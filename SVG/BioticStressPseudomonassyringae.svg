@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 900 600" enable-background="new 0 0 900 600" xml:space="preserve">
+<g id="Infiltrating">
+	<g id="Labels">
+		<text transform="matrix(1 0 0 1 31.2314 348.2479)"><tspan x="0" y="0" font-family="'HelveticaNeue'" font-size="18">Infiltrating </tspan><tspan x="84.3" y="0" font-family="'HelveticaNeue-Italic'" font-size="18">Pseudomonas syringae</tspan></text>
+		<text transform="matrix(1 0 0 1 245.3129 383.6665)"><tspan x="0" y="0" font-family="'HelveticaNeue-Thin'" font-size="12">Mock Treatment</tspan><tspan x="-7.9" y="13" font-family="'HelveticaNeue-Thin'" font-size="10">(10mM MgCl2 solution)</tspan></text>
+		<text transform="matrix(1 0 0 1 239.8712 437.1665)"><tspan x="0" y="0" font-family="'HelveticaNeue-Thin'" font-size="12">Avirulent pathogen</tspan><tspan x="12" y="13" font-family="'HelveticaNeue-Thin'" font-size="10">(10e8 cfu/ml pv. </tspan><tspan x="10.3" y="26" font-family="'HelveticaNeue-Thin'" font-size="10">tomato avrRpm1)</tspan></text>
+		<text transform="matrix(1 0 0 1 242.7665 500.6665)"><tspan x="0" y="0" font-family="'HelveticaNeue-Thin'" font-size="12">Virulent pathogen</tspan><tspan x="9.1" y="13" font-family="'HelveticaNeue-Thin'" font-size="10">(10e8 cfu/ml pv. </tspan><tspan x="8.2" y="26" font-family="'HelveticaNeue-Thin'" font-size="10">tomato DC3000)</tspan></text>
+		<text transform="matrix(1 0 0 1 369.8842 567.6665)" font-family="'HelveticaNeue-Thin'" font-size="10">2 hours</text>
+		<text transform="matrix(1 0 0 1 430.9676 567.6665)" font-family="'HelveticaNeue-Thin'" font-size="10">6 hours</text>
+		<text transform="matrix(1 0 0 1 489.2708 567.6665)" font-family="'HelveticaNeue-Thin'" font-size="10">24 hours</text>
+		<text transform="matrix(1 0 0 1 572.3129 383.6665)"><tspan x="0" y="0" font-family="'HelveticaNeue-Thin'" font-size="12">Mock Treatment</tspan><tspan x="-7.9" y="13" font-family="'HelveticaNeue-Thin'" font-size="10">(10mM MgCl2 solution)</tspan></text>
+		<text transform="matrix(1 0 0 1 570.2614 437.1665)"><tspan x="0" y="0" font-family="'HelveticaNeue-Thin'" font-size="12">Type III-Secretion </tspan><tspan x="0.8" y="13" font-family="'HelveticaNeue-Thin'" font-size="12">System Deficient </tspan><tspan x="8.6" y="26" font-family="'HelveticaNeue-Thin'" font-size="10">(10e8 cfu/ml pv. </tspan><tspan x="-5.5" y="39" font-family="'HelveticaNeue-Thin'" font-size="10">tomato DC3000 hrcC-)</tspan></text>
+		<text transform="matrix(1 0 0 1 569.9408 500.6665)"><tspan x="0" y="0" font-family="'HelveticaNeue-Thin'" font-size="12">Nonhost Bacteria</tspan><tspan x="8.9" y="13" font-family="'HelveticaNeue-Thin'" font-size="10">(10e8 cfu/ml pv. </tspan><tspan x="16" y="26" font-family="'HelveticaNeue-Thin'" font-size="10">phaseolicola)</tspan></text>
+		<text transform="matrix(1 0 0 1 696.8842 567.6665)" font-family="'HelveticaNeue-Thin'" font-size="10">2 hours</text>
+		<text transform="matrix(1 0 0 1 757.9676 567.6665)" font-family="'HelveticaNeue-Thin'" font-size="10">6 hours</text>
+		<text transform="matrix(1 0 0 1 816.2708 567.6665)" font-family="'HelveticaNeue-Thin'" font-size="10">24 hours</text>
+	</g>
+	<g id="treatmentInfographic">
+		<g id="root">
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M110.4,506.5c0.8-2.1,0-4.2-0.7-5.9
+				c-0.1-0.2-0.2-0.4-0.2-0.6c-1-2.9,1.6-5.7,1.6-5.7"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M118.3,473.4c0,0,2.3-4.1,4.1-5.9"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M123.1,482.9c-0.7-1.9-3.9-2.2-4-2.2"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M103.7,481.6c-2.2,0.7-6.8,3.6-7,3.7"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M107.8,481.7c-3.1-0.4-8.2,5.1-8.5,5.3"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M100.9,472.6c-8.2-0.9-13.7,3.5-13.8,3.6"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M109.1,472.4c-1.2-1.1-2.6-4.6-2.6-4.6"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M113.1,474.6c0,0,0.3,0.9,0.4,1.4"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M125,494.8c-1.4-3.1-4.8-6.6-4.9-6.6"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M111.8,473.2L111.8,473.2
+				C111.7,473.2,111.7,473.2,111.8,473.2"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M117.4,497.1c-0.3-0.3-1.9-1.6-1.9-3.2
+				c-0.1-1.5-0.5-3.4-1.3-5.4c-0.1-0.4-0.5-0.6-0.4-0.4c0.4-0.9,0.6-2.6,0.6-3.2c0-0.2,0-0.4,0-0.6c0-0.5,0.1-0.8,0.2-1.2
+				c0.1-0.3,0.1-0.6,0.2-0.9"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M110.1,535.2c-0.1-0.9,0.2-1.6,0.7-2.6
+				c0.2-1-0.1-3.2-0.5-4.8c-0.6-2.6,2.2-5.3,2.3-5.4l0.1,0.1c0.1-0.9,0.3-1.9,0.6-2.8c0.1-0.7,0.1-1.7,0.1-2.7
+				c0-1.6-0.1-3.3,0.4-4.2c0.1-0.2,0.2-0.5,0.3-0.8c0.7-1.9,1.4-3.8,1.1-7.8c-1.5-3.6-1.1-2.5-1.6-3.3c-0.5-0.8-1.3-0.4-2-4.2
+				c-0.8-3.7,0-5.2,0-7c0-1.8,0.9-6.2,1.2-7.5"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M119.5,541.2c-0.8-0.5-0.9-1.7-1-2.5
+				c0-0.3,0-0.5-0.1-0.6c-1.1-1.1-0.9-2.3-0.6-3.8c0-1.4-1.1-2.3-1.5-2.6c0.1,0.6,0.1,1.2,0.1,1.5c-0.3,1.5-1,4.8,0.4,9.6
+				c0.2,0.5,0.5,1,0.8,1.5l0,0c0.6,4.2,0.9,7.7,0.9,7.7l-0.1-1.6c0,0-0.5-1.8-1.1-6c-0.2-0.5-0.4-0.9-0.6-1.3l0,0
+				c0-0.1,0-0.1-0.1-0.2c-1.1-2.2-2.1-4.1-1.9-7.4l0-0.2c0.2-4.1,0.2-5.4-1.7-9.3c-0.3-0.9-0.3-2.6-0.3-3.7"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M120.5,521.8c0.3-3.2-0.5-4.2-1.1-5l-0.1-0.1
+				c-0.8-1-0.8-2.2-0.7-4.7c0-2.6-1.4-3.6-1.9-3.9c0,1.1-0.1,2.2-0.3,2.9l-0.1,0.2c-0.8,1.9-1.3,3-1.1,5.3c0.1,1.7-0.3,3.7-0.6,4.9
+				c-0.1,0.5-0.2,0.9-0.2,1.1c-0.2,1.1,0.3,2.9,0.8,3.5c0.4,0.7,0.6,1.7,0.8,2.4c0.1,0.3,0.1,0.6,0.2,0.8l0,0l0,0.3
+				c0.1,0.5,0.2,1.1,0.3,1.7l0.1,0.4"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M113.8,488.1c-0.4,2-0.3,2-0.3,4
+				s-0.3,3.1,0,4.1s0.8,1.8,1.2,2.3c0.9,1.3,1.8,2.5,1.9,4.3c0,0.4,0,0.9,0,1.4c0,1.1,0,2.6,0,3.8"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M136.4,470.3c-3-0.3-6,1.2-6.1,1.3l0.8,0
+				c-2,0-4.5,0.3-6.9,1.1"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M137.9,473.2c-1.8-0.9-4.1-1.6-6.8-1.7"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M112.2,480.8c0.2-0.1,1-0.1,1.2-0.4
+				c0.3-0.4,0.4-1.1,0.2-1.8l0,0c-0.1-0.2-0.3-0.4-0.4-0.7c-0.6-0.9-1.5-2.3-1.3-4.5"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M114.3,478.5L114.3,478.5
+				c-0.2,1-0.1,1.8-0.1,1.8"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M126.5,473.9l14.7,5.1
+				C132.6,471.6,126.5,473.9,126.5,473.9z"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="114.6" y1="477.9" x2="114.4" y2="478.3"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="114.4" y1="478.6" x2="114.4" y2="478.3"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="113.6" y1="472.8" x2="113.6" y2="473"/>
+		</g>
+		<path id="rosette" fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M80.8,480.6
+			c0,0-0.8-0.5,2.1-4.2c2.4-2.9,5.3-6.2,7.3-7.3c2.1-1.3,4.1-2.8,8.5-1.1c1.4,0.8,2.3,1.4,3.7,2.8c0.7,1.1,2.7,2,2.9,2.3
+			c1,0.5,5.5,3.7,6.7,4.2c-1.2-1.1-5.1-4.5-6.4-5.1c-1.4-0.6-2.6-1.7-2.2-5.9c0.4-2.4,0.9-3.8,0.9-3.8c1,0.8,5,4.5,5.7,5.8
+			c0.6,1,0.2,1.7,0.6,2.8c0.3,1,0.9,2.1,1.3,2.3c0.1-0.7,0.3-1.8,0.3-1.8c0.3,0.5,1.6,1.5,1.6,1.5c0.2,0.5,1,2.6,0.9,3.1
+			c-0.1,0.8-0.3,2-0.3,2c0.6-0.8,2-2,2.6-4.7c0.2-1.5,0.1-4.5,1.1-5.8c0.9-1.3,1.6-2.6,3.7-3.1c1.1-0.3,2.9-0.8,3.5,1.9
+			c0.1,0.9-0.1,2.1-2.2,4.5c-1.4,1.3-4.5,4-4.5,4.1c-0.7,0.8-1,1.2-1,1.2c1.4-1,5.7-3.3,6.3-3.5c0.6-0.8,4.5-5,9.5-5.6
+			c2.2-0.2,7.4,1.2,8.9,1.9c-0.8,0.4-2.2,1.2-2.4,1.9c-0.3,0.8-1,2.3-1.9,2.3c0.9,0.6,4,2.6,5.2,4.3c1,1.1,4.1,3.4,6.1,3.9
+			c-0.3,0.5-6.5,2.9-9.6,1.9c-3.1-1-4.8-2.9-7.7-5.2c-1.7-1.2-4.4-3-8.4-2.3c-2.2,0.5-6.2,1.8-8,3.2c-0.3,0.4-0.3,0.4-0.3,0.4
+			c1,0,8.3-0.7,9.7,1.1c1.2,1.6,2.5,3.4,2.5,3.4c-0.7,0.6-4.4,3.6-8.2,0c-1.5-1.7-2.7-3.3-4-3.2c0.6,0.8,3.6,4.8,5.6,5.9
+			c2.2,0.6,8.1,1.4,9.5,6.1c0.8,2.6,1,5.7,1,5.7c-1.3,0.6-5.5,3.5-11.3-3.8c-1.3-2.6-1.6-2.8-2.7-8.3c-0.8-1.5-1.5-3-2.8-4
+			c-1.3-0.1-1.9-0.1-2,0c-1,0.1-3.8,0.3-4.9,2.1c-1.3,1.7-3.3,4.1-7.7,6.4c-2.2,1-4.4,2.1-7.7-1.9c-0.8-1.3-1.2-3.9,0.1-5.4
+			c1.4-1.6,3.9-4.7,6.4-4.6c1.7,0.1,8.4,1.3,13.3,2.2c-0.6-0.8-4.3-5.7-12-5.8c-1.5,0.1-3.4,0.4-5.7,1.9c-2.6,1.6-5.9,4.5-10,3.2
+			C83.4,480.1,81.9,480,80.8,480.6z"/>
+		<g id="syringe">
+			<path d="M139.2,457.6c-0.8-0.2-1.7-0.3-2.5-0.6c-1-0.4-1.7-0.1-2.4,0.7c-0.8,0.9-4.2,4.2-5.1,5.1c-0.3,0.3-0.6,0.6-1,0.2
+				c-0.4-0.4,0-0.7,0.2-1c1-1,4.5-4.5,5.5-5.5c0.5-0.4,0.6-0.8,0.4-1.4c0,0,0-0.1,0-0.1c-1.2-2.4-0.3-4,1.6-5.7
+				c2.9-2.6,5.5-5.5,8.3-8.2c0.4-0.4,0.7-0.7,0.1-1.1c-0.3-0.2-0.5-0.6-0.1-0.9c0.3-0.3,0.6,0,0.9,0.2c2.3,2.3,4.6,4.6,6.9,6.9
+				c0.3,0.3,0.5,0.6,0.2,0.9c-0.3,0.3-0.7,0.2-0.9-0.1c-0.5-0.6-0.8-0.3-1.1,0.1c-3.3,3.3-6.6,6.7-10,10
+				C140,457.3,139.8,457.7,139.2,457.6z"/>
+			<path fill="#030303" d="M155.5,441.4c0,0.3-0.1,0.5-0.3,0.6c-0.3,0.2-0.5,0-0.7-0.2c-0.5-0.7-0.8-0.4-1.2,0.1
+				c-0.4,0.5-0.9,0.9-1.4,1.4c-0.2,0.2-0.5,0.6-0.9,0.2c-0.4-0.4-0.1-0.7,0.2-1c0.5-0.5,1.3-1,1.6-1.7c0.6-1.1-0.7-1.3-1.2-1.9
+				c-0.2-0.3-0.4-1.2-1.2-0.5c-0.5,0.5-1.1,1.1-1.6,1.6c-0.3,0.3-0.6,0.6-1,0.2c-0.4-0.4,0-0.6,0.2-0.9c0.3-0.4,0.7-0.7,1.1-1.1
+				c0.5-0.5,1.3-1,0.3-1.8c-0.3-0.2-0.1-0.5,0.1-0.7c0.3-0.2,0.6,0,0.8,0.2c1,0.9,1.9,1.9,2.9,2.9c0.7,0.7,1.4,1.4,2,2
+				C155.4,441.1,155.5,441.3,155.5,441.4z"/>
+			<path fill="#FFFFFF" d="M143.5,446.2c0,0.3-0.2,0.5-0.5,0.5c-0.3,0-1.6-1.2-1.6-1.6c0-0.3,0.2-0.5,0.5-0.5
+				C142.3,444.6,143.6,445.9,143.5,446.2z"/>
+			<path fill="#FFFFFF" d="M138.3,448.3c0.3,0,1.6,1.2,1.6,1.6c0,0.3-0.2,0.6-0.5,0.5c-0.7-0.3-1.2-0.8-1.5-1.5
+				C137.8,448.6,138,448.4,138.3,448.3z"/>
+			<path fill="#FFFFFF" d="M136.8,450.4c0.3,0,1.6,1.3,1.6,1.6c0,0.3-0.2,0.5-0.5,0.5c-0.3,0-1.5-1.3-1.5-1.6
+				C136.3,450.6,136.5,450.4,136.8,450.4z"/>
+			<path fill="#FFFFFF" d="M142,448.3c0,0.3-0.2,0.6-0.5,0.4c-0.7-0.3-1.2-0.8-1.5-1.5c-0.1-0.2,0.2-0.5,0.5-0.5
+				C140.8,446.7,142,448,142,448.3z"/>
+			<path fill="#FFFFFF" d="M144.1,443.1c0.3,0,1.5,1.2,1.5,1.6c0,0.3-0.3,0.5-0.5,0.4c-0.7-0.3-1.2-0.8-1.5-1.5
+				C143.5,443.4,143.8,443.2,144.1,443.1z"/>
+		</g>
+	</g>
+	<g id="TimeSampleChart">
+		<g id="ligtCycle">
+			<path fill="none" stroke="#FFF69F" stroke-width="10" stroke-miterlimit="10" d="M99.4,402.2c6.2-6.5,16.5-6.7,23-0.5
+				c2.2,2.1,3.7,4.7,4.4,7.5"/>
+		</g>
+		<g id="darkCycle">
+			<path fill="none" stroke="#555555" stroke-width="10" stroke-miterlimit="10" d="M126.8,409.2c1.4,5.3,0.1,11.2-4,15.5
+				c-6.2,6.5-16.5,6.7-23,0.5c-6.5-6.2-6.7-16.5-0.5-23"/>
+		</g>
+		<g id="labels">
+			<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="110.9" y1="391.6" x2="110.9" y2="400.9"/>
+			<text transform="matrix(1 0 0 1 138.9912 413.4747)"><tspan x="0" y="0" font-family="'HelveticaNeue-Thin'" font-size="8">6 hour</tspan><tspan x="-1.3" y="9" font-family="'HelveticaNeue-Thin'" font-size="8">sample</tspan></text>
+			<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="123.8" y1="414" x2="133.3" y2="413.8"/>
+			<text transform="matrix(1 0 0 1 129.293 388.6152)"><tspan x="0" y="0" font-family="'HelveticaNeue-Thin'" font-size="8">2 hour</tspan><tspan x="-1.3" y="9" font-family="'HelveticaNeue-Thin'" font-size="8">sample</tspan></text>
+			<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="117.7" y1="403.1" x2="124.1" y2="396.2"/>
+			<text transform="matrix(1 0 0 1 99.2833 375.9405)"><tspan x="0" y="0" font-family="'HelveticaNeue-Thin'" font-size="8">24 hour</tspan><tspan x="0.9" y="9" font-family="'HelveticaNeue-Thin'" font-size="8">sample</tspan></text>
+		</g>
+	</g>
+	<g id="Infiltrating_Pseudomonas_syringae_at_24_Hours">
+		
+			<path id="Nonhost_Pseudomonas_syringae_at_24_Hours" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M827.3,505.3c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M835.9,536c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M835.3,503c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		
+			<path id="Deficient_Pseudomonas_syringae_at_24_Hours" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M827.3,441.5c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M835.9,472.2c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M835.3,439.2c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		
+			<path id="Virulent_Pseudomonas_syringae_at_24_Hours" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M502.3,507.3c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M510.9,538c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M510.3,505c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		
+			<path id="Avirulent_Pseudomonas_syringae_at_24_Hours" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M502.3,443.5c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M510.9,474.2c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M510.3,441.2c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		
+			<path id="Control_Pseudomonas_syringae_at_24_Hours" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M502.3,379.6c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M510.9,410.3c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M510.3,377.4c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4 M827.3,377.6
+			c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1c0.1,1.1,0,2.3,0,3.4
+			 M835.9,408.3c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1c-0.9-3.2-3.3-6.6-2.9-10.2 M835.3,375.4
+			c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+	</g>
+	<g id="Infiltrating_Pseudomonas_syringae_at_6_Hours">
+		
+			<path id="Nonhost_Pseudomonas_syringae_at_6_Hours" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M765.3,505.3c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M773.9,536c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M773.3,503c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		
+			<path id="Deficient_Pseudomonas_syringae_at_6_Hours" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M765.3,441.5c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M773.9,472.2c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M773.3,439.2c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		
+			<path id="Virulent_Pseudomonas_syringae_at_6_Hours" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M441.3,506.3c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M449.9,537c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M449.3,504c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		
+			<path id="Avirulent_Pseudomonas_syringae_at_6_Hours" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M441.3,442.5c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M449.9,473.2c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M449.3,440.2c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		
+			<path id="Control_Pseudomonas_syringae_at_6_Hours" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M441.3,378.6c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M449.9,409.3c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M449.3,376.4c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4 M765.3,377.6
+			c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1c0.1,1.1,0,2.3,0,3.4
+			 M773.9,408.3c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1c-0.9-3.2-3.3-6.6-2.9-10.2 M773.3,375.4
+			c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+	</g>
+	<g id="Infiltrating_Pseudomonas_syringae_at_2_Hours">
+		
+			<path id="Nonhost_Pseudomonas_syringae_at_2_Hours" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M704.3,506.3c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M712.9,537c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M712.3,504c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		
+			<path id="Deficient_Pseudomonas_syringae_at_2_Hours" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M704.3,442.5c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M712.9,473.2c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M712.3,440.2c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		
+			<path id="Virulent_Pseudomonas_syringae_at_2_Hours" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M378.3,506.3c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M386.9,537c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M386.3,504c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		
+			<path id="Avirulent_Pseudomonas_syringae_at_2_Hours" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M378.3,442.5c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M386.9,473.2c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M386.3,440.2c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		
+			<path id="Control_Pseudomonas_syringae_at_2_Hours" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M378.3,378.6c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M386.9,409.3c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M386.3,376.4c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4 M704.3,378.6
+			c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1c0.1,1.1,0,2.3,0,3.4
+			 M712.9,409.3c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1c-0.9-3.2-3.3-6.6-2.9-10.2 M712.3,376.4
+			c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+	</g>
+	<g id="infoButton_Infiltrating_Psuedomonas_syringae">
+		<circle fill="#F77128" cx="319.2" cy="342.2" r="9.2"/>
+		<text transform="matrix(1 0 0 1 317.4521 346.5)" fill="#FFFFFF" font-family="'HelveticaNeue-Bold'" font-size="12">i</text>
+	</g>
+</g>
+<g id="dividerLine">
+</g>
+<g id="Half_Leaf">
+	<g id="Labels">
+		<text transform="matrix(1 0 0 1 31.2314 70.314)"><tspan x="0" y="0" font-family="'HelveticaNeue'" font-size="18">Half Leaf </tspan><tspan x="76.7" y="0" font-family="'HelveticaNeue-Italic'" font-size="18">Pseudomonas syringae</tspan></text>
+		<text transform="matrix(1 0 0 1 245.3129 117.6665)"><tspan x="0" y="0" font-family="'HelveticaNeue-Thin'" font-size="12">Mock Treatment</tspan><tspan x="-7.9" y="13" font-family="'HelveticaNeue-Thin'" font-size="10">(10mM MgCl2 solution)</tspan></text>
+		<text transform="matrix(1 0 0 1 239.8712 181.1665)"><tspan x="0" y="0" font-family="'HelveticaNeue-Thin'" font-size="12">Avirulent pathogen</tspan><tspan x="9.2" y="13" font-family="'HelveticaNeue-Thin'" font-size="10">(ES4326 avrRpt2)</tspan></text>
+		<text transform="matrix(1 0 0 1 242.7665 244.6665)"><tspan x="0" y="0" font-family="'HelveticaNeue-Thin'" font-size="12">Virulent pathogen</tspan><tspan x="23.8" y="13" font-family="'HelveticaNeue-Thin'" font-size="10">(ES4326)</tspan></text>
+		<text transform="matrix(1 0 0 1 369.8842 301.6665)" font-family="'HelveticaNeue-Thin'" font-size="10">4 hours</text>
+		<text transform="matrix(1 0 0 1 430.9676 301.6665)" font-family="'HelveticaNeue-Thin'" font-size="10">8 hours</text>
+		<text transform="matrix(1 0 0 1 489.2708 301.6665)" font-family="'HelveticaNeue-Thin'" font-size="10">16 hours</text>
+		<text transform="matrix(1 0 0 1 550.3544 302.6665)" font-family="'HelveticaNeue-Thin'" font-size="10">24 hours</text>
+		<text transform="matrix(1 0 0 1 611.4377 302.6665)" font-family="'HelveticaNeue-Thin'" font-size="10">48 hours</text>
+	</g>
+	<g id="infoButton_Half_Leaf_Psuedomonas_syringae">
+		<circle fill="#F9AD26" cx="314.2" cy="64.2" r="9.2"/>
+		<text transform="matrix(1 0 0 1 312.4521 68.5)" fill="#FFFFFF" font-family="'HelveticaNeue-Bold'" font-size="12">i</text>
+	</g>
+	<g id="treatmentInfographic">
+		<g id="root">
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M110.4,236c0.8-2.1,0-4.2-0.7-5.9
+				c-0.1-0.2-0.2-0.4-0.2-0.6c-1-2.9,1.6-5.7,1.6-5.7"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M118.3,202.9c0,0,2.3-4.1,4.1-5.9"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M123.1,212.4c-0.7-1.9-3.9-2.2-4-2.2"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M103.7,211.1c-2.2,0.7-6.8,3.6-7,3.7"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M107.8,211.2c-3.1-0.4-8.2,5.1-8.5,5.3"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M100.9,202c-8.2-0.9-13.7,3.5-13.8,3.6"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M109.1,201.9c-1.2-1.1-2.6-4.6-2.6-4.6"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M113.1,204.1c0,0,0.3,0.9,0.4,1.4"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M125,224.3c-1.4-3.1-4.8-6.6-4.9-6.6"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M111.8,202.7L111.8,202.7
+				C111.7,202.7,111.7,202.7,111.8,202.7"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M117.4,226.6c-0.3-0.3-1.9-1.6-1.9-3.2
+				c-0.1-1.5-0.5-3.4-1.3-5.4c-0.1-0.4-0.5-0.6-0.4-0.4c0.4-0.9,0.6-2.6,0.6-3.2c0-0.2,0-0.4,0-0.6c0-0.5,0.1-0.8,0.2-1.2
+				c0.1-0.3,0.1-0.6,0.2-0.9"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M110.1,264.6c-0.1-0.9,0.2-1.6,0.7-2.6
+				c0.2-1-0.1-3.2-0.5-4.8c-0.6-2.6,2.2-5.3,2.3-5.4l0.1,0.1c0.1-0.9,0.3-1.9,0.6-2.8c0.1-0.7,0.1-1.7,0.1-2.7
+				c0-1.6-0.1-3.3,0.4-4.2c0.1-0.2,0.2-0.5,0.3-0.8c0.7-1.9,1.4-3.8,1.1-7.8c-1.5-3.6-1.1-2.5-1.6-3.3c-0.5-0.8-1.3-0.4-2-4.2
+				s0-5.2,0-7s0.9-6.2,1.2-7.5"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M119.5,270.7c-0.8-0.5-0.9-1.7-1-2.5
+				c0-0.3,0-0.5-0.1-0.6c-1.1-1.1-0.9-2.3-0.6-3.8c0-1.4-1.1-2.3-1.5-2.6c0.1,0.6,0.1,1.2,0.1,1.5c-0.3,1.5-1,4.8,0.4,9.6
+				c0.2,0.5,0.5,1,0.8,1.5l0,0c0.6,4.2,0.9,7.7,0.9,7.7l-0.1-1.6c0,0-0.5-1.8-1.1-6c-0.2-0.5-0.4-0.9-0.6-1.3l0,0
+				c0-0.1,0-0.1-0.1-0.2c-1.1-2.2-2.1-4.1-1.9-7.4l0-0.2c0.2-4.1,0.2-5.4-1.7-9.3c-0.3-0.9-0.3-2.6-0.3-3.7"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M120.5,251.3c0.3-3.2-0.5-4.2-1.1-5l-0.1-0.1
+				c-0.8-1-0.8-2.2-0.7-4.7c0-2.6-1.4-3.6-1.9-3.9c0,1.1-0.1,2.2-0.3,2.9l-0.1,0.2c-0.8,1.9-1.3,3-1.1,5.3c0.1,1.7-0.3,3.7-0.6,4.9
+				c-0.1,0.5-0.2,0.9-0.2,1.1c-0.2,1.1,0.3,2.9,0.8,3.5c0.4,0.7,0.6,1.7,0.8,2.4c0.1,0.3,0.1,0.6,0.2,0.8l0,0l0,0.3
+				c0.1,0.5,0.2,1.1,0.3,1.7l0.1,0.4"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M113.8,217.6c-0.4,2-0.3,2-0.3,4
+				s-0.3,3.1,0,4.1c0.3,1,0.8,1.8,1.2,2.3c0.9,1.3,1.8,2.5,1.9,4.3c0,0.4,0,0.9,0,1.4c0,1.1,0,2.6,0,3.8"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M136.4,199.8c-3-0.3-6,1.2-6.1,1.3l0.8,0
+				c-2,0-4.5,0.3-6.9,1.1"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M137.9,202.7c-1.8-0.9-4.1-1.6-6.8-1.7"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M112.2,210.3c0.2-0.1,1-0.1,1.2-0.4
+				c0.3-0.4,0.4-1.1,0.2-1.8l0,0c-0.1-0.2-0.3-0.4-0.4-0.7c-0.6-0.9-1.5-2.3-1.3-4.5"/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M114.3,208L114.3,208c-0.2,1-0.1,1.8-0.1,1.8"
+				/>
+			<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M126.5,203.4l14.7,5.1
+				C132.6,201.1,126.5,203.4,126.5,203.4z"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="114.6" y1="207.4" x2="114.4" y2="207.8"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="114.4" y1="208" x2="114.4" y2="207.8"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="113.6" y1="202.2" x2="113.6" y2="202.5"/>
+		</g>
+		<path id="rosette" fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M80.8,210.1
+			c0,0-0.8-0.5,2.1-4.2c2.4-2.9,5.3-6.2,7.3-7.3c2.1-1.3,4.1-2.8,8.5-1.1c1.4,0.8,2.3,1.4,3.7,2.8c0.7,1.1,2.7,2,2.9,2.3
+			c1,0.5,5.5,3.7,6.7,4.2c-1.2-1.1-5.1-4.5-6.4-5.1c-1.4-0.6-2.6-1.7-2.2-5.9c0.4-2.4,0.9-3.8,0.9-3.8c1,0.8,5,4.5,5.7,5.8
+			c0.6,1,0.2,1.7,0.6,2.8c0.3,1,0.9,2.1,1.3,2.3c0.1-0.7,0.3-1.8,0.3-1.8c0.3,0.5,1.6,1.5,1.6,1.5c0.2,0.5,1,2.6,0.9,3.1
+			c-0.1,0.8-0.3,2-0.3,2c0.6-0.8,2-2,2.6-4.7c0.2-1.5,0.1-4.5,1.1-5.8c0.9-1.3,1.6-2.6,3.7-3.1c1.1-0.3,2.9-0.8,3.5,1.9
+			c0.1,0.9-0.1,2.1-2.2,4.5c-1.4,1.3-4.5,4-4.5,4.1c-0.7,0.8-1,1.2-1,1.2c1.4-1,5.7-3.3,6.3-3.5c0.6-0.8,4.5-5,9.5-5.6
+			c2.2-0.2,7.4,1.2,8.9,1.9c-0.8,0.4-2.2,1.2-2.4,1.9c-0.3,0.8-1,2.3-1.9,2.3c0.9,0.6,4,2.6,5.2,4.3c1,1.1,4.1,3.4,6.1,3.9
+			c-0.3,0.5-6.5,2.9-9.6,1.9c-3.1-1-4.8-2.9-7.7-5.2c-1.7-1.2-4.4-3-8.4-2.3c-2.2,0.5-6.2,1.8-8,3.2c-0.3,0.4-0.3,0.4-0.3,0.4
+			c1,0,8.3-0.7,9.7,1.1c1.2,1.6,2.5,3.4,2.5,3.4c-0.7,0.6-4.4,3.6-8.2,0c-1.5-1.7-2.7-3.3-4-3.2c0.6,0.8,3.6,4.8,5.6,5.9
+			c2.2,0.6,8.1,1.4,9.5,6.1c0.8,2.6,1,5.7,1,5.7c-1.3,0.6-5.5,3.5-11.3-3.8c-1.3-2.6-1.6-2.8-2.7-8.3c-0.8-1.5-1.5-3-2.8-4
+			c-1.3-0.1-1.9-0.1-2,0c-1,0.1-3.8,0.3-4.9,2.1c-1.3,1.7-3.3,4.1-7.7,6.4c-2.2,1-4.4,2.1-7.7-1.9c-0.8-1.3-1.2-3.9,0.1-5.4
+			c1.4-1.6,3.9-4.7,6.4-4.6c1.7,0.1,8.4,1.3,13.3,2.2c-0.6-0.8-4.3-5.7-12-5.8c-1.5,0.1-3.4,0.4-5.7,1.9c-2.6,1.6-5.9,4.5-10,3.2
+			C83.4,209.6,81.9,209.5,80.8,210.1z"/>
+		<g id="syringe">
+			<path d="M139.2,187.6c-0.8-0.2-1.7-0.3-2.5-0.6c-1-0.4-1.7-0.1-2.4,0.7c-0.8,0.9-4.2,4.2-5.1,5.1c-0.3,0.3-0.6,0.6-1,0.2
+				c-0.4-0.4,0-0.7,0.2-1c1-1,4.5-4.5,5.5-5.5c0.5-0.4,0.6-0.8,0.4-1.4c0,0,0-0.1,0-0.1c-1.2-2.4-0.3-4,1.6-5.7
+				c2.9-2.6,5.5-5.5,8.3-8.2c0.4-0.4,0.7-0.7,0.1-1.1c-0.3-0.2-0.5-0.6-0.1-0.9c0.3-0.3,0.6,0,0.9,0.2c2.3,2.3,4.6,4.6,6.9,6.9
+				c0.3,0.3,0.5,0.6,0.2,0.9c-0.3,0.3-0.7,0.2-0.9-0.1c-0.5-0.6-0.8-0.3-1.1,0.1c-3.3,3.3-6.6,6.7-10,10
+				C140,187.3,139.8,187.7,139.2,187.6z"/>
+			<path fill="#030303" d="M155.5,171.4c0,0.3-0.1,0.5-0.3,0.6c-0.3,0.2-0.5,0-0.7-0.2c-0.5-0.7-0.8-0.4-1.2,0.1
+				c-0.4,0.5-0.9,0.9-1.4,1.4c-0.2,0.2-0.5,0.6-0.9,0.2c-0.4-0.4-0.1-0.7,0.2-1c0.5-0.5,1.3-1,1.6-1.7c0.6-1.1-0.7-1.3-1.2-1.9
+				c-0.2-0.3-0.4-1.2-1.2-0.5c-0.5,0.5-1.1,1.1-1.6,1.6c-0.3,0.3-0.6,0.6-1,0.2c-0.4-0.4,0-0.6,0.2-0.9c0.3-0.4,0.7-0.7,1.1-1.1
+				c0.5-0.5,1.3-1,0.3-1.8c-0.3-0.2-0.1-0.5,0.1-0.7c0.3-0.2,0.6,0,0.8,0.2c1,0.9,1.9,1.9,2.9,2.9c0.7,0.7,1.4,1.4,2,2
+				C155.4,171.1,155.5,171.3,155.5,171.4z"/>
+			<path fill="#FFFFFF" d="M143.5,176.2c0,0.3-0.2,0.5-0.5,0.5c-0.3,0-1.6-1.2-1.6-1.6c0-0.3,0.2-0.5,0.5-0.5
+				C142.3,174.6,143.6,175.9,143.5,176.2z"/>
+			<path fill="#FFFFFF" d="M138.3,178.3c0.3,0,1.6,1.2,1.6,1.6c0,0.3-0.2,0.6-0.5,0.5c-0.7-0.3-1.2-0.8-1.5-1.5
+				C137.8,178.6,138,178.4,138.3,178.3z"/>
+			<path fill="#FFFFFF" d="M136.8,180.4c0.3,0,1.6,1.3,1.6,1.6c0,0.3-0.2,0.5-0.5,0.5c-0.3,0-1.5-1.3-1.5-1.6
+				C136.3,180.6,136.5,180.4,136.8,180.4z"/>
+			<path fill="#FFFFFF" d="M142,178.3c0,0.3-0.2,0.6-0.5,0.4c-0.7-0.3-1.2-0.8-1.5-1.5c-0.1-0.2,0.2-0.5,0.5-0.5
+				C140.8,176.7,142,178,142,178.3z"/>
+			<path fill="#FFFFFF" d="M144.1,173.1c0.3,0,1.5,1.2,1.5,1.6c0,0.3-0.3,0.5-0.5,0.4c-0.7-0.3-1.2-0.8-1.5-1.5
+				C143.5,173.4,143.8,173.2,144.1,173.1z"/>
+		</g>
+	</g>
+	<g id="TimeSampleChart">
+		<g id="darkCycle">
+			<path fill="none" stroke="#555555" stroke-width="10" stroke-miterlimit="10" d="M127.4,135c0,9-7.3,16.3-16.3,16.3
+				c-3.1,0-5.9-0.8-8.4-2.3"/>
+		</g>
+		<g id="lightCycle">
+			<path fill="none" stroke="#FFF69F" stroke-width="10" stroke-miterlimit="10" d="M102.7,148.9c-4.7-2.8-7.9-8-7.9-13.9
+				c0-9,7.3-16.3,16.3-16.3s16.3,7.3,16.3,16.3"/>
+		</g>
+		<g id="labels">
+			<text transform="matrix(1 0 0 1 90.2393 97.4444)"><tspan x="0" y="0" font-family="'HelveticaNeue-Thin'" font-size="8">24 &amp; 48 hour</tspan><tspan x="8.5" y="9" font-family="'HelveticaNeue-Thin'" font-size="8">injection</tspan></text>
+			<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="110.9" y1="112.3" x2="110.9" y2="121.6"/>
+			<text transform="matrix(1 0 0 1 135.4072 148.0537)"><tspan x="0" y="0" font-family="'HelveticaNeue-Thin'" font-size="8">16 hour</tspan><tspan x="-0.5" y="9" font-family="'HelveticaNeue-Thin'" font-size="8">injection</tspan></text>
+			<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="123" y1="140.1" x2="131.3" y2="144.4"/>
+			<text transform="matrix(1 0 0 1 63.9464 146.499)"><tspan x="0" y="0" font-family="'HelveticaNeue-Thin'" font-size="8">8 hour</tspan><tspan x="-2.8" y="9" font-family="'HelveticaNeue-Thin'" font-size="8">injection</tspan></text>
+			<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="99.8" y1="139.1" x2="91.5" y2="143.4"/>
+			<text transform="matrix(1 0 0 1 62.4517 116.9199)"><tspan x="0" y="0" font-family="'HelveticaNeue-Thin'" font-size="8">4 hour</tspan><tspan x="-2.8" y="9" font-family="'HelveticaNeue-Thin'" font-size="8">injection</tspan></text>
+			<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="100.4" y1="129.7" x2="92.1" y2="125.5"/>
+		</g>
+	</g>
+	<g id="Half_Leaf_Pseudomonas_syringae_at_48_Hours">
+		<path id="Virulent_Half_Leaf_Pseudomonas_syringae_at_48_Hours" fill="#FFFFFF" d="M629.8,224c-1.3,2.5-5.2,9.1-6.3,14
+			c-0.3,1.1-0.4,3.7,0,6.2c0.3,1.9,1,3.7,1.7,5.2c1.5,3.4,4.3,8.3,4.7,10c0.3,1.7,1.7,5.7,1.7,7.3c0,1.7,0,4.7,0,4.7l0.8,0.3
+			L629.8,224z"/>
+		
+			<path id="Virulent_Half_Leaf_Pseudomonas_syringae_at_48_Hours_outline" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M623.3,241.3c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M631.9,272c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M631.3,239c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		<path id="Avirulent_Half_Leaf_Pseudomonas_syringae_at_48_Hours" fill="#FFF200" d="M630,160.3c-1.3,2.5-5.2,9.1-6.3,14
+			c-0.3,1.1-0.4,3.7,0,6.2c0.3,1.9,1,3.7,1.7,5.2c1.5,3.4,4.3,8.3,4.7,10c0.3,1.7,1.7,5.7,1.7,7.3s0,4.7,0,4.7l0.8,0.3L630,160.3z"
+			/>
+		
+			<path id="Avirulent_Half_Leaf_Pseudomonas_syringae_at_48_Hours_outline" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M623.3,177.5c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M631.9,208.2c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M631.3,175.2c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		<path id="Control_Half_Leaf_Pseudomonas_syringae_at_48_Hours" fill="#FFFFFF" d="M630,96.3c-1.3,2.5-5.2,9.1-6.3,14
+			c-0.3,1.1-0.4,3.7,0,6.2c0.3,1.9,1,3.7,1.7,5.2c1.5,3.4,4.3,8.3,4.7,10c0.3,1.7,1.7,5.7,1.7,7.3s0,4.7,0,4.7l0.8,0.3L630,96.3z"/>
+		
+			<path id="Control_Half_Leaf_Pseudomonas_syringae_at_48_Hours_outline" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M623.3,113.6c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M631.9,144.3c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M631.3,111.4c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+	</g>
+	<g id="Half_Leaf_Pseudomonas_syringae_at_24_Hours">
+		<path id="Virulent_Half_Leaf_Pseudomonas_syringae_at_24_Hours" fill="#FFF200" d="M569.8,224c-1.3,2.5-5.2,9.1-6.3,14
+			c-0.3,1.1-0.4,3.7,0,6.2c0.3,1.9,1,3.7,1.7,5.2c1.5,3.4,4.3,8.3,4.7,10c0.3,1.7,1.7,5.7,1.7,7.3c0,1.7,0,4.7,0,4.7l0.8,0.3
+			L569.8,224z"/>
+		
+			<path id="Virulent_Half_Leaf_Pseudomonas_syringae_at_24_Hours_outline" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M563.3,241.3c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M571.9,272c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M571.3,239c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		<path id="Avirulent_Half_Leaf_Pseudomonas_syringae_at_24_Hours" fill="#FFFFFF" d="M570,160.3c-1.3,2.5-5.2,9.1-6.3,14
+			c-0.3,1.1-0.4,3.7,0,6.2c0.3,1.9,1,3.7,1.7,5.2c1.5,3.4,4.3,8.3,4.7,10c0.3,1.7,1.7,5.7,1.7,7.3s0,4.7,0,4.7l0.8,0.3L570,160.3z"
+			/>
+		
+			<path id="Avirulent_Half_Leaf_Pseudomonas_syringae_at_24_Hours_outline" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M563.3,177.5c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M571.9,208.2c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M571.3,175.2c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		<path id="Control_Half_Leaf_Pseudomonas_syringae_at_24_Hours" fill="#FFFFFF" d="M570,96.3c-1.3,2.5-5.2,9.1-6.3,14
+			c-0.3,1.1-0.4,3.7,0,6.2c0.3,1.9,1,3.7,1.7,5.2c1.5,3.4,4.3,8.3,4.7,10c0.3,1.7,1.7,5.7,1.7,7.3s0,4.7,0,4.7l0.8,0.3L570,96.3z"/>
+		
+			<path id="Control_Half_Leaf_Pseudomonas_syringae_at_24_Hours_outline" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M563.3,113.6c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M571.9,144.3c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M571.3,111.4c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+	</g>
+	<g id="Half_Leaf_Pseudomonas_syringae_at_16_Hours">
+		<path id="Virulent_Half_Leaf_Pseudomonas_syringae_at_16_Hours" fill="#FFF200" d="M508.8,223c-1.3,2.5-5.2,9.1-6.3,14
+			c-0.3,1.1-0.4,3.7,0,6.2c0.3,1.9,1,3.7,1.7,5.2c1.5,3.4,4.3,8.3,4.7,10c0.3,1.7,1.7,5.7,1.7,7.3c0,1.7,0,4.7,0,4.7l0.8,0.3
+			L508.8,223z"/>
+		
+			<path id="Virulent_Half_Leaf_Pseudomonas_syringae_at_16_Hours_outline" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M502.3,240.3c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M510.9,271c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M510.3,238c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		<path id="Avirulent_Half_Leaf_Pseudomonas_syringae_at_16_Hours" fill="#FFFFFF" d="M509,159.3c-1.3,2.5-5.2,9.1-6.3,14
+			c-0.3,1.1-0.4,3.7,0,6.2c0.3,1.9,1,3.7,1.7,5.2c1.5,3.4,4.3,8.3,4.7,10c0.3,1.7,1.7,5.7,1.7,7.3s0,4.7,0,4.7l0.8,0.3L509,159.3z"
+			/>
+		
+			<path id="Avirulent_Half_Leaf_Pseudomonas_syringae_at_16_Hours_outline" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M502.3,176.5c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M510.9,207.2c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M510.3,174.2c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		<path id="Control_Half_Leaf_Pseudomonas_syringae_at_16_Hours" fill="#FFFFFF" d="M509,95.3c-1.3,2.5-5.2,9.1-6.3,14
+			c-0.3,1.1-0.4,3.7,0,6.2c0.3,1.9,1,3.7,1.7,5.2c1.5,3.4,4.3,8.3,4.7,10c0.3,1.7,1.7,5.7,1.7,7.3s0,4.7,0,4.7l0.8,0.3L509,95.3z"/>
+		
+			<path id="Control_Half_Leaf_Pseudomonas_syringae_at_16_Hours_outline" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M502.3,112.6c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M510.9,143.3c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M510.3,110.4c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+	</g>
+	<g id="Half_Leaf_Pseudomonas_syringae_at_8_Hours">
+		<path id="Virulent_Half_Leaf_Pseudomonas_syringae_at_8_Hours" fill="#FFFFFF" d="M447.8,225c-1.3,2.5-5.2,9.1-6.3,14
+			c-0.3,1.1-0.4,3.7,0,6.2c0.3,1.9,1,3.7,1.7,5.2c1.5,3.4,4.3,8.3,4.7,10c0.3,1.7,1.7,5.7,1.7,7.3c0,1.7,0,4.7,0,4.7l0.8,0.3
+			L447.8,225z"/>
+		
+			<path id="Virulent_Half_Leaf_Pseudomonas_syringae_at_8_Hours_outline" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M441.3,242.3c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M449.9,273c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M449.3,240c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		<path id="Avirulent_Half_Leaf_Pseudomonas_syringae_at_8_Hours" fill="#FFFFFF" d="M448,161.3c-1.3,2.5-5.2,9.1-6.3,14
+			c-0.3,1.1-0.4,3.7,0,6.2c0.3,1.9,1,3.7,1.7,5.2c1.5,3.4,4.3,8.3,4.7,10c0.3,1.7,1.7,5.7,1.7,7.3s0,4.7,0,4.7l0.8,0.3L448,161.3z"
+			/>
+		
+			<path id="Avirulent_Half_Leaf_Pseudomonas_syringae_at_8_Hours_outline" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M441.3,178.5c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M449.9,209.2c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M449.3,176.2c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		<path id="Control_Half_Leaf_Pseudomonas_syringae_at_8_Hours" fill="#FFFFFF" d="M448,97.3c-1.3,2.5-5.2,9.1-6.3,14
+			c-0.3,1.1-0.4,3.7,0,6.2c0.3,1.9,1,3.7,1.7,5.2c1.5,3.4,4.3,8.3,4.7,10c0.3,1.7,1.7,5.7,1.7,7.3s0,4.7,0,4.7l0.8,0.3L448,97.3z"/>
+		
+			<path id="Control_Half_Leaf_Pseudomonas_syringae_at_8_Hours_outline" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M441.3,114.6c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M449.9,145.3c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M449.3,112.4c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+	</g>
+	<g id="Half_Leaf_Pseudomonas_syringae_at_4_Hours">
+		<path id="Virulent_Half_Leaf_Pseudomonas_syringae_at_4_Hours" fill="#FFFFFF" d="M384.8,223c-1.3,2.5-5.2,9.1-6.3,14
+			c-0.3,1.1-0.4,3.7,0,6.2c0.3,1.9,1,3.7,1.7,5.2c1.5,3.4,4.3,8.3,4.7,10c0.3,1.7,1.7,5.7,1.7,7.3c0,1.7,0,4.7,0,4.7l0.8,0.3
+			L384.8,223z"/>
+		
+			<path id="Virulent_Half_Leaf_Pseudomonas_syringae_at_4_Hours_outline" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M378.3,240.3c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M386.9,271c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M386.3,238c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		<path id="Avirulent_Half_Leaf_Pseudomonas_syringae_at_4_Hours" fill="#FFFFFF" d="M385,159.3c-1.3,2.5-5.2,9.1-6.3,14
+			c-0.3,1.1-0.4,3.7,0,6.2c0.3,1.9,1,3.7,1.7,5.2c1.5,3.4,4.3,8.3,4.7,10c0.3,1.7,1.7,5.7,1.7,7.3s0,4.7,0,4.7l0.8,0.3L385,159.3z"
+			/>
+		
+			<path id="Avirulent_Half_Leaf_Pseudomonas_syringae_at_4_Hours_outline" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M378.3,176.5c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M386.9,207.2c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M386.3,174.2c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+		<path id="Control_Half_Leaf_Pseudomonas_syringae_at_4_Hours" fill="#FFFFFF" d="M385,95.3c-1.3,2.5-5.2,9.1-6.3,14
+			c-0.3,1.1-0.4,3.7,0,6.2c0.3,1.9,1,3.7,1.7,5.2c1.5,3.4,4.3,8.3,4.7,10c0.3,1.7,1.7,5.7,1.7,7.3s0,4.7,0,4.7l0.8,0.3L385,95.3z"/>
+		
+			<path id="Control_Half_Leaf_Pseudomonas_syringae_at_4_Hours_outline" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M378.3,112.6c-0.1-6.3,3-11.8,6.5-16.9c0.9,1.1,1.4,1.8,2,2.4c6.4,6.8,8,14.8,4.4,23.3c-2.6,6.2-3.8,12.5-3.3,19.1
+			c0.1,1.1,0,2.3,0,3.4 M386.9,143.3c-0.2-2.6-0.2-5.1-0.6-7.7c-0.3-1.9-0.9-3.9-1.7-5.7c-1-2.4-2.6-4.7-3.3-7.1
+			c-0.9-3.2-3.3-6.6-2.9-10.2 M386.3,110.4c-0.3,2.4-0.7,4.7-0.8,7.1c-0.1,2.5,0.1,4.9,0.3,7.4"/>
+	</g>
+</g>
+</svg>
