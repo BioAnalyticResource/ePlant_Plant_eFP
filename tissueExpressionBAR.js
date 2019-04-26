@@ -188,6 +188,8 @@ class CreateSVGExpressionData {
         this.svgValues = {};
         this.svgMax;
         this.svgMin;
+        // Store object name:
+        this.svgObjectName;
     };
 
     /**
@@ -206,6 +208,7 @@ class CreateSVGExpressionData {
         // Append SVG to document
         var appendSVG = '<object id="' + svgName + '_object" data="' + urlSVG + '" type="image/svg+xml"></object>';
         targetDOMRegion.innerHTML = appendSVG;
+        createSVGExpressionData.svgObjectName = svgName + '_object';
 
         // Wait for SVG to load
         var svgLoaded = false;
@@ -303,20 +306,18 @@ class CreateSVGExpressionData {
             var minValue = numValues[1];
             if (createSVGExpressionData.svgMax === undefined) {
                 createSVGExpressionData.svgMax = maxValue;
-            }
-            else {
+            } else {
                 if (maxValue > createSVGExpressionData.svgMax) {                   
                     createSVGExpressionData.svgMax = maxValue;
                 }
-            }
+            };
             if (createSVGExpressionData.svgMin === undefined) {
                 createSVGExpressionData.svgMin = minValue;
-            }
-            else {
+            } else {
                 if (minValue < createSVGExpressionData.svgMin) {                   
                     createSVGExpressionData.svgMin = minValue;
                 }
-            }
+            };
 
             // Find averages
             var sumValues = 0;
@@ -351,29 +352,96 @@ class CreateSVGExpressionData {
                 percentage = 100;
             } else if ((percentage < 0) ||(percentage === undefined) || (percentage === null)) {
                 percentage = 0;
-            }
+            };
+            // Check for duplicate error:
+            var duplicateShoot = ['Control_Shoot_0_Hour', 'Cold_Shoot_0_Hour', 'Osmotic_Shoot_0_Hour', 'Salt_Shoot_0_Hour', 'Drought_Shoot_0_Hour', 'Genotoxic_Shoot_0_Hour', 'Oxidative_Shoot_0_Hour', 'UV-B_Shoot_0_Hour', 'Wounding_Shoot_0_Hour', 'Heat_Shoot_0_Hour'];
+            var duplicateRoot = ['Control_Root_0_Hour', 'Cold_Root_0_Hour', 'Osmotic_Root_0_Hour', 'Salt_Root_0_Hour', 'Drought_Root_0_Hour', 'Genotoxic_Root_0_Hour', 'Oxidative_Root_0_Hour', 'UV-B_Root_0_Hour', 'Wounding_Root_0_Hour', 'Heat_Root_0_Hour'];
+            var isdupShoot = false;
+            var isdupRoot = false;
+            if (duplicateShoot.includes(svgSubunits[i])) {
+                isdupShoot = true;
+            } else if (duplicateRoot.includes(svgSubunits[i])) {
+                isdupRoot = true;
+            };
+            
             // Colouring
-            var colourFill = createSVGExpressionData.perc2color(percentage);   
+            var colourFill = createSVGExpressionData.percentageToColour(percentage);
             var childElements = svgObject.getElementById(svgSubunits[i]).childNodes;
             if (childElements.length > 0) {
                 for (var c = 0; c < childElements.length; c++) {
                     if (childElements[c].nodeName === 'path') {           
-                        childElements[c].setAttribute("fill", colourFill);
+                        childElements[c].setAttribute("fill", colourFill);       
                     }
                 }
-            }
-            else {             
+            } else {             
                 svgObject.getElementById(svgSubunits[i]).setAttribute("fill", colourFill);
-            }       
+            };
+
+            // Add interactivity 
+            svgObject.getElementById(svgSubunits[i]).setAttribute("class", 'hoverDetails');
+            svgObject.getElementById(svgSubunits[i]).addEventListener('mouseenter', function(event) {
+                interactiveSVGData.addDetails(this.id);
+            });
+            svgObject.getElementById(svgSubunits[i]).addEventListener('mouseleave', function(event) {
+                interactiveSVGData.removeDetails(this.id);
+            });
+
+            // Correcting duplicate error:
+            if (isdupShoot) {
+                for (var dupS = 0; dupS < duplicateShoot.length; dupS++) {
+                    var childElements = svgObject.getElementById(duplicateShoot[dupS]).childNodes;
+                    // Add interactivity 
+                    svgObject.getElementById(duplicateShoot[dupS]).setAttribute("class", 'hoverDetails');
+                    svgObject.getElementById(duplicateShoot[dupS]).addEventListener('mouseenter', function(event) {
+                        interactiveSVGData.addDetails(this.id);
+                    });
+                    svgObject.getElementById(duplicateShoot[dupS]).addEventListener('mouseleave', function(event) {
+                        interactiveSVGData.removeDetails(this.id);
+                    });
+                    // Adding colour
+                    if (childElements.length > 0) {
+                        for (var c = 0; c < childElements.length; c++) {
+                            if (childElements[c].nodeName === 'path') {           
+                                childElements[c].setAttribute("fill", colourFill);
+                            }
+                        }
+                    } else {             
+                        svgObject.getElementById(duplicateShoot[dupS]).setAttribute("fill", colourFill);
+                    }
+                }
+            } else if (isdupRoot) {
+                for (var dupR = 0; dupR < duplicateRoot.length; dupR++) {
+                    var childElements = svgObject.getElementById(duplicateRoot[dupR]).childNodes;
+                    // Add interactivity 
+                    svgObject.getElementById(duplicateRoot[dupR]).setAttribute("class", 'hoverDetails');
+                    svgObject.getElementById(duplicateRoot[dupR]).addEventListener('mouseenter', function(event) {
+                        interactiveSVGData.addDetails(this.id);
+                    });
+                    svgObject.getElementById(duplicateRoot[dupR]).addEventListener('mouseleave', function(event) {
+                        interactiveSVGData.removeDetails(this.id);
+                    });
+                    // Adding colour
+                    if (childElements.length > 0) {
+                        for (var c = 0; c < childElements.length; c++) {
+                            if (childElements[c].nodeName === 'path') {           
+                                childElements[c].setAttribute("fill", colourFill);
+                            }
+                        }
+                    }
+                    else {             
+                        svgObject.getElementById(duplicateRoot[dupR]).setAttribute("fill", colourFill);
+                    }
+                }
+            };
         }
     }
 
-    perc2color(perc) {
-        var perc = parseInt(perc);
+    percentageToColour(percentage) {
+        var percentage = parseInt(percentage);
 
         var colourList = ['#ffff00','#fffd00','#fffc00','#fff900','#fff800','#fff600','#fff500','#fff300','#fff200','#fff000','#ffee00','#ffec00','#ffeb00','#ffe800','#ffe700','#ffe600','#ffe300','#ffe100','#ffe000','#ffdf00','#ffdd00','#ffdb00','#ffda00','#ffd800','#ffd600','#ffd300','#ffd200','#ffd000','#ffcf00','#ffcc00','#ffcb00','#ffc900','#ffc700','#ffc500','#ffc300','#ffc300','#ffc000','#ffbf00','#ffbd00','#ffbb00','#ffb900','#ffb800','#ffb500','#ffb300','#ffb200','#ffb000','#ffad00','#ffac00','#ffa900','#ffa800','#ffa600','#ffa400','#ffa200','#ffa100','#ff9e00','#ff9c00','#ff9a00','#ff9900','#ff9600','#ff9400','#ff9300','#ff9000','#ff8f00','#ff8c00','#ff8900','#ff8700','#ff8600','#ff8300','#ff8200','#ff7f00','#ff7c00','#ff7b00','#ff7800','#ff7600','#ff7300','#ff7100','#ff6e00','#ff6c00','#ff6900','#ff6700','#ff6500','#ff6100','#ff5e00','#ff5c00','#ff5900','#ff5600','#ff5300','#ff5000','#ff4d00','#ff4900','#ff4600','#ff4200','#ff3d00','#ff3a00','#ff3400','#ff3000','#ff2a00','#ff2400','#ff1c00','#ff1100','#ff0000'];
 
-        return (colourList[perc]);
+        return (colourList[percentage]);
     }
 
     /**
@@ -388,3 +456,67 @@ class CreateSVGExpressionData {
     }
 }
 const createSVGExpressionData = new CreateSVGExpressionData();
+
+class InteractiveSVGData {
+    constructor() {
+        this.existingStrokeWidths = {};
+    }
+
+    addDetails(elementID) {
+        // Retrieve document objects:
+        var svgDoc = document.getElementById(createSVGExpressionData.svgObjectName).getSVGDocument();
+        var svgPart = svgDoc.getElementById(elementID);
+        // Add thicker boarder:
+        var svgPartChildren = svgPart.childNodes;
+        if (svgPartChildren.length > 0) {
+            for (var s = 0; s < svgPartChildren.length; s++) {
+                if (svgPartChildren[s].nodeName === 'path') {
+                    // Storing stroke widths
+                    var existingStrokeWidth = svgPartChildren[s].getAttribute('stroke-width');
+                    interactiveSVGData.existingStrokeWidths[elementID] = existingStrokeWidth;
+                    // Making stroke width thicker
+                    if ((existingStrokeWidth * 10) < 10) {
+                        svgPartChildren[s].setAttribute('stroke-width', (existingStrokeWidth * 7));
+                    } else {
+                        svgPartChildren[s].setAttribute('stroke-width', 10);
+                    };                
+                };
+            };
+        } else {
+            var existingStrokeWidth = svgPart.getAttribute('stroke-width');
+            interactiveSVGData.existingStrokeWidths[elementID] = existingStrokeWidth;
+            // Making stroke width thicker
+            if ((existingStrokeWidth * 10) < 10) {
+                svgPart.setAttribute('stroke-width', (existingStrokeWidth * 7));
+            } else {
+                svgPart.setAttribute('stroke-width', 10);
+            };
+        };
+    };
+
+    removeDetails(elementID) {
+        // Retrieve document objects:
+        var svgDoc = document.getElementById(createSVGExpressionData.svgObjectName).getSVGDocument();
+        var svgPart = svgDoc.getElementById(elementID);
+        // Add thicker boarder:
+        var svgPartChildren = svgPart.childNodes;
+        if (svgPartChildren.length > 0) {
+            for (var s = 0; s < svgPartChildren.length; s++) {
+                if (svgPartChildren[s].nodeName === 'path') {
+                    if (interactiveSVGData.existingStrokeWidths[elementID]) {
+                        svgPartChildren[s].setAttribute('stroke-width', (interactiveSVGData.existingStrokeWidths[elementID]));
+                    } else {
+                        svgPartChildren[s].setAttribute('stroke-width', 1.5);
+                    };
+                };
+            };
+        } else {
+            if (interactiveSVGData.existingStrokeWidths[elementID]) {
+                svgPart.setAttribute('stroke-width', (interactiveSVGData.existingStrokeWidths[elementID]));
+            } else {
+                svgPart.setAttribute('stroke-width', 1.5);
+            };
+        }        
+    }
+}
+const interactiveSVGData = new InteractiveSVGData();
