@@ -9,7 +9,7 @@ More information coming soon...
 
 Chrome | Firefox | IE | Edge | Safari | Opera
 --- | --- | --- | --- | --- | --- |
-✔ |  ✔ | ? |  ? | ? |  ✔ |
+✔ |  ✔ | ? |  ✔ | ? |  ✔ |
 
 ## Installation/Open
 

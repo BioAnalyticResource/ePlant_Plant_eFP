@@ -23,7 +23,7 @@ class RetrieveOnlineBARData {
      */
     loadSampleData(svgName, locus, continueForward = true) {
         let xhr = new XMLHttpRequest();
-        let url = 'https://bar.utoronto.ca/~asullivan/ia-test/src/scripts/dataRetrieval/data/SampleData.json';
+        let url = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/data/SampleData.json';
 
         xhr.responseType = 'json';
         xhr.onreadystatechange = () => {
@@ -93,7 +93,7 @@ class RetrieveOnlineBARData {
     callPlantEFP(datasource, locus, samples, svg, sampleSubunits) {
         let xhr = new XMLHttpRequest();
         // Create URL
-        let url = 'https://bar.utoronto.ca/~asullivan/ia-test/src/scripts/dataRetrieval/webservice/plantefp.cgi?';
+        let url = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/webservice/plantefp.cgi?';
         url += 'datasource=' + datasource + '&';
         url += 'id=' + locus + '&';
         url += 'samples=[';
@@ -188,6 +188,8 @@ class CreateSVGExpressionData {
         this.svgValues = {};
         this.svgMax;
         this.svgMin;
+        this.svgMaxAverage;
+        this.svgMinAverage;
         // Store object name:
         this.svgObjectName;
     };
@@ -249,6 +251,11 @@ class CreateSVGExpressionData {
         createSVGExpressionData.createSVGValues(whichSVG, locus);
     };
 
+    /**
+     * Retrieves and stores raw values based on the searched SVG
+     * @param {String} whichSVG Name of the SVG file without the .svg at the end
+     * @param {String} locus The AGI ID (example: AT3G24650) 
+     */
     createSVGValues(whichSVG, locus) {
         // Create variables used for this function:
         let svgSamples = []; // List of sample's included in this expression call
@@ -301,6 +308,14 @@ class CreateSVGExpressionData {
                     numValues.push(parseFloat(values[y]))
                 }
             }
+
+            // Find averages
+            var sumValues = 0;
+            for (var v = 0; v < numValues.length; v++) {
+                sumValues += numValues[v];
+            }
+            var averageValues = (sumValues / numValues.length);
+
             // Compare max values
             var maxValue = numValues[numValues.length - 1];
             var minValue = numValues[1];
@@ -318,13 +333,21 @@ class CreateSVGExpressionData {
                     createSVGExpressionData.svgMin = minValue;
                 }
             };
-
-            // Find averages
-            var sumValues = 0;
-            for (var v = 0; v < numValues.length; v++) {
-                sumValues += numValues[v];
-            }
-            var averageValues = (sumValues / numValues.length);
+            // Now for averages:
+            if (createSVGExpressionData.svgMaxAverage === undefined) {
+                createSVGExpressionData.svgMaxAverage = averageValues;
+            } else {
+                if (averageValues > createSVGExpressionData.svgMaxAverage) {                   
+                    createSVGExpressionData.svgMaxAverage = averageValues;
+                }
+            };
+            if (createSVGExpressionData.svgMinAverage === undefined) {
+                createSVGExpressionData.svgMinAverage = averageValues;
+            } else {
+                if (averageValues < createSVGExpressionData.svgMinAverage) {                   
+                    createSVGExpressionData.svgMinAverage = averageValues;
+                }
+            };
 
             // Add to value's dictionary:
             // Create SVG subunit in dictionary
@@ -345,8 +368,11 @@ class CreateSVGExpressionData {
         let svgObject = document.getElementById(whichSVG + '_object').getSVGDocument();
         for (var i = 0; i < svgSubunits.length; i++) {
             // Colouring values
-            var denominator = createSVGExpressionData.svgMax - createSVGExpressionData.svgMin;
-            var numerator = createSVGExpressionData.svgValues[svgSubunits[i]]['average'];
+            var denominator = createSVGExpressionData.svgMaxAverage - createSVGExpressionData.svgMinAverage;
+            var numerator = createSVGExpressionData.svgValues[svgSubunits[i]]['average'] - createSVGExpressionData.svgMinAverage;
+            if (numerator < 0) {
+                numerator = 0;
+            }
             var percentage = (numerator/denominator) * 100;
             if (percentage > 100) {
                 percentage = 100;
@@ -378,6 +404,7 @@ class CreateSVGExpressionData {
             };
 
             // Add interactivity 
+            // Adding hover features:
             svgObject.getElementById(svgSubunits[i]).setAttribute("class", 'hoverDetails');
             svgObject.getElementById(svgSubunits[i]).addEventListener('mouseenter', function(event) {
                 interactiveSVGData.addDetails(this.id);
@@ -385,6 +412,15 @@ class CreateSVGExpressionData {
             svgObject.getElementById(svgSubunits[i]).addEventListener('mouseleave', function(event) {
                 interactiveSVGData.removeDetails(this.id);
             });
+            // Adding details about sub-tissue:
+            var expressionLevel = parseFloat(numerator + createSVGExpressionData.svgMinAverage).toFixed(3);
+            svgObject.getElementById(svgSubunits[i]).setAttribute("data-expressionValue", expressionLevel);
+            var sampleSize = createSVGExpressionData.svgValues[svgSubunits[i]].rawValues.length;
+            svgObject.getElementById(svgSubunits[i]).setAttribute("data-sampleSize", sampleSize);
+            // Add tooltip/title on hover
+            var title = document.createElementNS("http://www.w3.org/2000/svg","title");
+            title.textContent = svgSubunits[i] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
+            svgObject.getElementById(svgSubunits[i]).appendChild(title)
 
             // Correcting duplicate error:
             if (isdupShoot) {
@@ -427,12 +463,11 @@ class CreateSVGExpressionData {
                                 childElements[c].setAttribute("fill", colourFill);
                             }
                         }
-                    }
-                    else {             
+                    } else {             
                         svgObject.getElementById(duplicateRoot[dupR]).setAttribute("fill", colourFill);
-                    }
+                    };
                 }
-            };
+            } 
         }
     }
 
@@ -450,7 +485,14 @@ class CreateSVGExpressionData {
      * @param {String} locus The AGI ID (example: AT3G24650) 
      * @param {String} desiredDOMid
      */
-    generateSVG(svgName, locus, desiredDOMid) {        
+    generateSVG(svgName, locus, desiredDOMid) {   
+        // Reset variables:
+        createSVGExpressionData.svgValues = {};
+        createSVGExpressionData.svgMax = undefined;
+        createSVGExpressionData.svgMin = undefined;
+        createSVGExpressionData.svgMaxAverage = undefined;
+        createSVGExpressionData.svgMinAverage = undefined;
+        // Initiate scripts     
         createSVGExpressionData.desiredDOMid = desiredDOMid;
         retrieveOnlineBARData.loadSampleData(svgName, locus, desiredDOMid);
     }
@@ -468,6 +510,9 @@ class InteractiveSVGData {
         var svgPart = svgDoc.getElementById(elementID);
         // Add thicker boarder:
         var svgPartChildren = svgPart.childNodes;
+        var increaseStrokeWidthBy = 4;
+        // use svgDetailsAdded to double check if been outlined or not
+        var svgDetailsAdded = false;
         if (svgPartChildren.length > 0) {
             for (var s = 0; s < svgPartChildren.length; s++) {
                 if (svgPartChildren[s].nodeName === 'path') {
@@ -476,21 +521,24 @@ class InteractiveSVGData {
                     interactiveSVGData.existingStrokeWidths[elementID] = existingStrokeWidth;
                     // Making stroke width thicker
                     if ((existingStrokeWidth * 10) < 10) {
-                        svgPartChildren[s].setAttribute('stroke-width', (existingStrokeWidth * 7));
+                        svgPartChildren[s].setAttribute('stroke-width', (existingStrokeWidth * increaseStrokeWidthBy));
                     } else {
                         svgPartChildren[s].setAttribute('stroke-width', 10);
-                    };                
+                    };
+                    svgDetailsAdded = true;        
                 };
             };
-        } else {
+        } 
+        if (svgDetailsAdded === false || svgPartChildren.length <= 0 || svgPartChildren === null) {
             var existingStrokeWidth = svgPart.getAttribute('stroke-width');
             interactiveSVGData.existingStrokeWidths[elementID] = existingStrokeWidth;
             // Making stroke width thicker
             if ((existingStrokeWidth * 10) < 10) {
-                svgPart.setAttribute('stroke-width', (existingStrokeWidth * 7));
+                svgPart.setAttribute('stroke-width', (existingStrokeWidth * increaseStrokeWidthBy));
             } else {
                 svgPart.setAttribute('stroke-width', 10);
             };
+            svgDetailsAdded = true;  
         };
     };
 
@@ -500,6 +548,8 @@ class InteractiveSVGData {
         var svgPart = svgDoc.getElementById(elementID);
         // Add thicker boarder:
         var svgPartChildren = svgPart.childNodes;
+        // use svgDetailsRemoved to double check if been outlined or not
+        var svgDetailsRemoved = false;
         if (svgPartChildren.length > 0) {
             for (var s = 0; s < svgPartChildren.length; s++) {
                 if (svgPartChildren[s].nodeName === 'path') {
@@ -508,14 +558,17 @@ class InteractiveSVGData {
                     } else {
                         svgPartChildren[s].setAttribute('stroke-width', 1.5);
                     };
+                    svgDetailsRemoved = true;
                 };
             };
-        } else {
+        } 
+        if (svgDetailsRemoved === false || svgPartChildren.length <= 0 || svgPartChildren === null) {
             if (interactiveSVGData.existingStrokeWidths[elementID]) {
                 svgPart.setAttribute('stroke-width', (interactiveSVGData.existingStrokeWidths[elementID]));
             } else {
                 svgPart.setAttribute('stroke-width', 1.5);
             };
+            svgDetailsRemoved = true;
         }        
     }
 }

@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+    color: azure;
+}
+
+.tissueExpressionSVG {
+    transition: background-color 0.5s ease-out;
+}
+
+.tissueExpressionSVG-darkMode {
+    background-color: #dae2dc !important;
+    transition: background-color 0.5s ease-out;
+}
