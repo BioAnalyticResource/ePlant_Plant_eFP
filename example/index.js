@@ -2,6 +2,10 @@
  * Contains necessary code required to create an interactive example page
  */
 class Example {
+    constructor() {
+        this.sampleDataSVGs;
+    }
+
     /**
      * Fills the dropdown of SVGs with list of possible options
      */
@@ -11,10 +15,10 @@ class Example {
         // Fill SVG list
         setTimeout(function() {
             var select = document.getElementById("selectSVG"); 
-            var sampleDataSVGs = Object.keys(retrieveOnlineBARData.sampleData);
+            example.sampleDataSVGs = Object.keys(retrieveOnlineBARData.sampleData);
             // Create SVG options as a dropdown list
-            for (var i = 0; i < sampleDataSVGs.length; i++) {
-                var opt = sampleDataSVGs[i];
+            for (var i = 0; i < example.sampleDataSVGs.length; i++) {
+                var opt = example.sampleDataSVGs[i];
                 var el = document.createElement("option");
                 el.textContent = opt;
                 el.value = opt;

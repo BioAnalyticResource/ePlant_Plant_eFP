@@ -201,7 +201,7 @@ class CreateSVGExpressionData {
      */
     addSVGtoDOM(svgName, locus) {
         // Call SVG file
-        var urlSVG = 'https://bar.utoronto.ca/~asullivan/ia-test/src/scripts/dataRetrieval/SVG/' + svgName + '.svg';
+        var urlSVG = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/SVG/' + svgName + '.svg';
 
         // Empty target region
         var targetDOMRegion = document.getElementById(createSVGExpressionData.desiredDOMid);
@@ -443,7 +443,11 @@ class CreateSVGExpressionData {
                         }
                     } else {             
                         svgObject.getElementById(duplicateShoot[dupS]).setAttribute("fill", colourFill);
-                    }
+                    };                    
+                    // Add tooltip/title on hover
+                    var title = document.createElementNS("http://www.w3.org/2000/svg","title");
+                    title.textContent = duplicateShoot[dupS] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
+                    svgObject.getElementById(duplicateShoot[dupS]).appendChild(title)
                 }
             } else if (isdupRoot) {
                 for (var dupR = 0; dupR < duplicateRoot.length; dupR++) {
@@ -465,7 +469,11 @@ class CreateSVGExpressionData {
                         }
                     } else {             
                         svgObject.getElementById(duplicateRoot[dupR]).setAttribute("fill", colourFill);
-                    };
+                    };                 
+                    // Add tooltip/title on hover
+                    var title = document.createElementNS("http://www.w3.org/2000/svg","title");
+                    title.textContent = duplicateRoot[dupR] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
+                    svgObject.getElementById(duplicateRoot[dupR]).appendChild(title)
                 }
             } 
         }
@@ -518,9 +526,13 @@ class InteractiveSVGData {
                 if (svgPartChildren[s].nodeName === 'path') {
                     // Storing stroke widths
                     var existingStrokeWidth = svgPartChildren[s].getAttribute('stroke-width');
-                    interactiveSVGData.existingStrokeWidths[elementID] = existingStrokeWidth;
+                    if (interactiveSVGData.existingStrokeWidths[elementID] === undefined) {
+                        interactiveSVGData.existingStrokeWidths[elementID] = existingStrokeWidth;
+                    } else {
+                        existingStrokeWidth = interactiveSVGData.existingStrokeWidths[elementID];
+                    };
                     // Making stroke width thicker
-                    if ((existingStrokeWidth * 10) < 10) {
+                    if ((existingStrokeWidth * increaseStrokeWidthBy) < 10) {
                         svgPartChildren[s].setAttribute('stroke-width', (existingStrokeWidth * increaseStrokeWidthBy));
                     } else {
                         svgPartChildren[s].setAttribute('stroke-width', 10);
@@ -531,9 +543,13 @@ class InteractiveSVGData {
         } 
         if (svgDetailsAdded === false || svgPartChildren.length <= 0 || svgPartChildren === null) {
             var existingStrokeWidth = svgPart.getAttribute('stroke-width');
-            interactiveSVGData.existingStrokeWidths[elementID] = existingStrokeWidth;
+            if (interactiveSVGData.existingStrokeWidths[elementID] === undefined) {
+                interactiveSVGData.existingStrokeWidths[elementID] = existingStrokeWidth;
+            } else {
+                existingStrokeWidth = interactiveSVGData.existingStrokeWidths[elementID];
+            };
             // Making stroke width thicker
-            if ((existingStrokeWidth * 10) < 10) {
+            if ((existingStrokeWidth * increaseStrokeWidthBy) < 10) {
                 svgPart.setAttribute('stroke-width', (existingStrokeWidth * increaseStrokeWidthBy));
             } else {
                 svgPart.setAttribute('stroke-width', 10);
