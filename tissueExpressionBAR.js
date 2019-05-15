@@ -395,7 +395,7 @@ class CreateSVGExpressionData {
             var childElements = svgObject.getElementById(svgSubunits[i]).childNodes;
             if (childElements.length > 0) {
                 for (var c = 0; c < childElements.length; c++) {
-                    if (childElements[c].nodeName === 'path') {           
+                    if (childElements[c].nodeName === 'path' || childElements[c].nodeName === 'g') {           
                         childElements[c].setAttribute("fill", colourFill);       
                     }
                 }
@@ -500,6 +500,8 @@ class CreateSVGExpressionData {
         createSVGExpressionData.svgMin = undefined;
         createSVGExpressionData.svgMaxAverage = undefined;
         createSVGExpressionData.svgMinAverage = undefined;
+        interactiveSVGData.existingStrokeWidths = {};
+        interactiveSVGData.existingStrokeColours = {};
         // Initiate scripts     
         createSVGExpressionData.desiredDOMid = desiredDOMid;
         retrieveOnlineBARData.loadSampleData(svgName, locus, desiredDOMid);
@@ -510,9 +512,14 @@ const createSVGExpressionData = new CreateSVGExpressionData();
 class InteractiveSVGData {
     constructor() {
         this.existingStrokeWidths = {};
+        this.existingStrokeColours = {};
     }
 
     addDetails(elementID) {
+        // Adjusting for BioticStressPseudomonassyringae's half leaf:
+        if (elementID.includes('Half_Leaf_Pseudomonas_syringae')) {
+            elementID = elementID + '_outline';
+        };
         // Retrieve document objects:
         var svgDoc = document.getElementById(createSVGExpressionData.svgObjectName).getSVGDocument();
         var svgPart = svgDoc.getElementById(elementID);
@@ -526,16 +533,28 @@ class InteractiveSVGData {
                 if (svgPartChildren[s].nodeName === 'path') {
                     // Storing stroke widths
                     var existingStrokeWidth = svgPartChildren[s].getAttribute('stroke-width');
+                    if (existingStrokeWidth === null || existingStrokeWidth === undefined) {
+                        existingStrokeWidth = 0;
+                    };
+                    var existingStrokeColour = svgPartChildren[s].getAttribute('stroke');
+                    if (existingStrokeColour === null || existingStrokeColour === undefined) {
+                        existingStrokeColour = 'none';
+                    };
                     if (interactiveSVGData.existingStrokeWidths[elementID] === undefined) {
                         interactiveSVGData.existingStrokeWidths[elementID] = existingStrokeWidth;
+                        interactiveSVGData.existingStrokeColours[elementID] = existingStrokeColour;
                     } else {
                         existingStrokeWidth = interactiveSVGData.existingStrokeWidths[elementID];
+                        existingStrokeColour = 
+                        interactiveSVGData.existingStrokeColours[elementID];
                     };
                     // Making stroke width thicker
-                    if ((existingStrokeWidth * increaseStrokeWidthBy) < 10) {
+                    if ((existingStrokeWidth * increaseStrokeWidthBy) < 10 && (existingStrokeWidth * increaseStrokeWidthBy) != 0) {
                         svgPartChildren[s].setAttribute('stroke-width', (existingStrokeWidth * increaseStrokeWidthBy));
+                        svgPartChildren[s].setAttribute('stroke', '#000000');
                     } else {
-                        svgPartChildren[s].setAttribute('stroke-width', 10);
+                        svgPartChildren[s].setAttribute('stroke-width', (increaseStrokeWidthBy * 1.5));
+                        svgPartChildren[s].setAttribute('stroke', '#000000');
                     };
                     svgDetailsAdded = true;        
                 };
@@ -543,22 +562,38 @@ class InteractiveSVGData {
         } 
         if (svgDetailsAdded === false || svgPartChildren.length <= 0 || svgPartChildren === null) {
             var existingStrokeWidth = svgPart.getAttribute('stroke-width');
+            if (existingStrokeWidth === null || existingStrokeWidth === undefined) {
+                existingStrokeWidth = 0;
+            };
+            var existingStrokeColour = svgPart.getAttribute('stroke');
+            if (existingStrokeColour === null || existingStrokeColour === undefined) {
+                existingStrokeColour = 'none';
+            };
             if (interactiveSVGData.existingStrokeWidths[elementID] === undefined) {
                 interactiveSVGData.existingStrokeWidths[elementID] = existingStrokeWidth;
+                interactiveSVGData.existingStrokeColours[elementID] = existingStrokeColour;
             } else {
                 existingStrokeWidth = interactiveSVGData.existingStrokeWidths[elementID];
+                existingStrokeColour = 
+                interactiveSVGData.existingStrokeColours[elementID];
             };
             // Making stroke width thicker
-            if ((existingStrokeWidth * increaseStrokeWidthBy) < 10) {
+            if ((existingStrokeWidth * increaseStrokeWidthBy) < 10 && (existingStrokeWidth * increaseStrokeWidthBy) != 0) {
                 svgPart.setAttribute('stroke-width', (existingStrokeWidth * increaseStrokeWidthBy));
+                svgPart.setAttribute('stroke', '#000000');
             } else {
-                svgPart.setAttribute('stroke-width', 10);
+                svgPart.setAttribute('stroke-width', (increaseStrokeWidthBy * 1.5));
+                svgPart.setAttribute('stroke', '#000000');
             };
             svgDetailsAdded = true;  
         };
     };
 
     removeDetails(elementID) {
+        // Adjusting for BioticStressPseudomonassyringae's half leaf:
+        if (elementID.includes('Half_Leaf_Pseudomonas_syringae')) {
+            elementID = elementID + '_outline';
+        };
         // Retrieve document objects:
         var svgDoc = document.getElementById(createSVGExpressionData.svgObjectName).getSVGDocument();
         var svgPart = svgDoc.getElementById(elementID);
@@ -569,20 +604,24 @@ class InteractiveSVGData {
         if (svgPartChildren.length > 0) {
             for (var s = 0; s < svgPartChildren.length; s++) {
                 if (svgPartChildren[s].nodeName === 'path') {
-                    if (interactiveSVGData.existingStrokeWidths[elementID]) {
+                    if (parseFloat(interactiveSVGData.existingStrokeWidths[elementID]) >= 0) {
                         svgPartChildren[s].setAttribute('stroke-width', (interactiveSVGData.existingStrokeWidths[elementID]));
+                        svgPartChildren[s].setAttribute('stroke', (interactiveSVGData.existingStrokeColours[elementID]));
                     } else {
                         svgPartChildren[s].setAttribute('stroke-width', 1.5);
+                        svgPartChildren[s].setAttribute('stroke', '#000000');
                     };
                     svgDetailsRemoved = true;
                 };
             };
         } 
         if (svgDetailsRemoved === false || svgPartChildren.length <= 0 || svgPartChildren === null) {
-            if (interactiveSVGData.existingStrokeWidths[elementID]) {
+            if (parseFloat(interactiveSVGData.existingStrokeWidths[elementID]) >= 0) {
                 svgPart.setAttribute('stroke-width', (interactiveSVGData.existingStrokeWidths[elementID]));
+                svgPart.setAttribute('stroke', (interactiveSVGData.existingStrokeColours[elementID]));
             } else {
                 svgPart.setAttribute('stroke-width', 1.5);
+                svgPart.setAttribute('stroke', '#000000');
             };
             svgDetailsRemoved = true;
         }        
