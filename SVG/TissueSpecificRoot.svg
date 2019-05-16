@@ -2031,51 +2031,51 @@
 	<text transform="matrix(1 0 0 1 847.6436 539)" font-family="'Helvetica'" font-size="8"> plus</text>
 	<text transform="matrix(1 0 0 1 170.4868 156.6665)" font-family="'Helvetica'" font-size="10">Proto &amp; Meta</text>
 	<text transform="matrix(1 0 0 1 182.6868 168.6665)" font-family="'Helvetica'" font-size="10">Pholem</text>
-	<text transform="matrix(1 0 0 1 169.9967 140.3332)" fill="#CCCCCC" font-family="'Helvetica'" font-size="7">13</text>
-	<text transform="matrix(1 0 0 1 169.9967 224.3332)" fill="#CCCCCC" font-family="'Helvetica'" font-size="7">12</text>
-	<text transform="matrix(1 0 0 1 170.2916 296.3332)" fill="#CCCCCC" font-family="'Helvetica'" font-size="7">11</text>
-	<text transform="matrix(1 0 0 1 169.9967 365.9998)" fill="#CCCCCC" font-family="'Helvetica'" font-size="7">10</text>
-	<text transform="matrix(1 0 0 1 172.2213 420.9998)" fill="#CCCCCC" font-family="'Helvetica'" font-size="7">9</text>
-	<text transform="matrix(1 0 0 1 172.2213 462.9998)" fill="#CCCCCC" font-family="'Helvetica'" font-size="7">8</text>
-	<text transform="matrix(1 0 0 1 172.2213 491.9998)" fill="#CCCCCC" font-family="'Helvetica'" font-size="7">7</text>
-	<text transform="matrix(1 0 0 1 172.2213 503.9998)" fill="#CCCCCC" font-family="'Helvetica'" font-size="7">6</text>
-	<text transform="matrix(1 0 0 1 172.2213 514.9999)" fill="#CCCCCC" font-family="'Helvetica'" font-size="7">5</text>
-	<text transform="matrix(1 0 0 1 172.2213 524.9999)" fill="#CCCCCC" font-family="'Helvetica'" font-size="7">4</text>
-	<text transform="matrix(1 0 0 1 172.2213 533.9999)" fill="#CCCCCC" font-family="'Helvetica'" font-size="7">3</text>
-	<text transform="matrix(1 0 0 1 172.2213 542.9999)" fill="#CCCCCC" font-family="'Helvetica'" font-size="7">2</text>
-	<text transform="matrix(1 0 0 1 172.2213 551.9999)" fill="#CCCCCC" font-family="'Helvetica'" font-size="7">1</text>
+	<text transform="matrix(1 0 0 1 169.9967 140.3332)" fill="#000000" font-family="'Helvetica'" font-size="7">13</text>
+	<text transform="matrix(1 0 0 1 169.9967 224.3332)" fill="#000000" font-family="'Helvetica'" font-size="7">12</text>
+	<text transform="matrix(1 0 0 1 170.2916 296.3332)" fill="#000000" font-family="'Helvetica'" font-size="7">11</text>
+	<text transform="matrix(1 0 0 1 169.9967 365.9998)" fill="#000000" font-family="'Helvetica'" font-size="7">10</text>
+	<text transform="matrix(1 0 0 1 172.2213 420.9998)" fill="#000000" font-family="'Helvetica'" font-size="7">9</text>
+	<text transform="matrix(1 0 0 1 172.2213 462.9998)" fill="#000000" font-family="'Helvetica'" font-size="7">8</text>
+	<text transform="matrix(1 0 0 1 172.2213 491.9998)" fill="#000000" font-family="'Helvetica'" font-size="7">7</text>
+	<text transform="matrix(1 0 0 1 172.2213 503.9998)" fill="#000000" font-family="'Helvetica'" font-size="7">6</text>
+	<text transform="matrix(1 0 0 1 172.2213 514.9999)" fill="#000000" font-family="'Helvetica'" font-size="7">5</text>
+	<text transform="matrix(1 0 0 1 172.2213 524.9999)" fill="#000000" font-family="'Helvetica'" font-size="7">4</text>
+	<text transform="matrix(1 0 0 1 172.2213 533.9999)" fill="#000000" font-family="'Helvetica'" font-size="7">3</text>
+	<text transform="matrix(1 0 0 1 172.2213 542.9999)" fill="#000000" font-family="'Helvetica'" font-size="7">2</text>
+	<text transform="matrix(1 0 0 1 172.2213 551.9999)" fill="#000000" font-family="'Helvetica'" font-size="7">1</text>
 </g>
 <g id="Nitrogen_Response">
 	<g id="root_verticalCrossSection_nitrogen_outlines">
-		<path fill="none" stroke="#CCCCCC" stroke-width="0.5" d="M288,441c0,3,0.8,36.5,0.8,36.5s-1.2,14.2-1,16.2s-0.2,5.5,0.5,7
+		<path fill="none" stroke="#000000" stroke-width="0.5" d="M288,441c0,3,0.8,36.5,0.8,36.5s-1.2,14.2-1,16.2s-0.2,5.5,0.5,7
 			s2.8,6.8,3.2,8.2s1.5,10.8,2.8,12s3.2,4,6,4.2s6.2,0,7.5-0.8s2.2-1.8,2.8-2.2s1.8-2.5,1.8-2.5s1.5-4.8,1.8-5.8s1.2-6.2,2.5-8.2
 			s2-4,2.5-5.5s0-12.8,0-13.8s-1-8-1-8.8s0.5-16,0.5-18s0.2-19.5,0.2-19.5"/>
-		<path fill="none" stroke="#CCCCCC" stroke-width="0.5" d="M333,441c0,3,0.8,36.5,0.8,36.5s-1.2,14.2-1,16.2s-0.2,5.5,0.5,7
+		<path fill="none" stroke="#000000" stroke-width="0.5" d="M333,441c0,3,0.8,36.5,0.8,36.5s-1.2,14.2-1,16.2s-0.2,5.5,0.5,7
 			s2.8,6.8,3.2,8.2s1.5,10.8,2.8,12s3.2,4,6,4.2s6.2,0,7.5-0.8s2.2-1.8,2.8-2.2s1.8-2.5,1.8-2.5s1.5-4.8,1.8-5.8s1.2-6.2,2.5-8.2
 			s2-4,2.5-5.5s0-12.8,0-13.8s-1-8-1-8.8s0.5-16,0.5-18s0.2-19.5,0.2-19.5"/>
-		<path fill="none" stroke="#CCCCCC" stroke-width="0.5" d="M410,441c0,3,0,34.6,0.5,36.4c0.6,2.2,0.3,13.2,0.5,15.2s0,7.2,0.8,8.8
+		<path fill="none" stroke="#000000" stroke-width="0.5" d="M410,441c0,3,0,34.6,0.5,36.4c0.6,2.2,0.3,13.2,0.5,15.2s0,7.2,0.8,8.8
 			s2.2,7.3,2.6,8.8s1.1,9.4,2.4,10.6s2.8,4.2,5.5,4.4s6.6-0.6,8.2-1.9c1.2-1-0.6,0.4,0,0s2.5-3.6,2.5-3.6s1.5-4.8,1.8-5.8
 			s1.2-6.2,2.5-8.2s1.9-6,2.4-7.5s0.2-12.4,0.2-13.4s0.2-6.3,0.2-7.1s0.5-16,0.5-18s0.2-19.5,0.2-19.5"/>
-		<path fill="none" stroke="#CCCCCC" stroke-width="0.5" d="M455,441c0,3,0,30.5,0,30.5s0.9,20.8,1.1,22.8s0.3,6.1,1,7.6
+		<path fill="none" stroke="#000000" stroke-width="0.5" d="M455,441c0,3,0,30.5,0,30.5s0.9,20.8,1.1,22.8s0.3,6.1,1,7.6
 			c0.7,1.4,2,6.2,2.5,8.4c0.3,1.4,2.4,9.4,3.2,11c0.9,1.6,2.9,3.5,4.4,3.9c2.7,0.7,4.2,0,5.5-0.8s2.2-1.8,2.8-2.2
 			c0.4-0.3,1.2-1.5,1.7-2.2c0.2-0.4,0.4-0.8,0.5-1.2c0.4-1.3,1.2-4.1,1.4-4.8c0.3-1,3.3-7,4.1-9.3c0.9-2.8,1.1-4.6,1.6-6.1
 			s0.4-11.1,0.4-12.1s-0.1-7.9-0.1-8.7s0.5-16,0.5-18s0.2-19.5,0.2-19.5"/>
-		<path fill="none" stroke="#CCCCCC" stroke-width="0.5" d="M534,441c0,3,0.8,36.5,0.8,36.5s-1.2,14.2-1,16.2s-0.2,5.5,0.5,7
+		<path fill="none" stroke="#000000" stroke-width="0.5" d="M534,441c0,3,0.8,36.5,0.8,36.5s-1.2,14.2-1,16.2s-0.2,5.5,0.5,7
 			s2.8,6.8,3.2,8.2s1.5,10.8,2.8,12s3.2,4,6,4.2s6.2,0,7.5-0.8s2.2-1.8,2.8-2.2s1.8-2.5,1.8-2.5s1.5-4.8,1.8-5.8s1.2-6.2,2.5-8.2
 			s2-4,2.5-5.5s0-12.8,0-13.8s-1-8-1-8.8s0.5-16,0.5-18s0.2-19.5,0.2-19.5"/>
-		<path fill="none" stroke="#CCCCCC" stroke-width="0.5" d="M579,441c0,3,0.8,36.5,0.8,36.5s-1.2,14.2-1,16.2s-0.2,5.5,0.5,7
+		<path fill="none" stroke="#000000" stroke-width="0.5" d="M579,441c0,3,0.8,36.5,0.8,36.5s-1.2,14.2-1,16.2s-0.2,5.5,0.5,7
 			s2.8,6.8,3.2,8.2s1.5,10.8,2.8,12s3.2,4,6,4.2s6.2,0,7.5-0.8s2.2-1.8,2.8-2.2s1.8-2.5,1.8-2.5s1.5-4.8,1.8-5.8s1.2-6.2,2.5-8.2
 			s2-4,2.5-5.5s0-12.8,0-13.8s-1-8-1-8.8s0.5-16,0.5-18s0.2-19.5,0.2-19.5"/>
-		<path fill="none" stroke="#CCCCCC" stroke-width="0.5" d="M660,441c0,3,0.8,36.5,0.8,36.5s-1.2,14.2-1,16.2s-0.2,5.5,0.5,7
+		<path fill="none" stroke="#000000" stroke-width="0.5" d="M660,441c0,3,0.8,36.5,0.8,36.5s-1.2,14.2-1,16.2s-0.2,5.5,0.5,7
 			s2.8,6.8,3.2,8.2s1.5,10.8,2.8,12s3.2,4,6,4.2s6.2,0,7.5-0.8s2.2-1.8,2.8-2.2s1.8-2.5,1.8-2.5s1.5-4.8,1.8-5.8s1.2-6.2,2.5-8.2
 			s2-4,2.5-5.5s0-12.8,0-13.8s-1-8-1-8.8s0.5-16,0.5-18s0.2-19.5,0.2-19.5"/>
-		<path fill="none" stroke="#CCCCCC" stroke-width="0.5" d="M705,441c0,3,0.8,36.5,0.8,36.5s-1.2,14.2-1,16.2s-0.2,5.5,0.5,7
+		<path fill="none" stroke="#000000" stroke-width="0.5" d="M705,441c0,3,0.8,36.5,0.8,36.5s-1.2,14.2-1,16.2s-0.2,5.5,0.5,7
 			s2.8,6.8,3.2,8.2s1.5,10.8,2.8,12s3.2,4,6,4.2s6.2,0,7.5-0.8s2.2-1.8,2.8-2.2s1.8-2.5,1.8-2.5s1.5-4.8,1.8-5.8s1.2-6.2,2.5-8.2
 			s2-4,2.5-5.5s0-12.8,0-13.8s-1-8-1-8.8s0.5-16,0.5-18s0.2-19.5,0.2-19.5"/>
-		<path fill="none" stroke="#CCCCCC" stroke-width="0.5" d="M789,442c0,3,0.8,36.5,0.8,36.5s-1.2,14.2-1,16.2s-0.2,5.5,0.5,7
+		<path fill="none" stroke="#000000" stroke-width="0.5" d="M789,442c0,3,0.8,36.5,0.8,36.5s-1.2,14.2-1,16.2s-0.2,5.5,0.5,7
 			s2.8,6.8,3.2,8.2s1.5,10.8,2.8,12s3.2,4,6,4.2s6.2,0,7.5-0.8s2.2-1.8,2.8-2.2s1.8-2.5,1.8-2.5s1.5-4.8,1.8-5.8s1.2-6.2,2.5-8.2
 			s2-4,2.5-5.5s0-12.8,0-13.8s-1-8-1-8.8s0.5-16,0.5-18s0.2-19.5,0.2-19.5"/>
-		<path fill="none" stroke="#CCCCCC" stroke-width="0.5" d="M834,442c0,3,0.8,36.5,0.8,36.5s-1.2,14.2-1,16.2s-0.2,5.5,0.5,7
+		<path fill="none" stroke="#000000" stroke-width="0.5" d="M834,442c0,3,0.8,36.5,0.8,36.5s-1.2,14.2-1,16.2s-0.2,5.5,0.5,7
 			s2.8,6.8,3.2,8.2s1.5,10.8,2.8,12s3.2,4,6,4.2s6.2,0,7.5-0.8s2.2-1.8,2.8-2.2s1.8-2.5,1.8-2.5s1.5-4.8,1.8-5.8s1.2-6.2,2.5-8.2
 			s2-4,2.5-5.5s0-12.8,0-13.8s-1-8-1-8.8s0.5-16,0.5-18s0.2-19.5,0.2-19.5"/>
 	</g>
@@ -3171,74 +3171,74 @@
 <g id="Iron_Response">
 	<g id="Whole_Root_Iron">
 		<g id="Whole_root_t0_iron_control">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M314.1,289.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M314.1,289.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
 				l0.1-0.1c0.3-0.4,0.4-0.4,0.2-0.3L314.1,289.5z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M300.4,296.3c0-0.1,0.1-0.2,0.1-0.3c0-0.1,0.1-0.1,0.1-0.2
 				C300.4,296,300.3,296.2,300.4,296.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M300.6,295.8L300.6,295.8C300.6,295.9,300.6,295.9,300.6,295.8
 				c0,0.1-0.1,0.1-0.1,0.2c-0.2,0.4-0.9,2-3.3,7.3c-2,4.4-3.8,13.2-4.1,17.1c-0.3,5.4,1.4,21.3,1.8,23c0.5,1.7,1.4,6.9,2.4,6.2
 				c1.1-0.8-0.4-17.4-0.8-21.8c-0.5-5.3,1.5-14.3,3.6-19.5c1.9-4.8,8-11.7,9.6-13.5C308.8,295.4,304.1,298.7,300.6,295.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M300.6,295.8l5.9-9C304.4,289.5,303.2,291.9,300.6,295.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M300.6,295.8l5.9-9C304.4,289.5,303.2,291.9,300.6,295.8z"/>
 		</g>
 		<g id="Whole_root_3_hrs_iron">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M346.1,289.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M346.1,289.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
 				l0.1-0.1c0.3-0.4,0.4-0.4,0.2-0.3L346.1,289.5z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M332.4,296.3c0-0.1,0.1-0.2,0.1-0.3c0-0.1,0.1-0.1,0.1-0.2
 				C332.4,296,332.3,296.2,332.4,296.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M332.6,295.8L332.6,295.8C332.6,295.9,332.6,295.9,332.6,295.8
 				c0,0.1-0.1,0.1-0.1,0.2c-0.2,0.4-0.9,2-3.3,7.3c-2,4.4-3.8,13.2-4.1,17.1c-0.3,5.4,1.4,21.3,1.8,23c0.5,1.7,1.4,6.9,2.4,6.2
 				c1.1-0.8-0.4-17.4-0.8-21.8c-0.5-5.3,1.5-14.3,3.6-19.5c1.9-4.8,8-11.7,9.6-13.5C340.8,295.4,336.1,298.7,332.6,295.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M332.6,295.8l5.9-9C336.4,289.5,335.2,291.9,332.6,295.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M332.6,295.8l5.9-9C336.4,289.5,335.2,291.9,332.6,295.8z"/>
 		</g>
 		<g id="Whole_root_6_hrs_iron">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M378.1,289.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M378.1,289.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
 				l0.1-0.1c0.3-0.4,0.4-0.4,0.2-0.3L378.1,289.5z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M364.4,296.3c0-0.1,0.1-0.2,0.1-0.3c0-0.1,0.1-0.1,0.1-0.2
 				C364.4,296,364.3,296.2,364.4,296.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M364.6,295.8L364.6,295.8C364.6,295.9,364.6,295.9,364.6,295.8
 				c0,0.1-0.1,0.1-0.1,0.2c-0.2,0.4-0.9,2-3.3,7.3c-2,4.4-3.8,13.2-4.1,17.1c-0.3,5.4,1.4,21.3,1.8,23c0.5,1.7,1.4,6.9,2.4,6.2
 				c1.1-0.8-0.4-17.4-0.8-21.8c-0.5-5.3,1.5-14.3,3.6-19.5c1.9-4.8,8-11.7,9.6-13.5C372.8,295.4,368.1,298.7,364.6,295.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M364.6,295.8l5.9-9C368.4,289.5,367.2,291.9,364.6,295.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M364.6,295.8l5.9-9C368.4,289.5,367.2,291.9,364.6,295.8z"/>
 		</g>
 		<g id="Whole_root_12_hrs_iron">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M410.1,289.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M410.1,289.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
 				l0.1-0.1c0.3-0.4,0.4-0.4,0.2-0.3L410.1,289.5z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M396.4,296.3c0-0.1,0.1-0.2,0.1-0.3c0-0.1,0.1-0.1,0.1-0.2
 				C396.4,296,396.3,296.2,396.4,296.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M396.6,295.8L396.6,295.8C396.6,295.9,396.6,295.9,396.6,295.8
 				c0,0.1-0.1,0.1-0.1,0.2c-0.2,0.4-0.9,2-3.3,7.3c-2,4.4-3.8,13.2-4.1,17.1c-0.3,5.4,1.4,21.3,1.8,23c0.5,1.7,1.4,6.9,2.4,6.2
 				c1.1-0.8-0.4-17.4-0.8-21.8c-0.5-5.3,1.5-14.3,3.6-19.5c1.9-4.8,8-11.7,9.6-13.5C404.8,295.4,400.1,298.7,396.6,295.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M396.6,295.8l5.9-9C400.4,289.5,399.2,291.9,396.6,295.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M396.6,295.8l5.9-9C400.4,289.5,399.2,291.9,396.6,295.8z"/>
 		</g>
 		<g id="Whole_root_24_hrs_iron">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M442.1,289.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M442.1,289.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
 				l0.1-0.1c0.3-0.4,0.4-0.4,0.2-0.3L442.1,289.5z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M428.4,296.3c0-0.1,0.1-0.2,0.1-0.3c0-0.1,0.1-0.1,0.1-0.2
 				C428.4,296,428.3,296.2,428.4,296.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M428.6,295.8L428.6,295.8C428.6,295.9,428.6,295.9,428.6,295.8
 				c0,0.1-0.1,0.1-0.1,0.2c-0.2,0.4-0.9,2-3.3,7.3c-2,4.4-3.8,13.2-4.1,17.1c-0.3,5.4,1.4,21.3,1.8,23c0.5,1.7,1.4,6.9,2.4,6.2
 				c1.1-0.8-0.4-17.4-0.8-21.8c-0.5-5.3,1.5-14.3,3.6-19.5c1.9-4.8,8-11.7,9.6-13.5C436.8,295.4,432.1,298.7,428.6,295.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M428.6,295.8l5.9-9C432.4,289.5,431.2,291.9,428.6,295.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M428.6,295.8l5.9-9C432.4,289.5,431.2,291.9,428.6,295.8z"/>
 		</g>
 		<g id="Whole_root_48_hrs_iron">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M473.1,289.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M473.1,289.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
 				l0.1-0.1c0.3-0.4,0.4-0.4,0.2-0.3L473.1,289.5z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M459.4,296.3c0-0.1,0.1-0.2,0.1-0.3c0-0.1,0.1-0.1,0.1-0.2
 				C459.4,296,459.3,296.2,459.4,296.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M459.6,295.8L459.6,295.8C459.6,295.9,459.6,295.9,459.6,295.8
 				c0,0.1-0.1,0.1-0.1,0.2c-0.2,0.4-0.9,2-3.3,7.3c-2,4.4-3.8,13.2-4.1,17.1c-0.3,5.4,1.4,21.3,1.8,23c0.5,1.7,1.4,6.9,2.4,6.2
 				c1.1-0.8-0.4-17.4-0.8-21.8c-0.5-5.3,1.5-14.3,3.6-19.5c1.9-4.8,8-11.7,9.6-13.5C467.8,295.4,463.1,298.7,459.6,295.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M459.6,295.8l5.9-9C463.4,289.5,462.2,291.9,459.6,295.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M459.6,295.8l5.9-9C463.4,289.5,462.2,291.9,459.6,295.8z"/>
 		</g>
 		<g id="Whole_root_72_hrs_iron">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M504,289.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3l0.1-0.1
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M504,289.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3l0.1-0.1
 				c0.3-0.4,0.4-0.4,0.2-0.3L504,289.5z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M490.2,296.3c0-0.1,0.1-0.2,0.1-0.3c0-0.1,0.1-0.1,0.1-0.2
 				C490.2,296,490.1,296.2,490.2,296.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M490.4,295.8L490.4,295.8C490.4,295.9,490.4,295.9,490.4,295.8
 				c0,0.1-0.1,0.1-0.1,0.2c-0.2,0.4-0.9,2-3.3,7.3c-2,4.4-3.8,13.2-4.1,17.1c-0.3,5.4,1.4,21.3,1.8,23c0.5,1.7,1.4,6.9,2.4,6.2
 				c1.1-0.8-0.4-17.4-0.8-21.8c-0.5-5.3,1.5-14.3,3.6-19.5c1.9-4.8,8-11.7,9.6-13.5C498.6,295.4,494,298.7,490.4,295.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M490.4,295.8l5.9-9C494.2,289.5,493,291.9,490.4,295.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M490.4,295.8l5.9-9C494.2,289.5,493,291.9,490.4,295.8z"/>
 		</g>
 	</g>
 	<g id="longitudinal_zone_iron_control">
@@ -3259,14 +3259,14 @@
 				c-0.2,0.5-1.3,3.3-4.2,9.6l5.8,1.1c3.3-5.6,9.4-12.1,9.4-12.1C565,302.5,560.2,298.8,560.2,298.8z"/>
 		</g>
 		<g id="Whole_Root_Outline_2_">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M576.2,291.3c-0.6,0.5-4,4.9-4.8,5.9c-0.1,0.1-0.2,0.2-0.3,0.3
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M576.2,291.3c-0.6,0.5-4,4.9-4.8,5.9c-0.1,0.1-0.2,0.2-0.3,0.3
 				c0.1,0,0.1-0.1,0.1-0.1c0.4-0.4,0.5-0.5,0.3-0.3L576.2,291.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M559.9,299.3c0.1-0.1,0.1-0.2,0.2-0.3c0-0.1,0.1-0.2,0.1-0.2
 				C560,299.1,559.9,299.2,559.9,299.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M560.2,298.8L560.2,298.8L560.2,298.8c0,0.1-0.1,0.1-0.1,0.2
 				c-0.2,0.5-1.1,2.3-3.9,8.6c-2.4,5.3-4.5,15.6-4.8,20.3c-0.4,6.4,1.6,25.2,2.1,27.2s1.6,8.2,2.8,7.3c1.2-0.9-0.4-20.6-0.9-25.8
 				c-0.5-6.2,1.8-16.9,4.3-23.1c2.3-5.7,9.4-13.8,11.4-15.9C569.9,298.3,564.4,302.2,560.2,298.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M560.2,298.8l7-10.6C564.7,291.3,563.3,294.1,560.2,298.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M560.2,298.8l7-10.6C564.7,291.3,563.3,294.1,560.2,298.8z"/>
 		</g>
 	</g>
 	<g id="longitudinal_zone_iron_treatment">
@@ -3287,14 +3287,14 @@
 				c-0.2,0.5-1.3,3.3-4.2,9.6l5.8,1.1c3.3-5.6,9.4-12.1,9.4-12.1C753,302.5,748.2,298.8,748.2,298.8z"/>
 		</g>
 		<g id="Whole_Root_Outline_3_">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M764.2,291.3c-0.6,0.5-4,4.9-4.8,5.9c-0.1,0.1-0.2,0.2-0.3,0.3
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M764.2,291.3c-0.6,0.5-4,4.9-4.8,5.9c-0.1,0.1-0.2,0.2-0.3,0.3
 				c0.1,0,0.1-0.1,0.1-0.1c0.4-0.4,0.5-0.5,0.3-0.3L764.2,291.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M747.9,299.3c0.1-0.1,0.1-0.2,0.2-0.3c0-0.1,0.1-0.2,0.1-0.2
 				C748,299.1,747.9,299.2,747.9,299.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M748.2,298.8L748.2,298.8L748.2,298.8c0,0.1-0.1,0.1-0.1,0.2
 				c-0.2,0.5-1.1,2.3-3.9,8.6c-2.4,5.3-4.5,15.6-4.8,20.3c-0.4,6.4,1.6,25.2,2.1,27.2s1.6,8.2,2.8,7.3c1.2-0.9-0.4-20.6-0.9-25.8
 				c-0.5-6.2,1.8-16.9,4.3-23.1c2.3-5.7,9.4-13.8,11.4-15.9C757.9,298.3,752.4,302.2,748.2,298.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M748.2,298.8l7-10.6C752.7,291.3,751.3,294.1,748.2,298.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M748.2,298.8l7-10.6C752.7,291.3,751.3,294.1,748.2,298.8z"/>
 		</g>
 	</g>
 	<g id="root_cross_section_iron">
@@ -4197,64 +4197,64 @@
 <g id="Salt_Response">
 	<g id="Whole_Root_Salt">
 		<g id="Whole_root_t0_salt_control">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M314.1,130.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M314.1,130.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
 				l0.1-0.1c0.3-0.4,0.4-0.4,0.2-0.3L314.1,130.5z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M300.4,137.3c0-0.1,0.1-0.2,0.1-0.3s0.1-0.1,0.1-0.2
 				C300.4,137,300.3,137.2,300.4,137.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M300.6,136.8L300.6,136.8C300.6,136.9,300.6,136.9,300.6,136.8
 				c0,0.1-0.1,0.1-0.1,0.2c-0.2,0.4-0.9,2-3.3,7.3c-2,4.4-3.8,13.2-4.1,17.1c-0.3,5.4,1.4,21.3,1.8,23c0.5,1.7,1.4,6.9,2.4,6.2
 				c1.1-0.8-0.4-17.4-0.8-21.8c-0.5-5.3,1.5-14.3,3.6-19.5c1.9-4.8,8-11.7,9.6-13.5C308.8,136.4,304.1,139.7,300.6,136.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M300.6,136.8l5.9-9C304.4,130.5,303.2,132.9,300.6,136.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M300.6,136.8l5.9-9C304.4,130.5,303.2,132.9,300.6,136.8z"/>
 		</g>
 		<g id="Whole_root_30_minutes_salt">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M346.1,130.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M346.1,130.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
 				l0.1-0.1c0.3-0.4,0.4-0.4,0.2-0.3L346.1,130.5z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M332.4,137.3c0-0.1,0.1-0.2,0.1-0.3s0.1-0.1,0.1-0.2
 				C332.4,137,332.3,137.2,332.4,137.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M332.6,136.8L332.6,136.8C332.6,136.9,332.6,136.9,332.6,136.8
 				c0,0.1-0.1,0.1-0.1,0.2c-0.2,0.4-0.9,2-3.3,7.3c-2,4.4-3.8,13.2-4.1,17.1c-0.3,5.4,1.4,21.3,1.8,23c0.5,1.7,1.4,6.9,2.4,6.2
 				c1.1-0.8-0.4-17.4-0.8-21.8c-0.5-5.3,1.5-14.3,3.6-19.5c1.9-4.8,8-11.7,9.6-13.5C340.8,136.4,336.1,139.7,332.6,136.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M332.6,136.8l5.9-9C336.4,130.5,335.2,132.9,332.6,136.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M332.6,136.8l5.9-9C336.4,130.5,335.2,132.9,332.6,136.8z"/>
 		</g>
 		<g id="Whole_root_1hr_salt">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M378.1,130.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M378.1,130.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
 				l0.1-0.1c0.3-0.4,0.4-0.4,0.2-0.3L378.1,130.5z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M364.4,137.3c0-0.1,0.1-0.2,0.1-0.3s0.1-0.1,0.1-0.2
 				C364.4,137,364.3,137.2,364.4,137.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M364.6,136.8L364.6,136.8C364.6,136.9,364.6,136.9,364.6,136.8
 				c0,0.1-0.1,0.1-0.1,0.2c-0.2,0.4-0.9,2-3.3,7.3c-2,4.4-3.8,13.2-4.1,17.1c-0.3,5.4,1.4,21.3,1.8,23c0.5,1.7,1.4,6.9,2.4,6.2
 				c1.1-0.8-0.4-17.4-0.8-21.8c-0.5-5.3,1.5-14.3,3.6-19.5c1.9-4.8,8-11.7,9.6-13.5C372.8,136.4,368.1,139.7,364.6,136.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M364.6,136.8l5.9-9C368.4,130.5,367.2,132.9,364.6,136.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M364.6,136.8l5.9-9C368.4,130.5,367.2,132.9,364.6,136.8z"/>
 		</g>
 		<g id="Whole_root_4hrs_salt">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M410.1,130.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M410.1,130.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
 				l0.1-0.1c0.3-0.4,0.4-0.4,0.2-0.3L410.1,130.5z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M396.4,137.3c0-0.1,0.1-0.2,0.1-0.3s0.1-0.1,0.1-0.2
 				C396.4,137,396.3,137.2,396.4,137.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M396.6,136.8L396.6,136.8C396.6,136.9,396.6,136.9,396.6,136.8
 				c0,0.1-0.1,0.1-0.1,0.2c-0.2,0.4-0.9,2-3.3,7.3c-2,4.4-3.8,13.2-4.1,17.1c-0.3,5.4,1.4,21.3,1.8,23c0.5,1.7,1.4,6.9,2.4,6.2
 				c1.1-0.8-0.4-17.4-0.8-21.8c-0.5-5.3,1.5-14.3,3.6-19.5c1.9-4.8,8-11.7,9.6-13.5C404.8,136.4,400.1,139.7,396.6,136.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M396.6,136.8l5.9-9C400.4,130.5,399.2,132.9,396.6,136.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M396.6,136.8l5.9-9C400.4,130.5,399.2,132.9,396.6,136.8z"/>
 		</g>
 		<g id="Whole_root_16hrs_salt">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M442.1,130.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M442.1,130.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
 				l0.1-0.1c0.3-0.4,0.4-0.4,0.2-0.3L442.1,130.5z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M428.4,137.3c0-0.1,0.1-0.2,0.1-0.3s0.1-0.1,0.1-0.2
 				C428.4,137,428.3,137.2,428.4,137.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M428.6,136.8L428.6,136.8C428.6,136.9,428.6,136.9,428.6,136.8
 				c0,0.1-0.1,0.1-0.1,0.2c-0.2,0.4-0.9,2-3.3,7.3c-2,4.4-3.8,13.2-4.1,17.1c-0.3,5.4,1.4,21.3,1.8,23c0.5,1.7,1.4,6.9,2.4,6.2
 				c1.1-0.8-0.4-17.4-0.8-21.8c-0.5-5.3,1.5-14.3,3.6-19.5c1.9-4.8,8-11.7,9.6-13.5C436.8,136.4,432.1,139.7,428.6,136.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M428.6,136.8l5.9-9C432.4,130.5,431.2,132.9,428.6,136.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M428.6,136.8l5.9-9C432.4,130.5,431.2,132.9,428.6,136.8z"/>
 		</g>
 		<g id="Whole_root_32hrs_salt">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M473.1,130.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M473.1,130.5c-0.5,0.4-3.4,4.1-4.1,5c-0.1,0.1-0.2,0.2-0.3,0.3
 				l0.1-0.1c0.3-0.4,0.4-0.4,0.2-0.3L473.1,130.5z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M459.4,137.3c0-0.1,0.1-0.2,0.1-0.3s0.1-0.1,0.1-0.2
 				C459.4,137,459.3,137.2,459.4,137.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M459.6,136.8L459.6,136.8C459.6,136.9,459.6,136.9,459.6,136.8
 				c0,0.1-0.1,0.1-0.1,0.2c-0.2,0.4-0.9,2-3.3,7.3c-2,4.4-3.8,13.2-4.1,17.1c-0.3,5.4,1.4,21.3,1.8,23c0.5,1.7,1.4,6.9,2.4,6.2
 				c1.1-0.8-0.4-17.4-0.8-21.8c-0.5-5.3,1.5-14.3,3.6-19.5c1.9-4.8,8-11.7,9.6-13.5C467.8,136.4,463.1,139.7,459.6,136.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M459.6,136.8l5.9-9C463.4,130.5,462.2,132.9,459.6,136.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M459.6,136.8l5.9-9C463.4,130.5,462.2,132.9,459.6,136.8z"/>
 		</g>
 	</g>
 	<g id="longitudinal_zone_salt_control">
@@ -4275,14 +4275,14 @@
 				c-0.2,0.5-1.3,3.3-4.2,9.6l5.8,1.1c3.3-5.6,9.4-12.1,9.4-12.1C565,142.5,560.2,138.8,560.2,138.8z"/>
 		</g>
 		<g id="Whole_Root_Outline_4_">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M576.2,131.3c-0.6,0.5-4,4.9-4.8,5.9c-0.1,0.1-0.2,0.2-0.3,0.3
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M576.2,131.3c-0.6,0.5-4,4.9-4.8,5.9c-0.1,0.1-0.2,0.2-0.3,0.3
 				c0.1,0,0.1-0.1,0.1-0.1c0.4-0.4,0.5-0.5,0.3-0.3L576.2,131.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M559.9,139.3c0.1-0.1,0.1-0.2,0.2-0.3c0-0.1,0.1-0.2,0.1-0.2
 				C560,139.1,559.9,139.2,559.9,139.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M560.2,138.8L560.2,138.8L560.2,138.8c0,0.1-0.1,0.1-0.1,0.2
 				c-0.2,0.5-1.1,2.3-3.9,8.6c-2.4,5.3-4.5,15.6-4.8,20.3c-0.4,6.4,1.6,25.2,2.1,27.2s1.6,8.2,2.8,7.3s-0.4-20.6-0.9-25.8
 				c-0.5-6.2,1.8-16.9,4.3-23.1c2.3-5.7,9.4-13.8,11.4-15.9C569.9,138.3,564.4,142.2,560.2,138.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M560.2,138.8l7-10.6C564.7,131.3,563.3,134.1,560.2,138.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M560.2,138.8l7-10.6C564.7,131.3,563.3,134.1,560.2,138.8z"/>
 		</g>
 	</g>
 	<g id="longitudinal_zone_salt_treatment">
@@ -4303,14 +4303,14 @@
 				c-0.2,0.5-1.3,3.3-4.2,9.6l5.8,1.1c3.3-5.6,9.4-12.1,9.4-12.1C753,142.5,748.2,138.8,748.2,138.8z"/>
 		</g>
 		<g id="Whole_Root_Outline_1_">
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M764.2,131.3c-0.6,0.5-4,4.9-4.8,5.9c-0.1,0.1-0.2,0.2-0.3,0.3
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M764.2,131.3c-0.6,0.5-4,4.9-4.8,5.9c-0.1,0.1-0.2,0.2-0.3,0.3
 				c0.1,0,0.1-0.1,0.1-0.1c0.4-0.4,0.5-0.5,0.3-0.3L764.2,131.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M747.9,139.3c0.1-0.1,0.1-0.2,0.2-0.3c0-0.1,0.1-0.2,0.1-0.2
 				C748,139.1,747.9,139.2,747.9,139.3z"/>
 			<path fill="none" stroke="#000000" stroke-width="0.25" d="M748.2,138.8L748.2,138.8L748.2,138.8c0,0.1-0.1,0.1-0.1,0.2
 				c-0.2,0.5-1.1,2.3-3.9,8.6c-2.4,5.3-4.5,15.6-4.8,20.3c-0.4,6.4,1.6,25.2,2.1,27.2s1.6,8.2,2.8,7.3s-0.4-20.6-0.9-25.8
 				c-0.5-6.2,1.8-16.9,4.3-23.1c2.3-5.7,9.4-13.8,11.4-15.9C757.9,138.3,752.4,142.2,748.2,138.8z"/>
-			<path fill="none" stroke="#CCCCCC" stroke-width="0.25" d="M748.2,138.8l7-10.6C752.7,131.3,751.3,134.1,748.2,138.8z"/>
+			<path fill="none" stroke="#000000" stroke-width="0.25" d="M748.2,138.8l7-10.6C752.7,131.3,751.3,134.1,748.2,138.8z"/>
 		</g>
 	</g>
 	<g id="root_cross_section_salt">
@@ -5213,38 +5213,38 @@
 <g id="Lines">
 	
 		<line display="none" fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="127.5" y1="40.5" x2="127.5" y2="58.9"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="127" y1="40.6" x2="127" y2="61"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="121.1" y1="52.3" x2="121.1" y2="70.7"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="112.5" y1="64.3" x2="112.5" y2="82.7"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="104.6" y1="74.9" x2="104.6" y2="93.3"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="216.7" y1="52.8" x2="232.5" y2="52.8"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="202.7" y1="40.7" x2="232.5" y2="40.7"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="213.5" y1="73.3" x2="232.4" y2="75.3"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="207" y1="80.1" x2="231.7" y2="86.5"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="201.3" y1="84.2" x2="233.3" y2="97.6"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="211.1" y1="64.3" x2="232.5" y2="64.3"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="135.7" y1="24" x2="197.9" y2="24"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="127" y1="40.6" x2="127" y2="61"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="121.1" y1="52.3" x2="121.1" y2="70.7"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="112.5" y1="64.3" x2="112.5" y2="82.7"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="104.6" y1="74.9" x2="104.6" y2="93.3"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="216.7" y1="52.8" x2="232.5" y2="52.8"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="202.7" y1="40.7" x2="232.5" y2="40.7"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="213.5" y1="73.3" x2="232.4" y2="75.3"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="207" y1="80.1" x2="231.7" y2="86.5"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="201.3" y1="84.2" x2="233.3" y2="97.6"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="211.1" y1="64.3" x2="232.5" y2="64.3"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="135.7" y1="24" x2="197.9" y2="24"/>
 	<g>
-		<line fill="none" stroke="#CCCCCC" stroke-miterlimit="10" x1="197.9" y1="31.3" x2="197.9" y2="34.2"/>
+		<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="197.9" y1="31.3" x2="197.9" y2="34.2"/>
 		<g>
-			<path fill="#CCCCCC" stroke="#CCCCCC" stroke-miterlimit="10" d="M197.9,34.2c-0.5-1.4-1.4-3.2-2.4-4.3l2.4,0.9l2.4-0.9
+			<path fill="#000000" stroke="#000000" stroke-miterlimit="10" d="M197.9,34.2c-0.5-1.4-1.4-3.2-2.4-4.3l2.4,0.9l2.4-0.9
 				C199.3,31,198.4,32.7,197.9,34.2z"/>
 		</g>
 	</g>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="197.9" y1="31.3" x2="197.9" y2="24"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="81.4" y1="149.1" x2="120" y2="149.1"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="164.3" y1="182" x2="184.6" y2="182"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="164.3" y1="264" x2="184.6" y2="264"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="164.3" y1="331" x2="184.6" y2="331"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="164.3" y1="398.7" x2="184.6" y2="398.7"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="437.7" x2="184.6" y2="437.7"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="482.7" x2="184.6" y2="482.7"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="495.7" x2="184.6" y2="495.7"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="507.7" x2="184.6" y2="507.7"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="517.7" x2="184.6" y2="517.7"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="526.7" x2="184.6" y2="526.7"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="535.7" x2="184.6" y2="535.7"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="544.7" x2="184.6" y2="544.7"/>
-	<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="553.7" x2="184.6" y2="553.7"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="197.9" y1="31.3" x2="197.9" y2="24"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="81.4" y1="149.1" x2="120" y2="149.1"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="164.3" y1="182" x2="184.6" y2="182"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="164.3" y1="264" x2="184.6" y2="264"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="164.3" y1="331" x2="184.6" y2="331"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="164.3" y1="398.7" x2="184.6" y2="398.7"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="437.7" x2="184.6" y2="437.7"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="482.7" x2="184.6" y2="482.7"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="495.7" x2="184.6" y2="495.7"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="507.7" x2="184.6" y2="507.7"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="517.7" x2="184.6" y2="517.7"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="526.7" x2="184.6" y2="526.7"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="535.7" x2="184.6" y2="535.7"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="544.7" x2="184.6" y2="544.7"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="161.3" y1="553.7" x2="184.6" y2="553.7"/>
 </g>
 </svg>

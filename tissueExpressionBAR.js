@@ -192,6 +192,8 @@ class CreateSVGExpressionData {
         this.svgMinAverage;
         // Store object name:
         this.svgObjectName;
+        // Start or finished colouring:
+        this.finishedColouring = false;
     };
 
     /**
@@ -474,11 +476,19 @@ class CreateSVGExpressionData {
                     var title = document.createElementNS("http://www.w3.org/2000/svg","title");
                     title.textContent = duplicateRoot[dupR] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
                     svgObject.getElementById(duplicateRoot[dupR]).appendChild(title)
-                }
-            } 
+                };
+            };
+
+            // Finished colouring:
+            createSVGExpressionData.finishedColouring = true;
         }
     }
 
+    /**
+     * Convert a percentage into a hex-code colour
+     * @param {Number} percentage The percentage between 0 - 100 (as an int) into a colour between yellow and red
+     * @returns {String} Hex-code colour
+     */
     percentageToColour(percentage) {
         var percentage = parseInt(percentage);
 
@@ -502,19 +512,30 @@ class CreateSVGExpressionData {
         createSVGExpressionData.svgMinAverage = undefined;
         interactiveSVGData.existingStrokeWidths = {};
         interactiveSVGData.existingStrokeColours = {};
+        createSVGExpressionData.finishedColouring = false;
         // Initiate scripts     
         createSVGExpressionData.desiredDOMid = desiredDOMid;
         retrieveOnlineBARData.loadSampleData(svgName, locus, desiredDOMid);
     }
 }
+/**
+ * Create and retrieve expression data in an SVG format
+ */
 const createSVGExpressionData = new CreateSVGExpressionData();
 
+/**
+ * Enables interactivity with the SVG
+ */
 class InteractiveSVGData {
     constructor() {
         this.existingStrokeWidths = {};
         this.existingStrokeColours = {};
     }
 
+    /**
+     * Add details to an SVG or SVG-subunit including: hover and outline
+     * @param {String} elementID Which SVG or SVG-subunit is being found and edited
+     */
     addDetails(elementID) {
         // Adjusting for BioticStressPseudomonassyringae's half leaf:
         if (elementID.includes('Half_Leaf_Pseudomonas_syringae')) {
@@ -589,6 +610,10 @@ class InteractiveSVGData {
         };
     };
 
+    /**
+     * Remove details to an SVG or SVG-subunit including: hover and outline
+     * @param {String} elementID Which SVG or SVG-subunit is being found and edited
+     */
     removeDetails(elementID) {
         // Adjusting for BioticStressPseudomonassyringae's half leaf:
         if (elementID.includes('Half_Leaf_Pseudomonas_syringae')) {
@@ -627,4 +652,7 @@ class InteractiveSVGData {
         }        
     }
 }
+/**
+ * Enables interactivity with the SVG
+ */
 const interactiveSVGData = new InteractiveSVGData();
