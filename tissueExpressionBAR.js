@@ -189,7 +189,9 @@ class CreateSVGExpressionData {
         this.svgMax;
         this.svgMin;
         this.svgMaxAverage;
+        this.svgMaxAverageSample;
         this.svgMinAverage;
+        this.svgMinAverageSample;
         // Store object name:
         this.svgObjectName;
         // Start or finished colouring:
@@ -338,16 +340,20 @@ class CreateSVGExpressionData {
             // Now for averages:
             if (createSVGExpressionData.svgMaxAverage === undefined) {
                 createSVGExpressionData.svgMaxAverage = averageValues;
+                createSVGExpressionData.svgMaxAverageSample = svgSubunits[i];
             } else {
                 if (averageValues > createSVGExpressionData.svgMaxAverage) {                   
                     createSVGExpressionData.svgMaxAverage = averageValues;
+                    createSVGExpressionData.svgMaxAverageSample = svgSubunits[i];
                 }
             };
             if (createSVGExpressionData.svgMinAverage === undefined) {
                 createSVGExpressionData.svgMinAverage = averageValues;
+                createSVGExpressionData.svgMinAverageSample = svgSubunits[i];
             } else {
                 if (averageValues < createSVGExpressionData.svgMinAverage) {                   
                     createSVGExpressionData.svgMinAverage = averageValues;
+                    createSVGExpressionData.svgMinAverageSample = svgSubunits[i];
                 }
             };
 
@@ -509,7 +515,9 @@ class CreateSVGExpressionData {
         createSVGExpressionData.svgMax = undefined;
         createSVGExpressionData.svgMin = undefined;
         createSVGExpressionData.svgMaxAverage = undefined;
+        createSVGExpressionData.svgMaxAverageSample = undefined;
         createSVGExpressionData.svgMinAverage = undefined;
+        createSVGExpressionData.svgMinAverageSample = undefined;
         interactiveSVGData.existingStrokeWidths = {};
         interactiveSVGData.existingStrokeColours = {};
         createSVGExpressionData.finishedColouring = false;
