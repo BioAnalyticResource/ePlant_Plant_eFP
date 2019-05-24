@@ -203,7 +203,7 @@ class CreateSVGExpressionData {
      */
     addSVGtoDOM(svgName, locus) {
         // Call SVG file
-        var urlSVG = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/SVG/' + svgName + '.svg';
+        var urlSVG = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/SVG/' + svgName + '.min.svg';
 
         // Empty target region
         var targetDOMRegion = document.getElementById(createSVGExpressionData.desiredDOMid);
