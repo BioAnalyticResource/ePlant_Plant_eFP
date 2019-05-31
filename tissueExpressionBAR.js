@@ -13,7 +13,7 @@ class RetrieveOnlineBARData {
         this.callEFPObjects = {};
         // loadSampleData
         this.sampleData = {};
-    }
+    };
 
     /**
      * Calls and stores the sample Data for the SVG, SVG's subunits, datasource and it's name-values 
@@ -50,7 +50,7 @@ class RetrieveOnlineBARData {
         // Check if svgName contains .svg
         if (svgName.substr(-4) === '.svg') {
             svgName = svgName.substr(0, svgName.length -4);
-        }
+        };
 
         // Create variables that will be used in retrieveSampleData
         var sampleDataKeys = Object.keys(retrieveOnlineBARData.sampleData); // All possible SVGs 
@@ -74,12 +74,12 @@ class RetrieveOnlineBARData {
                 sampleIDList = [];
                 for (var sK = 0; sK < sampleSubunits.length; sK++) {
                     sampleIDList = sampleIDList.concat(sampleOptions[sampleSubunits[sK]]);
-                }
-            }
+                };
+            };
 
             // Call plantefp.cgi webservice to retrieve information about the target tissue expression data
             retrieveOnlineBARData.callPlantEFP(sampleDB, locus, sampleIDList, svgName, sampleOptions);
-        }
+        };
     };    
 
     /**
@@ -101,8 +101,8 @@ class RetrieveOnlineBARData {
            url += '"' + samples[i] + '"';
            if (i != samples.length-1) {
                url += ',';
-           }
-        }
+           };
+        };
         url += ']';
 
         xhr.responseType = 'json';
@@ -116,17 +116,17 @@ class RetrieveOnlineBARData {
                     // Create SVG in dictionary
                     if (retrieveOnlineBARData.callEFPObjects[svg] === undefined) {
                         retrieveOnlineBARData.callEFPObjects[svg] = {};
-                    }
+                    };
 
                     // Create samples in dictionary
                     if (retrieveOnlineBARData.callEFPObjects[svg]['sample'] === undefined) {
                         retrieveOnlineBARData.callEFPObjects[svg]['sample'] = {};
-                    }
+                    };
 
                     // Create samples in dictionary
                     if (retrieveOnlineBARData.callEFPObjects[svg]['sample'] === undefined) {
                         retrieveOnlineBARData.callEFPObjects[svg]['sample'] = {};
-                    }
+                    };
 
                     // Add values
                     for (var t = 0; t < response.length; t++) {
@@ -143,35 +143,35 @@ class RetrieveOnlineBARData {
                         for (var s = 0; s < subunitsList.length; s++) {  
                             if (sampleSubunits[subunitsList[s]].includes(tempName)) {
                                 subunitName = subunitsList[s];
-                            }
+                            };
                         };
 
                         // Create subunit
                         if (retrieveOnlineBARData.callEFPObjects[svg]['sample'][subunitName] === undefined) {
                             retrieveOnlineBARData.callEFPObjects[svg]['sample'][subunitName] = {};
-                        }
+                        };
 
                         // Create responseName
                         if (retrieveOnlineBARData.callEFPObjects[svg]['sample'][subunitName][tempName] === undefined) {
                             retrieveOnlineBARData.callEFPObjects[svg]['sample'][subunitName][tempName] = {};
-                        }
+                        };
 
                         // Add to dictionary
                         retrieveOnlineBARData.callEFPObjects[svg]['sample'][subunitName][tempName][locus] = responseValue;
-                    }
+                    };
 
                     // Add db
                     retrieveOnlineBARData.callEFPObjects[svg]['db'] = datasource;
 
                     createSVGExpressionData.addSVGtoDOM(svg, locus);
-                }
-            }
+                };
+            };
         };
 
         xhr.open('GET', url);
         xhr.send();
     };
-}
+};
 /**
  * Parses online data sources for information
  */
@@ -246,11 +246,10 @@ class CreateSVGExpressionData {
         for (var i = 0; i < locusPoint.length; i++) {
             if (i === 1 || i === 3) {
                 locusValue = locusValue + locusPoint[i].toLowerCase();
-            }
-            else {
+            } else {
                 locusValue = locusValue + locusPoint[i];
-            }
-        }
+            };
+        };
         // console.log(locusValue);
         createSVGExpressionData.createSVGValues(whichSVG, locus);
     };
@@ -272,7 +271,7 @@ class CreateSVGExpressionData {
         let svgSubunits = Object.keys(svgDataObject);
         for (var i = 0; i < svgSubunits.length; i++) {
             svgSamples.push(svgDataObject[svgSubunits[i]]);
-        }
+        };
 
         // Find respective values
         for (var n = 0; n < svgSubunits.length; n++) {
@@ -280,16 +279,16 @@ class CreateSVGExpressionData {
             // Create SVG subunit in dictionary
             if (createSVGExpressionData.svgValues[svgSubunits[n]] === undefined) {
                 createSVGExpressionData.svgValues[svgSubunits[n]] = {};
-            }
+            };
             // Add raw values
             for (var v = 0; v < sampleValues.length; v++) {
                 // Create raw values in dictionary
                 if (createSVGExpressionData.svgValues[svgSubunits[n]]['rawValues'] === undefined) {
                     createSVGExpressionData.svgValues[svgSubunits[n]]['rawValues'] = [];
-                }
+                };
                 createSVGExpressionData.svgValues[svgSubunits[n]]['rawValues'].push(svgDataObject[svgSubunits[n]][sampleValues[v]][locus]);
-            }
-        }
+            };
+        };
         createSVGExpressionData.findMaxAndMin(whichSVG, svgSubunits);
     };
 
@@ -310,14 +309,14 @@ class CreateSVGExpressionData {
             for (var y = 0; y < values.length; y++) {
                 if (isNaN(values[y]) === false) {
                     numValues.push(parseFloat(values[y]))
-                }
-            }
+                };
+            };
 
             // Find averages
             var sumValues = 0;
             for (var v = 0; v < numValues.length; v++) {
                 sumValues += numValues[v];
-            }
+            };
             var averageValues = (sumValues / numValues.length);
 
             // Compare max values
@@ -328,14 +327,14 @@ class CreateSVGExpressionData {
             } else {
                 if (maxValue > createSVGExpressionData.svgMax) {                   
                     createSVGExpressionData.svgMax = maxValue;
-                }
+                };
             };
             if (createSVGExpressionData.svgMin === undefined) {
                 createSVGExpressionData.svgMin = minValue;
             } else {
                 if (minValue < createSVGExpressionData.svgMin) {                   
                     createSVGExpressionData.svgMin = minValue;
-                }
+                };
             };
             // Now for averages:
             if (createSVGExpressionData.svgMaxAverage === undefined) {
@@ -345,7 +344,7 @@ class CreateSVGExpressionData {
                 if (averageValues > createSVGExpressionData.svgMaxAverage) {                   
                     createSVGExpressionData.svgMaxAverage = averageValues;
                     createSVGExpressionData.svgMaxAverageSample = svgSubunits[i];
-                }
+                };
             };
             if (createSVGExpressionData.svgMinAverage === undefined) {
                 createSVGExpressionData.svgMinAverage = averageValues;
@@ -354,19 +353,19 @@ class CreateSVGExpressionData {
                 if (averageValues < createSVGExpressionData.svgMinAverage) {                   
                     createSVGExpressionData.svgMinAverage = averageValues;
                     createSVGExpressionData.svgMinAverageSample = svgSubunits[i];
-                }
+                };
             };
 
             // Add to value's dictionary:
             // Create SVG subunit in dictionary
             if (createSVGExpressionData.svgValues[svgSubunits[i]] === undefined) {
                 createSVGExpressionData.svgValues[svgSubunits[i]] = {};
-            }
+            };
             createSVGExpressionData.svgValues[svgSubunits[i]]['average'] = averageValues;
         };
 
         createSVGExpressionData.colourSVGs(whichSVG, svgSubunits);
-    }
+    };
 
     /**
      * Colour the existing SVG that has been created
@@ -380,7 +379,7 @@ class CreateSVGExpressionData {
             var numerator = createSVGExpressionData.svgValues[svgSubunits[i]]['average'] - createSVGExpressionData.svgMinAverage;
             if (numerator < 0) {
                 numerator = 0;
-            }
+            };
             var percentage = (numerator/denominator) * 100;
             if (percentage > 100) {
                 percentage = 100;
@@ -400,13 +399,22 @@ class CreateSVGExpressionData {
             
             // Colouring
             var colourFill = createSVGExpressionData.percentageToColour(percentage);
-            var childElements = svgObject.getElementById(svgSubunits[i]).childNodes;
+            var childElements;
+            if (svgObject.getElementById(svgSubunits[i]) === null || svgObject.getElementById(svgSubunits[i]).childNodes === null || svgObject.getElementById(svgSubunits[i]) === undefined || svgObject.getElementById(svgSubunits[i]).childNodes === undefined) {
+                setTimeout(function() {
+                    if (svgObject.getElementById(svgSubunits[i]).childNodes != null || svgObject.getElementById(svgSubunits[i]).childNodes != undefined) {
+                        childElements = svgObject.getElementById(svgSubunits[i]).childNodes;
+                    };
+                }, 500);
+            } else {
+                childElements = svgObject.getElementById(svgSubunits[i]).childNodes;
+            };
             if (childElements.length > 0) {
                 for (var c = 0; c < childElements.length; c++) {
                     if (childElements[c].nodeName === 'path' || childElements[c].nodeName === 'g') {           
                         childElements[c].setAttribute("fill", colourFill);       
-                    }
-                }
+                    };
+                };
             } else {             
                 svgObject.getElementById(svgSubunits[i]).setAttribute("fill", colourFill);
             };
@@ -428,7 +436,7 @@ class CreateSVGExpressionData {
             // Add tooltip/title on hover
             var title = document.createElementNS("http://www.w3.org/2000/svg","title");
             title.textContent = svgSubunits[i] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
-            svgObject.getElementById(svgSubunits[i]).appendChild(title)
+            svgObject.getElementById(svgSubunits[i]).appendChild(title);
 
             // Correcting duplicate error:
             if (isdupShoot) {
@@ -447,8 +455,8 @@ class CreateSVGExpressionData {
                         for (var c = 0; c < childElements.length; c++) {
                             if (childElements[c].nodeName === 'path') {           
                                 childElements[c].setAttribute("fill", colourFill);
-                            }
-                        }
+                            };
+                        };
                     } else {             
                         svgObject.getElementById(duplicateShoot[dupS]).setAttribute("fill", colourFill);
                     };                    
@@ -456,7 +464,7 @@ class CreateSVGExpressionData {
                     var title = document.createElementNS("http://www.w3.org/2000/svg","title");
                     title.textContent = duplicateShoot[dupS] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
                     svgObject.getElementById(duplicateShoot[dupS]).appendChild(title)
-                }
+                };
             } else if (isdupRoot) {
                 for (var dupR = 0; dupR < duplicateRoot.length; dupR++) {
                     var childElements = svgObject.getElementById(duplicateRoot[dupR]).childNodes;
@@ -473,8 +481,8 @@ class CreateSVGExpressionData {
                         for (var c = 0; c < childElements.length; c++) {
                             if (childElements[c].nodeName === 'path') {           
                                 childElements[c].setAttribute("fill", colourFill);
-                            }
-                        }
+                            };
+                        };
                     } else {             
                         svgObject.getElementById(duplicateRoot[dupR]).setAttribute("fill", colourFill);
                     };                 
@@ -487,8 +495,8 @@ class CreateSVGExpressionData {
 
             // Finished colouring:
             createSVGExpressionData.finishedColouring = true;
-        }
-    }
+        };
+    };
 
     /**
      * Convert a percentage into a hex-code colour
@@ -501,7 +509,7 @@ class CreateSVGExpressionData {
         var colourList = ['#ffff00','#fffd00','#fffc00','#fff900','#fff800','#fff600','#fff500','#fff300','#fff200','#fff000','#ffee00','#ffec00','#ffeb00','#ffe800','#ffe700','#ffe600','#ffe300','#ffe100','#ffe000','#ffdf00','#ffdd00','#ffdb00','#ffda00','#ffd800','#ffd600','#ffd300','#ffd200','#ffd000','#ffcf00','#ffcc00','#ffcb00','#ffc900','#ffc700','#ffc500','#ffc300','#ffc300','#ffc000','#ffbf00','#ffbd00','#ffbb00','#ffb900','#ffb800','#ffb500','#ffb300','#ffb200','#ffb000','#ffad00','#ffac00','#ffa900','#ffa800','#ffa600','#ffa400','#ffa200','#ffa100','#ff9e00','#ff9c00','#ff9a00','#ff9900','#ff9600','#ff9400','#ff9300','#ff9000','#ff8f00','#ff8c00','#ff8900','#ff8700','#ff8600','#ff8300','#ff8200','#ff7f00','#ff7c00','#ff7b00','#ff7800','#ff7600','#ff7300','#ff7100','#ff6e00','#ff6c00','#ff6900','#ff6700','#ff6500','#ff6100','#ff5e00','#ff5c00','#ff5900','#ff5600','#ff5300','#ff5000','#ff4d00','#ff4900','#ff4600','#ff4200','#ff3d00','#ff3a00','#ff3400','#ff3000','#ff2a00','#ff2400','#ff1c00','#ff1100','#ff0000'];
 
         return (colourList[percentage]);
-    }
+    };
 
     /**
      * Create and generate an SVG based on the desired tissue expression locus
@@ -524,8 +532,8 @@ class CreateSVGExpressionData {
         // Initiate scripts     
         createSVGExpressionData.desiredDOMid = desiredDOMid;
         retrieveOnlineBARData.loadSampleData(svgName, locus, desiredDOMid);
-    }
-}
+    };
+};
 /**
  * Create and retrieve expression data in an SVG format
  */
@@ -538,7 +546,7 @@ class InteractiveSVGData {
     constructor() {
         this.existingStrokeWidths = {};
         this.existingStrokeColours = {};
-    }
+    };
 
     /**
      * Add details to an SVG or SVG-subunit including: hover and outline
@@ -588,7 +596,7 @@ class InteractiveSVGData {
                     svgDetailsAdded = true;        
                 };
             };
-        } 
+        };
         if (svgDetailsAdded === false || svgPartChildren.length <= 0 || svgPartChildren === null) {
             var existingStrokeWidth = svgPart.getAttribute('stroke-width');
             if (existingStrokeWidth === null || existingStrokeWidth === undefined) {
@@ -647,7 +655,7 @@ class InteractiveSVGData {
                     svgDetailsRemoved = true;
                 };
             };
-        } 
+        };
         if (svgDetailsRemoved === false || svgPartChildren.length <= 0 || svgPartChildren === null) {
             if (parseFloat(interactiveSVGData.existingStrokeWidths[elementID]) >= 0) {
                 svgPart.setAttribute('stroke-width', (interactiveSVGData.existingStrokeWidths[elementID]));
@@ -657,9 +665,9 @@ class InteractiveSVGData {
                 svgPart.setAttribute('stroke', '#000000');
             };
             svgDetailsRemoved = true;
-        }        
-    }
-}
+        };      
+    };
+};
 /**
  * Enables interactivity with the SVG
  */
