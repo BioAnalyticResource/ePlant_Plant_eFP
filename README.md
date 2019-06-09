@@ -1,6 +1,6 @@
 # ePlant Plant eFP
 
-The ePlant Plant eFP is a tissue expression API provided by the [Bio-Analytic Resource for Plant Biology (BAR)](https://bar.utoronto.ca/) from the University of Toronto. This tool will provide tissue expression data corresponding with one of the listed [compendiums](./compendiums).
+The ePlant Plant eFP is a tissue expression API provided by the [Bio-Analytic Resource for Plant Biology (BAR)](https://bar.utoronto.ca/) from the University of Toronto. This tool will provide visualized tissue expression data corresponding for Arabidopsis thaliana with one of the listed [compendiums](./compendiums).
 
 ## Getting Started
 
@@ -13,7 +13,9 @@ Just an important note, the ePlant Plant eFP tissue expression API requires an o
 For the ePlant Plant eFP to work correctly, you need to call the CreateSVGExpressionData's generateSVG. For generateSVG, you will need the desired compendium you wish to call, the gene/locus input as formatted by AGI ID (example: AT3G24650) and the ID of the desired location for this information to be printed to (example: a div with ID 'desiredDOM'):
 
 ```javascript
-// A variable already exists called createSVGExpressionData for CreateSVGExpressionData but if you wish to create your own function, just instantiate a new one through variableName = new CreateSVGExpressionData();
+// A variable already exists called createSVGExpressionData for CreateSVGExpressionData 
+// but if you wish to create your own function, just instantiate a new one 
+// through variableName = new CreateSVGExpressionData();
 createSVGExpressionData.generateSVG('AbioticStress', 'AT3G24650', 'desiredDOM');
 ```
 
