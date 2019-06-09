@@ -107,7 +107,7 @@ class RetrieveOnlineBARData {
 
         xhr.responseType = 'json';
         xhr.onreadystatechange = () => {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                 xhr.onload = function() {
                     // Create object based on response:
                     let subunitsList = Object.keys(sampleSubunits);
@@ -205,7 +205,7 @@ class CreateSVGExpressionData {
      */
     addSVGtoDOM(svgName, locus) {
         // Call SVG file
-        var urlSVG = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/SVG/' + svgName + '.min.svg';
+        var urlSVG = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/compendiums/' + svgName + '.min.svg';
 
         // Empty target region
         var targetDOMRegion = document.getElementById(createSVGExpressionData.desiredDOMid);
@@ -506,6 +506,7 @@ class CreateSVGExpressionData {
     percentageToColour(percentage) {
         var percentage = parseInt(percentage);
 
+        // From 0% to 100% as integers 
         var colourList = ['#ffff00','#fffd00','#fffc00','#fff900','#fff800','#fff600','#fff500','#fff300','#fff200','#fff000','#ffee00','#ffec00','#ffeb00','#ffe800','#ffe700','#ffe600','#ffe300','#ffe100','#ffe000','#ffdf00','#ffdd00','#ffdb00','#ffda00','#ffd800','#ffd600','#ffd300','#ffd200','#ffd000','#ffcf00','#ffcc00','#ffcb00','#ffc900','#ffc700','#ffc500','#ffc300','#ffc300','#ffc000','#ffbf00','#ffbd00','#ffbb00','#ffb900','#ffb800','#ffb500','#ffb300','#ffb200','#ffb000','#ffad00','#ffac00','#ffa900','#ffa800','#ffa600','#ffa400','#ffa200','#ffa100','#ff9e00','#ff9c00','#ff9a00','#ff9900','#ff9600','#ff9400','#ff9300','#ff9000','#ff8f00','#ff8c00','#ff8900','#ff8700','#ff8600','#ff8300','#ff8200','#ff7f00','#ff7c00','#ff7b00','#ff7800','#ff7600','#ff7300','#ff7100','#ff6e00','#ff6c00','#ff6900','#ff6700','#ff6500','#ff6100','#ff5e00','#ff5c00','#ff5900','#ff5600','#ff5300','#ff5000','#ff4d00','#ff4900','#ff4600','#ff4200','#ff3d00','#ff3a00','#ff3400','#ff3000','#ff2a00','#ff2400','#ff1c00','#ff1100','#ff0000'];
 
         return (colourList[percentage]);
@@ -515,7 +516,7 @@ class CreateSVGExpressionData {
      * Create and generate an SVG based on the desired tissue expression locus
      * @param {String} svgName Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
-     * @param {String} desiredDOMid
+     * @param {String} desiredDOMid The desired DOM location 
      */
     generateSVG(svgName, locus, desiredDOMid) {   
         // Reset variables:
