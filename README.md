@@ -38,7 +38,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 
 ## License
 
-Coming soon...
+[GPL-2.0](LICENSE)
 
 ## Authors
 
