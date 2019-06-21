@@ -4,7 +4,7 @@ The ePlant Plant eFP is a tissue expression API provided by the [Bio-Analytic Re
 
 ## Getting Started
 
-To use the ePlant Plant eFP, you will be required to either call the [tissueExpressionBAR.js](tissueExpressionBAR.js) from our hosted location (https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/tissueExpressionBAR.min.js) or download the files locally (including the tissueExpressionBAR.js, compendiums and data). 
+To use the ePlant Plant eFP, you will be required to either call the [tissueExpressionBAR.js](tissueExpressionBAR.js) from our hosted location (https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/tissueExpressionBAR.min.js) or download the files locally (including the tissueExpressionBAR.js, compendiums and data). 
 
 Just an important note, the ePlant Plant eFP tissue expression API requires an online connection to run correctly.
 

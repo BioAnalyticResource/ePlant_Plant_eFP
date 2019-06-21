@@ -143,21 +143,21 @@ class RetrieveOnlineBARData {
                         for (var s = 0; s < subunitsList.length; s++) {  
                             if (sampleSubunits[subunitsList[s]].includes(tempName)) {
                                 subunitName = subunitsList[s];
+
+                                // Create subunit
+                                if (retrieveOnlineBARData.callEFPObjects[svg]['sample'][subunitName] === undefined) {
+                                    retrieveOnlineBARData.callEFPObjects[svg]['sample'][subunitName] = {};
+                                };
+
+                                // Create responseName
+                                if (retrieveOnlineBARData.callEFPObjects[svg]['sample'][subunitName][tempName] === undefined) {
+                                    retrieveOnlineBARData.callEFPObjects[svg]['sample'][subunitName][tempName] = {};
+                                };
+
+                                // Add to dictionary
+                                retrieveOnlineBARData.callEFPObjects[svg]['sample'][subunitName][tempName][locus] = responseValue;
                             };
                         };
-
-                        // Create subunit
-                        if (retrieveOnlineBARData.callEFPObjects[svg]['sample'][subunitName] === undefined) {
-                            retrieveOnlineBARData.callEFPObjects[svg]['sample'][subunitName] = {};
-                        };
-
-                        // Create responseName
-                        if (retrieveOnlineBARData.callEFPObjects[svg]['sample'][subunitName][tempName] === undefined) {
-                            retrieveOnlineBARData.callEFPObjects[svg]['sample'][subunitName][tempName] = {};
-                        };
-
-                        // Add to dictionary
-                        retrieveOnlineBARData.callEFPObjects[svg]['sample'][subunitName][tempName][locus] = responseValue;
                     };
 
                     // Add db
@@ -295,7 +295,7 @@ class CreateSVGExpressionData {
     /**
      * Find the maximum, minimum and average values
      * @param {String} whichSVG Name of the SVG file without the .svg at the end
-     * @param {*} svgSubunits 
+     * @param {Array} svgSubunits A list containing all desired SVG subunits to be interacted with
      */
     findMaxAndMin(whichSVG, svgSubunits) {
         // Reset variables 
@@ -370,9 +370,9 @@ class CreateSVGExpressionData {
     /**
      * Colour the existing SVG that has been created
      * @param {String} whichSVG Name of the SVG file without the .svg at the end
+     * @param {Array} svgSubunits A list containing all desired SVG subunits to be interacted with
      */
     colourSVGs(whichSVG, svgSubunits) {
-        let svgObject = document.getElementById(whichSVG + '_object').getSVGDocument();
         for (var i = 0; i < svgSubunits.length; i++) {
             // Colouring values
             var denominator = createSVGExpressionData.svgMaxAverage - createSVGExpressionData.svgMinAverage;
@@ -386,115 +386,135 @@ class CreateSVGExpressionData {
             } else if ((percentage < 0) ||(percentage === undefined) || (percentage === null)) {
                 percentage = 0;
             };
-            // Check for duplicate error:
-            var duplicateShoot = ['Control_Shoot_0_Hour', 'Cold_Shoot_0_Hour', 'Osmotic_Shoot_0_Hour', 'Salt_Shoot_0_Hour', 'Drought_Shoot_0_Hour', 'Genotoxic_Shoot_0_Hour', 'Oxidative_Shoot_0_Hour', 'UV-B_Shoot_0_Hour', 'Wounding_Shoot_0_Hour', 'Heat_Shoot_0_Hour'];
-            var duplicateRoot = ['Control_Root_0_Hour', 'Cold_Root_0_Hour', 'Osmotic_Root_0_Hour', 'Salt_Root_0_Hour', 'Drought_Root_0_Hour', 'Genotoxic_Root_0_Hour', 'Oxidative_Root_0_Hour', 'UV-B_Root_0_Hour', 'Wounding_Root_0_Hour', 'Heat_Root_0_Hour'];
-            var isdupShoot = false;
-            var isdupRoot = false;
-            if (duplicateShoot.includes(svgSubunits[i])) {
-                isdupShoot = true;
-            } else if (duplicateRoot.includes(svgSubunits[i])) {
-                isdupRoot = true;
-            };
-            
-            // Colouring
-            var colourFill = createSVGExpressionData.percentageToColour(percentage);
-            var childElements;
-            if (svgObject.getElementById(svgSubunits[i]) === null || svgObject.getElementById(svgSubunits[i]).childNodes === null || svgObject.getElementById(svgSubunits[i]) === undefined || svgObject.getElementById(svgSubunits[i]).childNodes === undefined) {
-                setTimeout(function() {
-                    if (svgObject.getElementById(svgSubunits[i]).childNodes != null || svgObject.getElementById(svgSubunits[i]).childNodes != undefined) {
-                        childElements = svgObject.getElementById(svgSubunits[i]).childNodes;
-                    };
-                }, 500);
-            } else {
-                childElements = svgObject.getElementById(svgSubunits[i]).childNodes;
-            };
-            if (childElements.length > 0) {
-                for (var c = 0; c < childElements.length; c++) {
-                    if (childElements[c].nodeName === 'path' || childElements[c].nodeName === 'g') {           
-                        childElements[c].setAttribute("fill", colourFill);       
-                    };
-                };
-            } else {             
-                svgObject.getElementById(svgSubunits[i]).setAttribute("fill", colourFill);
-            };
-
-            // Add interactivity 
-            // Adding hover features:
-            svgObject.getElementById(svgSubunits[i]).setAttribute("class", 'hoverDetails');
-            svgObject.getElementById(svgSubunits[i]).addEventListener('mouseenter', function(event) {
-                interactiveSVGData.addDetails(this.id);
-            });
-            svgObject.getElementById(svgSubunits[i]).addEventListener('mouseleave', function(event) {
-                interactiveSVGData.removeDetails(this.id);
-            });
-            // Adding details about sub-tissue:
             var expressionLevel = parseFloat(numerator + createSVGExpressionData.svgMinAverage).toFixed(3);
-            svgObject.getElementById(svgSubunits[i]).setAttribute("data-expressionValue", expressionLevel);
             var sampleSize = createSVGExpressionData.svgValues[svgSubunits[i]].rawValues.length;
-            svgObject.getElementById(svgSubunits[i]).setAttribute("data-sampleSize", sampleSize);
-            // Add tooltip/title on hover
-            var title = document.createElementNS("http://www.w3.org/2000/svg","title");
-            title.textContent = svgSubunits[i] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
-            svgObject.getElementById(svgSubunits[i]).appendChild(title);
 
-            // Correcting duplicate error:
-            if (isdupShoot) {
-                for (var dupS = 0; dupS < duplicateShoot.length; dupS++) {
-                    var childElements = svgObject.getElementById(duplicateShoot[dupS]).childNodes;
-                    // Add interactivity 
-                    svgObject.getElementById(duplicateShoot[dupS]).setAttribute("class", 'hoverDetails');
-                    svgObject.getElementById(duplicateShoot[dupS]).addEventListener('mouseenter', function(event) {
-                        interactiveSVGData.addDetails(this.id);
-                    });
-                    svgObject.getElementById(duplicateShoot[dupS]).addEventListener('mouseleave', function(event) {
-                        interactiveSVGData.removeDetails(this.id);
-                    });
-                    // Adding colour
-                    if (childElements.length > 0) {
-                        for (var c = 0; c < childElements.length; c++) {
-                            if (childElements[c].nodeName === 'path') {           
-                                childElements[c].setAttribute("fill", colourFill);
-                            };
-                        };
-                    } else {             
-                        svgObject.getElementById(duplicateShoot[dupS]).setAttribute("fill", colourFill);
-                    };                    
-                    // Add tooltip/title on hover
-                    var title = document.createElementNS("http://www.w3.org/2000/svg","title");
-                    title.textContent = duplicateShoot[dupS] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
-                    svgObject.getElementById(duplicateShoot[dupS]).appendChild(title)
-                };
-            } else if (isdupRoot) {
-                for (var dupR = 0; dupR < duplicateRoot.length; dupR++) {
-                    var childElements = svgObject.getElementById(duplicateRoot[dupR]).childNodes;
-                    // Add interactivity 
-                    svgObject.getElementById(duplicateRoot[dupR]).setAttribute("class", 'hoverDetails');
-                    svgObject.getElementById(duplicateRoot[dupR]).addEventListener('mouseenter', function(event) {
-                        interactiveSVGData.addDetails(this.id);
-                    });
-                    svgObject.getElementById(duplicateRoot[dupR]).addEventListener('mouseleave', function(event) {
-                        interactiveSVGData.removeDetails(this.id);
-                    });
-                    // Adding colour
-                    if (childElements.length > 0) {
-                        for (var c = 0; c < childElements.length; c++) {
-                            if (childElements[c].nodeName === 'path') {           
-                                childElements[c].setAttribute("fill", colourFill);
-                            };
-                        };
-                    } else {             
-                        svgObject.getElementById(duplicateRoot[dupR]).setAttribute("fill", colourFill);
-                    };                 
-                    // Add tooltip/title on hover
-                    var title = document.createElementNS("http://www.w3.org/2000/svg","title");
-                    title.textContent = duplicateRoot[dupR] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
-                    svgObject.getElementById(duplicateRoot[dupR]).appendChild(title)
-                };
-            };
+            // Retrieve colouring information
+            var colourFill = createSVGExpressionData.percentageToColour(percentage);
+
+            // Begin colouring SVG subunits
+            createSVGExpressionData.colourSVGSubunit(whichSVG, svgSubunits[i], colourFill, expressionLevel, sampleSize);
 
             // Finished colouring:
             createSVGExpressionData.finishedColouring = true;
+        };
+    };
+
+    /**
+     * The intent is to colour the subunit of a desired location within an SVG
+     * @param {String} whichSVG Name of the SVG file without the .svg at the end
+     * @param {Array} svgSubunit A list containing all desired SVG subunits to be interacted with
+     * @param {String} colour A hex code for what colour it is meant to be filled with
+     * @param {Number} expressionLevel The expression level for the interactive data
+     * @param {Number} sampleSize The sample size of the input information, default to 1
+     */
+    colourSVGSubunit(whichSVG, svgSubunit, colour, expressionLevel, sampleSize = 1) {
+        let svgObject = document.getElementById(whichSVG + '_object').getSVGDocument();
+        
+        // Check for duplicate error:
+        var duplicateShoot = ['Control_Shoot_0_Hour', 'Cold_Shoot_0_Hour', 'Osmotic_Shoot_0_Hour', 'Salt_Shoot_0_Hour', 'Drought_Shoot_0_Hour', 'Genotoxic_Shoot_0_Hour', 'Oxidative_Shoot_0_Hour', 'UV-B_Shoot_0_Hour', 'Wounding_Shoot_0_Hour', 'Heat_Shoot_0_Hour'];
+        var duplicateRoot = ['Control_Root_0_Hour', 'Cold_Root_0_Hour', 'Osmotic_Root_0_Hour', 'Salt_Root_0_Hour', 'Drought_Root_0_Hour', 'Genotoxic_Root_0_Hour', 'Oxidative_Root_0_Hour', 'UV-B_Root_0_Hour', 'Wounding_Root_0_Hour', 'Heat_Root_0_Hour'];
+        var isdupShoot = false;
+        var isdupRoot = false;
+        if (duplicateShoot.includes(svgSubunit)) {
+            isdupShoot = true;
+        } else if (duplicateRoot.includes(svgSubunit)) {
+            isdupRoot = true;
+        };
+
+        // This is used to determine if the SVG should be automatically coloured or manually done
+        var childElements;
+        if (svgObject.getElementById(svgSubunit) === null || svgObject.getElementById(svgSubunit).childNodes === null || svgObject.getElementById(svgSubunit) === undefined || svgObject.getElementById(svgSubunit).childNodes === undefined) {
+            setTimeout(function() {
+                if (svgObject.getElementById(svgSubunit).childNodes != null || svgObject.getElementById(svgSubunit).childNodes != undefined) {
+                    childElements = svgObject.getElementById(svgSubunit).childNodes;
+                };
+            }, 500);
+        } else {
+            childElements = svgObject.getElementById(svgSubunit).childNodes;
+        };
+        if (childElements.length > 0) {
+            for (var c = 0; c < childElements.length; c++) {
+                if (childElements[c].nodeName === 'path' || childElements[c].nodeName === 'g') {           
+                    childElements[c].setAttribute("fill", colour);       
+                };
+            };
+        } else {             
+            svgObject.getElementById(svgSubunit).setAttribute("fill", colour);
+        };        
+
+        // Add interactivity 
+        // Adding hover features:
+        svgObject.getElementById(svgSubunit).setAttribute("class", 'hoverDetails');
+        svgObject.getElementById(svgSubunit).addEventListener('mouseenter', function(event) {
+            interactiveSVGData.addDetails(this.id);
+        });
+        svgObject.getElementById(svgSubunit).addEventListener('mouseleave', function(event) {
+            interactiveSVGData.removeDetails(this.id);
+        });
+        // Adding details about sub-tissue:
+        var expressionLevel = expressionLevel;
+        svgObject.getElementById(svgSubunit).setAttribute("data-expressionValue", expressionLevel);
+        var sampleSize = sampleSize;
+        svgObject.getElementById(svgSubunit).setAttribute("data-sampleSize", sampleSize);
+        // Add tooltip/title on hover
+        var title = document.createElementNS("http://www.w3.org/2000/svg","title");
+        title.textContent = svgSubunit + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
+        svgObject.getElementById(svgSubunit).appendChild(title);
+
+        // Correcting duplicate error:
+        if (isdupShoot) {
+            for (var dupS = 0; dupS < duplicateShoot.length; dupS++) {
+                // Add interactivity 
+                svgObject.getElementById(duplicateShoot[dupS]).setAttribute("class", 'hoverDetails');
+                svgObject.getElementById(duplicateShoot[dupS]).addEventListener('mouseenter', function(event) {
+                    interactiveSVGData.addDetails(this.id);
+                });
+                svgObject.getElementById(duplicateShoot[dupS]).addEventListener('mouseleave', function(event) {
+                    interactiveSVGData.removeDetails(this.id);
+                });
+                // Adding colour
+                var childElements = svgObject.getElementById(duplicateShoot[dupS]).childNodes;
+                if (childElements.length > 0) {
+                    for (var c = 0; c < childElements.length; c++) {
+                        if (childElements[c].nodeName === 'path') {           
+                            childElements[c].setAttribute("fill", colour);
+                        };
+                    };
+                } else {             
+                    svgObject.getElementById(duplicateShoot[dupS]).setAttribute("fill", colour);
+                };                    
+                // Add tooltip/title on hover
+                var title = document.createElementNS("http://www.w3.org/2000/svg","title");
+                title.textContent = duplicateShoot[dupS] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
+                svgObject.getElementById(duplicateShoot[dupS]).appendChild(title)
+            };
+        } else if (isdupRoot) {
+            for (var dupR = 0; dupR < duplicateRoot.length; dupR++) {
+                // Add interactivity 
+                svgObject.getElementById(duplicateRoot[dupR]).setAttribute("class", 'hoverDetails');
+                svgObject.getElementById(duplicateRoot[dupR]).addEventListener('mouseenter', function(event) {
+                    interactiveSVGData.addDetails(this.id);
+                });
+                svgObject.getElementById(duplicateRoot[dupR]).addEventListener('mouseleave', function(event) {
+                    interactiveSVGData.removeDetails(this.id);
+                });
+                var childElements = svgObject.getElementById(duplicateRoot[dupR]).childNodes;
+                // Adding colour
+                if (childElements.length > 0) {
+                    for (var c = 0; c < childElements.length; c++) {
+                        if (childElements[c].nodeName === 'path') {           
+                            childElements[c].setAttribute("fill", colour);
+                        };
+                    };
+                } else {             
+                    svgObject.getElementById(duplicateRoot[dupR]).setAttribute("fill", colour);
+                };                 
+                // Add tooltip/title on hover
+                var title = document.createElementNS("http://www.w3.org/2000/svg","title");
+                title.textContent = duplicateRoot[dupR] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
+                svgObject.getElementById(duplicateRoot[dupR]).appendChild(title)
+            };
         };
     };
 
