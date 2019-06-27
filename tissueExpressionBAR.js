@@ -22,23 +22,26 @@ class RetrieveOnlineBARData {
      * @param {Boolean} continueForward Continue forward with the generation of the tissue expression data
      */
     loadSampleData(svgName, locus, continueForward = true) {
-        let xhr = new XMLHttpRequest();
-        let url = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/data/SampleData.json';
-
-        xhr.responseType = 'json';
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                // Store response
-                retrieveOnlineBARData.sampleData = xhr.response;
-                // Setup and retrieve information about the target SVG and locus
-                if (continueForward) {
-                    retrieveOnlineBARData.retrieveSampleData(svgName, locus);
-                };                
+        if (retrieveOnlineBARData.sampleData["AbioticStress"] === undefined) {
+            let xhr = new XMLHttpRequest();
+            let url = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/data/SampleData.json';
+    
+            xhr.responseType = 'json';
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    // Store response
+                    retrieveOnlineBARData.sampleData = xhr.response;
+                    // Setup and retrieve information about the target SVG and locus             
+                };
             };
-        };
-
-        xhr.open('GET', url);
-        xhr.send();
+    
+            xhr.open('GET', url);
+            xhr.send();   
+        };   
+        
+        if (continueForward) {
+            retrieveOnlineBARData.retrieveSampleData(svgName, locus);
+        };    
     };
 
     /**
@@ -389,6 +392,9 @@ class CreateSVGExpressionData {
             var expressionLevel = parseFloat(numerator + createSVGExpressionData.svgMinAverage).toFixed(3);
             var sampleSize = createSVGExpressionData.svgValues[svgSubunits[i]].rawValues.length;
 
+            createSVGExpressionData.svgValues[svgSubunits[i]]['expressionLevel'] = expressionLevel;
+            createSVGExpressionData.svgValues[svgSubunits[i]]['sampleSize'] = sampleSize;
+
             // Retrieve colouring information
             var colourFill = createSVGExpressionData.percentageToColour(percentage);
 
@@ -552,7 +558,7 @@ class CreateSVGExpressionData {
         createSVGExpressionData.finishedColouring = false;
         // Initiate scripts     
         createSVGExpressionData.desiredDOMid = desiredDOMid;
-        retrieveOnlineBARData.loadSampleData(svgName, locus, desiredDOMid);
+        retrieveOnlineBARData.loadSampleData(svgName, locus);
     };
 };
 /**
