@@ -167,6 +167,7 @@ class RetrieveOnlineBARData {
                     retrieveOnlineBARData.callEFPObjects[svg]['db'] = datasource;
 
                     createSVGExpressionData.addSVGtoDOM(svg, locus);
+                    interactiveSVGData.retrieveTopExpressionValues(locus);
                 };
             };
         };
@@ -573,6 +574,8 @@ class InteractiveSVGData {
     constructor() {
         this.existingStrokeWidths = {};
         this.existingStrokeColours = {};
+        this.expressionValues = undefined;
+        this.topExpressionValues = {};
     };
 
     /**
@@ -693,6 +696,47 @@ class InteractiveSVGData {
             };
             svgDetailsRemoved = true;
         };      
+    };
+
+    /**
+     * Retrieve information about the top expression values for a specific locus
+     * @param {String} locus The AGI ID (example: AT3G24650) 
+     */
+    retrieveTopExpressionValues(locus = 'AT3G24650') {
+        // If never been called before
+        if (interactiveSVGData.expressionValues === undefined) {
+            let xhr = new XMLHttpRequest();
+            let url = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/data/topExpressionValues.json';
+    
+            xhr.responseType = 'json';
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    let expressionResponse = xhr.response;
+                    interactiveSVGData.expressionValues = expressionResponse;
+
+                    if (expressionResponse['locus'][locus] != undefined) {
+                        // If locus exists, then add to topExpressionValues
+                        interactiveSVGData.topExpressionValues = expressionResponse['locus'][locus];
+                    } else {
+                        // If does not, add error to topExpressionValues
+                        interactiveSVGData.topExpressionValues['error'] = 'No data for ' + locus;
+                    };
+                };
+            };
+    
+            xhr.open('GET', url);
+            xhr.send();  
+        } else {
+            // If already called, do not recall this data
+            let expressionResponse = interactiveSVGData.expressionValues;
+            if (expressionResponse['locus'][locus] != undefined) {
+                // If locus exists, then add to topExpressionValues
+                interactiveSVGData.topExpressionValues = expressionResponse['locus'][locus];
+            } else {
+                // If does not, add error to topExpressionValues
+                interactiveSVGData.topExpressionValues['error'] = 'No data for ' + locus;
+            };
+        };        
     };
 };
 /**
