@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>ePlant Plant eFP - Example</title>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="author" content="BAR Lab @ University of Toronto: Alexander Sullivan, Asher Pasha, Nicholas J. Provart" />
+</head>
+<body style="background-color: black; color: white">
+    <div id="details">
+        <h1>This page is intended to demonstrate how the ePlant Plant eFP works</h1>
+        <p>
+            It is recommended that you visit <a href="https://github.com/BioAnalyticResource/ePlant_Plant_eFP" target="_blank" rel="noopener noreferrer" style="color:turquoise">https://github.com/BioAnalyticResource/ePlant_Plant_eFP</a> before exploring this page.
+            <br /><br />
+            The first thing you need to do is either download the ePlant Plant eFP by using 
+            <blockquote><code>git clone https://github.com/BioAnalyticResource/ePlant_Plant_eFP.git</code></blockquote>
+            or by calling the following from the official GitHub repository: 
+            <blockquote><code>https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/tissueExpressionBAR.min.js</code></blockquote>
+            <hr>
+            <br /><br />
+            The ePlant Plant eFP already comes with a declared variable for you to call from declared as <code>createSVGExpressionData</code>. 
+            <br /><br />
+            From here, you would have to decide on what tissue sample you would like to call, for what gene using an AGI ID and the desired location. Once decided on, you will need to call <code>generateSVG</code> from the CreateSVGExpressionData class. This would require three inputs:
+            <blockquote>
+                <code>
+                    /** <br />
+                      * Create and generate an SVG based on the desired tissue expression locus <br />
+                      * @param {String} svgName Name of the SVG file without the .svg at the end <br />
+                      * @param {String} locus The AGI ID (example: AT3G24650) <br />
+                      * @param {String} desiredDOMid The desired DOM location or if kept empty, returns the string version of the output <br />
+                      * @returns {String} If no desiredDOMid is given, returns the string version of the output instead <br />
+                      */ <br />
+                      generateSVG(svgName, locus, desiredDOMid)
+                </code>
+            </blockquote>
+            To see all options of tissues that can be called, you can look at the available SVGs for the ePlant Plant eFP at <a href="https://github.com/BioAnalyticResource/ePlant_Plant_eFP/tree/master/compendiums" target="_blank" rel="noopener noreferrer" style="color:turquoise">'./compendiums'</a>.
+            <br /><br />
+            To convert a gene alias to an AGI ID, you can use the BAR's <a href='https://bar.utoronto.ca/intelligent-agent/' target="_blank" rel="noopener noreferrer" style="color:turquoise">Intelligent Agent</a>.
+            <br /><br />
+            The final required parameter is a required DOM location for the tissue expression visualizer to be placed. In this HTML, we have an example DOM with an ID of <code>exampleDOM</code>. If you wish to have the visual output to be returned as a string, keep this parameter empty. 
+            <br /><br />
+            Try it out with the following:
+            <br />
+            <select id="selectSVG"></select>
+            <input id="selectLocus" value="AT2G36270" placeholder="AT2G36270"></input>
+            <button id="loadTissueExpression" onclick="createSVGExpressionData.generateSVG(document.getElementById('selectSVG').value, document.getElementById('selectLocus').value, 'exampleDOM');">Load tissue expression</button>
+        </p>
+    </div>
+    <div id="exampleDOM" style="background-color: white;">
+
+    </div>
+    <script src="../tissueExpressionBAR.min.js"></script>
+    <script>
+        let agiList = [];
+        function FindSVGOptions() {
+            const xhr = new XMLHttpRequest();
+            let url = '../data/SampleData.json';
+
+            xhr.responseType = 'json';
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    let response = xhr.response;
+                    agiList = Object.keys(response);
+                    FillSVGOptions();
+                };
+            };
+
+            xhr.open('GET', url, true);
+            xhr.send();
+        };
+        function FillSVGOptions() {
+            // Fill SVG list
+            setTimeout(function () {
+                var select = document.getElementById("selectSVG");
+                // Create SVG options as a dropdown list
+                for (var i = 0; i < agiList.length; i++) {
+                    var opt = agiList[i];
+                    var el = document.createElement("option");
+                    el.textContent = opt;
+                    el.value = opt;
+                    select.appendChild(el);
+                }
+            }, 100);
+        }
+        FindSVGOptions();
+    </script>
+</body>

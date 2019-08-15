@@ -4,9 +4,11 @@ The ePlant Plant eFP is a tissue expression API provided by the [Bio-Analytic Re
 
 ## Getting Started
 
-To use the ePlant Plant eFP, you will be required to either call the [tissueExpressionBAR.js](tissueExpressionBAR.js) from our hosted location (https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/tissueExpressionBAR.min.js) or download the files locally (including the tissueExpressionBAR.js, compendiums and data). 
+To use the ePlant Plant eFP, you will be required to either call the [tissueExpressionBAR.js](tissueExpressionBAR.js) from our hosted location (https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/tissueExpressionBAR.min.js) or download the files locally (including the tissueExpressionBAR.js, compendiums and data) which can be done using the following: 
 
-Just an important note, the ePlant Plant eFP tissue expression API requires an online connection to run correctly.
+```git clone https://github.com/BioAnalyticResource/ePlant_Plant_eFP.git```
+
+Just an important note, the ePlant Plant eFP tissue expression API requires an online connection to run and display data correctly.
 
 ## How to use
 
@@ -20,6 +22,8 @@ createSVGExpressionData.generateSVG('AbioticStress', 'AT3G24650', 'desiredDOM');
 ```
 
 This will display the visualized and coloured tissue expression data within the desired location. 
+
+Instructions with an example can be found here: [https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/example/index.html](https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/example/index.html) (or in the example's [index.html](./example/index.html)).
 
 ## Browser Compatibilities 
 
@@ -43,5 +47,5 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 ## Authors
 
 * Alexander Sullivan - [GitHub](https://github.com/ASully), [Twitter](https://twitter.com/alexjsully), [ORCiD](https://orcid.org/0000-0002-4463-4473), [LinkedIn](https://www.linkedin.com/in/alexanderjsullivan/)
-* Asher Pasha - [Github](https://github.com/asherpasha), [ORCiD](https://orcid.org/0000-0002-9315-0520)
-* Nicholas J. Provart - [Github](https://github.com/BioAnalyticResource), [Twitter](https://twitter.com/BAR_PlantBio), [Website](http://bar.utoronto.ca)
+* Asher Pasha - [Github](https://github.com/asherpasha), [Twitter](https://twitter.com/AsherPasha), [ORCiD](https://orcid.org/0000-0002-9315-0520)
+* Nicholas J. Provart - [Github](https://github.com/BioAnalyticResource), [Twitter](https://twitter.com/BAR_PlantBio), [Website](https://bar.utoronto.ca)
