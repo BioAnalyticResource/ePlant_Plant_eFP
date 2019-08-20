@@ -73,7 +73,7 @@ class RetrieveOnlineBARData {
             sampleDB = sampleInfo['db'];
 
             // If a database is available for this SVG, then find sample ID information
-            if (sampleDB != undefined) {
+            if (sampleDB !== undefined) {
                 sampleSubunits = Object.keys(sampleInfo.sample);
                 sampleIDList = [];
                 for (var sK = 0; sK < sampleSubunits.length; sK++) {
@@ -103,7 +103,7 @@ class RetrieveOnlineBARData {
         url += 'samples=[';
         for (var i = 0; i < samples.length; i++) {
            url += '"' + samples[i] + '"';
-           if (i != samples.length-1) {
+           if (i !== samples.length-1) {
                url += ',';
            };
         };
@@ -117,7 +117,7 @@ class RetrieveOnlineBARData {
                 var response = xhr.response;
                 if (this.eFPObjects === undefined) {
                     this.eFPObjects = {};
-                }
+                };
 
                 // Create SVG in dictionary
                 if (this.eFPObjects[svg] === undefined) {
@@ -200,7 +200,7 @@ class InteractiveSVGData {
                     let expressionResponse = xhr.response;
                     this.expressionValues = expressionResponse;
 
-                    if (expressionResponse['locus'][locus] != undefined) {
+                    if (expressionResponse['locus'][locus] !== undefined) {
                         // If locus exists, then add to topExpressionValues
                         this.topExpressionValues = expressionResponse['locus'][locus];
                     } else {
@@ -215,7 +215,7 @@ class InteractiveSVGData {
         } else {
             // If already called, do not recall this data
             let expressionResponse = this.expressionValues;
-            if (expressionResponse['locus'][locus] != undefined) {
+            if (expressionResponse['locus'][locus] !== undefined) {
                 // If locus exists, then add to topExpressionValues
                 this.topExpressionValues = expressionResponse['locus'][locus];
             } else {
@@ -229,7 +229,6 @@ class InteractiveSVGData {
 
 let existingStrokeWidths = {};
 let existingStrokeColours = {};
-let expressionValues = undefined;
 /**
  * Add details to an SVG or SVG-subunit including: hover and outline
  * @param {String} elementID Which SVG or SVG-subunit is being found and edited
@@ -268,7 +267,7 @@ function addTissueMetadata(elementID) {
                     existingStrokeColours[elementID];
                 };
                 // Making stroke width thicker
-                if ((existingStrokeWidth * increaseStrokeWidthBy) < 10 && (existingStrokeWidth * increaseStrokeWidthBy) != 0) {
+                if ((existingStrokeWidth * increaseStrokeWidthBy) < 10 && (existingStrokeWidth * increaseStrokeWidthBy) !== 0) {
                     svgPartChildren[s].setAttribute('stroke-width', (existingStrokeWidth * increaseStrokeWidthBy));
                     svgPartChildren[s].setAttribute('stroke', '#000000');
                 } else {
@@ -280,11 +279,11 @@ function addTissueMetadata(elementID) {
         };
     };
     if (svgDetailsAdded === false || svgPartChildren.length <= 0 || svgPartChildren === null) {
-        var existingStrokeWidth = svgPart.getAttribute('stroke-width');
+        existingStrokeWidth = svgPart.getAttribute('stroke-width');
         if (existingStrokeWidth === null || existingStrokeWidth === undefined) {
             existingStrokeWidth = 0;
         };
-        var existingStrokeColour = svgPart.getAttribute('stroke');
+        existingStrokeColour = svgPart.getAttribute('stroke');
         if (existingStrokeColour === null || existingStrokeColour === undefined) {
             existingStrokeColour = 'none';
         };
@@ -297,7 +296,7 @@ function addTissueMetadata(elementID) {
             existingStrokeColours[elementID];
         };
         // Making stroke width thicker
-        if ((existingStrokeWidth * increaseStrokeWidthBy) < 10 && (existingStrokeWidth * increaseStrokeWidthBy) != 0) {
+        if ((existingStrokeWidth * increaseStrokeWidthBy) < 10 && (existingStrokeWidth * increaseStrokeWidthBy) !== 0) {
             svgPart.setAttribute('stroke-width', (existingStrokeWidth * increaseStrokeWidthBy));
             svgPart.setAttribute('stroke', '#000000');
         } else {
@@ -359,18 +358,18 @@ class CreateSVGExpressionData {
         this.retrieveOnlineBARData = new RetrieveOnlineBARData();
         this.interactiveSVGData = new InteractiveSVGData();
         // Local for this class
-        this.desiredDOMid;
+        this.desiredDOMid = '';
         // createSVGValues
         this.clickList = [];
         this.svgValues = {};
-        this.svgMax;
-        this.svgMin;
-        this.svgMaxAverage;
-        this.svgMaxAverageSample;
-        this.svgMinAverage;
-        this.svgMinAverageSample;
+        this.svgMax = 0;
+        this.svgMin = 0;
+        this.svgMaxAverage = 0;
+        this.svgMaxAverageSample = '';
+        this.svgMinAverage = 0;
+        this.svgMinAverageSample = '';
         // Store object name:
-        this.svgObjectName;
+        this.svgObjectName = '';
         // Start or finished colouring:
         this.finishedColouring = false;
     };
@@ -396,7 +395,7 @@ class CreateSVGExpressionData {
         // Wait for SVG to load
         var svgLoaded = false;
         while (svgLoaded === false) {
-            if (targetDOMRegion.innerHTML != '') {
+            if (targetDOMRegion.innerHTML !== '') {
                 // End while loop
                 svgLoaded = true;
 
@@ -606,7 +605,7 @@ class CreateSVGExpressionData {
         var childElements;
         if (svgObject.getElementById(svgSubunit) === null || svgObject.getElementById(svgSubunit).childNodes === null || svgObject.getElementById(svgSubunit) === undefined || svgObject.getElementById(svgSubunit).childNodes === undefined) {
             setTimeout(function() {
-                if (svgObject.getElementById(svgSubunit).childNodes != null || svgObject.getElementById(svgSubunit).childNodes != undefined) {
+                if (svgObject.getElementById(svgSubunit).childNodes !== null || svgObject.getElementById(svgSubunit).childNodes !== undefined) {
                     childElements = svgObject.getElementById(svgSubunit).childNodes;
                 };
             }, 500);
@@ -633,9 +632,7 @@ class CreateSVGExpressionData {
             removeTissueMetadata(this.id);
         });
         // Adding details about sub-tissue:
-        var expressionLevel = expressionLevel;
         svgObject.getElementById(svgSubunit).setAttribute("data-expressionValue", expressionLevel);
-        var sampleSize = sampleSize;
         svgObject.getElementById(svgSubunit).setAttribute("data-sampleSize", sampleSize);
         // Add tooltip/title on hover
         var title = document.createElementNS("http://www.w3.org/2000/svg","title");
@@ -654,7 +651,7 @@ class CreateSVGExpressionData {
                     removeTissueMetadata(this.id);
                 });
                 // Adding colour
-                var childElements = svgObject.getElementById(duplicateShoot[dupS]).childNodes;
+                childElements = svgObject.getElementById(duplicateShoot[dupS]).childNodes;
                 if (childElements.length > 0) {
                     for (var c = 0; c < childElements.length; c++) {
                         if (childElements[c].nodeName === 'path') {           
@@ -665,7 +662,6 @@ class CreateSVGExpressionData {
                     svgObject.getElementById(duplicateShoot[dupS]).setAttribute("fill", colour);
                 };                    
                 // Add tooltip/title on hover
-                var title = document.createElementNS("http://www.w3.org/2000/svg","title");
                 title.textContent = duplicateShoot[dupS] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
                 svgObject.getElementById(duplicateShoot[dupS]).appendChild(title)
             };
@@ -679,7 +675,7 @@ class CreateSVGExpressionData {
                 svgObject.getElementById(duplicateRoot[dupR]).addEventListener('mouseleave', function(event) {
                     removeTissueMetadata(this.id);
                 });
-                var childElements = svgObject.getElementById(duplicateRoot[dupR]).childNodes;
+                childElements = svgObject.getElementById(duplicateRoot[dupR]).childNodes;
                 // Adding colour
                 if (childElements.length > 0) {
                     for (var c = 0; c < childElements.length; c++) {
@@ -691,7 +687,6 @@ class CreateSVGExpressionData {
                     svgObject.getElementById(duplicateRoot[dupR]).setAttribute("fill", colour);
                 };                 
                 // Add tooltip/title on hover
-                var title = document.createElementNS("http://www.w3.org/2000/svg","title");
                 title.textContent = duplicateRoot[dupR] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
                 svgObject.getElementById(duplicateRoot[dupR]).appendChild(title)
             };
@@ -704,12 +699,12 @@ class CreateSVGExpressionData {
      * @returns {String} Hex-code colour
      */
     percentageToColour(percentage) {
-        var percentage = parseInt(percentage);
+        var percentageInt = parseInt(percentage);
 
         // From 0% to 100% as integers 
         var colourList = ['#ffff00','#fffd00','#fffc00','#fff900','#fff800','#fff600','#fff500','#fff300','#fff200','#fff000','#ffee00','#ffec00','#ffeb00','#ffe800','#ffe700','#ffe600','#ffe300','#ffe100','#ffe000','#ffdf00','#ffdd00','#ffdb00','#ffda00','#ffd800','#ffd600','#ffd300','#ffd200','#ffd000','#ffcf00','#ffcc00','#ffcb00','#ffc900','#ffc700','#ffc500','#ffc300','#ffc300','#ffc000','#ffbf00','#ffbd00','#ffbb00','#ffb900','#ffb800','#ffb500','#ffb300','#ffb200','#ffb000','#ffad00','#ffac00','#ffa900','#ffa800','#ffa600','#ffa400','#ffa200','#ffa100','#ff9e00','#ff9c00','#ff9a00','#ff9900','#ff9600','#ff9400','#ff9300','#ff9000','#ff8f00','#ff8c00','#ff8900','#ff8700','#ff8600','#ff8300','#ff8200','#ff7f00','#ff7c00','#ff7b00','#ff7800','#ff7600','#ff7300','#ff7100','#ff6e00','#ff6c00','#ff6900','#ff6700','#ff6500','#ff6100','#ff5e00','#ff5c00','#ff5900','#ff5600','#ff5300','#ff5000','#ff4d00','#ff4900','#ff4600','#ff4200','#ff3d00','#ff3a00','#ff3400','#ff3000','#ff2a00','#ff2400','#ff1c00','#ff1100','#ff0000'];
 
-        return (colourList[percentage]);
+        return (colourList[percentageInt]);
     };
 
     /**
