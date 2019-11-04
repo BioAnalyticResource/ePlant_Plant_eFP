@@ -54,7 +54,7 @@
         let agiList = [];
         function FindSVGOptions() {
             const xhr = new XMLHttpRequest();
-            let url = '../data/SampleData.json';
+            let url = '../data/SampleData.min.json';
 
             xhr.responseType = 'json';
             xhr.onreadystatechange = () => {
@@ -79,9 +79,9 @@
                     el.textContent = opt;
                     el.value = opt;
                     select.appendChild(el);
-                }
+                };
             }, 100);
-        }
+        };
         FindSVGOptions();
     </script>
 </body>

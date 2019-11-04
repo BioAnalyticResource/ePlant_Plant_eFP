@@ -24,7 +24,7 @@ class RetrieveOnlineBARData {
     loadSampleData(svgName, locus, continueForward = true) {
         if (this.sampleData["AbioticStress"] === undefined) {
             let xhr = new XMLHttpRequest();
-            let url = 'https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/data/SampleData.json';
+            let url = 'https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/data/SampleData.min.json';
     
             xhr.responseType = 'json';
             xhr.onreadystatechange = () => {
@@ -182,6 +182,7 @@ class RetrieveOnlineBARData {
 class InteractiveSVGData {
     constructor() {
         this.topExpressionValues = {};
+        this.expressionValues = {};
     };
 
     /**
@@ -192,7 +193,7 @@ class InteractiveSVGData {
         // If never been called before
         if (this.expressionValues === undefined) {
             let xhr = new XMLHttpRequest();
-            let url = 'https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/data/topExpressionValues.json';
+            let url = 'https://bar.utoronto.ca/~asullivan/webservices/max_expression/get_max_expression.php?locus=' + locus;
     
             xhr.responseType = 'json';
             xhr.onreadystatechange = () => {
@@ -200,9 +201,9 @@ class InteractiveSVGData {
                     let expressionResponse = xhr.response;
                     this.expressionValues = expressionResponse;
 
-                    if (expressionResponse['locus'][locus] !== undefined) {
+                    if (expressionResponse['sources'][0] !== undefined) {
                         // If locus exists, then add to topExpressionValues
-                        this.topExpressionValues = expressionResponse['locus'][locus];
+                        this.topExpressionValues = expressionResponse['sources'][0];
                     } else {
                         // If does not, add error to topExpressionValues
                         this.topExpressionValues['error'] = 'No data for ' + locus;
@@ -212,17 +213,7 @@ class InteractiveSVGData {
     
             xhr.open('GET', url);
             xhr.send();  
-        } else {
-            // If already called, do not recall this data
-            let expressionResponse = this.expressionValues;
-            if (expressionResponse['locus'][locus] !== undefined) {
-                // If locus exists, then add to topExpressionValues
-                this.topExpressionValues = expressionResponse['locus'][locus];
-            } else {
-                // If does not, add error to topExpressionValues
-                this.topExpressionValues['error'] = 'No data for ' + locus;
-            };
-        };        
+        };       
     };
 };
 
@@ -465,7 +456,37 @@ class CreateSVGExpressionData {
                 this.svgValues[svgSubunits[n]]['rawValues'].push(svgDataObject[svgSubunits[n]][sampleValues[v]][locus]);
             };
         };
-        this.findMaxAndMin(whichSVG, svgSubunits);
+        this.findExpressionValues(whichSVG, svgSubunits);
+    };
+
+    /**
+     * Calculate the functional standard deviation
+     * Modified from https://www.geeksforgeeks.org/php-program-find-standard-deviation-array/
+     * @param {Array} numbers An array of numbers that the standard deviation will be found for
+     * @return sd Standard deviation
+     */
+    standardDeviationCalc(numbers) {
+        var sd = 0;
+
+        var num_of_elements = numbers.length; 
+
+        if (num_of_elements >= 1) {
+            var variance = 0.0; 
+          
+            var number_sum = 0;
+            for (var i = 0; i < num_of_elements; i++) {
+                number_sum += numbers[i];
+            };
+            var average = number_sum/num_of_elements;
+            
+            for (var x = 0; x < num_of_elements; x++) {
+                variance += (Math.pow((numbers[x] - average), 2));
+            };
+
+            sd = Math.sqrt(variance/num_of_elements);
+        };
+        
+        return sd; 
     };
 
     /**
@@ -473,7 +494,7 @@ class CreateSVGExpressionData {
      * @param {String} whichSVG Name of the SVG file without the .svg at the end
      * @param {Array} svgSubunits A list containing all desired SVG subunits to be interacted with
      */
-    findMaxAndMin(whichSVG, svgSubunits) {
+    findExpressionValues(whichSVG, svgSubunits) {
         // Reset variables 
         this.svgMax = undefined;
         this.svgMin = undefined;
@@ -512,6 +533,7 @@ class CreateSVGExpressionData {
                     this.svgMin = minValue;
                 };
             };
+
             // Now for averages:
             if (this.svgMaxAverage === undefined) {
                 this.svgMaxAverage = averageValues;
@@ -531,13 +553,53 @@ class CreateSVGExpressionData {
                     this.svgMinAverageSample = svgSubunits[i];
                 };
             };
-
             // Add to value's dictionary:
             // Create SVG subunit in dictionary
             if (this.svgValues[svgSubunits[i]] === undefined) {
                 this.svgValues[svgSubunits[i]] = {};
             };
             this.svgValues[svgSubunits[i]]['average'] = averageValues;
+            this.svgValues[svgSubunits[i]]['sd'] = this.standardDeviationCalc(numValues);
+
+            // Find control value
+            var controlData = this.retrieveOnlineBARData.sampleData[whichSVG];
+            var controlKeys = Object.keys(controlData["controlComparison"]);
+            if (controlKeys.includes(svgSubunits[i]) === false) {
+                var controlSampleName = '';
+                for (var c = 0; c < controlKeys.length; c++) {
+                    if (controlData["controlComparison"][controlKeys[c]].includes(svgSubunits[i])) {
+                        controlSampleName = controlKeys[c];
+                    }
+                };
+
+                if (this.svgValues[controlSampleName] && this.svgValues[controlSampleName]["rawValues"]) {
+                    // Calculate control average:
+                    var controlValues = this.svgValues[controlSampleName]["rawValues"];
+                    var controlSum = 0;
+                    for (var cv = 0; cv < controlValues.length; cv++) {
+                        controlSum += parseFloat(controlValues[cv]);
+                    };
+                    var controlAverage = (controlSum / controlValues.length);
+
+                    var inductionValue = 0;
+                    var reductionValue = 0;
+                    if (controlAverage !== null && controlAverage > 0 && averageValues > 0) {
+                        if (averageValues > controlAverage) {
+                            inductionValue = averageValues - controlAverage;
+                            this.svgValues[svgSubunits[i]]['inductionValue'] = inductionValue;
+                        } else if (controlAverage > averageValues) {
+                            reductionValue = controlAverage - averageValues;
+                            this.svgValues[svgSubunits[i]]['reductionValue'] = reductionValue;
+                        };
+
+                        var expressionRatio = averageValues / controlAverage;
+                        this.svgValues[svgSubunits[i]]['expressionRatio'] = expressionRatio;
+                        
+                        this.svgValues[svgSubunits[i]]['controlSampleName'] = controlSampleName;
+                        this.svgValues[svgSubunits[i]]['controlAverage'] = controlAverage;
+                    };
+                };
+            };
         };
 
         this.colourSVGs(whichSVG, svgSubunits);
@@ -589,6 +651,7 @@ class CreateSVGExpressionData {
      */
     colourSVGSubunit(whichSVG, svgSubunit, colour, expressionLevel, sampleSize = 1) {
         let svgObject = document.getElementById(whichSVG + '_object').getSVGDocument();
+        var expressionData = createSVGExpressionData["svgValues"][svgSubunit];
         
         // Check for duplicate error:
         var duplicateShoot = ['Control_Shoot_0_Hour', 'Cold_Shoot_0_Hour', 'Osmotic_Shoot_0_Hour', 'Salt_Shoot_0_Hour', 'Drought_Shoot_0_Hour', 'Genotoxic_Shoot_0_Hour', 'Oxidative_Shoot_0_Hour', 'UV-B_Shoot_0_Hour', 'Wounding_Shoot_0_Hour', 'Heat_Shoot_0_Hour'];
@@ -634,9 +697,32 @@ class CreateSVGExpressionData {
         // Adding details about sub-tissue:
         svgObject.getElementById(svgSubunit).setAttribute("data-expressionValue", expressionLevel);
         svgObject.getElementById(svgSubunit).setAttribute("data-sampleSize", sampleSize);
+        svgObject.getElementById(svgSubunit).setAttribute("data-standardDeviation", expressionData['sd']);
+        svgObject.getElementById(svgSubunit).setAttribute("data-sampleSize", sampleSize);
+        
         // Add tooltip/title on hover
         var title = document.createElementNS("http://www.w3.org/2000/svg","title");
-        title.textContent = svgSubunit + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
+        title.textContent = svgSubunit + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize + '\nStandardDeviation: ' + parseFloat(expressionData['sd']).toFixed(3);
+
+        // Add rest of titles and tooltip/title
+        var inducReduc = false;
+        if (expressionData['inductionValue']) {
+            svgObject.getElementById(svgSubunit).setAttribute("data-inductionValue", expressionData['inductionValue']);
+            title.textContent += '\nInduction Value: ' + parseFloat(expressionData['inductionValue']).toFixed(3);
+            inducReduc = true;
+        } else if (expressionData['reductionValue']) {
+            svgObject.getElementById(svgSubunit).setAttribute("data-reductionValue", expressionData['reductionValue']);
+            title.textContent += '\nReduction Value: ' + parseFloat(expressionData['ReductionValue']).toFixed(3);
+            inducReduc = true;
+        };
+        if (inducReduc === true) {
+            svgObject.getElementById(svgSubunit).setAttribute("data-expressionRatio", expressionData['expressionRatio']);
+            title.textContent += '\nExpression Ratio: ' + parseFloat(expressionData['expressionRatio']).toFixed(3);
+            svgObject.getElementById(svgSubunit).setAttribute("data-controlSampleName", expressionData['controlSampleName']);
+            title.textContent += '\nControl Sample Name: ' + expressionData['controlSampleName'];
+            svgObject.getElementById(svgSubunit).setAttribute("data-controlAverage", expressionData['controlAverage']);
+            title.textContent += '\nControl Expression: ' + parseFloat(expressionData['controlAverage']).toFixed(3);
+        };
         svgObject.getElementById(svgSubunit).appendChild(title);
 
         // Correcting duplicate error:
