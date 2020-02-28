@@ -835,6 +835,8 @@ class CreateSVGExpressionData {
      * @param {String} svgName Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
      * @param {String} desiredDOMid The desired DOM location or if kept empty, returns the string version of the output
+     * @param {Boolean} includeDropdownAll true = include a html dropdown/select of all available SVGs/samples, false = don't
+     * @param {Boolean} includeMaxDropdown true = include a html dropdown/select of the highest/lowest expression SVGs/samples, false = don't
      * @returns {String} If no desiredDOMid is given, returns the string version of the output instead
      */
     generateSVG(svgName, locus, desiredDOMid, includeDropdownAll = false, includeMaxDropdown = false) {   
