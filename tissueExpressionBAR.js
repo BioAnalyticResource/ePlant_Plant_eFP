@@ -13,6 +13,7 @@ class RetrieveOnlineBARData {
         this.eFPObjects = {};
         // loadSampleData
         this.sampleData = {};
+        this.sampleOptions = [];
     };
 
     /**
@@ -58,6 +59,7 @@ class RetrieveOnlineBARData {
 
         // Create variables that will be used in retrieveSampleData
         var sampleDataKeys = Object.keys(this.sampleData); // All possible SVGs 
+        this.sampleOptions = sampleDataKeys;
         var sampleDB = ''; // The sample's datasource
         var sampleIDList = []; // List of all of the sample's IDs
         var sampleSubunits = []; // List of SVG's subunits
@@ -191,7 +193,7 @@ class InteractiveSVGData {
      */
     retrieveTopExpressionValues(locus = 'AT3G24650') {
         // If never been called before
-        if (this.expressionValues === undefined) {
+        if (Object.keys(this.expressionValues).length === 0 || this.expressionValues === undefined) {
             let xhr = new XMLHttpRequest();
             let url = 'https://bar.utoronto.ca/~asullivan/webservices/max_expression/get_max_expression.php?locus=' + locus;
     
@@ -230,14 +232,16 @@ function addTissueMetadata(elementID) {
         elementID = elementID + '_outline';
     };
     // Retrieve document objects:
-    var svgDoc = document.getElementById(createSVGExpressionData.svgObjectName).getSVGDocument();
-    var svgPart = svgDoc.getElementById(elementID);
-    // Add thicker boarder:
-    var svgPartChildren = svgPart.childNodes;
+    var svgDoc, svgPart, svgPartChildren;
+    if (document.getElementById(createSVGExpressionData.svgObjectName) && document.getElementById(createSVGExpressionData.svgObjectName).getSVGDocument()) {
+        svgDoc = document.getElementById(createSVGExpressionData.svgObjectName).getSVGDocument();
+        svgPart = svgDoc.getElementById(elementID);
+        svgPartChildren = svgPart.childNodes;
+    };
     var increaseStrokeWidthBy = 4;
     // use svgDetailsAdded to double check if been outlined or not
     var svgDetailsAdded = false;
-    if (svgPartChildren.length > 0) {
+    if (svgDoc && svgPartChildren && svgPartChildren.length > 0) {
         for (var s = 0; s < svgPartChildren.length; s++) {
             if (svgPartChildren[s].nodeName === 'path') {
                 // Storing stroke widths
@@ -370,18 +374,48 @@ class CreateSVGExpressionData {
      * @param {String} svgName Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
      */
-    addSVGtoDOM(svgName, locus) {
-        // Call SVG file
-        var urlSVG = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/compendiums/' + svgName + '.min.svg';
+    addSVGtoDOM(svgName, locus, includeDropdownAll = false, includeMaxDropdown = false) {
+        var svgUse = 'Klepikova';
+        var appendSVG = '';
+        if (svgName !== '') {
+            svgUse = svgName;
+        };
 
         // Empty target region
         var targetDOMRegion = document.getElementById(this.desiredDOMid);
         targetDOMRegion.innerHTML = '';
 
+        // Add dropdown list of all samples to document:
+        if (includeDropdownAll && this.retrieveOnlineBARData.sampleOptions) {
+            appendSVG += 'Select SVG to display: <select onchange="createSVGExpressionData.generateSVG(this.value.toString(), \'' + locus + '\', \'' + this.desiredDOMid + '\', ' + includeDropdownAll + ', ' + includeMaxDropdown + ')" id="sampleOptions" value="' + svgName + '">';
+            var sampleOptions = this.retrieveOnlineBARData.sampleOptions;
+            for (var i = 0; i < sampleOptions.length; i++) {
+                appendSVG += '<option value="' + sampleOptions[i] + '">' + sampleOptions[i] + '</option>';
+            };
+            appendSVG += '</select></br>';
+        };
+
+        // Add max dropdown list to document:
+        if (includeMaxDropdown && this.interactiveSVGData.expressionValues && this.interactiveSVGData.expressionValues['sources']) {
+            appendSVG += 'Select top expression to display: <select onchange="createSVGExpressionData.generateSVG(this.value.toString(), \'' + locus + '\', \'' + this.desiredDOMid + '\', ' + includeDropdownAll + ', ' + includeMaxDropdown + ')" id="topExpressionOptions">';
+            var expressionValues = this.interactiveSVGData.expressionValues['sources'][0];
+            var topList = Object.keys(expressionValues);
+            for (var i = 0; i < topList.length; i++) {
+                if (topList[i].length > 3 && topList[i].substring(0, 3).toLowerCase() !== 'top') {
+                    appendSVG += '<option value="' + expressionValues[topList[i]]['Compendium'] + '">' + topList[i] + ': ' + expressionValues[topList[i]]['Compendium'] + '</option>';
+                };
+            };
+            appendSVG += '</select></br>';
+        };
+
+        // Create call for SVG file
+        var urlSVG = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/compendiums/' + svgUse + '.min.svg';
+
         // Append SVG to document
-        var appendSVG = '<object id="' + svgName + '_object" data="' + urlSVG + '" type="image/svg+xml"></object>';
+        appendSVG += '<b>' + svgName + '</b></br>';
+        appendSVG += '<object id="' + svgUse + '_object" data="' + urlSVG + '" type="image/svg+xml"></object>';
         targetDOMRegion.innerHTML = appendSVG;
-        this.svgObjectName = svgName + '_object';
+        this.svgObjectName = svgUse + '_object';
 
         // Wait for SVG to load
         var svgLoaded = false;
@@ -391,12 +425,12 @@ class CreateSVGExpressionData {
                 svgLoaded = true;
 
                 // Change shape of SVG
-                let svgObject = document.getElementById(svgName + '_object');
+                let svgObject = document.getElementById(svgUse + '_object');
                 svgObject.style = 'width: 100%; height: 100%; left: 0px; top: 0px; display: inline-block;';
 
                 // Check locus to see if it matches 
                 let timer = setTimeout(() => {
-                    this.createLocusMatch(svgName, locus);
+                    this.createLocusMatch(svgUse, locus);
                 }, 200);
             };
         };
@@ -651,130 +685,133 @@ class CreateSVGExpressionData {
      */
     colourSVGSubunit(whichSVG, svgSubunit, colour, expressionLevel, sampleSize = 1) {
         let svgObject = document.getElementById(whichSVG + '_object').getSVGDocument();
-        var expressionData = createSVGExpressionData["svgValues"][svgSubunit];
+        if (svgObject && svgObject.getElementById(svgSubunit)) {
+            var expressionData = createSVGExpressionData["svgValues"][svgSubunit];
         
-        // Check for duplicate error:
-        var duplicateShoot = ['Control_Shoot_0_Hour', 'Cold_Shoot_0_Hour', 'Osmotic_Shoot_0_Hour', 'Salt_Shoot_0_Hour', 'Drought_Shoot_0_Hour', 'Genotoxic_Shoot_0_Hour', 'Oxidative_Shoot_0_Hour', 'UV-B_Shoot_0_Hour', 'Wounding_Shoot_0_Hour', 'Heat_Shoot_0_Hour'];
-        var duplicateRoot = ['Control_Root_0_Hour', 'Cold_Root_0_Hour', 'Osmotic_Root_0_Hour', 'Salt_Root_0_Hour', 'Drought_Root_0_Hour', 'Genotoxic_Root_0_Hour', 'Oxidative_Root_0_Hour', 'UV-B_Root_0_Hour', 'Wounding_Root_0_Hour', 'Heat_Root_0_Hour'];
-        var isdupShoot = false;
-        var isdupRoot = false;
-        if (duplicateShoot.includes(svgSubunit)) {
-            isdupShoot = true;
-        } else if (duplicateRoot.includes(svgSubunit)) {
-            isdupRoot = true;
-        };
-
-        // This is used to determine if the SVG should be automatically coloured or manually done
-        var childElements;
-        if (svgObject.getElementById(svgSubunit) === null || svgObject.getElementById(svgSubunit).childNodes === null || svgObject.getElementById(svgSubunit) === undefined || svgObject.getElementById(svgSubunit).childNodes === undefined) {
-            setTimeout(function() {
-                if (svgObject.getElementById(svgSubunit).childNodes !== null || svgObject.getElementById(svgSubunit).childNodes !== undefined) {
-                    childElements = svgObject.getElementById(svgSubunit).childNodes;
-                };
-            }, 500);
-        } else {
-            childElements = svgObject.getElementById(svgSubunit).childNodes;
-        };
-        if (childElements.length > 0) {
-            for (var c = 0; c < childElements.length; c++) {
-                if (childElements[c].nodeName === 'path' || childElements[c].nodeName === 'g') {           
-                    childElements[c].setAttribute("fill", colour);       
-                };
+            // Check for duplicate error:
+            var duplicateShoot = ['Control_Shoot_0_Hour', 'Cold_Shoot_0_Hour', 'Osmotic_Shoot_0_Hour', 'Salt_Shoot_0_Hour', 'Drought_Shoot_0_Hour', 'Genotoxic_Shoot_0_Hour', 'Oxidative_Shoot_0_Hour', 'UV-B_Shoot_0_Hour', 'Wounding_Shoot_0_Hour', 'Heat_Shoot_0_Hour'];
+            var duplicateRoot = ['Control_Root_0_Hour', 'Cold_Root_0_Hour', 'Osmotic_Root_0_Hour', 'Salt_Root_0_Hour', 'Drought_Root_0_Hour', 'Genotoxic_Root_0_Hour', 'Oxidative_Root_0_Hour', 'UV-B_Root_0_Hour', 'Wounding_Root_0_Hour', 'Heat_Root_0_Hour'];
+            var isdupShoot = false;
+            var isdupRoot = false;
+            if (duplicateShoot.includes(svgSubunit)) {
+                isdupShoot = true;
+            } else if (duplicateRoot.includes(svgSubunit)) {
+                isdupRoot = true;
             };
-        } else {             
-            svgObject.getElementById(svgSubunit).setAttribute("fill", colour);
-        };        
-
-        // Add interactivity 
-        // Adding hover features:
-        svgObject.getElementById(svgSubunit).setAttribute("class", 'hoverDetails');
-        svgObject.getElementById(svgSubunit).addEventListener('mouseenter', function(event) {
-            addTissueMetadata(this.id);
-        });
-        svgObject.getElementById(svgSubunit).addEventListener('mouseleave', function(event) {
-            removeTissueMetadata(this.id);
-        });
-        // Adding details about sub-tissue:
-        svgObject.getElementById(svgSubunit).setAttribute("data-expressionValue", expressionLevel);
-        svgObject.getElementById(svgSubunit).setAttribute("data-sampleSize", sampleSize);
-        svgObject.getElementById(svgSubunit).setAttribute("data-standardDeviation", expressionData['sd']);
-        svgObject.getElementById(svgSubunit).setAttribute("data-sampleSize", sampleSize);
-        
-        // Add tooltip/title on hover
-        var title = document.createElementNS("http://www.w3.org/2000/svg","title");
-        title.textContent = svgSubunit + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize + '\nStandardDeviation: ' + parseFloat(expressionData['sd']).toFixed(3);
-
-        // Add rest of titles and tooltip/title
-        var inducReduc = false;
-        if (expressionData['inductionValue']) {
-            svgObject.getElementById(svgSubunit).setAttribute("data-inductionValue", expressionData['inductionValue']);
-            title.textContent += '\nInduction Value: ' + parseFloat(expressionData['inductionValue']).toFixed(3);
-            inducReduc = true;
-        } else if (expressionData['reductionValue']) {
-            svgObject.getElementById(svgSubunit).setAttribute("data-reductionValue", expressionData['reductionValue']);
-            title.textContent += '\nReduction Value: ' + parseFloat(expressionData['ReductionValue']).toFixed(3);
-            inducReduc = true;
-        };
-        if (inducReduc === true) {
-            svgObject.getElementById(svgSubunit).setAttribute("data-expressionRatio", expressionData['expressionRatio']);
-            title.textContent += '\nExpression Ratio: ' + parseFloat(expressionData['expressionRatio']).toFixed(3);
-            svgObject.getElementById(svgSubunit).setAttribute("data-controlSampleName", expressionData['controlSampleName']);
-            title.textContent += '\nControl Sample Name: ' + expressionData['controlSampleName'];
-            svgObject.getElementById(svgSubunit).setAttribute("data-controlAverage", expressionData['controlAverage']);
-            title.textContent += '\nControl Expression: ' + parseFloat(expressionData['controlAverage']).toFixed(3);
-        };
-        svgObject.getElementById(svgSubunit).appendChild(title);
-
-        // Correcting duplicate error:
-        if (isdupShoot) {
-            for (var dupS = 0; dupS < duplicateShoot.length; dupS++) {
-                // Add interactivity 
-                svgObject.getElementById(duplicateShoot[dupS]).setAttribute("class", 'hoverDetails');
-                svgObject.getElementById(duplicateShoot[dupS]).addEventListener('mouseenter', function(event) {
-                    addTissueMetadata(this.id);
-                });
-                svgObject.getElementById(duplicateShoot[dupS]).addEventListener('mouseleave', function(event) {
-                    removeTissueMetadata(this.id);
-                });
-                // Adding colour
-                childElements = svgObject.getElementById(duplicateShoot[dupS]).childNodes;
-                if (childElements.length > 0) {
-                    for (var c = 0; c < childElements.length; c++) {
-                        if (childElements[c].nodeName === 'path') {           
-                            childElements[c].setAttribute("fill", colour);
-                        };
+    
+            // This is used to determine if the SVG should be automatically coloured or manually done
+            var childElements;
+            if (svgObject.getElementById(svgSubunit) && svgObject.getElementById(svgSubunit).childNodes) {
+                childElements = svgObject.getElementById(svgSubunit).childNodes;
+            } else {
+                setTimeout(function() {
+                    if (svgObject.getElementById(svgSubunit) && svgObject.getElementById(svgSubunit).childNodes) {
+                        childElements = svgObject.getElementById(svgSubunit).childNodes;
                     };
-                } else {             
-                    svgObject.getElementById(duplicateShoot[dupS]).setAttribute("fill", colour);
-                };                    
-                // Add tooltip/title on hover
-                title.textContent = duplicateShoot[dupS] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
-                svgObject.getElementById(duplicateShoot[dupS]).appendChild(title)
+                }, 500);
             };
-        } else if (isdupRoot) {
-            for (var dupR = 0; dupR < duplicateRoot.length; dupR++) {
-                // Add interactivity 
-                svgObject.getElementById(duplicateRoot[dupR]).setAttribute("class", 'hoverDetails');
-                svgObject.getElementById(duplicateRoot[dupR]).addEventListener('mouseenter', function(event) {
-                    addTissueMetadata(this.id);
-                });
-                svgObject.getElementById(duplicateRoot[dupR]).addEventListener('mouseleave', function(event) {
-                    removeTissueMetadata(this.id);
-                });
-                childElements = svgObject.getElementById(duplicateRoot[dupR]).childNodes;
-                // Adding colour
-                if (childElements.length > 0) {
-                    for (var c = 0; c < childElements.length; c++) {
-                        if (childElements[c].nodeName === 'path') {           
-                            childElements[c].setAttribute("fill", colour);
-                        };
+    
+            if (childElements && childElements.length > 0) {
+                for (var c = 0; c < childElements.length; c++) {
+                    if (childElements[c].nodeName === 'path' || childElements[c].nodeName === 'g') {           
+                        childElements[c].setAttribute("fill", colour);       
                     };
-                } else {             
-                    svgObject.getElementById(duplicateRoot[dupR]).setAttribute("fill", colour);
-                };                 
-                // Add tooltip/title on hover
-                title.textContent = duplicateRoot[dupR] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
-                svgObject.getElementById(duplicateRoot[dupR]).appendChild(title)
+                };
+            } else if (svgObject && svgObject.getElementById(svgSubunit)) {             
+                svgObject.getElementById(svgSubunit).setAttribute("fill", colour);
+            };        
+    
+            // Add interactivity 
+            // Adding hover features:
+            svgObject.getElementById(svgSubunit).setAttribute("class", 'hoverDetails');
+            svgObject.getElementById(svgSubunit).addEventListener('mouseenter', function(event) {
+                addTissueMetadata(this.id);
+            });
+            svgObject.getElementById(svgSubunit).addEventListener('mouseleave', function(event) {
+                removeTissueMetadata(this.id);
+            });
+            // Adding details about sub-tissue:
+            svgObject.getElementById(svgSubunit).setAttribute("data-expressionValue", expressionLevel);
+            svgObject.getElementById(svgSubunit).setAttribute("data-sampleSize", sampleSize);
+            svgObject.getElementById(svgSubunit).setAttribute("data-standardDeviation", expressionData['sd']);
+            svgObject.getElementById(svgSubunit).setAttribute("data-sampleSize", sampleSize);
+            
+            // Add tooltip/title on hover
+            var title = document.createElementNS("http://www.w3.org/2000/svg","title");
+            title.textContent = svgSubunit + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize + '\nStandardDeviation: ' + parseFloat(expressionData['sd']).toFixed(3);
+    
+            // Add rest of titles and tooltip/title
+            var inducReduc = false;
+            if (expressionData['inductionValue']) {
+                svgObject.getElementById(svgSubunit).setAttribute("data-inductionValue", expressionData['inductionValue']);
+                title.textContent += '\nInduction Value: ' + parseFloat(expressionData['inductionValue']).toFixed(3);
+                inducReduc = true;
+            } else if (expressionData['reductionValue']) {
+                svgObject.getElementById(svgSubunit).setAttribute("data-reductionValue", expressionData['reductionValue']);
+                title.textContent += '\nReduction Value: ' + parseFloat(expressionData['ReductionValue']).toFixed(3);
+                inducReduc = true;
+            };
+            if (inducReduc === true) {
+                svgObject.getElementById(svgSubunit).setAttribute("data-expressionRatio", expressionData['expressionRatio']);
+                title.textContent += '\nExpression Ratio: ' + parseFloat(expressionData['expressionRatio']).toFixed(3);
+                svgObject.getElementById(svgSubunit).setAttribute("data-controlSampleName", expressionData['controlSampleName']);
+                title.textContent += '\nControl Sample Name: ' + expressionData['controlSampleName'];
+                svgObject.getElementById(svgSubunit).setAttribute("data-controlAverage", expressionData['controlAverage']);
+                title.textContent += '\nControl Expression: ' + parseFloat(expressionData['controlAverage']).toFixed(3);
+            };
+            svgObject.getElementById(svgSubunit).appendChild(title);
+    
+            // Correcting duplicate error:
+            if (isdupShoot) {
+                for (var dupS = 0; dupS < duplicateShoot.length; dupS++) {
+                    // Add interactivity 
+                    svgObject.getElementById(duplicateShoot[dupS]).setAttribute("class", 'hoverDetails');
+                    svgObject.getElementById(duplicateShoot[dupS]).addEventListener('mouseenter', function(event) {
+                        addTissueMetadata(this.id);
+                    });
+                    svgObject.getElementById(duplicateShoot[dupS]).addEventListener('mouseleave', function(event) {
+                        removeTissueMetadata(this.id);
+                    });
+                    // Adding colour
+                    childElements = svgObject.getElementById(duplicateShoot[dupS]).childNodes;
+                    if (childElements.length > 0) {
+                        for (var c = 0; c < childElements.length; c++) {
+                            if (childElements[c].nodeName === 'path') {           
+                                childElements[c].setAttribute("fill", colour);
+                            };
+                        };
+                    } else {             
+                        svgObject.getElementById(duplicateShoot[dupS]).setAttribute("fill", colour);
+                    };                    
+                    // Add tooltip/title on hover
+                    title.textContent = duplicateShoot[dupS] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
+                    svgObject.getElementById(duplicateShoot[dupS]).appendChild(title)
+                };
+            } else if (isdupRoot) {
+                for (var dupR = 0; dupR < duplicateRoot.length; dupR++) {
+                    // Add interactivity 
+                    svgObject.getElementById(duplicateRoot[dupR]).setAttribute("class", 'hoverDetails');
+                    svgObject.getElementById(duplicateRoot[dupR]).addEventListener('mouseenter', function(event) {
+                        addTissueMetadata(this.id);
+                    });
+                    svgObject.getElementById(duplicateRoot[dupR]).addEventListener('mouseleave', function(event) {
+                        removeTissueMetadata(this.id);
+                    });
+                    childElements = svgObject.getElementById(duplicateRoot[dupR]).childNodes;
+                    // Adding colour
+                    if (childElements.length > 0) {
+                        for (var c = 0; c < childElements.length; c++) {
+                            if (childElements[c].nodeName === 'path') {           
+                                childElements[c].setAttribute("fill", colour);
+                            };
+                        };
+                    } else {             
+                        svgObject.getElementById(duplicateRoot[dupR]).setAttribute("fill", colour);
+                    };                 
+                    // Add tooltip/title on hover
+                    title.textContent = duplicateRoot[dupR] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
+                    svgObject.getElementById(duplicateRoot[dupR]).appendChild(title)
+                };
             };
         };
     };
@@ -800,7 +837,7 @@ class CreateSVGExpressionData {
      * @param {String} desiredDOMid The desired DOM location or if kept empty, returns the string version of the output
      * @returns {String} If no desiredDOMid is given, returns the string version of the output instead
      */
-    generateSVG(svgName, locus, desiredDOMid) {   
+    generateSVG(svgName, locus, desiredDOMid, includeDropdownAll = false, includeMaxDropdown = false) {   
         // Reset variables:
         this.svgValues = {};
         this.svgMax = undefined;
@@ -812,12 +849,15 @@ class CreateSVGExpressionData {
         existingStrokeWidths = {};
         existingStrokeColours = {};
         this.finishedColouring = false;
+        this.includeDropdownAll = includeDropdownAll;
+        this.includeMaxDropdown = includeMaxDropdown;
         if (this.clickList.includes(svgName) === false) {
             this.clickList.push(svgName);
         };
         // Initiate scripts     
         this.desiredDOMid = desiredDOMid;
         this.retrieveOnlineBARData.loadSampleData(svgName, locus);
+        this.interactiveSVGData.retrieveTopExpressionValues(locus);
         this.updateChecker(svgName, locus);
     };
 
@@ -836,8 +876,7 @@ class CreateSVGExpressionData {
 
                 // Want to double check if not already been called or not
                 if (checkList.length === this.clickList.length) {
-                    this.addSVGtoDOM(svgName, locus);
-                    this.interactiveSVGData.retrieveTopExpressionValues(locus);
+                    this.addSVGtoDOM(svgName, locus, this.includeDropdownAll, this.includeMaxDropdown);
                 } else {
                     this.updateChecker(svgName, locus, newIt);
                 }
