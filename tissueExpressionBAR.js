@@ -23,7 +23,7 @@ class RetrieveOnlineBARData {
      * @param {Boolean} continueForward Continue forward with the generation of the tissue expression data
      */
     loadSampleData(svgName, locus, continueForward = true) {
-        if (this.sampleData["AbioticStress"] === undefined) {
+        if (Object.keys(this.sampleData).length === 0) {
             let xhr = new XMLHttpRequest();
             let url = 'https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/data/SampleData.min.json';
     
@@ -41,7 +41,7 @@ class RetrieveOnlineBARData {
             xhr.send();   
         };   
         
-        if (this.sampleData["AbioticStress"] && continueForward) {
+        if (Object.keys(this.sampleData).length > 0 && continueForward) {
             this.retrieveSampleData(svgName, locus);
         }; 
     };
@@ -84,7 +84,9 @@ class RetrieveOnlineBARData {
             };
 
             // Call plantefp.cgi webservice to retrieve information about the target tissue expression data
-            this.callPlantEFP(sampleDB, locus, sampleIDList, svgName, sampleOptions);
+            if (this.eFPObjects[svgName] === undefined) {
+                this.callPlantEFP(sampleDB, locus, sampleIDList, svgName, sampleOptions);
+            };
         };
     };    
 
@@ -104,10 +106,14 @@ class RetrieveOnlineBARData {
         url += 'id=' + locus + '&';
         url += 'samples=[';
         for (var i = 0; i < samples.length; i++) {
-           url += '"' + samples[i] + '"';
-           if (i !== samples.length-1) {
-               url += ',';
-           };
+            var sampleName = samples[i].trim();
+            sampleName = sampleName.replace(/\+/g, '%2B');
+            sampleName = sampleName.replace(/ /g, '%20');
+
+            url += '"' + sampleName + '"';
+            if (i !== samples.length-1) {
+                url += ',';
+            };
         };
         url += ']';
 
@@ -145,8 +151,8 @@ class RetrieveOnlineBARData {
 
                     // Create subunits element in dictionary     
                     var tempName = responseName;                
-                    tempName = responseName.replace(/\+/g, '%2B');
-                    tempName = tempName.replace(/ /g, '+');
+                    tempName = responseName.replace(/%2B/g, '+');
+                    tempName = tempName.replace(/%20/g, ' ');
                     tempName = tempName.trim();
                     for (var s = 0; s < subunitsList.length; s++) {  
                         if (sampleSubunits[subunitsList[s]].includes(tempName)) {
@@ -193,35 +199,108 @@ class InteractiveSVGData {
      */
     retrieveTopExpressionValues(locus = 'AT3G24650') {
         // If never been called before
-        if (Object.keys(this.expressionValues).length === 0 || this.expressionValues === undefined) {
-            let xhr = new XMLHttpRequest();
-            let url = 'https://bar.utoronto.ca/~asullivan/webservices/max_expression/get_max_expression.php?locus=' + locus;
-    
-            xhr.responseType = 'json';
-            xhr.onreadystatechange = () => {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    let expressionResponse = xhr.response;
-                    this.expressionValues = expressionResponse;
+        if (Object.keys(this.topExpressionValues).length === 0 || this.topExpressionValues === undefined) {
+            this.retrieveTopMicroarray(locus);
+            this.retrieveTopRNASeq(locus);
+        };       
+    };
 
-                    if (expressionResponse['sources'][0] !== undefined) {
-                        // If locus exists, then add to topExpressionValues
-                        this.topExpressionValues = expressionResponse['sources'][0];
-                    } else {
-                        // If does not, add error to topExpressionValues
-                        this.topExpressionValues['error'] = 'No data for ' + locus;
+    retrieveTopMicroarray(locus = 'AT3G24650') {
+        let xhr = new XMLHttpRequest();
+        let url = 'https://bar.utoronto.ca/expression_max_api/max_average';
+        let method = 'POST';
+        var sendHeaders = "application/json";
+        var postSend = {
+            'loci': [locus.toUpperCase()],
+            'method': 'Microarray'
+        };
+        postSend = JSON.stringify(postSend);
+
+        xhr.responseType = 'json';
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                let response = xhr.response;
+                if (response && response["wasSuccessful"] === true) {
+                    if (response['maxAverage']) {
+                        var tempMicroarray = {
+                            'microarray': {
+                                'maxAverage': response['maxAverage'][locus.toUpperCase()]
+                            }
+                        };
+
+                        if (response['standardDeviation']) {
+                            tempMicroarray['microarray']['standardDeviation'] = response['standardDeviation'][locus.toUpperCase()]
+                        };
+                        if (response['sample']) {
+                            tempMicroarray['microarray']['sample'] = response['sample'][locus.toUpperCase()]
+                        };
+                        if (response['compendium']) {
+                            tempMicroarray['microarray']['compendium'] = response['compendium'][locus.toUpperCase()]
+                        };
+                        this.topExpressionValues = Object.assign(this.topExpressionValues, tempMicroarray);
                     };
                 };
             };
-    
-            xhr.open('GET', url);
-            xhr.send();  
-        };       
+        };
+
+        xhr.open(method, url, true);
+        if (method === 'POST') {
+            xhr.setRequestHeader("Content-Type", sendHeaders);
+            xhr.send(postSend); 
+        } else {
+            xhr.send();
+        }; 
+    };
+
+    retrieveTopRNASeq(locus = 'AT3G24650') {
+        let xhr = new XMLHttpRequest();
+        let url = 'https://bar.utoronto.ca/expression_max_api/max_average';
+        let method = 'POST';
+        var sendHeaders = "application/json";
+        var postSend = {
+            'loci': [locus.toUpperCase()],
+            'method': 'RNA-seq'
+        };
+        postSend = JSON.stringify(postSend);
+
+        xhr.responseType = 'json';
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                let response = xhr.response;
+                if (response && response["wasSuccessful"] === true) {
+                    if (response['maxAverage']) {
+                        var tempRNASeq = {
+                            'rnaSeq': {
+                                'maxAverage': response['maxAverage'][locus.toUpperCase()]
+                            }
+                        };
+
+                        if (response['standardDeviation']) {
+                            tempRNASeq['rnaSeq']['standardDeviation'] = response['standardDeviation'][locus.toUpperCase()]
+                        };
+                        if (response['sample']) {
+                            tempRNASeq['rnaSeq']['sample'] = response['sample'][locus.toUpperCase()]
+                        };
+                        if (response['compendium']) {
+                            tempRNASeq['rnaSeq']['compendium'] = response['compendium'][locus.toUpperCase()]
+                        };
+                        this.topExpressionValues = Object.assign(this.topExpressionValues, tempRNASeq);
+                    };
+                };
+            };
+        };
+
+        xhr.open(method, url, true);
+        if (method === 'POST') {
+            xhr.setRequestHeader("Content-Type", sendHeaders);
+            xhr.send(postSend); 
+        } else {
+            xhr.send();
+        }; 
     };
 };
 
-
-let existingStrokeWidths = {};
-let existingStrokeColours = {};
+let existingStrokeData = {};
 /**
  * Add details to an SVG or SVG-subunit including: hover and outline
  * @param {String} elementID Which SVG or SVG-subunit is being found and edited
@@ -238,67 +317,95 @@ function addTissueMetadata(elementID) {
         svgPart = svgDoc.getElementById(elementID);
         svgPartChildren = svgPart.childNodes;
     };
-    var increaseStrokeWidthBy = 4;
-    // use svgDetailsAdded to double check if been outlined or not
-    var svgDetailsAdded = false;
+    /** Increase stroke width within SVG by (multiplied) this much */
+    var increaseStrokeWidthBy = 1.5;
+    // Storing stroke widths
+    var existingStrokeWidth = undefined, 
+        existingStrokeColour = undefined,
+        doesStrokeDataExist = false;
     if (svgDoc && svgPartChildren && svgPartChildren.length > 0) {
-        for (var s = 0; s < svgPartChildren.length; s++) {
-            if (svgPartChildren[s].nodeName === 'path') {
-                // Storing stroke widths
-                var existingStrokeWidth = svgPartChildren[s].getAttribute('stroke-width');
-                if (existingStrokeWidth === null || existingStrokeWidth === undefined) {
-                    existingStrokeWidth = 0;
+        var strokeID = '';
+        if (svgPart.getAttribute('stroke-width')) {
+            existingStrokeWidth = svgPart.getAttribute('stroke-width');
+            doesStrokeDataExist = true;
+        };
+
+        if (svgPart.getAttribute('stroke')) {
+            existingStrokeColour = svgPart.getAttribute('stroke');
+            doesStrokeDataExist = true;
+        };
+        if (doesStrokeDataExist === false) {
+            for (var s = 0; s < svgPartChildren.length; s++) {
+                if (svgPartChildren[s].nodeName === 'path') {
+                    if (svgPartChildren[s].getAttribute('stroke-width')) {
+                        existingStrokeWidth = svgPartChildren[s].getAttribute('stroke-width');
+                        doesStrokeDataExist = true;
+                    };
+    
+                    if (svgPartChildren[s].getAttribute('stroke')) {
+                        existingStrokeColour = svgPartChildren[s].getAttribute('stroke');
+                        doesStrokeDataExist = true;
+                    };
                 };
-                var existingStrokeColour = svgPartChildren[s].getAttribute('stroke');
-                if (existingStrokeColour === null || existingStrokeColour === undefined) {
-                    existingStrokeColour = 'none';
-                };
-                if (existingStrokeWidths[elementID] === undefined) {
-                    existingStrokeWidths[elementID] = existingStrokeWidth;
-                    existingStrokeColours[elementID] = existingStrokeColour;
-                } else {
-                    existingStrokeWidth = existingStrokeWidths[elementID];
-                    existingStrokeColour = 
-                    existingStrokeColours[elementID];
-                };
-                // Making stroke width thicker
-                if ((existingStrokeWidth * increaseStrokeWidthBy) < 10 && (existingStrokeWidth * increaseStrokeWidthBy) !== 0) {
-                    svgPartChildren[s].setAttribute('stroke-width', (existingStrokeWidth * increaseStrokeWidthBy));
-                    svgPartChildren[s].setAttribute('stroke', '#000000');
-                } else {
-                    svgPartChildren[s].setAttribute('stroke-width', (increaseStrokeWidthBy * 1.5));
-                    svgPartChildren[s].setAttribute('stroke', '#000000');
-                };
-                svgDetailsAdded = true;        
             };
         };
-    };
-    if (svgDetailsAdded === false || svgPartChildren.length <= 0 || svgPartChildren === null) {
-        existingStrokeWidth = svgPart.getAttribute('stroke-width');
-        if (existingStrokeWidth === null || existingStrokeWidth === undefined) {
-            existingStrokeWidth = 0;
+        strokeID = elementID;
+
+        if (doesStrokeDataExist) {
+            if (existingStrokeWidth === null || existingStrokeWidth === undefined) {
+                existingStrokeWidth = 0;
+            }; 
+            if (existingStrokeColour === null || existingStrokeColour === undefined) {
+                existingStrokeColour = 'none';
+            };
+
+            if (existingStrokeData[elementID] === undefined) {
+                existingStrokeData[elementID] = {};
+                existingStrokeData[elementID]['strokeDataExist'] = doesStrokeDataExist;
+                existingStrokeData[elementID]['strokeWidth'] = existingStrokeWidth;
+                existingStrokeData[elementID]['strokeColour'] = existingStrokeColour;
+                existingStrokeData[elementID]['strokeID'] = strokeID;
+            } else {
+                existingStrokeData[elementID]['strokeDataExist'] = doesStrokeDataExist;
+                existingStrokeData[elementID]['strokeWidth'] = existingStrokeWidth;
+                existingStrokeData[elementID]['strokeColour'] = existingStrokeColour;
+                existingStrokeData[elementID]['strokeID'] = strokeID;
+            };
+
+            // Making stroke width thicker
+            if (svgDoc.getElementById(existingStrokeData[elementID]['strokeID'])) {
+                var strokeElement = svgDoc.getElementById(existingStrokeData[elementID]['strokeID']);
+                
+                var newStrokeWidth = existingStrokeWidth * increaseStrokeWidthBy;
+                var maxStrokeWidth = 5;
+                if (newStrokeWidth < maxStrokeWidth && newStrokeWidth !== 0) {
+                    if ((increaseStrokeWidthBy * 1.5) < maxStrokeWidth && (increaseStrokeWidthBy * 1.5) !== 0) {
+                        newStrokeWidth = increaseStrokeWidthBy * 1.5;
+                    } else {
+                        newStrokeWidth = 1.5;
+                    };
+                };
+
+                if (strokeElement.getAttribute('stroke-width')) {
+                    svgDoc.getElementById(existingStrokeData[elementID]['strokeID']).setAttribute('stroke-width', newStrokeWidth);
+                    svgDoc.getElementById(existingStrokeData[elementID]['strokeID']).setAttribute('stroke', '#000000');
+                } else {
+                    if (svgDoc && svgPartChildren && svgPartChildren.length > 0) {
+                        for (var s = 0; s < svgPartChildren.length; s++) {
+                            if (svgPartChildren[s].nodeName === 'path') {
+                                if (svgPartChildren[s].getAttribute('stroke-width')) {
+                                    svgPartChildren[s].setAttribute('stroke-width', newStrokeWidth);
+                                };
+                
+                                if (svgPartChildren[s].getAttribute('stroke')) {
+                                    svgPartChildren[s].setAttribute('stroke', '#000000');
+                                };
+                            };
+                        };
+                    };
+                };
+            };
         };
-        existingStrokeColour = svgPart.getAttribute('stroke');
-        if (existingStrokeColour === null || existingStrokeColour === undefined) {
-            existingStrokeColour = 'none';
-        };
-        if (existingStrokeWidths[elementID] === undefined) {
-            existingStrokeWidths[elementID] = existingStrokeWidth;
-            existingStrokeColours[elementID] = existingStrokeColour;
-        } else {
-            existingStrokeWidth = existingStrokeWidths[elementID];
-            existingStrokeColour = 
-            existingStrokeColours[elementID];
-        };
-        // Making stroke width thicker
-        if ((existingStrokeWidth * increaseStrokeWidthBy) < 10 && (existingStrokeWidth * increaseStrokeWidthBy) !== 0) {
-            svgPart.setAttribute('stroke-width', (existingStrokeWidth * increaseStrokeWidthBy));
-            svgPart.setAttribute('stroke', '#000000');
-        } else {
-            svgPart.setAttribute('stroke-width', (increaseStrokeWidthBy * 1.5));
-            svgPart.setAttribute('stroke', '#000000');
-        };
-        svgDetailsAdded = true;  
     };
 };
 
@@ -311,37 +418,54 @@ function removeTissueMetadata(elementID) {
     if (elementID.includes('Half_Leaf_Pseudomonas_syringae')) {
         elementID = elementID + '_outline';
     };
+
     // Retrieve document objects:
     var svgDoc = document.getElementById(createSVGExpressionData.svgObjectName).getSVGDocument();
     var svgPart = svgDoc.getElementById(elementID);
+
     // Add thicker boarder:
     var svgPartChildren = svgPart.childNodes;
-    // use svgDetailsRemoved to double check if been outlined or not
+    /** use svgDetailsRemoved to double check if been outlined or not */
     var svgDetailsRemoved = false;
-    if (svgPartChildren.length > 0) {
+
+    if (svgDetailsRemoved === false || svgPartChildren.length <= 0 || svgPartChildren === null) {
+        if (existingStrokeData[elementID] && existingStrokeData[elementID]['strokeWidth'] && parseFloat(existingStrokeData[elementID]['strokeWidth']) >= 0) {
+            svgPart.setAttribute('stroke-width', (existingStrokeData[elementID]['strokeWidth']));
+        };
+
+        if (existingStrokeData[elementID] && existingStrokeData[elementID]['strokeColour']) {
+            svgPart.setAttribute('stroke', (existingStrokeData[elementID]['strokeColour']));
+        };
+
+        svgDetailsRemoved = true;
+    };
+    
+    if (svgDetailsRemoved === false && svgPartChildren.length > 0) {
         for (var s = 0; s < svgPartChildren.length; s++) {
             if (svgPartChildren[s].nodeName === 'path') {
-                if (parseFloat(existingStrokeWidths[elementID]) >= 0) {
-                    svgPartChildren[s].setAttribute('stroke-width', (existingStrokeWidths[elementID]));
-                    svgPartChildren[s].setAttribute('stroke', (existingStrokeColours[elementID]));
-                } else {
+                if (svgPartChildren[s].getAttribute('stroke-width') && existingStrokeData[elementID]['strokeWidth'] && parseFloat(existingStrokeData[elementID]['strokeWidth']) >= 0) {
+                    svgPartChildren[s].setAttribute('stroke-width', (existingStrokeData[elementID]['strokeWidth']));
+                    svgDetailsRemoved = true;
+                } else if (svgPartChildren[s].getAttribute('stroke-width')) {
                     svgPartChildren[s].setAttribute('stroke-width', 1.5);
-                    svgPartChildren[s].setAttribute('stroke', '#000000');
+                    svgDetailsRemoved = true;
                 };
-                svgDetailsRemoved = true;
+
+                if (svgPartChildren[s].getAttribute('stroke') && existingStrokeData[elementID]['strokeColour']) {
+                    svgPartChildren[s].setAttribute('stroke', (existingStrokeData[elementID]['strokeColour']));
+                    svgDetailsRemoved = true;
+                } else if (svgPartChildren[s].getAttribute('stroke')) {
+                    svgPartChildren[s].setAttribute('stroke', '#000000');
+                    svgDetailsRemoved = true;
+                };
             };
         };
     };
-    if (svgDetailsRemoved === false || svgPartChildren.length <= 0 || svgPartChildren === null) {
-        if (parseFloat(existingStrokeWidths[elementID]) >= 0) {
-            svgPart.setAttribute('stroke-width', (existingStrokeWidths[elementID]));
-            svgPart.setAttribute('stroke', (existingStrokeColours[elementID]));
-        } else {
-            svgPart.setAttribute('stroke-width', 1.5);
-            svgPart.setAttribute('stroke', '#000000');
-        };
-        svgDetailsRemoved = true;
-    };      
+
+    if (svgDetailsRemoved === false) {
+        svgPart.setAttribute('stroke-width', 1.5);
+        svgPart.setAttribute('stroke', '#000000');
+    };
 };
 
 /**
@@ -365,8 +489,6 @@ class CreateSVGExpressionData {
         this.svgMinAverageSample = '';
         // Store object name:
         this.svgObjectName = '';
-        // Start or finished colouring:
-        this.finishedColouring = false;
     };
 
     /**
@@ -396,10 +518,9 @@ class CreateSVGExpressionData {
         };
 
         // Add max dropdown list to document:
-        if (includeMaxDropdown && this.interactiveSVGData.expressionValues && this.interactiveSVGData.expressionValues['sources']) {
+        if (includeMaxDropdown && this.interactiveSVGData.topExpressionValues) {
             appendSVG += 'Select top expression to display: <select onchange="createSVGExpressionData.generateSVG(this.value.toString(), \'' + locus + '\', \'' + this.desiredDOMid + '\', ' + includeDropdownAll + ', ' + includeMaxDropdown + ')" id="topExpressionOptions">';
-            var expressionValues = this.interactiveSVGData.expressionValues['sources'][0];
-            var topList = Object.keys(expressionValues);
+            var topList = Object.keys(topExpressionValues);
             for (var i = 0; i < topList.length; i++) {
                 if (topList[i].length > 3 && topList[i].substring(0, 3).toLowerCase() !== 'top') {
                     appendSVG += '<option value="' + expressionValues[topList[i]]['Compendium'] + '">' + topList[i] + ': ' + expressionValues[topList[i]]['Compendium'] + '</option>';
@@ -669,9 +790,6 @@ class CreateSVGExpressionData {
 
             // Begin colouring SVG subunits
             this.colourSVGSubunit(whichSVG, svgSubunits[i], colourFill, expressionLevel, sampleSize);
-
-            // Finished colouring:
-            this.finishedColouring = true;
         };
     };
 
@@ -687,6 +805,13 @@ class CreateSVGExpressionData {
         let svgObject = document.getElementById(whichSVG + '_object').getSVGDocument();
         if (svgObject && svgObject.getElementById(svgSubunit)) {
             var expressionData = createSVGExpressionData["svgValues"][svgSubunit];
+            var descriptionName = undefined;
+            if (this.retrieveOnlineBARData.sampleData[whichSVG]['description']) {
+                descriptionName = this.retrieveOnlineBARData.sampleData[whichSVG]['description'][svgSubunit];
+            };
+            if (descriptionName === undefined || descriptionName === '') {
+                descriptionName = svgSubunit;
+            };
         
             // Check for duplicate error:
             var duplicateShoot = ['Control_Shoot_0_Hour', 'Cold_Shoot_0_Hour', 'Osmotic_Shoot_0_Hour', 'Salt_Shoot_0_Hour', 'Drought_Shoot_0_Hour', 'Genotoxic_Shoot_0_Hour', 'Oxidative_Shoot_0_Hour', 'UV-B_Shoot_0_Hour', 'Wounding_Shoot_0_Hour', 'Heat_Shoot_0_Hour'];
@@ -738,7 +863,7 @@ class CreateSVGExpressionData {
             
             // Add tooltip/title on hover
             var title = document.createElementNS("http://www.w3.org/2000/svg","title");
-            title.textContent = svgSubunit + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize + '\nStandardDeviation: ' + parseFloat(expressionData['sd']).toFixed(3);
+            title.textContent = descriptionName + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize + '\nStandardDeviation: ' + parseFloat(expressionData['sd']).toFixed(3);
     
             // Add rest of titles and tooltip/title
             var inducReduc = false;
@@ -755,7 +880,16 @@ class CreateSVGExpressionData {
                 svgObject.getElementById(svgSubunit).setAttribute("data-expressionRatio", expressionData['expressionRatio']);
                 title.textContent += '\nExpression Ratio: ' + parseFloat(expressionData['expressionRatio']).toFixed(3);
                 svgObject.getElementById(svgSubunit).setAttribute("data-controlSampleName", expressionData['controlSampleName']);
-                title.textContent += '\nControl Sample Name: ' + expressionData['controlSampleName'];
+
+                var controlSampleName = undefined;
+                if (this.retrieveOnlineBARData.sampleData[whichSVG]['description']) {
+                    controlSampleName = this.retrieveOnlineBARData.sampleData[whichSVG]['description'][expressionData['controlSampleName']];
+                };
+                if (controlSampleName === undefined || controlSampleName === '') {
+                    controlSampleName = expressionData['controlSampleName'];
+                };
+                title.textContent += '\nControl Sample Name: ' + controlSampleName;
+
                 svgObject.getElementById(svgSubunit).setAttribute("data-controlAverage", expressionData['controlAverage']);
                 title.textContent += '\nControl Expression: ' + parseFloat(expressionData['controlAverage']).toFixed(3);
             };
@@ -764,28 +898,30 @@ class CreateSVGExpressionData {
             // Correcting duplicate error:
             if (isdupShoot) {
                 for (var dupS = 0; dupS < duplicateShoot.length; dupS++) {
-                    // Add interactivity 
-                    svgObject.getElementById(duplicateShoot[dupS]).setAttribute("class", 'hoverDetails');
-                    svgObject.getElementById(duplicateShoot[dupS]).addEventListener('mouseenter', function(event) {
-                        addTissueMetadata(this.id);
-                    });
-                    svgObject.getElementById(duplicateShoot[dupS]).addEventListener('mouseleave', function(event) {
-                        removeTissueMetadata(this.id);
-                    });
-                    // Adding colour
-                    childElements = svgObject.getElementById(duplicateShoot[dupS]).childNodes;
-                    if (childElements.length > 0) {
-                        for (var c = 0; c < childElements.length; c++) {
-                            if (childElements[c].nodeName === 'path') {           
-                                childElements[c].setAttribute("fill", colour);
+                    if (svgObject.getElementById(duplicateShoot[dupS])) {
+                        // Add interactivity 
+                        svgObject.getElementById(duplicateShoot[dupS]).setAttribute("class", 'hoverDetails');
+                        svgObject.getElementById(duplicateShoot[dupS]).addEventListener('mouseenter', function(event) {
+                            addTissueMetadata(this.id);
+                        });
+                        svgObject.getElementById(duplicateShoot[dupS]).addEventListener('mouseleave', function(event) {
+                            removeTissueMetadata(this.id);
+                        });
+                        // Adding colour
+                        childElements = svgObject.getElementById(duplicateShoot[dupS]).childNodes;
+                        if (childElements.length > 0) {
+                            for (var c = 0; c < childElements.length; c++) {
+                                if (childElements[c].nodeName === 'path') {           
+                                    childElements[c].setAttribute("fill", colour);
+                                };
                             };
-                        };
-                    } else {             
-                        svgObject.getElementById(duplicateShoot[dupS]).setAttribute("fill", colour);
-                    };                    
-                    // Add tooltip/title on hover
-                    title.textContent = duplicateShoot[dupS] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
-                    svgObject.getElementById(duplicateShoot[dupS]).appendChild(title)
+                        } else {             
+                            svgObject.getElementById(duplicateShoot[dupS]).setAttribute("fill", colour);
+                        };                    
+                        // Add tooltip/title on hover
+                        title.textContent = duplicateShoot[dupS] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
+                        svgObject.getElementById(duplicateShoot[dupS]).appendChild(title);
+                    };
                 };
             } else if (isdupRoot) {
                 for (var dupR = 0; dupR < duplicateRoot.length; dupR++) {
@@ -848,9 +984,6 @@ class CreateSVGExpressionData {
         this.svgMaxAverageSample = undefined;
         this.svgMinAverage = undefined;
         this.svgMinAverageSample = undefined;
-        existingStrokeWidths = {};
-        existingStrokeColours = {};
-        this.finishedColouring = false;
         this.includeDropdownAll = includeDropdownAll;
         this.includeMaxDropdown = includeMaxDropdown;
         if (this.clickList.includes(svgName) === false) {
@@ -859,7 +992,9 @@ class CreateSVGExpressionData {
         // Initiate scripts     
         this.desiredDOMid = desiredDOMid;
         this.retrieveOnlineBARData.loadSampleData(svgName, locus);
-        this.interactiveSVGData.retrieveTopExpressionValues(locus);
+        if (includeMaxDropdown) {
+            this.interactiveSVGData.retrieveTopExpressionValues(locus);
+        };
         this.updateChecker(svgName, locus);
     };
 
