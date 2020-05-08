@@ -352,8 +352,8 @@ function addTissueMetadata(elementID) {
         strokeID = elementID;
 
         if (doesStrokeDataExist) {
-            if (existingStrokeWidth === null || existingStrokeWidth === undefined) {
-                existingStrokeWidth = 0;
+            if (existingStrokeWidth === null || existingStrokeWidth === undefined || existingStrokeData === 0) {
+                existingStrokeWidth = 1;
             }; 
             if (existingStrokeColour === null || existingStrokeColour === undefined) {
                 existingStrokeColour = 'none';
@@ -378,7 +378,7 @@ function addTissueMetadata(elementID) {
                 
                 var newStrokeWidth = existingStrokeWidth * increaseStrokeWidthBy;
                 var maxStrokeWidth = 5;
-                if (newStrokeWidth < maxStrokeWidth && newStrokeWidth !== 0) {
+                if (newStrokeWidth < maxStrokeWidth || newStrokeWidth === 0) {
                     if ((increaseStrokeWidthBy * 1.5) < maxStrokeWidth && (increaseStrokeWidthBy * 1.5) !== 0) {
                         newStrokeWidth = increaseStrokeWidthBy * 1.5;
                     } else {
@@ -386,15 +386,18 @@ function addTissueMetadata(elementID) {
                     };
                 };
 
+                var changedStrokeData = false;
                 if (strokeElement.getAttribute('stroke-width')) {
                     svgDoc.getElementById(existingStrokeData[elementID]['strokeID']).setAttribute('stroke-width', newStrokeWidth);
                     svgDoc.getElementById(existingStrokeData[elementID]['strokeID']).setAttribute('stroke', '#000000');
+                    changedStrokeData = true;
                 } else {
                     if (svgDoc && svgPartChildren && svgPartChildren.length > 0) {
                         for (var s = 0; s < svgPartChildren.length; s++) {
                             if (svgPartChildren[s].nodeName === 'path') {
                                 if (svgPartChildren[s].getAttribute('stroke-width')) {
                                     svgPartChildren[s].setAttribute('stroke-width', newStrokeWidth);
+                                    changedStrokeData = true;
                                 };
                 
                                 if (svgPartChildren[s].getAttribute('stroke')) {
@@ -403,6 +406,11 @@ function addTissueMetadata(elementID) {
                             };
                         };
                     };
+                };
+
+                if (changedStrokeData === false) {
+                    svgDoc.getElementById(existingStrokeData[elementID]['strokeID']).setAttribute('stroke-width', newStrokeWidth);
+                    svgDoc.getElementById(existingStrokeData[elementID]['strokeID']).setAttribute('stroke', '#000000');
                 };
             };
         };
@@ -420,24 +428,25 @@ function removeTissueMetadata(elementID) {
     };
 
     // Retrieve document objects:
-    var svgDoc = document.getElementById(createSVGExpressionData.svgObjectName).getSVGDocument();
-    var svgPart = svgDoc.getElementById(elementID);
-
-    // Add thicker boarder:
-    var svgPartChildren = svgPart.childNodes;
+    var svgDoc, svgPart, svgPartChildren;
+    if (document.getElementById(createSVGExpressionData.svgObjectName) && document.getElementById(createSVGExpressionData.svgObjectName).getSVGDocument()) {
+        svgDoc = document.getElementById(createSVGExpressionData.svgObjectName).getSVGDocument();
+        svgPart = svgDoc.getElementById(elementID);
+        svgPartChildren = svgPart.childNodes;
+    };
     /** use svgDetailsRemoved to double check if been outlined or not */
     var svgDetailsRemoved = false;
 
     if (svgDetailsRemoved === false || svgPartChildren.length <= 0 || svgPartChildren === null) {
-        if (existingStrokeData[elementID] && existingStrokeData[elementID]['strokeWidth'] && parseFloat(existingStrokeData[elementID]['strokeWidth']) >= 0) {
-            svgPart.setAttribute('stroke-width', (existingStrokeData[elementID]['strokeWidth']));
+        if (svgPart.getAttribute('stroke-width') && existingStrokeData[elementID] && existingStrokeData[elementID]['strokeWidth'] && parseFloat(existingStrokeData[elementID]['strokeWidth']) >= 0) {
+            svgDoc.getElementById(existingStrokeData[elementID]['strokeID']).setAttribute('stroke-width', (existingStrokeData[elementID]['strokeWidth']));
+
+            svgDetailsRemoved = true;
         };
 
-        if (existingStrokeData[elementID] && existingStrokeData[elementID]['strokeColour']) {
-            svgPart.setAttribute('stroke', (existingStrokeData[elementID]['strokeColour']));
+        if (svgPart.getAttribute('stroke') && existingStrokeData[elementID] && existingStrokeData[elementID]['strokeColour']) {
+            svgDoc.getElementById(existingStrokeData[elementID]['strokeID']).setAttribute('stroke', (existingStrokeData[elementID]['strokeColour']));
         };
-
-        svgDetailsRemoved = true;
     };
     
     if (svgDetailsRemoved === false && svgPartChildren.length > 0) {
@@ -453,10 +462,8 @@ function removeTissueMetadata(elementID) {
 
                 if (svgPartChildren[s].getAttribute('stroke') && existingStrokeData[elementID]['strokeColour']) {
                     svgPartChildren[s].setAttribute('stroke', (existingStrokeData[elementID]['strokeColour']));
-                    svgDetailsRemoved = true;
                 } else if (svgPartChildren[s].getAttribute('stroke')) {
                     svgPartChildren[s].setAttribute('stroke', '#000000');
-                    svgDetailsRemoved = true;
                 };
             };
         };

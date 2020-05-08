@@ -1967,6 +1967,1587 @@
         },
         "db": "klepikova"
     },
+    "LateralRootInitiation": {
+      "sample": {
+        "De_Smet_J0121_NPA": [
+          "0h_1.cel",
+          "0h_2.cel",
+          "0h_3.CEL"
+        ],
+        "De_Smet_J0121_2h_NAA": [
+          "2h_1.cel", "2h_2.cel"
+        ],
+        "De_Smet_J0121_6h_NAA": [
+          "6h_1.cel",
+          "6h_2.cel"
+        ],
+        "De_Rybel_Col0_6h_Naxillin": [
+          "hyb4647.CEL",
+          "hyb4652.CEL",
+          "hyb4657.CEL"
+        ],
+        "De_Rybel_Col0_2h_Naxillin": [
+          "hyb4645.CEL",
+          "hyb4650.CEL",
+          "hyb4655.CEL"
+        ],
+        "De_Rybel_Col0_6h_NAA": [
+          "hyb4646.CEL",
+          "hyb4651.CEL",
+          "hyb4656.CEL"
+        ],
+        "De_Rybel_Col0_2h_NAA": [
+          "hyb4644.CEL",
+          "hyb4649.CEL",
+          "hyb4654.CEL"
+        ],
+        "De_Rybel_Col0_NPA": [
+          "hyb4643.CEL",
+          "hyb4648.CEL",
+          "hyb4653.CEL"
+        ],
+        "Vanneste_slr-1_2h_NAA": [
+          "GSM75517.CEL",
+          "GSM75520.CEL"
+        ],
+        "Vanneste_slr-1_NPA": [
+          "GSM75516.CEL",
+          "GSM75519.CEL"
+        ],
+        "Vanneste_slr-1_6h_NAA": [
+          "GSM75518.CEL",
+          "GSM75521.CEL"
+        ],
+        "Vanneste_Col0_2h_NAA": [
+          "GSM75509.CEL",
+          "GSM75513.CEL"
+        ],
+        "Vanneste_Col0_6h_NAA": [
+          "GSM75510.CEL",
+          "GSM75514.CEL"
+        ],
+        "Vanneste_Col0_NPA": [
+          "GSM75508.CEL",
+          "GSM75512.CEL"
+        ],
+        "Okushima_Col": [
+          "GSM9571.cel",
+          "GSM9572.cel",
+          "GSM9573.cel"
+        ],
+        "Okushima_Col_IAA": [
+          "GSM9574.cel",
+          "GSM9575.cel",
+          "GSM9576.cel"
+        ],
+        "Okushima_arf19-1": [
+          "GSM9583.cel",
+          "GSM9584.cel",
+          "GSM9585.cel"
+        ],
+        "Okushima_arf19-1_IAA": [
+          "GSM9586.cel",
+          "GSM9587.cel",
+          "GSM9588.cel"
+        ],
+        "Okushima_nph4-1_IAA": [
+          "GSM9580.cel",
+          "GSM9581.cel",
+          "GSM9582.cel"
+        ],
+        "Okushima_nph4-1": [
+          "GSM9577.cel",
+          "GSM9578.cel",
+          "GSM9579.CEL"
+        ],
+        "Okushima_nph4-1arf19-1_IAA": [
+          "GSM9592.cel",
+          "GSM9593.cel",
+          "GSM9594.cel"
+        ],
+        "Okushima_nph4-1arf19-1": [
+          "GSM9589.cel",
+          "GSM9590.cel",
+          "GSM9591.cel"
+        ],
+        "Xuan_ibr3_IBA": [
+          "hyb12692.CEL",
+          "hyb12696.CEL",
+          "hyb12700.CEL"
+        ],
+        "Xuan_ibr3_DMSO": [
+          "hyb12690.CEL",
+          "hyb12694.CEL",
+          "hyb12698.CEL"
+        ],
+        "Xuan_Col_DMSO": [
+          "hyb12689.CEL",
+          "hyb12693.CEL",
+          "hyb12697.CEL"
+        ],
+        "Xuan_Col_IBA": [
+          "hyb12691.CEL",
+          "hyb12695.CEL",
+          "hyb12699.CEL"
+        ],
+        "Lewis_control_0h": [
+          "GSM1030558",
+          "GSM1030574",
+          "GSM1030590"
+        ],
+        "Lewis_IAA_0h": [
+          "GSM1030566",
+          "GSM1030582",
+          "GSM1030598"
+        ],
+        "Lewis_control_0.5h": [
+          "GSM1030559",
+          "GSM1030575",
+          "GSM1030591"
+        ],
+        "Lewis_IAA_0.5h": [
+          "GSM1030567",
+          "GSM1030583",
+          "GSM1030599"
+        ],
+        "Lewis_control_1h": [
+          "GSM1030560",
+          "GSM1030576",
+          "GSM1030592"
+        ],
+        "Lewis_IAA_1h": [
+          "GSM1030568",
+          "GSM1030584",
+          "GSM1030600"
+        ],
+        "Lewis_control_2h": [
+          "GSM1030561",
+          "GSM1030577",
+          "GSM1030593"
+        ],
+        "Lewis_IAA_2h": [
+          "GSM1030569",
+          "GSM1030585",
+          "GSM1030601"
+        ],
+        "Lewis_control_4h": [
+          "GSM1030562",
+          "GSM1030578",
+          "GSM1030594"
+        ],
+        "Lewis_IAA_4h": [
+          "GSM1030570",
+          "GSM1030586",
+          "GSM1030602"
+        ],
+        "Lewis_control_8h": [
+          "GSM1030563",
+          "GSM1030579",
+          "GSM1030595"
+        ],
+        "Lewis_IAA_8h": [
+          "GSM1030571",
+          "GSM1030587",
+          "GSM1030603"
+        ],
+        "Lewis_control_12h": [
+          "GSM1030564",
+          "GSM1030580",
+          "GSM1030596"
+        ],
+        "Lewis_IAA_12h": [
+          "GSM1030572",
+          "GSM1030588",
+          "GSM1030604"
+        ],
+        "Lewis_control_24h": [
+          "GSM1030565",
+          "GSM1030581",
+          "GSM1030597"
+        ],
+        "Lewis_IAA_24h": [
+          "GSM1030573",
+          "GSM1030589",
+          "GSM1030605"
+        ],
+        "WalkerAndGifford_Cortex_Untreated_00h": [
+          "Cortex.0hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Untreated_01h": [
+          "Cortex.Untreated.1hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Untreated_02h": [
+          "Cortex.Untreated.2hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Untreated_04h": [
+          "Cortex.Untreated.4hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Untreated_06h": [
+          "Cortex.Untreated.6hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Untreated_08h": [
+          "Cortex.Untreated.8hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Untreated_10h": [
+          "Cortex.Untreated.10hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Untreated_12h": [
+          "Cortex.Untreated.12hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Untreated_14h": [
+          "Cortex.Untreated.14hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Untreated_16h": [
+          "Cortex.Untreated.16hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Untreated_20h": [
+          "Cortex.Untreated.20hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Untreated_24h": [
+          "Cortex.Untreated.24hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Untreated_36h": [
+          "Cortex.Untreated.36hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Untreated_48h": [
+          "Cortex.Untreated.48hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Untreated_00h": [
+          "Pericycle.0hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Untreated_01h": [
+          "Pericycle.Untreated.1hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Untreated_02h": [
+          "Pericycle.Untreated.2hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Untreated_04h": [
+          "Pericycle.Untreated.4hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Untreated_06h": [
+          "Pericycle.Untreated.6hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Untreated_08h": [
+          "Pericycle.Untreated.8hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Untreated_10h": [
+          "Pericycle.Untreated.10hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Untreated_12h": [
+          "Pericycle.Untreated.12hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Untreated_14h": [
+          "Pericycle.Untreated.14hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Untreated_16h": [
+          "Pericycle.Untreated.16hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Untreated_20h": [
+          "Pericycle.Untreated.20hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Untreated_24h": [
+          "Pericycle.Untreated.24hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Untreated_36h": [
+          "Pericycle.Untreated.36hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Untreated_48h": [
+          "Pericycle.Untreated.48hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Nitrogen_00h": [
+          "Cortex.0hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Nitrogen_01h": [
+          "Cortex.Nitrogen.1hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Nitrogen_02h": [
+          "Cortex.Nitrogen.2hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Nitrogen_04h": [
+          "Cortex.Nitrogen.4hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Nitrogen_06h": [
+          "Cortex.Nitrogen.6hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Nitrogen_08h": [
+          "Cortex.Nitrogen.8hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Nitrogen_10h": [
+          "Cortex.Nitrogen.10hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Nitrogen_12h": [
+          "Cortex.Nitrogen.12hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Nitrogen_14h": [
+          "Cortex.Nitrogen.14hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Nitrogen_16h": [
+          "Cortex.Nitrogen.16hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Nitrogen_20h": [
+          "Cortex.Nitrogen.20hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Nitrogen_24h": [
+          "Cortex.Nitrogen.24hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Nitrogen_36h": [
+          "Cortex.Nitrogen.36hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Nitrogen_48h": [
+          "Cortex.Nitrogen.48hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Nitrogen_00h": [
+          "Pericycle.0hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Nitrogen_01h": [
+          "Pericycle.Nitrogen.1hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Nitrogen_02h": [
+          "Pericycle.Nitrogen.2hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Nitrogen_04h": [
+          "Pericycle.Nitrogen.4hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Nitrogen_06h": [
+          "Pericycle.Nitrogen.6hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Nitrogen_08h": [
+          "Pericycle.Nitrogen.8hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Nitrogen_10h": [
+          "Pericycle.Nitrogen.10hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Nitrogen_12h": [
+          "Pericycle.Nitrogen.12hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Nitrogen_14h": [
+          "Pericycle.Nitrogen.14hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Nitrogen_16h": [
+          "Pericycle.Nitrogen.16hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Nitrogen_20h": [
+          "Pericycle.Nitrogen.20hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Nitrogen_24h": [
+          "Pericycle.Nitrogen.24hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Nitrogen_36h": [
+          "Pericycle.Nitrogen.36hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Nitrogen_48h": [
+          "Pericycle.Nitrogen.48hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Rhizobium_00h": [
+          "Cortex.0hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Rhizobium_01h": [
+          "Cortex.Rhizobium.1hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Rhizobium_02h": [
+          "Cortex.Rhizobium.2hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Rhizobium_04h": [
+          "Cortex.Rhizobium.4hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Rhizobium_06h": [
+          "Cortex.Rhizobium.6hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Rhizobium_08h": [
+          "Cortex.Rhizobium.8hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Rhizobium_10h": [
+          "Cortex.Rhizobium.10hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Rhizobium_12h": [
+          "Cortex.Rhizobium.12hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Rhizobium_14h": [
+          "Cortex.Rhizobium.14hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Rhizobium_16h": [
+          "Cortex.Rhizobium.16hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Rhizobium_20h": [
+          "Cortex.Rhizobium.20hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Rhizobium_24h": [
+          "Cortex.Rhizobium.24hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Rhizobium_36h": [
+          "Cortex.Rhizobium.36hr.Mean"
+        ],
+        "WalkerAndGifford_Cortex_Rhizobium_48h": [
+          "Cortex.Rhizobium.48hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Rhizobium_00h": [
+          "Pericycle.0hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Rhizobium_01h": [
+          "Pericycle.Rhizobium.1hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Rhizobium_02h": [
+          "Pericycle.Rhizobium.2hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Rhizobium_04h": [
+          "Pericycle.Rhizobium.4hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Rhizobium_06h": [
+          "Pericycle.Rhizobium.6hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Rhizobium_08h": [
+          "Pericycle.Rhizobium.8hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Rhizobium_10h": [
+          "Pericycle.Rhizobium.10hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Rhizobium_12h": [
+          "Pericycle.Rhizobium.12hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Rhizobium_14h": [
+          "Pericycle.Rhizobium.14hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Rhizobium_16h": [
+          "Pericycle.Rhizobium.16hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Rhizobium_20h": [
+          "Pericycle.Rhizobium.20hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Rhizobium_24h": [
+          "Pericycle.Rhizobium.24hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Rhizobium_36h": [
+          "Pericycle.Rhizobium.36hr.Mean"
+        ],
+        "WalkerAndGifford_Pericycle_Rhizobium_48h": [
+          "Pericycle.Rhizobium.48hr.Mean"
+        ],
+        "VossAndBennet_control_0h": [
+          "Voss_1-1_0h_after-lateral-root-initiation_Rep1",
+          "Voss_1-19_0h_after-lateral-root-initiation_Rep2",
+          "Voss_1-37_0h_after-lateral-root-initiation_Rep3",
+          "Voss_1-55_0h_after-lateral-root-initiation_Rep4"
+        ],
+        "VossAndBennet_6h_after_bending": [
+          "Voss_1-2_6h_after-lateral-root-initiation_Rep1",
+          "Voss_1-20_6h_after-lateral-root-initiation_Rep2",
+          "Voss_1-38_6h_after-lateral-root-initiation_Rep3",
+          "Voss_1-56_6h_after-lateral-root-initiation_Rep4"
+        ],
+        "VossAndBennet_9h_after_bending": [
+          "Voss_1-21_9h_after-lateral-root-initiation_Rep2",
+          "Voss_1-3_9h_after-lateral-root-initiation_Rep1",
+          "Voss_1-39_9h_after-lateral-root-initiation_Rep3",
+          "Voss_1-57_9h_after-lateral-root-initiation_Rep4"
+        ],
+        "VossAndBennet_12h_after_bending": [
+          "Voss_1-22_12h_after-lateral-root-initiation_Rep2",
+          "Voss_1-4_12h_after-lateral-root-initiation_Rep1",
+          "Voss_1-40_12h_after-lateral-root-initiation_Rep3",
+          "Voss_1-58_12h_after-lateral-root-initiation_Rep4"
+        ],
+        "VossAndBennet_15h_after_bending": [
+          "Voss_1-23_15h_after-lateral-root-initiation_Rep2",
+          "Voss_1-41_15h_after-lateral-root-initiation_Rep3",
+          "Voss_1-5_15h_after-lateral-root-initiation_Rep1",
+          "Voss_1-59_15h_after-lateral-root-initiation_Rep4"
+        ],
+        "VossAndBennet_18h_after_bending": [
+          "Voss_1-24_18h_after-lateral-root-initiation_Rep2",
+          "Voss_1-42_18h_after-lateral-root-initiation_Rep3",
+          "Voss_1-6_18h_after-lateral-root-initiation_Rep1",
+          "Voss_1-60_18h_after-lateral-root-initiation_Rep4"
+        ],
+        "VossAndBennet_21h_after_bending": [
+          "Voss_1-25_21h_after-lateral-root-initiation_Rep2",
+          "Voss_1-43_21h_after-lateral-root-initiation_Rep3",
+          "Voss_1-61_21h_after-lateral-root-initiation_Rep4",
+          "Voss_1-7_21h_after-lateral-root-initiation_Rep1"
+        ],
+        "VossAndBennet_24h_after_bending": [
+          "Voss_1-26_24h_after-lateral-root-initiation_Rep2",
+          "Voss_1-44_24h_after-lateral-root-initiation_Rep3",
+          "Voss_1-62_24h_after-lateral-root-initiation_Rep4",
+          "Voss_1-8_24h_after-lateral-root-initiation_Rep1"
+        ],
+        "VossAndBennet_27h_after_bending": [
+          "Voss_1-27_27h_after-lateral-root-initiation_Rep2",
+          "Voss_1-45_27h_after-lateral-root-initiation_Rep3",
+          "Voss_1-63_27h_after-lateral-root-initiation_Rep4",
+          "Voss_1-9_27h_after-lateral-root-initiation_Rep1"
+        ],
+        "VossAndBennet_30h_after_bending": [
+          "Voss_1-10_30h_after-lateral-root-initiation_Rep1",
+          "Voss_1-28_30h_after-lateral-root-initiation_Rep2",
+          "Voss_1-46_30h_after-lateral-root-initiation_Rep3",
+          "Voss_1-64_30h_after-lateral-root-initiation_Rep4"
+        ],
+        "VossAndBennet_33h_after_bending": [
+          "Voss_1-11_33h_after-lateral-root-initiation_Rep1",
+          "Voss_1-29_33h_after-lateral-root-initiation_Rep2",
+          "Voss_1-47_33h_after-lateral-root-initiation_Rep3",
+          "Voss_1-65_33h_after-lateral-root-initiation_Rep4"
+        ],
+        "VossAndBennet_36h_after_bending": [
+          "Voss_1-12_36h_after-lateral-root-initiation_Rep1",
+          "Voss_1-30_36h_after-lateral-root-initiation_Rep2",
+          "Voss_1-48_36h_after-lateral-root-initiation_Rep3",
+          "Voss_1-66_36h_after-lateral-root-initiation_Rep4"
+        ],
+        "VossAndBennet_39h_after_bending": [
+          "Voss_1-13_39h_after-lateral-root-initiation_Rep1",
+          "Voss_1-31_39h_after-lateral-root-initiation_Rep2",
+          "Voss_1-49_39h_after-lateral-root-initiation_Rep3",
+          "Voss_1-67_39h_after-lateral-root-initiation_Rep4"
+        ],
+        "VossAndBennet_42h_after_bending": [
+          "Voss_1-14_42h_after-lateral-root-initiation_Rep1",
+          "Voss_1-32_42h_after-lateral-root-initiation_Rep2",
+          "Voss_1-50_42h_after-lateral-root-initiation_Rep3",
+          "Voss_1-68_42h_after-lateral-root-initiation_Rep4"
+        ],
+        "VossAndBennet_45h_after_bending": [
+          "Voss_1-15_45h_after-lateral-root-initiation_Rep1",
+          "Voss_1-33_45h_after-lateral-root-initiation_Rep2",
+          "Voss_1-51_45h_after-lateral-root-initiation_Rep3",
+          "Voss_1-69_45h_after-lateral-root-initiation_Rep4"
+        ],
+        "VossAndBennet_48h_after_bending": [
+          "Voss_1-16_48h_after-lateral-root-initiation_Rep1",
+          "Voss_1-34_48h_after-lateral-root-initiation_Rep2",
+          "Voss_1-52_48h_after-lateral-root-initiation_Rep3",
+          "Voss_1-70_48h_after-lateral-root-initiation_Rep4"
+        ],
+        "VossAndBennet_51h_after_bending": [
+          "Voss_1-17_51h_after-lateral-root-initiation_Rep1",
+          "Voss_1-35_51h_after-lateral-root-initiation_Rep2",
+          "Voss_1-53_51h_after-lateral-root-initiation_Rep3",
+          "Voss_1-71_51h_after-lateral-root-initiation_Rep4"
+        ],
+        "VossAndBennet_54h_after_bending": [
+          "Voss_1-18_54h_after-lateral-root-initiation_Rep1",
+          "Voss_1-36_54h_after-lateral-root-initiation_Rep2",
+          "Voss_1-54_54h_after-lateral-root-initiation_Rep3",
+          "Voss_1-72_54h_after-lateral-root-initiation_Rep4"
+        ]
+      },
+      "description": {
+        "De_Smet_J0121_NPA": "De_Smet_J0121_NPA",
+        "De_Smet_J0121_2h_NAA": "De_Smet_J0121_2h_NAA",
+        "De_Smet_J0121_6h_NAA": "De_Smet_J0121_6h_NAA",
+        "De_Rybel_Col0_6h_Naxillin": "De_Rybel_Col0_6h_Naxillin",
+        "De_Rybel_Col0_2h_Naxillin": "De_Rybel_Col0_2h_Naxillin",
+        "De_Rybel_Col0_6h_NAA": "De_Rybel_Col0_6h_NAA",
+        "De_Rybel_Col0_2h_NAA": "De_Rybel_Col0_2h_NAA",
+        "De_Rybel_Col0_NPA": "De_Rybel_Col0_NPA",
+        "Vanneste_slr-1_2h_NAA": "Vanneste_slr-1_2h_NAA",
+        "Vanneste_slr-1_NPA": "Vanneste_slr-1_NPA",
+        "Vanneste_slr-1_6h_NAA": "Vanneste_slr-1_6h_NAA",
+        "Vanneste_Col0_2h_NAA": "Vanneste_Col0_2h_NAA",
+        "Vanneste_Col0_6h_NAA": "Vanneste_Col0_6h_NAA",
+        "Vanneste_Col0_NPA": "Vanneste_Col0_NPA",
+        "Okushima_Col": "Okushima_Col",
+        "Okushima_Col_IAA": "Okushima_Col_IAA",
+        "Okushima_arf19-1": "Okushima_arf19-1",
+        "Okushima_arf19-1_IAA": "Okushima_arf19-1_IAA",
+        "Okushima_nph4-1_IAA": "Okushima_nph4-1_IAA",
+        "Okushima_nph4-1": "Okushima_nph4-1",
+        "Okushima_nph4-1arf19-1_IAA": "Okushima_nph4-1arf19-1_IAA",
+        "Okushima_nph4-1arf19-1": "Okushima_nph4-1arf19-1",
+        "Xuan_ibr3_IBA": "Xuan_ibr3_IBA",
+        "Xuan_ibr3_DMSO": "Xuan_ibr3_DMSO",
+        "Xuan_Col_DMSO": "Xuan_Col_DMSO",
+        "Xuan_Col_IBA": "Xuan_Col_IBA",
+        "Lewis_control_0h": "Lewis_control_0h",
+        "Lewis_IAA_0h": "Lewis_IAA_0h",
+        "Lewis_control_0.5h": "Lewis_control_0.5h",
+        "Lewis_IAA_0.5h": "Lewis_IAA_0.5h",
+        "Lewis_control_1h": "Lewis_control_1h",
+        "Lewis_IAA_1h": "Lewis_IAA_1h",
+        "Lewis_control_2h": "Lewis_control_2h",
+        "Lewis_IAA_2h": "Lewis_IAA_2h",
+        "Lewis_control_4h": "Lewis_control_4h",
+        "Lewis_IAA_4h": "Lewis_IAA_4h",
+        "Lewis_control_8h": "Lewis_control_8h",
+        "Lewis_IAA_8h": "Lewis_IAA_8h",
+        "Lewis_control_12h": "Lewis_control_12h",
+        "Lewis_IAA_12h": "Lewis_IAA_12h",
+        "Lewis_control_24h": "Lewis_control_24h",
+        "Lewis_IAA_24h": "Lewis_IAA_24h",
+        "WalkerAndGifford_Cortex_Untreated_00h": "WalkerAndGifford_Cortex_Untreated_00h",
+        "WalkerAndGifford_Cortex_Untreated_01h": "WalkerAndGifford_Cortex_Untreated_01h",
+        "WalkerAndGifford_Cortex_Untreated_02h": "WalkerAndGifford_Cortex_Untreated_02h",
+        "WalkerAndGifford_Cortex_Untreated_04h": "WalkerAndGifford_Cortex_Untreated_04h",
+        "WalkerAndGifford_Cortex_Untreated_06h": "WalkerAndGifford_Cortex_Untreated_06h",
+        "WalkerAndGifford_Cortex_Untreated_08h": "WalkerAndGifford_Cortex_Untreated_08h",
+        "WalkerAndGifford_Cortex_Untreated_10h": "WalkerAndGifford_Cortex_Untreated_10h",
+        "WalkerAndGifford_Cortex_Untreated_12h": "WalkerAndGifford_Cortex_Untreated_12h",
+        "WalkerAndGifford_Cortex_Untreated_14h": "WalkerAndGifford_Cortex_Untreated_14h",
+        "WalkerAndGifford_Cortex_Untreated_16h": "WalkerAndGifford_Cortex_Untreated_16h",
+        "WalkerAndGifford_Cortex_Untreated_20h": "WalkerAndGifford_Cortex_Untreated_20h",
+        "WalkerAndGifford_Cortex_Untreated_24h": "WalkerAndGifford_Cortex_Untreated_24h",
+        "WalkerAndGifford_Cortex_Untreated_36h": "WalkerAndGifford_Cortex_Untreated_36h",
+        "WalkerAndGifford_Cortex_Untreated_48h": "WalkerAndGifford_Cortex_Untreated_48h",
+        "WalkerAndGifford_Pericycle_Untreated_00h": "WalkerAndGifford_Pericycle_Untreated_00h",
+        "WalkerAndGifford_Pericycle_Untreated_01h": "WalkerAndGifford_Pericycle_Untreated_01h",
+        "WalkerAndGifford_Pericycle_Untreated_02h": "WalkerAndGifford_Pericycle_Untreated_02h",
+        "WalkerAndGifford_Pericycle_Untreated_04h": "WalkerAndGifford_Pericycle_Untreated_04h",
+        "WalkerAndGifford_Pericycle_Untreated_06h": "WalkerAndGifford_Pericycle_Untreated_06h",
+        "WalkerAndGifford_Pericycle_Untreated_08h": "WalkerAndGifford_Pericycle_Untreated_08h",
+        "WalkerAndGifford_Pericycle_Untreated_10h": "WalkerAndGifford_Pericycle_Untreated_10h",
+        "WalkerAndGifford_Pericycle_Untreated_12h": "WalkerAndGifford_Pericycle_Untreated_12h",
+        "WalkerAndGifford_Pericycle_Untreated_14h": "WalkerAndGifford_Pericycle_Untreated_14h",
+        "WalkerAndGifford_Pericycle_Untreated_16h": "WalkerAndGifford_Pericycle_Untreated_16h",
+        "WalkerAndGifford_Pericycle_Untreated_20h": "WalkerAndGifford_Pericycle_Untreated_20h",
+        "WalkerAndGifford_Pericycle_Untreated_24h": "WalkerAndGifford_Pericycle_Untreated_24h",
+        "WalkerAndGifford_Pericycle_Untreated_36h": "WalkerAndGifford_Pericycle_Untreated_36h",
+        "WalkerAndGifford_Pericycle_Untreated_48h": "WalkerAndGifford_Pericycle_Untreated_48h",
+        "WalkerAndGifford_Cortex_Nitrogen_00h": "WalkerAndGifford_Cortex_Nitrogen_00h",
+        "WalkerAndGifford_Cortex_Nitrogen_01h": "WalkerAndGifford_Cortex_Nitrogen_01h",
+        "WalkerAndGifford_Cortex_Nitrogen_02h": "WalkerAndGifford_Cortex_Nitrogen_02h",
+        "WalkerAndGifford_Cortex_Nitrogen_04h": "WalkerAndGifford_Cortex_Nitrogen_04h",
+        "WalkerAndGifford_Cortex_Nitrogen_06h": "WalkerAndGifford_Cortex_Nitrogen_06h",
+        "WalkerAndGifford_Cortex_Nitrogen_08h": "WalkerAndGifford_Cortex_Nitrogen_08h",
+        "WalkerAndGifford_Cortex_Nitrogen_10h": "WalkerAndGifford_Cortex_Nitrogen_10h",
+        "WalkerAndGifford_Cortex_Nitrogen_12h": "WalkerAndGifford_Cortex_Nitrogen_12h",
+        "WalkerAndGifford_Cortex_Nitrogen_14h": "WalkerAndGifford_Cortex_Nitrogen_14h",
+        "WalkerAndGifford_Cortex_Nitrogen_16h": "WalkerAndGifford_Cortex_Nitrogen_16h",
+        "WalkerAndGifford_Cortex_Nitrogen_20h": "WalkerAndGifford_Cortex_Nitrogen_20h",
+        "WalkerAndGifford_Cortex_Nitrogen_24h": "WalkerAndGifford_Cortex_Nitrogen_24h",
+        "WalkerAndGifford_Cortex_Nitrogen_36h": "WalkerAndGifford_Cortex_Nitrogen_36h",
+        "WalkerAndGifford_Cortex_Nitrogen_48h": "WalkerAndGifford_Cortex_Nitrogen_48h",
+        "WalkerAndGifford_Pericycle_Nitrogen_00h": "WalkerAndGifford_Pericycle_Nitrogen_00h",
+        "WalkerAndGifford_Pericycle_Nitrogen_01h": "WalkerAndGifford_Pericycle_Nitrogen_01h",
+        "WalkerAndGifford_Pericycle_Nitrogen_02h": "WalkerAndGifford_Pericycle_Nitrogen_02h",
+        "WalkerAndGifford_Pericycle_Nitrogen_04h": "WalkerAndGifford_Pericycle_Nitrogen_04h",
+        "WalkerAndGifford_Pericycle_Nitrogen_06h": "WalkerAndGifford_Pericycle_Nitrogen_06h",
+        "WalkerAndGifford_Pericycle_Nitrogen_08h": "WalkerAndGifford_Pericycle_Nitrogen_08h",
+        "WalkerAndGifford_Pericycle_Nitrogen_10h": "WalkerAndGifford_Pericycle_Nitrogen_10h",
+        "WalkerAndGifford_Pericycle_Nitrogen_12h": "WalkerAndGifford_Pericycle_Nitrogen_12h",
+        "WalkerAndGifford_Pericycle_Nitrogen_14h": "WalkerAndGifford_Pericycle_Nitrogen_14h",
+        "WalkerAndGifford_Pericycle_Nitrogen_16h": "WalkerAndGifford_Pericycle_Nitrogen_16h",
+        "WalkerAndGifford_Pericycle_Nitrogen_20h": "WalkerAndGifford_Pericycle_Nitrogen_20h",
+        "WalkerAndGifford_Pericycle_Nitrogen_24h": "WalkerAndGifford_Pericycle_Nitrogen_24h",
+        "WalkerAndGifford_Pericycle_Nitrogen_36h": "WalkerAndGifford_Pericycle_Nitrogen_36h",
+        "WalkerAndGifford_Pericycle_Nitrogen_48h": "WalkerAndGifford_Pericycle_Nitrogen_48h",
+        "WalkerAndGifford_Cortex_Rhizobium_00h": "WalkerAndGifford_Cortex_Rhizobium_00h",
+        "WalkerAndGifford_Cortex_Rhizobium_01h": "WalkerAndGifford_Cortex_Rhizobium_01h",
+        "WalkerAndGifford_Cortex_Rhizobium_02h": "WalkerAndGifford_Cortex_Rhizobium_02h",
+        "WalkerAndGifford_Cortex_Rhizobium_04h": "WalkerAndGifford_Cortex_Rhizobium_04h",
+        "WalkerAndGifford_Cortex_Rhizobium_06h": "WalkerAndGifford_Cortex_Rhizobium_06h",
+        "WalkerAndGifford_Cortex_Rhizobium_08h": "WalkerAndGifford_Cortex_Rhizobium_08h",
+        "WalkerAndGifford_Cortex_Rhizobium_10h": "WalkerAndGifford_Cortex_Rhizobium_10h",
+        "WalkerAndGifford_Cortex_Rhizobium_12h": "WalkerAndGifford_Cortex_Rhizobium_12h",
+        "WalkerAndGifford_Cortex_Rhizobium_14h": "WalkerAndGifford_Cortex_Rhizobium_14h",
+        "WalkerAndGifford_Cortex_Rhizobium_16h": "WalkerAndGifford_Cortex_Rhizobium_16h",
+        "WalkerAndGifford_Cortex_Rhizobium_20h": "WalkerAndGifford_Cortex_Rhizobium_20h",
+        "WalkerAndGifford_Cortex_Rhizobium_24h": "WalkerAndGifford_Cortex_Rhizobium_24h",
+        "WalkerAndGifford_Cortex_Rhizobium_36h": "WalkerAndGifford_Cortex_Rhizobium_36h",
+        "WalkerAndGifford_Cortex_Rhizobium_48h": "WalkerAndGifford_Cortex_Rhizobium_48h",
+        "WalkerAndGifford_Pericycle_Rhizobium_00h": "WalkerAndGifford_Pericycle_Rhizobium_00h",
+        "WalkerAndGifford_Pericycle_Rhizobium_01h": "WalkerAndGifford_Pericycle_Rhizobium_01h",
+        "WalkerAndGifford_Pericycle_Rhizobium_02h": "WalkerAndGifford_Pericycle_Rhizobium_02h",
+        "WalkerAndGifford_Pericycle_Rhizobium_04h": "WalkerAndGifford_Pericycle_Rhizobium_04h",
+        "WalkerAndGifford_Pericycle_Rhizobium_06h": "WalkerAndGifford_Pericycle_Rhizobium_06h",
+        "WalkerAndGifford_Pericycle_Rhizobium_08h": "WalkerAndGifford_Pericycle_Rhizobium_08h",
+        "WalkerAndGifford_Pericycle_Rhizobium_10h": "WalkerAndGifford_Pericycle_Rhizobium_10h",
+        "WalkerAndGifford_Pericycle_Rhizobium_12h": "WalkerAndGifford_Pericycle_Rhizobium_12h",
+        "WalkerAndGifford_Pericycle_Rhizobium_14h": "WalkerAndGifford_Pericycle_Rhizobium_14h",
+        "WalkerAndGifford_Pericycle_Rhizobium_16h": "WalkerAndGifford_Pericycle_Rhizobium_16h",
+        "WalkerAndGifford_Pericycle_Rhizobium_20h": "WalkerAndGifford_Pericycle_Rhizobium_20h",
+        "WalkerAndGifford_Pericycle_Rhizobium_24h": "WalkerAndGifford_Pericycle_Rhizobium_24h",
+        "WalkerAndGifford_Pericycle_Rhizobium_36h": "WalkerAndGifford_Pericycle_Rhizobium_36h",
+        "WalkerAndGifford_Pericycle_Rhizobium_48h": "WalkerAndGifford_Pericycle_Rhizobium_48h",
+        "VossAndBennet_control_0h": "VossAndBennet_control_0h",
+        "VossAndBennet_6h_after_bending": "VossAndBennet_6h_after_bending",
+        "VossAndBennet_9h_after_bending": "VossAndBennet_9h_after_bending",
+        "VossAndBennet_12h_after_bending": "VossAndBennet_12h_after_bending",
+        "VossAndBennet_15h_after_bending": "VossAndBennet_15h_after_bending",
+        "VossAndBennet_18h_after_bending": "VossAndBennet_18h_after_bending",
+        "VossAndBennet_21h_after_bending": "VossAndBennet_21h_after_bending",
+        "VossAndBennet_24h_after_bending": "VossAndBennet_24h_after_bending",
+        "VossAndBennet_27h_after_bending": "VossAndBennet_27h_after_bending",
+        "VossAndBennet_30h_after_bending": "VossAndBennet_30h_after_bending",
+        "VossAndBennet_33h_after_bending": "VossAndBennet_33h_after_bending",
+        "VossAndBennet_36h_after_bending": "VossAndBennet_36h_after_bending",
+        "VossAndBennet_39h_after_bending": "VossAndBennet_39h_after_bending",
+        "VossAndBennet_42h_after_bending": "VossAndBennet_42h_after_bending",
+        "VossAndBennet_45h_after_bending": "VossAndBennet_45h_after_bending",
+        "VossAndBennet_48h_after_bending": "VossAndBennet_48h_after_bending",
+        "VossAndBennet_51h_after_bending": "VossAndBennet_51h_after_bending",
+        "VossAndBennet_54h_after_bending": "VossAndBennet_54h_after_bending"
+      },
+      "controlComparison": {
+        "Vanneste_Col0_NPA": ["De_Smet_J0121_NPA"],
+        "Vanneste_Col0_2h_NAA": ["De_Smet_J0121_2h_NAA"],
+        "Vanneste_Col0_6h_NAA": ["De_Smet_J0121_6h_NAA"],
+        "Okushima_Col": ["Okushima_Col_IAA"],
+        "Okushima_arf19-1": ["Okushima_arf19-1_IAA"],
+        "Okushima_nph4-1": ["Okushima_nph4-1_IAA"],
+        "Okushima_nph4-1arf19-1": ["Okushima_nph4-1arf19-1_IAA"],
+        "Xuan_ibr3_DMSO": ["Xuan_ibr3_IBA"],
+        "Xuan_Col_DMSO": ["Xuan_Col_IBA"],
+        "Lewis_control_0h": ["Lewis_IAA_0h"],
+        "Lewis_control_0.5h": ["Lewis_IAA_0.5h"],
+        "Lewis_control_1h": ["Lewis_IAA_1h"],
+        "Lewis_control_2h": ["Lewis_IAA_2h"],
+        "Lewis_control_4h": ["Lewis_IAA_4h"],
+        "Lewis_control_8h": ["Lewis_IAA_8h"],
+        "Lewis_control_12h": ["Lewis_IAA_12h"],
+        "Lewis_control_24h": ["Lewis_IAA_24h"],
+        "WalkerAndGifford_Cortex_Untreated_00h": ["WalkerAndGifford_Cortex_Nitrogen_00h", "WalkerAndGifford_Cortex_Rhizobium_00h"],
+        "WalkerAndGifford_Cortex_Untreated_01h": ["WalkerAndGifford_Cortex_Nitrogen_01h", "WalkerAndGifford_Cortex_Rhizobium_01h"],
+        "WalkerAndGifford_Cortex_Untreated_02h": ["WalkerAndGifford_Cortex_Nitrogen_02h", "WalkerAndGifford_Cortex_Rhizobium_02h"],
+        "WalkerAndGifford_Cortex_Untreated_04h": ["WalkerAndGifford_Cortex_Nitrogen_04h", "WalkerAndGifford_Cortex_Rhizobium_04h"],
+        "WalkerAndGifford_Cortex_Untreated_06h": ["WalkerAndGifford_Cortex_Nitrogen_06h", "WalkerAndGifford_Cortex_Rhizobium_06h"],
+        "WalkerAndGifford_Cortex_Untreated_08h": ["WalkerAndGifford_Cortex_Nitrogen_08h", "WalkerAndGifford_Cortex_Rhizobium_08h"],
+        "WalkerAndGifford_Cortex_Untreated_10h": ["WalkerAndGifford_Cortex_Nitrogen_10h", "WalkerAndGifford_Cortex_Rhizobium_10h"],
+        "WalkerAndGifford_Cortex_Untreated_12h": ["WalkerAndGifford_Cortex_Nitrogen_12h", "WalkerAndGifford_Cortex_Rhizobium_12h"],
+        "WalkerAndGifford_Cortex_Untreated_14h": ["WalkerAndGifford_Cortex_Nitrogen_14h", "WalkerAndGifford_Cortex_Rhizobium_14h"],
+        "WalkerAndGifford_Cortex_Untreated_16h": ["WalkerAndGifford_Cortex_Nitrogen_16h", "WalkerAndGifford_Cortex_Rhizobium_16h"],
+        "WalkerAndGifford_Cortex_Untreated_20h": ["WalkerAndGifford_Cortex_Nitrogen_20h", "WalkerAndGifford_Cortex_Rhizobium_20h"],
+        "WalkerAndGifford_Cortex_Untreated_24h": ["WalkerAndGifford_Cortex_Nitrogen_24h", "WalkerAndGifford_Cortex_Rhizobium_24h"],
+        "WalkerAndGifford_Cortex_Untreated_36h": ["WalkerAndGifford_Cortex_Nitrogen_36h", "WalkerAndGifford_Cortex_Rhizobium_36h"],
+        "WalkerAndGifford_Cortex_Untreated_48h": ["WalkerAndGifford_Cortex_Nitrogen_48h", "WalkerAndGifford_Cortex_Rhizobium_48h"],
+        "WalkerAndGifford_Pericycle_Untreated_00h": ["WalkerAndGifford_Pericycle_Nitrogen_00h", "WalkerAndGifford_Pericycle_Rhizobium_00h"],
+        "WalkerAndGifford_Pericycle_Untreated_01h": ["WalkerAndGifford_Pericycle_Nitrogen_01h", "WalkerAndGifford_Pericycle_Rhizobium_01h"],
+        "WalkerAndGifford_Pericycle_Untreated_02h": ["WalkerAndGifford_Pericycle_Nitrogen_02h", "WalkerAndGifford_Pericycle_Rhizobium_02h"],
+        "WalkerAndGifford_Pericycle_Untreated_04h": ["WalkerAndGifford_Pericycle_Nitrogen_04h", "WalkerAndGifford_Pericycle_Rhizobium_04h"],
+        "WalkerAndGifford_Pericycle_Untreated_06h": ["WalkerAndGifford_Pericycle_Nitrogen_06h", "WalkerAndGifford_Pericycle_Rhizobium_06h"],
+        "WalkerAndGifford_Pericycle_Untreated_08h": ["WalkerAndGifford_Pericycle_Nitrogen_08h", "WalkerAndGifford_Pericycle_Rhizobium_08h"],
+        "WalkerAndGifford_Pericycle_Untreated_10h": ["WalkerAndGifford_Pericycle_Nitrogen_10h", "WalkerAndGifford_Pericycle_Rhizobium_10h"],
+        "WalkerAndGifford_Pericycle_Untreated_12h": ["WalkerAndGifford_Pericycle_Nitrogen_12h", "WalkerAndGifford_Pericycle_Rhizobium_12h"],
+        "WalkerAndGifford_Pericycle_Untreated_14h": ["WalkerAndGifford_Pericycle_Nitrogen_14h", "WalkerAndGifford_Pericycle_Rhizobium_14h"],
+        "WalkerAndGifford_Pericycle_Untreated_16h": ["WalkerAndGifford_Pericycle_Nitrogen_16h", "WalkerAndGifford_Pericycle_Rhizobium_16h"],
+        "WalkerAndGifford_Pericycle_Untreated_20h": ["WalkerAndGifford_Pericycle_Nitrogen_20h", "WalkerAndGifford_Pericycle_Rhizobium_20h"],
+        "WalkerAndGifford_Pericycle_Untreated_24h": ["WalkerAndGifford_Pericycle_Nitrogen_24h", "WalkerAndGifford_Pericycle_Rhizobium_24h"],
+        "WalkerAndGifford_Pericycle_Untreated_36h": ["WalkerAndGifford_Pericycle_Nitrogen_36h", "WalkerAndGifford_Pericycle_Rhizobium_36h"],
+        "WalkerAndGifford_Pericycle_Untreated_48h": ["WalkerAndGifford_Pericycle_Nitrogen_48h", "WalkerAndGifford_Pericycle_Rhizobium_48h"],
+        "VossAndBennet_control_0h": ["VossAndBennet_6h_after_bending", "VossAndBennet_9h_after_bending", "VossAndBennet_12h_after_bending", "VossAndBennet_15h_after_bending", "VossAndBennet_18h_after_bending", "VossAndBennet_21h_after_bending", "VossAndBennet_24h_after_bending", "VossAndBennet_27h_after_bending", "VossAndBennet_30h_after_bending", "VossAndBennet_33h_after_bending", "VossAndBennet_36h_after_bending", "VossAndBennet_39h_after_bending", "VossAndBennet_42h_after_bending", "VossAndBennet_45h_after_bending", "VossAndBennet_48h_after_bending", "VossAndBennet_51h_after_bending", "VossAndBennet_54h_after_bending"]
+      },
+      "db": "lateral_root_initiation"
+    },
+    "LightSeries": {
+      "sample": {
+        "LLHC_0h": [
+          "LLHC_00"
+        ],
+        "LLHC_4h": [
+          "LLHC_04"
+        ],
+        "LLHC_8h": [
+          "LLHC_08"
+        ],
+        "LLHC_12h": [
+          "LLHC_12"
+        ],
+        "LLHC_16h": [
+          "LLHC_16"
+        ],
+        "LLHC_20h": [
+          "LLHC_20"
+        ],
+        "LLHC_24h": [
+          "LLHC_24"
+        ],
+        "LLHC_28h": [
+          "LLHC_28"
+        ],
+        "LLHC_32h": [
+          "LLHC_32"
+        ],
+        "LLHC_36h": [
+          "LLHC_36"
+        ],
+        "LLHC_40h": [
+          "LLHC_40"
+        ],
+        "LLHC_44h": [
+          "LLHC_44"
+        ],
+        "LDHC_0h": [
+          "LDHC_00"
+        ],
+        "LDHC_4h": [
+          "LDHC_04"
+        ],
+        "LDHC_8h": [
+          "LDHC_08"
+        ],
+        "LDHC_12h": [
+          "LDHC_12"
+        ],
+        "LDHC_16h": [
+          "LDHC_16"
+        ],
+        "LDHC_20h": [
+          "LDHC_20"
+        ],
+        "LDHC_24h": [
+          "LDHC_24"
+        ],
+        "LDHC_28h": [
+          "LDHC_28"
+        ],
+        "LDHC_32h": [
+          "LDHC_32"
+        ],
+        "LDHC_36h": [
+          "LDHC_36"
+        ],
+        "LDHC_40h": [
+          "LDHC_40"
+        ],
+        "LDHC_44h": [
+          "LDHC_44"
+        ],
+        "longday_0h": [
+          "longday_00"
+        ],
+        "longday_4h": [
+          "longday_04"
+        ],
+        "longday_8h": [
+          "longday_08"
+        ],
+        "longday_12h": [
+          "longday_12"
+        ],
+        "longday_16h": [
+          "longday_16"
+        ],
+        "longday_20h": [
+          "longday_20"
+        ],
+        "longday_24h": [
+          "longday_24"
+        ],
+        "longday_28h": [
+          "longday_28"
+        ],
+        "longday_32h": [
+          "longday_32"
+        ],
+        "longday_36h": [
+          "longday_36"
+        ],
+        "longday_40h": [
+          "longday_40"
+        ],
+        "longday_44h": [
+          "longday_44"
+        ],
+        "shortday_0h": [
+          "shortday_00"
+        ],
+        "shortday_4h": [
+          "shortday_04"
+        ],
+        "shortday_8h": [
+          "shortday_08"
+        ],
+        "shortday_12h": [
+          "shortday_12"
+        ],
+        "shortday_16h": [
+          "shortday_16"
+        ],
+        "shortday_20h": [
+          "shortday_20"
+        ],
+        "shortday_24h": [
+          "shortday_24"
+        ],
+        "shortday_28h": [
+          "shortday_28"
+        ],
+        "shortday_32h": [
+          "shortday_32"
+        ],
+        "shortday_36h": [
+          "shortday_36"
+        ],
+        "shortday_40h": [
+          "shortday_40"
+        ],
+        "shortday_44h": [
+          "shortday_44"
+        ],
+        "LDHH_ST_0h": [
+          "LDHH_ST_00",
+          "LDHH_ST_24"
+        ],
+        "LDHH_ST_4h": [
+          "LDHH_ST_04",
+          "LDHH_ST_28"
+        ],
+        "LDHH_ST_8h": [
+          "LDHH_ST_08",
+          "LDHH_ST_32"
+        ],
+        "LDHH_ST_12h": [
+          "LDHH_ST_12",
+          "LDHH_ST_36"
+        ],
+        "LDHH_ST_16h": [
+          "LDHH_ST_16",
+          "LDHH_ST_40"
+        ],
+        "LDHH_ST_20h": [
+          "LDHH_ST_20",
+          "LDHH_ST_44"
+        ],
+        "LDHH_ST_24h": [
+          "LDHH_ST_00",
+          "LDHH_ST_24"
+        ],
+        "LDHH_SM_0h": [
+          "LDHH_SM_00",
+          "LDHH_SM_24"
+        ],
+        "LDHH_SM_4h": [
+          "LDHH_SM_04",
+          "LDHH_SM_28"
+        ],
+        "LDHH_SM_8h": [
+          "LDHH_SM_08",
+          "LDHH_SM_32"
+        ],
+        "LDHH_SM_12h": [
+          "LDHH_SM_12",
+          "LDHH_SM_36"
+        ],
+        "LDHH_SM_16h": [
+          "LDHH_SM_16",
+          "LDHH_SM_40"
+        ],
+        "LDHH_SM_20h": [
+          "LDHH_SM_20",
+          "LDHH_SM_44"
+        ],
+        "LDHH_SM_24h": [
+          "LDHH_SM_00",
+          "LDHH_SM_24"
+        ],
+        "LL_LLHC_0h": [
+          "LL_LLHC_00"
+        ],
+        "LL_LLHC_4h": [
+          "LL_LLHC_04"
+        ],
+        "LL_LLHC_8h": [
+          "LL_LLHC_08"
+        ],
+        "LL_LLHC_12h": [
+          "LL_LLHC_12"
+        ],
+        "LL_LLHC_16h": [
+          "LL_LLHC_16"
+        ],
+        "LL_LLHC_20h": [
+          "LL_LLHC_20"
+        ],
+        "LL_LLHC_24h": [
+          "LL_LLHC_24"
+        ],
+        "LL_LLHC_28h": [
+          "LL_LLHC_28"
+        ],
+        "LL_LLHC_32h": [
+          "LL_LLHC_32"
+        ],
+        "LL_LLHC_36h": [
+          "LL_LLHC_36"
+        ],
+        "LL_LLHC_40h": [
+          "LL_LLHC_40"
+        ],
+        "LL_LLHC_44h": [
+          "LL_LLHC_44"
+        ],
+        "LL_LDHC_0h": [
+          "LL_LDHC_00"
+        ],
+        "LL_LDHC_4h": [
+          "LL_LDHC_04"
+        ],
+        "LL_LDHC_8h": [
+          "LL_LDHC_08"
+        ],
+        "LL_LDHC_12h": [
+          "LL_LDHC_12"
+        ],
+        "LL_LDHC_16h": [
+          "LL_LDHC_16"
+        ],
+        "LL_LDHC_20h": [
+          "LL_LDHC_20"
+        ],
+        "LL_LDHC_24h": [
+          "LL_LDHC_24"
+        ],
+        "LL_LDHC_28h": [
+          "LL_LDHC_28"
+        ],
+        "LL_LDHC_32h": [
+          "LL_LDHC_32"
+        ],
+        "LL_LDHC_36h": [
+          "LL_LDHC_36"
+        ],
+        "LL_LDHC_40h": [
+          "LL_LDHC_40"
+        ],
+        "LL_LDHC_44h": [
+          "LL_LDHC_44"
+        ],
+        "LL_LDHH_SH_0h": [
+          "LL_LDHH_SH_00"
+        ],
+        "LL_LDHH_SH_4h": [
+          "LL_LDHH_SH_04"
+        ],
+        "LL_LDHH_SH_8h": [
+          "LL_LDHH_SH_08"
+        ],
+        "LL_LDHH_SH_12h": [
+          "LL_LDHH_SH_12"
+        ],
+        "LL_LDHH_SH_16h": [
+          "LL_LDHH_SH_16"
+        ],
+        "LL_LDHH_SH_20h": [
+          "LL_LDHH_SH_20"
+        ],
+        "LL_LDHH_SH_24h": [
+          "LL_LDHH_SH_24"
+        ],
+        "LL_LDHH_SH_28h": [
+          "LL_LDHH_SH_28"
+        ],
+        "LL_LDHH_SH_32h": [
+          "LL_LDHH_SH_32"
+        ],
+        "LL_LDHH_SH_36h": [
+          "LL_LDHH_SH_36"
+        ],
+        "LL_LDHH_SH_40h": [
+          "LL_LDHH_SH_40"
+        ],
+        "LL_LDHH_SH_44h": [
+          "LL_LDHH_SH_44"
+        ],
+        "LL_LDHH_AM_0h": [
+          "LL_LDHH_AM_26"
+        ],
+        "LL_LDHH_AM_4h": [
+          "LL_LDHH_AM_30"
+        ],
+        "LL_LDHH_AM_8h": [
+          "LL_LDHH_AM_34"
+        ],
+        "LL_LDHH_AM_12h": [
+          "LL_LDHH_AM_38"
+        ],
+        "LL_LDHH_AM_16h": [
+          "LL_LDHH_AM_42"
+        ],
+        "LL_LDHH_AM_20h": [
+          "LL_LDHH_AM_46"
+        ],
+        "LL_LDHH_AM_24h": [
+          "LL_LDHH_AM_50"
+        ],
+        "LL_LDHH_AM_28h": [
+          "LL_LDHH_AM_54"
+        ],
+        "LL_LDHH_AM_32h": [
+          "LL_LDHH_AM_58"
+        ],
+        "LL_LDHH_AM_36h": [
+          "LL_LDHH_AM_62"
+        ],
+        "LL_LDHH_AM_40h": [
+          "LL_LDHH_AM_66"
+        ],
+        "LL_LDHH_AM_44h": [
+          "LL_LDHH_AM_70"
+        ],
+        "DD_DDHC_0h": [
+          "DD_DDHC_00"
+        ],
+        "DD_DDHC_4h": [
+          "DD_DDHC_04"
+        ],
+        "DD_DDHC_8h": [
+          "DD_DDHC_08"
+        ],
+        "DD_DDHC_12h": [
+          "DD_DDHC_12"
+        ],
+        "DD_DDHC_16h": [
+          "DD_DDHC_16"
+        ],
+        "DD_DDHC_20h": [
+          "DD_DDHC_20"
+        ],
+        "DD_DDHC_24h": [
+          "DD_DDHC_24"
+        ],
+        "DD_DDHC_28h": [
+          "DD_DDHC_28"
+        ],
+        "DD_DDHC_32h": [
+          "DD_DDHC_32"
+        ],
+        "DD_DDHC_36h": [
+          "DD_DDHC_36"
+        ],
+        "DD_DDHC_40h": [
+          "DD_DDHC_40"
+        ],
+        "DD_DDHC_44h": [
+          "DD_DDHC_44"
+        ],
+        "d_1_red_44_dark": [
+          "AtGen_D-11_1-PS_REP1_ATH1",
+          "AtGen_D-27_2-PS_REP2_ATH1",
+          "AtGen_D-43_3-PS_REP3_ATH1"
+        ],
+        "d_5_uv_a_40_dark": [
+          "AtGen_D-14_1-AS_REP1_ATH1",
+          "AtGen_D-30_2-AS_REP2_ATH1",
+          "AtGen_D-46_3-AS_REP3_ATH1"
+        ],
+        "d_5_uv_ab_40_dark": [
+          "AtGen_D-15_1-US_REP1_ATH1",
+          "AtGen_D-47_3-US_REP3_ATH1",
+          "AtGen_D-31_2-US_REP2_ATH1"
+        ],
+        "d_45_red": [
+          "AtGen_D-12_1-RS_REP1_ATH1",
+          "AtGen_D-28_2-RS_REP2_ATH1",
+          "AtGen_D-44_3-RS_REP3_ATH1"
+        ],
+        "d_45_far_red": [
+          "AtGen_D-10_1-FS_REP1_ATH1",
+          "AtGen_D-42_3-FS_REP3_ATH1",
+          "AtGen_D-26_1-FS_REP2_ATH1"
+        ],
+        "d_45_blue": [
+          "AtGen_D-13_1-BS_REP1_ATH1",
+          "AtGen_D-29_2-BS_REP2_ATH1",
+          "AtGen_D-45_3-BS_REP3_ATH1"
+        ],
+        "d_45_white": [
+          "AtGen_D-16_1-WS_REP1_ATH1",
+          "AtGen_D-32_2-WS_REP2_ATH1",
+          "AtGen_D-48_3-WS_REP3_ATH1"
+        ],
+        "d_control_44": [
+          "AtGen_D-9_1-DS_REP1_ATH1",
+          "AtGen_D-25_2-DS_REP2_ATH1",
+          "AtGen_D-41_3-DS_REP3_ATH1"
+        ],
+        "d_1_red_4_dark": [
+          "AtGen_D-3_1-PL_REP1_ATH1",
+          "AtGen_D-19_2-PL_REP2_ATH1",
+          "AtGen_D-35_3-PL_REP3_ATH1"
+        ],
+        "d_5_uv_a_4_dark": [
+          "AtGen_D-6_1-AL_REP1_ATH1",
+          "AtGen_D-22_2-AL_REP2_ATH1",
+          "AtGen_D-38_3-AL_REP3_ATH1"
+        ],
+        "d_5_uv_ab_4_dark": [
+          "AtGen_D-7_1-UL_REP1_ATH1",
+          "AtGen_D-23_2-UL_REP2_ATH1",
+          "AtGen_D-39_3-UL_REP3_ATH1"
+        ],
+        "d_4_red": [
+          "AtGen_D-4_1-RL_REP1_ATH1",
+          "AtGen_D-20_2-RL_REP2_ATH1",
+          "AtGen_D-36_3-RL_REP3_ATH1"
+        ],
+        "d_4_far_red": [
+          "AtGen_D-2_1-FL_REP1_ATH1",
+          "AtGen_D-18_2-FL_REP2_ATH1",
+          "AtGen_D-34_3-FL_REP3_ATH1"
+        ],
+        "d_4_blue": [
+          "AtGen_D-5_1-BL_REP1_ATH1",
+          "AtGen_D-21_2-BL_REP2_ATH1",
+          "AtGen_D-37_3-BL_REP3_ATH1"
+        ],
+        "d_4_white": [
+          "AtGen_D-8_1-WL_REP1_ATH1",
+          "AtGen_D-24_2-WL_REP2_ATH1",
+          "AtGen_D-40_3-WL_REP3_ATH1"
+        ],
+        "d_control_4": [
+          "AtGen_D-33_3-DL_REP3_ATH1",
+          "AtGen_D-1_1-DL_REP1_ATH1",
+          "AtGen_D-17_2-DL_REP2_ATH1"
+        ]
+      },
+      "description": {
+        "LLHC_0h": "Continuous light with temperature cycles, 0h",
+        "LLHC_4h": "Continuous light with temperature cycles, 4h",
+        "LLHC_8h": "Continuous light with temperature cycles, 8h",
+        "LLHC_12h": "Continuous light with temperature cycles, 12h",
+        "LLHC_16h": "Continuous light with temperature cycles, 16h",
+        "LLHC_20h": "Continuous light with temperature cycles, 20h",
+        "LLHC_24h": "Continuous light with temperature cycles, 24h",
+        "LLHC_28h": "Continuous light with temperature cycles, 28h",
+        "LLHC_32h": "Continuous light with temperature cycles, 32h",
+        "LLHC_36h": "Continuous light with temperature cycles, 36h",
+        "LLHC_40h": "Continuous light with temperature cycles, 40h",
+        "LLHC_44h": "Continuous light with temperature cycles, 44h",
+        "LDHC_0h": "12h light-dark cycle with concommitant temperature cycle, 0h",
+        "LDHC_4h": "12h light-dark cycle with concommitant temperature cycle, 4h",
+        "LDHC_8h": "12h light-dark cycle with concommitant temperature cycle, 8h",
+        "LDHC_12h": "12h light-dark cycle with concommitant temperature cycle, 12h",
+        "LDHC_16h": "12h light-dark cycle with concommitant temperature cycle, 16h",
+        "LDHC_20h": "12h light-dark cycle with concommitant temperature cycle, 20h",
+        "LDHC_24h": "12h light-dark cycle with concommitant temperature cycle, 24h",
+        "LDHC_28h": "12h light-dark cycle with concommitant temperature cycle, 28h",
+        "LDHC_32h": "12h light-dark cycle with concommitant temperature cycle, 32h",
+        "LDHC_36h": "12h light-dark cycle with concommitant temperature cycle, 36h",
+        "LDHC_40h": "12h light-dark cycle with concommitant temperature cycle, 40h",
+        "LDHC_44h": "12h light-dark cycle with concommitant temperature cycle, 44h",
+        "longday_0h": "Long day grown plants, 0h",
+        "longday_4h": "Long day grown plants, 4h",
+        "longday_8h": "Long day grown plants, 8h",
+        "longday_12h": "Long day grown plants, 12h",
+        "longday_16h": "Long day grown plants, 16h",
+        "longday_20h": "Long day grown plants, 20h",
+        "longday_24h": "Long day grown plants, 24h",
+        "longday_28h": "Long day grown plants, 28h",
+        "longday_32h": "Long day grown plants, 32h",
+        "longday_36h": "Long day grown plants, 36h",
+        "longday_40h": "Long day grown plants, 40h",
+        "longday_44h": "Long day grown plants, 44h",
+        "shortday_0h": "Short day grown plants, 0h",
+        "shortday_4h": "Short day grown plants, 4h",
+        "shortday_8h": "Short day grown plants, 8h",
+        "shortday_12h": "Short day grown plants, 12h",
+        "shortday_16h": "Short day grown plants, 16h",
+        "shortday_20h": "Short day grown plants, 20h",
+        "shortday_24h": "Short day grown plants, 24h",
+        "shortday_28h": "Short day grown plants, 28h",
+        "shortday_32h": "Short day grown plants, 32h",
+        "shortday_36h": "Short day grown plants, 36h",
+        "shortday_40h": "Short day grown plants, 40h",
+        "shortday_44h": "Short day grown plants, 44h",
+        "LDHH_ST_0h": "12h light-dark cycle, no temperature cycle, leaves from older plants, 0h",
+        "LDHH_ST_4h": "12h light-dark cycle, no temperature cycle, leaves from older plants, 4h",
+        "LDHH_ST_8h": "12h light-dark cycle, no temperature cycle, leaves from older plants, 8h",
+        "LDHH_ST_12h": "12h light-dark cycle, no temperature cycle, leaves from older plants, 12h",
+        "LDHH_ST_16h": "12h light-dark cycle, no temperature cycle, leaves from older plants, 16h",
+        "LDHH_ST_20h": "12h light-dark cycle, no temperature cycle, leaves from older plants, 20h",
+        "LDHH_ST_24h": "12h light-dark cycle, no temperature cycle, leaves from older plants, 24h",
+        "LDHH_SM_0h": "12h light-dark cycle, no temperature cycle, leaves from older plants, 0h",
+        "LDHH_SM_4h": "12h light-dark cycle, no temperature cycle, leaves from older plants, 4h",
+        "LDHH_SM_8h": "12h light-dark cycle, no temperature cycle, leaves from older plants, 8h",
+        "LDHH_SM_12h": "12h light-dark cycle, no temperature cycle, leaves from older plants, 12h",
+        "LDHH_SM_16h": "12h light-dark cycle, no temperature cycle, leaves from older plants, 16h",
+        "LDHH_SM_20h": "12h light-dark cycle, no temperature cycle, leaves from older plants, 20h",
+        "LDHH_SM_24h": "12h light-dark cycle, no temperature cycle, leaves from older plants, 24h",
+        "LL_LLHC_0h": "Circadian experiment - plants grown under continuous light with temperature cycle, then sampled under continuous light and constant temperature, 0h",
+        "LL_LLHC_4h": "Circadian experiment - plants grown under continuous light with temperature cycle, then sampled under continuous light and constant temperature, 4h",
+        "LL_LLHC_8h": "Circadian experiment - plants grown under continuous light with temperature cycle, then sampled under continuous light and constant temperature, 8h",
+        "LL_LLHC_12h": "Circadian experiment - plants grown under continuous light with temperature cycle, then sampled under continuous light and constant temperature, 12h",
+        "LL_LLHC_16h": "Circadian experiment - plants grown under continuous light with temperature cycle, then sampled under continuous light and constant temperature, 16h",
+        "LL_LLHC_20h": "Circadian experiment - plants grown under continuous light with temperature cycle, then sampled under continuous light and constant temperature, 20h",
+        "LL_LLHC_24h": "Circadian experiment - plants grown under continuous light with temperature cycle, then sampled under continuous light and constant temperature, 24h",
+        "LL_LLHC_28h": "Circadian experiment - plants grown under continuous light with temperature cycle, then sampled under continuous light and constant temperature, 28h",
+        "LL_LLHC_32h": "Circadian experiment - plants grown under continuous light with temperature cycle, then sampled under continuous light and constant temperature, 32h",
+        "LL_LLHC_36h": "Circadian experiment - plants grown under continuous light with temperature cycle, then sampled under continuous light and constant temperature, 36h",
+        "LL_LLHC_40h": "Circadian experiment - plants grown under continuous light with temperature cycle, then sampled under continuous light and constant temperature, 40h",
+        "LL_LLHC_44h": "Circadian experiment - plants grown under continuous light with temperature cycle, then sampled under continuous light and constant temperature, 44h",
+        "LL_LDHC_0h": "Circadian experiment - plants grown under 12h light-dark cycle with a temperature cycle, then sampled under continuous light and constant temperature, 0h",
+        "LL_LDHC_4h": "Circadian experiment - plants grown under 12h light-dark cycle with a temperature cycle, then sampled under continuous light and constant temperature, 4h",
+        "LL_LDHC_8h": "Circadian experiment - plants grown under 12h light-dark cycle with a temperature cycle, then sampled under continuous light and constant temperature, 8h",
+        "LL_LDHC_12h": "Circadian experiment - plants grown under 12h light-dark cycle with a temperature cycle, then sampled under continuous light and constant temperature, 12h",
+        "LL_LDHC_16h": "Circadian experiment - plants grown under 12h light-dark cycle with a temperature cycle, then sampled under continuous light and constant temperature, 16h",
+        "LL_LDHC_20h": "Circadian experiment - plants grown under 12h light-dark cycle with a temperature cycle, then sampled under continuous light and constant temperature, 20h",
+        "LL_LDHC_24h": "Circadian experiment - plants grown under 12h light-dark cycle with a temperature cycle, then sampled under continuous light and constant temperature, 24h",
+        "LL_LDHC_28h": "Circadian experiment - plants grown under 12h light-dark cycle with a temperature cycle, then sampled under continuous light and constant temperature, 28h",
+        "LL_LDHC_32h": "Circadian experiment - plants grown under 12h light-dark cycle with a temperature cycle, then sampled under continuous light and constant temperature, 32h",
+        "LL_LDHC_36h": "Circadian experiment - plants grown under 12h light-dark cycle with a temperature cycle, then sampled under continuous light and constant temperature, 36h",
+        "LL_LDHC_40h": "Circadian experiment - plants grown under 12h light-dark cycle with a temperature cycle, then sampled under continuous light and constant temperature, 40h",
+        "LL_LDHC_44h": "Circadian experiment - plants grown under 12h light-dark cycle with a temperature cycle, then sampled under continuous light and constant temperature, 44h",
+        "LL_LDHH_SH_0h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 0h",
+        "LL_LDHH_SH_4h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 4h",
+        "LL_LDHH_SH_8h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 8h",
+        "LL_LDHH_SH_12h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 12h",
+        "LL_LDHH_SH_16h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 16h",
+        "LL_LDHH_SH_20h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 20h",
+        "LL_LDHH_SH_24h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 24h",
+        "LL_LDHH_SH_28h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 28h",
+        "LL_LDHH_SH_32h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 32h",
+        "LL_LDHH_SH_36h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 36h",
+        "LL_LDHH_SH_40h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 40h",
+        "LL_LDHH_SH_44h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 44h",
+        "LL_LDHH_AM_0h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 0h",
+        "LL_LDHH_AM_4h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 4h",
+        "LL_LDHH_AM_8h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 8h",
+        "LL_LDHH_AM_12h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 12h",
+        "LL_LDHH_AM_16h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 16h",
+        "LL_LDHH_AM_20h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 20h",
+        "LL_LDHH_AM_24h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 24h",
+        "LL_LDHH_AM_28h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 28h",
+        "LL_LDHH_AM_32h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 32h",
+        "LL_LDHH_AM_36h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 36h",
+        "LL_LDHH_AM_40h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 40h",
+        "LL_LDHH_AM_44h": "Circadian experiment - plants grown under 12h light-dark cycle and constant temperature, then sampled under continuous light and constant temperature, 44h",
+        "DD_DDHC_0h": "Control series - plants grown in constant dark but with a temperature cycle applied. Samples taken in constant dark and temperature, 0h",
+        "DD_DDHC_4h": "Control series - plants grown in constant dark but with a temperature cycle applied. Samples taken in constant dark and temperature, 4h",
+        "DD_DDHC_8h": "Control series - plants grown in constant dark but with a temperature cycle applied. Samples taken in constant dark and temperature, 8h",
+        "DD_DDHC_12h": "Control series - plants grown in constant dark but with a temperature cycle applied. Samples taken in constant dark and temperature, 12h",
+        "DD_DDHC_16h": "Control series - plants grown in constant dark but with a temperature cycle applied. Samples taken in constant dark and temperature, 16h",
+        "DD_DDHC_20h": "Control series - plants grown in constant dark but with a temperature cycle applied. Samples taken in constant dark and temperature, 20h",
+        "DD_DDHC_24h": "Control series - plants grown in constant dark but with a temperature cycle applied. Samples taken in constant dark and temperature, 24h",
+        "DD_DDHC_28h": "Control series - plants grown in constant dark but with a temperature cycle applied. Samples taken in constant dark and temperature, 28h",
+        "DD_DDHC_32h": "Control series - plants grown in constant dark but with a temperature cycle applied. Samples taken in constant dark and temperature, 32h",
+        "DD_DDHC_36h": "Control series - plants grown in constant dark but with a temperature cycle applied. Samples taken in constant dark and temperature, 36h",
+        "DD_DDHC_40h": "Control series - plants grown in constant dark but with a temperature cycle applied. Samples taken in constant dark and temperature, 40h",
+        "DD_DDHC_44h": "Control series - plants grown in constant dark but with a temperature cycle applied. Samples taken in constant dark and temperature, 44h",
+        "d_1_red_44_dark": "4 d darkness then 1 min red light then 44 min darkness",
+        "d_5_uv_a_40_dark": "4 d darkness then 5 min UV-A light then 40 min darkness",
+        "d_5_uv_ab_40_dark": "4 d darkness then 5 min UV-A/B light then 40 min darkness",
+        "d_45_red": "4 d darkness then 45 min continuous red light",
+        "d_45_far_red": "4 d darkness then 45 min continuous far-red light",
+        "d_45_blue": "4 d darkness then 45 min continuous blue light",
+        "d_45_white": "4 d darkness then 45 min continuous white light",
+        "d_control_44": "dark control 44min",
+        "d_1_red_4_dark": "4 d darkness then 1 min red light then 4 h darkness",
+        "d_5_uv_a_4_dark": "4 d darkness then 5 min UV-A light then 4 h darkness",
+        "d_5_uv_ab_4_dark": "4 d darkness then 5 min UV-A/B light then 4 h darkness",
+        "d_4_red": "4 d darkness then 4 h continuous red light",
+        "d_4_far_red": "4 d darkness then 4 h continuous far-red light",
+        "d_4_blue": "4 d darkness then 4 h continuous blue light",
+        "d_4_white": "4 d darkness then 4 h continuous white light",
+        "d_control_4": "dark control 4h"
+      },
+      "controlComparison": {
+        "LLHC_0h": ["LLHC_4h", "LLHC_8h", "LLHC_12h", "LLHC_16h", "LLHC_20h", "LLHC_24h", "LLHC_28h", "LLHC_32h", "LLHC_36h", "LLHC_40h", "LLHC_44h"],
+        "LDHC_0h": ["LDHC_4h", "LDHC_8h", "LDHC_12h", "LDHC_16h", "LDHC_20h", "LDHC_24h", "LDHC_28h", "LDHC_32h", "LDHC_36h", "LDHC_40h", "LDHC_44h"],
+        "longday_0h": ["longday_4h", "longday_8h", "longday_12h", "longday_16h", "longday_20h", "longday_24h", "longday_28h", "longday_32h", "longday_36h", "longday_40h", "longday_44h"],
+        "shortday_0h": ["shortday_4h", "shortday_8h", "shortday_12h", "shortday_16h", "shortday_20h", "shortday_24h", "shortday_28h", "shortday_32h", "shortday_36h", "shortday_40h", "shortday_44h"],
+        "LDHH_ST_0h": ["LDHH_ST_4h", "LDHH_ST_8h", "LDHH_ST_12h", "LDHH_ST_16h", "LDHH_ST_20h", "LDHH_ST_24h", "LDHH_ST_28h", "LDHH_ST_32h", "LDHH_ST_36h", "LDHH_ST_40h", "LDHH_ST_44h"],
+        "LDHH_SM_0h": ["LDHH_SM_4h", "LDHH_SM_8h", "LDHH_SM_12h", "LDHH_SM_16h", "LDHH_SM_20h", "LDHH_SM_24h", "LDHH_SM_28h", "LDHH_SM_32h", "LDHH_SM_36h", "LDHH_SM_40h", "LDHH_SM_44h"],
+        "LL_LLHC_0h": ["LL_LLHC_4h", "LL_LLHC_8h", "LL_LLHC_12h", "LL_LLHC_16h", "LL_LLHC_20h", "LL_LLHC_24h", "LL_LLHC_28h", "LL_LLHC_32h", "LL_LLHC_36h", "LL_LLHC_40h", "LL_LLHC_44h"],
+        "LL_LDHC_0h": ["LL_LDHC_4h", "LL_LDHC_8h", "LL_LDHC_12h", "LL_LDHC_16h", "LL_LDHC_20h", "LL_LDHC_24h", "LL_LDHC_28h", "LL_LDHC_32h", "LL_LDHC_36h", "LL_LDHC_40h", "LL_LDHC_44h"],
+        "LL_LDHC_SH_0h": ["LL_LDHC_SH_4h", "LL_LDHC_SH_8h", "LL_LDHC_SH_12h", "LL_LDHC_SH_16h", "LL_LDHC_SH_20h", "LL_LDHC_SH_24h", "LL_LDHC_SH_28h", "LL_LDHC_SH_32h", "LL_LDHC_SH_36h", "LL_LDHC_SH_40h", "LL_LDHC_SH_44h"],
+        "LL_LDHH_AM_0h": ["LL_LDHH_AM_4h", "LL_LDHH_AM_8h", "LL_LDHH_AM_12h", "LL_LDHH_AM_16h", "LL_LDHH_AM_20h", "LL_LDHH_AM_24h", "LL_LDHH_AM_28h", "LL_LDHH_AM_32h", "LL_LDHH_AM_36h", "LL_LDHH_AM_40h", "LL_LDHH_AM_44h"],
+        "DD_DDHC_0h": ["DD_DDHC_4h", "DD_DDHC_8h", "DD_DDHC_12h", "DD_DDHC_16h", "DD_DDHC_20h", "DD_DDHC_24h", "DD_DDHC_28h", "DD_DDHC_32h", "DD_DDHC_36h", "DD_DDHC_40h", "DD_DDHC_44h"],
+        "d_control_44": ["d_1_red_44_dark", "d_5_uv_a_40_dark", "d_5_uv_ab_40_dark", "d_45_red", "d_45_far_red", "d_45_blue", "d_45_white"],
+        "d_control_4": ["d_1_red_4_dark", "d_5_uv_a_4_dark", "d_5_uv_ab_4_dark", "d_4_red", "d_4_far_red", "d_4_blue", "d_4_white"]
+      },
+      "db": "light_series"
+    },
+    "Regeneration": {
+      "sample": {
+        "Che et al., 0 day root explants": [
+          "0d_rep1",
+          "0d_rep2"
+        ],
+        "Che et al. expt, 2 days CIM": [
+          "2d_CIM_rep1",
+          "2d_CIM_rep2"
+        ],
+        "Che et al., 4 days CIM": [
+          "4d_CIM_rep1",
+          "4d_CIM_rep2"
+        ],
+        "Che et al., 7 days CIM": [
+          "7d_CIM_rep1",
+          "7d_CIM_rep2"
+        ],
+        "Che el al., 10 days CIM": [
+          "10d_CIM_rep1",
+          "10d_CIM_rep2"
+        ],
+        "Che et al., 7 days SIM": [
+          "7d_SIM_rep1",
+          "7d_SIM_rep2"
+        ],
+        "Che et al., 10 days SIM": [
+          "10d_SIM_rep1",
+          "10d_SIM_rep2",
+          "10d_SIM_rep3"
+        ],
+        "Che et al., 7 days RIM": [
+          "7d_RIM_rep1",
+          "7d_RIM_rep2"
+        ],
+        "Che et al., 10 days RIM": [
+          "10d_RIM_rep1",
+          "10d_RIM_rep2"
+        ],
+        "Sugimoto et al., cotyledon tissue prior to callus induction": [
+          "GSM496078_d0",
+          "GSM496077_d0",
+          "GSM496080_d0",
+          "GSM496079_d0"
+        ],
+        "Sugimoto et al., cotyledon derived callus": [
+          "GSM496078",
+          "GSM496077",
+          "GSM496080",
+          "GSM496079"
+        ],
+        "Sugimoto et al., root tissue prior to callus-induction treatment": [
+          "GSM496071_d0",
+          "GSM496067_d0",
+          "GSM496076_d0",
+          "GSM496073_d0"
+        ],
+        "Sugimoto et al., root derived callus": [
+          "GSM496067",
+          "GSM496076",
+          "GSM496073",
+          "GSM496071"
+        ],
+        "Sugimoto et al., petal tissue prior to callus induction": [
+          "GSM496084_d0",
+          "GSM496083_d0",
+          "GSM496082_d0",
+          "GSM496081_d0"
+        ],
+        "Sugimoto et al., petal derived callus": [
+          "GSM496084",
+          "GSM496083",
+          "GSM496082",
+          "GSM496081"
+        ],
+        "Sena et al., 130 mm of root tip (uncut control)": [
+          "GSM252663",
+          "GSM252664",
+          "GSM252665",
+          "GSM252666"
+        ],
+        "Sena et al., regenerating stump of root tip at 0hrs": [
+          "GSM252667",
+          "GSM252668",
+          "GSM252669",
+          "GSM252670"
+        ],
+        "Sena et al., regenerating stump of root tip after 5hrs": [
+          "GSM252671",
+          "GSM252672",
+          "GSM252673",
+          "GSM252674"
+        ],
+        "Sena et al., regenerating stump of root tip after 13hrs": [
+          "GSM252675",
+          "GSM252676",
+          "GSM252677",
+          "GSM252678"
+        ],
+        "Sena et al., regenerating stump of root tip after 22hrs": [
+          "GSM252679",
+          "GSM252680",
+          "GSM252681",
+          "GSM252682",
+          "GSM252683"
+        ],
+        "WT, 0 hours 2iP": [
+          "bot1330w",
+          "bot1517",
+          "bot1516"
+        ],
+        "WT, 19 hours 2iP": [
+          "bot1332w",
+          "bot1519",
+          "bot1518"
+        ],
+        "WT, 30 hours 2iP": [
+          "bot1334w",
+          "bot1521",
+          "bot1520"
+        ],
+        "WT, 48 hours 2iP": [
+          "bot1336w",
+          "bot1523",
+          "bot1522"
+        ],
+        "WUSp cells, 30 hours 2iP": [
+          "bot1957",
+          "bot1922",
+          "bot1920"
+        ],
+        "Yadav et al., WUSp SAM cells": [
+          "GSM342148",
+          "GSM342149"
+        ],
+        "wus, 0 hours 2iP": [
+          "bot1524",
+          "bot1600",
+          "bot1331w"
+        ],
+        "wus, 19 hours 2iP": [
+          "bot1333w",
+          "bot1601",
+          "bot1525"
+        ],
+        "wus, 30 hours 2iP": [
+          "bot1335w",
+          "bot1602",
+          "bot1526"
+        ],
+        "wus, 48 hours 2iP": [
+          "bot1527",
+          "bot1337w",
+          "bot1528"
+        ]
+      },
+      "description": {
+        "Che et al., 0 day root explants": "Che et al., 0 day root explants",
+        "Che et al. expt, 2 days CIM": "Che et al. expt, 2 days CIM",
+        "Che et al., 4 days CIM": "Che et al., 4 days CIM",
+        "Che et al., 7 days CIM": "Che et al., 7 days CIM",
+        "Che el al., 10 days CIM": "Che el al., 10 days CIM",
+        "Che et al., 7 days SIM": "Che et al., 7 days SIM",
+        "Che et al., 10 days SIM": "Che et al., 10 days SIM",
+        "Che et al., 7 days RIM": "Che et al., 7 days RIM",
+        "Che et al., 10 days RIM": "Che et al., 10 days RIM",
+        "Sugimoto et al., cotyledon tissue prior to callus induction": "Sugimoto et al., cotyledon tissue prior to callus induction",
+        "Sugimoto et al., cotyledon derived callus": "Sugimoto et al., cotyledon derived callus",
+        "Sugimoto et al., root tissue prior to callus-induction treatment": "Sugimoto et al., root tissue prior to callus-induction treatment",
+        "Sugimoto et al., root derived callus": "Sugimoto et al., root derived callus",
+        "Sugimoto et al., petal tissue prior to callus induction": "Sugimoto et al., petal tissue prior to callus induction",
+        "Sugimoto et al., petal derived callus": "Sugimoto et al., petal derived callus",
+        "Sena et al., 130 mm of root tip (uncut control)": "Sena et al., 130 mm of root tip (uncut control)",
+        "Sena et al., regenerating stump of root tip at 0hrs": "Sena et al., regenerating stump of root tip at 0hrs",
+        "Sena et al., regenerating stump of root tip after 5hrs": "Sena et al., regenerating stump of root tip after 5hrs",
+        "Sena et al., regenerating stump of root tip after 13hrs": "Sena et al., regenerating stump of root tip after 13hrs",
+        "Sena et al., regenerating stump of root tip after 22hrs": "Sena et al., regenerating stump of root tip after 22hrs",
+        "WT, 0 hours 2iP": "WT, 0 hours 2iP",
+        "WT, 19 hours 2iP": "WT, 19 hours 2iP",
+        "WT, 30 hours 2iP": "WT, 30 hours 2iP",
+        "WT, 48 hours 2iP": "WT, 48 hours 2iP",
+        "WUSp cells, 30 hours 2iP": "WUSp cells, 30 hours 2iP",
+        "Yadav et al., WUSp SAM cells": "Yadav et al., WUSp SAM cells",
+        "wus, 0 hours 2iP": "wus, 0 hours 2iP",
+        "wus, 19 hours 2iP": "wus, 19 hours 2iP",
+        "wus, 30 hours 2iP": "wus, 30 hours 2iP",
+        "wus, 48 hours 2iP": "wus, 48 hours 2iP"
+      },
+      "controlComparison": {
+        "Che et al., 0 day root explants": ["Che et al. expt, 2 days CIM", "Che et al., 4 days CIM", "Che et al., 7 days CIM", "Che et al., 10 days CIM", "Che et al., 7 days SIM", "Che et al., 10 days SIM", "Che et al., 7 days RIM", "Che et al., 10 days RIM"],
+        "Sugimoto et al., cotyledon tissue prior to callus induction": ["Sugimoto et al., cotyledon derived callus"],
+        "Sugimoto et al., root tissue prior to callus-induction treatment": ["Sugimoto et al., root derived callus"],
+        "Sugimoto et al., petal tissue prior to callus induction": ["Sugimoto et al., petal derived callus"],
+        "Sena et al., 130 mm of root tip (uncut control)": ["Sena et al., regenerating stump of root tip at 0hrs", "Sena et al., regenerating stump of root tip at 5hrs", "Sena et al., regenerating stump of root tip at 13hrs", "Sena et al., regenerating stump of root tip at 22hrs"],
+        "WT, 0 hours 2iP": ["wus, 0 hours 2iP"],
+        "WT, 19 hours 2iP": ["wus, 19 hours 2iP"],
+        "WT, 30 hours 2iP": ["wus, 30 hours 2iP"],
+        "WT, 48 hours 2iP": ["wus, 48 hours 2iP"]
+      },
+      "db": "meristem_db"
+    },
     "RootEpidermis": {
         "sample": {
             "WT": ["GSM757891", "GSM757892", "GSM757893"],
