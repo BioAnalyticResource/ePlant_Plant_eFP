@@ -527,7 +527,7 @@ class CreateSVGExpressionData {
         // Add max dropdown list to document:
         if (includeMaxDropdown && this.interactiveSVGData.topExpressionValues) {
             appendSVG += 'Select top expression to display: <select onchange="createSVGExpressionData.generateSVG(this.value.toString(), \'' + locus + '\', \'' + this.desiredDOMid + '\', ' + includeDropdownAll + ', ' + includeMaxDropdown + ')" id="topExpressionOptions">';
-            var topList = Object.keys(topExpressionValues);
+            var topList = Object.keys(this.interactiveSVGData.topExpressionValues);
             for (var i = 0; i < topList.length; i++) {
                 if (topList[i].length > 3 && topList[i].substring(0, 3).toLowerCase() !== 'top') {
                     appendSVG += '<option value="' + expressionValues[topList[i]]['Compendium'] + '">' + topList[i] + ': ' + expressionValues[topList[i]]['Compendium'] + '</option>';
