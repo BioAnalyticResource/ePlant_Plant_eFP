@@ -236,14 +236,14 @@
       </marker>
       <marker inkscape:stockid="Arrow2Lend" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend"
          style="overflow:visible;" inkscape:isstock="true" inkscape:collect="always">
-         <path 
+         <path
             style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
             d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
             transform="scale(1.1) rotate(180) translate(1,0)" />
       </marker>
       <marker inkscape:stockid="Arrow1Lend" orient="auto" refY="0.0" refX="0.0" id="Arrow1Lend"
          style="overflow:visible;" inkscape:isstock="true">
-         <path  d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         <path d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
             style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
             transform="scale(0.8) rotate(180) translate(12.5,0)" />
       </marker>
@@ -555,7 +555,7 @@
    </g>
    <path
       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
-      d="m 68.75,432.30932 h 42.24047"  inkscape:connector-curvature="0" />
+      d="m 68.75,432.30932 h 42.24047" inkscape:connector-curvature="0" />
    <g id="Vanneste_Col0_2h_NAA" transform="translate(85.06356)">
       <path style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 42.227908,415.30443 h 12.359387 v 39.96202 H 41.815928 Z" inkscape:connector-curvature="0" />
@@ -576,7 +576,7 @@
    </g>
    <path inkscape:connector-curvature="0" d="m 153.81356,432.30932 h 42.24047"
       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)" />
-   <g transform="translate(171.875)" id="De_Rybel_Col0_6h_NAA">
+   <g transform="translate(171.875)" id="Vanneste_Col0_6h_NAA">
       <path inkscape:connector-curvature="0" d="m 42.227908,415.30443 h 12.359387 v 39.96202 H 41.815928 Z"
          style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
    </g>
@@ -595,7 +595,7 @@
    <path
       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
       d="m 240.625,432.30932 h 42.24047" inkscape:connector-curvature="0" />
-   <g id="De_Smet_J0121_6h_NAA" transform="translate(171.875,168.96186)">
+   <g id="Vanneste_slr-1_6h_NAA" transform="translate(171.875,168.96186)">
       <path style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 42.227908,415.30443 h 12.359387 v 39.96202 H 41.815928 Z" inkscape:connector-curvature="0" />
    </g>
@@ -615,7 +615,7 @@
    </g>
    <path inkscape:connector-curvature="0" d="m 240.625,601.27118 h 42.24047"
       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)" />
-   <g transform="translate(85.063559,168.96186)" id="De_Smet_J0121_2h_NAA">
+   <g transform="translate(85.063559,168.96186)" id="Vanneste_slr-1_2h_NAA">
       <path inkscape:connector-curvature="0" d="m 42.227908,415.30443 h 12.359387 v 39.96202 H 41.815928 Z"
          style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
    </g>
@@ -634,7 +634,7 @@
    <path
       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1252)"
       d="m 153.81356,601.27118 h 42.24047" inkscape:connector-curvature="0" />
-   <g id="De_Smet_J0121_NPA" transform="translate(-5.0156476e-7,168.96186)">
+   <g id="Vanneste_slr-1_NPA" transform="translate(-5.0156476e-7,168.96186)">
       <path style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 42.227908,415.30443 h 12.359387 v 39.96202 H 41.815928 Z" inkscape:connector-curvature="0" />
    </g>
@@ -1559,7 +1559,7 @@
    </g>
    <path inkscape:connector-curvature="0" d="m 744.65311,1302.6832 v 174.3001"
       style="fill:#999999;stroke:#999999;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2, 2;stroke-dashoffset:0;stroke-opacity:1" />
-   <path
+   <path id="WalkerAndGifford_Pericycle_Untreated_48h"
       style="fill:none;stroke:#000000;stroke-width:0.74043292px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
       d="m 936.5326,1319.0539 h 48.82004 v 5.4259 h -48.71705 z" inkscape:connector-curvature="0"
       sodipodi:nodetypes="ccccc" />
@@ -1653,7 +1653,7 @@
          d="m 844.66115,1319.0539 h 46.86268 v 5.4259 h -46.96567 z" inkscape:connector-curvature="0"
          sodipodi:nodetypes="ccccc" />
    </g>
-   <path sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0"
+   <path sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0" id="WalkerAndGifford_Cortex_Untreated_48h"
       d="m 936.5326,1302.6831 h 48.82004 v 8.6876 h -48.71705 z"
       style="fill:none;stroke:#000000;stroke-width:0.93691242px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
    <g id="WalkerAndGifford_Cortex_Untreated_36h" transform="matrix(1,0,0,1.6011298,0,-809.29335)">
@@ -1843,7 +1843,7 @@
          style="fill:none;stroke:#000000;stroke-width:0.74043292px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
    </g>
    <g id="WalkerAndGifford_Cortex_Nitrogen_00h">
-      <path sodipodi:nodetypes="cccccc" inkscape:connector-curvature="0" 
+      <path sodipodi:nodetypes="cccccc" inkscape:connector-curvature="0"
          d="m 661.56281,1387.3141 -8.36917,0.056 -0.41198,-9.2696 v 0 h 8.78122 z"
          style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
    </g>
@@ -1854,8 +1854,7 @@
       d="m 777.53001,1386.5347 -17.0528,0.1146 -7.3e-4,-8.7513 17.05281,-0.2155 z"
       id="WalkerAndGifford_Cortex_Nitrogen_14h" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccc" />
    <path style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-      d="M 844.94571 1385.1044 L 835.08262 1385.1044 C 835.08262 1385.1044 825.4763 1382.258 810.06597 1385.4926 "
-       />
+      d="M 844.94571 1385.1044 L 835.08262 1385.1044 C 835.08262 1385.1044 825.4763 1382.258 810.06597 1385.4926 " />
    <path style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
       d="m 891.30024,1385.1044 h -46.35453 l -8e-5,-8.274 46.16622,-0.5836 0.18935,-0.022 z"
       id="WalkerAndGifford_Cortex_Nitrogen_24h" inkscape:connector-curvature="0" sodipodi:nodetypes="cccccc" />
@@ -1881,12 +1880,12 @@
       d="m 693.34589,1378.1007 h 17.25182 l 4.4e-4,8.8838 -17.25201,0.116 z" id="WalkerAndGifford_Cortex_Nitrogen_06h"
       inkscape:connector-curvature="0" sodipodi:nodetypes="ccccc" />
    <g id="WalkerAndGifford_Cortex_Nitrogen_04h">
-      <path sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0" 
+      <path sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0"
          d="m 677.68583,1378.1007 h 15.66006 l 2.5e-4,8.9998 -15.66022,0.1053 z"
          style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
    </g>
    <g id="WalkerAndGifford_Cortex_Nitrogen_02h">
-      <path sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0" 
+      <path sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0"
          d="m 670.16829,1378.1007 h 7.51754 l 9e-5,9.1051 -7.51761,0.051 z"
          style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
    </g>
@@ -2264,7 +2263,7 @@
       d="m 936.78086,1401.0363 h -45.22909 v -8.7702 c 0,0 16.03691,-1.1276 45.60495,-14.784 z"
       id="WalkerAndGifford_Pericycle_Nitrogen_36h" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccc" />
    <path style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-      d="M 844.69393,1401.0363 H 809.48791"  />
+      d="M 844.69393,1401.0363 H 809.48791" />
    <path style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
       d="M 809.48791,1401.0363 H 777.4141 l 0.1156,-7.6685 c 0,0 17.42477,-2.3546 32.45937,-7.3661 z"
       id="WalkerAndGifford_Pericycle_Nitrogen_16h" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccc" />
