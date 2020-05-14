@@ -2606,7 +2606,7 @@
          d="M596.5 1693.5C596.5 1693.5 597.625 1692.0 597.375 1689.75C597.125 1687.5 598.875 1685.5 598.875 1685.5"
          style="stroke-linejoin:miter;stroke-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-width:1.41421356237;fill:none" />
    </g>
-   <g id="Control-at-3-Hours">
+   <g id="Control_at_3_Hours">
       <path id="path5761"
          d="M101.75 1771.0C101.75 1771.0 110.72112 1772.7916 111.75 1782.5C112.96505 1793.965 105.06773 1795.8177 105.0 1795.75C105.0 1795.75 97.5 1798.75 94.5 1787.25C91.5 1775.75 101.75 1771.0 101.75 1771.0C101.75 1771.0 101.75 1771.0 101.75 1771.0"
          style="stroke-linejoin:miter;stroke-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-width:1.41421356237;fill:none" />
@@ -2646,7 +2646,7 @@
          d="M99.5 1834.5C99.5 1834.5 100.625 1833.0 100.375 1830.75C100.125 1828.5 101.875 1826.5 101.875 1826.5"
          id="path5785" />
    </g>
-   <g id="Control-at-6-Hours">
+   <g id="Control_at_6_Hours">
       <path
          style="stroke-linejoin:miter;stroke-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-width:1.41421356237;fill:none"
          d="M149.75 1771.0C149.75 1771.0 158.72112 1772.7916 159.75 1782.5C160.96505 1793.965 153.06773 1795.8177 153.0 1795.75C153.0 1795.75 145.5 1798.75 142.5 1787.25C139.5 1775.75 149.75 1771.0 149.75 1771.0C149.75 1771.0 149.75 1771.0 149.75 1771.0"
@@ -2686,7 +2686,7 @@
          d="M147.5 1834.5C147.5 1834.5 148.625 1833.0 148.375 1830.75C148.125 1828.5 149.875 1826.5 149.875 1826.5"
          style="stroke-linejoin:miter;stroke-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-width:1.41421356237;fill:none" />
    </g>
-   <g id="Control-at-9-Hours">
+   <g id="Control_at_9_Hours">
       <path id="path5817"
          d="M196.75 1771.0C196.75 1771.0 205.72112 1772.7916 206.75 1782.5C207.96505 1793.965 200.06773 1795.8177 200.0 1795.75C200.0 1795.75 192.5 1798.75 189.5 1787.25C186.5 1775.75 196.75 1771.0 196.75 1771.0C196.75 1771.0 196.75 1771.0 196.75 1771.0"
          style="stroke-linejoin:miter;stroke-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-width:1.41421356237;fill:none" />

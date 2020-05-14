@@ -525,15 +525,36 @@ class CreateSVGExpressionData {
         };
 
         // Add max dropdown list to document:
+        var topCompendiumsInclude = false;
+        var topCompendiumsList = [];
         if (includeMaxDropdown && this.interactiveSVGData.topExpressionValues) {
             appendSVG += 'Select top expression to display: <select onchange="createSVGExpressionData.generateSVG(this.value.toString(), \'' + locus + '\', \'' + this.desiredDOMid + '\', ' + includeDropdownAll + ', ' + includeMaxDropdown + ')" id="topExpressionOptions">';
+            
+            // Hidden option
+            appendSVG += '<option value="hiddenOption" id="hiddenExpressionOption" disabled>Compendiums with maximum average expression:</option>';
+
             var topList = Object.keys(this.interactiveSVGData.topExpressionValues);
+            
+            
             for (var i = 0; i < topList.length; i++) {
-                if (topList[i].length > 3 && topList[i].substring(0, 3).toLowerCase() !== 'top') {
-                    appendSVG += '<option value="' + expressionValues[topList[i]]['Compendium'] + '">' + topList[i] + ': ' + expressionValues[topList[i]]['Compendium'] + '</option>';
+                if (this.interactiveSVGData.topExpressionValues[topList[i]]) {
+                    var expressionData = this.interactiveSVGData.topExpressionValues[topList[i]];
+                    if (expressionData['compendium'][1]) {
+                        var expressionCompendium = expressionData['compendium'][1];
+                        topCompendiumsList.push(expressionCompendium);
+                        var expressionSample = expressionData['sample'][1];
+                        var readableSampleName = this.retrieveOnlineBARData.sampleData[expressionCompendium]['description'][expressionSample];
+                        var expressionAverageLevel = expressionData['maxAverage'][1];
+                        
+                        appendSVG += '<option value="' + expressionCompendium + '">' + expressionCompendium + ': ' + readableSampleName + ' at ' +  expressionAverageLevel + '(' + topList[i] + ')</option>';
+                    };
                 };
             };
             appendSVG += '</select></br>';
+            
+            if (topCompendiumsList.includes(svgName)) {
+                topCompendiumsInclude = true;
+            };
         };
 
         // Create call for SVG file
@@ -543,6 +564,16 @@ class CreateSVGExpressionData {
         appendSVG += '<b>' + svgName + '</b></br>';
         appendSVG += '<object id="' + svgUse + '_object" data="' + urlSVG + '" type="image/svg+xml"></object>';
         targetDOMRegion.innerHTML = appendSVG;
+
+        // Modify how HTML is presented
+        document.getElementById('sampleOptions').selectedIndex = sampleOptions.indexOf(svgName);
+        if (topCompendiumsInclude === true) {
+            document.getElementById('hiddenExpressionOption').setAttribute('hidden', true);
+            document.getElementById('topExpressionOptions').selectedIndex = topCompendiumsList.indexOf(svgName) + 1;
+        } else {
+            document.getElementById('topExpressionOptions').selectedIndex = 0;
+        };
+
         this.svgObjectName = svgUse + '_object';
 
         // Wait for SVG to load

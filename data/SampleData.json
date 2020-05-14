@@ -1671,7 +1671,7 @@
           "RIKEN-NAKABAYASHI4A",
           "RIKEN-NAKABAYASHI4B"
         ],
-        "Control-at-3-Hours": [
+        "Control_at_3_Hours": [
           "RIKEN-LI1A",
           "RIKEN-LI1B"
         ],
@@ -1679,7 +1679,7 @@
           "RIKEN-LI4A",
           "RIKEN-LI4B"
         ],
-        "Control-at-6-Hours": [
+        "Control_at_6_Hours": [
           "RIKEN-LI2A",
           "RIKEN-LI2B"
         ],
@@ -1687,7 +1687,7 @@
           "RIKEN-LI5A",
           "RIKEN-LI5B"
         ],
-        "Control-at-9-Hours": [
+        "Control_at_9_Hours": [
           "RIKEN-LI3A",
           "RIKEN-LI3B"
         ],
@@ -1772,11 +1772,11 @@
         "Treated-with-Water": "Treated with Water",
         "Treated-with-3uM-ABA": "Treated with 3uM ABA",
         "Treated-with-30uM-ABA": "Treated with 30uM ABA",
-        "Control-at-3-Hours": "Control at 3 Hours",
+        "Control_at_3_Hours": "Control at 3 Hours",
         "Giberellin-Treated-at-3-Hours": "Giberellin Treated at 3 Hours",
-        "Control-at-6-Hours": "Control at 6 Hours",
+        "Control_at_6_Hours": "Control at 6 Hours",
         "Giberellin-Treated-at-6-Hours": "Giberellin Treated at 6 Hours",
-        "Control-at-9-Hours": "Control at 9 Hours",
+        "Control_at_9_Hours": "Control at 9 Hours",
         "Giberellin-Treated-at-9-Hours": "Giberellin Treated at 9 Hours"
       },
       "controlComparison": {
@@ -1811,9 +1811,9 @@
         "Control-Wild-Type": ["t-zeatin-Treated Wild-Type"],
         "Control-ARR22-Overexpressed": ["t-zeatin-Treated-ARR22-Overexpressed"],
         "No-Treatment": ["Treated-with-Water", "Treated-with-3uM-ABA", "Treated-with-30uM-ABA"],
-        "Control-at-3-Hours": ["Giberellin-Treated-at-3-Hours"],
-        "Control-at-6-Hours": ["Giberellin-Treated-at-6-Hours"],
-        "Control-at-9-Hours": ["Giberellin-Treated-at-9-Hours"]
+        "Control_at_3_Hours": ["Giberellin-Treated-at-3-Hours"],
+        "Control_at_6_Hours": ["Giberellin-Treated-at-6-Hours"],
+        "Control_at_9_Hours": ["Giberellin-Treated-at-9-Hours"]
       },
       "db": "atgenexp_hormone"
     },
@@ -3547,6 +3547,102 @@
         "WT, 48 hours 2iP": ["wus, 48 hours 2iP"]
       },
       "db": "meristem_db"
+    },
+    "RootCellsTypes": {
+      "sample": {
+        "Root Stage II Stele": [
+          "stele_stage2"
+        ],
+        "Root Stage III Endodermis": [
+          "endo_stage3"
+        ],
+        "Root Stage III Endodermis + Cortex": [
+          "cortex-endo_stage3"
+        ],
+        "Root Stage I Lateral Root Cap": [
+          "lat_root_cap_stage1"
+        ],
+        "Root Stage III Lateral Root Cap": [
+          "lat_root_cap_stage3"
+        ],
+        "Root Stage II Epidermal Artrichoblasts": [
+          "epidermis_stage2"
+        ],
+        "Root Stage II Lateral Root Cap": [
+          "lat_root_cap_stage2"
+        ],
+        "Root Quiescent Center": [
+          "ARTH1_AGL42-01",
+          "ARTH1_AGL42-02"
+        ],
+        "ATGE_CTRL_7": [
+          "ATGE_CTRL_7"
+        ],
+        "Root Stage III Epidermal Artrichoblasts": [
+          "epidermis_stage3"
+        ],
+        "Root Stage I Epidermal Artrichoblasts": [
+          "epidermis_stage1"
+        ],
+        "Root Stage II Endodermis": [
+          "endo_stage2"
+        ],
+        "Root Stage II Endodermis + Cortex": [
+          "cortex-endo_stage2"
+        ],
+        "Root Stage I Endodermis + Cortex": [
+          "cortex-endo_stage1"
+        ],
+        "Root Stage III Stele": [
+          "stele_stage3"
+        ],
+        "Root Stage I Stele": [
+          "stele_stage1"
+        ],
+        "Root Stage I Endodermis": [
+          "endo_stage1"
+        ]
+      },
+      "description": {
+        "Root Stage III Endodermis": "Root Stage III Endodermis",
+        "Root Stage III Endodermis + Cortex": "Root Stage III Endodermis + Cortex",
+        "Root Stage III Lateral Root Cap": "Root Stage III Lateral Root Cap",
+        "Root Stage III Epidermal Artrichoblasts": "Root Stage III Epidermal Artrichoblasts",
+        "Root Stage III Stele": "Root Stage III Stele",
+        "Root Stage II Stele": "Root Stage II Stele",
+        "Root Stage II Epidermal Artrichoblasts": "Root Stage II Epidermal Artrichoblasts",
+        "Root Stage II Lateral Root Cap": "Root Stage II Lateral Root Cap",
+        "Root Stage II Endodermis": "Root Stage II Endodermis",
+        "Root Stage II Endodermis + Cortex": "Root Stage II Endodermis + Cortex",
+        "Root Stage I Lateral Root Cap": "Root Stage I Lateral Root Cap",
+        "Root Stage I Epidermal Artrichoblasts": "Root Stage I Epidermal Artrichoblasts",
+        "Root Stage I Endodermis + Cortex": "Root Stage I Endodermis + Cortex",
+        "Root Stage I Stele": "Root Stage I Stele",
+        "Root Stage I Endodermis": "Root Stage I Endodermis",
+        "Root Quiescent Center": "Root Quiescent Center",
+        "ATGE_CTRL_7": "Control"
+      },
+      "controlComparison": {
+        "ATGE_CTRL_7": [
+          "Root Stage III Endodermis",
+          "Root Stage III Endodermis + Cortex",
+          "Root Stage III Lateral Root Cap",
+          "Root Stage III Epidermal Artrichoblasts",
+          "Root Stage III Stele",
+          "Root Stage II Stele",
+          "Root Stage II Epidermal Artrichoblasts",
+          "Root Stage II Lateral Root Cap",
+          "Root Stage II Endodermis",
+          "Root Stage II Endodermis + Cortex",
+          "Root Stage I Lateral Root Cap",
+          "Root Stage I Epidermal Artrichoblasts",
+          "Root Stage I Endodermis + Cortex",
+          "Root Stage I Stele",
+          "Root Stage I Endodermis",
+          "Root Quiescent Center"
+        ]
+      },
+      "db": "atgenexp_plus"
     },
     "RootEpidermis": {
         "sample": {
