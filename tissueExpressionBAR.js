@@ -223,19 +223,19 @@ class InteractiveSVGData {
                 if (response && response["wasSuccessful"] === true) {
                     if (response['maxAverage']) {
                         var tempMicroarray = {
-                            'microarray': {
+                            'Microarray': {
                                 'maxAverage': response['maxAverage'][locus.toUpperCase()]
                             }
                         };
 
                         if (response['standardDeviation']) {
-                            tempMicroarray['microarray']['standardDeviation'] = response['standardDeviation'][locus.toUpperCase()]
+                            tempMicroarray['Microarray']['standardDeviation'] = response['standardDeviation'][locus.toUpperCase()]
                         };
                         if (response['sample']) {
-                            tempMicroarray['microarray']['sample'] = response['sample'][locus.toUpperCase()]
+                            tempMicroarray['Microarray']['sample'] = response['sample'][locus.toUpperCase()]
                         };
                         if (response['compendium']) {
-                            tempMicroarray['microarray']['compendium'] = response['compendium'][locus.toUpperCase()]
+                            tempMicroarray['Microarray']['compendium'] = response['compendium'][locus.toUpperCase()]
                         };
                         this.topExpressionValues = Object.assign(this.topExpressionValues, tempMicroarray);
                     };
@@ -270,19 +270,19 @@ class InteractiveSVGData {
                 if (response && response["wasSuccessful"] === true) {
                     if (response['maxAverage']) {
                         var tempRNASeq = {
-                            'rnaSeq': {
+                            'RNA-seq': {
                                 'maxAverage': response['maxAverage'][locus.toUpperCase()]
                             }
                         };
 
                         if (response['standardDeviation']) {
-                            tempRNASeq['rnaSeq']['standardDeviation'] = response['standardDeviation'][locus.toUpperCase()]
+                            tempRNASeq['RNA-seq']['standardDeviation'] = response['standardDeviation'][locus.toUpperCase()]
                         };
                         if (response['sample']) {
-                            tempRNASeq['rnaSeq']['sample'] = response['sample'][locus.toUpperCase()]
+                            tempRNASeq['RNA-seq']['sample'] = response['sample'][locus.toUpperCase()]
                         };
                         if (response['compendium']) {
-                            tempRNASeq['rnaSeq']['compendium'] = response['compendium'][locus.toUpperCase()]
+                            tempRNASeq['RNA-seq']['compendium'] = response['compendium'][locus.toUpperCase()]
                         };
                         this.topExpressionValues = Object.assign(this.topExpressionValues, tempRNASeq);
                     };
