@@ -562,7 +562,7 @@ class CreateSVGExpressionData {
 
         // Append SVG to document
         appendSVG += '<b>' + svgName + '</b></br>';
-        appendSVG += '<object id="' + svgUse + '_object" data="' + urlSVG + '" type="image/svg+xml"></object>';
+        appendSVG += '<object alt="SVG for ' + svgUse + '" id="' + svgUse + '_object" data="' + urlSVG + '" type="image/svg+xml"></object>';
         targetDOMRegion.innerHTML = appendSVG;
 
         // Modify how HTML is presented
