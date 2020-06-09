@@ -543,10 +543,12 @@ class CreateSVGExpressionData {
                         var expressionCompendium = expressionData['compendium'][1];
                         topCompendiumsList.push(expressionCompendium);
                         var expressionSample = expressionData['sample'][1];
-                        var readableSampleName = this.retrieveOnlineBARData.sampleData[expressionCompendium]['description'][expressionSample];
-                        var expressionAverageLevel = expressionData['maxAverage'][1];
-                        
-                        appendSVG += '<option value="' + expressionCompendium + '">' + expressionCompendium + ': ' + readableSampleName + ' at ' +  expressionAverageLevel + '(' + topList[i] + ')</option>';
+                        if (expressionSample && this.retrieveOnlineBARData.sampleData[expressionCompendium] && this.retrieveOnlineBARData.sampleData[expressionCompendium]['description']) {
+                            var readableSampleName = this.retrieveOnlineBARData.sampleData[expressionCompendium]['description'][expressionSample];
+                            var expressionAverageLevel = expressionData['maxAverage'][1];
+                            
+                            appendSVG += '<option value="' + expressionCompendium + '">' + expressionCompendium + ': ' + readableSampleName + ' at ' +  expressionAverageLevel + '(' + topList[i] + ')</option>';
+                        };
                     };
                 };
             };
