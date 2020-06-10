@@ -40,48 +40,15 @@
             The final required parameter is a required DOM location for the tissue expression visualizer to be placed. In this HTML, we have an example DOM with an ID of <code>exampleDOM</code>. If you wish to have the visual output to be returned as a string, keep this parameter empty. 
             <br /><br />
             Try it out with the following:
-            <br />
-            <select id="selectSVG"></select>
-            <input id="selectLocus" value="AT3G24650" placeholder="AT3G24650"></input>
-            <button id="loadTissueExpression" onclick="createSVGExpressionData.generateSVG(document.getElementById('selectSVG').value, document.getElementById('selectLocus').value, 'exampleDOM');">Load tissue expression</button>
         </p>
     </div>
-    <div id="exampleDOM" style="background-color: white;">
+    <div id="exampleDOM" style="background-color: white;color: black;">
 
     </div>
-    <script src="../tissueExpressionBAR.min.js"></script>
+    <script src="../tissueExpressionBAR.js"></script>
     <script>
-        let agiList = [];
-        function FindSVGOptions() {
-            const xhr = new XMLHttpRequest();
-            let url = '../data/SampleData.min.json';
-
-            xhr.responseType = 'json';
-            xhr.onreadystatechange = () => {
-                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                    let response = xhr.response;
-                    agiList = Object.keys(response);
-                    FillSVGOptions();
-                };
-            };
-
-            xhr.open('GET', url, true);
-            xhr.send();
-        };
-        function FillSVGOptions() {
-            // Fill SVG list
-            setTimeout(function () {
-                var select = document.getElementById("selectSVG");
-                // Create SVG options as a dropdown list
-                for (var i = 0; i < agiList.length; i++) {
-                    var opt = agiList[i];
-                    var el = document.createElement("option");
-                    el.textContent = opt;
-                    el.value = opt;
-                    select.appendChild(el);
-                };
-            }, 100);
-        };
-        FindSVGOptions();
+        setTimeout(function() {
+            createSVGExpressionData.generateSVG('AbioticStress', 'AT3G24650', "exampleDOM", true, false);
+        }, 10);
     </script>
 </body>

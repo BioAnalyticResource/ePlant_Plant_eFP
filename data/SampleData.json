@@ -3741,6 +3741,456 @@
         },
         "db": "atgenexp_plus"
     },
+    "RootII": {
+      "sample": {
+        "pH-lowPH-6h": [
+          "GSM744792",
+          "GSM744793"
+        ],
+        "pH-ctrl-6h": [
+          "GSM744778",
+          "GSM744779"
+        ],
+        "auxin-ctrl-intact": [
+          "GSM871266",
+          "GSM871267",
+          "GSM871268"
+        ],
+        "auxin-auxin-intact": [
+          "GSM871269",
+          "GSM871270",
+          "GSM871271"
+        ],
+        "pH-lowPH-3h": [
+          "GSM744790",
+          "GSM744791"
+        ],
+        "pH-ctrl-3h": [
+          "GSM744776",
+          "GSM744777"
+        ],
+        "auxin-auxin-epidermis": [
+          "GSM871257",
+          "GSM871258",
+          "GSM871259"
+        ],
+        "auxin-ctrl-epidermis": [
+          "GSM871254",
+          "GSM871255",
+          "GSM871256"
+        ],
+        "PO4-PiFree-6h": [
+          "GSM618329",
+          "GSM618337",
+          "GSM618345"
+        ],
+        "PO4-ctrl-6h": [
+          "GSM618328",
+          "GSM618336",
+          "GSM618344"
+        ],
+        "pH-lowPH-1h": [
+          "GSM744788",
+          "GSM744789"
+        ],
+        "pH-ctrl-1h": [
+          "GSM744774",
+          "GSM744775"
+        ],
+        "auxin-auxin-stele": [
+          "GSM871245",
+          "GSM871246",
+          "GSM871247"
+        ],
+        "auxin-ctrl-stele": [
+          "GSM871242",
+          "GSM871243",
+          "GSM871244"
+        ],
+        "pH-ctrl-zone1": [
+          "GSM744758",
+          "GSM744759"
+        ],
+        "pH-lowPH-zone1": [
+          "GSM744756",
+          "GSM744757"
+        ],
+        "pH-ctrl-endodermis": [
+          "GSM744747",
+          "GSM744748",
+          "GSM744749"
+        ],
+        "pH-lowPH-endodermis": [
+          "GSM744744",
+          "GSM744745",
+          "GSM744746"
+        ],
+        "pH-ctrl-cortex": [
+          "GSM744741",
+          "GSM744742",
+          "GSM744743"
+        ],
+        "pH-lowPH-cortex": [
+          "GSM744738",
+          "GSM744739",
+          "GSM744740"
+        ],
+        "auxin-auxin-columella": [
+          "GSM871263",
+          "GSM871264",
+          "GSM871265"
+        ],
+        "auxin-ctrl-columella": [
+          "GSM871260",
+          "GSM871261",
+          "GSM871262"
+        ],
+        "sulfur-ctrl-cortex": [
+          "GSM184895",
+          "GSM184896",
+          "GSM184897"
+        ],
+        "sulfur-sulfurDeficient-cortex": [
+          "GSM744818",
+          "GSM744819",
+          "GSM744820"
+        ],
+        "sulfur-sulfurDeficient-zone4": [
+          "GSM744833",
+          "GSM744834"
+        ],
+        "sulfur-ctrl-zone4": [
+          "GSM265424",
+          "GSM265425"
+        ],
+        "pH-lowPH-12h": [
+          "GSM744794",
+          "GSM744795"
+        ],
+        "pH-ctrl-12h": [
+          "GSM744780",
+          "GSM744781"
+        ],
+        "PO4-PiFree-0h": [
+          "GSM618325",
+          "GSM618333",
+          "GSM618341"
+        ],
+        "PO4-ctrl-0h": [
+          "GSM618324",
+          "GSM618332",
+          "GSM618340"
+        ],
+        "sulfur-ctrl-0h": [
+          "GSM744800",
+          "GSM744801"
+        ],
+        "sulfur-sulfurDeficient-48h": [
+          "GSM744808",
+          "GSM744809"
+        ],
+        "sulfur-sulfurDeficient-24h": [
+          "GSM744806",
+          "GSM744807"
+        ],
+        "sulfur-ctrl-3h": [
+          "GSM744802",
+          "GSM744803"
+        ],
+        "sulfur-sulfurDeficient-72h": [
+          "GSM744810",
+          "GSM744811"
+        ],
+        "sulfur-sulfurDeficient-12h": [
+          "GSM744804",
+          "GSM744805"
+        ],
+        "auxin-auxin-pericycle": [
+          "GSM871251",
+          "GSM871252",
+          "GSM871253"
+        ],
+        "auxin-ctrl-pericycle": [
+          "GSM871248",
+          "GSM871249",
+          "GSM871250"
+        ],
+        "pH-lowPH-0h": [
+          "GSM744786",
+          "GSM744787"
+        ],
+        "pH-ctrl-0h": [
+          "GSM744772",
+          "GSM744773"
+        ],
+        "pH-ctrl-columella": [
+          "GSM744729",
+          "GSM744730",
+          "GSM744731"
+        ],
+        "pH-lowPH-columella": [
+          "GSM744726",
+          "GSM744727",
+          "GSM744728"
+        ],
+        "pH-ctrl-epidermis": [
+          "GSM744735",
+          "GSM744736",
+          "GSM744737"
+        ],
+        "pH-lowPH-epidermis": [
+          "GSM744732",
+          "GSM744733",
+          "GSM744734"
+        ],
+        "pH-ctrl-48h": [
+          "GSM744784",
+          "GSM744785"
+        ],
+        "pH-lowPH-48h": [
+          "GSM744798",
+          "GSM744799"
+        ],
+        "pH-lowPH-stele": [
+          "GSM744750",
+          "GSM744751",
+          "GSM744752"
+        ],
+        "pH-ctrl-stele": [
+          "GSM744753",
+          "GSM744754",
+          "GSM744755"
+        ],
+        "sulfur-sulfurDeficient-stele": [
+          "GSM744824",
+          "GSM744825",
+          "GSM744826"
+        ],
+        "sulfur-ctrl-stele": [
+          "GSM184901",
+          "GSM184902",
+          "GSM184903"
+        ],
+        "pH-ctrl-24h": [
+          "GSM744782",
+          "GSM744783"
+        ],
+        "pH-lowPH-24h": [
+          "GSM744796",
+          "GSM744797"
+        ],
+        "sulfur-sulfurDeficient-endodermis": [
+          "GSM744821",
+          "GSM744822",
+          "GSM744823"
+        ],
+        "sulfur-ctrl-endodermis": [
+          "GSM184898",
+          "GSM184899",
+          "GSM184900"
+        ],
+        "PO4-ctrl-24h": [
+          "GSM618330",
+          "GSM618338",
+          "GSM618346"
+        ],
+        "PO4-PiFree-24h": [
+          "GSM618331",
+          "GSM618339",
+          "GSM618347"
+        ],
+        "PO4-ctrl-1h": [
+          "GSM618326",
+          "GSM618334",
+          "GSM618342"
+        ],
+        "PO4-PiFree-1h": [
+          "GSM618327",
+          "GSM618343"
+        ],
+        "sulfur-sulfurDeficient-epidermis": [
+          "GSM744815",
+          "GSM744816",
+          "GSM744817"
+        ],
+        "sulfur-ctrl-epidermis": [
+          "GSM184889",
+          "GSM184890",
+          "GSM184891"
+        ],
+        "pH-ctrl-zone2": [
+          "GSM744762",
+          "GSM744763"
+        ],
+        "pH-lowPH-zone2": [
+          "GSM744760",
+          "GSM744761"
+        ],
+        "sulfur-sulfurDeficient-zone2": [
+          "GSM265429",
+          "GSM265430"
+        ],
+        "sulfur-ctrl-zone2": [
+          "GSM265420",
+          "GSM265421"
+        ],
+        "sulfur-sulfurDeficient-zone3": [
+          "GSM744831",
+          "GSM744832"
+        ],
+        "sulfur-ctrl-zone3": [
+          "GSM265422",
+          "GSM265423"
+        ],
+        "sulfur-sulfurDeficient-columella": [
+          "GSM744812",
+          "GSM744813",
+          "GSM744814"
+        ],
+        "sulfur-ctrl-columella": [
+          "GSM184892",
+          "GSM184893",
+          "GSM184894"
+        ],
+        "pH-lowPH-zone3": [
+          "GSM744764",
+          "GSM744765"
+        ],
+        "pH-ctrl-zone3": [
+          "GSM744766",
+          "GSM744767"
+        ],
+        "sulfur-sulfurDeficient-zone1": [
+          "GSM744827",
+          "GSM744828"
+        ],
+        "sulfur-ctrl-zone1": [
+          "GSM265418",
+          "GSM265419"
+        ],
+        "pH-lowPH-zone4": [
+          "GSM744768",
+          "GSM744769"
+        ],
+        "pH-ctrl-zone4": [
+          "GSM744770",
+          "GSM744771"
+        ]
+      },
+      "description": {
+        "pH-lowPH-6h": "Low pH, t=6",
+        "pH-ctrl-6h": "Standard pH, t=6 (control)",
+        "auxin-ctrl-intact": "intact root control",
+        "auxin-auxin-intact": "intact root auxin",
+        "pH-lowPH-3h": "Low pH, t=3",
+        "pH-ctrl-3h": "Standard pH, t=3 (Control)",
+        "auxin-auxin-epidermis": "epidermis auxin",
+        "auxin-ctrl-epidermis": "epidermis control",
+        "PO4-PiFree-6h": "Without phosphate 6h into RNALater",
+        "PO4-ctrl-6h": "With phosphate 6h into RNALater (CONTROL)",
+        "pH-lowPH-1h": "Low pH, t=1",
+        "pH-ctrl-1h": "Standard pH, t=1 (Control)",
+        "auxin-auxin-stele": "stele auxin",
+        "auxin-ctrl-stele": "stele control",
+        "pH-ctrl-zone1": "Standard pH, Arabidopsis root section, longitudinal zone 1 (Control)",
+        "pH-lowPH-zone1": "Low pH, Arabidopsis root section, longitudinal zone 1",
+        "pH-ctrl-endodermis": "Standard pH, Arabidopsis root cells, endodermis and quiescent center (Control)",
+        "pH-lowPH-endodermis": "Low pH, Arabidopsis root cells, endodermis and quiescent center",
+        "pH-ctrl-cortex": "Standard pH, Arabidopsis root cells, cortex (Control)",
+        "pH-lowPH-cortex": "Low pH, Arabidopsis root cells, cortex",
+        "auxin-auxin-columella": "columella auxin",
+        "auxin-ctrl-columella": "columella control",
+        "sulfur-ctrl-cortex": "Low sulfur, Arabidopsis root cells, cortex (control)",
+        "sulfur-sulfurDeficient-cortex": "Low sulfur, Arabidopsis root cells, cortex",
+        "sulfur-sulfurDeficient-zone4": "Low Sulfur, Arabidopsis root section, longitudinal zone 4",
+        "sulfur-ctrl-zone4": "Standard conditions, Arabidopsis root section, longitudinal zone 4",
+        "pH-lowPH-12h": "Low pH, t=12",
+        "pH-ctrl-12h": "Standard pH, t=12 (control)",
+        "PO4-PiFree-0h": "Without phosphate 0h into RNALater",
+        "PO4-ctrl-0h": "With phosphate 0h into RNALater (CONTROL)",
+        "sulfur-ctrl-0h": "Low sulfur, t=0",
+        "sulfur-sulfurDeficient-48h": "Low sulfur, t=48",
+        "sulfur-sulfurDeficient-24h": "Low sulfur, t=24",
+        "sulfur-ctrl-3h": "Low sulfur, t=3",
+        "sulfur-sulfurDeficient-72h": "Low sulfur, t=72",
+        "sulfur-sulfurDeficient-12h": "Low sulfur, t=12",
+        "auxin-auxin-pericycle": "pericycle auxin",
+        "auxin-ctrl-pericycle": "pericycle control",
+        "pH-lowPH-0h": "Low pH, t=0.5",
+        "pH-ctrl-0h": "Standard pH, t=0.5 (Control)",
+        "pH-ctrl-columella": "Standard pH, Arabidopsis root cells, columella root cap (Control)",
+        "pH-lowPH-columella": "Low pH, Arabidopsis root cells, columella root cap",
+        "pH-ctrl-epidermis": "Standard pH, Arabidopsis root cells, epidermis and lateral root cap (Control)",
+        "pH-lowPH-epidermis": "Low pH, Arabidopsis root cells, epidermis and lateral root cap",
+        "pH-ctrl-48h": "Standard pH, t=48 (control)",
+        "pH-lowPH-48h": "Low pH, t=48",
+        "pH-lowPH-stele": "Low pH, Arabidopsis root cells, stele",
+        "pH-ctrl-stele": "Standard pH, Arabidopsis root cells, stele (Control)",
+        "sulfur-sulfurDeficient-stele": "Low sulfur, Arabidopsis root cells, stele",
+        "sulfur-ctrl-stele": "Low sulfur, Arabidopsis root cells, stele (Control from GSE7641)",
+        "pH-ctrl-24h": "Standard pH, t=24 (control)",
+        "pH-lowPH-24h": "Low pH, t=24",
+        "sulfur-sulfurDeficient-endodermis": "Low sulfur, Arabidopsis root cells, endodermis",
+        "sulfur-ctrl-endodermis": "Low sulfur, Arabidopsis root cells, endodermis (control)",
+        "PO4-ctrl-24h": "With phosphate 24h into RNALater (CONTROL)",
+        "PO4-PiFree-24h": "Without phosphate 24h into RNALater",
+        "PO4-ctrl-1h": "With phosphate 1h into RNALater (CONTROL)",
+        "PO4-PiFree-1h": "Without phosphate 1h into RNALater",
+        "sulfur-sulfurDeficient-epidermis": "Low sulfur, Arabidopsis root cells, epidermis and lateral root cap",
+        "sulfur-ctrl-epidermis": "Low sulfur, Arabidopsis root cells, epidermis and lateral root cap (Control)",
+        "pH-ctrl-zone2": "Standard pH, Arabidopsis root section, longitudinal zone 2",
+        "pH-lowPH-zone2": "Low pH, Arabidopsis root section, longitudinal zone 2",
+        "sulfur-sulfurDeficient-zone2": "Low Sulfur, Arabidopsis root section, longitudinal zone 2",
+        "sulfur-ctrl-zone2": "Standard conditions, Arabidopsis root section, longitudinal zone 2",
+        "sulfur-sulfurDeficient-zone3": "Low Sulfur, Arabidopsis root section, longitudinal zone 3",
+        "sulfur-ctrl-zone3": "Standard conditions, Arabidopsis root section, longitudinal zone 3",
+        "sulfur-sulfurDeficient-columella": "Low sulfur, Arabidopsis root cells, columella root cap",
+        "sulfur-ctrl-columella": "Low sulfur, Arabidopsis root cells, columella root cap (control)",
+        "pH-lowPH-zone3": "Low pH, Arabidopsis root section, longitudinal zone 3",
+        "pH-ctrl-zone3": "Standard pH, Arabidopsis root section, longitudinal zone 3",
+        "sulfur-sulfurDeficient-zone1": "Low Sulfur, Arabidopsis root section, longitudinal zone 1",
+        "sulfur-ctrl-zone1": "Standard conditions, Arabidopsis root section, longitudinal zone 1",
+        "pH-lowPH-zone4": "Low pH, Arabidopsis root section, longitudinal zone 4",
+        "pH-ctrl-zone4": "Standard pH, Arabidopsis root section, longitudinal zone 4"
+      },
+      "controlComparison": {
+        "PO4-ctrl-0h": ["PO4-PiFree-0h"],
+        "PO4-ctrl-1h": ["PO4-PiFree-1h"],
+        "PO4-ctrl-6h": ["PO4-PiFree-6h"],
+        "PO4-ctrl-24h": ["PO4-PiFree-24h"],
+        "pH-ctrl-0h": ["pH-lowPH-0h"],
+        "pH-ctrl-1h": ["pH-lowPH-1h"],
+        "pH-ctrl-3h": ["pH-lowPH-3h"],
+        "pH-ctrl-6h": ["pH-lowPH-6h"],
+        "pH-ctrl-12h": ["pH-lowPH-12h"],
+        "pH-ctrl-48h": ["pH-lowPH-48h"],
+        "pH-ctrl-zone1": ["pH-lowPH-zone1"],
+        "pH-ctrl-zone2": ["pH-lowPH-zone2"],
+        "pH-ctrl-zone3": ["pH-lowPH-zone3"],
+        "pH-ctrl-zone4": ["pH-lowPH-zone4"],
+        "pH-ctrl-endodermis": ["pH-lowPH-endodermis"],
+        "pH-ctrl-cortex": ["pH-lowPH-cortex"],
+        "pH-ctrl-stele": ["pH-lowPH-stele"],
+        "pH-ctrl-columella": ["pH-lowPH-columella"],
+        "pH-ctrl-epidermis": ["pH-lowPH-epidermis"],
+        "sulfur-ctrl-0h": ["sulfur-sulfurDeficient-12h", "sulfur-sulfurDeficient-24h", "sulfur-sulfurDeficient-48h", "sulfur-sulfurDeficient-72h"],
+        "sulfur-ctrl-cortex": ["sulfur-sulfurDeficient-cortex"],
+        "sulfur-ctrl-endodermis": ["sulfur-sulfurDeficient-endodermis"],
+        "sulfur-ctrl-stele": ["sulfur-sulfurDeficient-stele"],
+        "sulfur-ctrl-columella": ["sulfur-sulfurDeficient-columella"],
+        "sulfur-ctrl-epidermis": ["sulfur-sulfurDeficient-epidermis"],
+        "sulfur-ctrl-zone1": ["sulfur-sulfurDeficient-zone1"],
+        "sulfur-ctrl-zone2": ["sulfur-sulfurDeficient-zone2"],
+        "sulfur-ctrl-zone3": ["sulfur-sulfurDeficient-zone3"],
+        "sulfur-ctrl-zone4": ["sulfur-sulfurDeficient-zone4"],
+        "auxin-ctrl-intact": ["auxin-auxin-intact"],
+        "auxin-ctrl-epidermis": ["auxin-auxin-epidermis"],
+        "auxin-ctrl-stele": ["auxin-auxin-stele"],
+        "auxin-ctrl-columella": ["auxin-auxin-columella"],
+        "auxin-ctrl-pericycle": ["auxin-auxin-pericycle"]
+      },
+      "db": "root"
+    },
     "RootImmunityElicitation": {
         "sample": {
             "Mock-Epidermis": ["WTCHG_203594_01", "WTCHG_203594_05", "WTCHG_203839_04"],

@@ -572,8 +572,6 @@ class CreateSVGExpressionData {
         if (topCompendiumsInclude === true) {
             document.getElementById('hiddenExpressionOption').setAttribute('hidden', true);
             document.getElementById('topExpressionOptions').selectedIndex = topCompendiumsList.indexOf(svgName) + 1;
-        } else {
-            document.getElementById('topExpressionOptions').selectedIndex = 0;
         };
 
         this.svgObjectName = svgUse + '_object';
