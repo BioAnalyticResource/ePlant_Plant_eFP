@@ -191,6 +191,10 @@ class InteractiveSVGData {
     constructor() {
         this.topExpressionValues = {};
         this.expressionValues = {};
+        this.topExpressionOptions = [
+            'Microarray',
+            'RNA-seq'
+        ];
     };
 
     /**
@@ -200,103 +204,61 @@ class InteractiveSVGData {
     retrieveTopExpressionValues(locus = 'AT3G24650') {
         // If never been called before
         if (Object.keys(this.topExpressionValues).length === 0 || this.topExpressionValues === undefined) {
-            this.retrieveTopMicroarray(locus);
-            this.retrieveTopRNASeq(locus);
+            for (var t = 0; t < this.topExpressionOptions.length; t++) {
+                var topMethod = this.topExpressionOptions[t];
+
+                let xhr = new XMLHttpRequest();
+                let url = 'https://bar.utoronto.ca/expression_max_api/max_average' + '?method=' + topMethod;
+                let method = 'POST';
+                var sendHeaders = "application/json";
+                var postSend = {
+                    'loci': [locus.toUpperCase()],
+                    'method': topMethod
+                };
+                postSend = JSON.stringify(postSend);
+
+                xhr.responseType = 'json';
+                xhr.onreadystatechange = () => {
+                    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                        let response = xhr.response;
+
+                        var topMethodUsed;
+                        var urlQuery = url.split('=');
+                        if (urlQuery.length > 1) {
+                            topMethodUsed = urlQuery[1];
+                        };
+
+                        if (topMethodUsed && response && response["wasSuccessful"] === true) {
+                            if (response['maxAverage']) {
+                                var tempTopExpressionData = {};
+                                tempTopExpressionData[topMethodUsed] = {};
+
+                                tempTopExpressionData[topMethodUsed]['maxAverage'] = response['maxAverage'][locus.toUpperCase()];
+
+                                if (response['standardDeviation']) {
+                                    tempTopExpressionData[topMethodUsed]['standardDeviation'] = response['standardDeviation'][locus.toUpperCase()]
+                                };
+                                if (response['sample']) {
+                                    tempTopExpressionData[topMethodUsed]['sample'] = response['sample'][locus.toUpperCase()]
+                                };
+                                if (response['compendium']) {
+                                    tempTopExpressionData[topMethodUsed]['compendium'] = response['compendium'][locus.toUpperCase()]
+                                };
+                                this.topExpressionValues = Object.assign(this.topExpressionValues, tempTopExpressionData);
+                            };
+                        };
+                    };
+                };
+
+                xhr.open(method, url, true);
+                if (method === 'POST') {
+                    xhr.setRequestHeader("Content-Type", sendHeaders);
+                    xhr.send(postSend); 
+                } else {
+                    xhr.send();
+                };
+            };
         };       
-    };
-
-    retrieveTopMicroarray(locus = 'AT3G24650') {
-        let xhr = new XMLHttpRequest();
-        let url = 'https://bar.utoronto.ca/expression_max_api/max_average';
-        let method = 'POST';
-        var sendHeaders = "application/json";
-        var postSend = {
-            'loci': [locus.toUpperCase()],
-            'method': 'Microarray'
-        };
-        postSend = JSON.stringify(postSend);
-
-        xhr.responseType = 'json';
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                let response = xhr.response;
-                if (response && response["wasSuccessful"] === true) {
-                    if (response['maxAverage']) {
-                        var tempMicroarray = {
-                            'Microarray': {
-                                'maxAverage': response['maxAverage'][locus.toUpperCase()]
-                            }
-                        };
-
-                        if (response['standardDeviation']) {
-                            tempMicroarray['Microarray']['standardDeviation'] = response['standardDeviation'][locus.toUpperCase()]
-                        };
-                        if (response['sample']) {
-                            tempMicroarray['Microarray']['sample'] = response['sample'][locus.toUpperCase()]
-                        };
-                        if (response['compendium']) {
-                            tempMicroarray['Microarray']['compendium'] = response['compendium'][locus.toUpperCase()]
-                        };
-                        this.topExpressionValues = Object.assign(this.topExpressionValues, tempMicroarray);
-                    };
-                };
-            };
-        };
-
-        xhr.open(method, url, true);
-        if (method === 'POST') {
-            xhr.setRequestHeader("Content-Type", sendHeaders);
-            xhr.send(postSend); 
-        } else {
-            xhr.send();
-        }; 
-    };
-
-    retrieveTopRNASeq(locus = 'AT3G24650') {
-        let xhr = new XMLHttpRequest();
-        let url = 'https://bar.utoronto.ca/expression_max_api/max_average';
-        let method = 'POST';
-        var sendHeaders = "application/json";
-        var postSend = {
-            'loci': [locus.toUpperCase()],
-            'method': 'RNA-seq'
-        };
-        postSend = JSON.stringify(postSend);
-
-        xhr.responseType = 'json';
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                let response = xhr.response;
-                if (response && response["wasSuccessful"] === true) {
-                    if (response['maxAverage']) {
-                        var tempRNASeq = {
-                            'RNA-seq': {
-                                'maxAverage': response['maxAverage'][locus.toUpperCase()]
-                            }
-                        };
-
-                        if (response['standardDeviation']) {
-                            tempRNASeq['RNA-seq']['standardDeviation'] = response['standardDeviation'][locus.toUpperCase()]
-                        };
-                        if (response['sample']) {
-                            tempRNASeq['RNA-seq']['sample'] = response['sample'][locus.toUpperCase()]
-                        };
-                        if (response['compendium']) {
-                            tempRNASeq['RNA-seq']['compendium'] = response['compendium'][locus.toUpperCase()]
-                        };
-                        this.topExpressionValues = Object.assign(this.topExpressionValues, tempRNASeq);
-                    };
-                };
-            };
-        };
-
-        xhr.open(method, url, true);
-        if (method === 'POST') {
-            xhr.setRequestHeader("Content-Type", sendHeaders);
-            xhr.send(postSend); 
-        } else {
-            xhr.send();
-        }; 
     };
 };
 
@@ -535,21 +497,28 @@ class CreateSVGExpressionData {
 
             var topList = Object.keys(this.interactiveSVGData.topExpressionValues);
             
-            
             for (var i = 0; i < topList.length; i++) {
                 if (this.interactiveSVGData.topExpressionValues[topList[i]]) {
                     var expressionData = this.interactiveSVGData.topExpressionValues[topList[i]];
-                    if (expressionData['compendium'][1]) {
-                        var expressionCompendium = expressionData['compendium'][1];
-                        topCompendiumsList.push(expressionCompendium);
-                        var expressionSample = expressionData['sample'][1];
-                        if (expressionSample && this.retrieveOnlineBARData.sampleData[expressionCompendium] && this.retrieveOnlineBARData.sampleData[expressionCompendium]['description']) {
-                            var readableSampleName = this.retrieveOnlineBARData.sampleData[expressionCompendium]['description'][expressionSample];
-                            var expressionAverageLevel = expressionData['maxAverage'][1];
-                            
-                            appendSVG += '<option value="' + expressionCompendium + '">' + expressionCompendium + ': ' + readableSampleName + ' at ' +  expressionAverageLevel + '(' + topList[i] + ')</option>';
+                    var compendiumOptions = expressionData['compendium'];
+
+                    for (var c = 0; c < Object.keys(compendiumOptions).length; c++) {
+                        var cUse = c + 1;
+
+                        if (expressionData['compendium'][cUse]) {
+                            var expressionCompendium = expressionData['compendium'][cUse];
+                            var expressionSample = expressionData['sample'][cUse];
+
+                            if (expressionSample && this.retrieveOnlineBARData.sampleData[expressionCompendium] && this.retrieveOnlineBARData.sampleData[expressionCompendium] && this.retrieveOnlineBARData.sampleData[expressionCompendium]['description']) {
+                                topCompendiumsList.push(expressionCompendium);
+                                var readableSampleName = this.retrieveOnlineBARData.sampleData[expressionCompendium]['description'][expressionSample];
+                                var expressionAverageLevel = expressionData['maxAverage'][cUse];
+                                
+                                appendSVG += '<option value="' + expressionCompendium + '">' + expressionCompendium + ': ' + readableSampleName + ' at ' +  expressionAverageLevel + '(' + topList[i] + ')</option>';
+                                break;
+                            };
                         };
-                    };
+                    };                    
                 };
             };
             appendSVG += '</select></br>';
