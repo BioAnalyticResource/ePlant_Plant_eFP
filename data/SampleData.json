@@ -1,5 +1,6 @@
 {
     "AbioticStress": {
+        "name": "Abiotic Stress",
         "sample": {
             "Control_Shoot_0_Hour": [
                 "AtGen_6_0011",
@@ -951,6 +952,7 @@
         "db": "atgenexp_stress"
     },
     "AbioticStressII": {
+        "name": "Abiotic Stress II",
         "sample": {
             "WellWatered-Predawn": [
                 "GSM491684",
@@ -1068,6 +1070,7 @@
         "db": "atgenexp_stress"
     },
     "AtGenExpress": {
+        "name": "Developmental Map",
         "sample": {
             "ATGE_CTRL_7": [
                 "ATGE_CTRL_7"
@@ -1403,6 +1406,7 @@
         "db": "atgenexp_plus"
     },
     "BioticStressBotrytiscinerea": {
+        "name": "Biotic Stress Botrytis cinerea",
         "sample": {
             "Control_Botrytis_cinerea_at_18_Hours": [
                 "CT181-1",
@@ -1442,6 +1446,7 @@
         "db": "atgenexp_pathogen"
     },
     "BioticStressElicitors": {
+        "name": "Biotic Stress Elicitors",
         "sample": {
             "H2O_at_1_Hour": [
                 "AtGen_B-1_1-1-1_REP_1_ATH1",
@@ -1555,6 +1560,7 @@
         "db": "atgenexp_pathogen"
     },
     "BioticStressErysipheorontii": {
+        "name": "Biotic Stress Erysiphe orontii",
         "sample": {
             "Control_Erysiphe_orontii_at_6_Hours": [
                 "JD AT+EO COL WT 06H UNINFECTED",
@@ -1684,6 +1690,7 @@
         "db": "atgenexp_pathogen"
     },
     "BioticStressGolovinomycesorontii": {
+        "name": "Biotic Stress Golovinomyces orontii",
         "sample": {
             "ColLaserMicrodissected-5dUninfected": [
                 "GSM392490",
@@ -1731,6 +1738,7 @@
         "db": "atgenexp_pathogen"
     },
     "BioticStressHyaloperonosporaarabidopsis": {
+        "name": "Biotic Stress Hyaloperonospora arabidopsis",
         "sample": {
             "WT_Emwa1_0dpi_rep1_rep2": [
                 "GSM554311_WT_Emwa1_0dpi_rep1",
@@ -1804,6 +1812,7 @@
         "db": "atgenexp_pathogen"
     },
     "BioticStressMyzuspersicaere": {
+        "name": "Biotic Stress Myzus persicaere",
         "sample": {
             "Control": [
                 "GSM157299_JPritchard_A-1_CTR_Rep1_ATH1",
@@ -1827,6 +1836,7 @@
         "db": "atgenexp_pathogen"
     },
     "BioticStressPhytophthorainfestans": {
+        "name": "Biotic Stress Phytophthora infestans",
         "sample": {
             "Control_Phytophthora_infestans_at_6_Hours": [
                 "AtGen_C-1_1-C-6_REP1_ATH1",
@@ -1881,6 +1891,7 @@
         "db": "atgenexp_pathogen"
     },
     "BioticStressPseudomonassyringae": {
+        "name": "Biotic Stress Pseudomonas syringae",
         "sample": {
             "Control_Half_Leaf_Pseudomonas_syringae_at_4_Hours": [
                 "2505",
@@ -2093,6 +2104,7 @@
         "db": "atgenexp_pathogen"
     },
     "Chemical": {
+        "name": "Chemical",
         "sample": {
             "Control_at_12_Hours": [
                 "RIKEN-GODA2A2",
@@ -2249,6 +2261,7 @@
         "db": "atgenexp_hormone"
     },
     "DnaDamage": {
+        "name": "DNA Damage",
         "sample": {
             "Y_Col-0_20min": [
                 "col-0_rep1_20min_+Y",
@@ -2414,6 +2427,7 @@
         "db": "dna_damage"
     },
     "Embryo": {
+        "name": "Embryo",
         "sample": {
             "oligocell": [
                 "pg_1",
@@ -2485,6 +2499,7 @@
         "db": "embryo"
     },
     "Germination": {
+        "name": "Germination",
         "sample": {
             "germinationZeroHourFillS": [
                 "0h_1",
@@ -2578,6 +2593,7 @@
         "db": "germination"
     },
     "GuardCellMeristemoids": {
+        "name": "Guard Cell Meristemoids",
         "sample": {
             "Col-0_WT_whole_seedling_at_5_dpg": [
                 "GSM738872_C2",
@@ -2616,6 +2632,7 @@
         "db": "guard_cell"
     },
     "GuardCellMeristemoidsCellSorted": {
+        "name": "Guard Cell Meristemoids Cell Sorted",
         "sample": {
             "Med_CTRL": [
                 "Med_CTRL"
@@ -2685,6 +2702,7 @@
         "db": "guard_cell"
     },
     "GuardCellMutantAndWildTypeGuardCellABAResponse": {
+        "name": "Guard Cell Mutant And Wild Type Guard Cell ABA Response",
         "sample": {
             "WT_Col-0_guard_cells_no_ABA": [
                 "GSM486892",
@@ -2806,6 +2824,7 @@
         "db": "guard_cell"
     },
     "GuardCellSuspensionCellABAResponseWithROSScavenger": {
+        "name": "Guard Cell Suspension Cell ABA Response With ROS Scavenger",
         "sample": {
             "Suspension_cell_culture_control": [
                 "GSM571891",
@@ -2844,6 +2863,7 @@
         "db": "guard_cell"
     },
     "Hormone": {
+        "name": "Hormone",
         "sample": {
             "ACC-Mock-30min": [
                 "RIKEN-GODA1AA",
@@ -3377,6 +3397,7 @@
         "db": "atgenexp_hormone"
     },
     "Klepikova": {
+        "name": "Klepikova Atlas",
         "sample": {
             "Med_CTRL": [
                 "Med_CTRL"
@@ -3806,6 +3827,7 @@
         "db": "klepikova"
     },
     "LateralRootInitiation": {
+        "name": "Lateral Root Initiation",
         "sample": {
             "De_Smet_J0121_NPA": [
                 "0h_1.cel",
@@ -4703,6 +4725,7 @@
         "db": "lateral_root_initiation"
     },
     "LightSeries": {
+        "name": "Light Series",
         "sample": {
             "LLHC_0h": [
                 "LLHC_00"
@@ -5471,6 +5494,7 @@
         "db": "light_series"
     },
     "Regeneration": {
+        "name": "Regeneration",
         "sample": {
             "Che et al., 0 day root explants": [
                 "0d_rep1",
@@ -5700,6 +5724,7 @@
         "db": "meristem_db"
     },
     "RootCellsTypes": {
+        "name": "Tissue Specific: Root Cell Types",
         "sample": {
             "Root Stage II Stele": [
                 "stele_stage2"
@@ -5796,6 +5821,7 @@
         "db": "atgenexp_plus"
     },
     "RootEpidermis": {
+        "name": "Root Epidermis",
         "sample": {
             "WT": [
                 "GSM757891",
@@ -6009,6 +6035,7 @@
         "db": "atgenexp_plus"
     },
     "RootII": {
+        "name": "Root II",
         "sample": {
             "pH-lowPH-6h": [
                 "GSM744792",
@@ -6530,6 +6557,7 @@
         "db": "root"
     },
     "RootImmunityElicitation": {
+        "name": "Root Immunity Elicitation",
         "sample": {
             "Mock-Epidermis": [
                 "WTCHG_203594_01",
@@ -6604,7 +6632,675 @@
         },
         "db": "root_Schaefer_lab"
     },
+    "scRNASeq": {
+        "name": "Single Cell",
+        "sample": {
+            "CortexG6-CortexCells31": [
+                "cluster31_WT1.ExprMean ",
+                "cluster31_WT2.ExprMean ",
+                "cluster31_WT3.ExprMean "
+            ],
+            "CortexG6-CortexCells19": [
+                "cluster19_WT1.ExprMean ",
+                "cluster19_WT2.ExprMean ",
+                "cluster19_WT3.ExprMean "
+            ],
+            "RootCapG1-QuiescentCenterCellsAndYoungMeristemCells17": [
+                "cluster17_WT1.ExprMean ",
+                "cluster17_WT2.ExprMean ",
+                "cluster17_WT3.ExprMean "
+            ],
+            "SteleG5-XylemCells23": [
+                "cluster23_WT1.ExprMean ",
+                "cluster23_WT2.ExprMean ",
+                "cluster23_WT3.ExprMean "
+            ],
+            "SteleG0-SteleCellsIncludingPericyte7": [
+                "cluster7_WT1.ExprMean ",
+                "cluster7_WT2.ExprMean ",
+                "cluster7_WT3.ExprMean "
+            ],
+            "CortexG6-CortexCells11": [
+                "cluster11_WT1.ExprMean ",
+                "cluster11_WT2.ExprMean ",
+                "cluster11_WT3.ExprMean "
+            ],
+            "RootCapG1-ColumellaRootCapCells28": [
+                "cluster28_WT1.ExprMean ",
+                "cluster28_WT2.ExprMean ",
+                "cluster28_WT3.ExprMean "
+            ],
+            "RootCapG1-DividingMeristemCells25": [
+                "cluster25_WT1.ExprMean ",
+                "cluster25_WT2.ExprMean ",
+                "cluster25_WT3.ExprMean "
+            ],
+            "SteleG0-PhloemCells21": [
+                "cluster21_WT1.ExprMean ",
+                "cluster21_WT2.ExprMean ",
+                "cluster21_WT3.ExprMean "
+            ],
+            "SteleG0-SteleCells34": [
+                "cluster34_WT1.ExprMean ",
+                "cluster34_WT2.ExprMean ",
+                "cluster34_WT3.ExprMean "
+            ],
+            "SteleG0-SteleCellsIncludingPericyte14": [
+                "cluster14_WT1.ExprMean ",
+                "cluster14_WT2.ExprMean ",
+                "cluster14_WT3.ExprMean "
+            ],
+            "CortexG6-DifferentiatingEndodermisCortexCells30": [
+                "cluster30_WT1.ExprMean ",
+                "cluster30_WT2.ExprMean ",
+                "cluster30_WT3.ExprMean "
+            ],
+            "EndocortexG2-DifferentiatingEndodermisCortexCells0": [
+                "cluster0_WT1.ExprMean ",
+                "cluster0_WT2.ExprMean ",
+                "cluster0_WT3.ExprMean "
+            ],
+            "SteleG0-SteleCells6": [
+                "cluster6_WT1.ExprMean ",
+                "cluster6_WT2.ExprMean ",
+                "cluster6_WT3.ExprMean "
+            ],
+            "SteleG5-SteleCells9": [
+                "cluster9_WT1.ExprMean ",
+                "cluster9_WT2.ExprMean ",
+                "cluster9_WT3.ExprMean "
+            ],
+            "EpidermisHG4-EarlyStageDifferentiatingRootHairEpidermalCells15": [
+                "cluster15_WT1.ExprMean ",
+                "cluster15_WT2.ExprMean ",
+                "cluster15_WT3.ExprMean "
+            ],
+            "EndocortexG2-DifferentiatingEndodermisCortexCells29": [
+                "cluster29_WT1.ExprMean ",
+                "cluster29_WT2.ExprMean ",
+                "cluster29_WT3.ExprMean "
+            ],
+            "EpidermisHG8-RootHairEpidermalCells26": [
+                "cluster26_WT1.ExprMean ",
+                "cluster26_WT2.ExprMean ",
+                "cluster26_WT3.ExprMean "
+            ],
+            "EpidermisNG3-DifferentiatingNonHairEpidermalCells1": [
+                "cluster1_WT1.ExprMean ",
+                "cluster1_WT2.ExprMean ",
+                "cluster1_WT3.ExprMean "
+            ],
+            "EpidermisHG8-RootHairEpidermalCells10": [
+                "cluster10_WT1.ExprMean ",
+                "cluster10_WT2.ExprMean ",
+                "cluster10_WT3.ExprMean "
+            ],
+            "EndodermisG7-EndodermisCells12": [
+                "cluster12_WT1.ExprMean ",
+                "cluster12_WT2.ExprMean ",
+                "cluster12_WT3.ExprMean ",
+                "pg_3"
+            ],
+            "SteleG5-SteleCells18": [
+                "cluster18_WT1.ExprMean ",
+                "cluster18_WT2.ExprMean ",
+                "cluster18_WT3.ExprMean "
+            ],
+            "SteleG5-ProtoxylemCells33": [
+                "cluster33_WT1.ExprMean ",
+                "cluster33_WT2.ExprMean ",
+                "cluster33_WT3.ExprMean "
+            ],
+            "SteleG5-XylemCells27": [
+                "cluster27_WT1.ExprMean ",
+                "cluster27_WT2.ExprMean ",
+                "cluster27_WT3.ExprMean "
+            ],
+            "EndocortexG2-EarlyStageDifferentiatingEndodermisCortexCells13": [
+                "cluster13_WT1.ExprMean ",
+                "cluster13_WT2.ExprMean ",
+                "cluster13_WT3.ExprMean "
+            ],
+            "SteleG0-SteleCells20": [
+                "cluster20_WT1.ExprMean ",
+                "cluster20_WT2.ExprMean ",
+                "cluster20_WT3.ExprMean "
+            ],
+            "RootCapG1-DifferentiatingRootCapCells8": [
+                "cluster8_WT1.ExprMean ",
+                "cluster8_WT2.ExprMean ",
+                "cluster8_WT3.ExprMean "
+            ],
+            "EpidermisHG4-MidStageDifferentiatingRootHairEpidermalCells4": [
+                "cluster4_WT1.ExprMean ",
+                "cluster4_WT2.ExprMean ",
+                "cluster4_WT3.ExprMean "
+            ],
+            "EpidermisNG3-NonHairEpidermalCells16": [
+                "cluster16_WT1.ExprMean ",
+                "cluster16_WT2.ExprMean ",
+                "cluster16_WT3.ExprMean "
+            ],
+            "EndodermisG7-EndodermisCells22": [
+                "cluster22_WT1.ExprMean ",
+                "cluster22_WT2.ExprMean ",
+                "cluster22_WT3.ExprMean "
+            ],
+            "EndocortexG2-EarlyStageDifferentiatingEndodermisCortexCells35": [
+                "cluster35_WT1.ExprMean ",
+                "cluster35_WT2.ExprMean ",
+                "cluster35_WT3.ExprMean "
+            ],
+            "EpidermisHG4-LateStageDifferentiatingRootHairEpidermalCells3": [
+                "cluster3_WT1.ExprMean ",
+                "cluster3_WT2.ExprMean ",
+                "cluster3_WT3.ExprMean "
+            ],
+            "RootCapG1-DividingMeristemCells24": [
+                "cluster24_WT1.ExprMean ",
+                "cluster24_WT2.ExprMean ",
+                "cluster24_WT3.ExprMean "
+            ],
+            "RootCapG1-LateralRootCapCells2": [
+                "cluster2_WT1.ExprMean ",
+                "cluster2_WT2.ExprMean ",
+                "cluster2_WT3.ExprMean "
+            ],
+            "EpidermisNG3-EarlyStageDifferentiatingNonHairEpidermalCells5": [
+                "cluster5_WT1.ExprMean ",
+                "cluster5_WT2.ExprMean ",
+                "cluster5_WT3.ExprMean "
+            ],
+            "EndocortexG2-DividingMeristemCells32": [
+                "cluster32_WT1.ExprMean ",
+                "cluster32_WT2.ExprMean ",
+                "cluster32_WT3.ExprMean "
+            ]
+        },
+        "db": "single_cell",
+        "description": {
+            "CortexG6-CortexCells31": "Cortex cells (31)",
+            "CortexG6-CortexCells19": "Cortex cells (19)",
+            "RootCapG1-QuiescentCenterCellsAndYoungMeristemCells17": "Quiescent center cells and young meristem cells (17)",
+            "SteleG5-XylemCells23": "Xylem cells (23)",
+            "SteleG0-SteleCellsIncludingPericyte7": "Stele cells (including pericyte) (7)",
+            "CortexG6-CortexCells11": "Cortex cells (11)",
+            "RootCapG1-ColumellaRootCapCells28": "Columella root cap cells (28)",
+            "RootCapG1-DividingMeristemCells25": "Dividing meristem cells (25)",
+            "SteleG0-PhloemCells21": "Phloem cells (21)",
+            "SteleG0-SteleCells34": "Stele cells (34)",
+            "SteleG0-SteleCellsIncludingPericyte14": "Stele cells (including pericyte) (14)",
+            "CortexG6-DifferentiatingEndodermisCortexCells30": "Differentiating endodermis/cortex cells (30)",
+            "EndocortexG2-DifferentiatingEndodermisCortexCells0": "Differentiating endodermis/cortex cells (0)",
+            "SteleG0-SteleCells6": "Stele cells (6)",
+            "SteleG5-SteleCells9": "Stele cells (9)",
+            "EpidermisHG4-EarlyStageDifferentiatingRootHairEpidermalCells15": "Early-stage differentiating root hair epidermal cells (15)",
+            "EndocortexG2-DifferentiatingEndodermisCortexCells29": "Differentiating endodermis/cortex cells (29)",
+            "EpidermisHG8-RootHairEpidermalCells26": "Root hair epidermal cells (26)",
+            "EpidermisNG3-DifferentiatingNonHairEpidermalCells1": "Differentiating non-hair epidermal cells (1)",
+            "EpidermisHG8-RootHairEpidermalCells10": "Root hair epidermal cells (10)",
+            "EndodermisG7-EndodermisCells12": "Endodermis cells (12)",
+            "SteleG5-SteleCells18": "Stele cells (18)",
+            "SteleG5-ProtoxylemCells33": "Protoxylem cells (33)",
+            "SteleG5-XylemCells27": "Xylem cells (27)",
+            "EndocortexG2-EarlyStageDifferentiatingEndodermisCortexCells13": "Early-stage differentiating endodermis/cortex cells (13)",
+            "SteleG0-SteleCells20": "Stele cells (20)",
+            "RootCapG1-DifferentiatingRootCapCells8": "Differentiating lateral root cap cells (8)",
+            "EpidermisHG4-MidStageDifferentiatingRootHairEpidermalCells4": "Mid-stage differentiating root hair epidermal cells (4)",
+            "EpidermisNG3-NonHairEpidermalCells16": "Non-hair epidermal cells (16)",
+            "EndodermisG7-EndodermisCells22": "Endodermis cells (22)",
+            "EndocortexG2-EarlyStageDifferentiatingEndodermisCortexCells35": "Early-stage differentiating endodermis/cortex cells (35)",
+            "EpidermisHG4-LateStageDifferentiatingRootHairEpidermalCells3": "Late-stage differentiating root hair epidermal cells (3)",
+            "RootCapG1-DividingMeristemCells24": "Dividing meristem cells (24)",
+            "RootCapG1-LateralRootCapCells2": "Lateral root cap cells (2)",
+            "EpidermisNG3-EarlyStageDifferentiatingNonHairEpidermalCells5": "Early-stage differentiating root hair epidermal cells (5)",
+            "EndocortexG2-DividingMeristemCells32": "Dividing meristem cells (32)"
+        },
+        "controlComparison": {
+            "Med_CTRL": [
+                "Endodermis cells (12)",
+                "Endodermis cells (22)",
+                "Differentiating endodermis/cortex cells (0)",
+                "Differentiating endodermis/cortex cells (29)",
+                "Early-stage differentiating endodermis/cortex cells (13)",
+                "Early-stage differentiating endodermis/cortex cells (35)",
+                "Dividing meristem cells (32)",
+                "Late-stage differentiating root hair epidermal cells (3)",
+                "Mid-stage differentiating root hair epidermal cells (4)",
+                "Early-stage differentiating root hair epidermal cells (15)",
+                "Root hair epidermal cells (26)",
+                "Root hair epidermal cells (10)",
+                "Protoxylem cells (33)",
+                "Xylem cells (27)",
+                "Xylem cells (23)",
+                "Stele cells (18)",
+                "Stele cells (9)",
+                "Cortex cells (11)",
+                "Cortex cells (19)",
+                "Cortex cells (31)",
+                "Differentiating endodermis/cortex cells (30)",
+                "Early-stage differentiating root hair epidermal cells (5)",
+                "Non-hair epidermal cells (16)",
+                "Differentiating non-hair epidermal cells (1)",
+                "Dividing meristem cells (25)",
+                "Quiescent center cells and young meristem cells (17)",
+                "Dividing meristem cells (24)",
+                "Differentiating lateral root cap cells (8)",
+                "Lateral root cap cells (2)",
+                "Columella root cap cells (28)",
+                "Stele cells (34)",
+                "Stele cells (6)",
+                "Stele cells (including pericyte) (14)",
+                "Stele cells (including pericyte) (7)",
+                "Stele cells (20)",
+                "Phloem cells (21)"
+            ]
+        }
+    },
+    "Seed": {
+        "name": "Seed",
+        "sample": {
+            "EES-GL-endosperm-WIgerm": [
+                "Penfield_1-1_endosperm-control_Rep1_ATH1",
+                "Penfield_1-2_endosperm-control_Rep2_ATH1",
+                "Penfield_1-3_endosperm-control_Rep3_ATH1"
+            ],
+            "dormancy-HL-Cvi-AR": [
+                "Carrera Begua_1-25_CVI-24hr-ripening_Rep1_ATH1",
+                "Carrera Begua_1-26_CVI-24hr-ripening_Rep2_ATH1",
+                "Carrera Begua_1-27_CVI-24hr-ripening_Rep3_ATH1"
+            ],
+            "mutant-HL-abi11": [
+                "Carrera Begua_1-10_abi1_Rep1_ATH1",
+                "Carrera Begua_1-11_abi1_Rep2_ATH1",
+                "Carrera Begua_1-12_abi1-Rep3_ATH1"
+            ],
+            "dormancy-FSL-PDN": [
+                "Finch-Savage_1-41_PDN_Rep1_ATH1",
+                "Finch-Savage_1-42_PDN_Rep2_ATH1",
+                "Finch-Savage_1-43_PDN_Rep3_ATH1",
+                "Finch-Savage_1-44_PDN_Rep4_ATH1"
+            ],
+            "dormancy-FSL-PDL": [
+                "Finch-Savage_1-37_PDL_Rep1_ATH1",
+                "Finch-Savage_1-38_PDL_Rep2_ATH1",
+                "Finch-Savage_1-39_PDL_Rep3_ATH1",
+                "Finch-Savage_1-40_PDL_Rep4_ATH1"
+            ],
+            "mutant-HL-cts1": [
+                "Carrera Begua_1-31_cts1-24hr-dormancy_Rep1_ATH1",
+                "Carrera Begua_1-32_cts1-24hr-dormancy_Rep2_ATH1",
+                "Carrera Begua_1-33_cts1-24hr-dormancy_Rep3_ATH1"
+            ],
+            "mutant-YL-WI-3h": [
+                "RIKEN-LI1A",
+                "RIKEN-LI1B"
+            ],
+            "mutant-HL-aba11": [
+                "Carrera Begua_1-7_aba_Rep1_ATH1",
+                "Carrera Begua_1-8_aba_Rep2_ATH1",
+                "Carrera Begua_1-9_aba_Rep3_ATH1"
+            ],
+            "dormancy-FSL-DL": [
+                "Finch-Savage_1-5_AND_Rep1_ATH1",
+                "Finch-Savage_1-6_AND_Rep2_ATH1",
+                "Finch-Savage_1-7_AND_Rep3_ATH1",
+                "Finch-Savage_1-8_AND_Rep4_ATH1"
+            ],
+            "dormancy-FSL-PDD": [
+                "Finch-Savage_1-29_PDD_Rep1_ATH1",
+                "Finch-Savage_1-30_PDD_Rep2_ATH1",
+                "Finch-Savage_1-31_PDD_Rep3_ATH1",
+                "Finch-Savage_1-32_PDD_Rep4_ATH1"
+            ],
+            "EES-GL-embryo-WIungerm": [
+                "Penfield_1-16_embryo-PAC_Rep1_ATH1",
+                "Penfield_1-17_embryo-PAC_Rep2_ATH1",
+                "Penfield_1-18_embryo-PAC_Rep3_ATH1"
+            ],
+            "dormancy-HL-Ler0-FH": [
+                "Carrera Begua_1-4_ido_Rep1_ATH1",
+                "Carrera Begua_1-5_ido_Rep2_ATH1",
+                "Carrera Begua_1-6_ido_Rep3_ATH1"
+            ],
+            "dormancy-FSL-PDC": [
+                "Finch-Savage_1-49_PDC_Rep1_ATH1",
+                "Finch-Savage_1-50_PDC_Rep2_ATH1",
+                "Finch-Savage_1-51_PDC_Rep3_ATH1",
+                "Finch-Savage_1-52_PDC_Rep4_ATH1"
+            ],
+            "mutant-HL-rdo2": [
+                "Carrera Begua_1-19_rdo_Rep1_ATH1",
+                "Carrera Begua_1-20_rdo_Rep2_ATH1",
+                "Carrera Begua_1-21_rdo_Rep3_ATH1"
+            ],
+            "dormancy-FSL-PD30d": [
+                "Finch-Savage_1-17_PD30d_Rep1_ATH1",
+                "Finch-Savage_1-18_PD30d_Rep2_ATH1",
+                "Finch-Savage_1-19_PD30d_Rep3_ATH1",
+                "Finch-Savage_1-20_PD30d_Rep4_ATH1"
+            ],
+            "mutant-YL-GAI-6h": [
+                "RIKEN-LI5A",
+                "RIKEN-LI5B"
+            ],
+            "mutant-YL-GAI-3h": [
+                "RIKEN-LI4A",
+                "RIKEN-LI4B"
+            ],
+            "chemicalTreatment-CL-methotrexate": [
+                "bot0293",
+                "bot0294"
+            ],
+            "dormancy-FSL-PD24h": [
+                "Finch-Savage_1-1_PD24h_Rep1_ATH1",
+                "Finch-Savage_1-2_PD24h_Rep2_ATH1",
+                "Finch-Savage_1-3_PD24h_Rep3_ATH1",
+                "Finch-Savage_1-4_PD24h_Rep4_ATH1"
+            ],
+            "dormancy-HL-Ler0-AR": [
+                "Carrera Begua_1-1_lar_Rep1_ATH1",
+                "Carrera Begua_1-2_lar_Rep2_ATH1",
+                "Carrera Begua_1-3_lar_Rep3_ATH1"
+            ],
+            "chemicalTreatment-CL-cyclohexamide": [
+                "bot0256",
+                "bot0257"
+            ],
+            "mutant-NL-abi57-WI": [
+                "abi5_24HAI_rep1",
+                "abi5_24HAI_rep2"
+            ],
+            "EES-GL-endosperm-ABAI": [
+                "Penfield_1-4_endosperm-ABA_Rep1_ATH1",
+                "Penfield_1-5_endosperm-ABA_Rep2_ATH1",
+                "Penfield_1-6_endosperm-ABA_Rep3_ATH1"
+            ],
+            "dormancy-FSL-DDL": [
+                "Finch-Savage_1-33_NDD_Rep1_ATH1",
+                "Finch-Savage_1-34_NDD_Rep2_ATH1",
+                "Finch-Savage_1-35_NDD_Rep3_ATH1",
+                "Finch-Savage_1-36_NDD_Rep4_ATH1"
+            ],
+            "EES-GL-embryo-ABAI": [
+                "Penfield_1-13_embryo-ABA_Rep1_ATH1",
+                "Penfield_1-14_embryo-ABA_Rep2_ATH1",
+                "Penfield_1-15_embryo-ABA_Rep3_ATH1"
+            ],
+            "germination-NL-24h": [
+                "24hr_rep1",
+                "24hr_rep2"
+            ],
+            "mutant-YL-WI-6h": [
+                "RIKEN-LI2A",
+                "RIKEN-LI2B"
+            ],
+            "hormoneTreatment-NL-3ABA": [
+                "RIKEN-NAKABAYASHI3A",
+                "RIKEN-NAKABAYASHI5B"
+            ],
+            "EES-GL-embryo-WIgerm": [
+                "Penfield_1-10_embryo-control_Rep1_ATH1",
+                "Penfield_1-11_embryo-control_Rep2_ATH1",
+                "Penfield_1-12_embryo-control_Rep3_ATH1"
+            ],
+            "germination-drySeed": [
+                "RIKEN-PRESTON0A",
+                "RIKEN-PRESTON0B"
+            ],
+            "mutant-NL-abi57-drySeed": [
+                "abi5_ds_rep1",
+                "abi5_ds_rep2"
+            ],
+            "dormancy-HL-Cvi-FH": [
+                "Carrera Begua_1-22_CVI-24hr-dormancy_Rep1_ATH1",
+                "Carrera Begua_1-23_CVI-24hr-dormancy_Rep2_ATH1",
+                "Carrera Begua_1-24_CVI-24hr-dormancy_Rep3_ATH1"
+            ],
+            "mutant-NL-abi41-drySeed": [
+                "abi4_ds_rep1",
+                "abi4_ds_rep2"
+            ],
+            "dormancy-FSL-PDLN": [
+                "Finch-Savage_1-45_PDLN_Rep1_ATH1",
+                "Finch-Savage_1-46_PDLN_Rep2_ATH1",
+                "Finch-Savage_1-47_PDLN_Rep3_ATH1",
+                "Finch-Savage_1-48_PDLN_Rep4_ATH1"
+            ],
+            "mutant-YL-GAI-9h": [
+                "RIKEN-LI6A",
+                "RIKEN-LI6B"
+            ],
+            "germination-NL-6h": [
+                "6hr_rep1",
+                "6hr_rep2"
+            ],
+            "chemicalTreatment-CL-DMSO": [
+                "bot0142",
+                "bot0314",
+                "bot0394"
+            ],
+            "hormoneTreatment-NL-WI": [
+                "RIKEN-NAKABAYASHI2A",
+                "RIKEN-NAKABAYASHI2B"
+            ],
+            "mutant-YL-WI-9h": [
+                "RIKEN-LI3A",
+                "RIKEN-LI3B"
+            ],
+            "germination-YL-4C": [
+                "RIKEN-YAMAUCHI2A",
+                "RIKEN-YAMAUCHI2B"
+            ],
+            "EES-GL-endosperm-WIungerm": [
+                "Penfield_1-7_endosperm-PAC_Rep1_ATH1",
+                "Penfield_1-8_endosperm-PAC_Rep2_ATH1",
+                "Penfield_1-9_endosperm-PAC_Rep3_ATH1"
+            ],
+            "germination-NL-1h": [
+                "RIKEN-PRESTON1A",
+                "RIKEN-PRESTON1B"
+            ],
+            "germination-NL-12h": [
+                "12hr_rep1",
+                "12hr_rep2"
+            ],
+            "hormoneTreatment-NL-30ABA": [
+                "RIKEN-NAKABAYASHI4A",
+                "RIKEN-NAKABAYASHI4B"
+            ],
+            "germination-NL-3h": [
+                "RIKEN-PRESTON2A",
+                "RIKEN-PRESTON2B"
+            ],
+            "dormancy-FSL-LIG": [
+                "Finch-Savage_1-25_LIG_Rep1_ATH1",
+                "Finch-Savage_1-26_LIG_Rep2_ATH1",
+                "Finch-Savage_1-27_LIG_Rep3_ATH1",
+                "Finch-Savage_1-28_LIG_Rep4_ATH1"
+            ],
+            "mutant-NL-abi41-WI": [
+                "abi4_24HAI_rep1",
+                "abi4_24HAI_rep2"
+            ],
+            "dormancy-FSL-PD48h": [
+                "Finch-Savage_1-13_PD48h_Rep1_ATH1",
+                "Finch-Savage_1-14_PD48h_Rep2_ATH1",
+                "Finch-Savage_1-15_PD48h_Rep3_ATH1",
+                "Finch-Savage_1-16_PD48h_Rep4_ATH1"
+            ],
+            "germination-YL-22C": [
+                "RIKEN-YAMAUCHI1A",
+                "RIKEN-YAMAUCHI1B"
+            ],
+            "dormancy-FSL-SD1": [
+                "Finch-Savage_1-9_SD1_Rep1_ATH1",
+                "Finch-Savage_1-10_SD1_Rep2_ATH1",
+                "Finch-Savage_1-11_SD1_Rep3_ATH1",
+                "Finch-Savage_1-12_SD1_Rep4_ATH1"
+            ],
+            "mutant-HL-fus38": [
+                "Carrera Begua_1-16_fus_Rep1_ATH1",
+                "Carrera Begua_1-17_fus_Rep2_ATH1",
+                "Carrera Begua_1-18_fus_Rep3_ATH1"
+            ],
+            "dormancy-FSL-SD2": [
+                "Finch-Savage_1-21_SD2_Rep1_ATH1",
+                "Finch-Savage_1-22_SD2_Rep2_ATH1",
+                "Finch-Savage_1-23_SD2_Rep3_ATH1",
+                "Finch-Savage_1-24_SD2_Rep4_ATH1"
+            ]
+        },
+        "db": "seed_db",
+        "description": {
+            "EES-GL-endosperm-WIgerm": "Germinated Endosperm",
+            "dormancy-HL-Cvi-AR": "Cvi After-ripened",
+            "mutant-HL-abi11": "abi1-1",
+            "dormancy-FSL-PDN": "PDN",
+            "dormancy-FSL-PDL": "PDL",
+            "mutant-HL-cts1": "cts1",
+            "mutant-YL-WI-3h": "3 h in water",
+            "mutant-HL-aba11": "aba1-1",
+            "dormancy-FSL-DL": "DL",
+            "dormancy-FSL-PDD": "PDD",
+            "EES-GL-embryo-WIungerm": "PAC Treated Embryo",
+            "dormancy-HL-Ler0-FH": "Ler Fresh",
+            "dormancy-FSL-PDC": "PDC",
+            "mutant-HL-rdo2": "rdo2",
+            "dormancy-FSL-PD30d": "PD30d",
+            "mutant-YL-GAI-6h": "6 h in GA",
+            "mutant-YL-GAI-3h": "3 h in GA",
+            "chemicalTreatment-CL-methotrexate": "Methotrexate",
+            "dormancy-FSL-PD24h": "PD24h",
+            "dormancy-HL-Ler0-AR": "Ler After-ripened",
+            "chemicalTreatment-CL-cyclohexamide": "Cycloheximide",
+            "mutant-NL-abi57-WI": "abi5 24 HAI",
+            "EES-GL-endosperm-ABAI": "ABA Treated Endosperm",
+            "dormancy-FSL-DDL": "DDL",
+            "EES-GL-embryo-ABAI": "ABA Treated Embryo",
+            "germination-NL-24h": "24 h Imbibed Seeds",
+            "mutant-YL-WI-6h": "6 h in water",
+            "hormoneTreatment-NL-3ABA": "24 h in 3 uM ABA",
+            "EES-GL-embryo-WIgerm": "Germinated Embryo",
+            "germination-drySeed": "Dry Seeds",
+            "mutant-NL-abi57-drySeed": "abi5 dry seed",
+            "dormancy-HL-Cvi-FH": "Cvi Fresh",
+            "mutant-NL-abi41-drySeed": "abi4 dry seed",
+            "dormancy-FSL-PDLN": "PDLN",
+            "mutant-YL-GAI-9h": "9 h in GA",
+            "germination-NL-6h": "6 h Imbibed Seeds",
+            "chemicalTreatment-CL-DMSO": "DMSO",
+            "hormoneTreatment-NL-WI": "24 h in water",
+            "mutant-YL-WI-9h": "9 h in water",
+            "germination-YL-4C": "96 h at 4 C",
+            "EES-GL-endosperm-WIungerm": "PAC Treated Endosperm",
+            "germination-NL-1h": "1 h Imbibed Seeds",
+            "germination-NL-12h": "12 h Imbibed Seeds",
+            "hormoneTreatment-NL-30ABA": " 24 h in 30 uM ABA",
+            "germination-NL-3h": "3 h Imbibed Seeds",
+            "dormancy-FSL-LIG": "LIG",
+            "mutant-NL-abi41-WI": "abi4 24 HAI",
+            "dormancy-FSL-PD48h": "PD48h",
+            "germination-YL-22C": "96 h at 22 C",
+            "dormancy-FSL-SD1": "SD1",
+            "mutant-HL-fus38": "fus3-8",
+            "dormancy-FSL-SD2": "SD2"
+        },
+        "controlComparison": {
+            "SEED_LCM_CTRL": [
+                "embryo pre-globular stage",
+                "micropylar endosperm pre-globular stage",
+                "peripheral endosperm pre-globular stage",
+                "chalazal endosperm pre-globular stage",
+                "chalazal seed coat pre-globular stage",
+                "general seed coat pre-globular stage",
+                "embryo globular stage",
+                "suspensor globular stage",
+                "micropylar endosperm globular stage",
+                "peripheral endosperm globular stage",
+                "chalazal endosperm globular stage",
+                "chalazal seed coat globular stage",
+                "general seed coat globular stage",
+                "embryo proper heart stage",
+                "micropylar endosperm heart stage",
+                "peripheral endosperm heart stage",
+                "chalazal endosperm heart stage",
+                "chalazal seed coat heart stage",
+                "seed coat heart stage",
+                "embryo  proper linear-cotyledon stage",
+                "cellularized endosperm linear-cotyledon stage",
+                "chalazal endosperm linear-cotyledon stage",
+                "chalazal seed coat linear-cotyledon stage",
+                "general seed coat linear-cotyledon stage",
+                "embryo proper mature green stage",
+                "micropylar endosperm mature green stage",
+                "peripherial endosperm mature green stage",
+                "chalazal endosperm mature green stage",
+                "chalazal seed coat mature green stage",
+                "seed coat mature green stage"
+            ],
+            "SEED_CTRL": [
+                "Dry Seeds",
+                "1 h Imbibed Seeds",
+                "3 h Imbibed Seeds",
+                "6 h Imbibed Seeds",
+                "12 h Imbibed Seeds",
+                "24 h Imbibed Seeds",
+                "96 h at 22 C",
+                "96 h at 4 C",
+                "3 h in water",
+                "6 h in water",
+                "9 h in water",
+                "3 h in GA",
+                "6 h in GA",
+                "9 h in GA",
+                "24 h in water",
+                "24 h in 3 uM ABA",
+                " 24 h in 30 uM ABA",
+                "Germinated Embryo",
+                "PAC Treated Embryo",
+                "ABA Treated Embryo",
+                "Germinated Endosperm",
+                "PAC Treated Endosperm",
+                "ABA Treated Endosperm",
+                "PDD",
+                "DDL",
+                "PD24h",
+                "PD48h",
+                "PD30d",
+                "SD1",
+                "SD2",
+                "PDC",
+                "PDL",
+                "DL",
+                "PDN",
+                "PDLN",
+                "LIG",
+                "aba1-1",
+                "abi1-1",
+                "abi3-4",
+                "cts1",
+                "fus3-8",
+                "rdo2",
+                "Ler Fresh",
+                "Ler After-ripened",
+                "Cvi Fresh",
+                "Cvi After-ripened",
+                "abi4 dry seed",
+                "abi4 24 HAI",
+                "abi5 dry seed",
+                "abi5 24 HAI"
+            ],
+            "Germination_inhibitors": [
+                "DMSO",
+                "Cycloheximide",
+                "Methotrexate",
+                "2,4-DNP"
+            ]
+        }
+    },
     "ShootApex": {
+        "name": "ShootApex",
         "sample": {
             "AVG": [
                 "AVG"
@@ -6660,6 +7356,7 @@
         "db": "shoot_apex"
     },
     "TissueSpecificEmbryoDevelopment": {
+        "name": "Tissue Specific: Embryo Development",
         "sample": {
             "ATGE_CTRL_7": [
                 "ATGE_CTRL_7"
@@ -6738,6 +7435,7 @@
         "db": "atgenexp_plus"
     },
     "TissueSpecificGuardAndMesophyllCells": {
+        "name": "Tissue Specific: Guard and Mesophyll Cells",
         "sample": {
             "Mesophyll_cells_with_100_uM_ABA": [
                 "JS88",
@@ -6817,6 +7515,7 @@
         "db": "atgenexp_plus"
     },
     "TissueSpecificMicrogametogenesis": {
+        "name": "Tissue Specific: Microgametogenesis",
         "sample": {
             "ATGE_CTRL_7": [
                 "ATGE_CTRL_7"
@@ -6855,6 +7554,7 @@
         "db": "atgenexp_plus"
     },
     "TissueSpecificPollenGermination": {
+        "name": "Tissue Specific: Pollen Germination",
         "sample": {
             "ATGE_CTRL_7": [
                 "ATGE_CTRL_7"
@@ -6901,6 +7601,7 @@
         "db": "atgenexp_plus"
     },
     "TissueSpecificRoot": {
+        "name": "Tissue Specific: Root",
         "sample": {
             "ROOT_CTRL": [
                 "ROOT_CTRL"
@@ -8178,6 +8879,7 @@
         "db": "root"
     },
     "TissueSpecificShootApicalMeristem": {
+        "name": "Tissue Specific: Shoot Apical Meristem",
         "sample": {
             "ATGE_CTRL_7": [
                 "ATGE_CTRL_7"
@@ -8213,6 +8915,7 @@
         "db": "atgenexp_plus"
     },
     "TissueSpecificStemEpidermis": {
+        "name": "Tissue Specific: Stem Epidermis",
         "sample": {
             "ATGE_CTRL_7": [
                 "ATGE_CTRL_7"
@@ -8252,6 +8955,7 @@
         "db": "atgenexp_plus"
     },
     "TissueSpecificStigmaAndOvaries": {
+        "name": "Tissue Specific: Stigma and Ovaries",
         "sample": {
             "ATGE_CTRL_7": [
                 "ATGE_CTRL_7"
@@ -8282,6 +8986,7 @@
         "db": "atgenexp_plus"
     },
     "TissueSpecificTrichomes": {
+        "name": "Tissue Specific: Trichomes",
         "sample": {
             "ATGE_CTRL_7": [
                 "ATGE_CTRL_7"
@@ -8334,6 +9039,7 @@
         "db": "atgenexp_plus"
     },
     "TissueSpecificXylemAndCork": {
+        "name": "Tissue Specific: Xylem and Cork",
         "sample": {
             "Xylem_MYB61_knockout": [
                 "Dubos_A-3-6kx_Rep1",
@@ -8428,670 +9134,5 @@
             ]
         },
         "db": "atgenexp_plus"
-    },
-    "Seed": {
-        "sample": {
-            "EES-GL-endosperm-WIgerm": [
-                "Penfield_1-1_endosperm-control_Rep1_ATH1",
-                "Penfield_1-2_endosperm-control_Rep2_ATH1",
-                "Penfield_1-3_endosperm-control_Rep3_ATH1"
-            ],
-            "dormancy-HL-Cvi-AR": [
-                "Carrera Begua_1-25_CVI-24hr-ripening_Rep1_ATH1",
-                "Carrera Begua_1-26_CVI-24hr-ripening_Rep2_ATH1",
-                "Carrera Begua_1-27_CVI-24hr-ripening_Rep3_ATH1"
-            ],
-            "mutant-HL-abi11": [
-                "Carrera Begua_1-10_abi1_Rep1_ATH1",
-                "Carrera Begua_1-11_abi1_Rep2_ATH1",
-                "Carrera Begua_1-12_abi1-Rep3_ATH1"
-            ],
-            "dormancy-FSL-PDN": [
-                "Finch-Savage_1-41_PDN_Rep1_ATH1",
-                "Finch-Savage_1-42_PDN_Rep2_ATH1",
-                "Finch-Savage_1-43_PDN_Rep3_ATH1",
-                "Finch-Savage_1-44_PDN_Rep4_ATH1"
-            ],
-            "dormancy-FSL-PDL": [
-                "Finch-Savage_1-37_PDL_Rep1_ATH1",
-                "Finch-Savage_1-38_PDL_Rep2_ATH1",
-                "Finch-Savage_1-39_PDL_Rep3_ATH1",
-                "Finch-Savage_1-40_PDL_Rep4_ATH1"
-            ],
-            "mutant-HL-cts1": [
-                "Carrera Begua_1-31_cts1-24hr-dormancy_Rep1_ATH1",
-                "Carrera Begua_1-32_cts1-24hr-dormancy_Rep2_ATH1",
-                "Carrera Begua_1-33_cts1-24hr-dormancy_Rep3_ATH1"
-            ],
-            "mutant-YL-WI-3h": [
-                "RIKEN-LI1A",
-                "RIKEN-LI1B"
-            ],
-            "mutant-HL-aba11": [
-                "Carrera Begua_1-7_aba_Rep1_ATH1",
-                "Carrera Begua_1-8_aba_Rep2_ATH1",
-                "Carrera Begua_1-9_aba_Rep3_ATH1"
-            ],
-            "dormancy-FSL-DL": [
-                "Finch-Savage_1-5_AND_Rep1_ATH1",
-                "Finch-Savage_1-6_AND_Rep2_ATH1",
-                "Finch-Savage_1-7_AND_Rep3_ATH1",
-                "Finch-Savage_1-8_AND_Rep4_ATH1"
-            ],
-            "dormancy-FSL-PDD": [
-                "Finch-Savage_1-29_PDD_Rep1_ATH1",
-                "Finch-Savage_1-30_PDD_Rep2_ATH1",
-                "Finch-Savage_1-31_PDD_Rep3_ATH1",
-                "Finch-Savage_1-32_PDD_Rep4_ATH1"
-            ],
-            "EES-GL-embryo-WIungerm": [
-                "Penfield_1-16_embryo-PAC_Rep1_ATH1",
-                "Penfield_1-17_embryo-PAC_Rep2_ATH1",
-                "Penfield_1-18_embryo-PAC_Rep3_ATH1"
-            ],
-            "dormancy-HL-Ler0-FH": [
-                "Carrera Begua_1-4_ido_Rep1_ATH1",
-                "Carrera Begua_1-5_ido_Rep2_ATH1",
-                "Carrera Begua_1-6_ido_Rep3_ATH1"
-            ],
-            "dormancy-FSL-PDC": [
-                "Finch-Savage_1-49_PDC_Rep1_ATH1",
-                "Finch-Savage_1-50_PDC_Rep2_ATH1",
-                "Finch-Savage_1-51_PDC_Rep3_ATH1",
-                "Finch-Savage_1-52_PDC_Rep4_ATH1"
-            ],
-            "mutant-HL-rdo2": [
-                "Carrera Begua_1-19_rdo_Rep1_ATH1",
-                "Carrera Begua_1-20_rdo_Rep2_ATH1",
-                "Carrera Begua_1-21_rdo_Rep3_ATH1"
-            ],
-            "dormancy-FSL-PD30d": [
-                "Finch-Savage_1-17_PD30d_Rep1_ATH1",
-                "Finch-Savage_1-18_PD30d_Rep2_ATH1",
-                "Finch-Savage_1-19_PD30d_Rep3_ATH1",
-                "Finch-Savage_1-20_PD30d_Rep4_ATH1"
-            ],
-            "mutant-YL-GAI-6h": [
-                "RIKEN-LI5A",
-                "RIKEN-LI5B"
-            ],
-            "mutant-YL-GAI-3h": [
-                "RIKEN-LI4A",
-                "RIKEN-LI4B"
-            ],
-            "chemicalTreatment-CL-methotrexate": [
-                "bot0293",
-                "bot0294"
-            ],
-            "dormancy-FSL-PD24h": [
-                "Finch-Savage_1-1_PD24h_Rep1_ATH1",
-                "Finch-Savage_1-2_PD24h_Rep2_ATH1",
-                "Finch-Savage_1-3_PD24h_Rep3_ATH1",
-                "Finch-Savage_1-4_PD24h_Rep4_ATH1"
-            ],
-            "dormancy-HL-Ler0-AR": [
-                "Carrera Begua_1-1_lar_Rep1_ATH1",
-                "Carrera Begua_1-2_lar_Rep2_ATH1",
-                "Carrera Begua_1-3_lar_Rep3_ATH1"
-            ],
-            "chemicalTreatment-CL-cyclohexamide": [
-                "bot0256",
-                "bot0257"
-            ],
-            "mutant-NL-abi57-WI": [
-                "abi5_24HAI_rep1",
-                "abi5_24HAI_rep2"
-            ],
-            "EES-GL-endosperm-ABAI": [
-                "Penfield_1-4_endosperm-ABA_Rep1_ATH1",
-                "Penfield_1-5_endosperm-ABA_Rep2_ATH1",
-                "Penfield_1-6_endosperm-ABA_Rep3_ATH1"
-            ],
-            "dormancy-FSL-DDL": [
-                "Finch-Savage_1-33_NDD_Rep1_ATH1",
-                "Finch-Savage_1-34_NDD_Rep2_ATH1",
-                "Finch-Savage_1-35_NDD_Rep3_ATH1",
-                "Finch-Savage_1-36_NDD_Rep4_ATH1"
-            ],
-            "EES-GL-embryo-ABAI": [
-                "Penfield_1-13_embryo-ABA_Rep1_ATH1",
-                "Penfield_1-14_embryo-ABA_Rep2_ATH1",
-                "Penfield_1-15_embryo-ABA_Rep3_ATH1"
-            ],
-            "germination-NL-24h": [
-                "24hr_rep1",
-                "24hr_rep2"
-            ],
-            "mutant-YL-WI-6h": [
-                "RIKEN-LI2A",
-                "RIKEN-LI2B"
-            ],
-            "hormoneTreatment-NL-3ABA": [
-                "RIKEN-NAKABAYASHI3A",
-                "RIKEN-NAKABAYASHI5B"
-            ],
-            "EES-GL-embryo-WIgerm": [
-                "Penfield_1-10_embryo-control_Rep1_ATH1",
-                "Penfield_1-11_embryo-control_Rep2_ATH1",
-                "Penfield_1-12_embryo-control_Rep3_ATH1"
-            ],
-            "germination-drySeed": [
-                "RIKEN-PRESTON0A",
-                "RIKEN-PRESTON0B"
-            ],
-            "mutant-NL-abi57-drySeed": [
-                "abi5_ds_rep1",
-                "abi5_ds_rep2"
-            ],
-            "dormancy-HL-Cvi-FH": [
-                "Carrera Begua_1-22_CVI-24hr-dormancy_Rep1_ATH1",
-                "Carrera Begua_1-23_CVI-24hr-dormancy_Rep2_ATH1",
-                "Carrera Begua_1-24_CVI-24hr-dormancy_Rep3_ATH1"
-            ],
-            "mutant-NL-abi41-drySeed": [
-                "abi4_ds_rep1",
-                "abi4_ds_rep2"
-            ],
-            "dormancy-FSL-PDLN": [
-                "Finch-Savage_1-45_PDLN_Rep1_ATH1",
-                "Finch-Savage_1-46_PDLN_Rep2_ATH1",
-                "Finch-Savage_1-47_PDLN_Rep3_ATH1",
-                "Finch-Savage_1-48_PDLN_Rep4_ATH1"
-            ],
-            "mutant-YL-GAI-9h": [
-                "RIKEN-LI6A",
-                "RIKEN-LI6B"
-            ],
-            "germination-NL-6h": [
-                "6hr_rep1",
-                "6hr_rep2"
-            ],
-            "chemicalTreatment-CL-DMSO": [
-                "bot0142",
-                "bot0314",
-                "bot0394"
-            ],
-            "hormoneTreatment-NL-WI": [
-                "RIKEN-NAKABAYASHI2A",
-                "RIKEN-NAKABAYASHI2B"
-            ],
-            "mutant-YL-WI-9h": [
-                "RIKEN-LI3A",
-                "RIKEN-LI3B"
-            ],
-            "germination-YL-4C": [
-                "RIKEN-YAMAUCHI2A",
-                "RIKEN-YAMAUCHI2B"
-            ],
-            "EES-GL-endosperm-WIungerm": [
-                "Penfield_1-7_endosperm-PAC_Rep1_ATH1",
-                "Penfield_1-8_endosperm-PAC_Rep2_ATH1",
-                "Penfield_1-9_endosperm-PAC_Rep3_ATH1"
-            ],
-            "germination-NL-1h": [
-                "RIKEN-PRESTON1A",
-                "RIKEN-PRESTON1B"
-            ],
-            "germination-NL-12h": [
-                "12hr_rep1",
-                "12hr_rep2"
-            ],
-            "hormoneTreatment-NL-30ABA": [
-                "RIKEN-NAKABAYASHI4A",
-                "RIKEN-NAKABAYASHI4B"
-            ],
-            "germination-NL-3h": [
-                "RIKEN-PRESTON2A",
-                "RIKEN-PRESTON2B"
-            ],
-            "dormancy-FSL-LIG": [
-                "Finch-Savage_1-25_LIG_Rep1_ATH1",
-                "Finch-Savage_1-26_LIG_Rep2_ATH1",
-                "Finch-Savage_1-27_LIG_Rep3_ATH1",
-                "Finch-Savage_1-28_LIG_Rep4_ATH1"
-            ],
-            "mutant-NL-abi41-WI": [
-                "abi4_24HAI_rep1",
-                "abi4_24HAI_rep2"
-            ],
-            "dormancy-FSL-PD48h": [
-                "Finch-Savage_1-13_PD48h_Rep1_ATH1",
-                "Finch-Savage_1-14_PD48h_Rep2_ATH1",
-                "Finch-Savage_1-15_PD48h_Rep3_ATH1",
-                "Finch-Savage_1-16_PD48h_Rep4_ATH1"
-            ],
-            "germination-YL-22C": [
-                "RIKEN-YAMAUCHI1A",
-                "RIKEN-YAMAUCHI1B"
-            ],
-            "dormancy-FSL-SD1": [
-                "Finch-Savage_1-9_SD1_Rep1_ATH1",
-                "Finch-Savage_1-10_SD1_Rep2_ATH1",
-                "Finch-Savage_1-11_SD1_Rep3_ATH1",
-                "Finch-Savage_1-12_SD1_Rep4_ATH1"
-            ],
-            "mutant-HL-fus38": [
-                "Carrera Begua_1-16_fus_Rep1_ATH1",
-                "Carrera Begua_1-17_fus_Rep2_ATH1",
-                "Carrera Begua_1-18_fus_Rep3_ATH1"
-            ],
-            "dormancy-FSL-SD2": [
-                "Finch-Savage_1-21_SD2_Rep1_ATH1",
-                "Finch-Savage_1-22_SD2_Rep2_ATH1",
-                "Finch-Savage_1-23_SD2_Rep3_ATH1",
-                "Finch-Savage_1-24_SD2_Rep4_ATH1"
-            ]
-        },
-        "db": "seed_db",
-        "description": {
-            "EES-GL-endosperm-WIgerm": "Germinated Endosperm",
-            "dormancy-HL-Cvi-AR": "Cvi After-ripened",
-            "mutant-HL-abi11": "abi1-1",
-            "dormancy-FSL-PDN": "PDN",
-            "dormancy-FSL-PDL": "PDL",
-            "mutant-HL-cts1": "cts1",
-            "mutant-YL-WI-3h": "3 h in water",
-            "mutant-HL-aba11": "aba1-1",
-            "dormancy-FSL-DL": "DL",
-            "dormancy-FSL-PDD": "PDD",
-            "EES-GL-embryo-WIungerm": "PAC Treated Embryo",
-            "dormancy-HL-Ler0-FH": "Ler Fresh",
-            "dormancy-FSL-PDC": "PDC",
-            "mutant-HL-rdo2": "rdo2",
-            "dormancy-FSL-PD30d": "PD30d",
-            "mutant-YL-GAI-6h": "6 h in GA",
-            "mutant-YL-GAI-3h": "3 h in GA",
-            "chemicalTreatment-CL-methotrexate": "Methotrexate",
-            "dormancy-FSL-PD24h": "PD24h",
-            "dormancy-HL-Ler0-AR": "Ler After-ripened",
-            "chemicalTreatment-CL-cyclohexamide": "Cycloheximide",
-            "mutant-NL-abi57-WI": "abi5 24 HAI",
-            "EES-GL-endosperm-ABAI": "ABA Treated Endosperm",
-            "dormancy-FSL-DDL": "DDL",
-            "EES-GL-embryo-ABAI": "ABA Treated Embryo",
-            "germination-NL-24h": "24 h Imbibed Seeds",
-            "mutant-YL-WI-6h": "6 h in water",
-            "hormoneTreatment-NL-3ABA": "24 h in 3 uM ABA",
-            "EES-GL-embryo-WIgerm": "Germinated Embryo",
-            "germination-drySeed": "Dry Seeds",
-            "mutant-NL-abi57-drySeed": "abi5 dry seed",
-            "dormancy-HL-Cvi-FH": "Cvi Fresh",
-            "mutant-NL-abi41-drySeed": "abi4 dry seed",
-            "dormancy-FSL-PDLN": "PDLN",
-            "mutant-YL-GAI-9h": "9 h in GA",
-            "germination-NL-6h": "6 h Imbibed Seeds",
-            "chemicalTreatment-CL-DMSO": "DMSO",
-            "hormoneTreatment-NL-WI": "24 h in water",
-            "mutant-YL-WI-9h": "9 h in water",
-            "germination-YL-4C": "96 h at 4 C",
-            "EES-GL-endosperm-WIungerm": "PAC Treated Endosperm",
-            "germination-NL-1h": "1 h Imbibed Seeds",
-            "germination-NL-12h": "12 h Imbibed Seeds",
-            "hormoneTreatment-NL-30ABA": " 24 h in 30 uM ABA",
-            "germination-NL-3h": "3 h Imbibed Seeds",
-            "dormancy-FSL-LIG": "LIG",
-            "mutant-NL-abi41-WI": "abi4 24 HAI",
-            "dormancy-FSL-PD48h": "PD48h",
-            "germination-YL-22C": "96 h at 22 C",
-            "dormancy-FSL-SD1": "SD1",
-            "mutant-HL-fus38": "fus3-8",
-            "dormancy-FSL-SD2": "SD2"
-        },
-        "controlComparison": {
-            "SEED_LCM_CTRL": [
-                "embryo pre-globular stage",
-                "micropylar endosperm pre-globular stage",
-                "peripheral endosperm pre-globular stage",
-                "chalazal endosperm pre-globular stage",
-                "chalazal seed coat pre-globular stage",
-                "general seed coat pre-globular stage",
-                "embryo globular stage",
-                "suspensor globular stage",
-                "micropylar endosperm globular stage",
-                "peripheral endosperm globular stage",
-                "chalazal endosperm globular stage",
-                "chalazal seed coat globular stage",
-                "general seed coat globular stage",
-                "embryo proper heart stage",
-                "micropylar endosperm heart stage",
-                "peripheral endosperm heart stage",
-                "chalazal endosperm heart stage",
-                "chalazal seed coat heart stage",
-                "seed coat heart stage",
-                "embryo  proper linear-cotyledon stage",
-                "cellularized endosperm linear-cotyledon stage",
-                "chalazal endosperm linear-cotyledon stage",
-                "chalazal seed coat linear-cotyledon stage",
-                "general seed coat linear-cotyledon stage",
-                "embryo proper mature green stage",
-                "micropylar endosperm mature green stage",
-                "peripherial endosperm mature green stage",
-                "chalazal endosperm mature green stage",
-                "chalazal seed coat mature green stage",
-                "seed coat mature green stage"
-            ],
-            "SEED_CTRL": [
-                "Dry Seeds",
-                "1 h Imbibed Seeds",
-                "3 h Imbibed Seeds",
-                "6 h Imbibed Seeds",
-                "12 h Imbibed Seeds",
-                "24 h Imbibed Seeds",
-                "96 h at 22 C",
-                "96 h at 4 C",
-                "3 h in water",
-                "6 h in water",
-                "9 h in water",
-                "3 h in GA",
-                "6 h in GA",
-                "9 h in GA",
-                "24 h in water",
-                "24 h in 3 uM ABA",
-                " 24 h in 30 uM ABA",
-                "Germinated Embryo",
-                "PAC Treated Embryo",
-                "ABA Treated Embryo",
-                "Germinated Endosperm",
-                "PAC Treated Endosperm",
-                "ABA Treated Endosperm",
-                "PDD",
-                "DDL",
-                "PD24h",
-                "PD48h",
-                "PD30d",
-                "SD1",
-                "SD2",
-                "PDC",
-                "PDL",
-                "DL",
-                "PDN",
-                "PDLN",
-                "LIG",
-                "aba1-1",
-                "abi1-1",
-                "abi3-4",
-                "cts1",
-                "fus3-8",
-                "rdo2",
-                "Ler Fresh",
-                "Ler After-ripened",
-                "Cvi Fresh",
-                "Cvi After-ripened",
-                "abi4 dry seed",
-                "abi4 24 HAI",
-                "abi5 dry seed",
-                "abi5 24 HAI"
-            ],
-            "Germination_inhibitors": [
-                "DMSO",
-                "Cycloheximide",
-                "Methotrexate",
-                "2,4-DNP"
-            ]
-        }
-    },
-    "scRNA-seq": {
-        "sample": {
-            "CortexG6-CortexCells31": [
-                "cluster31_WT1.ExprMean ",
-                "cluster31_WT2.ExprMean ",
-                "cluster31_WT3.ExprMean "
-            ],
-            "CortexG6-CortexCells19": [
-                "cluster19_WT1.ExprMean ",
-                "cluster19_WT2.ExprMean ",
-                "cluster19_WT3.ExprMean "
-            ],
-            "RootCapG1-QuiescentCenterCellsAndYoungMeristemCells17": [
-                "cluster17_WT1.ExprMean ",
-                "cluster17_WT2.ExprMean ",
-                "cluster17_WT3.ExprMean "
-            ],
-            "SteleG5-XylemCells23": [
-                "cluster23_WT1.ExprMean ",
-                "cluster23_WT2.ExprMean ",
-                "cluster23_WT3.ExprMean "
-            ],
-            "SteleG0-SteleCellsIncludingPericyte7": [
-                "cluster7_WT1.ExprMean ",
-                "cluster7_WT2.ExprMean ",
-                "cluster7_WT3.ExprMean "
-            ],
-            "CortexG6-CortexCells11": [
-                "cluster11_WT1.ExprMean ",
-                "cluster11_WT2.ExprMean ",
-                "cluster11_WT3.ExprMean "
-            ],
-            "RootCapG1-ColumellaRootCapCells28": [
-                "cluster28_WT1.ExprMean ",
-                "cluster28_WT2.ExprMean ",
-                "cluster28_WT3.ExprMean "
-            ],
-            "RootCapG1-DividingMeristemCells25": [
-                "cluster25_WT1.ExprMean ",
-                "cluster25_WT2.ExprMean ",
-                "cluster25_WT3.ExprMean "
-            ],
-            "SteleG0-PhloemCells21": [
-                "cluster21_WT1.ExprMean ",
-                "cluster21_WT2.ExprMean ",
-                "cluster21_WT3.ExprMean "
-            ],
-            "SteleG0-SteleCells34": [
-                "cluster34_WT1.ExprMean ",
-                "cluster34_WT2.ExprMean ",
-                "cluster34_WT3.ExprMean "
-            ],
-            "SteleG0-SteleCellsIncludingPericyte14": [
-                "cluster14_WT1.ExprMean ",
-                "cluster14_WT2.ExprMean ",
-                "cluster14_WT3.ExprMean "
-            ],
-            "CortexG6-DifferentiatingEndodermisCortexCells30": [
-                "cluster30_WT1.ExprMean ",
-                "cluster30_WT2.ExprMean ",
-                "cluster30_WT3.ExprMean "
-            ],
-            "EndocortexG2-DifferentiatingEndodermisCortexCells0": [
-                "cluster0_WT1.ExprMean ",
-                "cluster0_WT2.ExprMean ",
-                "cluster0_WT3.ExprMean "
-            ],
-            "SteleG0-SteleCells6": [
-                "cluster6_WT1.ExprMean ",
-                "cluster6_WT2.ExprMean ",
-                "cluster6_WT3.ExprMean "
-            ],
-            "SteleG5-SteleCells9": [
-                "cluster9_WT1.ExprMean ",
-                "cluster9_WT2.ExprMean ",
-                "cluster9_WT3.ExprMean "
-            ],
-            "EpidermisHG4-EarlyStageDifferentiatingRootHairEpidermalCells15": [
-                "cluster15_WT1.ExprMean ",
-                "cluster15_WT2.ExprMean ",
-                "cluster15_WT3.ExprMean "
-            ],
-            "EndocortexG2-DifferentiatingEndodermisCortexCells29": [
-                "cluster29_WT1.ExprMean ",
-                "cluster29_WT2.ExprMean ",
-                "cluster29_WT3.ExprMean "
-            ],
-            "EpidermisHG8-RootHairEpidermalCells26": [
-                "cluster26_WT1.ExprMean ",
-                "cluster26_WT2.ExprMean ",
-                "cluster26_WT3.ExprMean "
-            ],
-            "EpidermisNG3-DifferentiatingNonHairEpidermalCells1": [
-                "cluster1_WT1.ExprMean ",
-                "cluster1_WT2.ExprMean ",
-                "cluster1_WT3.ExprMean "
-            ],
-            "EpidermisHG8-RootHairEpidermalCells10": [
-                "cluster10_WT1.ExprMean ",
-                "cluster10_WT2.ExprMean ",
-                "cluster10_WT3.ExprMean "
-            ],
-            "EndodermisG7-EndodermisCells12": [
-                "cluster12_WT1.ExprMean ",
-                "cluster12_WT2.ExprMean ",
-                "cluster12_WT3.ExprMean ",
-                "pg_3"
-            ],
-            "SteleG5-SteleCells18": [
-                "cluster18_WT1.ExprMean ",
-                "cluster18_WT2.ExprMean ",
-                "cluster18_WT3.ExprMean "
-            ],
-            "SteleG5-ProtoxylemCells33": [
-                "cluster33_WT1.ExprMean ",
-                "cluster33_WT2.ExprMean ",
-                "cluster33_WT3.ExprMean "
-            ],
-            "SteleG5-XylemCells27": [
-                "cluster27_WT1.ExprMean ",
-                "cluster27_WT2.ExprMean ",
-                "cluster27_WT3.ExprMean "
-            ],
-            "EndocortexG2-EarlyStageDifferentiatingEndodermisCortexCells13": [
-                "cluster13_WT1.ExprMean ",
-                "cluster13_WT2.ExprMean ",
-                "cluster13_WT3.ExprMean "
-            ],
-            "SteleG0-SteleCells20": [
-                "cluster20_WT1.ExprMean ",
-                "cluster20_WT2.ExprMean ",
-                "cluster20_WT3.ExprMean "
-            ],
-            "RootCapG1-DifferentiatingRootCapCells8": [
-                "cluster8_WT1.ExprMean ",
-                "cluster8_WT2.ExprMean ",
-                "cluster8_WT3.ExprMean "
-            ],
-            "EpidermisHG4-MidStageDifferentiatingRootHairEpidermalCells4": [
-                "cluster4_WT1.ExprMean ",
-                "cluster4_WT2.ExprMean ",
-                "cluster4_WT3.ExprMean "
-            ],
-            "EpidermisNG3-NonHairEpidermalCells16": [
-                "cluster16_WT1.ExprMean ",
-                "cluster16_WT2.ExprMean ",
-                "cluster16_WT3.ExprMean "
-            ],
-            "EndodermisG7-EndodermisCells22": [
-                "cluster22_WT1.ExprMean ",
-                "cluster22_WT2.ExprMean ",
-                "cluster22_WT3.ExprMean "
-            ],
-            "EndocortexG2-EarlyStageDifferentiatingEndodermisCortexCells35": [
-                "cluster35_WT1.ExprMean ",
-                "cluster35_WT2.ExprMean ",
-                "cluster35_WT3.ExprMean "
-            ],
-            "EpidermisHG4-LateStageDifferentiatingRootHairEpidermalCells3": [
-                "cluster3_WT1.ExprMean ",
-                "cluster3_WT2.ExprMean ",
-                "cluster3_WT3.ExprMean "
-            ],
-            "RootCapG1-DividingMeristemCells24": [
-                "cluster24_WT1.ExprMean ",
-                "cluster24_WT2.ExprMean ",
-                "cluster24_WT3.ExprMean "
-            ],
-            "RootCapG1-LateralRootCapCells2": [
-                "cluster2_WT1.ExprMean ",
-                "cluster2_WT2.ExprMean ",
-                "cluster2_WT3.ExprMean "
-            ],
-            "EpidermisNG3-EarlyStageDifferentiatingNonHairEpidermalCells5": [
-                "cluster5_WT1.ExprMean ",
-                "cluster5_WT2.ExprMean ",
-                "cluster5_WT3.ExprMean "
-            ],
-            "EndocortexG2-DividingMeristemCells32": [
-                "cluster32_WT1.ExprMean ",
-                "cluster32_WT2.ExprMean ",
-                "cluster32_WT3.ExprMean "
-            ]
-        },
-        "db": "single_cell",
-        "description": {
-            "CortexG6-CortexCells31": "Cortex cells (31)",
-            "CortexG6-CortexCells19": "Cortex cells (19)",
-            "RootCapG1-QuiescentCenterCellsAndYoungMeristemCells17": "Quiescent center cells and young meristem cells (17)",
-            "SteleG5-XylemCells23": "Xylem cells (23)",
-            "SteleG0-SteleCellsIncludingPericyte7": "Stele cells (including pericyte) (7)",
-            "CortexG6-CortexCells11": "Cortex cells (11)",
-            "RootCapG1-ColumellaRootCapCells28": "Columella root cap cells (28)",
-            "RootCapG1-DividingMeristemCells25": "Dividing meristem cells (25)",
-            "SteleG0-PhloemCells21": "Phloem cells (21)",
-            "SteleG0-SteleCells34": "Stele cells (34)",
-            "SteleG0-SteleCellsIncludingPericyte14": "Stele cells (including pericyte) (14)",
-            "CortexG6-DifferentiatingEndodermisCortexCells30": "Differentiating endodermis/cortex cells (30)",
-            "EndocortexG2-DifferentiatingEndodermisCortexCells0": "Differentiating endodermis/cortex cells (0)",
-            "SteleG0-SteleCells6": "Stele cells (6)",
-            "SteleG5-SteleCells9": "Stele cells (9)",
-            "EpidermisHG4-EarlyStageDifferentiatingRootHairEpidermalCells15": "Early-stage differentiating root hair epidermal cells (15)",
-            "EndocortexG2-DifferentiatingEndodermisCortexCells29": "Differentiating endodermis/cortex cells (29)",
-            "EpidermisHG8-RootHairEpidermalCells26": "Root hair epidermal cells (26)",
-            "EpidermisNG3-DifferentiatingNonHairEpidermalCells1": "Differentiating non-hair epidermal cells (1)",
-            "EpidermisHG8-RootHairEpidermalCells10": "Root hair epidermal cells (10)",
-            "EndodermisG7-EndodermisCells12": "Endodermis cells (12)",
-            "SteleG5-SteleCells18": "Stele cells (18)",
-            "SteleG5-ProtoxylemCells33": "Protoxylem cells (33)",
-            "SteleG5-XylemCells27": "Xylem cells (27)",
-            "EndocortexG2-EarlyStageDifferentiatingEndodermisCortexCells13": "Early-stage differentiating endodermis/cortex cells (13)",
-            "SteleG0-SteleCells20": "Stele cells (20)",
-            "RootCapG1-DifferentiatingRootCapCells8": "Differentiating lateral root cap cells (8)",
-            "EpidermisHG4-MidStageDifferentiatingRootHairEpidermalCells4": "Mid-stage differentiating root hair epidermal cells (4)",
-            "EpidermisNG3-NonHairEpidermalCells16": "Non-hair epidermal cells (16)",
-            "EndodermisG7-EndodermisCells22": "Endodermis cells (22)",
-            "EndocortexG2-EarlyStageDifferentiatingEndodermisCortexCells35": "Early-stage differentiating endodermis/cortex cells (35)",
-            "EpidermisHG4-LateStageDifferentiatingRootHairEpidermalCells3": "Late-stage differentiating root hair epidermal cells (3)",
-            "RootCapG1-DividingMeristemCells24": "Dividing meristem cells (24)",
-            "RootCapG1-LateralRootCapCells2": "Lateral root cap cells (2)",
-            "EpidermisNG3-EarlyStageDifferentiatingNonHairEpidermalCells5": "Early-stage differentiating root hair epidermal cells (5)",
-            "EndocortexG2-DividingMeristemCells32": "Dividing meristem cells (32)"
-        },
-        "controlComparison": {
-            "Med_CTRL": [
-                "Endodermis cells (12)",
-                "Endodermis cells (22)",
-                "Differentiating endodermis/cortex cells (0)",
-                "Differentiating endodermis/cortex cells (29)",
-                "Early-stage differentiating endodermis/cortex cells (13)",
-                "Early-stage differentiating endodermis/cortex cells (35)",
-                "Dividing meristem cells (32)",
-                "Late-stage differentiating root hair epidermal cells (3)",
-                "Mid-stage differentiating root hair epidermal cells (4)",
-                "Early-stage differentiating root hair epidermal cells (15)",
-                "Root hair epidermal cells (26)",
-                "Root hair epidermal cells (10)",
-                "Protoxylem cells (33)",
-                "Xylem cells (27)",
-                "Xylem cells (23)",
-                "Stele cells (18)",
-                "Stele cells (9)",
-                "Cortex cells (11)",
-                "Cortex cells (19)",
-                "Cortex cells (31)",
-                "Differentiating endodermis/cortex cells (30)",
-                "Early-stage differentiating root hair epidermal cells (5)",
-                "Non-hair epidermal cells (16)",
-                "Differentiating non-hair epidermal cells (1)",
-                "Dividing meristem cells (25)",
-                "Quiescent center cells and young meristem cells (17)",
-                "Dividing meristem cells (24)",
-                "Differentiating lateral root cap cells (8)",
-                "Lateral root cap cells (2)",
-                "Columella root cap cells (28)",
-                "Stele cells (34)",
-                "Stele cells (6)",
-                "Stele cells (including pericyte) (14)",
-                "Stele cells (including pericyte) (7)",
-                "Stele cells (20)",
-                "Phloem cells (21)"
-            ]
-        }
     }
 }
