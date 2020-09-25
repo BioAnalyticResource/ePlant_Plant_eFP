@@ -25,9 +25,9 @@
                 <code>
                     /** <br />
                       * Create and generate an SVG based on the desired tissue expression locus <br />
+                      * @param {String} desiredDOMid The desired DOM location or if kept empty, returns the string version of the output <br />
                       * @param {String} svgName Name of the SVG file without the .svg at the end <br />
                       * @param {String} locus The AGI ID (example: AT3G24650) <br />
-                      * @param {String} desiredDOMid The desired DOM location or if kept empty, returns the string version of the output <br />
                       * @returns {String} If no desiredDOMid is given, returns the string version of the output instead <br />
                       */ <br />
                       generateSVG(svgName, locus, desiredDOMid)
@@ -35,7 +35,7 @@
             </blockquote>
             To see all options of tissues that can be called, you can look at the available SVGs for the ePlant Plant eFP at <a href="https://github.com/BioAnalyticResource/ePlant_Plant_eFP/tree/master/compendiums" target="_blank" rel="noopener noreferrer" style="color:turquoise">'./compendiums'</a>.
             <br /><br />
-            To convert a gene alias to an AGI ID, you can use the BAR's <a href='https://bar.utoronto.ca/~asullivan/gaia-build/' target="_blank" rel="noopener noreferrer" style="color:turquoise">GAIA</a>.
+            To convert a gene alias to an AGI ID, you can use the BAR's <a href='https://bar.utoronto.ca/gaia/' target="_blank" rel="noopener noreferrer" style="color:turquoise">GAIA</a>.
             <br /><br />
             The final required parameter is a required DOM location for the tissue expression visualizer to be placed. In this HTML, we have an example DOM with an ID of <code>exampleDOM</code>. If you wish to have the visual output to be returned as a string, keep this parameter empty. 
             <br /><br />
@@ -48,7 +48,7 @@
     <script src="../tissueExpressionBAR.js"></script>
     <script>
         setTimeout(function() {
-            createSVGExpressionData.generateSVG('AbioticStress', 'AT3G24650', "exampleDOM", true, true);
+            createSVGExpressionData.generateSVG('exampleDOM', 'default', 'AT3G24650', true, true);
         }, 10);
     </script>
 </body>

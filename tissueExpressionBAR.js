@@ -3,265 +3,6 @@
 // Purpose: Generates eFP tissue expression data
 //
 //=============================================================================
-
-/**
- * Parses online data sources for information
- */
-class RetrieveOnlineBARData {
-    constructor() {
-        // callPlantEFP
-        this.eFPObjects = {};
-        // loadSampleData
-        this.sampleData = {};
-        this.sampleOptions = [];
-    };
-
-    /**
-     * Calls and stores the sample Data for the SVG, SVG's subunits, datasource and it's name-values 
-     * @param {String} svgName Name of the SVG file without the .svg at the end
-     * @param {String} locus The AGI ID (example: AT3G24650) 
-     * @param {Boolean} continueForward Continue forward with the generation of the tissue expression data
-     */
-    loadSampleData(svgName, locus, continueForward = true) {
-        if (Object.keys(this.sampleData).length === 0) {
-            let xhr = new XMLHttpRequest();
-            let url = 'https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/data/SampleData.min.json';
-    
-            xhr.responseType = 'json';
-            xhr.onreadystatechange = () => {
-                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                    // Store response
-                    this.sampleData = xhr.response;
-                    // Setup and retrieve information about the target SVG and locus 
-                    this.retrieveSampleData(svgName, locus);
-                };
-            };
-    
-            xhr.open('GET', url);
-            xhr.send();   
-        };   
-        
-        if (Object.keys(this.sampleData).length > 0 && continueForward) {
-            this.retrieveSampleData(svgName, locus);
-        }; 
-    };
-
-    /**
-     * Retrieves the sample information relating to an SVG for a specific set of data
-     * @param {String} svgName Name of the SVG file without the .svg at the end
-     * @param {String} locus The AGI ID (example: AT3G24650) 
-     */
-    retrieveSampleData(svgName, locus) {
-        // Check if svgName contains .svg
-        if (svgName.substr(-4) === '.svg') {
-            svgName = svgName.substr(0, svgName.length -4);
-        };
-
-        // Create variables that will be used in retrieveSampleData
-        var sampleDataKeys = Object.keys(this.sampleData); // All possible SVGs 
-        this.sampleOptions = sampleDataKeys;
-        var sampleDB = ''; // The sample's datasource
-        var sampleIDList = []; // List of all of the sample's IDs
-        var sampleSubunits = []; // List of SVG's subunits
-
-        // Check if valid SVG
-        if (sampleDataKeys.includes(svgName)) {
-            // Find position of the SVG name within the JSON data
-            let DataKeyPos = sampleDataKeys.indexOf(svgName);
-
-            // Create variables for parsing
-            var sampleInfo = this.sampleData[sampleDataKeys[DataKeyPos]];
-            var sampleOptions = sampleInfo['sample'];
-            sampleDB = sampleInfo['db'];
-
-            // If a database is available for this SVG, then find sample ID information
-            if (sampleDB !== undefined) {
-                sampleSubunits = Object.keys(sampleInfo.sample);
-                sampleIDList = [];
-                for (var sK = 0; sK < sampleSubunits.length; sK++) {
-                    sampleIDList = sampleIDList.concat(sampleOptions[sampleSubunits[sK]]);
-                };
-            };
-
-            // Call plantefp.cgi webservice to retrieve information about the target tissue expression data
-            if (this.eFPObjects[svgName] === undefined) {
-                this.callPlantEFP(sampleDB, locus, sampleIDList, svgName, sampleOptions);
-            };
-        };
-    };    
-
-    /**
-     * Calls the plantefp.cgi webservice to retrieve expression data from the BAR
-     * @param {String} datasource Which database the information is contained in
-     * @param {String} locus The AGI ID (example: AT3G24650) 
-     * @param {Array} samples List of sample ID's which the exact expression data is related to
-     * @param {String} svg Which SVG is being called 
-     * @param {Array} sampleSubunits List of the SVG's subunits
-     */
-    callPlantEFP(datasource, locus, samples, svg, sampleSubunits) {
-        let xhr = new XMLHttpRequest();
-        // Create URL
-        let url = 'https://bar.utoronto.ca/~asullivan/webservices/plantefp.cgi?';
-        url += 'datasource=' + datasource + '&';
-        url += 'id=' + locus + '&';
-        url += 'samples=[';
-        for (var i = 0; i < samples.length; i++) {
-            var sampleName = samples[i].trim();
-            sampleName = sampleName.replace(/\+/g, '%2B');
-            sampleName = sampleName.replace(/ /g, '%20');
-
-            url += '"' + sampleName + '"';
-            if (i !== samples.length-1) {
-                url += ',';
-            };
-        };
-        url += ']';
-
-        xhr.responseType = 'json';
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                // Create object based on response:
-                let subunitsList = Object.keys(sampleSubunits);
-                var response = xhr.response;
-                if (this.eFPObjects === undefined) {
-                    this.eFPObjects = {};
-                };
-
-                // Create SVG in dictionary
-                if (this.eFPObjects[svg] === undefined) {
-                    this.eFPObjects[svg] = {};
-                };
-
-                // Create samples in dictionary
-                if (this.eFPObjects[svg]['sample'] === undefined) {
-                    this.eFPObjects[svg]['sample'] = {};
-                };
-
-                // Create samples in dictionary
-                if (this.eFPObjects[svg]['sample'] === undefined) {
-                    this.eFPObjects[svg]['sample'] = {};
-                };
-
-                // Add values
-                for (var t = 0; t < response.length; t++) {
-                    // Create key and value variables
-                    var responseName = response[t]['name'].trim();
-                    var responseValue = response[t]['value'];
-                    var subunitName = '';
-
-                    // Create subunits element in dictionary     
-                    var tempName = responseName;                
-                    tempName = responseName.replace(/%2B/g, '+');
-                    tempName = tempName.replace(/%20/g, ' ');
-                    tempName = tempName.trim();
-                    for (var s = 0; s < subunitsList.length; s++) {  
-                        if (sampleSubunits[subunitsList[s]].includes(tempName)) {
-                            subunitName = subunitsList[s];
-
-                            // Create subunit
-                            if (this.eFPObjects[svg]['sample'][subunitName] === undefined) {
-                                this.eFPObjects[svg]['sample'][subunitName] = {};
-                            };
-
-                            // Create responseName
-                            if (this.eFPObjects[svg]['sample'][subunitName][tempName] === undefined) {
-                                this.eFPObjects[svg]['sample'][subunitName][tempName] = {};
-                            };
-
-                            // Add to dictionary
-                            this.eFPObjects[svg]['sample'][subunitName][tempName][locus] = responseValue;
-                        };
-                    };
-                };
-
-                // Add db
-                this.eFPObjects[svg]['db'] = datasource;
-            };
-        };
-
-        xhr.open('GET', url);
-        xhr.send();
-    };
-};
-
-/**
- * Enables interactivity with the SVG
- */
-class InteractiveSVGData {
-    constructor() {
-        this.topExpressionValues = {};
-        this.expressionValues = {};
-        this.topExpressionOptions = [
-            'Microarray',
-            'RNA-seq'
-        ];
-    };
-
-    /**
-     * Retrieve information about the top expression values for a specific locus
-     * @param {String} locus The AGI ID (example: AT3G24650) 
-     */
-    retrieveTopExpressionValues(locus = 'AT3G24650') {
-        // If never been called before
-        if (Object.keys(this.topExpressionValues).length === 0 || this.topExpressionValues === undefined) {
-            for (var t = 0; t < this.topExpressionOptions.length; t++) {
-                var topMethod = this.topExpressionOptions[t];
-
-                let xhr = new XMLHttpRequest();
-                let url = 'https://bar.utoronto.ca/expression_max_api/max_average' + '?method=' + topMethod;
-                let method = 'POST';
-                var sendHeaders = "application/json";
-                var postSend = {
-                    'loci': [locus.toUpperCase()],
-                    'method': topMethod
-                };
-                postSend = JSON.stringify(postSend);
-
-                xhr.responseType = 'json';
-                xhr.onreadystatechange = () => {
-                    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                        let response = xhr.response;
-
-                        var topMethodUsed;
-                        var urlQuery = url.split('=');
-                        if (urlQuery.length > 1) {
-                            topMethodUsed = urlQuery[1];
-                        };
-
-                        if (topMethodUsed && response && response["wasSuccessful"] === true) {
-                            if (response['maxAverage']) {
-                                var tempTopExpressionData = {};
-                                tempTopExpressionData[topMethodUsed] = {};
-
-                                tempTopExpressionData[topMethodUsed]['maxAverage'] = response['maxAverage'][locus.toUpperCase()];
-
-                                if (response['standardDeviation']) {
-                                    tempTopExpressionData[topMethodUsed]['standardDeviation'] = response['standardDeviation'][locus.toUpperCase()]
-                                };
-                                if (response['sample']) {
-                                    tempTopExpressionData[topMethodUsed]['sample'] = response['sample'][locus.toUpperCase()]
-                                };
-                                if (response['compendium']) {
-                                    tempTopExpressionData[topMethodUsed]['compendium'] = response['compendium'][locus.toUpperCase()]
-                                };
-                                this.topExpressionValues = Object.assign(this.topExpressionValues, tempTopExpressionData);
-                            };
-                        };
-                    };
-                };
-
-                xhr.open(method, url, true);
-                if (method === 'POST') {
-                    xhr.setRequestHeader("Content-Type", sendHeaders);
-                    xhr.send(postSend); 
-                } else {
-                    xhr.send();
-                };
-            };
-        };       
-    };
-};
-
 let existingStrokeData = {};
 /**
  * Add details to an SVG or SVG-subunit including: hover and outline
@@ -442,9 +183,18 @@ function removeTissueMetadata(elementID) {
  */
 class CreateSVGExpressionData {
     constructor() {
-        // Class calls:
-        this.retrieveOnlineBARData = new RetrieveOnlineBARData();
-        this.interactiveSVGData = new InteractiveSVGData();
+        // callPlantEFP
+        this.eFPObjects = {};
+        // loadSampleData
+        this.sampleData = {};
+        this.sampleOptions = [];
+        // Top expression data
+        this.topExpressionValues = {};
+        this.expressionValues = {};
+        this.topExpressionOptions = [
+            'Microarray',
+            'RNA-seq'
+        ];
         // Local for this class
         this.desiredDOMid = '';
         // createSVGValues
@@ -458,6 +208,292 @@ class CreateSVGExpressionData {
         this.svgMinAverageSample = '';
         // Store object name:
         this.svgObjectName = '';
+    };
+    
+    /**
+     * Retrieve information about the top expression values for a specific locus
+     * @param {String} svgName Name of the SVG file without the .svg at the end
+     * @param {String} locus The AGI ID (example: AT3G24650) 
+     */
+    retrieveTopExpressionValues(svgName, locus = 'AT3G24650') {
+        var completedFetches = 0;
+        // If never been called before
+        if (Object.keys(this.topExpressionValues).length === 0 || this.topExpressionValues === undefined) {
+            for (var t = 0; t < this.topExpressionOptions.length; t++) {
+                var topMethod = this.topExpressionOptions[t];
+
+                let url = 'https://bar.utoronto.ca/expression_max_api/max_average' + '?method=' + topMethod;
+                var sendHeaders = "application/json";
+                var postSend = {
+                    'loci': [locus.toUpperCase()],
+                    'method': topMethod
+                };
+                postSend = JSON.stringify(postSend);
+
+                var methods = {mode: 'cors'};
+                methods['method'] = 'POST';
+                if (sendHeaders) {
+                    methods['headers'] = {};
+                    methods['headers']["Content-type"] = sendHeaders;
+                };
+                methods['body'] = postSend;
+
+                fetch(url, methods).then(
+                    response => {
+                        if (response.status === 200) {
+                            response.json().then(data => {
+                                let response = data;
+
+                                var topMethodUsed;
+                                var urlQuery = url.split('=');
+                                if (urlQuery.length > 1) {
+                                    topMethodUsed = urlQuery[1];
+                                };
+
+                                if (topMethodUsed && response && response["wasSuccessful"] === true) {
+                                    if (response['maxAverage']) {
+                                        var tempTopExpressionData = {};
+                                        tempTopExpressionData[topMethodUsed] = {};
+
+                                        tempTopExpressionData[topMethodUsed]['maxAverage'] = response['maxAverage'][locus.toUpperCase()];
+
+                                        if (response['standardDeviation']) {
+                                            tempTopExpressionData[topMethodUsed]['standardDeviation'] = response['standardDeviation'][locus.toUpperCase()]
+                                        };
+                                        if (response['sample']) {
+                                            tempTopExpressionData[topMethodUsed]['sample'] = response['sample'][locus.toUpperCase()]
+                                        };
+                                        if (response['compendium']) {
+                                            tempTopExpressionData[topMethodUsed]['compendium'] = response['compendium'][locus.toUpperCase()]
+                                        };
+                                        this.topExpressionValues = Object.assign(this.topExpressionValues, tempTopExpressionData);
+                                    };
+                                };
+
+                                completedFetches++;
+                                if (completedFetches === this.topExpressionOptions.length) {
+                                    if (svgName.trim().toLowerCase() === 'default') {
+                                        // Determine max expression value to default too
+                                        var maxExpressionValue = 0;
+                                        var maxExpressionCompendium = undefined;
+                                        for (const [key, value] of Object.entries(this.topExpressionValues)) {
+                                            if (value['compendium'] && value['compendium'][1] && value['maxAverage'] && value['maxAverage'][1] && value['maxAverage'][1] > maxExpressionValue) {
+                                                maxExpressionValue = value.maxAverage[1];
+                                                maxExpressionCompendium = value.compendium[1];
+                                            };
+                                        };
+                                        
+                                        if (maxExpressionCompendium) {
+                                            svgName = maxExpressionCompendium;
+                                        } else {
+                                            svgName = 'AbioticStress';
+                                        };
+                                    };
+                                    
+                                    this.loadSampleData(svgName, locus);
+                                };
+                            });
+                        } else if (response.status !== 200) {   
+                            completedFetches++;                         
+                            if (completedFetches === this.topExpressionOptions.length) {
+                                this.loadSampleData(svgName, locus);
+                            };
+                            
+                            console.error('fetch error - Status Code: ' + response.status + ', fetch-url: ' + response.url + ', document-url: ' + window.location.href);
+                        };
+                    }		
+                ).catch(err => {
+                    completedFetches++;
+                    if (completedFetches === this.topExpressionOptions.length) {
+                        this.loadSampleData(svgName, locus);
+                    };
+
+                    console.error(err);
+                });
+            };
+        };       
+    };
+
+    /**
+     * Calls and stores the sample Data for the SVG, SVG's subunits, datasource and it's name-values 
+     * @param {String} svgName Name of the SVG file without the .svg at the end
+     * @param {String} locus The AGI ID (example: AT3G24650) 
+     * @param {Boolean} continueForward Continue forward with the generation of the tissue expression data
+     */
+    loadSampleData(svgName, locus, continueForward = true) {
+        if (Object.keys(this.sampleData).length === 0) {
+            let url = 'https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/data/SampleData.min.json';
+
+            var methods = {mode: 'cors'};
+    
+            fetch(url, methods).then(
+                response => {
+                    if (response.status === 200) {
+                        response.json().then(data => {
+                            // Store response
+                            this.sampleData = data;
+                            // Setup and retrieve information about the target SVG and locus 
+                            this.retrieveSampleData(svgName, locus);
+                        });
+                    } else if (response.status !== 200) {
+                          console.error('fetch error - Status Code: ' + response.status + ', fetch-url: ' + response.url + ', document-url: ' + window.location.href);
+                    };
+                }		
+            ).catch(err => {
+                console.error(err);
+            });
+        };   
+        
+        if (Object.keys(this.sampleData).length > 0 && continueForward) {
+            this.retrieveSampleData(svgName, locus);
+        }; 
+    };
+
+    /**
+     * Retrieves the sample information relating to an SVG for a specific set of data
+     * @param {String} svgName Name of the SVG file without the .svg at the end
+     * @param {String} locus The AGI ID (example: AT3G24650) 
+     */
+    retrieveSampleData(svgName, locus) {
+        // Check if svgName contains .svg
+        if (svgName.substr(-4) === '.svg') {
+            svgName = svgName.substr(0, svgName.length -4);
+        };
+
+        // Create variables that will be used in retrieveSampleData
+        var sampleDataKeys = Object.keys(this.sampleData); // All possible SVGs 
+        this.sampleOptions = sampleDataKeys;
+        var sampleDB = ''; // The sample's datasource
+        var sampleIDList = []; // List of all of the sample's IDs
+        var sampleSubunits = []; // List of SVG's subunits
+
+        // Check if valid SVG
+        if (sampleDataKeys.includes(svgName)) {
+            // Find position of the SVG name within the JSON data
+            let DataKeyPos = sampleDataKeys.indexOf(svgName);
+
+            // Create variables for parsing
+            var sampleInfo = this.sampleData[sampleDataKeys[DataKeyPos]];
+            var sampleOptions = sampleInfo['sample'];
+            sampleDB = sampleInfo['db'];
+
+            // If a database is available for this SVG, then find sample ID information
+            if (sampleDB !== undefined) {
+                sampleSubunits = Object.keys(sampleInfo.sample);
+                sampleIDList = [];
+                for (var sK = 0; sK < sampleSubunits.length; sK++) {
+                    sampleIDList = sampleIDList.concat(sampleOptions[sampleSubunits[sK]]);
+                };
+            };
+
+            // Call plantefp.cgi webservice to retrieve information about the target tissue expression data
+            if (this.eFPObjects[svgName] === undefined) {
+                this.callPlantEFP(sampleDB, locus, sampleIDList, svgName, sampleOptions);
+            };
+        };
+    };    
+
+    /**
+     * Calls the plantefp.cgi webservice to retrieve expression data from the BAR
+     * @param {String} datasource Which database the information is contained in
+     * @param {String} locus The AGI ID (example: AT3G24650) 
+     * @param {Array} samples List of sample ID's which the exact expression data is related to
+     * @param {String} svg Which SVG is being called 
+     * @param {Array} sampleSubunits List of the SVG's subunits
+     */
+    callPlantEFP(datasource, locus, samples, svg, sampleSubunits) {
+        // Create URL
+        let url = 'https://bar.utoronto.ca/~asullivan/webservices/plantefp.cgi?';
+        url += 'datasource=' + datasource + '&';
+        url += 'id=' + locus + '&';
+        url += 'samples=[';
+        for (var i = 0; i < samples.length; i++) {
+            var sampleName = samples[i].trim();
+            sampleName = sampleName.replace(/\+/g, '%2B');
+            sampleName = sampleName.replace(/ /g, '%20');
+
+            url += '"' + sampleName + '"';
+            if (i !== samples.length-1) {
+                url += ',';
+            };
+        };
+        url += ']';
+
+        var methods = {mode: 'cors'};
+
+        fetch(url, methods).then(
+            response => {
+                if (response.status === 200) {
+                    response.json().then(data => {
+                        let subunitsList = Object.keys(sampleSubunits);
+                        var response = data;
+                        if (this.eFPObjects === undefined) {
+                            this.eFPObjects = {};
+                        };
+        
+                        // Create SVG in dictionary
+                        if (this.eFPObjects[svg] === undefined) {
+                            this.eFPObjects[svg] = {};
+                        };
+        
+                        // Create samples in dictionary
+                        if (this.eFPObjects[svg]['sample'] === undefined) {
+                            this.eFPObjects[svg]['sample'] = {};
+                        };
+        
+                        // Create samples in dictionary
+                        if (this.eFPObjects[svg]['sample'] === undefined) {
+                            this.eFPObjects[svg]['sample'] = {};
+                        };
+        
+                        // Add values
+                        for (var t = 0; t < response.length; t++) {
+                            // Create key and value variables
+                            var responseName = response[t]['name'].trim();
+                            var responseValue = response[t]['value'];
+                            var subunitName = '';
+        
+                            // Create subunits element in dictionary     
+                            var tempName = responseName;                
+                            tempName = responseName.replace(/%2B/g, '+');
+                            tempName = tempName.replace(/%20/g, ' ');
+                            tempName = tempName.trim();
+                            for (var s = 0; s < subunitsList.length; s++) {  
+                                if (sampleSubunits[subunitsList[s]].includes(tempName)) {
+                                    subunitName = subunitsList[s];
+        
+                                    // Create subunit
+                                    if (this.eFPObjects[svg]['sample'][subunitName] === undefined) {
+                                        this.eFPObjects[svg]['sample'][subunitName] = {};
+                                    };
+        
+                                    // Create responseName
+                                    if (this.eFPObjects[svg]['sample'][subunitName][tempName] === undefined) {
+                                        this.eFPObjects[svg]['sample'][subunitName][tempName] = {};
+                                    };
+        
+                                    // Add to dictionary
+                                    this.eFPObjects[svg]['sample'][subunitName][tempName][locus] = responseValue;
+                                };
+                            };
+                        };
+        
+                        // Add db
+                        this.eFPObjects[svg]['db'] = datasource;
+
+                        this.addSVGtoDOM(svg, locus, this.includeDropdownAll, this.includeMaxDropdown);
+                    });
+                } else if (response.status !== 200) {
+                    this.addSVGtoDOM(svg, locus, this.includeDropdownAll, this.includeMaxDropdown);
+
+                    console.error('fetch error - Status Code: ' + response.status + ', fetch-url: ' + response.url + ', document-url: ' + window.location.href);
+                };
+            }		
+        ).catch(err => {
+            this.addSVGtoDOM(svg, locus, this.includeDropdownAll, this.includeMaxDropdown);
+
+            console.error(err);
+        });
     };
 
     /**
@@ -477,9 +513,9 @@ class CreateSVGExpressionData {
         targetDOMRegion.innerHTML = '';
 
         // Add dropdown list of all samples to document:
-        if (includeDropdownAll && this.retrieveOnlineBARData.sampleOptions) {
-            appendSVG += 'Select SVG to display: <select onchange="createSVGExpressionData.generateSVG(this.value.toString(), \'' + locus + '\', \'' + this.desiredDOMid + '\', ' + includeDropdownAll + ', ' + includeMaxDropdown + ')" id="sampleOptions" value="' + svgName + '">';
-            var sampleOptions = this.retrieveOnlineBARData.sampleOptions;
+        if (includeDropdownAll && this.sampleOptions) {
+            appendSVG += 'Select SVG to display: <select onchange="createSVGExpressionData.generateSVG(\'' + this.desiredDOMid + '\', this.value.toString(), \'' + locus + '\', ' + includeDropdownAll + ', ' + includeMaxDropdown + ')" id="sampleOptions" value="' + svgName + '">';
+            var sampleOptions = this.sampleOptions;
             for (var i = 0; i < sampleOptions.length; i++) {
                 appendSVG += '<option value="' + sampleOptions[i] + '">' + sampleOptions[i] + '</option>';
             };
@@ -489,17 +525,17 @@ class CreateSVGExpressionData {
         // Add max dropdown list to document:
         var topCompendiumsInclude = false;
         var topCompendiumsList = [];
-        if (includeMaxDropdown && this.interactiveSVGData.topExpressionValues) {
-            appendSVG += 'Select top expression to display: <select onchange="createSVGExpressionData.generateSVG(this.value.toString(), \'' + locus + '\', \'' + this.desiredDOMid + '\', ' + includeDropdownAll + ', ' + includeMaxDropdown + ')" id="topExpressionOptions">';
+        if (includeMaxDropdown && this.topExpressionValues) {
+            appendSVG += 'Select top expression to display: <select onchange="createSVGExpressionData.generateSVG(\'' + this.desiredDOMid + '\', this.value.toString(), \'' + locus + '\', ' + includeDropdownAll + ', ' + includeMaxDropdown + ')" id="topExpressionOptions">';
             
             // Hidden option
             appendSVG += '<option value="hiddenOption" id="hiddenExpressionOption" disabled>Compendiums with maximum average expression:</option>';
 
-            var topList = Object.keys(this.interactiveSVGData.topExpressionValues);
+            var topList = Object.keys(this.topExpressionValues);
             
             for (var i = 0; i < topList.length; i++) {
-                if (this.interactiveSVGData.topExpressionValues[topList[i]]) {
-                    var expressionData = this.interactiveSVGData.topExpressionValues[topList[i]];
+                if (this.topExpressionValues[topList[i]]) {
+                    var expressionData = this.topExpressionValues[topList[i]];
                     var compendiumOptions = expressionData['compendium'];
 
                     for (var c = 0; c < Object.keys(compendiumOptions).length; c++) {
@@ -509,9 +545,9 @@ class CreateSVGExpressionData {
                             var expressionCompendium = expressionData['compendium'][cUse];
                             var expressionSample = expressionData['sample'][cUse];
 
-                            if (expressionSample && this.retrieveOnlineBARData.sampleData[expressionCompendium] && this.retrieveOnlineBARData.sampleData[expressionCompendium] && this.retrieveOnlineBARData.sampleData[expressionCompendium]['description']) {
+                            if (expressionSample && this.sampleData[expressionCompendium] && this.sampleData[expressionCompendium] && this.sampleData[expressionCompendium]['description']) {
                                 topCompendiumsList.push(expressionCompendium);
-                                var readableSampleName = this.retrieveOnlineBARData.sampleData[expressionCompendium]['description'][expressionSample];
+                                var readableSampleName = this.sampleData[expressionCompendium]['description'][expressionSample];
                                 var expressionAverageLevel = expressionData['maxAverage'][cUse];
                                 
                                 appendSVG += '<option value="' + expressionCompendium + '">' + expressionCompendium + ': ' + readableSampleName + ' at ' +  expressionAverageLevel + '(' + topList[i] + ')</option>';
@@ -593,7 +629,7 @@ class CreateSVGExpressionData {
         let svgSamples = []; // List of sample's included in this expression call
 
         // Retrieve tissue expression information 
-        let dataObject = this.retrieveOnlineBARData.eFPObjects; 
+        let dataObject = this.eFPObjects; 
         let svgDataObject = dataObject[whichSVG]['sample'];
 
         // Find tissue expression's sample IDs
@@ -724,7 +760,7 @@ class CreateSVGExpressionData {
             this.svgValues[svgSubunits[i]]['sd'] = this.standardDeviationCalc(numValues);
 
             // Find control value
-            var controlData = this.retrieveOnlineBARData.sampleData[whichSVG];
+            var controlData = this.sampleData[whichSVG];
             var controlKeys = Object.keys(controlData["controlComparison"]);
             if (controlKeys.includes(svgSubunits[i]) === false) {
                 var controlSampleName = '';
@@ -813,8 +849,8 @@ class CreateSVGExpressionData {
         if (svgObject && svgObject.getElementById(svgSubunit)) {
             var expressionData = createSVGExpressionData["svgValues"][svgSubunit];
             var descriptionName = undefined;
-            if (this.retrieveOnlineBARData.sampleData[whichSVG]['description']) {
-                descriptionName = this.retrieveOnlineBARData.sampleData[whichSVG]['description'][svgSubunit];
+            if (this.sampleData[whichSVG]['description']) {
+                descriptionName = this.sampleData[whichSVG]['description'][svgSubunit];
             };
             if (descriptionName === undefined || descriptionName === '') {
                 descriptionName = svgSubunit;
@@ -889,8 +925,8 @@ class CreateSVGExpressionData {
                 svgObject.getElementById(svgSubunit).setAttribute("data-controlSampleName", expressionData['controlSampleName']);
 
                 var controlSampleName = undefined;
-                if (this.retrieveOnlineBARData.sampleData[whichSVG]['description']) {
-                    controlSampleName = this.retrieveOnlineBARData.sampleData[whichSVG]['description'][expressionData['controlSampleName']];
+                if (this.sampleData[whichSVG]['description']) {
+                    controlSampleName = this.sampleData[whichSVG]['description'][expressionData['controlSampleName']];
                 };
                 if (controlSampleName === undefined || controlSampleName === '') {
                     controlSampleName = expressionData['controlSampleName'];
@@ -975,14 +1011,14 @@ class CreateSVGExpressionData {
 
     /**
      * Create and generate an SVG based on the desired tissue expression locus
-     * @param {String} svgName Name of the SVG file without the .svg at the end
-     * @param {String} locus The AGI ID (example: AT3G24650) 
      * @param {String} desiredDOMid The desired DOM location or if kept empty, returns the string version of the output
+     * @param {String} svgName Name of the SVG file without the .svg at the end. Default is set to "default", when left this value, the highest expression value (if any) is chosen and if not, then Abiotic Stress is. 
+     * @param {String} locus The AGI ID (example: AT3G24650) 
      * @param {Boolean} includeDropdownAll true = include a html dropdown/select of all available SVGs/samples, false = don't
      * @param {Boolean} includeMaxDropdown true = include a html dropdown/select of the highest/lowest expression SVGs/samples, false = don't
      * @returns {String} If no desiredDOMid is given, returns the string version of the output instead
      */
-    generateSVG(svgName, locus, desiredDOMid, includeDropdownAll = false, includeMaxDropdown = false) {   
+    generateSVG(desiredDOMid, svgName = 'default', locus = 'AT3G24650', includeDropdownAll = false, includeMaxDropdown = false) {   
         // Reset variables:
         this.svgValues = {};
         this.svgMax = undefined;
@@ -998,34 +1034,7 @@ class CreateSVGExpressionData {
         };
         // Initiate scripts     
         this.desiredDOMid = desiredDOMid;
-        this.retrieveOnlineBARData.loadSampleData(svgName, locus);
-        if (includeMaxDropdown) {
-            this.interactiveSVGData.retrieveTopExpressionValues(locus);
-        };
-        this.updateChecker(svgName, locus);
-    };
-
-    /**
-     * Checks if a call has received its data yet
-     * @param {String} svgName Which SVG is being called
-     * @param {String} locus The AGI ID (example: AT3G24650) 
-     * @param {Number} iteration How many times has this recursive function been called
-     */
-    updateChecker(svgName, locus, iteration = 0) {
-        if (iteration < 200) { 
-            let newIt = iteration + 1;
-
-            let timer = setTimeout(() => {
-                var checkList = Object.keys(this.retrieveOnlineBARData.eFPObjects);
-
-                // Want to double check if not already been called or not
-                if (checkList.length === this.clickList.length) {
-                    this.addSVGtoDOM(svgName, locus, this.includeDropdownAll, this.includeMaxDropdown);
-                } else {
-                    this.updateChecker(svgName, locus, newIt);
-                }
-            }, 100);
-        };
+        this.retrieveTopExpressionValues(svgName, locus);
     };
 };
 /**
