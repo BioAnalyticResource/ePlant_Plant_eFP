@@ -23,14 +23,14 @@
             From here, you would have to decide on what tissue sample you would like to call, for what gene using an AGI ID and the desired location. Once decided on, you will need to call <code>generateSVG</code> from the CreateSVGExpressionData class. This would require three inputs:
             <blockquote>
                 <code>
-                    /** <br />
-                      * Create and generate an SVG based on the desired tissue expression locus <br />
-                      * @param {String} desiredDOMid The desired DOM location or if kept empty, returns the string version of the output <br />
-                      * @param {String} svgName Name of the SVG file without the .svg at the end <br />
-                      * @param {String} locus The AGI ID (example: AT3G24650) <br />
-                      * @returns {String} If no desiredDOMid is given, returns the string version of the output instead <br />
-                      */ <br />
-                      generateSVG(svgName, locus, desiredDOMid)
+                    /**
+                     * Create and generate an SVG based on the desired tissue expression locus <br/>
+                     * @param {String} desiredDOMid The desired DOM location or if kept empty, returns the string version of the output<br/>
+                     * @param {String} svgName Name of the SVG file without the .svg at the end. Default is set to "default", when left this value, the highest expression value (if any) is chosen and if not, then Abiotic Stress is. <br/>
+                     * @param {String} locus The AGI ID (example: AT3G24650) <br/>
+                     * @param {Boolean} includeDropdownAll true = include a html dropdown/select of all available SVGs/samples, false = don't<br/>
+                     * @returns {String} If no desiredDOMid is given, returns the string version of the output instead<br/>
+                     */<br/>
                 </code>
             </blockquote>
             To see all options of tissues that can be called, you can look at the available SVGs for the ePlant Plant eFP at <a href="https://github.com/BioAnalyticResource/ePlant_Plant_eFP/tree/master/compendiums" target="_blank" rel="noopener noreferrer" style="color:turquoise">'./compendiums'</a>.

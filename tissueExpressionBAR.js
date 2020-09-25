@@ -321,9 +321,8 @@ class CreateSVGExpressionData {
      * Calls and stores the sample Data for the SVG, SVG's subunits, datasource and it's name-values 
      * @param {String} svgName Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
-     * @param {Boolean} continueForward Continue forward with the generation of the tissue expression data
      */
-    loadSampleData(svgName, locus, continueForward = true) {
+    loadSampleData(svgName, locus) {
         if (Object.keys(this.sampleData).length === 0) {
             let url = 'https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/data/SampleData.min.json';
 
@@ -345,9 +344,7 @@ class CreateSVGExpressionData {
             ).catch(err => {
                 console.error(err);
             });
-        };   
-        
-        if (Object.keys(this.sampleData).length > 0 && continueForward) {
+        } else if (Object.keys(this.sampleData).length > 0) {
             this.retrieveSampleData(svgName, locus);
         }; 
     };
@@ -398,6 +395,8 @@ class CreateSVGExpressionData {
             // Call plantefp.cgi webservice to retrieve information about the target tissue expression data
             if (this.eFPObjects[svgName] === undefined) {
                 this.callPlantEFP(sampleDB, locus, sampleIDList, svgName, sampleOptions);
+            } else if (this.eFPObjects[svgName]) {
+                this.addSVGtoDOM(svgName, locus, this.includeDropdownAll);
             };
         };
     };    
