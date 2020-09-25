@@ -188,6 +188,7 @@ class CreateSVGExpressionData {
         // loadSampleData
         this.sampleData = {};
         this.sampleOptions = [];
+        this.sampleReadableName = {};
         // Top expression data
         this.topExpressionValues = {};
         this.expressionValues = {};
@@ -311,6 +312,8 @@ class CreateSVGExpressionData {
                     console.error(err);
                 });
             };
+        } else if (Object.keys(this.topExpressionValues).length > 0) {
+            this.loadSampleData(svgName, locus);
         };       
     };
 
@@ -359,10 +362,16 @@ class CreateSVGExpressionData {
         if (svgName.substr(-4) === '.svg') {
             svgName = svgName.substr(0, svgName.length -4);
         };
+        
+        if (this.sampleOptions.length === 0) {
+            for (const [key, value] of Object.entries(this.sampleData)) {
+                this.sampleOptions.push(key);
+                this.sampleReadableName[value['name']] = key;
+            };
+        };
 
         // Create variables that will be used in retrieveSampleData
-        var sampleDataKeys = Object.keys(this.sampleData); // All possible SVGs 
-        this.sampleOptions = sampleDataKeys;
+        var sampleDataKeys = Object.keys(this.sampleData); // All possible SVGs
         var sampleDB = ''; // The sample's datasource
         var sampleIDList = []; // List of all of the sample's IDs
         var sampleSubunits = []; // List of SVG's subunits
@@ -481,16 +490,16 @@ class CreateSVGExpressionData {
                         // Add db
                         this.eFPObjects[svg]['db'] = datasource;
 
-                        this.addSVGtoDOM(svg, locus, this.includeDropdownAll, this.includeMaxDropdown);
+                        this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
                     });
                 } else if (response.status !== 200) {
-                    this.addSVGtoDOM(svg, locus, this.includeDropdownAll, this.includeMaxDropdown);
+                    this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
 
                     console.error('fetch error - Status Code: ' + response.status + ', fetch-url: ' + response.url + ', document-url: ' + window.location.href);
                 };
             }		
         ).catch(err => {
-            this.addSVGtoDOM(svg, locus, this.includeDropdownAll, this.includeMaxDropdown);
+            this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
 
             console.error(err);
         });
@@ -501,7 +510,7 @@ class CreateSVGExpressionData {
      * @param {String} svgName Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
      */
-    addSVGtoDOM(svgName, locus, includeDropdownAll = false, includeMaxDropdown = false) {
+    addSVGtoDOM(svgName, locus, includeDropdownAll = false) {
         var svgUse = 'Klepikova';
         var appendSVG = '';
         if (svgName !== '') {
@@ -512,56 +521,55 @@ class CreateSVGExpressionData {
         var targetDOMRegion = document.getElementById(this.desiredDOMid);
         targetDOMRegion.innerHTML = '';
 
+        var sampleIndexPos = 0;
+
         // Add dropdown list of all samples to document:
         if (includeDropdownAll && this.sampleOptions) {
-            appendSVG += 'Select SVG to display: <select onchange="createSVGExpressionData.generateSVG(\'' + this.desiredDOMid + '\', this.value.toString(), \'' + locus + '\', ' + includeDropdownAll + ', ' + includeMaxDropdown + ')" id="sampleOptions" value="' + svgName + '">';
-            var sampleOptions = this.sampleOptions;
-            for (var i = 0; i < sampleOptions.length; i++) {
-                appendSVG += '<option value="' + sampleOptions[i] + '">' + sampleOptions[i] + '</option>';
-            };
-            appendSVG += '</select></br>';
-        };
+            appendSVG += 'Select SVG to display: <select onchange="createSVGExpressionData.generateSVG(\'' + this.desiredDOMid + '\', this.value.toString(), \'' + locus + '\', ' + includeDropdownAll + ')" id="sampleOptions" value="' + svgName + '">';
+            var sampleOptions = Object.keys(this.sampleReadableName);
+            sampleOptions.sort();
 
-        // Add max dropdown list to document:
-        var topCompendiumsInclude = false;
-        var topCompendiumsList = [];
-        if (includeMaxDropdown && this.topExpressionValues) {
-            appendSVG += 'Select top expression to display: <select onchange="createSVGExpressionData.generateSVG(\'' + this.desiredDOMid + '\', this.value.toString(), \'' + locus + '\', ' + includeDropdownAll + ', ' + includeMaxDropdown + ')" id="topExpressionOptions">';
+            if (this.topExpressionValues && Object.keys(this.topExpressionValues).length > 0) {
+                // Hidden option
+                appendSVG += '<option value="hiddenOption" id="hiddenExpressionOption" disabled>Compendiums with maximum average expression:</option>';
+
+                var topList = Object.keys(this.topExpressionValues);
             
-            // Hidden option
-            appendSVG += '<option value="hiddenOption" id="hiddenExpressionOption" disabled>Compendiums with maximum average expression:</option>';
+                for (var i = 0; i < topList.length; i++) {
+                    if (this.topExpressionValues[topList[i]]) {
+                        var expressionData = this.topExpressionValues[topList[i]];
+                        var compendiumOptions = expressionData['compendium'];
 
-            var topList = Object.keys(this.topExpressionValues);
-            
-            for (var i = 0; i < topList.length; i++) {
-                if (this.topExpressionValues[topList[i]]) {
-                    var expressionData = this.topExpressionValues[topList[i]];
-                    var compendiumOptions = expressionData['compendium'];
+                        for (var c = 0; c < Object.keys(compendiumOptions).length; c++) {
+                            var cUse = c + 1;
 
-                    for (var c = 0; c < Object.keys(compendiumOptions).length; c++) {
-                        var cUse = c + 1;
+                            if (expressionData['compendium'][cUse]) {
+                                var expressionCompendium = expressionData['compendium'][cUse];
+                                var expressionSample = expressionData['sample'][cUse];
 
-                        if (expressionData['compendium'][cUse]) {
-                            var expressionCompendium = expressionData['compendium'][cUse];
-                            var expressionSample = expressionData['sample'][cUse];
-
-                            if (expressionSample && this.sampleData[expressionCompendium] && this.sampleData[expressionCompendium] && this.sampleData[expressionCompendium]['description']) {
-                                topCompendiumsList.push(expressionCompendium);
-                                var readableSampleName = this.sampleData[expressionCompendium]['description'][expressionSample];
-                                var expressionAverageLevel = expressionData['maxAverage'][cUse];
-                                
-                                appendSVG += '<option value="' + expressionCompendium + '">' + expressionCompendium + ': ' + readableSampleName + ' at ' +  expressionAverageLevel + '(' + topList[i] + ')</option>';
-                                break;
+                                if (expressionSample && this.sampleData[expressionCompendium] && this.sampleData[expressionCompendium] && this.sampleData[expressionCompendium]['description']) {
+                                    var readableSampleName = this.sampleData[expressionCompendium]['description'][expressionSample];
+                                    var expressionAverageLevel = expressionData['maxAverage'][cUse];
+                                    var compendiumName = this.sampleData[expressionCompendium]['name'];
+                                    
+                                    appendSVG += '<option value="' + expressionCompendium + '">' + compendiumName + ': ' + readableSampleName + ' at ' +  expressionAverageLevel + ' (' + topList[i] + ')</option>';
+                                    break;
+                                };
                             };
-                        };
-                    };                    
+                        };                    
+                    };
                 };
             };
-            appendSVG += '</select></br>';
-            
-            if (topCompendiumsList.includes(svgName)) {
-                topCompendiumsInclude = true;
+
+            appendSVG += '<option value="hiddenOption" id="allCompendiumOptions" disabled>All compendiums:</option>';
+            for (var i = 0; i < sampleOptions.length; i++) {
+                appendSVG += '<option value="' + this.sampleReadableName[sampleOptions[i]] + '">' + sampleOptions[i] + '</option>';
+
+                if (this.sampleReadableName[sampleOptions[i]] === svgName) {
+                    sampleIndexPos = i;
+                }
             };
+            appendSVG += '</select></br>';
         };
 
         // Create call for SVG file
@@ -573,11 +581,11 @@ class CreateSVGExpressionData {
         targetDOMRegion.innerHTML = appendSVG;
 
         // Modify how HTML is presented
-        document.getElementById('sampleOptions').selectedIndex = sampleOptions.indexOf(svgName);
-        if (topCompendiumsInclude === true) {
-            document.getElementById('hiddenExpressionOption').setAttribute('hidden', true);
-            document.getElementById('topExpressionOptions').selectedIndex = topCompendiumsList.indexOf(svgName) + 1;
+        var changeIndexBy = 4;
+        if (!this.topExpressionValues || Object.keys(this.topExpressionValues).length === 0) {
+            changeIndexBy = 1;
         };
+        document.getElementById('sampleOptions').selectedIndex = sampleIndexPos + changeIndexBy;
 
         this.svgObjectName = svgUse + '_object';
 
@@ -1015,10 +1023,9 @@ class CreateSVGExpressionData {
      * @param {String} svgName Name of the SVG file without the .svg at the end. Default is set to "default", when left this value, the highest expression value (if any) is chosen and if not, then Abiotic Stress is. 
      * @param {String} locus The AGI ID (example: AT3G24650) 
      * @param {Boolean} includeDropdownAll true = include a html dropdown/select of all available SVGs/samples, false = don't
-     * @param {Boolean} includeMaxDropdown true = include a html dropdown/select of the highest/lowest expression SVGs/samples, false = don't
      * @returns {String} If no desiredDOMid is given, returns the string version of the output instead
      */
-    generateSVG(desiredDOMid, svgName = 'default', locus = 'AT3G24650', includeDropdownAll = false, includeMaxDropdown = false) {   
+    generateSVG(desiredDOMid, svgName = 'default', locus = 'AT3G24650', includeDropdownAll = true) {
         // Reset variables:
         this.svgValues = {};
         this.svgMax = undefined;
@@ -1028,7 +1035,6 @@ class CreateSVGExpressionData {
         this.svgMinAverage = undefined;
         this.svgMinAverageSample = undefined;
         this.includeDropdownAll = includeDropdownAll;
-        this.includeMaxDropdown = includeMaxDropdown;
         if (this.clickList.includes(svgName) === false) {
             this.clickList.push(svgName);
         };

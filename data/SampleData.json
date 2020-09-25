@@ -7133,7 +7133,7 @@
                 "RIKEN-YAMAUCHI1A",
                 "RIKEN-YAMAUCHI1B"
             ],
-            "dormancy-FSL-SD1": [
+            "SD1": [
                 "Finch-Savage_1-9_SD1_Rep1_ATH1",
                 "Finch-Savage_1-10_SD1_Rep2_ATH1",
                 "Finch-Savage_1-11_SD1_Rep3_ATH1",
@@ -7144,7 +7144,7 @@
                 "Carrera Begua_1-17_fus_Rep2_ATH1",
                 "Carrera Begua_1-18_fus_Rep3_ATH1"
             ],
-            "dormancy-FSL-SD2": [
+            "SD2": [
                 "Finch-Savage_1-21_SD2_Rep1_ATH1",
                 "Finch-Savage_1-22_SD2_Rep2_ATH1",
                 "Finch-Savage_1-23_SD2_Rep3_ATH1",
@@ -7202,9 +7202,9 @@
             "mutant-NL-abi41-WI": "abi4 24 HAI",
             "dormancy-FSL-PD48h": "PD48h",
             "germination-YL-22C": "96 h at 22 C",
-            "dormancy-FSL-SD1": "SD1",
+            "SD1": "SD1",
             "mutant-HL-fus38": "fus3-8",
-            "dormancy-FSL-SD2": "SD2"
+            "SD2": "SD2"
         },
         "controlComparison": {
             "SEED_LCM_CTRL": [

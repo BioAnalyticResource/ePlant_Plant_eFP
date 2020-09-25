@@ -1970,7 +1970,7 @@
          inkscape:connector-curvature="0" />
     </g>
     <g
-       id="dormancy-FSL-SD1"
+       id="SD1"
        transform="translate(65.080132,33.67596)">
       <path
          inkscape:connector-curvature="0"
@@ -1980,7 +1980,7 @@
     </g>
     <g
        transform="translate(78.309974,33.67596)"
-       id="dormancy-FSL-SD2">
+       id="SD2">
       <path
          style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 16.440394,5.4108547 c 0,0 3.407685,-2.1381587 -3.541323,-2.1381587 -6.949007,0.4677224 -3.4076863,4.2763148 -3.4076863,4.2763148 0,0 4.1426783,1.269529 6.4144683,-0.066818 3.340869,-1.3363478 0.534541,-2.0713381 0.534541,-2.0713381 z"
