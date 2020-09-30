@@ -2459,7 +2459,7 @@
                 "lt_2",
                 "lt_3"
             ],
-            "bendCotyledon": [
+            "bentCotyledon": [
                 "bc_1",
                 "bc_2",
                 "bc_3"
@@ -2480,7 +2480,7 @@
             "lateHeart": "Late Heart",
             "earlyTorpedo": "Early Torpedo",
             "lateTorpedo": "Late Torpedo",
-            "bendCotyledon": "Bend Cotyledon",
+            "bentCotyledon": "Bend Cotyledon",
             "matureGreen": "Mature Green",
             "Med_CTRL": "Med CTRL"
         },
@@ -2492,7 +2492,7 @@
                 "lateHeart",
                 "earlyTorpedo",
                 "lateTorpedo",
-                "bendCotyledon",
+                "bentCotyledon",
                 "matureGreen"
             ]
         },
@@ -6632,85 +6632,6 @@
         },
         "db": "root_Schaefer_lab"
     },
-    "ImmunityElicitation": {
-        "name":"Immunity Elicitation",
-        "sample": {
-            "Mock-Pericycle": [
-                "WTCHG_131167_01",
-                "WTCHG_125416_01",
-                "WTCHG_129190_05"
-            ],
-            "Mock-Epidermis": [
-                "WTCHG_203594_01",
-                "WTCHG_203594_05",
-                "WTCHG_203839_04"
-            ],
-            "Mock-Cortex": [
-                "WTCHG_129187_01",
-                "WTCHG_129189_01",
-                "WTCHG_129190_01"
-            ],
-            "flg22-Pericycle": [
-                "WTCHG_131167_03",
-                "WTCHG_125416_03",
-                "WTCHG_129190_07"
-            ],
-            "flg22-Epidermis": [
-                "WTCHG_203594_03",
-                "WTCHG_203594_07",
-                "WTCHG_203839_06"
-            ],
-            "flg22-Cortex": [
-                "WTCHG_129187_03",
-                "WTCHG_129189_03",
-                "WTCHG_129190_03"
-            ],
-            "Pep1-Pericycle": [
-                "WTCHG_131167_05",
-                "WTCHG_125416_05",
-                "WTCHG_129189_07"
-            ],
-            "Pep1-Epidermis": [
-                "WTCHG_203839_01",
-                "WTCHG_203594_10",
-                "WTCHG_203839_08"
-            ],
-            "Pep1-Cortex": [
-                "WTCHG_129187_05",
-                "WTCHG_129189_05",
-                "WTCHG_129187_07"
-            ]
-        },
-        "description": {
-            "Mock-Pericycle": "Control - Pericycle",
-            "Mock-Epidermis": "Control - Epidermis",
-            "Mock-Cortex": "Control - Cortex",
-            "flg22-Pericycle": "flg22 - Pericycle",
-            "flg22-Epidermis": "flg22 - Epidermis",
-            "flg22-Cortex": "flg22 - Cortex",
-            "Pep1-Pericycle": "Pep1 - Pericycle",
-            "Pep1-Epidermis": "Pep1 - Epidermis",
-            "Pep1-Cortex": "Pep1 - Cortex"
-        },
-        "controlComparison": {
-            "Epidermis": [
-                "Control - Epidermis",
-                "flg22 - Epidermis",
-                "Pep1 - Epidermis"
-            ],
-            "Cortex": [
-                "Control - Cortex",
-                "flg22 - Cortex",
-                "Pep1 - Cortex"
-            ],
-            "Pericycle": [
-                "Control - Pericycle",
-                "flg22 - Pericycle",
-                "Pep1 - Pericycle"
-            ]
-        },
-        "db": "root_Schaefer_lab"
-    },
     "Seed": {
         "name": "Seed",
         "sample": {
@@ -6894,6 +6815,10 @@
                 "bot0314",
                 "bot0394"
             ],
+            "chemicalTreatment-CL-24dinitrophenol": [
+                "bot0246",
+                "bot0247"
+            ],
             "hormoneTreatment-NL-WI": [
                 "RIKEN-NAKABAYASHI2A",
                 "RIKEN-NAKABAYASHI2B"
@@ -6963,6 +6888,11 @@
                 "Finch-Savage_1-22_SD2_Rep2_ATH1",
                 "Finch-Savage_1-23_SD2_Rep3_ATH1",
                 "Finch-Savage_1-24_SD2_Rep4_ATH1"
+            ],
+            "mutant-HL-aba34": [
+                "Carrera Begua_1-13_abi3_Rep1_ATH1",
+                "Carrera Begua_1-14_abi3_Rep2_ATH1",
+                "Carrera Begua_1-15_abi3_Rep3_ATH1"
             ]
         },
         "db": "seed_db",
@@ -7004,6 +6934,7 @@
             "mutant-YL-GAI-9h": "9 h in GA",
             "germination-NL-6h": "6 h Imbibed Seeds",
             "chemicalTreatment-CL-DMSO": "DMSO",
+            "chemicalTreatment-CL-24dinitrophenol": "2,4-dinitrophenol",
             "hormoneTreatment-NL-WI": "24 h in water",
             "mutant-YL-WI-9h": "9 h in water",
             "germination-YL-4C": "96 h at 4 C",
@@ -7018,7 +6949,8 @@
             "germination-YL-22C": "96 h at 22 C",
             "SD1": "SD1",
             "mutant-HL-fus38": "fus3-8",
-            "SD2": "SD2"
+            "SD2": "SD2",
+            "mutant-HL-aba34": "abi3-4"
         },
         "controlComparison": {
             "SEED_LCM_CTRL": [
@@ -7181,7 +7113,8 @@
             "siliqueDevelopment": [
                 "Control - Epidermis"
             ]
-        }
+        },
+        "db": "Silique"
     },
     "TissueSpecificEmbryoDevelopment": {
         "name": "Tissue Specific: Embryo Development",

@@ -242,8 +242,13 @@ class CreateSVGExpressionData {
                 fetch(url, methods).then(
                     response => {
                         if (response.status === 200) {
-                            response.json().then(data => {
-                                let response = data;
+                            response.text().then(data => {
+                                let response; 
+                                if (data.length > 0) {
+                                    response = JSON.parse(data);
+                                } else {
+                                    response = {};
+                                };
 
                                 var topMethodUsed;
                                 var urlQuery = url.split('=');
@@ -331,9 +336,16 @@ class CreateSVGExpressionData {
             fetch(url, methods).then(
                 response => {
                     if (response.status === 200) {
-                        response.json().then(data => {
+                        response.text().then(data => {
+                            let res; 
+                            if (data.length > 0) {
+                                res = JSON.parse(data);
+                            } else {
+                                res = {};
+                            };
+                            
                             // Store response
-                            this.sampleData = data;
+                            this.sampleData = res;
                             // Setup and retrieve information about the target SVG and locus 
                             this.retrieveSampleData(svgName, locus);
                         });
@@ -382,6 +394,7 @@ class CreateSVGExpressionData {
             var sampleInfo = this.sampleData[sampleDataKeys[DataKeyPos]];
             var sampleOptions = sampleInfo['sample'];
             sampleDB = sampleInfo['db'];
+            console.log(sampleInfo);
 
             // If a database is available for this SVG, then find sample ID information
             if (sampleDB !== undefined) {
@@ -432,9 +445,16 @@ class CreateSVGExpressionData {
         fetch(url, methods).then(
             response => {
                 if (response.status === 200) {
-                    response.json().then(data => {
+                    response.text().then(data => {
+                        let response; 
+                        if (data.length > 0) {
+                            response = JSON.parse(data);
+                        } else {
+                            response = {};
+                        };
+
                         let subunitsList = Object.keys(sampleSubunits);
-                        var response = data;
+
                         if (this.eFPObjects === undefined) {
                             this.eFPObjects = {};
                         };
@@ -591,8 +611,9 @@ class CreateSVGExpressionData {
                             this.svgObjectName = document.getElementsByTagName('svg')[0].id;
                             
                             // Adjust width and height of SVG
-                            document.getElementById(this.svgObjectName).setAttribute('width', '95%');
-                            document.getElementById(this.svgObjectName).setAttribute('height', '95%');
+                            if (document.getElementById(this.svgObjectName)) {
+                                document.getElementById(this.svgObjectName).style = 'width: 95% !important;height: 95% !important;';
+                            };
                         };
 
                         var changeIndexBy = 4;
@@ -601,18 +622,9 @@ class CreateSVGExpressionData {
                         };
                         document.getElementById('sampleOptions').selectedIndex = sampleIndexPos + changeIndexBy;
 
-                        if (targetDOMRegion.innerHTML !== '') {            
-                            // Change shape of SVG
-                            let svgObject = document.getElementById(svgUse + '_object');
-                            svgObject.style = 'width: 100%; height: 100%; left: 0px; top: 0px; display: inline-block;';
-            
-                            // Check locus to see if it matches 
-                            setTimeout(() => {
-                                this.createLocusMatch(svgUse, locus);
-                            }, 200);
-                        } else {
-                            console.log('no target DOM region')
-                        };
+                        setTimeout(() => {
+                            this.createLocusMatch(svgUse, locus);
+                        }, 200);
                     });
                 } else if (response.status !== 200) {
                     console.error('fetch error - Status Code: ' + response.status + ', fetch-url: ' + response.url + ', document-url: ' + window.location.href);
