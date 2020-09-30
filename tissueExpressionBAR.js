@@ -15,13 +15,13 @@ function addTissueMetadata(elementID) {
     };
     // Retrieve document objects:
     var svgDoc, svgPart, svgPartChildren;
-    if (document.getElementById(createSVGExpressionData.svgObjectName) && document.getElementById(createSVGExpressionData.svgObjectName).getSVGDocument()) {
-        svgDoc = document.getElementById(createSVGExpressionData.svgObjectName).getSVGDocument();
+    if (document.getElementById(createSVGExpressionData.svgObjectName) && document.getElementById(createSVGExpressionData.svgObjectName)) {
+        svgDoc = document.getElementById(createSVGExpressionData.svgObjectName);
         svgPart = svgDoc.getElementById(elementID);
         svgPartChildren = svgPart.childNodes;
     };
     /** Increase stroke width within SVG by (multiplied) this much */
-    var increaseStrokeWidthBy = 1.5;
+    var increaseStrokeWidthBy = 1.3;
     // Storing stroke widths
     var existingStrokeWidth = undefined, 
         existingStrokeColour = undefined,
@@ -82,10 +82,10 @@ function addTissueMetadata(elementID) {
                 var newStrokeWidth = existingStrokeWidth * increaseStrokeWidthBy;
                 var maxStrokeWidth = 5;
                 if (newStrokeWidth < maxStrokeWidth || newStrokeWidth === 0) {
-                    if ((increaseStrokeWidthBy * 1.5) < maxStrokeWidth && (increaseStrokeWidthBy * 1.5) !== 0) {
-                        newStrokeWidth = increaseStrokeWidthBy * 1.5;
+                    if ((increaseStrokeWidthBy * 1.3) < maxStrokeWidth && (increaseStrokeWidthBy * 1.3) !== 0) {
+                        newStrokeWidth = increaseStrokeWidthBy * 1.3;
                     } else {
-                        newStrokeWidth = 1.5;
+                        newStrokeWidth = 1.3;
                     };
                 };
 
@@ -132,8 +132,8 @@ function removeTissueMetadata(elementID) {
 
     // Retrieve document objects:
     var svgDoc, svgPart, svgPartChildren;
-    if (document.getElementById(createSVGExpressionData.svgObjectName) && document.getElementById(createSVGExpressionData.svgObjectName).getSVGDocument()) {
-        svgDoc = document.getElementById(createSVGExpressionData.svgObjectName).getSVGDocument();
+    if (document.getElementById(createSVGExpressionData.svgObjectName) && document.getElementById(createSVGExpressionData.svgObjectName)) {
+        svgDoc = document.getElementById(createSVGExpressionData.svgObjectName);
         svgPart = svgDoc.getElementById(elementID);
         svgPartChildren = svgPart.childNodes;
     };
@@ -159,7 +159,7 @@ function removeTissueMetadata(elementID) {
                     svgPartChildren[s].setAttribute('stroke-width', (existingStrokeData[elementID]['strokeWidth']));
                     svgDetailsRemoved = true;
                 } else if (svgPartChildren[s].getAttribute('stroke-width')) {
-                    svgPartChildren[s].setAttribute('stroke-width', 1.5);
+                    svgPartChildren[s].setAttribute('stroke-width', 1.3);
                     svgDetailsRemoved = true;
                 };
 
@@ -173,7 +173,7 @@ function removeTissueMetadata(elementID) {
     };
 
     if (svgDetailsRemoved === false) {
-        svgPart.setAttribute('stroke-width', 1.5);
+        svgPart.setAttribute('stroke-width', 1.3);
         svgPart.setAttribute('stroke', '#000000');
     };
 };
@@ -571,40 +571,56 @@ class CreateSVGExpressionData {
             appendSVG += '</select></br>';
         };
 
-        // Create call for SVG file
-        var urlSVG = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/compendiums/' + svgUse + '.min.svg';
-
         // Append SVG to document
         appendSVG += '<b>' + svgName + '</b></br>';
-        appendSVG += '<object alt="SVG for ' + svgUse + '" id="' + svgUse + '_object" data="' + urlSVG + '" type="image/svg+xml"></object>';
-        targetDOMRegion.innerHTML = appendSVG;
 
-        // Modify how HTML is presented
-        var changeIndexBy = 4;
-        if (!this.topExpressionValues || Object.keys(this.topExpressionValues).length === 0) {
-            changeIndexBy = 1;
-        };
-        document.getElementById('sampleOptions').selectedIndex = sampleIndexPos + changeIndexBy;
+        // Create call for SVG file
+        var urlSVG = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/compendiums/' + svgUse + '.min.svg';
+        var methods = {mode: 'cors'};
 
-        this.svgObjectName = svgUse + '_object';
+        fetch(urlSVG, methods).then(
+            response => {
+                if (response.status === 200) {
+                    response.text().then(data => {
+                        appendSVG += '<div id="' + svgUse + '_object">';
+                        appendSVG += data;
+                        appendSVG += '</div>';
+                        targetDOMRegion.innerHTML = appendSVG;
 
-        // Wait for SVG to load
-        var svgLoaded = false;
-        while (svgLoaded === false) {
-            if (targetDOMRegion.innerHTML !== '') {
-                // End while loop
-                svgLoaded = true;
+                        if (document.getElementsByTagName('svg') && document.getElementsByTagName('svg')[0]) {
+                            this.svgObjectName = document.getElementsByTagName('svg')[0].id;
+                            
+                            // Adjust width and height of SVG
+                            document.getElementById(this.svgObjectName).setAttribute('width', '95%');
+                            document.getElementById(this.svgObjectName).setAttribute('height', '95%');
+                        };
 
-                // Change shape of SVG
-                let svgObject = document.getElementById(svgUse + '_object');
-                svgObject.style = 'width: 100%; height: 100%; left: 0px; top: 0px; display: inline-block;';
+                        var changeIndexBy = 4;
+                        if (!this.topExpressionValues || Object.keys(this.topExpressionValues).length === 0) {
+                            changeIndexBy = 1;
+                        };
+                        document.getElementById('sampleOptions').selectedIndex = sampleIndexPos + changeIndexBy;
 
-                // Check locus to see if it matches 
-                let timer = setTimeout(() => {
-                    this.createLocusMatch(svgUse, locus);
-                }, 200);
-            };
-        };
+                        if (targetDOMRegion.innerHTML !== '') {            
+                            // Change shape of SVG
+                            let svgObject = document.getElementById(svgUse + '_object');
+                            svgObject.style = 'width: 100%; height: 100%; left: 0px; top: 0px; display: inline-block;';
+            
+                            // Check locus to see if it matches 
+                            setTimeout(() => {
+                                this.createLocusMatch(svgUse, locus);
+                            }, 200);
+                        } else {
+                            console.log('no target DOM region')
+                        };
+                    });
+                } else if (response.status !== 200) {
+                    console.error('fetch error - Status Code: ' + response.status + ', fetch-url: ' + response.url + ', document-url: ' + window.location.href);
+                };
+            }		
+        ).catch(err => {
+            console.error(err);
+        });
     };
 
     /**
@@ -852,7 +868,7 @@ class CreateSVGExpressionData {
      * @param {Number} sampleSize The sample size of the input information, default to 1
      */
     colourSVGSubunit(whichSVG, svgSubunit, colour, expressionLevel, sampleSize = 1) {
-        let svgObject = document.getElementById(whichSVG + '_object').getSVGDocument();
+        let svgObject = document.getElementById(this.svgObjectName);
         if (svgObject && svgObject.getElementById(svgSubunit)) {
             var expressionData = createSVGExpressionData["svgValues"][svgSubunit];
             var descriptionName = undefined;
