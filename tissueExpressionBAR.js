@@ -394,7 +394,6 @@ class CreateSVGExpressionData {
             var sampleInfo = this.sampleData[sampleDataKeys[DataKeyPos]];
             var sampleOptions = sampleInfo['sample'];
             sampleDB = sampleInfo['db'];
-            console.log(sampleInfo);
 
             // If a database is available for this SVG, then find sample ID information
             if (sampleDB !== undefined) {

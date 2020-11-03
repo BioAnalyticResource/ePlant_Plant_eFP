@@ -6632,6 +6632,271 @@
         },
         "db": "root_Schaefer_lab"
     },
+    "scRNASeq": {
+        "name": "Single Cell",
+        "sample": {
+            "CortexG6-CortexCells31": [
+                "cluster31_WT1.ExprMean",
+                "cluster31_WT2.ExprMean",
+                "cluster31_WT3.ExprMean"
+            ],
+            "CortexG6-CortexCells19": [
+                "cluster19_WT1.ExprMean",
+                "cluster19_WT2.ExprMean",
+                "cluster19_WT3.ExprMean"
+            ],
+            "RootCapG1-QuiescentCenterCellsAndYoungMeristemCells17": [
+                "cluster17_WT1.ExprMean",
+                "cluster17_WT2.ExprMean",
+                "cluster17_WT3.ExprMean"
+            ],
+            "SteleG5-XylemCells23": [
+                "cluster23_WT1.ExprMean",
+                "cluster23_WT2.ExprMean",
+                "cluster23_WT3.ExprMean"
+            ],
+            "SteleG0-SteleCellsIncludingPericyte7": [
+                "cluster7_WT1.ExprMean",
+                "cluster7_WT2.ExprMean",
+                "cluster7_WT3.ExprMean"
+            ],
+            "CortexG6-CortexCells11": [
+                "cluster11_WT1.ExprMean",
+                "cluster11_WT2.ExprMean",
+                "cluster11_WT3.ExprMean"
+            ],
+            "RootCapG1-ColumellaRootCapCells28": [
+                "cluster28_WT1.ExprMean",
+                "cluster28_WT2.ExprMean",
+                "cluster28_WT3.ExprMean"
+            ],
+            "RootCapG1-DividingMeristemCells25": [
+                "cluster25_WT1.ExprMean",
+                "cluster25_WT2.ExprMean",
+                "cluster25_WT3.ExprMean"
+            ],
+            "SteleCellsG0-PhloemCells21": [
+                "cluster21_WT1.ExprMean",
+                "cluster21_WT2.ExprMean",
+                "cluster21_WT3.ExprMean"
+            ],
+            "SteleG0-SteleCells34": [
+                "cluster34_WT1.ExprMean",
+                "cluster34_WT2.ExprMean",
+                "cluster34_WT3.ExprMean"
+            ],
+            "SteleG0-SteleCellsIncludingPericyte14": [
+                "cluster14_WT1.ExprMean",
+                "cluster14_WT2.ExprMean",
+                "cluster14_WT3.ExprMean"
+            ],
+            "CortexG6-DifferentiatingEndodermisCortexCells30": [
+                "cluster30_WT1.ExprMean",
+                "cluster30_WT2.ExprMean",
+                "cluster30_WT3.ExprMean"
+            ],
+            "EndocortexG2-DifferentiatingEndodermisCortexCells0": [
+                "cluster0_WT1.ExprMean",
+                "cluster0_WT2.ExprMean",
+                "cluster0_WT3.ExprMean"
+            ],
+            "SteleG0-SteleCells6": [
+                "cluster6_WT1.ExprMean",
+                "cluster6_WT2.ExprMean",
+                "cluster6_WT3.ExprMean"
+            ],
+            "SteleG5-SteleCells9": [
+                "cluster9_WT1.ExprMean",
+                "cluster9_WT2.ExprMean",
+                "cluster9_WT3.ExprMean"
+            ],
+            "EpidermisHG4-EarlyStageDifferentiatingRootHairEpidermalCells15": [
+                "cluster15_WT1.ExprMean",
+                "cluster15_WT2.ExprMean",
+                "cluster15_WT3.ExprMean"
+            ],
+            "EndocortexG2-DifferentiatingEndodermisCortexCells29": [
+                "cluster29_WT1.ExprMean",
+                "cluster29_WT2.ExprMean",
+                "cluster29_WT3.ExprMean"
+            ],
+            "EpidermisHG8-RootHairEpidermalCells26": [
+                "cluster26_WT1.ExprMean",
+                "cluster26_WT2.ExprMean",
+                "cluster26_WT3.ExprMean"
+            ],
+            "EpidermisNG3-DifferentiatingNonHairEpidermalCells1": [
+                "cluster1_WT1.ExprMean",
+                "cluster1_WT2.ExprMean",
+                "cluster1_WT3.ExprMean"
+            ],
+            "EpidermisHG8-RootHairEpidermalCells10": [
+                "cluster10_WT1.ExprMean",
+                "cluster10_WT2.ExprMean",
+                "cluster10_WT3.ExprMean"
+            ],
+            "EndodermisG7-EndodermisCells12": [
+                "cluster12_WT1.ExprMean",
+                "cluster12_WT2.ExprMean",
+                "cluster12_WT3.ExprMean",
+                "pg_3"
+            ],
+            "SteleG5-SteleCells18": [
+                "cluster18_WT1.ExprMean",
+                "cluster18_WT2.ExprMean",
+                "cluster18_WT3.ExprMean"
+            ],
+            "SteleG5-ProtoxylemCells33": [
+                "cluster33_WT1.ExprMean",
+                "cluster33_WT2.ExprMean",
+                "cluster33_WT3.ExprMean"
+            ],
+            "SteleG5-XylemCells27": [
+                "cluster27_WT1.ExprMean",
+                "cluster27_WT2.ExprMean",
+                "cluster27_WT3.ExprMean"
+            ],
+            "EndocortexG2-EarlyStageDifferentiatingEndodermisCortexCells13": [
+                "cluster13_WT1.ExprMean",
+                "cluster13_WT2.ExprMean",
+                "cluster13_WT3.ExprMean"
+            ],
+            "SteleG0-SteleCells20": [
+                "cluster20_WT1.ExprMean",
+                "cluster20_WT2.ExprMean",
+                "cluster20_WT3.ExprMean"
+            ],
+            "RootCapG1-DifferentiatingRootCapCells8": [
+                "cluster8_WT1.ExprMean",
+                "cluster8_WT2.ExprMean",
+                "cluster8_WT3.ExprMean"
+            ],
+            "EpidermisHG4-MidStageDifferentiatingRootHairEpidermalCells4": [
+                "cluster4_WT1.ExprMean",
+                "cluster4_WT2.ExprMean",
+                "cluster4_WT3.ExprMean"
+            ],
+            "EpidermisNG3-NonHairEpidermalCells16": [
+                "cluster16_WT1.ExprMean",
+                "cluster16_WT2.ExprMean",
+                "cluster16_WT3.ExprMean"
+            ],
+            "EndodermisG7-EndodermisCells22": [
+                "cluster22_WT1.ExprMean",
+                "cluster22_WT2.ExprMean",
+                "cluster22_WT3.ExprMean"
+            ],
+            "EndocortexG2-EarlyStageDifferentiatingEndodermisCortexCells35": [
+                "cluster35_WT1.ExprMean",
+                "cluster35_WT2.ExprMean",
+                "cluster35_WT3.ExprMean"
+            ],
+            "EpidermisHG4-LateStageDifferentiatingRootHairEpidermalCells3": [
+                "cluster3_WT1.ExprMean",
+                "cluster3_WT2.ExprMean",
+                "cluster3_WT3.ExprMean"
+            ],
+            "RootCapG1-DividingMeristemCells24": [
+                "cluster24_WT1.ExprMean",
+                "cluster24_WT2.ExprMean",
+                "cluster24_WT3.ExprMean"
+            ],
+            "RootCapG1-LateralRootCapCells2": [
+                "cluster2_WT1.ExprMean",
+                "cluster2_WT2.ExprMean",
+                "cluster2_WT3.ExprMean"
+            ],
+            "EpidermisNG3-EarlyStageDifferentiatingNonHairEpidermalCells5": [
+                "cluster5_WT1.ExprMean",
+                "cluster5_WT2.ExprMean",
+                "cluster5_WT3.ExprMean"
+            ],
+            "EndocortexG2-DividingMeristemCells32": [
+                "cluster32_WT1.ExprMean",
+                "cluster32_WT2.ExprMean",
+                "cluster32_WT3.ExprMean"
+            ]
+        },
+        "db": "single_cell",
+        "description": {
+            "CortexG6-CortexCells31": "Cortex cells (31)",
+            "CortexG6-CortexCells19": "Cortex cells (19)",
+            "RootCapG1-QuiescentCenterCellsAndYoungMeristemCells17": "Quiescent center cells and young meristem cells (17)",
+            "SteleG5-XylemCells23": "Xylem cells (23)",
+            "SteleG0-SteleCellsIncludingPericyte7": "Stele cells (including pericyte) (7)",
+            "CortexG6-CortexCells11": "Cortex cells (11)",
+            "RootCapG1-ColumellaRootCapCells28": "Columella root cap cells (28)",
+            "RootCapG1-DividingMeristemCells25": "Dividing meristem cells (25)",
+            "SteleG0-PhloemCells21": "Phloem cells (21)",
+            "SteleG0-SteleCells34": "Stele cells (34)",
+            "SteleG0-SteleCellsIncludingPericyte14": "Stele cells (including pericyte) (14)",
+            "CortexG6-DifferentiatingEndodermisCortexCells30": "Differentiating endodermis/cortex cells (30)",
+            "EndocortexG2-DifferentiatingEndodermisCortexCells0": "Differentiating endodermis/cortex cells (0)",
+            "SteleG0-SteleCells6": "Stele cells (6)",
+            "SteleG5-SteleCells9": "Stele cells (9)",
+            "EpidermisHG4-EarlyStageDifferentiatingRootHairEpidermalCells15": "Early-stage differentiating root hair epidermal cells (15)",
+            "EndocortexG2-DifferentiatingEndodermisCortexCells29": "Differentiating endodermis/cortex cells (29)",
+            "EpidermisHG8-RootHairEpidermalCells26": "Root hair epidermal cells (26)",
+            "EpidermisNG3-DifferentiatingNonHairEpidermalCells1": "Differentiating non-hair epidermal cells (1)",
+            "EpidermisHG8-RootHairEpidermalCells10": "Root hair epidermal cells (10)",
+            "EndodermisG7-EndodermisCells12": "Endodermis cells (12)",
+            "SteleG5-SteleCells18": "Stele cells (18)",
+            "SteleG5-ProtoxylemCells33": "Protoxylem cells (33)",
+            "SteleG5-XylemCells27": "Xylem cells (27)",
+            "EndocortexG2-EarlyStageDifferentiatingEndodermisCortexCells13": "Early-stage differentiating endodermis/cortex cells (13)",
+            "SteleG0-SteleCells20": "Stele cells (20)",
+            "RootCapG1-DifferentiatingRootCapCells8": "Differentiating lateral root cap cells (8)",
+            "EpidermisHG4-MidStageDifferentiatingRootHairEpidermalCells4": "Mid-stage differentiating root hair epidermal cells (4)",
+            "EpidermisNG3-NonHairEpidermalCells16": "Non-hair epidermal cells (16)",
+            "EndodermisG7-EndodermisCells22": "Endodermis cells (22)",
+            "EndocortexG2-EarlyStageDifferentiatingEndodermisCortexCells35": "Early-stage differentiating endodermis/cortex cells (35)",
+            "EpidermisHG4-LateStageDifferentiatingRootHairEpidermalCells3": "Late-stage differentiating root hair epidermal cells (3)",
+            "RootCapG1-DividingMeristemCells24": "Dividing meristem cells (24)",
+            "RootCapG1-LateralRootCapCells2": "Lateral root cap cells (2)",
+            "EpidermisNG3-EarlyStageDifferentiatingNonHairEpidermalCells5": "Early-stage differentiating root hair epidermal cells (5)",
+            "EndocortexG2-DividingMeristemCells32": "Dividing meristem cells (32)"
+        },
+        "controlComparison": {
+            "Med_CTRL": [
+                "Endodermis cells (12)",
+                "Endodermis cells (22)",
+                "Differentiating endodermis/cortex cells (0)",
+                "Differentiating endodermis/cortex cells (29)",
+                "Early-stage differentiating endodermis/cortex cells (13)",
+                "Early-stage differentiating endodermis/cortex cells (35)",
+                "Dividing meristem cells (32)",
+                "Late-stage differentiating root hair epidermal cells (3)",
+                "Mid-stage differentiating root hair epidermal cells (4)",
+                "Early-stage differentiating root hair epidermal cells (15)",
+                "Root hair epidermal cells (26)",
+                "Root hair epidermal cells (10)",
+                "Protoxylem cells (33)",
+                "Xylem cells (27)",
+                "Xylem cells (23)",
+                "Stele cells (18)",
+                "Stele cells (9)",
+                "Cortex cells (11)",
+                "Cortex cells (19)",
+                "Cortex cells (31)",
+                "Differentiating endodermis/cortex cells (30)",
+                "Early-stage differentiating root hair epidermal cells (5)",
+                "Non-hair epidermal cells (16)",
+                "Differentiating non-hair epidermal cells (1)",
+                "Dividing meristem cells (25)",
+                "Quiescent center cells and young meristem cells (17)",
+                "Dividing meristem cells (24)",
+                "Differentiating lateral root cap cells (8)",
+                "Lateral root cap cells (2)",
+                "Columella root cap cells (28)",
+                "Stele cells (34)",
+                "Stele cells (6)",
+                "Stele cells (including pericyte) (14)",
+                "Stele cells (including pericyte) (7)",
+                "Stele cells (20)",
+                "Phloem cells (21)"
+            ]
+        }
+    },
     "Seed": {
         "name": "Seed",
         "sample": {
@@ -7116,7 +7381,7 @@
             "DAP12": "Silique 12DAP"
         },
         "controlComparison": {},
-        "db": "Silique"
+        "db": "silique"
     },
     "TissueSpecificEmbryoDevelopment": {
         "name": "Tissue Specific: Embryo Development",
@@ -8897,270 +9162,5 @@
             ]
         },
         "db": "atgenexp_plus"
-    },
-    "scRNASeq": {
-        "name": "Single Cell",
-        "sample": {
-            "CortexG6-CortexCells31": [
-                "cluster31_WT1.ExprMean ",
-                "cluster31_WT2.ExprMean ",
-                "cluster31_WT3.ExprMean "
-            ],
-            "CortexG6-CortexCells19": [
-                "cluster19_WT1.ExprMean ",
-                "cluster19_WT2.ExprMean ",
-                "cluster19_WT3.ExprMean "
-            ],
-            "RootCapG1-QuiescentCenterCellsAndYoungMeristemCells17": [
-                "cluster17_WT1.ExprMean ",
-                "cluster17_WT2.ExprMean ",
-                "cluster17_WT3.ExprMean "
-            ],
-            "SteleG5-XylemCells23": [
-                "cluster23_WT1.ExprMean ",
-                "cluster23_WT2.ExprMean ",
-                "cluster23_WT3.ExprMean "
-            ],
-            "SteleG0-SteleCellsIncludingPericyte7": [
-                "cluster7_WT1.ExprMean ",
-                "cluster7_WT2.ExprMean ",
-                "cluster7_WT3.ExprMean "
-            ],
-            "CortexG6-CortexCells11": [
-                "cluster11_WT1.ExprMean ",
-                "cluster11_WT2.ExprMean ",
-                "cluster11_WT3.ExprMean "
-            ],
-            "RootCapG1-ColumellaRootCapCells28": [
-                "cluster28_WT1.ExprMean ",
-                "cluster28_WT2.ExprMean ",
-                "cluster28_WT3.ExprMean "
-            ],
-            "RootCapG1-DividingMeristemCells25": [
-                "cluster25_WT1.ExprMean ",
-                "cluster25_WT2.ExprMean ",
-                "cluster25_WT3.ExprMean "
-            ],
-            "SteleG0-PhloemCells21": [
-                "cluster21_WT1.ExprMean ",
-                "cluster21_WT2.ExprMean ",
-                "cluster21_WT3.ExprMean "
-            ],
-            "SteleG0-SteleCells34": [
-                "cluster34_WT1.ExprMean ",
-                "cluster34_WT2.ExprMean ",
-                "cluster34_WT3.ExprMean "
-            ],
-            "SteleG0-SteleCellsIncludingPericyte14": [
-                "cluster14_WT1.ExprMean ",
-                "cluster14_WT2.ExprMean ",
-                "cluster14_WT3.ExprMean "
-            ],
-            "CortexG6-DifferentiatingEndodermisCortexCells30": [
-                "cluster30_WT1.ExprMean ",
-                "cluster30_WT2.ExprMean ",
-                "cluster30_WT3.ExprMean "
-            ],
-            "EndocortexG2-DifferentiatingEndodermisCortexCells0": [
-                "cluster0_WT1.ExprMean ",
-                "cluster0_WT2.ExprMean ",
-                "cluster0_WT3.ExprMean "
-            ],
-            "SteleG0-SteleCells6": [
-                "cluster6_WT1.ExprMean ",
-                "cluster6_WT2.ExprMean ",
-                "cluster6_WT3.ExprMean "
-            ],
-            "SteleG5-SteleCells9": [
-                "cluster9_WT1.ExprMean ",
-                "cluster9_WT2.ExprMean ",
-                "cluster9_WT3.ExprMean "
-            ],
-            "EpidermisHG4-EarlyStageDifferentiatingRootHairEpidermalCells15": [
-                "cluster15_WT1.ExprMean ",
-                "cluster15_WT2.ExprMean ",
-                "cluster15_WT3.ExprMean "
-            ],
-            "EndocortexG2-DifferentiatingEndodermisCortexCells29": [
-                "cluster29_WT1.ExprMean ",
-                "cluster29_WT2.ExprMean ",
-                "cluster29_WT3.ExprMean "
-            ],
-            "EpidermisHG8-RootHairEpidermalCells26": [
-                "cluster26_WT1.ExprMean ",
-                "cluster26_WT2.ExprMean ",
-                "cluster26_WT3.ExprMean "
-            ],
-            "EpidermisNG3-DifferentiatingNonHairEpidermalCells1": [
-                "cluster1_WT1.ExprMean ",
-                "cluster1_WT2.ExprMean ",
-                "cluster1_WT3.ExprMean "
-            ],
-            "EpidermisHG8-RootHairEpidermalCells10": [
-                "cluster10_WT1.ExprMean ",
-                "cluster10_WT2.ExprMean ",
-                "cluster10_WT3.ExprMean "
-            ],
-            "EndodermisG7-EndodermisCells12": [
-                "cluster12_WT1.ExprMean ",
-                "cluster12_WT2.ExprMean ",
-                "cluster12_WT3.ExprMean ",
-                "pg_3"
-            ],
-            "SteleG5-SteleCells18": [
-                "cluster18_WT1.ExprMean ",
-                "cluster18_WT2.ExprMean ",
-                "cluster18_WT3.ExprMean "
-            ],
-            "SteleG5-ProtoxylemCells33": [
-                "cluster33_WT1.ExprMean ",
-                "cluster33_WT2.ExprMean ",
-                "cluster33_WT3.ExprMean "
-            ],
-            "SteleG5-XylemCells27": [
-                "cluster27_WT1.ExprMean ",
-                "cluster27_WT2.ExprMean ",
-                "cluster27_WT3.ExprMean "
-            ],
-            "EndocortexG2-EarlyStageDifferentiatingEndodermisCortexCells13": [
-                "cluster13_WT1.ExprMean ",
-                "cluster13_WT2.ExprMean ",
-                "cluster13_WT3.ExprMean "
-            ],
-            "SteleG0-SteleCells20": [
-                "cluster20_WT1.ExprMean ",
-                "cluster20_WT2.ExprMean ",
-                "cluster20_WT3.ExprMean "
-            ],
-            "RootCapG1-DifferentiatingRootCapCells8": [
-                "cluster8_WT1.ExprMean ",
-                "cluster8_WT2.ExprMean ",
-                "cluster8_WT3.ExprMean "
-            ],
-            "EpidermisHG4-MidStageDifferentiatingRootHairEpidermalCells4": [
-                "cluster4_WT1.ExprMean ",
-                "cluster4_WT2.ExprMean ",
-                "cluster4_WT3.ExprMean "
-            ],
-            "EpidermisNG3-NonHairEpidermalCells16": [
-                "cluster16_WT1.ExprMean ",
-                "cluster16_WT2.ExprMean ",
-                "cluster16_WT3.ExprMean "
-            ],
-            "EndodermisG7-EndodermisCells22": [
-                "cluster22_WT1.ExprMean ",
-                "cluster22_WT2.ExprMean ",
-                "cluster22_WT3.ExprMean "
-            ],
-            "EndocortexG2-EarlyStageDifferentiatingEndodermisCortexCells35": [
-                "cluster35_WT1.ExprMean ",
-                "cluster35_WT2.ExprMean ",
-                "cluster35_WT3.ExprMean "
-            ],
-            "EpidermisHG4-LateStageDifferentiatingRootHairEpidermalCells3": [
-                "cluster3_WT1.ExprMean ",
-                "cluster3_WT2.ExprMean ",
-                "cluster3_WT3.ExprMean "
-            ],
-            "RootCapG1-DividingMeristemCells24": [
-                "cluster24_WT1.ExprMean ",
-                "cluster24_WT2.ExprMean ",
-                "cluster24_WT3.ExprMean "
-            ],
-            "RootCapG1-LateralRootCapCells2": [
-                "cluster2_WT1.ExprMean ",
-                "cluster2_WT2.ExprMean ",
-                "cluster2_WT3.ExprMean "
-            ],
-            "EpidermisNG3-EarlyStageDifferentiatingNonHairEpidermalCells5": [
-                "cluster5_WT1.ExprMean ",
-                "cluster5_WT2.ExprMean ",
-                "cluster5_WT3.ExprMean "
-            ],
-            "EndocortexG2-DividingMeristemCells32": [
-                "cluster32_WT1.ExprMean ",
-                "cluster32_WT2.ExprMean ",
-                "cluster32_WT3.ExprMean "
-            ]
-        },
-        "db": "single_cell",
-        "description": {
-            "CortexG6-CortexCells31": "Cortex cells (31)",
-            "CortexG6-CortexCells19": "Cortex cells (19)",
-            "RootCapG1-QuiescentCenterCellsAndYoungMeristemCells17": "Quiescent center cells and young meristem cells (17)",
-            "SteleG5-XylemCells23": "Xylem cells (23)",
-            "SteleG0-SteleCellsIncludingPericyte7": "Stele cells (including pericyte) (7)",
-            "CortexG6-CortexCells11": "Cortex cells (11)",
-            "RootCapG1-ColumellaRootCapCells28": "Columella root cap cells (28)",
-            "RootCapG1-DividingMeristemCells25": "Dividing meristem cells (25)",
-            "SteleG0-PhloemCells21": "Phloem cells (21)",
-            "SteleG0-SteleCells34": "Stele cells (34)",
-            "SteleG0-SteleCellsIncludingPericyte14": "Stele cells (including pericyte) (14)",
-            "CortexG6-DifferentiatingEndodermisCortexCells30": "Differentiating endodermis/cortex cells (30)",
-            "EndocortexG2-DifferentiatingEndodermisCortexCells0": "Differentiating endodermis/cortex cells (0)",
-            "SteleG0-SteleCells6": "Stele cells (6)",
-            "SteleG5-SteleCells9": "Stele cells (9)",
-            "EpidermisHG4-EarlyStageDifferentiatingRootHairEpidermalCells15": "Early-stage differentiating root hair epidermal cells (15)",
-            "EndocortexG2-DifferentiatingEndodermisCortexCells29": "Differentiating endodermis/cortex cells (29)",
-            "EpidermisHG8-RootHairEpidermalCells26": "Root hair epidermal cells (26)",
-            "EpidermisNG3-DifferentiatingNonHairEpidermalCells1": "Differentiating non-hair epidermal cells (1)",
-            "EpidermisHG8-RootHairEpidermalCells10": "Root hair epidermal cells (10)",
-            "EndodermisG7-EndodermisCells12": "Endodermis cells (12)",
-            "SteleG5-SteleCells18": "Stele cells (18)",
-            "SteleG5-ProtoxylemCells33": "Protoxylem cells (33)",
-            "SteleG5-XylemCells27": "Xylem cells (27)",
-            "EndocortexG2-EarlyStageDifferentiatingEndodermisCortexCells13": "Early-stage differentiating endodermis/cortex cells (13)",
-            "SteleG0-SteleCells20": "Stele cells (20)",
-            "RootCapG1-DifferentiatingRootCapCells8": "Differentiating lateral root cap cells (8)",
-            "EpidermisHG4-MidStageDifferentiatingRootHairEpidermalCells4": "Mid-stage differentiating root hair epidermal cells (4)",
-            "EpidermisNG3-NonHairEpidermalCells16": "Non-hair epidermal cells (16)",
-            "EndodermisG7-EndodermisCells22": "Endodermis cells (22)",
-            "EndocortexG2-EarlyStageDifferentiatingEndodermisCortexCells35": "Early-stage differentiating endodermis/cortex cells (35)",
-            "EpidermisHG4-LateStageDifferentiatingRootHairEpidermalCells3": "Late-stage differentiating root hair epidermal cells (3)",
-            "RootCapG1-DividingMeristemCells24": "Dividing meristem cells (24)",
-            "RootCapG1-LateralRootCapCells2": "Lateral root cap cells (2)",
-            "EpidermisNG3-EarlyStageDifferentiatingNonHairEpidermalCells5": "Early-stage differentiating root hair epidermal cells (5)",
-            "EndocortexG2-DividingMeristemCells32": "Dividing meristem cells (32)"
-        },
-        "controlComparison": {
-            "Med_CTRL": [
-                "Endodermis cells (12)",
-                "Endodermis cells (22)",
-                "Differentiating endodermis/cortex cells (0)",
-                "Differentiating endodermis/cortex cells (29)",
-                "Early-stage differentiating endodermis/cortex cells (13)",
-                "Early-stage differentiating endodermis/cortex cells (35)",
-                "Dividing meristem cells (32)",
-                "Late-stage differentiating root hair epidermal cells (3)",
-                "Mid-stage differentiating root hair epidermal cells (4)",
-                "Early-stage differentiating root hair epidermal cells (15)",
-                "Root hair epidermal cells (26)",
-                "Root hair epidermal cells (10)",
-                "Protoxylem cells (33)",
-                "Xylem cells (27)",
-                "Xylem cells (23)",
-                "Stele cells (18)",
-                "Stele cells (9)",
-                "Cortex cells (11)",
-                "Cortex cells (19)",
-                "Cortex cells (31)",
-                "Differentiating endodermis/cortex cells (30)",
-                "Early-stage differentiating root hair epidermal cells (5)",
-                "Non-hair epidermal cells (16)",
-                "Differentiating non-hair epidermal cells (1)",
-                "Dividing meristem cells (25)",
-                "Quiescent center cells and young meristem cells (17)",
-                "Dividing meristem cells (24)",
-                "Differentiating lateral root cap cells (8)",
-                "Lateral root cap cells (2)",
-                "Columella root cap cells (28)",
-                "Stele cells (34)",
-                "Stele cells (6)",
-                "Stele cells (including pericyte) (14)",
-                "Stele cells (including pericyte) (7)",
-                "Stele cells (20)",
-                "Phloem cells (21)"
-            ]
-        }
     }
 }
