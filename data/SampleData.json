@@ -1070,7 +1070,7 @@
         "db": "atgenexp_stress"
     },
     "AtGenExpress": {
-        "name": "Developmental Map",
+        "name": "Developmental Map - AtGenExpress",
         "sample": {
             "ATGE_CTRL_7": [
                 "ATGE_CTRL_7"
@@ -7103,17 +7103,19 @@
     },
     "SiliqueDevelopment": {
         "name": "Silique Development",
+        "sample": {
+            "DAP3": ["3_dap-1_AGTTCC_L006_R1_001", "3_dap-2_GAGTGG_L006_R1_001", "3_dap-3_ATTCCT_L006_R1_001"],
+            "DAP6": ["6_dap-1_CGATGT_L005_R1_001", "6_dap-2_TTAGGC_L005_R1_001", "6_dap-3_TGACCA_L005_R1_001", "6_dap_n_1_ATCACG_L001_R1_001_6_dap_n_1_ATCACG_L002_R1_001", "6_dap_n_2_TGACCA_L001_R1_001_6_dap_n_2_TGACCA_L002_R1_001", "6_dap_n_3_ACAGTG_L001_R1_001_6_dap_n_3_ACAGTG_L002_R1_001"],
+            "DAP9": ["9_dap-1_CAGATC_L005_R1_001", "9_dap-2_GATCAG_L005_R1_001" ,"9_dap-3_ACTGAT_L005_R1_001", "9_dap_n_1_ACTTGA_L001_R1_001_9_dap_n_1_ACTTGA_L002_R1_001", "9_dap_n_2_TAGCTT_L001_R1_001_9_dap_n_2_TAGCTT_L002_R1_001", "9_dap_n_3_GGCTAC_L001_R1_001_9_dap_n_3_GGCTAC_L002_R1_001"],
+            "DAP12": ["12_dap-1_ATCACG_L006_R1_001", "12_dap-2_ACAGTG_L006_R1_001", "12_dap-3_GGCTAC_L006_R1_001"]
+        },
         "description": {
             "DAP3": "Silique 3DAP",
             "DAP6": "Silique 6DAP",
             "DAP9": "Silique 9DAP",
             "DAP12": "Silique 12DAP"
         },
-        "controlComparison": {
-            "siliqueDevelopment": [
-                "Control - Epidermis"
-            ]
-        },
+        "controlComparison": {},
         "db": "Silique"
     },
     "TissueSpecificEmbryoDevelopment": {

@@ -595,7 +595,7 @@ class CreateSVGExpressionData {
         appendSVG += '<b>' + svgName + '</b></br>';
 
         // Create call for SVG file
-        var urlSVG = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/compendiums/' + svgUse + '.min.svg';
+        var urlSVG = 'https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/compendiums/' + svgUse + '.min.svg';
         var methods = {mode: 'cors'};
 
         fetch(urlSVG, methods).then(
