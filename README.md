@@ -18,7 +18,17 @@ For the ePlant Plant eFP to work correctly, you need to call the CreateSVGExpres
 // A variable already exists called createSVGExpressionData for CreateSVGExpressionData 
 // but if you wish to create your own function, just instantiate a new one 
 // through variableName = new CreateSVGExpressionData();
-createSVGExpressionData.generateSVG('AbioticStress', 'AT3G24650', 'desiredDOM');
+
+// To create your own visualized tissue expression, call generateSVG(). Documentation below:
+// /**
+//  * Create and generate an SVG based on the desired tissue expression locus
+//  * @param {String} desiredDOMid The desired DOM location or if kept empty, returns the string version of the output
+//  * @param {String} svgName Name of the SVG file without the .svg at the end. Default is set to "default", when left this value, the highest expression value (if any) is chosen and if not, then Abiotic Stress is. 
+//  * @param {String} locus The AGI ID (example: AT3G24650) 
+//  * @param {Boolean} includeDropdownAll true = include a html dropdown/select of all available SVGs/samples, false = don't
+//  * @returns {String} If no desiredDOMid is given, returns the string version of the output instead
+//  */
+createSVGExpressionData.generateSVG('desiredDOM', 'default', 'AT3G24650');
 ```
 
 This will display the visualized and coloured tissue expression data within the desired location. 
@@ -29,7 +39,7 @@ Instructions with an example can be found here: [https://bar.utoronto.ca/~asulli
 
 Chrome | Firefox | IE | Edge | Safari | Opera | Mobile
 --- | --- | --- | --- | --- | --- | --- |
-✔ |  ✔ | ? |  ✔ | ? |  ✔ | ✔ | 
+✔ |  ✔ | X |  ✔ | ? |  ✔ | ✔ | 
 
 ## Known issues
 
@@ -48,4 +58,5 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 
 * Alexander Sullivan - [GitHub](https://github.com/ASully), [Twitter](https://twitter.com/alexjsully), [ORCiD](https://orcid.org/0000-0002-4463-4473), [LinkedIn](https://www.linkedin.com/in/alexanderjsullivan/)
 * Asher Pasha - [Github](https://github.com/asherpasha), [Twitter](https://twitter.com/AsherPasha), [ORCiD](https://orcid.org/0000-0002-9315-0520)
+* Youyang Li - [Github](https://github.com/lyy321) 
 * Nicholas J. Provart - [Github](https://github.com/BioAnalyticResource), [Twitter](https://twitter.com/BAR_PlantBio), [Website](https://bar.utoronto.ca)
