@@ -842,25 +842,25 @@ class CreateSVGExpressionData {
     colourSVGs(whichSVG, svgSubunits) {
         for (var i = 0; i < svgSubunits.length; i++) {
             // Colouring values
-            var denominator = this.svgMaxAverage - this.svgMinAverage;
-            var numerator = this.svgValues[svgSubunits[i]]['average'] - this.svgMinAverage;
+            var denominator = this.svgMaxAverage;
+            var numerator = this.svgValues[svgSubunits[i]]['average'];
             if (numerator < 0) {
                 numerator = 0;
             };
             var percentage = (numerator/denominator) * 100;
             if (percentage > 100) {
                 percentage = 100;
-            } else if ((percentage < 0) ||(percentage === undefined) || (percentage === null)) {
+            } else if (!percentage || percentage < 0) {
                 percentage = 0;
             };
-            var expressionLevel = parseFloat(numerator + this.svgMinAverage).toFixed(3);
+            // Retrieve colouring information
+            var colourFill = this.percentageToColour(percentage);
+
+            var expressionLevel = parseFloat(numerator).toFixed(3);
             var sampleSize = this.svgValues[svgSubunits[i]].rawValues.length;
 
             this.svgValues[svgSubunits[i]]['expressionLevel'] = expressionLevel;
             this.svgValues[svgSubunits[i]]['sampleSize'] = sampleSize;
-
-            // Retrieve colouring information
-            var colourFill = this.percentageToColour(percentage);
 
             // Begin colouring SVG subunits
             this.colourSVGSubunit(whichSVG, svgSubunits[i], colourFill, expressionLevel, sampleSize);
@@ -1035,7 +1035,7 @@ class CreateSVGExpressionData {
         var percentageInt = parseInt(percentage);
 
         // From 0% to 100% as integers 
-        var colourList = ['#ffff00','#fffd00','#fffc00','#fff900','#fff800','#fff600','#fff500','#fff300','#fff200','#fff000','#ffee00','#ffec00','#ffeb00','#ffe800','#ffe700','#ffe600','#ffe300','#ffe100','#ffe000','#ffdf00','#ffdd00','#ffdb00','#ffda00','#ffd800','#ffd600','#ffd300','#ffd200','#ffd000','#ffcf00','#ffcc00','#ffcb00','#ffc900','#ffc700','#ffc500','#ffc300','#ffc300','#ffc000','#ffbf00','#ffbd00','#ffbb00','#ffb900','#ffb800','#ffb500','#ffb300','#ffb200','#ffb000','#ffad00','#ffac00','#ffa900','#ffa800','#ffa600','#ffa400','#ffa200','#ffa100','#ff9e00','#ff9c00','#ff9a00','#ff9900','#ff9600','#ff9400','#ff9300','#ff9000','#ff8f00','#ff8c00','#ff8900','#ff8700','#ff8600','#ff8300','#ff8200','#ff7f00','#ff7c00','#ff7b00','#ff7800','#ff7600','#ff7300','#ff7100','#ff6e00','#ff6c00','#ff6900','#ff6700','#ff6500','#ff6100','#ff5e00','#ff5c00','#ff5900','#ff5600','#ff5300','#ff5000','#ff4d00','#ff4900','#ff4600','#ff4200','#ff3d00','#ff3a00','#ff3400','#ff3000','#ff2a00','#ff2400','#ff1c00','#ff1100','#ff0000'];
+        var colourList=["#ffff00","#fffc00","#fff900","#fff700","#fef400","#fff200","#ffef00","#feed00","#ffea00","#ffe800","#ffe500","#ffe200","#ffe000","#ffdd00","#ffdb00","#ffd800","#ffd600","#fed300","#ffd100","#ffce00","#ffcc00","#ffc900","#ffc600","#ffc400","#ffc100","#ffbf00","#ffbc00","#ffba00","#ffb700","#feb500","#ffb200","#ffaf00","#ffad00","#ffaa00","#ffa800","#ffa500","#ffa300","#ffa000","#ff9e00","#ff9b00","#ff9900","#ff9600","#ff9300","#ff9100","#ff8e00","#ff8c00","#ff8900","#ff8700","#ff8400","#ff8200","#ff7f00","#ff7c00","#ff7a00","#ff7700","#ff7500","#ff7200","#ff7000","#ff6d00","#ff6b00","#ff6800","#ff6600","#ff6300","#ff6000","#ff5e00","#ff5b00","#ff5900","#ff5600","#ff5400","#ff5100","#ff4f00","#ff4c00","#ff4900","#ff4700","#ff4400","#ff4200","#ff3f00","#ff3d00","#ff3a00","#ff3800","#ff3500","#ff3200","#ff3000","#ff2d00","#ff2b00","#ff2800","#ff2600","#ff2300","#ff2100","#ff1e00","#ff1c00","#ff1900","#ff1600","#ff1400","#ff1100","#ff0f00","#ff0c00","#ff0a00","#ff0700","#ff0500","#ff0200","#ff0000"];
 
         return (colourList[percentageInt]);
     };
