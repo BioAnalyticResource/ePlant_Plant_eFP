@@ -20,101 +20,86 @@ function addTissueMetadata(elementID) {
         svgPart = svgDoc.getElementById(elementID);
         svgPartChildren = svgPart.childNodes;
     };
+
     /** Increase stroke width within SVG by (multiplied) this much */
-    var increaseStrokeWidthBy = 1.3;
+    var increaseStrokeWidthBy = 2.25;
     // Storing stroke widths
     var existingStrokeWidth = undefined, 
-        existingStrokeColour = undefined,
-        doesStrokeDataExist = false;
-    if (svgDoc && svgPartChildren && svgPartChildren.length > 0) {
-        var strokeID = '';
+        existingStrokeColour = undefined;
+
+    if (svgDoc && svgPart) {
         if (svgPart.getAttribute('stroke-width')) {
             existingStrokeWidth = svgPart.getAttribute('stroke-width');
-            doesStrokeDataExist = true;
-        };
 
-        if (svgPart.getAttribute('stroke')) {
-            existingStrokeColour = svgPart.getAttribute('stroke');
-            doesStrokeDataExist = true;
-        };
-        if (doesStrokeDataExist === false) {
+            if (svgPart.getAttribute('stroke')) {
+                existingStrokeColour = svgPart.getAttribute('stroke');
+            };
+        } else if (svgPartChildren.length > 0) {
             for (var s = 0; s < svgPartChildren.length; s++) {
                 if (svgPartChildren[s].nodeName === 'path') {
                     if (svgPartChildren[s].getAttribute('stroke-width')) {
                         existingStrokeWidth = svgPartChildren[s].getAttribute('stroke-width');
-                        doesStrokeDataExist = true;
                     };
     
                     if (svgPartChildren[s].getAttribute('stroke')) {
                         existingStrokeColour = svgPartChildren[s].getAttribute('stroke');
-                        doesStrokeDataExist = true;
                     };
                 };
             };
         };
-        strokeID = elementID;
 
-        if (doesStrokeDataExist) {
-            if (existingStrokeWidth === null || existingStrokeWidth === undefined || existingStrokeData === 0) {
-                existingStrokeWidth = 1;
-            }; 
-            if (existingStrokeColour === null || existingStrokeColour === undefined) {
-                existingStrokeColour = 'none';
+        if (!existingStrokeData[elementID]) {
+            existingStrokeData[elementID] = {};
+            existingStrokeData[elementID]['strokeWidth'] = existingStrokeWidth;
+            existingStrokeData[elementID]['strokeColour'] = existingStrokeColour;
+            existingStrokeData[elementID]['addedMetadata'] = false;
+        };
+
+        // Making stroke width thicker
+        if (svgDoc.getElementById(elementID) && !existingStrokeData[elementID]['addedMetadata']) {
+            existingStrokeData[elementID]['addedMetadata'] = true;
+
+            var strokeElement = svgDoc.getElementById(elementID);
+            
+            existingStrokeWidth = Number(existingStrokeWidth);
+            var newStrokeWidth = existingStrokeWidth * increaseStrokeWidthBy;
+            var maxStrokeWidth = increaseStrokeWidthBy;
+            var minStrokeWidth = increaseStrokeWidthBy / 2;
+
+            if (newStrokeWidth > maxStrokeWidth && maxStrokeWidth > existingStrokeWidth) {
+                newStrokeWidth = maxStrokeWidth;
+            } else if (newStrokeWidth < minStrokeWidth && minStrokeWidth > existingStrokeWidth) {
+                newStrokeWidth = minStrokeWidth;
+            } else if (newStrokeWidth === 0) {
+                newStrokeWidth = increaseStrokeWidthBy;
+            } else if (!newStrokeWidth) {
+                newStrokeWidth = minStrokeWidth;
             };
 
-            if (existingStrokeData[elementID] === undefined) {
-                existingStrokeData[elementID] = {};
-                existingStrokeData[elementID]['strokeDataExist'] = doesStrokeDataExist;
-                existingStrokeData[elementID]['strokeWidth'] = existingStrokeWidth;
-                existingStrokeData[elementID]['strokeColour'] = existingStrokeColour;
-                existingStrokeData[elementID]['strokeID'] = strokeID;
-            } else {
-                existingStrokeData[elementID]['strokeDataExist'] = doesStrokeDataExist;
-                existingStrokeData[elementID]['strokeWidth'] = existingStrokeWidth;
-                existingStrokeData[elementID]['strokeColour'] = existingStrokeColour;
-                existingStrokeData[elementID]['strokeID'] = strokeID;
-            };
+            /** Boolean to determine if metadata has been added already */
+            var addedHoverMetadata = false;
+            if (strokeElement.getAttribute('stroke-width')) {
+                svgDoc.getElementById(elementID).setAttribute('stroke-width', newStrokeWidth);
+                svgDoc.getElementById(elementID).setAttribute('stroke', '#000');
 
-            // Making stroke width thicker
-            if (svgDoc.getElementById(existingStrokeData[elementID]['strokeID'])) {
-                var strokeElement = svgDoc.getElementById(existingStrokeData[elementID]['strokeID']);
-                
-                var newStrokeWidth = existingStrokeWidth * increaseStrokeWidthBy;
-                var maxStrokeWidth = 5;
-                if (newStrokeWidth < maxStrokeWidth || newStrokeWidth === 0) {
-                    if ((increaseStrokeWidthBy * 1.3) < maxStrokeWidth && (increaseStrokeWidthBy * 1.3) !== 0) {
-                        newStrokeWidth = increaseStrokeWidthBy * 1.3;
-                    } else {
-                        newStrokeWidth = 1.3;
-                    };
-                };
+                addedHoverMetadata = true;
+            } else if (svgPartChildren && svgPartChildren.length > 0) {
+                for (var s = 0; s < svgPartChildren.length; s++) {
+                    if (svgPartChildren[s].nodeName === 'path' && svgPartChildren[s].getAttribute('stroke-width')) {
+                        svgPartChildren[s].setAttribute('stroke-width', newStrokeWidth);
 
-                var changedStrokeData = false;
-                if (strokeElement.getAttribute('stroke-width')) {
-                    svgDoc.getElementById(existingStrokeData[elementID]['strokeID']).setAttribute('stroke-width', newStrokeWidth);
-                    svgDoc.getElementById(existingStrokeData[elementID]['strokeID']).setAttribute('stroke', '#000000');
-                    changedStrokeData = true;
-                } else {
-                    if (svgDoc && svgPartChildren && svgPartChildren.length > 0) {
-                        for (var s = 0; s < svgPartChildren.length; s++) {
-                            if (svgPartChildren[s].nodeName === 'path') {
-                                if (svgPartChildren[s].getAttribute('stroke-width')) {
-                                    svgPartChildren[s].setAttribute('stroke-width', newStrokeWidth);
-                                    changedStrokeData = true;
-                                };
-                
-                                if (svgPartChildren[s].getAttribute('stroke')) {
-                                    svgPartChildren[s].setAttribute('stroke', '#000000');
-                                };
-                            };
+                        if (svgPartChildren[s].getAttribute('stroke')) {
+                            svgPartChildren[s].setAttribute('stroke', '#000');
                         };
+
+                        addedHoverMetadata = true;
                     };
                 };
+            };
 
-                if (changedStrokeData === false) {
-                    svgDoc.getElementById(existingStrokeData[elementID]['strokeID']).setAttribute('stroke-width', newStrokeWidth);
-                    svgDoc.getElementById(existingStrokeData[elementID]['strokeID']).setAttribute('stroke', '#000000');
-                };
+            if (!addedHoverMetadata) {
+                svgDoc.getElementById(elementID).setAttribute('stroke-width', newStrokeWidth);
+                svgDoc.getElementById(elementID).setAttribute('stroke', '#000');
             };
         };
     };
@@ -130,6 +115,10 @@ function removeTissueMetadata(elementID) {
         elementID = elementID + '_outline';
     };
 
+    /** A fallback stroke width for the SVG if one is not already pre-determined */
+    var fallbackStrokeWidth = 1;
+    /** A fallback stroke colour (black) for the SVG if one is not already pre-determined */
+    var fallbackStrokeColour = '#000' // Black
     // Retrieve document objects:
     var svgDoc, svgPart, svgPartChildren;
     if (document.getElementById(createSVGExpressionData.svgObjectName) && document.getElementById(createSVGExpressionData.svgObjectName)) {
@@ -137,44 +126,52 @@ function removeTissueMetadata(elementID) {
         svgPart = svgDoc.getElementById(elementID);
         svgPartChildren = svgPart.childNodes;
     };
-    /** use svgDetailsRemoved to double check if been outlined or not */
-    var svgDetailsRemoved = false;
 
-    if (svgDetailsRemoved === false || svgPartChildren.length <= 0 || svgPartChildren === null) {
-        if (svgPart.getAttribute('stroke-width') && existingStrokeData[elementID] && existingStrokeData[elementID]['strokeWidth'] && parseFloat(existingStrokeData[elementID]['strokeWidth']) >= 0) {
-            svgDoc.getElementById(existingStrokeData[elementID]['strokeID']).setAttribute('stroke-width', (existingStrokeData[elementID]['strokeWidth']));
-
-            svgDetailsRemoved = true;
-        };
-
-        if (svgPart.getAttribute('stroke') && existingStrokeData[elementID] && existingStrokeData[elementID]['strokeColour']) {
-            svgDoc.getElementById(existingStrokeData[elementID]['strokeID']).setAttribute('stroke', (existingStrokeData[elementID]['strokeColour']));
-        };
-    };
+    // If existing stroke data exists, then proceed
+    if (existingStrokeData[elementID] && existingStrokeData[elementID]['addedMetadata']) {
+        existingStrokeData[elementID]['addedMetadata'] = false;
+        if (svgPart && svgPart.getAttribute('stroke-width')) {
+            if (Number(existingStrokeData[elementID]['strokeWidth']) >= 0) {
+                svgDoc.getElementById(elementID).setAttribute('stroke-width', (existingStrokeData[elementID]['strokeWidth']));
+            } else if (!existingStrokeData[elementID]['strokeWidth']) {
+                svgDoc.getElementById(elementID).removeAttribute('stroke-width');
+            } else {
+                svgDoc.getElementById(elementID).setAttribute('stroke-width', fallbackStrokeWidth);
+            };
     
-    if (svgDetailsRemoved === false && svgPartChildren.length > 0) {
-        for (var s = 0; s < svgPartChildren.length; s++) {
-            if (svgPartChildren[s].nodeName === 'path') {
-                if (svgPartChildren[s].getAttribute('stroke-width') && existingStrokeData[elementID]['strokeWidth'] && parseFloat(existingStrokeData[elementID]['strokeWidth']) >= 0) {
-                    svgPartChildren[s].setAttribute('stroke-width', (existingStrokeData[elementID]['strokeWidth']));
-                    svgDetailsRemoved = true;
-                } else if (svgPartChildren[s].getAttribute('stroke-width')) {
-                    svgPartChildren[s].setAttribute('stroke-width', 1.3);
-                    svgDetailsRemoved = true;
-                };
-
-                if (svgPartChildren[s].getAttribute('stroke') && existingStrokeData[elementID]['strokeColour']) {
-                    svgPartChildren[s].setAttribute('stroke', (existingStrokeData[elementID]['strokeColour']));
-                } else if (svgPartChildren[s].getAttribute('stroke')) {
-                    svgPartChildren[s].setAttribute('stroke', '#000000');
+            if (svgPart.getAttribute('stroke')) {
+                if (existingStrokeData[elementID]['strokeColour']) {
+                    svgDoc.getElementById(elementID).setAttribute('stroke', (existingStrokeData[elementID]['strokeColour']));
+                } else {
+                    svgDoc.getElementById(elementID).setAttribute('stroke', fallbackStrokeColour);
                 };
             };
-        };
-    };
+        } else if (svgPartChildren.length > 0) {
+            for (var s = 0; s < svgPartChildren.length; s++) {
+                if (svgPartChildren[s].nodeName === 'path') {
+                    if (svgPartChildren[s].getAttribute('stroke-width')) {
+                        if (Number(existingStrokeData[elementID]['strokeWidth']) >= 0) {
+                            svgPartChildren[s].setAttribute('stroke-width', (existingStrokeData[elementID]['strokeWidth']));
+                        } else if (!existingStrokeData[elementID]['strokeWidth']) {
+                            svgDoc.getElementById(elementID).removeAttribute('stroke-width');
+                        } else {
+                            svgPartChildren[s].setAttribute('stroke-width', fallbackStrokeWidth);
+                        };
+                    };
 
-    if (svgDetailsRemoved === false) {
-        svgPart.setAttribute('stroke-width', 1.3);
-        svgPart.setAttribute('stroke', '#000000');
+                    if (svgPartChildren[s].getAttribute('stroke')) {
+                        if (existingStrokeData[elementID]['strokeColour']) {
+                            svgPartChildren[s].setAttribute('stroke', (existingStrokeData[elementID]['strokeColour']));
+                        } else {
+                            svgPartChildren[s].setAttribute('stroke', fallbackStrokeColour);
+                        };
+                    };
+                };
+            };
+        } else {
+            svgPart.setAttribute('stroke-width', fallbackStrokeWidth);
+            svgPart.setAttribute('stroke', fallbackStrokeColour);
+        };
     };
 };
 
