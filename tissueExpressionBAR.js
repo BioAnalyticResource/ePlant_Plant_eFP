@@ -540,7 +540,7 @@ class CreateSVGExpressionData {
 
         // Add dropdown list of all samples to document:
         if (includeDropdownAll && this.sampleOptions) {
-            appendSVG += 'Select SVG to display: <select onchange="createSVGExpressionData.generateSVG(\'' + this.desiredDOMid + '\', this.value.toString(), \'' + locus + '\', ' + includeDropdownAll + ')" id="sampleOptions" value="' + svgName + '">';
+            appendSVG += 'Select SVG to display: <select onchange="window.createSVGExpressionData.generateSVG(\'' + this.desiredDOMid + '\', \'' + locus + '\', this.value.toString(), ' + includeDropdownAll + ')" id="sampleOptions" value="' + svgName + '">';
             var sampleOptions = Object.keys(this.sampleReadableName);
             sampleOptions.sort();
 
@@ -1043,12 +1043,12 @@ class CreateSVGExpressionData {
     /**
      * Create and generate an SVG based on the desired tissue expression locus
      * @param {String} desiredDOMid The desired DOM location or if kept empty, returns the string version of the output
-     * @param {String} svgName Name of the SVG file without the .svg at the end. Default is set to "default", when left this value, the highest expression value (if any) is chosen and if not, then Abiotic Stress is. 
      * @param {String} locus The AGI ID (example: AT3G24650) 
+     * @param {String} svgName Name of the SVG file without the .svg at the end. Default is set to "default", when left this value, the highest expression value (if any) is chosen and if not, then Abiotic Stress is. 
      * @param {Boolean} includeDropdownAll true = include a html dropdown/select of all available SVGs/samples, false = don't
      * @returns {String} If no desiredDOMid is given, returns the string version of the output instead
      */
-    generateSVG(desiredDOMid, svgName = 'default', locus = 'AT3G24650', includeDropdownAll = true) {
+    generateSVG(desiredDOMid, locus = 'AT3G24650', svgName = 'default', includeDropdownAll = true) {
         // Reset variables:
         this.svgValues = {};
         this.svgMax = undefined;
@@ -1069,4 +1069,5 @@ class CreateSVGExpressionData {
 /**
  * Create and retrieve expression data in an SVG format
  */
-const createSVGExpressionData = new CreateSVGExpressionData();
+let createSVGExpressionData = new CreateSVGExpressionData();
+window.createSVGExpressionData = createSVGExpressionData;
