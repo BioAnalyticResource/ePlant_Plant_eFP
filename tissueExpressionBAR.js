@@ -207,6 +207,32 @@ class CreateSVGExpressionData {
         // Store object name:
         this.svgObjectName = '';
     };
+
+    /**
+     * Create and generate an SVG based on the desired tissue expression locus
+     * @param {String} desiredDOMid The desired DOM location or if kept empty, returns the string version of the output
+     * @param {String} locus The AGI ID (example: AT3G24650) 
+     * @param {String} svgName Name of the SVG file without the .svg at the end. Default is set to "default", when left this value, the highest expression value (if any) is chosen and if not, then Abiotic Stress is. 
+     * @param {Boolean} includeDropdownAll true = include a html dropdown/select of all available SVGs/samples, false = don't
+     * @returns {String} If no desiredDOMid is given, returns the string version of the output instead
+     */
+     generateSVG(desiredDOMid, locus = 'AT3G24650', svgName = 'default', includeDropdownAll = true) {
+        // Reset variables:
+        this.svgValues = {};
+        this.svgMax = undefined;
+        this.svgMin = undefined;
+        this.svgMaxAverage = undefined;
+        this.svgMaxAverageSample = undefined;
+        this.svgMinAverage = undefined;
+        this.svgMinAverageSample = undefined;
+        this.includeDropdownAll = includeDropdownAll;
+        if (this.clickList.includes(svgName) === false) {
+            this.clickList.push(svgName);
+        };
+        // Initiate scripts     
+        this.desiredDOMid = desiredDOMid;
+        this.retrieveTopExpressionValues(svgName, locus);
+    };
     
     /**
      * Retrieve information about the top expression values for a specific locus
@@ -689,36 +715,6 @@ class CreateSVGExpressionData {
     };
 
     /**
-     * Calculate the functional standard deviation
-     * Modified from https://www.geeksforgeeks.org/php-program-find-standard-deviation-array/
-     * @param {Array} numbers An array of numbers that the standard deviation will be found for
-     * @return sd Standard deviation
-     */
-    standardDeviationCalc(numbers) {
-        var sd = 0;
-
-        var num_of_elements = numbers.length; 
-
-        if (num_of_elements >= 1) {
-            var variance = 0.0; 
-          
-            var number_sum = 0;
-            for (var i = 0; i < num_of_elements; i++) {
-                number_sum += numbers[i];
-            };
-            var average = number_sum/num_of_elements;
-            
-            for (var x = 0; x < num_of_elements; x++) {
-                variance += (Math.pow((numbers[x] - average), 2));
-            };
-
-            sd = Math.sqrt(variance/num_of_elements);
-        };
-        
-        return sd; 
-    };
-
-    /**
      * Find the maximum, minimum and average values
      * @param {String} whichSVG Name of the SVG file without the .svg at the end
      * @param {Array} svgSubunits A list containing all desired SVG subunits to be interacted with
@@ -835,6 +831,36 @@ class CreateSVGExpressionData {
     };
 
     /**
+     * Calculate the functional standard deviation
+     * Modified from https://www.geeksforgeeks.org/php-program-find-standard-deviation-array/
+     * @param {Array} numbers An array of numbers that the standard deviation will be found for
+     * @return sd Standard deviation
+     */
+    standardDeviationCalc(numbers) {
+        var sd = 0;
+
+        var num_of_elements = numbers.length; 
+
+        if (num_of_elements >= 1) {
+            var variance = 0.0; 
+          
+            var number_sum = 0;
+            for (var i = 0; i < num_of_elements; i++) {
+                number_sum += numbers[i];
+            };
+            var average = number_sum/num_of_elements;
+            
+            for (var x = 0; x < num_of_elements; x++) {
+                variance += (Math.pow((numbers[x] - average), 2));
+            };
+
+            sd = Math.sqrt(variance/num_of_elements);
+        };
+        
+        return sd; 
+    };
+
+    /**
      * Colour the existing SVG that has been created
      * @param {String} whichSVG Name of the SVG file without the .svg at the end
      * @param {Array} svgSubunits A list containing all desired SVG subunits to be interacted with
@@ -847,10 +873,15 @@ class CreateSVGExpressionData {
             if (numerator < 0) {
                 numerator = 0;
             };
-            var percentage = (numerator/denominator) * 100;
+
+            var percentage = null;
+            if (denominator && denominator >= 0) {
+                percentage = (numerator/denominator) * 100;
+            };
+
             if (percentage > 100) {
                 percentage = 100;
-            } else if (!percentage || percentage < 0) {
+            } else if (percentage < 0) {
                 percentage = 0;
             };
             // Retrieve colouring information
@@ -864,6 +895,24 @@ class CreateSVGExpressionData {
 
             // Begin colouring SVG subunits
             this.colourSVGSubunit(whichSVG, svgSubunits[i], colourFill, expressionLevel, sampleSize);
+        };
+    };
+
+    /**
+     * Convert a percentage into a hex-code colour
+     * @param {Number} percentage The percentage between 0 - 100 (as an int) into a colour between yellow and red
+     * @returns {String} Hex-code colour
+     */
+    percentageToColour(percentage) {
+        var percentageInt = parseInt(percentage);
+
+        if (percentageInt >= 0) {
+            // From 0% to 100% as integers 
+            var colourList=["#ffff00","#fffc00","#fff900","#fff700","#fef400","#fff200","#ffef00","#feed00","#ffea00","#ffe800","#ffe500","#ffe200","#ffe000","#ffdd00","#ffdb00","#ffd800","#ffd600","#fed300","#ffd100","#ffce00","#ffcc00","#ffc900","#ffc600","#ffc400","#ffc100","#ffbf00","#ffbc00","#ffba00","#ffb700","#feb500","#ffb200","#ffaf00","#ffad00","#ffaa00","#ffa800","#ffa500","#ffa300","#ffa000","#ff9e00","#ff9b00","#ff9900","#ff9600","#ff9300","#ff9100","#ff8e00","#ff8c00","#ff8900","#ff8700","#ff8400","#ff8200","#ff7f00","#ff7c00","#ff7a00","#ff7700","#ff7500","#ff7200","#ff7000","#ff6d00","#ff6b00","#ff6800","#ff6600","#ff6300","#ff6000","#ff5e00","#ff5b00","#ff5900","#ff5600","#ff5400","#ff5100","#ff4f00","#ff4c00","#ff4900","#ff4700","#ff4400","#ff4200","#ff3f00","#ff3d00","#ff3a00","#ff3800","#ff3500","#ff3200","#ff3000","#ff2d00","#ff2b00","#ff2800","#ff2600","#ff2300","#ff2100","#ff1e00","#ff1c00","#ff1900","#ff1600","#ff1400","#ff1100","#ff0f00","#ff0c00","#ff0a00","#ff0700","#ff0500","#ff0200","#ff0000"];
+
+            return (colourList[percentageInt]);
+        } else {
+            return ("#808080");
         };
     };
 
@@ -1024,46 +1073,6 @@ class CreateSVGExpressionData {
                 };
             };
         };
-    };
-
-    /**
-     * Convert a percentage into a hex-code colour
-     * @param {Number} percentage The percentage between 0 - 100 (as an int) into a colour between yellow and red
-     * @returns {String} Hex-code colour
-     */
-    percentageToColour(percentage) {
-        var percentageInt = parseInt(percentage);
-
-        // From 0% to 100% as integers 
-        var colourList=["#ffff00","#fffc00","#fff900","#fff700","#fef400","#fff200","#ffef00","#feed00","#ffea00","#ffe800","#ffe500","#ffe200","#ffe000","#ffdd00","#ffdb00","#ffd800","#ffd600","#fed300","#ffd100","#ffce00","#ffcc00","#ffc900","#ffc600","#ffc400","#ffc100","#ffbf00","#ffbc00","#ffba00","#ffb700","#feb500","#ffb200","#ffaf00","#ffad00","#ffaa00","#ffa800","#ffa500","#ffa300","#ffa000","#ff9e00","#ff9b00","#ff9900","#ff9600","#ff9300","#ff9100","#ff8e00","#ff8c00","#ff8900","#ff8700","#ff8400","#ff8200","#ff7f00","#ff7c00","#ff7a00","#ff7700","#ff7500","#ff7200","#ff7000","#ff6d00","#ff6b00","#ff6800","#ff6600","#ff6300","#ff6000","#ff5e00","#ff5b00","#ff5900","#ff5600","#ff5400","#ff5100","#ff4f00","#ff4c00","#ff4900","#ff4700","#ff4400","#ff4200","#ff3f00","#ff3d00","#ff3a00","#ff3800","#ff3500","#ff3200","#ff3000","#ff2d00","#ff2b00","#ff2800","#ff2600","#ff2300","#ff2100","#ff1e00","#ff1c00","#ff1900","#ff1600","#ff1400","#ff1100","#ff0f00","#ff0c00","#ff0a00","#ff0700","#ff0500","#ff0200","#ff0000"];
-
-        return (colourList[percentageInt]);
-    };
-
-    /**
-     * Create and generate an SVG based on the desired tissue expression locus
-     * @param {String} desiredDOMid The desired DOM location or if kept empty, returns the string version of the output
-     * @param {String} locus The AGI ID (example: AT3G24650) 
-     * @param {String} svgName Name of the SVG file without the .svg at the end. Default is set to "default", when left this value, the highest expression value (if any) is chosen and if not, then Abiotic Stress is. 
-     * @param {Boolean} includeDropdownAll true = include a html dropdown/select of all available SVGs/samples, false = don't
-     * @returns {String} If no desiredDOMid is given, returns the string version of the output instead
-     */
-    generateSVG(desiredDOMid, locus = 'AT3G24650', svgName = 'default', includeDropdownAll = true) {
-        // Reset variables:
-        this.svgValues = {};
-        this.svgMax = undefined;
-        this.svgMin = undefined;
-        this.svgMaxAverage = undefined;
-        this.svgMaxAverageSample = undefined;
-        this.svgMinAverage = undefined;
-        this.svgMinAverageSample = undefined;
-        this.includeDropdownAll = includeDropdownAll;
-        if (this.clickList.includes(svgName) === false) {
-            this.clickList.push(svgName);
-        };
-        // Initiate scripts     
-        this.desiredDOMid = desiredDOMid;
-        this.retrieveTopExpressionValues(svgName, locus);
     };
 };
 /**
