@@ -1,13 +1,36 @@
 {
   "name": "eplant_plant_efp",
-  "version": "1.0.0",
+  "contributors": [
+    {
+      "name": "Alexander Sullivan",
+      "email": "alexander.j.sullivan@hotmail.com",
+      "url": "https://twitter.com/AlexJSully"
+    },
+    {
+      "name": "Asher Pasha"
+    },
+    {
+      "name": "Youyang Li",
+      "email": "youyang.li@mail.utoronto.ca"
+    },
+    {
+      "name": "Nicholas Provart",
+      "email": "nicholas.provart@utoronto.ca",
+      "url": "https://bar.utoronto.ca/"
+    }
+  ],
+  "version": "1.0.1",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "description": "Data visualization tool to display tissue expression data for Arabidopsis thaliana",
   "main": "tissueExpressionBAR.js",
   "directories": {
     "example": "example"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bugs": {
+    "url": "https://github.com/BioAnalyticResource/ePlant_Plant_eFP/issues"
   },
   "repository": {
     "type": "git",
@@ -22,12 +45,11 @@
     "bioinformatics-data",
     "bioinformatics-visualization",
     "database",
-    "arabidopsis"
+    "arabidopsis",
+    "eplant-plant-efp",
+    "compendiums",
+    "svg"
   ],
-  "author": "BAR Lab @ University of Toronto: Alexander Sullivan, Asher Pasha, Nicholas J. Provart",
   "license": "GPL-2.0",
-  "bugs": {
-    "url": "https://github.com/BioAnalyticResource/ePlant_Plant_eFP/issues"
-  },
   "homepage": "https://github.com/BioAnalyticResource/ePlant_Plant_eFP#readme"
 }

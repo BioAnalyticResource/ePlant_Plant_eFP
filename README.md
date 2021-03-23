@@ -29,6 +29,8 @@ For the ePlant Plant eFP to work correctly, you need to call the CreateSVGExpres
 //  * @returns {String} If no desiredDOMid is given, returns the string version of the output instead
 //  */
 createSVGExpressionData.generateSVG('desiredDOM', 'AT3G24650', 'default');
+// or
+window.createSVGExpressionData.generateSVG('desiredDOM', 'AT3G24650', 'default');
 ```
 
 This will display the visualized and coloured tissue expression data within the desired location. 
@@ -37,9 +39,9 @@ Instructions with an example can be found here: [https://bar.utoronto.ca/~asulli
 
 ## Browser Compatibilities 
 
-Chrome | Firefox | IE | Edge | Safari | Opera | Mobile
---- | --- | --- | --- | --- | --- | --- |
-✔ |  ✔ | X |  ✔ | ? |  ✔ | ✔ | 
+Chrome | Firefox | IE | Edge | Safari | Opera | Tor | Mobile |
+--- | --- | --- | --- | --- | --- | --- | --- |
+✔ |  ✔ | X | ✔ | ? |  ✔ | ✔ | ✔ | 
 
 ## Known issues
 
