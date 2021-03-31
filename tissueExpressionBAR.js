@@ -216,7 +216,7 @@ class CreateSVGExpressionData {
      * @param {Boolean} includeDropdownAll true = include a html dropdown/select of all available SVGs/samples, false = don't
      * @returns {String} If no desiredDOMid is given, returns the string version of the output instead
      */
-     generateSVG(desiredDOMid, locus = 'AT3G24650', svgName = 'default', includeDropdownAll = true) {
+    generateSVG(desiredDOMid, locus = 'AT3G24650', svgName = 'default', includeDropdownAll = true) {
         // Reset variables:
         this.svgValues = {};
         this.svgMax = undefined;
@@ -242,7 +242,7 @@ class CreateSVGExpressionData {
     retrieveTopExpressionValues(svgName, locus = 'AT3G24650') {
         var completedFetches = 0;
         // If never been called before
-        if (Object.keys(this.topExpressionValues).length === 0 || this.topExpressionValues === undefined) {
+        if (!this.topExpressionValues || !this.topExpressionValues[locus]) {
             for (var t = 0; t < this.topExpressionOptions.length; t++) {
                 var topMethod = this.topExpressionOptions[t];
 
@@ -295,30 +295,16 @@ class CreateSVGExpressionData {
                                         if (response['compendium']) {
                                             tempTopExpressionData[topMethodUsed]['compendium'] = response['compendium'][locus.toUpperCase()]
                                         };
-                                        this.topExpressionValues = Object.assign(this.topExpressionValues, tempTopExpressionData);
+
+                                        if (!this.topExpressionValues) { 
+                                            this.topExpressionValues = {};
+                                        };
+                                        this.topExpressionValues[locus] = {...this.topExpressionValues[locus], ...tempTopExpressionData};
                                     };
                                 };
 
                                 completedFetches++;
                                 if (completedFetches === this.topExpressionOptions.length) {
-                                    if (svgName.trim().toLowerCase() === 'default') {
-                                        // Determine max expression value to default too
-                                        var maxExpressionValue = 0;
-                                        var maxExpressionCompendium = undefined;
-                                        for (const [key, value] of Object.entries(this.topExpressionValues)) {
-                                            if (value['compendium'] && value['compendium'][1] && value['maxAverage'] && value['maxAverage'][1] && value['maxAverage'][1] > maxExpressionValue) {
-                                                maxExpressionValue = value.maxAverage[1];
-                                                maxExpressionCompendium = value.compendium[1];
-                                            };
-                                        };
-                                        
-                                        if (maxExpressionCompendium) {
-                                            svgName = maxExpressionCompendium;
-                                        } else {
-                                            svgName = 'AbioticStress';
-                                        };
-                                    };
-                                    
                                     this.loadSampleData(svgName, locus);
                                 };
                             });
@@ -340,7 +326,7 @@ class CreateSVGExpressionData {
                     console.error(err);
                 });
             };
-        } else if (Object.keys(this.topExpressionValues).length > 0) {
+        } else if (Object.keys(this.topExpressionValues[locus]).length > 0) {
             this.loadSampleData(svgName, locus);
         };       
     };
@@ -409,30 +395,46 @@ class CreateSVGExpressionData {
         var sampleSubunits = []; // List of SVG's subunits
 
         // Check if valid SVG
-        if (sampleDataKeys.includes(svgName)) {
-            // Find position of the SVG name within the JSON data
-            let DataKeyPos = sampleDataKeys.indexOf(svgName);
-
-            // Create variables for parsing
-            var sampleInfo = this.sampleData[sampleDataKeys[DataKeyPos]];
-            var sampleOptions = sampleInfo['sample'];
-            sampleDB = sampleInfo['db'];
-
-            // If a database is available for this SVG, then find sample ID information
-            if (sampleDB !== undefined) {
-                sampleSubunits = Object.keys(sampleInfo.sample);
-                sampleIDList = [];
-                for (var sK = 0; sK < sampleSubunits.length; sK++) {
-                    sampleIDList = sampleIDList.concat(sampleOptions[sampleSubunits[sK]]);
+        if (!sampleDataKeys.includes(svgName) && this.topExpressionValues[locus]) {
+            // Determine max expression value to default too
+            var maxExpressionValue = 0;
+            var maxExpressionCompendium = undefined;
+            for (const [key, value] of Object.entries(this.topExpressionValues[locus])) {
+                if (value['compendium'] && value['compendium'][1] && value['maxAverage'] && value['maxAverage'][1] && value['maxAverage'][1] > maxExpressionValue) {
+                    maxExpressionValue = value.maxAverage[1];
+                    maxExpressionCompendium = value.compendium[1];
                 };
             };
-
-            // Call plantefp.cgi webservice to retrieve information about the target tissue expression data
-            if (this.eFPObjects[svgName] === undefined) {
-                this.callPlantEFP(sampleDB, locus, sampleIDList, svgName, sampleOptions);
-            } else if (this.eFPObjects[svgName]) {
-                this.addSVGtoDOM(svgName, locus, this.includeDropdownAll);
+            
+            if (maxExpressionCompendium) {
+                svgName = maxExpressionCompendium;
+            } else {
+                svgName = 'AbioticStress';
             };
+        };
+
+        // Find position of the SVG name within the JSON data
+        let DataKeyPos = sampleDataKeys.indexOf(svgName);
+
+        // Create variables for parsing
+        var sampleInfo = this.sampleData[sampleDataKeys[DataKeyPos]];
+        var sampleOptions = sampleInfo['sample'];
+        sampleDB = sampleInfo['db'];
+
+        // If a database is available for this SVG, then find sample ID information
+        if (sampleDB !== undefined) {
+            sampleSubunits = Object.keys(sampleInfo.sample);
+            sampleIDList = [];
+            for (var sK = 0; sK < sampleSubunits.length; sK++) {
+                sampleIDList = sampleIDList.concat(sampleOptions[sampleSubunits[sK]]);
+            };
+        };
+
+        // Call plantefp.cgi webservice to retrieve information about the target tissue expression data
+        if (!this.eFPObjects[svgName] || !this.eFPObjects[svgName]['locusCalled'].includes(locus)) {
+            this.callPlantEFP(sampleDB, locus, sampleIDList, svgName, sampleOptions);
+        } else if (this.eFPObjects[svgName]) {
+            this.addSVGtoDOM(svgName, locus, this.includeDropdownAll);
         };
     };    
 
@@ -524,6 +526,14 @@ class CreateSVGExpressionData {
         
                                     // Add to dictionary
                                     this.eFPObjects[svg]['sample'][subunitName][tempName][locus] = responseValue;
+
+                                    // Add to list of called locus data
+                                    if (!this.eFPObjects['locusCalled']) {
+                                        this.eFPObjects['locusCalled'] = [];
+                                    };
+                                    if (!this.eFPObjects['locusCalled'].includes(locus)) {
+                                        this.eFPObjects['locusCalled'].push(locus);
+                                    };
                                 };
                             };
                         };
@@ -570,15 +580,15 @@ class CreateSVGExpressionData {
             var sampleOptions = Object.keys(this.sampleReadableName);
             sampleOptions.sort();
 
-            if (this.topExpressionValues && Object.keys(this.topExpressionValues).length > 0) {
+            if (this.topExpressionValues[locus] && Object.keys(this.topExpressionValues[locus]).length > 0) {
                 // Hidden option
                 appendSVG += '<option value="hiddenOption" id="hiddenExpressionOption" disabled>Compendiums with maximum average expression:</option>';
 
-                var topList = Object.keys(this.topExpressionValues);
+                var topList = Object.keys(this.topExpressionValues[locus]);
             
                 for (var i = 0; i < topList.length; i++) {
-                    if (this.topExpressionValues[topList[i]]) {
-                        var expressionData = this.topExpressionValues[topList[i]];
+                    if (this.topExpressionValues[locus][topList[i]]) {
+                        var expressionData = this.topExpressionValues[locus][topList[i]];
                         var compendiumOptions = expressionData['compendium'];
 
                         for (var c = 0; c < Object.keys(compendiumOptions).length; c++) {
@@ -639,7 +649,7 @@ class CreateSVGExpressionData {
                         };
 
                         var changeIndexBy = 4;
-                        if (!this.topExpressionValues || Object.keys(this.topExpressionValues).length === 0) {
+                        if (!this.topExpressionValues[locus] || Object.keys(this.topExpressionValues[locus]).length === 0) {
                             changeIndexBy = 1;
                         };
                         document.getElementById('sampleOptions').selectedIndex = sampleIndexPos + changeIndexBy;
