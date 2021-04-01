@@ -231,7 +231,7 @@ class CreateSVGExpressionData {
         };
         // Initiate scripts     
         this.desiredDOMid = desiredDOMid;
-        this.retrieveTopExpressionValues(svgName, locus);
+        this.retrieveTopExpressionValues(svgName, locus.toUpperCase());
     };
     
     /**
@@ -246,7 +246,7 @@ class CreateSVGExpressionData {
             for (var t = 0; t < this.topExpressionOptions.length; t++) {
                 var topMethod = this.topExpressionOptions[t];
 
-                let url = 'https://bar.utoronto.ca/expression_max_api/max_average' + '?method=' + topMethod;
+                let url = `https://bar.utoronto.ca/expression_max_api/max_average?method=${topMethod}`;
                 var sendHeaders = "application/json";
                 var postSend = {
                     'loci': [locus.toUpperCase()],
@@ -400,9 +400,11 @@ class CreateSVGExpressionData {
             var maxExpressionValue = 0;
             var maxExpressionCompendium = undefined;
             for (const [key, value] of Object.entries(this.topExpressionValues[locus])) {
-                if (value['compendium'] && value['compendium'][1] && value['maxAverage'] && value['maxAverage'][1] && value['maxAverage'][1] > maxExpressionValue) {
-                    maxExpressionValue = value.maxAverage[1];
-                    maxExpressionCompendium = value.compendium[1];
+                if (value['compendium'] && value['compendium'][1] && sampleDataKeys.includes(value['compendium'][1])) {
+                    if (value['maxAverage'] && value['maxAverage'][1] && value['maxAverage'][1] > maxExpressionValue) {
+                        maxExpressionValue = value.maxAverage[1];
+                        maxExpressionCompendium = value.compendium[1];
+                    };
                 };
             };
             
@@ -413,11 +415,8 @@ class CreateSVGExpressionData {
             };
         };
 
-        // Find position of the SVG name within the JSON data
-        let DataKeyPos = sampleDataKeys.indexOf(svgName);
-
         // Create variables for parsing
-        var sampleInfo = this.sampleData[sampleDataKeys[DataKeyPos]];
+        var sampleInfo = this.sampleData[svgName];
         var sampleOptions = sampleInfo['sample'];
         sampleDB = sampleInfo['db'];
 
@@ -528,11 +527,11 @@ class CreateSVGExpressionData {
                                     this.eFPObjects[svg]['sample'][subunitName][tempName][locus] = responseValue;
 
                                     // Add to list of called locus data
-                                    if (!this.eFPObjects['locusCalled']) {
-                                        this.eFPObjects['locusCalled'] = [];
+                                    if (!this.eFPObjects[svg]['locusCalled']) {
+                                        this.eFPObjects[svg]['locusCalled'] = [];
                                     };
-                                    if (!this.eFPObjects['locusCalled'].includes(locus)) {
-                                        this.eFPObjects['locusCalled'].push(locus);
+                                    if (!this.eFPObjects[svg]['locusCalled'].includes(locus)) {
+                                        this.eFPObjects[svg]['locusCalled'].push(locus);
                                     };
                                 };
                             };
