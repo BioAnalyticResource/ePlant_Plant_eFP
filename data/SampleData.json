@@ -6632,7 +6632,7 @@
         },
         "db": "root_Schaefer_lab"
     },
-    "scRNASeq": {
+    "SingleCellRNASeq": {
         "name": "Single Cell",
         "sample": {
             "CortexG6-CortexCells31": [
