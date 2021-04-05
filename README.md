@@ -46,6 +46,7 @@ Chrome | Firefox | IE | Edge | Safari | Opera | Tor | Mobile |
 ## Known issues
 
 We aim to make the ePlant Plant eFP as perfect as possible but unfortunately, there may be some unforeseen bugs. If you manage to find one that is not here, feel free to create a [bug report](https://github.com/BioAnalyticResource/ePlant_Plant_eFP/issues/new/choose) so we can fix it.
+
 * None at the moment... Help us find some!
 
 ## Contributing
