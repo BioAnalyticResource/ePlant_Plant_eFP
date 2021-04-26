@@ -571,8 +571,6 @@ class CreateSVGExpressionData {
         var targetDOMRegion = document.getElementById(this.desiredDOMid);
         targetDOMRegion.innerHTML = '';
 
-        var sampleIndexPos = 0;
-
         // Add dropdown list of all samples to document:
         if (includeDropdownAll && this.sampleOptions) {
             appendSVG += 'Select SVG to display: <select onchange="window.createSVGExpressionData.generateSVG(\'' + this.desiredDOMid + '\', \'' + locus + '\', this.value.toString(), ' + includeDropdownAll + ')" id="sampleOptions" value="' + svgName + '">';
@@ -614,10 +612,6 @@ class CreateSVGExpressionData {
             appendSVG += '<option value="hiddenOption" id="allCompendiumOptions" disabled>All compendiums:</option>';
             for (var i = 0; i < sampleOptions.length; i++) {
                 appendSVG += '<option value="' + this.sampleReadableName[sampleOptions[i]] + '">' + sampleOptions[i] + '</option>';
-
-                if (this.sampleReadableName[sampleOptions[i]] === svgName) {
-                    sampleIndexPos = i;
-                }
             };
             appendSVG += '</select></br>';
         };
@@ -647,11 +641,16 @@ class CreateSVGExpressionData {
                             };
                         };
 
-                        var changeIndexBy = 4;
-                        if (!this.topExpressionValues[locus] || Object.keys(this.topExpressionValues[locus]).length === 0) {
-                            changeIndexBy = 1;
+                        /** All dropdown sample options */
+                        let sampleOptions = document.getElementById('sampleOptions').options;
+                        for (let i in sampleOptions) {
+                            // If sample option is displayed SVG, change that dropdown's selected index to display that option
+                            if (sampleOptions[i].value && sampleOptions[i].value === svgName && sampleOptions[i].innerText && this.sampleData[svgName].name && sampleOptions[i].innerText.trim() === this.sampleData[svgName].name.trim()) {
+                                document.getElementById('sampleOptions').selectedIndex = i;
+
+                                break;
+                            };
                         };
-                        document.getElementById('sampleOptions').selectedIndex = sampleIndexPos + changeIndexBy;
 
                         setTimeout(() => {
                             this.createLocusMatch(svgUse, locus);
