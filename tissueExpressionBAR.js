@@ -632,8 +632,10 @@ class CreateSVGExpressionData {
                         appendSVG += '</div>';
                         targetDOMRegion.innerHTML = appendSVG;
 
-                        if (document.getElementsByTagName('svg') && document.getElementsByTagName('svg')[0]) {
-                            this.svgObjectName = document.getElementsByTagName('svg')[0].id;
+                        /** Parsable version of the returned SVG */
+                        let svgData = new DOMParser().parseFromString(data, 'text/xml');
+                        if (svgData.getElementsByTagName('svg') && svgData.getElementsByTagName('svg')[0] && svgData.getElementsByTagName('svg')[0].id) {
+                            this.svgObjectName = svgData.getElementsByTagName('svg')[0].id;
                             
                             // Adjust width and height of SVG
                             if (document.getElementById(this.svgObjectName)) {
@@ -934,6 +936,7 @@ class CreateSVGExpressionData {
      */
     colourSVGSubunit(whichSVG, svgSubunit, colour, expressionLevel, sampleSize = 1) {
         let svgObject = document.getElementById(this.svgObjectName);
+
         if (svgObject && svgObject.getElementById(svgSubunit)) {
             var expressionData = createSVGExpressionData["svgValues"][svgSubunit];
             var descriptionName = undefined;
