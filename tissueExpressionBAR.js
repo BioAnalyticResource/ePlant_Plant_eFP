@@ -309,7 +309,7 @@ class CreateSVGExpressionData {
                                 };
                             });
                         } else if (response.status !== 200) {   
-                            completedFetches++;                         
+                            completedFetches++;
                             if (completedFetches === this.topExpressionOptions.length) {
                                 this.loadSampleData(svgName, locus);
                             };
@@ -415,10 +415,20 @@ class CreateSVGExpressionData {
             };
         };
 
+        // If still default, load in Abiotic Stress
+        if (svgName === 'default') {
+            svgName = 'AbioticStress';
+        };
+
         // Create variables for parsing
         var sampleInfo = this.sampleData[svgName];
-        var sampleOptions = sampleInfo['sample'];
-        sampleDB = sampleInfo['db'];
+        let sampleOptions;
+        if (sampleInfo && sampleInfo.sample) {
+            sampleOptions = sampleInfo['sample'];
+        };
+        if (sampleInfo && sampleInfo.db) {
+            sampleDB = sampleInfo['db'];
+        };
 
         // If a database is available for this SVG, then find sample ID information
         if (sampleDB !== undefined) {
@@ -465,94 +475,100 @@ class CreateSVGExpressionData {
 
         var methods = {mode: 'cors'};
 
-        fetch(url, methods).then(
-            response => {
-                if (response.status === 200) {
-                    response.text().then(data => {
-                        let response; 
-                        if (data.length > 0) {
-                            response = JSON.parse(data);
-                        } else {
-                            response = {};
-                        };
-
-                        let subunitsList = Object.keys(sampleSubunits);
-
-                        if (this.eFPObjects === undefined) {
-                            this.eFPObjects = {};
-                        };
-        
-                        // Create SVG in dictionary
-                        if (this.eFPObjects[svg] === undefined) {
-                            this.eFPObjects[svg] = {};
-                        };
-        
-                        // Create samples in dictionary
-                        if (this.eFPObjects[svg]['sample'] === undefined) {
-                            this.eFPObjects[svg]['sample'] = {};
-                        };
-        
-                        // Create samples in dictionary
-                        if (this.eFPObjects[svg]['sample'] === undefined) {
-                            this.eFPObjects[svg]['sample'] = {};
-                        };
-        
-                        // Add values
-                        for (var t = 0; t < response.length; t++) {
-                            // Create key and value variables
-                            var responseName = response[t]['name'].trim();
-                            var responseValue = response[t]['value'];
-                            var subunitName = '';
-        
-                            // Create subunits element in dictionary     
-                            var tempName = responseName;                
-                            tempName = responseName.replace(/%2B/g, '+');
-                            tempName = tempName.replace(/%20/g, ' ');
-                            tempName = tempName.trim();
-                            for (var s = 0; s < subunitsList.length; s++) {  
-                                if (sampleSubunits[subunitsList[s]].includes(tempName)) {
-                                    subunitName = subunitsList[s];
-        
-                                    // Create subunit
-                                    if (this.eFPObjects[svg]['sample'][subunitName] === undefined) {
-                                        this.eFPObjects[svg]['sample'][subunitName] = {};
-                                    };
-        
-                                    // Create responseName
-                                    if (this.eFPObjects[svg]['sample'][subunitName][tempName] === undefined) {
-                                        this.eFPObjects[svg]['sample'][subunitName][tempName] = {};
-                                    };
-        
-                                    // Add to dictionary
-                                    this.eFPObjects[svg]['sample'][subunitName][tempName][locus] = responseValue;
-
-                                    // Add to list of called locus data
-                                    if (!this.eFPObjects[svg]['locusCalled']) {
-                                        this.eFPObjects[svg]['locusCalled'] = [];
-                                    };
-                                    if (!this.eFPObjects[svg]['locusCalled'].includes(locus)) {
-                                        this.eFPObjects[svg]['locusCalled'].push(locus);
+        if (sampleSubunits) {
+            fetch(url, methods).then(
+                response => {
+                    if (response.status === 200) {
+                        response.text().then(data => {
+                            let response; 
+                            if (data.length > 0) {
+                                response = JSON.parse(data);
+                            } else {
+                                response = {};
+                            };
+    
+                            let subunitsList = Object.keys(sampleSubunits);
+    
+                            if (this.eFPObjects === undefined) {
+                                this.eFPObjects = {};
+                            };
+            
+                            // Create SVG in dictionary
+                            if (this.eFPObjects[svg] === undefined) {
+                                this.eFPObjects[svg] = {};
+                            };
+            
+                            // Create samples in dictionary
+                            if (this.eFPObjects[svg]['sample'] === undefined) {
+                                this.eFPObjects[svg]['sample'] = {};
+                            };
+            
+                            // Create samples in dictionary
+                            if (this.eFPObjects[svg]['sample'] === undefined) {
+                                this.eFPObjects[svg]['sample'] = {};
+                            };
+            
+                            // Add values
+                            for (var t = 0; t < response.length; t++) {
+                                // Create key and value variables
+                                var responseName = response[t]['name'].trim();
+                                var responseValue = response[t]['value'];
+                                var subunitName = '';
+            
+                                // Create subunits element in dictionary     
+                                var tempName = responseName;                
+                                tempName = responseName.replace(/%2B/g, '+');
+                                tempName = tempName.replace(/%20/g, ' ');
+                                tempName = tempName.trim();
+                                for (var s = 0; s < subunitsList.length; s++) {  
+                                    if (sampleSubunits[subunitsList[s]].includes(tempName)) {
+                                        subunitName = subunitsList[s];
+            
+                                        // Create subunit
+                                        if (this.eFPObjects[svg]['sample'][subunitName] === undefined) {
+                                            this.eFPObjects[svg]['sample'][subunitName] = {};
+                                        };
+            
+                                        // Create responseName
+                                        if (this.eFPObjects[svg]['sample'][subunitName][tempName] === undefined) {
+                                            this.eFPObjects[svg]['sample'][subunitName][tempName] = {};
+                                        };
+            
+                                        // Add to dictionary
+                                        this.eFPObjects[svg]['sample'][subunitName][tempName][locus] = responseValue;
+    
+                                        // Add to list of called locus data
+                                        if (!this.eFPObjects[svg]['locusCalled']) {
+                                            this.eFPObjects[svg]['locusCalled'] = [];
+                                        };
+                                        if (!this.eFPObjects[svg]['locusCalled'].includes(locus)) {
+                                            this.eFPObjects[svg]['locusCalled'].push(locus);
+                                        };
                                     };
                                 };
                             };
-                        };
-        
-                        // Add db
-                        this.eFPObjects[svg]['db'] = datasource;
-
+            
+                            // Add db
+                            this.eFPObjects[svg]['db'] = datasource;
+    
+                            this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
+                        });
+                    } else if (response.status !== 200) {
                         this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
-                    });
-                } else if (response.status !== 200) {
-                    this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
-
-                    console.error('fetch error - Status Code: ' + response.status + ', fetch-url: ' + response.url + ', document-url: ' + window.location.href);
-                };
-            }		
-        ).catch(err => {
+    
+                        console.error('fetch error - Status Code: ' + response.status + ', fetch-url: ' + response.url + ', document-url: ' + window.location.href);
+                    };
+                }		
+            ).catch(err => {
+                this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
+    
+                console.error(err);
+            });
+        } else {
             this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
 
-            console.error(err);
-        });
+            console.error(`sampleSubunits is ${sampleSubunits}`);
+        };
     };
 
     /**
@@ -997,7 +1013,7 @@ class CreateSVGExpressionData {
             
             // Add tooltip/title on hover
             var title = document.createElementNS("http://www.w3.org/2000/svg","title");
-            title.textContent = descriptionName + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize + '\nStandardDeviation: ' + parseFloat(expressionData['sd']).toFixed(3);
+            title.textContent = descriptionName + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize + '\nStandard Deviation: ' + parseFloat(expressionData['sd']).toFixed(3);
     
             // Add rest of titles and tooltip/title
             var inducReduc = false;
