@@ -182,10 +182,12 @@ class CreateSVGExpressionData {
     constructor() {
         // callPlantEFP
         this.eFPObjects = {};
+
         // loadSampleData
         this.sampleData = {};
         this.sampleOptions = [];
         this.sampleReadableName = {};
+
         // Top expression data
         this.topExpressionValues = {};
         this.expressionValues = {};
@@ -193,8 +195,12 @@ class CreateSVGExpressionData {
             'Microarray',
             'RNA-seq'
         ];
+
         // Local for this class
         this.desiredDOMid = '';
+        /** Markup for the visualization container */ 
+        this.appendSVG;
+
         // createSVGValues
         this.clickList = [];
         this.svgValues = {};
@@ -210,11 +216,10 @@ class CreateSVGExpressionData {
 
     /**
      * Create and generate an SVG based on the desired tissue expression locus
-     * @param {String} desiredDOMid The desired DOM location or if kept empty, returns the string version of the output
+     * @param {String} desiredDOMid The desired DOM location or if kept empty, would not replace any DOM elements and just create the related HTML DOM elements within appendSVG
      * @param {String} locus The AGI ID (example: AT3G24650) 
      * @param {String} svgName Name of the SVG file without the .svg at the end. Default is set to "default", when left this value, the highest expression value (if any) is chosen and if not, then Abiotic Stress is. 
      * @param {Boolean} includeDropdownAll true = include a html dropdown/select of all available SVGs/samples, false = don't
-     * @returns {String} If no desiredDOMid is given, returns the string version of the output instead
      */
     generateSVG(desiredDOMid, locus = 'AT3G24650', svgName = 'default', includeDropdownAll = true) {
         // Reset variables:
@@ -239,7 +244,7 @@ class CreateSVGExpressionData {
      * @param {String} svgName Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
      */
-    retrieveTopExpressionValues(svgName, locus = 'AT3G24650') {
+    async retrieveTopExpressionValues(svgName, locus = 'AT3G24650') {
         var completedFetches = 0;
         // If never been called before
         if (!this.topExpressionValues || !this.topExpressionValues[locus]) {
@@ -262,10 +267,10 @@ class CreateSVGExpressionData {
                 };
                 methods['body'] = postSend;
 
-                fetch(url, methods).then(
-                    response => {
+                await fetch(url, methods).then(
+                    async response => {
                         if (response.status === 200) {
-                            response.text().then(data => {
+                            await response.text().then(async data => {
                                 let response; 
                                 if (data.length > 0) {
                                     response = JSON.parse(data);
@@ -305,29 +310,29 @@ class CreateSVGExpressionData {
 
                                 completedFetches++;
                                 if (completedFetches === this.topExpressionOptions.length) {
-                                    this.loadSampleData(svgName, locus);
+                                    await this.loadSampleData(svgName, locus);
                                 };
                             });
                         } else if (response.status !== 200) {   
                             completedFetches++;
                             if (completedFetches === this.topExpressionOptions.length) {
-                                this.loadSampleData(svgName, locus);
+                                await this.loadSampleData(svgName, locus);
                             };
                             
                             console.error('fetch error - Status Code: ' + response.status + ', fetch-url: ' + response.url + ', document-url: ' + window.location.href);
                         };
                     }		
-                ).catch(err => {
+                ).catch(async err => {
                     completedFetches++;
                     if (completedFetches === this.topExpressionOptions.length) {
-                        this.loadSampleData(svgName, locus);
+                        await this.loadSampleData(svgName, locus);
                     };
 
                     console.error(err);
                 });
             };
         } else if (Object.keys(this.topExpressionValues[locus]).length > 0) {
-            this.loadSampleData(svgName, locus);
+            await this.loadSampleData(svgName, locus);
         };       
     };
 
@@ -336,16 +341,16 @@ class CreateSVGExpressionData {
      * @param {String} svgName Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
      */
-    loadSampleData(svgName, locus) {
+    async loadSampleData(svgName, locus) {
         if (Object.keys(this.sampleData).length === 0) {
             let url = 'https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/data/SampleData.min.json';
 
             var methods = {mode: 'cors'};
     
-            fetch(url, methods).then(
-                response => {
+            await fetch(url, methods).then(
+                async response => {
                     if (response.status === 200) {
-                        response.text().then(data => {
+                        await response.text().then(async data => {
                             let res; 
                             if (data.length > 0) {
                                 res = JSON.parse(data);
@@ -356,17 +361,17 @@ class CreateSVGExpressionData {
                             // Store response
                             this.sampleData = res;
                             // Setup and retrieve information about the target SVG and locus 
-                            this.retrieveSampleData(svgName, locus);
+                            await this.retrieveSampleData(svgName, locus);
                         });
                     } else if (response.status !== 200) {
                           console.error('fetch error - Status Code: ' + response.status + ', fetch-url: ' + response.url + ', document-url: ' + window.location.href);
                     };
                 }		
-            ).catch(err => {
+            ).catch(async err => {
                 console.error(err);
             });
         } else if (Object.keys(this.sampleData).length > 0) {
-            this.retrieveSampleData(svgName, locus);
+            await this.retrieveSampleData(svgName, locus);
         }; 
     };
 
@@ -375,7 +380,7 @@ class CreateSVGExpressionData {
      * @param {String} svgName Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
      */
-    retrieveSampleData(svgName, locus) {
+    async retrieveSampleData(svgName, locus) {
         // Check if svgName contains .svg
         if (svgName.substr(-4) === '.svg') {
             svgName = svgName.substr(0, svgName.length -4);
@@ -441,9 +446,9 @@ class CreateSVGExpressionData {
 
         // Call plantefp.cgi webservice to retrieve information about the target tissue expression data
         if (!this.eFPObjects[svgName] || !this.eFPObjects[svgName]['locusCalled'].includes(locus)) {
-            this.callPlantEFP(sampleDB, locus, sampleIDList, svgName, sampleOptions);
+            await this.callPlantEFP(sampleDB, locus, sampleIDList, svgName, sampleOptions);
         } else if (this.eFPObjects[svgName]) {
-            this.addSVGtoDOM(svgName, locus, this.includeDropdownAll);
+            await this.addSVGtoDOM(svgName, locus, this.includeDropdownAll);
         };
     };    
 
@@ -455,7 +460,7 @@ class CreateSVGExpressionData {
      * @param {String} svg Which SVG is being called 
      * @param {Array} sampleSubunits List of the SVG's subunits
      */
-    callPlantEFP(datasource, locus, samples, svg, sampleSubunits) {
+    async callPlantEFP(datasource, locus, samples, svg, sampleSubunits) {
         // Create URL
         let url = 'https://bar.utoronto.ca/~asullivan/webservices/plantefp.cgi?';
         url += 'datasource=' + datasource + '&';
@@ -476,10 +481,10 @@ class CreateSVGExpressionData {
         var methods = {mode: 'cors'};
 
         if (sampleSubunits) {
-            fetch(url, methods).then(
-                response => {
+            await fetch(url, methods).then(
+                async response => {
                     if (response.status === 200) {
-                        response.text().then(data => {
+                        await response.text().then(async data => {
                             let response; 
                             if (data.length > 0) {
                                 response = JSON.parse(data);
@@ -551,21 +556,21 @@ class CreateSVGExpressionData {
                             // Add db
                             this.eFPObjects[svg]['db'] = datasource;
     
-                            this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
+                            await this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
                         });
                     } else if (response.status !== 200) {
-                        this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
+                        await this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
     
                         console.error('fetch error - Status Code: ' + response.status + ', fetch-url: ' + response.url + ', document-url: ' + window.location.href);
                     };
                 }		
-            ).catch(err => {
-                this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
+            ).catch(async err => {
+                await this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
     
                 console.error(err);
             });
         } else {
-            this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
+            await this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
 
             console.error(`sampleSubunits is ${sampleSubunits}`);
         };
@@ -576,26 +581,30 @@ class CreateSVGExpressionData {
      * @param {String} svgName Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
      */
-    addSVGtoDOM(svgName, locus, includeDropdownAll = false) {
+    async addSVGtoDOM(svgName, locus, includeDropdownAll = false) {
         var svgUse = 'Klepikova';
-        var appendSVG = '';
+        let localAppendSVG = new DOMParser().parseFromString('<div class="expressionContainer"></div>', 'text/html');
+        localAppendSVG = localAppendSVG.querySelector('.expressionContainer');
         if (svgName !== '') {
             svgUse = svgName;
         };
-
-        // Empty target region
-        var targetDOMRegion = document.getElementById(this.desiredDOMid);
-        targetDOMRegion.innerHTML = '';
-
+        
         // Add dropdown list of all samples to document:
-        if (includeDropdownAll && this.sampleOptions) {
-            appendSVG += 'Select SVG to display: <select onchange="window.createSVGExpressionData.generateSVG(\'' + this.desiredDOMid + '\', \'' + locus + '\', this.value.toString(), ' + includeDropdownAll + ')" id="sampleOptions" value="' + svgName + '">';
-            var sampleOptions = Object.keys(this.sampleReadableName);
-            sampleOptions.sort();
+        if (includeDropdownAll && this.sampleOptions) { 
+            let selectedIndexPos = 0;
+            let preSelectedIndex = 0;        
+            let options = '';
 
             if (this.topExpressionValues[locus] && Object.keys(this.topExpressionValues[locus]).length > 0) {
                 // Hidden option
-                appendSVG += '<option value="hiddenOption" id="hiddenExpressionOption" disabled>Compendiums with maximum average expression:</option>';
+                options += `<option
+                        value="hiddenOption" 
+                        id="hiddenExpressionOption"
+                        disabled="true"
+                    >
+                        Compendiums with maximum average expression:
+                    </option>`;
+                preSelectedIndex += 1;
 
                 var topList = Object.keys(this.topExpressionValues[locus]);
             
@@ -615,8 +624,15 @@ class CreateSVGExpressionData {
                                     var readableSampleName = this.sampleData[expressionCompendium]['description'][expressionSample];
                                     var expressionAverageLevel = expressionData['maxAverage'][cUse];
                                     var compendiumName = this.sampleData[expressionCompendium]['name'];
+
+                                    options += `<option
+                                            value="${expressionCompendium}"
+                                        >
+                                            ${compendiumName}: ${readableSampleName} at ${expressionAverageLevel} (${topList[i]})
+                                        </option>`;
                                     
-                                    appendSVG += '<option value="' + expressionCompendium + '">' + compendiumName + ': ' + readableSampleName + ' at ' +  expressionAverageLevel + ' (' + topList[i] + ')</option>';
+                                    preSelectedIndex += 1;
+
                                     break;
                                 };
                             };
@@ -625,62 +641,108 @@ class CreateSVGExpressionData {
                 };
             };
 
-            appendSVG += '<option value="hiddenOption" id="allCompendiumOptions" disabled>All compendiums:</option>';
-            for (var i = 0; i < sampleOptions.length; i++) {
-                appendSVG += '<option value="' + this.sampleReadableName[sampleOptions[i]] + '">' + sampleOptions[i] + '</option>';
+            options += `<option
+                    value="hiddenOption" 
+                    id="allCompendiumOptions"
+                    disabled="true"
+                >
+                    All compendiums:
+                </option>`;
+                
+            preSelectedIndex += 1;
+            
+            var sampleOptions = Object.keys(this.sampleReadableName);
+            sampleOptions.sort();
+
+            for (let i in sampleOptions) {
+                options += `<option
+                        value="${this.sampleReadableName[sampleOptions[i]]}"
+                    >
+                        ${sampleOptions[i]}
+                    </option>`;
+
+                if (this.sampleReadableName[sampleOptions[i]] === svgName) {
+                    selectedIndexPos = parseInt(preSelectedIndex) + parseInt(i);
+                };
             };
-            appendSVG += '</select></br>';
+            
+            let dropdownList = new DOMParser().parseFromString(
+                `<div class="selectSVGContainer">
+                    <span>Select SVG to display:</span> 
+                    <select 
+                        onchange="window.createSVGExpressionData.generateSVG('${this.desiredDOMid}', '${locus}', this.value.toString(), ${includeDropdownAll})"
+                        id="sampleOptions" 
+                        value="${svgName}" 
+                        class="selectCompendiumOptions"
+                    >
+                        ${options}
+                    </select>
+                </div>`,
+                'text/html');
+            dropdownList = dropdownList.body.childNodes[0];
+            dropdownList.getElementsByTagName('select')[0].selectedIndex = selectedIndexPos;
+            localAppendSVG.appendChild(dropdownList);
         };
 
         // Append SVG to document
-        appendSVG += '<b>' + svgName + '</b></br>';
+        localAppendSVG.appendChild(new DOMParser().parseFromString(
+            `<span class="${svgName}">
+                <b>${svgName}</b>
+            </span>`,
+            'text/xml'
+        ).documentElement);
 
         // Create call for SVG file
         var urlSVG = 'https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/compendiums/' + svgUse + '.min.svg';
         var methods = {mode: 'cors'};
 
-        fetch(urlSVG, methods).then(
-            response => {
+        await fetch(urlSVG, methods).then(
+           async response => {
                 if (response.status === 200) {
-                    response.text().then(data => {
-                        appendSVG += '<div id="' + svgUse + '_object">';
-                        appendSVG += data;
-                        appendSVG += '</div>';
-                        targetDOMRegion.innerHTML = appendSVG;
+                    await response.text().then(async data => {
+                        let svgData = new DOMParser().parseFromString(data, 'text/html').body.childNodes[0];
 
-                        /** Parsable version of the returned SVG */
-                        let svgData = new DOMParser().parseFromString(data, 'text/xml');
-                        if (svgData.getElementsByTagName('svg') && svgData.getElementsByTagName('svg')[0] && svgData.getElementsByTagName('svg')[0].id) {
-                            this.svgObjectName = svgData.getElementsByTagName('svg')[0].id;
+                        /** Adjust styling of SVG */
+                        if (svgData.id) {
+                            this.svgObjectName = svgData.id;
                             
-                            // Adjust width and height of SVG
-                            if (document.getElementById(this.svgObjectName)) {
-                                document.getElementById(this.svgObjectName).style = 'width: 95% !important;height: 95% !important;';
-                            };
+                            svgData.style = "width: 95% !important;height: 95% !important;"
                         };
 
-                        /** All dropdown sample options */
-                        let sampleOptions = document.getElementById('sampleOptions').options;
-                        for (let i in sampleOptions) {
-                            // If sample option is displayed SVG, change that dropdown's selected index to display that option
-                            if (sampleOptions[i].value && sampleOptions[i].value === svgName && sampleOptions[i].innerText && this.sampleData[svgName].name && sampleOptions[i].innerText.trim() === this.sampleData[svgName].name.trim()) {
-                                document.getElementById('sampleOptions').selectedIndex = i;
+                        let svgContainer = new DOMParser().parseFromString(
+                            `<div id="${svgUse}_object"></div>`,
+                            'text/html'
+                        ).body.childNodes[0];
+                        svgContainer.appendChild(svgData);
 
-                                break;
-                            };
-                        };
+                        localAppendSVG.appendChild(svgContainer);
 
-                        setTimeout(() => {
-                            this.createLocusMatch(svgUse, locus);
-                        }, 200);
+                        this.appendSVG = localAppendSVG;
+
+                        await this.createLocusMatch(svgUse, locus);
                     });
                 } else if (response.status !== 200) {
                     console.error('fetch error - Status Code: ' + response.status + ', fetch-url: ' + response.url + ', document-url: ' + window.location.href);
                 };
             }		
-        ).catch(err => {
+        ).catch(async err => {
             console.error(err);
         });
+
+        if (this.desiredDOMid && this.desiredDOMid.length > 0) {
+            // Add SVG to DOM
+            /** DOM Region being modified */
+            var targetDOMRegion = document.getElementById(this.desiredDOMid);
+
+            let targetDOMChildren = targetDOMRegion.childNodes;
+            for (let i in targetDOMChildren) {
+                if (targetDOMChildren[i].className && targetDOMChildren[i].className.includes('expressionContainer')) {
+                    targetDOMRegion.removeChild(targetDOMChildren[i]);
+                };
+            };
+
+            targetDOMRegion.appendChild(this.appendSVG);
+        };
     };
 
     /**
@@ -688,7 +750,7 @@ class CreateSVGExpressionData {
      * @param {String} whichSVG Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
      */
-    createLocusMatch(whichSVG, locus) {
+     async createLocusMatch(whichSVG, locus) {
         var locusPoint = locus;
         var locusValue = '';
         for (var i = 0; i < locusPoint.length; i++) {
@@ -699,7 +761,7 @@ class CreateSVGExpressionData {
             };
         };
         // console.log(locusValue);
-        this.createSVGValues(whichSVG, locus);
+        await this.createSVGValues(whichSVG, locus);
     };
 
     /**
@@ -707,7 +769,7 @@ class CreateSVGExpressionData {
      * @param {String} whichSVG Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
      */
-    createSVGValues(whichSVG, locus) {
+    async createSVGValues(whichSVG, locus) {
         // Create variables used for this function:
         let svgSamples = []; // List of sample's included in this expression call
 
@@ -737,7 +799,7 @@ class CreateSVGExpressionData {
                 this.svgValues[svgSubunits[n]]['rawValues'].push(svgDataObject[svgSubunits[n]][sampleValues[v]][locus]);
             };
         };
-        this.findExpressionValues(whichSVG, svgSubunits);
+        await this.findExpressionValues(whichSVG, svgSubunits);
     };
 
     /**
@@ -745,7 +807,7 @@ class CreateSVGExpressionData {
      * @param {String} whichSVG Name of the SVG file without the .svg at the end
      * @param {Array} svgSubunits A list containing all desired SVG subunits to be interacted with
      */
-    findExpressionValues(whichSVG, svgSubunits) {
+    async findExpressionValues(whichSVG, svgSubunits) {
         // Reset variables 
         this.svgMax = undefined;
         this.svgMin = undefined;
@@ -853,7 +915,7 @@ class CreateSVGExpressionData {
             };
         };
 
-        this.colourSVGs(whichSVG, svgSubunits);
+        await this.colourSVGs(whichSVG, svgSubunits);
     };
 
     /**
@@ -891,7 +953,7 @@ class CreateSVGExpressionData {
      * @param {String} whichSVG Name of the SVG file without the .svg at the end
      * @param {Array} svgSubunits A list containing all desired SVG subunits to be interacted with
      */
-    colourSVGs(whichSVG, svgSubunits) {
+    async colourSVGs(whichSVG, svgSubunits) {
         for (var i = 0; i < svgSubunits.length; i++) {
             // Colouring values
             var denominator = this.svgMaxAverage;
@@ -920,7 +982,7 @@ class CreateSVGExpressionData {
             this.svgValues[svgSubunits[i]]['sampleSize'] = sampleSize;
 
             // Begin colouring SVG subunits
-            this.colourSVGSubunit(whichSVG, svgSubunits[i], colourFill, expressionLevel, sampleSize);
+            await this.colourSVGSubunit(whichSVG, svgSubunits[i], colourFill, expressionLevel, sampleSize);
         };
     };
 
@@ -950,10 +1012,11 @@ class CreateSVGExpressionData {
      * @param {Number} expressionLevel The expression level for the interactive data
      * @param {Number} sampleSize The sample size of the input information, default to 1
      */
-    colourSVGSubunit(whichSVG, svgSubunit, colour, expressionLevel, sampleSize = 1) {
-        let svgObject = document.getElementById(this.svgObjectName);
+    async colourSVGSubunit(whichSVG, svgSubunit, colour, expressionLevel, sampleSize = 1) {
+        let svgObject = this.appendSVG.lastElementChild.getElementsByTagName('svg')[0];
+        let allParsableElements = [...svgObject.getElementsByTagName('path'), ...svgObject.getElementsByTagName('g')];
 
-        if (svgObject && svgObject.getElementById(svgSubunit)) {
+        if (svgObject && allParsableElements.length > 0) {
             var expressionData = createSVGExpressionData["svgValues"][svgSubunit];
             var descriptionName = undefined;
             if (this.sampleData[whichSVG]['description']) {
@@ -973,130 +1036,171 @@ class CreateSVGExpressionData {
             } else if (duplicateRoot.includes(svgSubunit)) {
                 isdupRoot = true;
             };
+
+            let subunitElement;
+            for (let i in allParsableElements) {
+                if (allParsableElements[i].id === svgSubunit) {
+                    subunitElement = allParsableElements[i];
+                };
+            };
     
             // This is used to determine if the SVG should be automatically coloured or manually done
-            var childElements;
-            if (svgObject.getElementById(svgSubunit) && svgObject.getElementById(svgSubunit).childNodes) {
-                childElements = svgObject.getElementById(svgSubunit).childNodes;
-            } else {
-                setTimeout(function() {
-                    if (svgObject.getElementById(svgSubunit) && svgObject.getElementById(svgSubunit).childNodes) {
-                        childElements = svgObject.getElementById(svgSubunit).childNodes;
-                    };
-                }, 500);
-            };
-    
-            if (childElements && childElements.length > 0) {
-                for (var c = 0; c < childElements.length; c++) {
-                    if (childElements[c].nodeName === 'path' || childElements[c].nodeName === 'g') {           
-                        childElements[c].setAttribute("fill", colour);       
+            if (subunitElement && subunitElement.childNodes.length > 0) {
+                var childElements;
+
+                childElements = subunitElement.childNodes;
+
+                let coloured = false;
+
+                for (let c in childElements) {
+                    if (childElements[c].tagName === 'path' || childElements[c].tagName === 'g') {           
+                        childElements[c].setAttribute("fill", colour);
+
+                        coloured = true;
                     };
                 };
-            } else if (svgObject && svgObject.getElementById(svgSubunit)) {             
-                svgObject.getElementById(svgSubunit).setAttribute("fill", colour);
-            };        
+
+                if (!coloured) {
+                    subunitElement.setAttribute("fill", colour);
+                }
+            } else if (subunitElement) {             
+                subunitElement.setAttribute("fill", colour);
+            };
     
             // Add interactivity 
-            // Adding hover features:
-            svgObject.getElementById(svgSubunit).setAttribute("class", 'hoverDetails');
-            svgObject.getElementById(svgSubunit).addEventListener('mouseenter', function(event) {
-                addTissueMetadata(this.id);
-            });
-            svgObject.getElementById(svgSubunit).addEventListener('mouseleave', function(event) {
-                removeTissueMetadata(this.id);
-            });
-            // Adding details about sub-tissue:
-            svgObject.getElementById(svgSubunit).setAttribute("data-expressionValue", expressionLevel);
-            svgObject.getElementById(svgSubunit).setAttribute("data-sampleSize", sampleSize);
-            svgObject.getElementById(svgSubunit).setAttribute("data-standardDeviation", expressionData['sd']);
-            svgObject.getElementById(svgSubunit).setAttribute("data-sampleSize", sampleSize);
-            
-            // Add tooltip/title on hover
-            var title = document.createElementNS("http://www.w3.org/2000/svg","title");
-            title.textContent = descriptionName + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize + '\nStandard Deviation: ' + parseFloat(expressionData['sd']).toFixed(3);
-    
-            // Add rest of titles and tooltip/title
-            var inducReduc = false;
-            if (expressionData['inductionValue']) {
-                svgObject.getElementById(svgSubunit).setAttribute("data-inductionValue", expressionData['inductionValue']);
-                title.textContent += '\nInduction Value: ' + parseFloat(expressionData['inductionValue']).toFixed(3);
-                inducReduc = true;
-            } else if (expressionData['reductionValue']) {
-                svgObject.getElementById(svgSubunit).setAttribute("data-reductionValue", expressionData['reductionValue']);
-                title.textContent += '\nReduction Value: ' + parseFloat(expressionData['ReductionValue']).toFixed(3);
-                inducReduc = true;
-            };
-            if (inducReduc === true) {
-                svgObject.getElementById(svgSubunit).setAttribute("data-expressionRatio", expressionData['expressionRatio']);
-                title.textContent += '\nExpression Ratio: ' + parseFloat(expressionData['expressionRatio']).toFixed(3);
-                svgObject.getElementById(svgSubunit).setAttribute("data-controlSampleName", expressionData['controlSampleName']);
+            if (subunitElement) {
+                // Adding hover features:
+                subunitElement.setAttribute("class", 'hoverDetails');
+                subunitElement.addEventListener('mouseenter', function(event) {
+                    addTissueMetadata(this.id);
+                });
+                subunitElement.addEventListener('mouseleave', function(event) {
+                    removeTissueMetadata(this.id);
+                });
+                // Adding details about sub-tissue:
+                subunitElement.setAttribute("data-expressionValue", expressionLevel);
+                subunitElement.setAttribute("data-sampleSize", sampleSize);
+                subunitElement.setAttribute("data-standardDeviation", expressionData['sd']);
+                subunitElement.setAttribute("data-sampleSize", sampleSize);
 
-                var controlSampleName = undefined;
-                if (this.sampleData[whichSVG]['description']) {
-                    controlSampleName = this.sampleData[whichSVG]['description'][expressionData['controlSampleName']];
-                };
-                if (controlSampleName === undefined || controlSampleName === '') {
-                    controlSampleName = expressionData['controlSampleName'];
-                };
-                title.textContent += '\nControl Sample Name: ' + controlSampleName;
+                // Add tooltip/title on hover
+                var title = document.createElementNS("http://www.w3.org/2000/svg","title");
+                title.textContent = descriptionName + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize + '\nStandard Deviation: ' + parseFloat(expressionData['sd']).toFixed(3);
 
-                svgObject.getElementById(svgSubunit).setAttribute("data-controlAverage", expressionData['controlAverage']);
-                title.textContent += '\nControl Expression: ' + parseFloat(expressionData['controlAverage']).toFixed(3);
+                // Add rest of titles and tooltip/title
+                var inducReduc = false;
+                if (expressionData['inductionValue']) {
+                    subunitElement.setAttribute("data-inductionValue", expressionData['inductionValue']);
+                    title.textContent += '\nInduction Value: ' + parseFloat(expressionData['inductionValue']).toFixed(3);
+                    inducReduc = true;
+                } else if (expressionData['reductionValue']) {
+                    subunitElement.setAttribute("data-reductionValue", expressionData['reductionValue']);
+                    title.textContent += '\nReduction Value: ' + parseFloat(expressionData['ReductionValue']).toFixed(3);
+                    inducReduc = true;
+                };
+                if (inducReduc === true) {
+                    subunitElement.setAttribute("data-expressionRatio", expressionData['expressionRatio']);
+                    title.textContent += '\nExpression Ratio: ' + parseFloat(expressionData['expressionRatio']).toFixed(3);
+                    subunitElement.setAttribute("data-controlSampleName", expressionData['controlSampleName']);
+
+                    var controlSampleName = undefined;
+                    if (this.sampleData[whichSVG]['description']) {
+                        controlSampleName = this.sampleData[whichSVG]['description'][expressionData['controlSampleName']];
+                    };
+                    if (controlSampleName === undefined || controlSampleName === '') {
+                        controlSampleName = expressionData['controlSampleName'];
+                    };
+                    title.textContent += '\nControl Sample Name: ' + controlSampleName;
+
+                    subunitElement.setAttribute("data-controlAverage", expressionData['controlAverage']);
+                    title.textContent += '\nControl Expression: ' + parseFloat(expressionData['controlAverage']).toFixed(3);
+                };
+                subunitElement.appendChild(title);
             };
-            svgObject.getElementById(svgSubunit).appendChild(title);
     
             // Correcting duplicate error:
             if (isdupShoot) {
-                for (var dupS = 0; dupS < duplicateShoot.length; dupS++) {
-                    if (svgObject.getElementById(duplicateShoot[dupS])) {
+                for (let dupS in duplicateShoot) {
+                    // Find duplicate shoot element:
+                    let dupShootElement;
+                    for (let i in allParsableElements) {
+                        if (allParsableElements[i].id === duplicateShoot[dupS]) {
+                            dupShootElement = allParsableElements[i];
+                        };
+                    };
+
+                    if (dupShootElement) {
                         // Add interactivity 
-                        svgObject.getElementById(duplicateShoot[dupS]).setAttribute("class", 'hoverDetails');
-                        svgObject.getElementById(duplicateShoot[dupS]).addEventListener('mouseenter', function(event) {
+                        dupShootElement.setAttribute("class", 'hoverDetails');
+                        dupShootElement.addEventListener('mouseenter', function(event) {
                             addTissueMetadata(this.id);
                         });
-                        svgObject.getElementById(duplicateShoot[dupS]).addEventListener('mouseleave', function(event) {
+                        dupShootElement.addEventListener('mouseleave', function(event) {
                             removeTissueMetadata(this.id);
                         });
                         // Adding colour
-                        childElements = svgObject.getElementById(duplicateShoot[dupS]).childNodes;
+                        childElements = dupShootElement.childNodes;
                         if (childElements.length > 0) {
+                            let foundColor = false;
+
                             for (var c = 0; c < childElements.length; c++) {
-                                if (childElements[c].nodeName === 'path') {           
+                                if (childElements[c].tagName === 'path') {           
                                     childElements[c].setAttribute("fill", colour);
+                                    foundColor = true;
                                 };
                             };
+
+                            if (!foundColor) {
+                                dupShootElement.setAttribute("fill", colour);
+                            };
                         } else {             
-                            svgObject.getElementById(duplicateShoot[dupS]).setAttribute("fill", colour);
+                            dupShootElement.setAttribute("fill", colour);
                         };                    
                         // Add tooltip/title on hover
                         title.textContent = duplicateShoot[dupS] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
-                        svgObject.getElementById(duplicateShoot[dupS]).appendChild(title);
+                        dupShootElement.appendChild(title);
                     };
                 };
             } else if (isdupRoot) {
-                for (var dupR = 0; dupR < duplicateRoot.length; dupR++) {
-                    // Add interactivity 
-                    svgObject.getElementById(duplicateRoot[dupR]).setAttribute("class", 'hoverDetails');
-                    svgObject.getElementById(duplicateRoot[dupR]).addEventListener('mouseenter', function(event) {
-                        addTissueMetadata(this.id);
-                    });
-                    svgObject.getElementById(duplicateRoot[dupR]).addEventListener('mouseleave', function(event) {
-                        removeTissueMetadata(this.id);
-                    });
-                    childElements = svgObject.getElementById(duplicateRoot[dupR]).childNodes;
-                    // Adding colour
-                    if (childElements.length > 0) {
-                        for (var c = 0; c < childElements.length; c++) {
-                            if (childElements[c].nodeName === 'path') {           
-                                childElements[c].setAttribute("fill", colour);
-                            };
+                for (let dupR in duplicateRoot) {
+                    let dupRootElement;
+                    for (let i in allParsableElements) {
+                        if (allParsableElements[i].id === duplicateRoot[dupR]) {
+                            dupRootElement = allParsableElements[i];
                         };
-                    } else {             
-                        svgObject.getElementById(duplicateRoot[dupR]).setAttribute("fill", colour);
-                    };                 
-                    // Add tooltip/title on hover
-                    title.textContent = duplicateRoot[dupR] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
-                    svgObject.getElementById(duplicateRoot[dupR]).appendChild(title)
+                    };
+
+                    if (dupRootElement) {
+                        // Add interactivity 
+                        dupRootElement.setAttribute("class", 'hoverDetails');
+                        dupRootElement.addEventListener('mouseenter', function(event) {
+                            addTissueMetadata(this.id);
+                        });
+                        dupRootElement.addEventListener('mouseleave', function(event) {
+                            removeTissueMetadata(this.id);
+                        });
+                        // Adding colour
+                        childElements = dupRootElement.childNodes;
+                        if (childElements.length > 0) {
+                            let foundColor = false;
+
+                            for (var c = 0; c < childElements.length; c++) {
+                                if (childElements[c].tagName === 'path') {           
+                                    childElements[c].setAttribute("fill", colour);
+                                    foundColor = true;
+                                };
+                            };
+
+                            if (!foundColor) {
+                                dupRootElement.setAttribute("fill", colour);
+                            };
+                        } else {             
+                            dupRootElement.setAttribute("fill", colour);
+                        };                    
+                        // Add tooltip/title on hover
+                        title.textContent = duplicateRoot[dupR] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
+                        dupRootElement.appendChild(title);
+                    };
                 };
             };
         };
