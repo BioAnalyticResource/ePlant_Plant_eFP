@@ -22,15 +22,15 @@ For the ePlant Plant eFP to work correctly, you need to call the CreateSVGExpres
 // To create your own visualized tissue expression, call generateSVG(). Documentation below:
 // /**
 //  * Create and generate an SVG based on the desired tissue expression locus
-//  * @param {String} desiredDOMid The desired DOM location or if kept empty, returns the string version of the output
 //  * @param {String} locus The AGI ID (example: AT3G24650) 
+//  * @param {String} desiredDOMid The desired DOM location or if kept empty, would not replace any DOM elements and just create the related HTML DOM elements within appendSVG
 //  * @param {String} svgName Name of the SVG file without the .svg at the end. Default is set to "default", when left this value, the highest expression value (if any) is chosen and if not, then Abiotic Stress is. 
 //  * @param {Boolean} includeDropdownAll true = include a html dropdown/select of all available SVGs/samples, false = don't
 //  * @returns {String} If no desiredDOMid is given, returns the string version of the output instead
 //  */
-createSVGExpressionData.generateSVG('desiredDOM', 'AT3G24650', 'default');
+createSVGExpressionData.generateSVG('AT3G24650', 'desiredDOM', 'default');
 // or
-window.createSVGExpressionData.generateSVG('desiredDOM', 'AT3G24650', 'default');
+window.createSVGExpressionData.generateSVG('AT3G24650', 'desiredDOM', 'default');
 ```
 
 This will display the visualized and coloured tissue expression data within the desired location. 

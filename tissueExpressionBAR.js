@@ -216,12 +216,12 @@ class CreateSVGExpressionData {
 
     /**
      * Create and generate an SVG based on the desired tissue expression locus
-     * @param {String} desiredDOMid The desired DOM location or if kept empty, would not replace any DOM elements and just create the related HTML DOM elements within appendSVG
      * @param {String} locus The AGI ID (example: AT3G24650) 
+     * @param {String} desiredDOMid The desired DOM location or if kept empty, would not replace any DOM elements and just create the related HTML DOM elements within appendSVG
      * @param {String} svgName Name of the SVG file without the .svg at the end. Default is set to "default", when left this value, the highest expression value (if any) is chosen and if not, then Abiotic Stress is. 
      * @param {Boolean} includeDropdownAll true = include a html dropdown/select of all available SVGs/samples, false = don't
      */
-    generateSVG(desiredDOMid, locus = 'AT3G24650', svgName = 'default', includeDropdownAll = true) {
+    generateSVG(locus = 'AT3G24650', desiredDOMid = undefined, svgName = 'default', includeDropdownAll = true) {
         // Reset variables:
         this.svgValues = {};
         this.svgMax = undefined;
@@ -670,7 +670,7 @@ class CreateSVGExpressionData {
                 `<div class="selectSVGContainer">
                     <span>Select SVG to display:</span> 
                     <select 
-                        onchange="window.createSVGExpressionData.generateSVG('${this.desiredDOMid}', '${locus}', this.value.toString(), ${includeDropdownAll})"
+                        onchange="window.createSVGExpressionData.generateSVG('${locus}', '${this.desiredDOMid}', this.value.toString(), ${includeDropdownAll})"
                         id="sampleOptions" 
                         value="${svgName}" 
                         class="selectCompendiumOptions"

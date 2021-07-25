@@ -54,8 +54,8 @@
                 <code>
                     /** <br />
                      * Create and generate an SVG based on the desired tissue expression locus <br />
-                     * @param {String} desiredDOMid The desired DOM location or if kept empty, returns the string version of the output <br />
                      * @param {String} locus The AGI ID (example: AT3G24650)  <br />
+                     * @param {String} desiredDOMid The desired DOM location or if kept empty, would not replace any DOM elements and just create the related HTML DOM elements within appendSVG <br />
                      * @param {String} svgName Name of the SVG file without the .svg at the end. Default is set to "default", when left this value, the highest expression value (if any) is chosen and if not, then Abiotic Stress is.  <br />
                      * @param {Boolean} includeDropdownAll true = include a html dropdown/select of all available SVGs/samples, false = don't <br />
                      * @returns {String} If no desiredDOMid is given, returns the string version of the output instead <br />
@@ -72,7 +72,7 @@
         </p>
     </div>
 
-    <input type="text" name="locus_input" id="locus_input" value="AT3G24650" aria-label="Change locus" /><button id="locus_change" onclick="window.createSVGExpressionData.generateSVG('exampleDOM', document.getElementById('locus_input').value, 'default', true, true);" >Change locus</button>
+    <input type="text" name="locus_input" id="locus_input" value="AT3G24650" aria-label="Change locus" /><button id="locus_change" onclick="window.createSVGExpressionData.generateSVG(document.getElementById('locus_input').value, 'exampleDOM', 'default', true, true);" >Change locus</button>
     <br/><br/>
 
     <div id="exampleDOM" style="background-color: white;color: black;">
@@ -81,10 +81,10 @@
     <script src="../tissueExpressionBAR.js"></script>
     <script>
         if (window?.createSVGExpressionData?.generateSVG) {
-            createSVGExpressionData.generateSVG('exampleDOM', 'AT3G24650', 'default', true, true);
+            createSVGExpressionData.generateSVG('AT3G24650', 'exampleDOM', 'default', true, true);
         } else {
             setTimeout(function() {
-                createSVGExpressionData.generateSVG('exampleDOM', 'AT3G24650', 'default', true, true);
+                createSVGExpressionData.generateSVG('AT3G24650', 'exampleDOM', 'default', true, true);
             }, 100);
         };
     </script>
