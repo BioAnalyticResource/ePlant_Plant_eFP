@@ -1089,15 +1089,17 @@ class CreateSVGExpressionData {
 
                 // Add rest of titles and tooltip/title
                 var inducReduc = false;
-                if (expressionData['inductionValue']) {
-                    subunitElement.setAttribute("data-inductionValue", expressionData['inductionValue']);
-                    title.textContent += '\nInduction Value: ' + parseFloat(expressionData['inductionValue']).toFixed(3);
-                    inducReduc = true;
-                } else if (expressionData['reductionValue']) {
-                    subunitElement.setAttribute("data-reductionValue", expressionData['reductionValue']);
-                    title.textContent += '\nReduction Value: ' + parseFloat(expressionData['ReductionValue']).toFixed(3);
-                    inducReduc = true;
-                };
+
+                // if (expressionData['inductionValue']) {
+                //     subunitElement.setAttribute("data-inductionValue", expressionData['inductionValue']);
+                //     title.textContent += '\nInduction Value: ' + parseFloat(expressionData['inductionValue']).toFixed(3);
+                //     inducReduc = true;
+                // } else if (expressionData['reductionValue']) {
+                //     subunitElement.setAttribute("data-reductionValue", expressionData['reductionValue']);
+                //     title.textContent += '\nReduction Value: ' + parseFloat(expressionData['ReductionValue']).toFixed(3);
+                //     inducReduc = true;
+                // };
+
                 if (inducReduc === true) {
                     subunitElement.setAttribute("data-expressionRatio", expressionData['expressionRatio']);
                     title.textContent += '\nExpression Ratio: ' + parseFloat(expressionData['expressionRatio']).toFixed(3);
