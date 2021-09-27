@@ -4,7 +4,7 @@
     {
       "name": "Alexander Sullivan",
       "email": "alexander.j.sullivan@hotmail.com",
-      "url": "https://twitter.com/AlexJSully"
+      "url": "https://alexjsully.me/"
     },
     {
       "name": "Asher Pasha"
@@ -19,7 +19,7 @@
       "url": "https://bar.utoronto.ca/"
     }
   ],
-  "version": "1.0.10",
+  "version": "1.0.11",
   "private": true,
   "description": "Data visualization tool to display tissue expression data for Arabidopsis thaliana",
   "main": "tissueExpressionBAR.js",
