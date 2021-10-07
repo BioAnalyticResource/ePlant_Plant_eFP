@@ -175,6 +175,158 @@ function removeTissueMetadata(elementID) {
     };
 };
 
+/** ePlant Plant's eFP mouse event data */
+let ePlantPlantEFPHandleMouseEventData = {
+    /** Whether mouse events can occur [true] or not [false, default] */
+    start: false,
+    /** Cache last mouse position to calculate next position on drag */
+    cacheMousePos: {x: null, y: null},
+    /** Initial height of the SVG */
+    startHeight: null,
+    /** How much the SVG has been zoomed in by */
+    zoomLevel: 1
+};
+
+/**
+ * Handle mouse events to drag the SVG compendium
+ * @param {String} domID DOM ID of the SVG container 
+ * @param {String} type What type of event is happening: 'down' to initiate drag, 'move' to drag, 'up' to end drag 
+ * @param {Event} e Mouse event object
+ * @param {Number} moveBy How much the SVG has been moved by 
+ */
+function ePlantPlantEFPHandleMouseEvent(domID, type, e, moveBy = 1.5) {
+    /** SVG document */
+    let svgElement = domID.firstElementChild;
+
+    // If the SVG is not yet been cached, then cache it
+    if (!ePlantPlantEFPHandleMouseEventData.startHeight) {
+        ePlantPlantEFPHandleMouseEventData.startHeight = svgElement.viewBox.baseVal.height;
+    };
+
+    // Determine if SVG should be draggable or not
+    if (type === 'down' && !ePlantPlantEFPHandleMouseEventData.start && window.getSelection() && window.getSelection().isCollapsed) {
+        // Prevent highlighting of text when dragging
+        e.preventDefault();
+
+        // Cache the mouse position and begin dragging
+        ePlantPlantEFPHandleMouseEventData.start = true;
+        ePlantPlantEFPHandleMouseEventData.cacheMousePos = {x: e.clientX, y: e.clientY};
+    };
+
+    // If the SVG is being dragged, then drag it
+    if (type === 'move' && ePlantPlantEFPHandleMouseEventData.start) {
+        // Prevent highlighting of text when dragging
+        e.preventDefault();
+
+        /** How much the SVG will be dragged */
+        let moveByValue = svgElement.viewBox.baseVal.height ?
+            (window.innerHeight / svgElement.viewBox.baseVal.height) / moveBy :
+            moveBy;
+
+        // Calculate the new position of the SVG
+        /** New X position of SVG */
+        let xDiff = -(e.clientX - ePlantPlantEFPHandleMouseEventData.cacheMousePos.x) / moveByValue;
+        /** New Y position of SVG */
+        let yDiff = -(e.clientY - ePlantPlantEFPHandleMouseEventData.cacheMousePos.y) / moveByValue;
+
+        // Find boundaries of the SVG so it does not leave viewpoint
+        /** Default boundaries for SVG viewpoint */
+        let defaultScaleBoundaries = 0.95
+
+        /** Boundaries to scale the SVG's viewpoint on the X axis */
+        let scaleBoundariesX = svgElement.height.baseVal.value ? 
+            (100 - (svgElement.height.baseVal.value / svgElement.viewBox.baseVal.height)) / 100 :
+            (100 - (window.innerHeight / svgElement.viewBox.baseVal.height)) / 100 ;
+        // Should be between 0 and 1
+        if (scaleBoundariesX <= 0 || scaleBoundariesX >= 1) {
+            scaleBoundariesX = defaultScaleBoundaries;
+        };
+
+        /** Boundaries to scale the SVG's viewpoint on the Y axis */
+        let scaleBoundariesY = svgElement.width.baseVal.value ? 
+            (100 - (svgElement.width.baseVal.value / svgElement.viewBox.baseVal.width)) / 100 :
+            (100 - (window.innerWidth / svgElement.viewBox.baseVal.height)) / 100 ;
+        // Should be between 0 and 1
+        if (scaleBoundariesY <= 0 || scaleBoundariesY >= 1) {
+            scaleBoundariesY = defaultScaleBoundaries;
+        };
+
+        /** Boundaries to scale the SVG's viewpoint on the X axis */
+        let xBoundaries = Math.abs(svgElement.viewBox.baseVal.width * scaleBoundariesX);
+        /** Upper boundaries to scale the SVG's viewpoint on the X axis */
+        let xUpperBoundaries = xBoundaries * (1 / ePlantPlantEFPHandleMouseEventData.zoomLevel);
+
+        /** Boundaries to scale the SVG's viewpoint on the Y axis */
+        let yBoundaries = Math.abs(svgElement.viewBox.baseVal.height * scaleBoundariesY);
+        /** Upper boundaries to scale the SVG's viewpoint on the Y axis */
+        let yUpperBoundaries = yBoundaries * (1 /ePlantPlantEFPHandleMouseEventData.zoomLevel);
+
+        // Cache mouse position
+        ePlantPlantEFPHandleMouseEventData.cacheMousePos = {x: e.clientX, y: e.clientY};
+
+        // If SVG's Y position within viewpoint, then move it
+        if (svgElement.viewBox.baseVal.y + yDiff <= yUpperBoundaries && svgElement.viewBox.baseVal.y + yDiff >= -yBoundaries) {
+            svgElement.viewBox.baseVal.y += yDiff;
+        } else {
+            // If SVG's Y position is outside viewpoint, then move it to the top or bottom
+            svgElement.viewBox.baseVal.y = svgElement.viewBox.baseVal.y + yDiff > 0 ? 
+                yUpperBoundaries : 
+                -yBoundaries;
+        };
+
+        // If SVG's X position within viewpoint, then move it
+        if (svgElement.viewBox.baseVal.x + xDiff <= xUpperBoundaries && svgElement.viewBox.baseVal.x + xDiff >= -xBoundaries) {
+            svgElement.viewBox.baseVal.x += xDiff;
+        } else {
+            // If SVG's X position is outside viewpoint, then move it to the left or right
+            svgElement.viewBox.baseVal.x = svgElement.viewBox.baseVal.x + xDiff > 0 ? 
+                xUpperBoundaries : 
+                -xBoundaries;
+        };
+    };
+
+    // End dragging
+    if (type === 'up') {
+        ePlantPlantEFPHandleMouseEventData.start = false;
+    };
+};
+
+/**
+ * Handle zooming of SVG
+ * @param {String} domID DOM ID of the SVG container
+ * @param {Event} e Mouse event object
+ * @param {Number} changeBy How much the SVG has been moved by 
+ */
+function ePlantPlantEFPHandleMouseWheel(domID, e, changeBy = 3) {
+    /** SVG document */
+    let svgElement = domID.firstElementChild;
+    /** SVG viewpoint */
+    let baseValues = svgElement.viewBox.baseVal;
+
+    /** If should zoom in [true] or out [false] */
+    let up = e.deltaY > 0;
+
+    /** How much the zoom will zoom in by */
+    let changeByValue = ePlantPlantEFPHandleMouseEventData.startHeight ?
+        (window.innerHeight / ePlantPlantEFPHandleMouseEventData.startHeight) / changeBy :
+        changeBy;
+    
+    if (window.getSelection() && window.getSelection().isCollapsed && baseValues && e.deltaY && ePlantPlantEFPHandleMouseEventData.start) {
+        // Prevent scrolling window
+        e.preventDefault();
+
+        if (up) {
+            svgElement.viewBox.baseVal.width = baseValues.width * changeByValue;
+            svgElement.viewBox.baseVal.height = baseValues.height * changeByValue;
+            ePlantPlantEFPHandleMouseEventData.zoomLevel *= changeByValue;
+        } else {
+            svgElement.viewBox.baseVal.width = baseValues.width / changeByValue;
+            svgElement.viewBox.baseVal.height = baseValues.height / changeByValue;
+            ePlantPlantEFPHandleMouseEventData.zoomLevel /= changeByValue;
+        };
+    };
+};
+
 /**
  * Create and retrieve expression data in an SVG format
  */
@@ -212,6 +364,9 @@ class CreateSVGExpressionData {
         this.svgMinAverageSample = '';
         // Store object name:
         this.svgObjectName = '';
+
+        /** SVG DOM container's height styling */
+        this.svgContainerHeight = '95vh';
     };
 
     /**
@@ -220,8 +375,9 @@ class CreateSVGExpressionData {
      * @param {String} desiredDOMid The desired DOM location or if kept empty, would not replace any DOM elements and just create the related HTML DOM elements within appendSVG
      * @param {String} svgName Name of the SVG file without the .svg at the end. Default is set to "default", when left this value, the highest expression value (if any) is chosen and if not, then Abiotic Stress is. 
      * @param {Boolean} includeDropdownAll true = include a html dropdown/select of all available SVGs/samples, false = don't
+     * @param {String | Number} containerHeight The height of the SVG container, default is 95vh
      */
-    generateSVG(locus = 'AT3G24650', desiredDOMid = undefined, svgName = 'default', includeDropdownAll = true) {
+    generateSVG(locus = 'AT3G24650', desiredDOMid = undefined, svgName = 'default', includeDropdownAll = true, containerHeight = undefined) {
         // Reset variables:
         this.svgValues = {};
         this.svgMax = undefined;
@@ -234,6 +390,12 @@ class CreateSVGExpressionData {
         if (this.clickList.includes(svgName) === false) {
             this.clickList.push(svgName);
         };
+        if (containerHeight && typeof containerHeight === 'string') {
+            this.svgContainerHeight = containerHeight.toString();
+        } else if (containerHeight && typeof containerHeight === 'number') {
+            this.svgContainerHeight = `${containerHeight.toString()}px`;
+        };
+        
         // Initiate scripts     
         this.desiredDOMid = desiredDOMid;
         this.retrieveTopExpressionValues(svgName, locus.toUpperCase());
@@ -684,16 +846,8 @@ class CreateSVGExpressionData {
             localAppendSVG.appendChild(dropdownList);
         };
 
-        // Append SVG to document
-        localAppendSVG.appendChild(new DOMParser().parseFromString(
-            `<span class="${svgName}">
-                <b>${svgName}</b>
-            </span>`,
-            'text/xml'
-        ).documentElement);
-
         // Create call for SVG file
-        var urlSVG = 'https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/compendiums/' + svgUse + '.min.svg';
+        var urlSVG = 'https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/compendiums/' + svgUse + '.svg';
         var methods = {mode: 'cors'};
 
         await fetch(urlSVG, methods).then(
@@ -706,11 +860,17 @@ class CreateSVGExpressionData {
                         if (svgData.id) {
                             this.svgObjectName = svgData.id;
                             
-                            svgData.style = "width: 95% !important;height: 95% !important;"
+                            svgData.style = "width: 100% !important;height: 100% !important; margin: auto !important";
                         };
 
                         let svgContainer = new DOMParser().parseFromString(
-                            `<div id="${svgUse}_object"></div>`,
+                            `<div id="${svgUse}_object" style="height:${this.svgContainerHeight};" 
+                                onMouseDown="ePlantPlantEFPHandleMouseEvent(${svgUse}_object, 'down', event)" 
+                                onMouseMove="ePlantPlantEFPHandleMouseEvent(${svgUse}_object, 'move', event)" 
+                                onMouseUp="ePlantPlantEFPHandleMouseEvent(${svgUse}_object, 'up', event)" 
+                                onMouseLeave="ePlantPlantEFPHandleMouseEvent(${svgUse}_object, 'up', event)"
+                                onWheel="ePlantPlantEFPHandleMouseWheel(${svgUse}_object, event)"
+                            ></div>`,
                             'text/html'
                         ).body.childNodes[0];
                         svgContainer.appendChild(svgData);
