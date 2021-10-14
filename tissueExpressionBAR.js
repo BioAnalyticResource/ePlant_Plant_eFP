@@ -235,8 +235,8 @@ function ePlantPlantEFPHandleMouseEvent(domID, type, e, moveBy = 1.5) {
 
         /** Boundaries to scale the SVG's viewpoint on the X axis */
         let scaleBoundariesX = svgElement.height.baseVal.value ? 
-            (100 - (svgElement.height.baseVal.value / svgElement.viewBox.baseVal.height)) / 100 :
-            (100 - (window.innerHeight / svgElement.viewBox.baseVal.height)) / 100 ;
+            ((defaultScaleBoundaries * 100) - (svgElement.height.baseVal.value / svgElement.viewBox.baseVal.height)) / 100 :
+            ((defaultScaleBoundaries * 100) - (window.innerHeight / svgElement.viewBox.baseVal.height)) / 100 ;
         // Should be between 0 and 1
         if (scaleBoundariesX <= 0 || scaleBoundariesX >= 1) {
             scaleBoundariesX = defaultScaleBoundaries;
@@ -244,22 +244,27 @@ function ePlantPlantEFPHandleMouseEvent(domID, type, e, moveBy = 1.5) {
 
         /** Boundaries to scale the SVG's viewpoint on the Y axis */
         let scaleBoundariesY = svgElement.width.baseVal.value ? 
-            (100 - (svgElement.width.baseVal.value / svgElement.viewBox.baseVal.width)) / 100 :
-            (100 - (window.innerWidth / svgElement.viewBox.baseVal.height)) / 100 ;
+            ((defaultScaleBoundaries * 100) - (svgElement.width.baseVal.value / svgElement.viewBox.baseVal.width)) / 100 :
+            ((defaultScaleBoundaries * 100) - (window.innerWidth / svgElement.viewBox.baseVal.height)) / 100 ;
         // Should be between 0 and 1
         if (scaleBoundariesY <= 0 || scaleBoundariesY >= 1) {
             scaleBoundariesY = defaultScaleBoundaries;
         };
 
+        /** Current zoom level on the SVG compendium */
+        let zoomLevel = 1 / ePlantPlantEFPHandleMouseEventData.zoomLevel === 1 ?
+            defaultScaleBoundaries : 
+            1 / ePlantPlantEFPHandleMouseEventData.zoomLevel ;
+
         /** Boundaries to scale the SVG's viewpoint on the X axis */
-        let xBoundaries = Math.abs(svgElement.viewBox.baseVal.width * scaleBoundariesX);
-        /** Upper boundaries to scale the SVG's viewpoint on the X axis */
-        let xUpperBoundaries = xBoundaries * (1 / ePlantPlantEFPHandleMouseEventData.zoomLevel);
+        let xBoundaries = svgElement.viewBox.baseVal.width * scaleBoundariesX * zoomLevel;
+        /** Boundaries for the X axis on the right side of the SVG compendium's viewpoint */
+        let xRightBoundaries = svgElement.viewBox.baseVal.width * scaleBoundariesX;
 
         /** Boundaries to scale the SVG's viewpoint on the Y axis */
-        let yBoundaries = Math.abs(svgElement.viewBox.baseVal.height * scaleBoundariesY);
+        let yBoundaries = svgElement.viewBox.baseVal.height * scaleBoundariesY;
         /** Upper boundaries to scale the SVG's viewpoint on the Y axis */
-        let yUpperBoundaries = yBoundaries * (1 /ePlantPlantEFPHandleMouseEventData.zoomLevel);
+        let yUpperBoundaries = yBoundaries * zoomLevel;
 
         // Cache mouse position
         ePlantPlantEFPHandleMouseEventData.cacheMousePos = {x: e.clientX, y: e.clientY};
@@ -275,13 +280,13 @@ function ePlantPlantEFPHandleMouseEvent(domID, type, e, moveBy = 1.5) {
         };
 
         // If SVG's X position within viewpoint, then move it
-        if (svgElement.viewBox.baseVal.x + xDiff <= xUpperBoundaries && svgElement.viewBox.baseVal.x + xDiff >= -xBoundaries) {
+        if (svgElement.viewBox.baseVal.x + xDiff <= xBoundaries && svgElement.viewBox.baseVal.x + xDiff >= -xRightBoundaries) {
             svgElement.viewBox.baseVal.x += xDiff;
         } else {
             // If SVG's X position is outside viewpoint, then move it to the left or right
             svgElement.viewBox.baseVal.x = svgElement.viewBox.baseVal.x + xDiff > 0 ? 
-                xUpperBoundaries : 
-                -xBoundaries;
+                xBoundaries : 
+                -xRightBoundaries;
         };
     };
 
@@ -847,7 +852,7 @@ class CreateSVGExpressionData {
         };
 
         // Create call for SVG file
-        var urlSVG = 'https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/compendiums/' + svgUse + '.svg';
+        var urlSVG = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/compendiums/' + svgUse + '.svg';
         var methods = {mode: 'cors'};
 
         await fetch(urlSVG, methods).then(
@@ -860,7 +865,7 @@ class CreateSVGExpressionData {
                         if (svgData.id) {
                             this.svgObjectName = svgData.id;
                             
-                            svgData.style = "width: 100% !important;height: 100% !important; margin: auto !important";
+                            svgData.style = "width: 100% !important; height: 100% !important;";
                         };
 
                         let svgContainer = new DOMParser().parseFromString(
@@ -920,7 +925,6 @@ class CreateSVGExpressionData {
                 locusValue = locusValue + locusPoint[i];
             };
         };
-        // console.log(locusValue);
         await this.createSVGValues(whichSVG, locus);
     };
 
