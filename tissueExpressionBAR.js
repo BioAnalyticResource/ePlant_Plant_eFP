@@ -1248,7 +1248,7 @@ class CreateSVGExpressionData {
                 subunitElement.setAttribute("data-sampleSize", sampleSize);
 
                 // Add tooltip/title on hover
-                var title = document.createElementNS("http://www.w3.org/2000/svg","title");
+                var title = document.createElementNS("https://www.w3.org/2000/svg","title");
                 title.textContent = descriptionName + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize + '\nStandard Deviation: ' + parseFloat(expressionData['sd']).toFixed(3);
 
                 // Add rest of titles and tooltip/title
