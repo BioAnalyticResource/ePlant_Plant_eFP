@@ -4,6 +4,7 @@
 //
 //=============================================================================
 let existingStrokeData = {};
+window.existingStrokeData = existingStrokeData;
 /**
  * Add details to an SVG or SVG-subunit including: hover and outline
  * @param {String} elementID Which SVG or SVG-subunit is being found and edited
