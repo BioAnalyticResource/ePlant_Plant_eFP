@@ -61,6 +61,27 @@ function addTissueMetadata(elementID) {
             existingStrokeData[elementID]['addedMetadata'] = true;
 
             var strokeElement = svgDoc.getElementById(elementID);
+
+            // Create hover title box
+            if (strokeElement.getBoundingClientRect()) {
+                /** Title box's text */
+                let titleText = svgPart.getElementsByTagName('title')?.[0]?.textContent;
+                /** Title box's x-coordinate */
+                let boxLeft = strokeElement.getBoundingClientRect().right;
+                /** Title box's y-coordinate */
+                let boxTop = strokeElement.getBoundingClientRect().bottom;
+
+                // If all the data is available, add the title box
+                if (titleText && boxLeft && boxTop) {
+                    ePlantPlantEFPChangeTitlePosition(true, boxLeft, boxTop, titleText);
+                } else {
+                    // Fail-safe, hide title box
+                    ePlantPlantEFPChangeTitlePosition(false);
+                };
+            } else {
+                // Fail-safe, hide title box
+                ePlantPlantEFPChangeTitlePosition(false);
+            };
             
             existingStrokeWidth = Number(existingStrokeWidth);
             var newStrokeWidth = existingStrokeWidth * increaseStrokeWidthBy;
@@ -174,6 +195,35 @@ function removeTissueMetadata(elementID) {
             svgPart.setAttribute('stroke', fallbackStrokeColour);
         };
     };
+
+    // Hide title box
+    ePlantPlantEFPChangeTitlePosition(false);
+};
+
+/**
+ * Create and display the ePlant Plant eFP's hover title box
+ * @param {Boolean} display Whether to display [true] or hide [false, default] the title box 
+ * @param {Number | String} x The x-coordinate of the element being hovered over 
+ * @param {Number | String} y The y-coordinate of the element being hovered over
+ * @param {String} textContent The text to be displayed in the title box
+ * @param {String} domID The ID of the title box DOM element
+ */
+function ePlantPlantEFPChangeTitlePosition(display = false, x = 0, y = 0, textContent = '', domID = 'ePlant-hover-title-box') {
+    /** DOM of the title box element */
+    let domElm = document.getElementById(domID);
+
+    if (domElm) {
+        if (!display) {
+            // Hide title box
+            domElm.style.display = 'none';
+        } else {
+            // Display title box
+            domElm.style.display = 'block';
+            domElm.style.left = `${x}px`;
+            domElm.style.top = `${y}px`;
+            domElm.textContent = textContent;
+        };
+    };
 };
 
 /** ePlant Plant's eFP mouse event data */
@@ -199,98 +249,101 @@ function ePlantPlantEFPHandleMouseEvent(domID, type, e, moveBy = 1.5) {
     /** SVG document */
     let svgElement = domID.firstElementChild;
 
-    // If the SVG is not yet been cached, then cache it
-    if (!ePlantPlantEFPHandleMouseEventData.startHeight) {
-        ePlantPlantEFPHandleMouseEventData.startHeight = svgElement.viewBox.baseVal.height;
+    // If SVG is not loaded, then return
+    if (svgElement?.viewBox?.baseVal) {
+        // If the SVG is not yet been cached, then cache it
+        if (!ePlantPlantEFPHandleMouseEventData.startHeight) {
+            ePlantPlantEFPHandleMouseEventData.startHeight = svgElement.viewBox.baseVal.height;
+        };
+
+        // Determine if SVG should be draggable or not
+        if (type === 'down' && !ePlantPlantEFPHandleMouseEventData.start && window.getSelection() && window.getSelection().isCollapsed) {
+            // Prevent highlighting of text when dragging
+            e.preventDefault();
+
+            // Cache the mouse position and begin dragging
+            ePlantPlantEFPHandleMouseEventData.start = true;
+            ePlantPlantEFPHandleMouseEventData.cacheMousePos = {x: e.clientX, y: e.clientY};
+        };
+
+        // If the SVG is being dragged, then drag it
+        if (type === 'move' && ePlantPlantEFPHandleMouseEventData.start) {
+            // Prevent highlighting of text when dragging
+            e.preventDefault();
+
+            /** How much the SVG will be dragged */
+            let moveByValue = svgElement.viewBox.baseVal.height ?
+                (window.innerHeight / svgElement.viewBox.baseVal.height) / moveBy :
+                moveBy;
+
+            // Calculate the new position of the SVG
+            /** New X position of SVG */
+            let xDiff = -(e.clientX - ePlantPlantEFPHandleMouseEventData.cacheMousePos.x) / moveByValue;
+            /** New Y position of SVG */
+            let yDiff = -(e.clientY - ePlantPlantEFPHandleMouseEventData.cacheMousePos.y) / moveByValue;
+
+            // Find boundaries of the SVG so it does not leave viewpoint
+            /** Default boundaries for SVG viewpoint */
+            let defaultScaleBoundaries = 0.95
+
+            /** Boundaries to scale the SVG's viewpoint on the X axis */
+            let scaleBoundariesX = svgElement.height.baseVal.value ? 
+                ((defaultScaleBoundaries * 100) - (svgElement.height.baseVal.value / svgElement.viewBox.baseVal.height)) / 100 :
+                ((defaultScaleBoundaries * 100) - (window.innerHeight / svgElement.viewBox.baseVal.height)) / 100 ;
+            // Should be between 0 and 1
+            if (scaleBoundariesX <= 0 || scaleBoundariesX >= 1) {
+                scaleBoundariesX = defaultScaleBoundaries;
+            };
+
+            /** Boundaries to scale the SVG's viewpoint on the Y axis */
+            let scaleBoundariesY = svgElement.width.baseVal.value ? 
+                ((defaultScaleBoundaries * 100) - (svgElement.width.baseVal.value / svgElement.viewBox.baseVal.width)) / 100 :
+                ((defaultScaleBoundaries * 100) - (window.innerWidth / svgElement.viewBox.baseVal.height)) / 100 ;
+            // Should be between 0 and 1
+            if (scaleBoundariesY <= 0 || scaleBoundariesY >= 1) {
+                scaleBoundariesY = defaultScaleBoundaries;
+            };
+
+            /** Current zoom level on the SVG compendium */
+            let zoomLevel = 1 / ePlantPlantEFPHandleMouseEventData.zoomLevel === 1 ?
+                defaultScaleBoundaries : 
+                1 / ePlantPlantEFPHandleMouseEventData.zoomLevel ;
+
+            /** Boundaries to scale the SVG's viewpoint on the X axis */
+            let xBoundaries = svgElement.viewBox.baseVal.width * scaleBoundariesX * zoomLevel;
+            /** Boundaries for the X axis on the right side of the SVG compendium's viewpoint */
+            let xRightBoundaries = svgElement.viewBox.baseVal.width * scaleBoundariesX;
+
+            /** Boundaries to scale the SVG's viewpoint on the Y axis */
+            let yBoundaries = svgElement.viewBox.baseVal.height * scaleBoundariesY;
+            /** Upper boundaries to scale the SVG's viewpoint on the Y axis */
+            let yUpperBoundaries = yBoundaries * zoomLevel;
+
+            // Cache mouse position
+            ePlantPlantEFPHandleMouseEventData.cacheMousePos = {x: e.clientX, y: e.clientY};
+
+            // If SVG's Y position within viewpoint, then move it
+            if (svgElement.viewBox.baseVal.y + yDiff <= yUpperBoundaries && svgElement.viewBox.baseVal.y + yDiff >= -yBoundaries) {
+                svgElement.viewBox.baseVal.y += yDiff;
+            } else {
+                // If SVG's Y position is outside viewpoint, then move it to the top or bottom
+                svgElement.viewBox.baseVal.y = svgElement.viewBox.baseVal.y + yDiff > 0 ? 
+                    yUpperBoundaries : 
+                    -yBoundaries;
+            };
+
+            // If SVG's X position within viewpoint, then move it
+            if (svgElement.viewBox.baseVal.x + xDiff <= xBoundaries && svgElement.viewBox.baseVal.x + xDiff >= -xRightBoundaries) {
+                svgElement.viewBox.baseVal.x += xDiff;
+            } else {
+                // If SVG's X position is outside viewpoint, then move it to the left or right
+                svgElement.viewBox.baseVal.x = svgElement.viewBox.baseVal.x + xDiff > 0 ? 
+                    xBoundaries : 
+                    -xRightBoundaries;
+            };
+        };
     };
-
-    // Determine if SVG should be draggable or not
-    if (type === 'down' && !ePlantPlantEFPHandleMouseEventData.start && window.getSelection() && window.getSelection().isCollapsed) {
-        // Prevent highlighting of text when dragging
-        e.preventDefault();
-
-        // Cache the mouse position and begin dragging
-        ePlantPlantEFPHandleMouseEventData.start = true;
-        ePlantPlantEFPHandleMouseEventData.cacheMousePos = {x: e.clientX, y: e.clientY};
-    };
-
-    // If the SVG is being dragged, then drag it
-    if (type === 'move' && ePlantPlantEFPHandleMouseEventData.start) {
-        // Prevent highlighting of text when dragging
-        e.preventDefault();
-
-        /** How much the SVG will be dragged */
-        let moveByValue = svgElement.viewBox.baseVal.height ?
-            (window.innerHeight / svgElement.viewBox.baseVal.height) / moveBy :
-            moveBy;
-
-        // Calculate the new position of the SVG
-        /** New X position of SVG */
-        let xDiff = -(e.clientX - ePlantPlantEFPHandleMouseEventData.cacheMousePos.x) / moveByValue;
-        /** New Y position of SVG */
-        let yDiff = -(e.clientY - ePlantPlantEFPHandleMouseEventData.cacheMousePos.y) / moveByValue;
-
-        // Find boundaries of the SVG so it does not leave viewpoint
-        /** Default boundaries for SVG viewpoint */
-        let defaultScaleBoundaries = 0.95
-
-        /** Boundaries to scale the SVG's viewpoint on the X axis */
-        let scaleBoundariesX = svgElement.height.baseVal.value ? 
-            ((defaultScaleBoundaries * 100) - (svgElement.height.baseVal.value / svgElement.viewBox.baseVal.height)) / 100 :
-            ((defaultScaleBoundaries * 100) - (window.innerHeight / svgElement.viewBox.baseVal.height)) / 100 ;
-        // Should be between 0 and 1
-        if (scaleBoundariesX <= 0 || scaleBoundariesX >= 1) {
-            scaleBoundariesX = defaultScaleBoundaries;
-        };
-
-        /** Boundaries to scale the SVG's viewpoint on the Y axis */
-        let scaleBoundariesY = svgElement.width.baseVal.value ? 
-            ((defaultScaleBoundaries * 100) - (svgElement.width.baseVal.value / svgElement.viewBox.baseVal.width)) / 100 :
-            ((defaultScaleBoundaries * 100) - (window.innerWidth / svgElement.viewBox.baseVal.height)) / 100 ;
-        // Should be between 0 and 1
-        if (scaleBoundariesY <= 0 || scaleBoundariesY >= 1) {
-            scaleBoundariesY = defaultScaleBoundaries;
-        };
-
-        /** Current zoom level on the SVG compendium */
-        let zoomLevel = 1 / ePlantPlantEFPHandleMouseEventData.zoomLevel === 1 ?
-            defaultScaleBoundaries : 
-            1 / ePlantPlantEFPHandleMouseEventData.zoomLevel ;
-
-        /** Boundaries to scale the SVG's viewpoint on the X axis */
-        let xBoundaries = svgElement.viewBox.baseVal.width * scaleBoundariesX * zoomLevel;
-        /** Boundaries for the X axis on the right side of the SVG compendium's viewpoint */
-        let xRightBoundaries = svgElement.viewBox.baseVal.width * scaleBoundariesX;
-
-        /** Boundaries to scale the SVG's viewpoint on the Y axis */
-        let yBoundaries = svgElement.viewBox.baseVal.height * scaleBoundariesY;
-        /** Upper boundaries to scale the SVG's viewpoint on the Y axis */
-        let yUpperBoundaries = yBoundaries * zoomLevel;
-
-        // Cache mouse position
-        ePlantPlantEFPHandleMouseEventData.cacheMousePos = {x: e.clientX, y: e.clientY};
-
-        // If SVG's Y position within viewpoint, then move it
-        if (svgElement.viewBox.baseVal.y + yDiff <= yUpperBoundaries && svgElement.viewBox.baseVal.y + yDiff >= -yBoundaries) {
-            svgElement.viewBox.baseVal.y += yDiff;
-        } else {
-            // If SVG's Y position is outside viewpoint, then move it to the top or bottom
-            svgElement.viewBox.baseVal.y = svgElement.viewBox.baseVal.y + yDiff > 0 ? 
-                yUpperBoundaries : 
-                -yBoundaries;
-        };
-
-        // If SVG's X position within viewpoint, then move it
-        if (svgElement.viewBox.baseVal.x + xDiff <= xBoundaries && svgElement.viewBox.baseVal.x + xDiff >= -xRightBoundaries) {
-            svgElement.viewBox.baseVal.x += xDiff;
-        } else {
-            // If SVG's X position is outside viewpoint, then move it to the left or right
-            svgElement.viewBox.baseVal.x = svgElement.viewBox.baseVal.x + xDiff > 0 ? 
-                xBoundaries : 
-                -xRightBoundaries;
-        };
-    };
-
+    
     // End dragging
     if (type === 'up') {
         ePlantPlantEFPHandleMouseEventData.start = false;
@@ -376,6 +429,33 @@ class CreateSVGExpressionData {
     };
 
     /**
+     * Verify that the locus being called is valid
+     * IMPORTANT: The current script only works for Arabidopsis thaliana
+     * TODO: Add support for other languages. Fill list of loci patterns can be found within GAIA's tools (accessible only to BAR developer at the moment)
+     * @param {String} locus The AGI ID (example: AT3G24650 or AT3G24650.1) 
+     * @returns {Boolean} If locus is valid [true] or not [false, default]
+     */
+    verifyLoci(locus) {
+        // Check if locus is a string
+        if (typeof locus === 'string') {
+            /** Arabidopsis thaliana locus pattern */
+            let arabidopsisThalianaPattern = `^[A][T][MC0-9][G][0-9]{5}[.][0-9]{1,2}$|^[A][T][MC0-9][G][0-9]{5}$`;
+
+            /** Reg Exp for the locus pattern */
+            let regexPattern = new RegExp(arabidopsisThalianaPattern, 'i');
+    
+            // If match, then return true, else return false
+            if (locus.trim().match(regexPattern)) {
+                return true;
+            } else {
+                return false;
+            };
+        } else { 
+            return false
+        };
+    };
+
+    /**
      * Create and generate an SVG based on the desired tissue expression locus
      * @param {String} locus The AGI ID (example: AT3G24650) 
      * @param {String} desiredDOMid The desired DOM location or if kept empty, would not replace any DOM elements and just create the related HTML DOM elements within appendSVG
@@ -384,27 +464,31 @@ class CreateSVGExpressionData {
      * @param {String | Number} containerHeight The height of the SVG container, default is 95vh
      */
     generateSVG(locus = 'AT3G24650', desiredDOMid = undefined, svgName = 'default', includeDropdownAll = true, containerHeight = undefined) {
-        // Reset variables:
-        this.svgValues = {};
-        this.svgMax = undefined;
-        this.svgMin = undefined;
-        this.svgMaxAverage = undefined;
-        this.svgMaxAverageSample = undefined;
-        this.svgMinAverage = undefined;
-        this.svgMinAverageSample = undefined;
-        this.includeDropdownAll = includeDropdownAll;
-        if (this.clickList.includes(svgName) === false) {
-            this.clickList.push(svgName);
+        if (this.verifyLoci(locus.trim())) {
+            // Reset variables:
+            this.svgValues = {};
+            this.svgMax = undefined;
+            this.svgMin = undefined;
+            this.svgMaxAverage = undefined;
+            this.svgMaxAverageSample = undefined;
+            this.svgMinAverage = undefined;
+            this.svgMinAverageSample = undefined;
+            this.includeDropdownAll = includeDropdownAll;
+            if (this.clickList.includes(svgName) === false) {
+                this.clickList.push(svgName);
+            };
+            if (containerHeight && typeof containerHeight === 'string') {
+                this.svgContainerHeight = containerHeight.toString();
+            } else if (containerHeight && typeof containerHeight === 'number') {
+                this.svgContainerHeight = `${containerHeight.toString()}px`;
+            };
+
+            // Initiate scripts     
+            this.desiredDOMid = desiredDOMid;
+            this.#retrieveTopExpressionValues(svgName, locus.trim().toUpperCase());
+        } else {
+            console.error(`Invalid locus: ${locus.trim()}`);
         };
-        if (containerHeight && typeof containerHeight === 'string') {
-            this.svgContainerHeight = containerHeight.toString();
-        } else if (containerHeight && typeof containerHeight === 'number') {
-            this.svgContainerHeight = `${containerHeight.toString()}px`;
-        };
-        
-        // Initiate scripts     
-        this.desiredDOMid = desiredDOMid;
-        this.retrieveTopExpressionValues(svgName, locus.toUpperCase());
     };
     
     /**
@@ -412,7 +496,7 @@ class CreateSVGExpressionData {
      * @param {String} svgName Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
      */
-    async retrieveTopExpressionValues(svgName, locus = 'AT3G24650') {
+    async #retrieveTopExpressionValues(svgName, locus = 'AT3G24650') {
         var completedFetches = 0;
         // If never been called before
         if (!this.topExpressionValues || !this.topExpressionValues[locus]) {
@@ -478,13 +562,13 @@ class CreateSVGExpressionData {
 
                                 completedFetches++;
                                 if (completedFetches === this.topExpressionOptions.length) {
-                                    await this.loadSampleData(svgName, locus);
+                                    await this.#loadSampleData(svgName, locus);
                                 };
                             });
                         } else if (response.status !== 200) {   
                             completedFetches++;
                             if (completedFetches === this.topExpressionOptions.length) {
-                                await this.loadSampleData(svgName, locus);
+                                await this.#loadSampleData(svgName, locus);
                             };
                             
                             console.error('fetch error - Status Code: ' + response.status + ', fetch-url: ' + response.url + ', document-url: ' + window.location.href);
@@ -493,14 +577,14 @@ class CreateSVGExpressionData {
                 ).catch(async err => {
                     completedFetches++;
                     if (completedFetches === this.topExpressionOptions.length) {
-                        await this.loadSampleData(svgName, locus);
+                        await this.#loadSampleData(svgName, locus);
                     };
 
                     console.error(err);
                 });
             };
         } else if (Object.keys(this.topExpressionValues[locus]).length > 0) {
-            await this.loadSampleData(svgName, locus);
+            await this.#loadSampleData(svgName, locus);
         };       
     };
 
@@ -509,7 +593,7 @@ class CreateSVGExpressionData {
      * @param {String} svgName Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
      */
-    async loadSampleData(svgName, locus) {
+    async #loadSampleData(svgName, locus) {
         if (Object.keys(this.sampleData).length === 0) {
             let url = 'https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/data/SampleData.min.json';
 
@@ -529,7 +613,7 @@ class CreateSVGExpressionData {
                             // Store response
                             this.sampleData = res;
                             // Setup and retrieve information about the target SVG and locus 
-                            await this.retrieveSampleData(svgName, locus);
+                            await this.#retrieveSampleData(svgName, locus);
                         });
                     } else if (response.status !== 200) {
                           console.error('fetch error - Status Code: ' + response.status + ', fetch-url: ' + response.url + ', document-url: ' + window.location.href);
@@ -539,7 +623,7 @@ class CreateSVGExpressionData {
                 console.error(err);
             });
         } else if (Object.keys(this.sampleData).length > 0) {
-            await this.retrieveSampleData(svgName, locus);
+            await this.#retrieveSampleData(svgName, locus);
         }; 
     };
 
@@ -548,7 +632,7 @@ class CreateSVGExpressionData {
      * @param {String} svgName Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
      */
-    async retrieveSampleData(svgName, locus) {
+    async #retrieveSampleData(svgName, locus) {
         // Check if svgName contains .svg
         if (svgName.substr(-4) === '.svg') {
             svgName = svgName.substr(0, svgName.length -4);
@@ -561,7 +645,7 @@ class CreateSVGExpressionData {
             };
         };
 
-        // Create variables that will be used in retrieveSampleData
+        // Create variables that will be used in #retrieveSampleData
         var sampleDataKeys = Object.keys(this.sampleData); // All possible SVGs
         var sampleDB = ''; // The sample's datasource
         var sampleIDList = []; // List of all of the sample's IDs
@@ -614,9 +698,9 @@ class CreateSVGExpressionData {
 
         // Call plantefp.cgi webservice to retrieve information about the target tissue expression data
         if (!this.eFPObjects[svgName] || !this.eFPObjects[svgName]['locusCalled'].includes(locus)) {
-            await this.callPlantEFP(sampleDB, locus, sampleIDList, svgName, sampleOptions);
+            await this.#callPlantEFP(sampleDB, locus, sampleIDList, svgName, sampleOptions);
         } else if (this.eFPObjects[svgName]) {
-            await this.addSVGtoDOM(svgName, locus, this.includeDropdownAll);
+            await this.#addSVGtoDOM(svgName, locus, this.includeDropdownAll);
         };
     };    
 
@@ -628,7 +712,7 @@ class CreateSVGExpressionData {
      * @param {String} svg Which SVG is being called 
      * @param {Array} sampleSubunits List of the SVG's subunits
      */
-    async callPlantEFP(datasource, locus, samples, svg, sampleSubunits) {
+    async #callPlantEFP(datasource, locus, samples, svg, sampleSubunits) {
         // Create URL
         let url = 'https://bar.utoronto.ca/~asullivan/webservices/plantefp.cgi?';
         url += 'datasource=' + datasource + '&';
@@ -724,21 +808,21 @@ class CreateSVGExpressionData {
                             // Add db
                             this.eFPObjects[svg]['db'] = datasource;
     
-                            await this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
+                            await this.#addSVGtoDOM(svg, locus, this.includeDropdownAll);
                         });
                     } else if (response.status !== 200) {
-                        await this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
+                        await this.#addSVGtoDOM(svg, locus, this.includeDropdownAll);
     
                         console.error('fetch error - Status Code: ' + response.status + ', fetch-url: ' + response.url + ', document-url: ' + window.location.href);
                     };
                 }		
             ).catch(async err => {
-                await this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
+                await this.#addSVGtoDOM(svg, locus, this.includeDropdownAll);
     
                 console.error(err);
             });
         } else {
-            await this.addSVGtoDOM(svg, locus, this.includeDropdownAll);
+            await this.#addSVGtoDOM(svg, locus, this.includeDropdownAll);
 
             console.error(`sampleSubunits is ${sampleSubunits}`);
         };
@@ -749,7 +833,7 @@ class CreateSVGExpressionData {
      * @param {String} svgName Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
      */
-    async addSVGtoDOM(svgName, locus, includeDropdownAll = false) {
+    async #addSVGtoDOM(svgName, locus, includeDropdownAll = false) {
         var svgUse = 'Klepikova';
         let localAppendSVG = new DOMParser().parseFromString('<div class="expressionContainer"></div>', 'text/html');
         localAppendSVG = localAppendSVG.querySelector('.expressionContainer');
@@ -809,7 +893,8 @@ class CreateSVGExpressionData {
                 };
             };
 
-            options += `<option
+            options += 
+                `<option
                     value="hiddenOption" 
                     id="allCompendiumOptions"
                     disabled="true"
@@ -823,7 +908,8 @@ class CreateSVGExpressionData {
             sampleOptions.sort();
 
             for (let i in sampleOptions) {
-                options += `<option
+                options += 
+                    `<option
                         value="${this.sampleReadableName[sampleOptions[i]]}"
                     >
                         ${sampleOptions[i]}
@@ -846,11 +932,31 @@ class CreateSVGExpressionData {
                         ${options}
                     </select>
                 </div>`,
-                'text/html');
-            dropdownList = dropdownList.body.childNodes[0];
+                'text/html'
+            ).body.childNodes[0];
             dropdownList.getElementsByTagName('select')[0].selectedIndex = selectedIndexPos;
             localAppendSVG.appendChild(dropdownList);
         };
+        
+        let titleBoxDOM = new DOMParser().parseFromString(
+            `<div 
+                id="ePlant-hover-title-box" 
+                style="
+                    position: fixed;
+                    z-index: 100;
+                    color: #fff;
+                    background-color: #000;
+                    border: 1px solid #000;
+                    border-radius: 3px;
+                    padding: 5px;
+                    opacity: 0.85;
+                    white-space: pre-line;
+                    display: none;
+                "
+            >Test</div>`,
+            'text/html'
+        ).body.childNodes[0];
+        localAppendSVG.appendChild(titleBoxDOM);
 
         // Create call for SVG file
         var urlSVG = 'https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/compendiums/' + svgUse + '.svg';
@@ -885,7 +991,7 @@ class CreateSVGExpressionData {
 
                         this.appendSVG = localAppendSVG;
 
-                        await this.createLocusMatch(svgUse, locus);
+                        await this.#createLocusMatch(svgUse, locus);
                     });
                 } else if (response.status !== 200) {
                     console.error('fetch error - Status Code: ' + response.status + ', fetch-url: ' + response.url + ', document-url: ' + window.location.href);
@@ -916,7 +1022,7 @@ class CreateSVGExpressionData {
      * @param {String} whichSVG Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
      */
-     async createLocusMatch(whichSVG, locus) {
+     async #createLocusMatch(whichSVG, locus) {
         var locusPoint = locus;
         var locusValue = '';
         for (var i = 0; i < locusPoint.length; i++) {
@@ -926,7 +1032,7 @@ class CreateSVGExpressionData {
                 locusValue = locusValue + locusPoint[i];
             };
         };
-        await this.createSVGValues(whichSVG, locus);
+        await this.#createSVGValues(whichSVG, locus);
     };
 
     /**
@@ -934,7 +1040,7 @@ class CreateSVGExpressionData {
      * @param {String} whichSVG Name of the SVG file without the .svg at the end
      * @param {String} locus The AGI ID (example: AT3G24650) 
      */
-    async createSVGValues(whichSVG, locus) {
+    async #createSVGValues(whichSVG, locus) {
         // Create variables used for this function:
         let svgSamples = []; // List of sample's included in this expression call
 
@@ -964,7 +1070,7 @@ class CreateSVGExpressionData {
                 this.svgValues[svgSubunits[n]]['rawValues'].push(svgDataObject[svgSubunits[n]][sampleValues[v]][locus]);
             };
         };
-        await this.findExpressionValues(whichSVG, svgSubunits);
+        await this.#findExpressionValues(whichSVG, svgSubunits);
     };
 
     /**
@@ -972,7 +1078,7 @@ class CreateSVGExpressionData {
      * @param {String} whichSVG Name of the SVG file without the .svg at the end
      * @param {Array} svgSubunits A list containing all desired SVG subunits to be interacted with
      */
-    async findExpressionValues(whichSVG, svgSubunits) {
+    async #findExpressionValues(whichSVG, svgSubunits) {
         // Reset variables 
         this.svgMax = undefined;
         this.svgMin = undefined;
@@ -1037,7 +1143,7 @@ class CreateSVGExpressionData {
                 this.svgValues[svgSubunits[i]] = {};
             };
             this.svgValues[svgSubunits[i]]['average'] = averageValues;
-            this.svgValues[svgSubunits[i]]['sd'] = this.standardDeviationCalc(numValues);
+            this.svgValues[svgSubunits[i]]['sd'] = this.#standardDeviationCalc(numValues);
 
             // Find control value
             var controlData = this.sampleData[whichSVG];
@@ -1080,7 +1186,7 @@ class CreateSVGExpressionData {
             };
         };
 
-        await this.colourSVGs(whichSVG, svgSubunits);
+        await this.#colourSVGs(whichSVG, svgSubunits);
     };
 
     /**
@@ -1089,7 +1195,7 @@ class CreateSVGExpressionData {
      * @param {Array} numbers An array of numbers that the standard deviation will be found for
      * @return sd Standard deviation
      */
-    standardDeviationCalc(numbers) {
+    #standardDeviationCalc(numbers) {
         var sd = 0;
 
         var num_of_elements = numbers.length; 
@@ -1118,7 +1224,7 @@ class CreateSVGExpressionData {
      * @param {String} whichSVG Name of the SVG file without the .svg at the end
      * @param {Array} svgSubunits A list containing all desired SVG subunits to be interacted with
      */
-    async colourSVGs(whichSVG, svgSubunits) {
+    async #colourSVGs(whichSVG, svgSubunits) {
         for (var i = 0; i < svgSubunits.length; i++) {
             // Colouring values
             var denominator = this.svgMaxAverage;
@@ -1147,7 +1253,7 @@ class CreateSVGExpressionData {
             this.svgValues[svgSubunits[i]]['sampleSize'] = sampleSize;
 
             // Begin colouring SVG subunits
-            await this.colourSVGSubunit(whichSVG, svgSubunits[i], colourFill, expressionLevel, sampleSize);
+            await this.#colourSVGsubunit(whichSVG, svgSubunits[i], colourFill, expressionLevel, sampleSize);
         };
     };
 
@@ -1177,7 +1283,7 @@ class CreateSVGExpressionData {
      * @param {Number} expressionLevel The expression level for the interactive data
      * @param {Number} sampleSize The sample size of the input information, default to 1
      */
-    async colourSVGSubunit(whichSVG, svgSubunit, colour, expressionLevel, sampleSize = 1) {
+    async #colourSVGsubunit(whichSVG, svgSubunit, colour, expressionLevel, sampleSize = 1) {
         let svgObject = this.appendSVG.lastElementChild.getElementsByTagName('svg')[0];
         let allParsableElements = [...svgObject.getElementsByTagName('path'), ...svgObject.getElementsByTagName('g')];
 
@@ -1250,24 +1356,24 @@ class CreateSVGExpressionData {
 
                 // Add tooltip/title on hover
                 var title = document.createElementNS("https://www.w3.org/2000/svg","title");
-                title.textContent = descriptionName + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize + '\nStandard Deviation: ' + parseFloat(expressionData['sd']).toFixed(3);
+                title.textContent = descriptionName + '\r\nExpression level: ' + expressionLevel + '\r\nSample size: ' + sampleSize + '\r\nStandard Deviation: ' + parseFloat(expressionData['sd']).toFixed(3);
 
                 // Add rest of titles and tooltip/title
                 var inducReduc = false;
 
                 // if (expressionData['inductionValue']) {
                 //     subunitElement.setAttribute("data-inductionValue", expressionData['inductionValue']);
-                //     title.textContent += '\nInduction Value: ' + parseFloat(expressionData['inductionValue']).toFixed(3);
+                //     title.textContent += '\r\nInduction Value: ' + parseFloat(expressionData['inductionValue']).toFixed(3);
                 //     inducReduc = true;
                 // } else if (expressionData['reductionValue']) {
                 //     subunitElement.setAttribute("data-reductionValue", expressionData['reductionValue']);
-                //     title.textContent += '\nReduction Value: ' + parseFloat(expressionData['ReductionValue']).toFixed(3);
+                //     title.textContent += '\r\nReduction Value: ' + parseFloat(expressionData['ReductionValue']).toFixed(3);
                 //     inducReduc = true;
                 // };
 
                 if (inducReduc === true) {
                     subunitElement.setAttribute("data-expressionRatio", expressionData['expressionRatio']);
-                    title.textContent += '\nExpression Ratio: ' + parseFloat(expressionData['expressionRatio']).toFixed(3);
+                    title.textContent += '\r\nExpression Ratio: ' + parseFloat(expressionData['expressionRatio']).toFixed(3);
                     subunitElement.setAttribute("data-controlSampleName", expressionData['controlSampleName']);
 
                     var controlSampleName = undefined;
@@ -1277,10 +1383,10 @@ class CreateSVGExpressionData {
                     if (controlSampleName === undefined || controlSampleName === '') {
                         controlSampleName = expressionData['controlSampleName'];
                     };
-                    title.textContent += '\nControl Sample Name: ' + controlSampleName;
+                    title.textContent += '\r\nControl Sample Name: ' + controlSampleName;
 
                     subunitElement.setAttribute("data-controlAverage", expressionData['controlAverage']);
-                    title.textContent += '\nControl Expression: ' + parseFloat(expressionData['controlAverage']).toFixed(3);
+                    title.textContent += '\r\nControl Expression: ' + parseFloat(expressionData['controlAverage']).toFixed(3);
                 };
                 subunitElement.appendChild(title);
             };
@@ -1324,7 +1430,7 @@ class CreateSVGExpressionData {
                             dupShootElement.setAttribute("fill", colour);
                         };                    
                         // Add tooltip/title on hover
-                        title.textContent = duplicateShoot[dupS] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
+                        title.textContent = duplicateShoot[dupS] + '\r\nExpression level: ' + expressionLevel + '\r\nSample size: ' + sampleSize;
                         dupShootElement.appendChild(title);
                     };
                 };
@@ -1365,7 +1471,7 @@ class CreateSVGExpressionData {
                             dupRootElement.setAttribute("fill", colour);
                         };                    
                         // Add tooltip/title on hover
-                        title.textContent = duplicateRoot[dupR] + '\nExpression level: ' + expressionLevel + '\nSample size: ' + sampleSize;
+                        title.textContent = duplicateRoot[dupR] + '\r\nExpression level: ' + expressionLevel + '\r\nSample size: ' + sampleSize;
                         dupRootElement.appendChild(title);
                     };
                 };

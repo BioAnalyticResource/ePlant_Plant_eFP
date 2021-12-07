@@ -50,13 +50,10 @@
         }
 
         function displayContent(params = params) {
-            console.log(params);
             if (window?.createSVGExpressionData?.generateSVG) {
-                console.log('y')
                 createSVGExpressionData.generateSVG(params.locus, 'exampleDOM', params.svgName, params.includeDropdownAll, params.containerHeight);
             } else {
                 setTimeout(function() {
-                console.log('y')
                     createSVGExpressionData.generateSVG(params.locus, params.desiredDOMid, params.svgName, params.includeDropdownAll, params.containerHeight);
                 }, 100);
             };
