@@ -1,87 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<title>ePlant Plant eFP</title>
+		<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+		<meta
+			name="author"
+			content="BAR Lab @ University of Toronto: Alexander Sullivan, Asher Pasha, Youyang Li, Nicholas J. Provart"
+		/>
+		<meta name="title" content="GAIA" />
+		<link rel="shortcut icon" href="icon/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta
+			name="description"
+			content="The ePlant Plant eFP is a tissue expression API provided by the Bio-Analytic Resource for Plant Biology (BAR) from the University of Toronto. This tool will provide visualized tissue expression data corresponding for Arabidopsis thaliana with one of the listed compendiums."
+		/>
+		<meta
+			name="keywords"
+			content="data, data-visualization, arabidopsis-thaliana, bioinformatics, bioinformatics-tool, bioinformatics-data, bioinformatics-visualization, database, arabidopsis, eplant-plant-efp, compendiums, svg"
+		/>
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="English" />
+		<link rel="manifest" href="icon/site.webmanifest" />
+		<!-- Metadata -->
+		<meta property="og:image" content="/icon/favicon.ico" />
+		<meta property="og:image:width" content="226" />
+		<meta property="og:image:height" content="226" />
+		<meta
+			property="og:description"
+			content="The ePlant Plant eFP is a tissue expression API provided by the Bio-Analytic Resource for Plant Biology (BAR) from the University of Toronto. This tool will provide visualized tissue expression data corresponding for Arabidopsis thaliana with one of the listed compendiums."
+		/>
+		<meta property="og:title" content="ePlant Plant eFP" />
+		<meta property="og:url" content="https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/example/index.html" />
+		<meta property="og:site_name" content="ePlant Plant eFP" />
+		<meta name="apple-mobile-web-app-title" content="ePlant Plant eFP" />
+		<link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="192x192" href="icon/android-chrome-192x192.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png" />
+		<link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#cddaa7" />
+		<meta name="application-name" content="ePlant Plant eFP" />
+		<meta name="msapplication-config" content="icon/browserconfig.xml" />
+		<meta name="msapplication-TileColor" content="#cddaa7" />
+		<meta name="msapplication-TileImage" content="icon/mstile-144x144.png" />
+		<meta name="theme-color" content="#cddaa7" />
+		<meta name="twitter:site" content="@BAR_PlantBio" />
+	</head>
+	<body>
+		<div id="exampleDOM" style="background-color: white; color: black"></div>
+		<script async src="./tissueExpressionBAR.min.js"></script>
+		<script>
+			let params = {
+				locus: "AT3G24650",
+				desiredDOMid: "exampleDOM",
+				svgName: "default",
+				includeDropdownAll: true,
+				containerHeight: undefined,
+			};
 
-<head>
-  <title>ePlant Plant eFP</title>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-  <meta name="author" content="BAR Lab @ University of Toronto: Alexander Sullivan, Asher Pasha, Youyang Li, Nicholas J. Provart" />
-  <meta name="title" content="GAIA">
-  <link rel="shortcut icon" href="icon/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="theme-color" content="#cddaa7" />
-  <meta name="description" content="The ePlant Plant eFP is a tissue expression API provided by the Bio-Analytic Resource for Plant Biology (BAR) from the University of Toronto. This tool will provide visualized tissue expression data corresponding for Arabidopsis thaliana with one of the listed compendiums.">
-  <meta name="keywords" content="data, data-visualization, arabidopsis-thaliana, bioinformatics, bioinformatics-tool, bioinformatics-data, bioinformatics-visualization, database, arabidopsis, eplant-plant-efp, compendiums, svg">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  <link rel="manifest" href="icon/site.webmanifest" />
-  <!-- Metadata -->
-  <meta property="og:image" content="/icon/favicon.ico">
-  <meta property="og:image:width" content="226">
-  <meta property="og:image:height" content="226">
-  <meta property="og:description" content="The ePlant Plant eFP is a tissue expression API provided by the Bio-Analytic Resource for Plant Biology (BAR) from the University of Toronto. This tool will provide visualized tissue expression data corresponding for Arabidopsis thaliana with one of the listed compendiums.">
-  <meta property="og:title" content="ePlant Plant eFP">
-  <meta property="og:url" content="https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/example/index.html">
-  <meta property="og:site_name" content="ePlant Plant eFP">
-  <meta name="apple-mobile-web-app-title" content="ePlant Plant eFP">
-  <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="icon/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
-  <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#cddaa7">
-  <meta name="application-name" content="ePlant Plant eFP">
-  <meta name="msapplication-config" content="icon/browserconfig.xml">
-  <meta name="msapplication-TileColor" content="#cddaa7">
-  <meta name="msapplication-TileImage" content="icon/mstile-144x144.png">
-  <meta name="theme-color" content="#cddaa7">
-  <meta name="twitter:site" content="@BAR_PlantBio">
-</head>
-<body>
-    <div id="exampleDOM" style="background-color: white;color: black;">
+			function displayContent(params = params) {
+				if (window?.createSVGExpressionData?.generateSVG) {
+					createSVGExpressionData.generateSVG(
+						params.locus,
+						"exampleDOM",
+						params.svgName,
+						params.includeDropdownAll,
+						params.containerHeight,
+					);
+				} else {
+					setTimeout(function () {
+						createSVGExpressionData.generateSVG(
+							params.locus,
+							params.desiredDOMid,
+							params.svgName,
+							params.includeDropdownAll,
+							params.containerHeight,
+						);
+					}, 100);
+				}
+			}
 
-    </div>
-    <script async src="./tissueExpressionBAR.min.js"></script>
-    <script>
-        let params = {
-            locus: "AT3G24650",
-            desiredDOMid: 'exampleDOM',
-            svgName: 'default',
-            includeDropdownAll: true,
-            containerHeight: undefined
-        }
+			function getParams() {
+				if (window.location.search) {
+					let paramSearch = decodeURI(window.location.search.substring(1));
 
-        function displayContent(params = params) {
-            if (window?.createSVGExpressionData?.generateSVG) {
-                createSVGExpressionData.generateSVG(params.locus, 'exampleDOM', params.svgName, params.includeDropdownAll, params.containerHeight);
-            } else {
-                setTimeout(function() {
-                    createSVGExpressionData.generateSVG(params.locus, params.desiredDOMid, params.svgName, params.includeDropdownAll, params.containerHeight);
-                }, 100);
-            };
-        };
+					let paramsURL = paramSearch.split("&");
+					for (let i = 0; i < paramsURL.length; i++) {
+						let paramOptions = paramsURL[i].split("=");
 
-        function getParams() {
-            if (window.location.search) {
-                let paramSearch = decodeURI(window.location.search.substring(1));
+						for (const [key, value] of Object.entries(params)) {
+							if (paramOptions[0].toLowerCase().trim() === key.toLowerCase().trim()) {
+								params[key] = paramOptions[1];
 
-                let paramsURL = paramSearch.split('&');
-                for (let i = 0; i < paramsURL.length; i++) {
-                    let paramOptions = paramsURL[i].split('=');
-                    
-                    for (const [key, value] of Object.entries(params)) {
-                        if (paramOptions[0].toLowerCase().trim() === key.toLowerCase().trim()) {
-                            params[key] = paramOptions[1];
+								break;
+							}
+						}
+					}
+				}
 
-                            break;
-                        };
-                    };
-                };
-            };
+				if (params) {
+					displayContent(params);
+				}
+			}
 
-            if (params) {
-                displayContent(params);
-            };
-        };
-
-        getParams();
-    </script>
-</body>
+			getParams();
+		</script>
+	</body>
+</html>

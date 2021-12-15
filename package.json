@@ -1,52 +1,52 @@
 {
-  "name": "eplant_plant_efp",
-  "contributors": [
-    {
-      "name": "Alexander Sullivan",
-      "email": "alexander.j.sullivan@hotmail.com",
-      "url": "https://alexjsully.me/"
-    },
-    {
-      "name": "Asher Pasha"
-    },
-    {
-      "name": "Youyang Li",
-      "email": "youyang.li@mail.utoronto.ca"
-    },
-    {
-      "name": "Nicholas Provart",
-      "email": "nicholas.provart@utoronto.ca",
-      "url": "https://bar.utoronto.ca/"
-    }
-  ],
-  "version": "1.0.15",
-  "private": true,
-  "description": "Data visualization tool to display tissue expression data for Arabidopsis thaliana",
-  "main": "tissueExpressionBAR.js",
-  "directories": {
-    "example": "example"
-  },
-  "bugs": {
-    "url": "https://github.com/BioAnalyticResource/ePlant_Plant_eFP/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BioAnalyticResource/ePlant_Plant_eFP.git"
-  },
-  "keywords": [
-    "data",
-    "data-visualization",
-    "arabidopsis-thaliana",
-    "bioinformatics",
-    "bioinformatics-tool",
-    "bioinformatics-data",
-    "bioinformatics-visualization",
-    "database",
-    "arabidopsis",
-    "eplant-plant-efp",
-    "compendiums",
-    "svg"
-  ],
-  "license": "GPL-2.0",
-  "homepage": "https://github.com/BioAnalyticResource/ePlant_Plant_eFP#readme"
+	"name": "eplant_plant_efp",
+	"contributors": [
+		{
+			"name": "Alexander Sullivan",
+			"email": "alexander.j.sullivan@hotmail.com",
+			"url": "https://alexjsully.me/"
+		},
+		{
+			"name": "Asher Pasha"
+		},
+		{
+			"name": "Youyang Li",
+			"email": "youyang.li@mail.utoronto.ca"
+		},
+		{
+			"name": "Nicholas Provart",
+			"email": "nicholas.provart@utoronto.ca",
+			"url": "https://bar.utoronto.ca/"
+		}
+	],
+	"version": "1.0.16",
+	"private": true,
+	"description": "Data visualization tool to display tissue expression data for Arabidopsis thaliana",
+	"main": "tissueExpressionBAR.js",
+	"directories": {
+		"example": "example"
+	},
+	"bugs": {
+		"url": "https://github.com/BioAnalyticResource/ePlant_Plant_eFP/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BioAnalyticResource/ePlant_Plant_eFP.git"
+	},
+	"keywords": [
+		"data",
+		"data-visualization",
+		"arabidopsis-thaliana",
+		"bioinformatics",
+		"bioinformatics-tool",
+		"bioinformatics-data",
+		"bioinformatics-visualization",
+		"database",
+		"arabidopsis",
+		"eplant-plant-efp",
+		"compendiums",
+		"svg"
+	],
+	"license": "GPL-2.0",
+	"homepage": "https://github.com/BioAnalyticResource/ePlant_Plant_eFP#readme"
 }

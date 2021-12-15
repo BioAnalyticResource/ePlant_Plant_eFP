@@ -1,0 +1,19 @@
+# Build files
+*.min.js
+*.min.css
+sw.js
+*.js.map
+
+# Server files
+.htaccess
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.vscode
+
+# workbox
+workbox-config.js
