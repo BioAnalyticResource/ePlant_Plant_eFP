@@ -1546,12 +1546,20 @@ class CreateSVGExpressionData {
 			if (subunitElement) {
 				// Adding hover features:
 				subunitElement.setAttribute("class", "hoverDetails");
-				subunitElement.addEventListener("mouseenter", function (event) {
-					addTissueMetadata(this.id);
-				});
-				subunitElement.addEventListener("mouseleave", function (event) {
-					removeTissueMetadata(this.id);
-				});
+				subunitElement.addEventListener(
+					"mouseenter",
+					function (event) {
+						addTissueMetadata(this.id);
+					},
+					{passive: true},
+				);
+				subunitElement.addEventListener(
+					"mouseleave",
+					function (event) {
+						removeTissueMetadata(this.id);
+					},
+					{passive: true},
+				);
 				// Adding details about sub-tissue:
 				subunitElement.setAttribute("data-expressionValue", expressionLevel);
 				subunitElement.setAttribute("data-sampleSize", sampleSize);
@@ -1619,12 +1627,20 @@ class CreateSVGExpressionData {
 					if (dupShootElement) {
 						// Add interactivity
 						dupShootElement.setAttribute("class", "hoverDetails");
-						dupShootElement.addEventListener("mouseenter", function (event) {
-							addTissueMetadata(this.id);
-						});
-						dupShootElement.addEventListener("mouseleave", function (event) {
-							removeTissueMetadata(this.id);
-						});
+						dupShootElement.addEventListener(
+							"mouseenter",
+							function (event) {
+								addTissueMetadata(this.id);
+							},
+							{passive: true},
+						);
+						dupShootElement.addEventListener(
+							"mouseleave",
+							function (event) {
+								removeTissueMetadata(this.id);
+							},
+							{passive: true},
+						);
 						// Adding colour
 						childElements = dupShootElement.childNodes;
 						if (childElements.length > 0) {
@@ -1665,12 +1681,20 @@ class CreateSVGExpressionData {
 					if (dupRootElement) {
 						// Add interactivity
 						dupRootElement.setAttribute("class", "hoverDetails");
-						dupRootElement.addEventListener("mouseenter", function (event) {
-							addTissueMetadata(this.id);
-						});
-						dupRootElement.addEventListener("mouseleave", function (event) {
-							removeTissueMetadata(this.id);
-						});
+						dupRootElement.addEventListener(
+							"mouseenter",
+							function (event) {
+								addTissueMetadata(this.id);
+							},
+							{passive: true},
+						);
+						dupRootElement.addEventListener(
+							"mouseleave",
+							function (event) {
+								removeTissueMetadata(this.id);
+							},
+							{passive: true},
+						);
 						// Adding colour
 						childElements = dupRootElement.childNodes;
 						if (childElements.length > 0) {
