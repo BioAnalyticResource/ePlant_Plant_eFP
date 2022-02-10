@@ -3,6 +3,7 @@
 *.min.css
 sw.js
 *.js.map
+*.min.json
 
 # Server files
 .htaccess
