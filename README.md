@@ -38,6 +38,8 @@ This will display the visualized and coloured tissue expression data within the 
 
 Instructions with an example can be found here: [https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/example/index.html](https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/example/index.html) (or in the example's [index.html](./example/index.html)).
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/ed34ffac71dd5a1b2d72/maintainability)](https://codeclimate.com/github/BioAnalyticResource/ePlant_Plant_eFP/maintainability)
+
 ## Browser Compatibilities
 
 | Chrome | Firefox | IE  | Edge | Safari | Opera | Tor | Mobile |
