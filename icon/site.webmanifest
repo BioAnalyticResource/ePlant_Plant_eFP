@@ -100,6 +100,7 @@
 			"type": "image/svg+xml"
 		}
 	],
+	"description": "The ePlant Plant eFP is a tissue expression API provided by the Bio-Analytic Resource for Plant Biology (BAR) from the University of Toronto. This tool will provide visualized tissue expression data corresponding for Arabidopsis thaliana with one of the listed compendiums.",
 	"theme_color": "#cddaa7",
 	"background_color": "#cddaa7",
 	"start_url": "/",

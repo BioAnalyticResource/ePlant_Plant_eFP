@@ -2,6 +2,11 @@
 
 The ePlant Plant eFP is a tissue expression API provided by the [Bio-Analytic Resource for Plant Biology (BAR)](https://bar.utoronto.ca/) from the University of Toronto. This tool will provide visualized tissue expression data corresponding for Arabidopsis thaliana with one of the listed [compendiums](./compendiums).
 
+[![Follow on Twitter](https://img.shields.io/twitter/follow/BAR_PlantBio?style=social)](https://twitter.com/BAR_PlantBio)
+[![GitHub repo size](https://img.shields.io/github/repo-size/BioAnalyticResource/ePlant_Plant_eFP)](https://github.com/BioAnalyticResource/ePlant_Plant_eFP)
+[![GitHub](https://img.shields.io/github/license/BioAnalyticResource/ePlant_Plant_eFP)](https://github.com/BioAnalyticResource/ePlant_Plant_eFP)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fbar.utoronto.ca%2F~asullivan%2FePlant_Plant_eFP%2F)](https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/)
+
 ## Getting Started
 
 To use the ePlant Plant eFP, you will be required to either call the [tissueExpressionBAR.js](tissueExpressionBAR.js) from our hosted location (https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/tissueExpressionBAR.min.js) or download the files locally (including the tissueExpressionBAR.js, compendiums and data) which can be done using the following:
