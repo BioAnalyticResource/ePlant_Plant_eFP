@@ -3,6 +3,7 @@
 // Purpose: Generates eFP tissue expression data
 //
 //=============================================================================
+/** Stroke data of compendiums that have already been called */
 let existingStrokeData = {};
 window.existingStrokeData = existingStrokeData;
 /**
@@ -649,41 +650,74 @@ class CreateSVGExpressionData {
 	 */
 	async #loadSampleData(svgName, locus) {
 		if (Object.keys(this.sampleData).length === 0) {
-			let url =
-				"https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/data/SampleData.min.json";
+			/** Whether to fetch the sample data container from GitHub (true, default) or not */
+			let fetchFromGitHub = true;
 
-			var methods = {mode: "cors"};
+			/** Browser's local storage for the sample data, if exists */
+			let localStoredSampleData = localStorage?.["bar_eplant-sample-data-storage"];
+			// If the local storage exists, see if it's expired (1 week) to fetch from GitHub or use the local storage data
+			if (localStoredSampleData) {
+				// Convert to JSON
+				localStoredSampleData = JSON.parse(localStoredSampleData);
 
-			await fetch(url, methods)
-				.then(async (response) => {
-					if (response.status === 200) {
-						await response.text().then(async (data) => {
-							let res;
-							if (data.length > 0) {
-								res = JSON.parse(data);
-							} else {
-								res = {};
-							}
+				// If a week has passed since the last time the data was stored
+				if (
+					localStoredSampleData.expiry &&
+					localStoredSampleData.data &&
+					!(new Date().getTime() - localStoredSampleData.expiry > 7 * 24 * 60 * 60 * 1000)
+				) {
+					// Has not expire, use this data
+					fetchFromGitHub = false;
 
-							// Store response
-							this.sampleData = res;
-							// Setup and retrieve information about the target SVG and locus
-							await this.#retrieveSampleData(svgName, locus);
-						});
-					} else if (response.status !== 200) {
-						console.error(
-							"fetch error - Status Code: " +
-								response.status +
-								", fetch-url: " +
-								response.url +
-								", document-url: " +
-								window.location.href,
-						);
-					}
-				})
-				.catch(async (err) => {
-					console.error(err);
-				});
+					this.sampleData = localStoredSampleData.data;
+				}
+			}
+
+			if (fetchFromGitHub) {
+				/** GitHub's URL for the sample data container */
+				const url =
+					"https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/data/SampleData.min.json";
+
+				/** Fetch methods */
+				let methods = {mode: "cors"};
+
+				await fetch(url, methods)
+					.then(async (response) => {
+						if (response.status === 200) {
+							await response.text().then(async (data) => {
+								/** Response data */
+								const res = data.length > 0 ? JSON.parse(data) : {};
+
+								// Store response
+								this.sampleData = res;
+								// Store into local storage
+								const sampleDataStorage = {
+									data: res,
+									expiry: new Date().getTime(),
+								};
+								localStorage.setItem(
+									"bar_eplant-sample-data-storage",
+									JSON.stringify(sampleDataStorage),
+								);
+							});
+						} else if (response.status !== 200) {
+							console.error(
+								"fetch error - Status Code: " +
+									response.status +
+									", fetch-url: " +
+									response.url +
+									", document-url: " +
+									window.location.href,
+							);
+						}
+					})
+					.catch(async (err) => {
+						console.error(err);
+					});
+			}
+
+			// Setup and retrieve information about the target SVG and locus
+			await this.#retrieveSampleData(svgName, locus);
 		} else if (Object.keys(this.sampleData).length > 0) {
 			await this.#retrieveSampleData(svgName, locus);
 		}
@@ -919,7 +953,7 @@ class CreateSVGExpressionData {
 			if (this.topExpressionValues[locus] && Object.keys(this.topExpressionValues[locus]).length > 0) {
 				// Hidden option
 				options += `<option
-                        value="hiddenOption" 
+                        value="hiddenOption"
                         id="hiddenExpressionOption"
                         disabled="true"
                     >
@@ -969,7 +1003,7 @@ class CreateSVGExpressionData {
 			}
 
 			options += `<option
-                    value="hiddenOption" 
+                    value="hiddenOption"
                     id="allCompendiumOptions"
                     disabled="true"
                 >
@@ -995,11 +1029,12 @@ class CreateSVGExpressionData {
 
 			let dropdownList = new DOMParser().parseFromString(
 				`<div class="selectSVGContainer">
-                    <span>Select SVG to display:</span> 
-                    <select 
+                    <span>Select SVG to display:</span>
+                    <select
                         onchange="window.createSVGExpressionData.generateSVG('${locus}', '${this.desiredDOMid}', this.value.toString(), ${includeDropdownAll})"
-                        id="sampleOptions" 
-                        value="${svgName}" 
+                        id="sampleOptions"
+                        value="${svgName}"
+						style="width: 100%; max-width: 40em;"
                         class="selectCompendiumOptions"
                     >
                         ${options}
@@ -1012,8 +1047,8 @@ class CreateSVGExpressionData {
 		}
 
 		let titleBoxDOM = new DOMParser().parseFromString(
-			`<div 
-                id="ePlant-hover-title-box" 
+			`<div
+                id="ePlant-hover-title-box"
                 style="
                     position: fixed;
                     z-index: 100;
@@ -1049,10 +1084,10 @@ class CreateSVGExpressionData {
 						}
 
 						let svgContainer = new DOMParser().parseFromString(
-							`<div id="${svgUse}_object" style="height:${this.svgContainerHeight};" 
-                                onMouseDown="ePlantPlantEFPHandleMouseEvent(${svgUse}_object, 'down', event)" 
-                                onMouseMove="ePlantPlantEFPHandleMouseEvent(${svgUse}_object, 'move', event)" 
-                                onMouseUp="ePlantPlantEFPHandleMouseEvent(${svgUse}_object, 'up', event)" 
+							`<div id="${svgUse}_object" style="height:${this.svgContainerHeight};"
+                                onMouseDown="ePlantPlantEFPHandleMouseEvent(${svgUse}_object, 'down', event)"
+                                onMouseMove="ePlantPlantEFPHandleMouseEvent(${svgUse}_object, 'move', event)"
+                                onMouseUp="ePlantPlantEFPHandleMouseEvent(${svgUse}_object, 'up', event)"
                                 onMouseLeave="ePlantPlantEFPHandleMouseEvent(${svgUse}_object, 'up', event)"
                                 onWheel="ePlantPlantEFPHandleMouseWheel(${svgUse}_object, event)"
                             ></div>`,
