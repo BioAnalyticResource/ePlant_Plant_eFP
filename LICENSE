@@ -93,7 +93,6 @@ you may at your option offer warranty protection in exchange for a fee.
    distribute such modifications or work under the terms of Section 1
    above, provided that you also meet all of these conditions:
 
-
     a) You must cause the modified files to carry prominent notices
     stating that you changed the files and the date of any change.
 
@@ -109,7 +108,7 @@ you may at your option offer warranty protection in exchange for a fee.
     notice that there is no warranty (or else, saying that you provide
     a warranty) and that users may redistribute the program under
     these conditions, and telling the user how to view a copy of this
-    License.  (Exception: if the Program itself is interactive but
+    License. (Exception: if the Program itself is interactive but
     does not normally print such an announcement, your work based on
     the Program is not required to print an announcement.)
 
@@ -137,7 +136,6 @@ the scope of this License.
    under Section 2) in object code or executable form under the terms of
    Sections 1 and 2 above provided that you also do one of the following:
 
-
     a) Accompany it with the complete corresponding machine-readable
     source code, which must be distributed under the terms of Sections
     1 and 2 above on a medium customarily used for software interchange; or,
@@ -150,7 +148,7 @@ the scope of this License.
     customarily used for software interchange; or,
 
     c) Accompany it with the information you received as to the offer
-    to distribute corresponding source code.  (This alternative is
+    to distribute corresponding source code. (This alternative is
     allowed only for noncommercial distribution and only if you
     received the program in object code or executable form with such
     an offer, in accord with Subsection b above.)

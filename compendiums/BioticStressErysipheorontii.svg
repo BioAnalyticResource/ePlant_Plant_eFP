@@ -1,101 +1,98 @@
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="BioticStressErysipheorontii_svg" x="0" y="0" version="1.1" viewBox="25 75 787.682 277.406" author="Provart Lab - Bio Analytic Resource, University of Toronto">
-  <g id="Erysiphe_orontii" transform="translate(-4.032 -5.627)">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="BioticStressErysipheorontii_svg" x="0" y="0" version="1.1" viewBox="25 75 787.7 277.4" author="Provart Lab - Bio Analytic Resource, University of Toronto">
+  <g id="Erysiphe_orontii" transform="translate(-4 -6)">
     <g id="Labels">
-      <text id="text2" font-family="HelveticaNeue-Italic" font-size="18" transform="translate(32.931 97.314)">Erysiphe orontii</text>
-      <text id="text4" font-family="HelveticaNeue-Thin" font-size="12" transform="translate(241.58 163.667)">Mock Treatment</text>
-      <text id="text6" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(229.101 176.667)">(placed in settling towers)</text>
-      <text id="text8" font-family="HelveticaNeue-Thin" font-size="12" transform="translate(256.064 266.166)">Inoculated</text>
-      <text id="text14" transform="translate(239.511 279.166)"><tspan id="tspan10" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="10">(settling towers with </tspan><tspan id="tspan12" x=".6" y="12" font-family="HelveticaNeue-Thin" font-size="10">10-day old cultures)</tspan></text>
-      <text id="text16" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(373.044 342.666)">6 hours</text>
-      <text id="text18" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(425.818 342.666)">12 hours</text>
-      <text id="text20" font-family="HelveticaNeue" font-size="8" transform="translate(104.996 162)">24hr</text>
-      <text id="text22" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(482.15 342.666)">18 hours</text>
-      <text id="text28" transform="translate(537.704 342.666)"><tspan id="tspan24" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="10">24 hours</tspan><tspan id="tspan26" x="4.5" y="12" font-family="HelveticaNeue-Thin" font-size="10">(1 day)</tspan></text>
-      <text id="text34" transform="translate(595.143 342.666)"><tspan id="tspan30" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="10">48 hours</tspan><tspan id="tspan32" x="2.1" y="12" font-family="HelveticaNeue-Thin" font-size="10">(2 days)</tspan></text>
-      <text id="text40" transform="translate(652.697 342.666)"><tspan id="tspan36" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="10">72 hours</tspan><tspan id="tspan38" x="2.1" y="12" font-family="HelveticaNeue-Thin" font-size="10">(3 days)</tspan></text>
-      <text id="text46" transform="translate(716.135 342.666)"><tspan id="tspan42" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="10">96 hours</tspan><tspan id="tspan44" x="2.1" y="12" font-family="HelveticaNeue-Thin" font-size="10">(4 days)</tspan></text>
-      <text id="text52" transform="translate(768.908 342.666)"><tspan id="tspan48" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="10">120 hours</tspan><tspan id="tspan50" x="4.9" y="12" font-family="HelveticaNeue-Thin" font-size="10">(5 days)</tspan></text>
+      <text id="text2" font-family="HelveticaNeue-Italic" font-size="18" transform="translate(33 97)">Erysiphe orontii</text>
+      <text id="text4" font-family="HelveticaNeue-Thin" font-size="12" transform="translate(242 164)">Mock Treatment</text>
+      <text id="text6" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(229 177)">(placed in settling towers)</text>
+      <text id="text8" font-family="HelveticaNeue-Thin" font-size="12" transform="translate(256 266)">Inoculated</text>
+      <text id="text14" transform="translate(240 279)"><tspan id="tspan10" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="10">(settling towers with </tspan><tspan id="tspan12" x=".6" y="12" font-family="HelveticaNeue-Thin" font-size="10">10-day old cultures)</tspan></text>
+      <text id="text16" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(373 343)">6 hours</text>
+      <text id="text18" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(426 343)">12 hours</text>
+      <text id="text20" font-family="HelveticaNeue" font-size="8" transform="translate(105 162)">24hr</text>
+      <text id="text22" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(482 343)">18 hours</text>
+      <text id="text28" transform="translate(538 343)"><tspan id="tspan24" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="10">24 hours</tspan><tspan id="tspan26" x="4.5" y="12" font-family="HelveticaNeue-Thin" font-size="10">(1 day)</tspan></text>
+      <text id="text34" transform="translate(595 343)"><tspan id="tspan30" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="10">48 hours</tspan><tspan id="tspan32" x="2.1" y="12" font-family="HelveticaNeue-Thin" font-size="10">(2 days)</tspan></text>
+      <text id="text40" transform="translate(653 343)"><tspan id="tspan36" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="10">72 hours</tspan><tspan id="tspan38" x="2.1" y="12" font-family="HelveticaNeue-Thin" font-size="10">(3 days)</tspan></text>
+      <text id="text46" transform="translate(716 343)"><tspan id="tspan42" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="10">96 hours</tspan><tspan id="tspan44" x="2.1" y="12" font-family="HelveticaNeue-Thin" font-size="10">(4 days)</tspan></text>
+      <text id="text52" transform="translate(769 343)"><tspan id="tspan48" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="10">120 hours</tspan><tspan id="tspan50" x="4.9" y="12" font-family="HelveticaNeue-Thin" font-size="10">(5 days)</tspan></text>
     </g>
     <g id="infoButton_Botrytis_cinerea">
       <circle id="circle55" cx="184.2" cy="91.2" r="9.2" fill="#00dd9e"/>
-      <text id="text57" fill="#fff" font-family="HelveticaNeue-Bold" font-size="12" transform="translate(182.452 95.5)">i</text>
+      <text id="text57" fill="#fff" font-family="HelveticaNeue-Bold" font-size="12" transform="translate(182 96)">i</text>
     </g>
     <g id="treatmentInfographic">
       <g id="root" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width=".5">
-        <path id="path60" d="M110.4 296c.8-2.1 0-4.2-.7-5.9-.1-.2-.2-.4-.2-.6-1-2.9 1.6-5.7 1.6-5.7"/>
-        <path id="path62" d="M118.3 262.9s2.3-4.1 4.1-5.9"/>
-        <path id="path64" d="M123.1 272.4c-.7-1.9-3.9-2.2-4-2.2"/>
-        <path id="path66" d="M103.7 271.1c-2.2.7-6.8 3.6-7 3.7"/>
-        <path id="path68" d="M107.8 271.2c-3.1-.4-8.2 5.1-8.5 5.3"/>
-        <path id="path70" d="M100.9 262c-8.2-.9-13.7 3.5-13.8 3.6"/>
-        <path id="path72" d="M109.1 261.9c-1.2-1.1-2.6-4.6-2.6-4.6"/>
-        <path id="path74" d="M113.1 264.1s.3.9.4 1.4"/>
-        <path id="path76" d="M125 284.3c-1.4-3.1-4.8-6.6-4.9-6.6"/>
-        <path id="path78" d="M111.8 262.7c-.1 0-.1 0 0 0"/>
-        <path id="path80" d="M117.4 286.6c-.3-.3-1.9-1.6-1.9-3.2-.1-1.5-.5-3.4-1.3-5.4-.1-.4-.5-.6-.4-.4.4-.9.6-2.6.6-3.2v-.6c0-.5.1-.8.2-1.2.1-.3.1-.6.2-.9"/>
-        <path id="path82" d="M110.1 324.6c-.1-.9.2-1.6.7-2.6.2-1-.1-3.2-.5-4.8-.6-2.6 2.2-5.3 2.3-5.4l.1.1c.1-.9.3-1.9.6-2.8.1-.7.1-1.7.1-2.7 0-1.6-.1-3.3.4-4.2.1-.2.2-.5.3-.8.7-1.9 1.4-3.8 1.1-7.8-1.5-3.6-1.1-2.5-1.6-3.3-.5-.8-1.3-.4-2-4.2-.7-3.8 0-5.2 0-7 0-1.8.9-6.2 1.2-7.5"/>
-        <path id="path84" d="M119.5 330.7c-.8-.5-.9-1.7-1-2.5 0-.3 0-.5-.1-.6-1.1-1.1-.9-2.3-.6-3.8 0-1.4-1.1-2.3-1.5-2.6.1.6.1 1.2.1 1.5-.3 1.5-1 4.8.4 9.6.2.5.5 1 .8 1.5.6 4.2.9 7.7.9 7.7l-.1-1.6s-.5-1.8-1.1-6c-.2-.5-.4-.9-.6-1.3 0-.1 0-.1-.1-.2-1.1-2.2-2.1-4.1-1.9-7.4v-.2c.2-4.1.2-5.4-1.7-9.3-.3-.9-.3-2.6-.3-3.7"/>
-        <path id="path86" d="M120.5 311.3c.3-3.2-.5-4.2-1.1-5l-.1-.1c-.8-1-.8-2.2-.7-4.7 0-2.6-1.4-3.6-1.9-3.9 0 1.1-.1 2.2-.3 2.9l-.1.2c-.8 1.9-1.3 3-1.1 5.3.1 1.7-.3 3.7-.6 4.9-.1.5-.2.9-.2 1.1-.2 1.1.3 2.9.8 3.5.4.7.6 1.7.8 2.4.1.3.1.6.2.8v.3c.1.5.2 1.1.3 1.7l.1.4"/>
-        <path id="path88" d="M113.8 277.6c-.4 2-.3 2-.3 4s-.3 3.1 0 4.1c.3 1 .8 1.8 1.2 2.3.9 1.3 1.8 2.5 1.9 4.3v5.2"/>
-        <path id="path90" d="M136.4 259.8c-3-.3-6 1.2-6.1 1.3h.8c-2 0-4.5.3-6.9 1.1"/>
-        <path id="path92" d="M137.9 262.7c-1.8-.9-4.1-1.6-6.8-1.7"/>
-        <path id="path94" d="M112.2 270.3c.2-.1 1-.1 1.2-.4.3-.4.4-1.1.2-1.8-.1-.2-.3-.4-.4-.7-.6-.9-1.5-2.3-1.3-4.5"/>
-        <path id="path96" d="M114.3 268c-.2 1-.1 1.8-.1 1.8"/>
-        <path id="path98" d="m126.5 263.4 14.7 5.1c-8.6-7.4-14.7-5.1-14.7-5.1z"/>
-        <path id="line100" d="m114.6 267.4-.2.4"/>
-        <path id="line102" d="M114.4 268v-.2"/>
-        <path id="line104" d="M113.6 262.2v.3"/>
+        <path id="path60" d="M110 296v-6c-1-3 1-6 1-6"/>
+        <path id="path62" d="m118 263 4-6"/>
+        <path id="path64" d="M123 272c-1-2-4-2-4-2"/>
+        <path id="path66" d="m104 271-7 4"/>
+        <path id="path68" d="M108 271c-3 0-8 5-9 5"/>
+        <path id="path70" d="M101 262c-8-1-14 4-14 4"/>
+        <path id="path72" d="m109 262-3-5"/>
+        <path id="path74" d="M113 264v2"/>
+        <path id="path76" d="M125 284c-1-3-5-6-5-6"/>
+        <path id="path80" d="m117 287-1-4-2-5s0-1 0 0v-4l1-1v-1"/>
+        <path id="path82" d="m110 325 1-3-1-5c0-2 2-5 3-5v-6l1-4v-1l1-7-1-4c-1 0-2 0-2-4v-7l1-7"/>
+        <path id="path84" d="m120 331-1-3h-1v-4c0-2-1-3-2-3v2c0 1-1 4 1 9l1 2 1 7-1-1-1-6v-2l-2-7c0-4 0-6-2-10v-3"/>
+        <path id="path86" d="M121 311c0-3-1-4-2-5v-5c0-2-2-3-2-3l-1 3-1 5v5l-1 1 1 4 1 2v1l1 2"/>
+        <path id="path88" d="m114 278-1 4 1 4 1 2 2 4v6"/>
+        <path id="path90" d="m136 260-6 1h1l-7 1"/>
+        <path id="path92" d="m138 263-7-2"/>
+        <path id="path94" d="M112 270h1l1-2-1-1-1-4"/>
+        <path id="path96" d="M114 268v2"/>
+        <path id="path98" d="m127 263 14 5c-8-7-15-5-15-5z"/>
+        <path id="line100" d="m115 267-1 1"/>
       </g>
-      <path id="rosette" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width=".5" d="M80.8 270.1s-.8-.5 2.1-4.2c2.4-2.9 5.3-6.2 7.3-7.3 2.1-1.3 4.1-2.8 8.5-1.1 1.4.8 2.3 1.4 3.7 2.8.7 1.1 2.7 2 2.9 2.3 1 .5 5.5 3.7 6.7 4.2-1.2-1.1-5.1-4.5-6.4-5.1-1.4-.6-2.6-1.7-2.2-5.9.4-2.4.9-3.8.9-3.8 1 .8 5 4.5 5.7 5.8.6 1 .2 1.7.6 2.8.3 1 .9 2.1 1.3 2.3.1-.7.3-1.8.3-1.8.3.5 1.6 1.5 1.6 1.5.2.5 1 2.6.9 3.1-.1.8-.3 2-.3 2 .6-.8 2-2 2.6-4.7.2-1.5.1-4.5 1.1-5.8.9-1.3 1.6-2.6 3.7-3.1 1.1-.3 2.9-.8 3.5 1.9.1.9-.1 2.1-2.2 4.5-1.4 1.3-4.5 4-4.5 4.1-.7.8-1 1.2-1 1.2 1.4-1 5.7-3.3 6.3-3.5.6-.8 4.5-5 9.5-5.6 2.2-.2 7.4 1.2 8.9 1.9-.8.4-2.2 1.2-2.4 1.9-.3.8-1 2.3-1.9 2.3.9.6 4 2.6 5.2 4.3 1 1.1 4.1 3.4 6.1 3.9-.3.5-6.5 2.9-9.6 1.9-3.1-1-4.8-2.9-7.7-5.2-1.7-1.2-4.4-3-8.4-2.3-2.2.5-6.2 1.8-8 3.2l-.3.4c1 0 8.3-.7 9.7 1.1 1.2 1.6 2.5 3.4 2.5 3.4-.7.6-4.4 3.6-8.2 0-1.5-1.7-2.7-3.3-4-3.2.6.8 3.6 4.8 5.6 5.9 2.2.6 8.1 1.4 9.5 6.1.8 2.6 1 5.7 1 5.7-1.3.6-5.5 3.5-11.3-3.8-1.3-2.6-1.6-2.8-2.7-8.3-.8-1.5-1.5-3-2.8-4-1.3-.1-1.9-.1-2 0-1 .1-3.8.3-4.9 2.1-1.3 1.7-3.3 4.1-7.7 6.4-2.2 1-4.4 2.1-7.7-1.9-.8-1.3-1.2-3.9.1-5.4 1.4-1.6 3.9-4.7 6.4-4.6 1.7.1 8.4 1.3 13.3 2.2-.6-.8-4.3-5.7-12-5.8-1.5.1-3.4.4-5.7 1.9-2.6 1.6-5.9 4.5-10 3.2-1-.4-2.5-.5-3.6.1z"/>
-      <path id="mist" d="M87.8 245.9c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.6.8.9 1.4zm-1.5 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.5-7.9c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.6.8.9 1.4zm-1.5 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.5-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.6.9.9 1.4zm-1.5 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.5-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.6.9.9 1.4zm-1.5 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm1.3 19.3c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.7.8.9 1.4zm-1.4 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.4-7.9c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.7.8.9 1.4zm-1.4 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.4-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.7.9.9 1.4zm-1.4 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.4-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.7.9.9 1.4zm-1.4 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm1.3 19.3c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.6.8.9 1.4zM98 247c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.8 1.4-.5 1.8zm3.5-7.9c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.6.8.9 1.4zm-1.5 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.8 1.4-.5 1.8zm3.5-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.6.9.9 1.4zm-1.5 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.8 1.4-.5 1.8zm3.5-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.6.9.9 1.4zm-1.5 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.8 1.4-.5 1.8zm1.3 19.3c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.7.8.9 1.4zm-1.4 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.4-7.9c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.7.8.9 1.4zm-1.4 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.4-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.7.9.9 1.4zm-1.4 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.4-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.7.9.9 1.4zm-1.4 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm1.3 19.3c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.7.8.9 1.4zm-1.5 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.8 1.4-.5 1.8zm3.5-7.9c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.7.8.9 1.4zm-1.5 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.8 1.4-.5 1.8zm3.5-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.7.9.9 1.4zm-1.5 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.8 1.4-.5 1.8zm3.5-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.7.9.9 1.4zm-1.5 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.8 1.4-.5 1.8zm1.1 19.3c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.6.8.9 1.4zm-1.5 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.5-7.9c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.6.8.9 1.4zm-1.5 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.5-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.6.9.9 1.4zm-1.5 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.5-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.6.9.9 1.4zm-1.5 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm1.3 19.3c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.7.8.9 1.4zm-1.4 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.4-7.9c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.7.8.9 1.4zm-1.4 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.4-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.7.9.9 1.4zm-1.4 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.4-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.7.9.9 1.4zm-1.4 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm1.3 19.3c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.6.8.9 1.4zM127 247c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.8 1.4-.5 1.8zm3.5-7.9c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.6.8.9 1.4zm-1.5 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.8 1.4-.5 1.8zm3.5-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.6.9.9 1.4zm-1.5 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.8 1.4-.5 1.8zm3.5-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.6.9.9 1.4zm-1.5 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.8 1.4-.5 1.8zm1.3 19.3c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.7.8.9 1.4zm-1.4 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.4-7.9c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.7.8.9 1.4zm-1.4 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.4-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.7.9.9 1.4zm-1.4 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm3.4-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.7.9.9 1.4zm-1.4 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.9 1.4-.5 1.8zm1.3 19.3c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.7.8.9 1.4zm-1.5 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.8 1.4-.5 1.8zm3.5-7.9c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.4.7.8.9 1.4zm-1.5 1.1c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.8 1.4-.5 1.8zm3.5-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.7.9.9 1.4zm-1.5 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.8 1.4-.5 1.8zm3.5-8c.3.6.2 1.3-.2 1.6-.4.3-1 .3-1.4 0-.4-.3-.5-1-.2-1.6.2-.5.6-.9.9-1.4.3.5.7.9.9 1.4zm-1.5 1.2c.2.3.8.3 1 0 .4-.4.2-1-.5-1.8-.7.8-.8 1.4-.5 1.8z"/>
+      <path id="rosette" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width=".5" d="m81 270 2-4 7-7c2-2 4-3 9-1l3 2 3 3 7 4-6-5c-2-1-3-2-3-6l1-4 6 6 1 3 1 2v-2l2 2 1 3-1 2 3-5 1-6 4-3c1 0 3-1 3 2l-2 5-4 4-1 1 6-4s4-5 9-5c3-1 8 1 9 2l-2 1-2 3 5 4 6 4s-6 3-9 2l-8-5c-2-2-4-3-8-3-3 1-7 2-8 4h-1c1 0 9-1 10 1l2 3c0 1-4 4-8 0-1-1-2-3-4-3l6 6c2 1 8 2 9 6l1 6c-1 1-5 3-11-4l-3-8-2-4h-2c-1 0-4 0-5 2l-8 6c-2 1-4 2-8-2v-5c2-2 4-5 7-5l13 3c-1-1-4-6-12-6l-6 2c-2 1-6 4-10 3h-3z"/>
+      <path id="mist" d="M88 246v2h-2v-2l1-1 1 1zm-2 1h1v-2l-1 2zm4-8v2h-2v-2l1-1 1 1zm-2 1h1v-2l-1 2zm4-8v2h-2v-2l1-1 1 1zm-2 1h1v-1l-1 1zm4-8v2h-2v-2l1-1 1 1zm-2 2h1v-2l-1 2zm2 19-1 1h-1v-1l1-2 1 2zm-2 1h1v-2l-1 2zm4-8-1 2h-1v-2l1-1 1 1zm-2 1h1v-2l-1 2zm4-8-1 2h-1v-2l1-1 1 1zm-2 1h1v-1l-1 1zm4-8-1 2h-1v-2l1-1 1 1zm-2 2h1v-2l-1 2zm1 19v1h-1v-1l1-2v2zm-1 1h1v-2l-1 2zm4-8-1 2h-1v-2l1-1v1zm-2 1h1v-2l-1 2zm4-8-1 2h-1v-2l1-1v1zm-2 1h1v-1l-1 1zm4-8-1 2h-1v-2l1-1v1zm-2 2h1v-2l-1 2zm1 19v1h-1l-1-1 1-2 1 2zm-1 1h1l-1-2v2zm3-8v2h-1l-1-2 1-1 1 1zm-1 1h1l-1-2v2zm3-8v2h-1l-1-2 1-1 1 1zm-1 1h1l-1-1v1zm3-8v2h-1l-1-2 1-1 1 1zm-1 2h1l-1-2v2zm1 19v1h-1l-1-1 1-2 1 2zm-1 1h1l-1-2v2zm3-8v2h-1l-1-2 1-1 1 1zm-1 1h1l-1-2v2zm3-8v2h-1l-1-2 1-1 1 1zm-1 1h1l-1-1v1zm3-8v2h-1l-1-2 1-1 1 1zm-1 2h1l-1-2v2zm1 19v1h-2v-1l1-2 1 2zm-2 1h1v-2l-1 2zm4-8v2h-2v-2l1-1 1 1zm-2 1h1v-2l-1 2zm4-8v2h-2v-2l1-1 1 1zm-2 1h1v-1l-1 1zm4-8v2h-2v-2l1-1 1 1zm-2 2h1v-2l-1 2zm2 19-1 1h-1v-1l1-2 1 2zm-2 1h1v-2l-1 2zm4-8-1 2h-1v-2l1-1 1 1zm-2 1h1v-2l-1 2zm4-8-1 2h-1v-2l1-1 1 1zm-2 1h1v-1l-1 1zm4-8-1 2h-1v-2l1-1 1 1zm-2 2h1v-2l-1 2zm1 19v1h-1v-1l1-2v2zm-1 1h1v-2l-1 2zm4-8-1 2h-1v-2l1-1 1 1zm-2 1h1v-2l-1 2zm4-8-1 2h-1v-2l1-1 1 1zm-2 1h1v-1l-1 1zm4-8-1 2h-1v-2l1-1 1 1zm-2 2h1v-2l-1 2zm1 19v1h-1v-3l1 2zm-1 1h1l-1-2v2zm3-8v2h-1v-3l1 1zm-1 1h1l-1-2v2zm3-8v2h-1v-3l1 1zm-1 1h1l-1-1v1zm3-8v2h-1v-3l1 1zm-1 2h1l-1-2v2zm1 19v1h-1l-1-1 1-2 1 2zm-1 1h1l-1-2v2zm3-8v2h-1l-1-2 1-1 1 1zm-1 1h1l-1-2v2zm3-8v2h-1l-1-2 1-1 1 1zm-1 1h1l-1-1v1zm3-8v2h-1l-1-2 1-1 1 1zm-1 2h1l-1-2v2z"/>
     </g>
     <g id="TimeSampleChart">
       <g id="darkCycle">
-        <path id="path110" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="10" d="M114.4 175.9c-9 0-16.3-7.3-16.3-16.3s7.3-16.3 16.3-16.3"/>
+        <path id="path110" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="10" d="M114 176a16 16 0 0 1 0-33"/>
       </g>
       <g id="lightCycle">
-        <path id="path113" fill="none" stroke="#fff69f" stroke-miterlimit="10" stroke-width="10" d="M114.1 143.3c9 0 16.3 7.3 16.3 16.3s-7.3 16.3-16.3 16.3"/>
+        <path id="path113" fill="none" stroke="#fff69f" stroke-miterlimit="10" stroke-width="10" d="M114 143a16 16 0 0 1 0 33"/>
       </g>
-      <text id="text145" transform="translate(102.491 120.444)"><tspan id="tspan141" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="8">6 hour</tspan><tspan id="tspan143" x="-6.9" y="9.6" font-family="HelveticaNeue-Thin" font-size="8">inoculation</tspan></text>
-      <path id="line147" fill="none" stroke="#000" stroke-miterlimit="10" d="M113.9 136.3v11.3"/>
-      <text id="text153" transform="translate(100.268 193.444)"><tspan id="tspan149" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="8">18 hour</tspan><tspan id="tspan151" x="-4.7" y="9.6" font-family="HelveticaNeue-Thin" font-size="8">inoculation</tspan></text>
-      <path id="line155" fill="none" stroke="#000" stroke-miterlimit="10" d="M113.9 171.3v11.3"/>
-      <text id="text161" transform="translate(53.268 155.444)"><tspan id="tspan157" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="8">12 hour</tspan><tspan id="tspan159" x="-4.7" y="9.6" font-family="HelveticaNeue-Thin" font-size="8">inoculation</tspan></text>
-      <path id="line163" fill="none" stroke="#000" stroke-miterlimit="10" d="M102.6 158.9H91.2"/>
-      <text id="text171" transform="translate(142.504 152.444)"><tspan id="tspan165" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="8">ALL SAMPLES</tspan><tspan id="tspan167" x="4.7" y="9.6" font-family="HelveticaNeue-Thin" font-size="8">1, 2, 3, 4, 5</tspan><tspan id="tspan169" x="-.5" y="19.2" font-family="HelveticaNeue-Thin" font-size="8">Day inoculation</tspan></text>
-      <path id="line173" fill="none" stroke="#000" stroke-miterlimit="10" d="M137.6 158.9h-11.4"/>
+      <text id="text145" transform="translate(102 120)"><tspan id="tspan141" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="8">6 hour</tspan><tspan id="tspan143" x="-6.9" y="9.6" font-family="HelveticaNeue-Thin" font-size="8">inoculation</tspan></text>
+      <path id="line147" fill="none" stroke="#000" stroke-miterlimit="10" d="M114 136v12"/>
+      <text id="text153" transform="translate(100 193)"><tspan id="tspan149" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="8">18 hour</tspan><tspan id="tspan151" x="-4.7" y="9.6" font-family="HelveticaNeue-Thin" font-size="8">inoculation</tspan></text>
+      <path id="line155" fill="none" stroke="#000" stroke-miterlimit="10" d="M114 171v12"/>
+      <text id="text161" transform="translate(53 155)"><tspan id="tspan157" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="8">12 hour</tspan><tspan id="tspan159" x="-4.7" y="9.6" font-family="HelveticaNeue-Thin" font-size="8">inoculation</tspan></text>
+      <path id="line163" fill="none" stroke="#000" stroke-miterlimit="10" d="M103 159H91"/>
+      <text id="text171" transform="translate(143 152)"><tspan id="tspan165" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="8">ALL SAMPLES</tspan><tspan id="tspan167" x="4.7" y="9.6" font-family="HelveticaNeue-Thin" font-size="8">1, 2, 3, 4, 5</tspan><tspan id="tspan169" x="-.5" y="19.2" font-family="HelveticaNeue-Thin" font-size="8">Day inoculation</tspan></text>
+      <path id="line173" fill="none" stroke="#000" stroke-miterlimit="10" d="M138 159h-12"/>
     </g>
     <g id="Erysiphe_orontii_at_120_Hours" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5">
-      <path id="Treated_Erysiphe_orontii_at_120_Hours" d="M780.7 253.4c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-1c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.2c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
-      <path id="Control_Erysiphe_orontii_at_120_Hours" d="M780.7 160c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-1c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.1c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
+      <path id="Treated_Erysiphe_orontii_at_120_Hours" d="M781 253c0-9 4-17 9-24l3 4c9 9 12 21 6 33-3 9-5 18-4 28v5m-2-1-1-12-2-8-5-10c-1-5-5-9-4-15m11-3-1 10v11"/>
+      <path id="Control_Erysiphe_orontii_at_120_Hours" d="M781 160c0-9 4-17 9-24l3 3c9 10 12 21 6 34-3 9-5 18-4 27v5m-2-1-1-11-2-8-5-10c-1-5-5-10-4-15m11-3-1 10v11"/>
     </g>
     <g id="Erysiphe_orontii_at_96_Hours" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5">
-      <path id="Treated_Erysiphe_orontii_at_96_Hours" d="M724.2 253.4c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-.9c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.3c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
-      <path id="Control_Erysiphe_orontii_at_96_Hours" d="M724.2 160c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-.9c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.2c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
+      <path id="Treated_Erysiphe_orontii_at_96_Hours" d="M724 253c0-9 5-17 10-24l3 4c9 9 11 21 6 33-4 9-6 18-5 28v5m-1-1-1-11-3-9-4-10c-2-4-5-9-5-15m12-3-2 10 1 11"/>
+      <path id="Control_Erysiphe_orontii_at_96_Hours" d="M724 160c0-9 5-17 10-24l3 3c9 10 11 21 6 34-4 9-6 18-5 27v5m-1-1-1-11-3-8-4-10c-2-5-5-10-5-15m12-3-2 10 1 11"/>
     </g>
     <g id="Erysiphe_orontii_at_72_Hours" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5">
-      <path id="Treated_Erysiphe_orontii_at_72_Hours" d="M661.7 253.4c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-1c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.2c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
-      <path id="Control_Erysiphe_orontii_at_72_Hours" d="M661.7 160c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-1c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.1c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
+      <path id="Treated_Erysiphe_orontii_at_72_Hours" d="M662 253c0-9 4-17 9-24l3 4c9 9 12 21 6 33-3 9-5 18-4 28v5m-2-1-1-12-2-8-5-10c-1-5-5-9-4-15m11-3-1 10v11"/>
+      <path id="Control_Erysiphe_orontii_at_72_Hours" d="M662 160c0-9 4-17 9-24l3 3c9 10 12 21 6 34-3 9-5 18-4 27v5m-2-1-1-11-2-8-5-10c-1-5-5-10-4-15m11-3-1 10v11"/>
     </g>
     <g id="Erysiphe_orontii_at_48_Hours" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5">
-      <path id="Treated_Erysiphe_orontii_at_48_Hours" d="M603.2 253.4c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-.9c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.3c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
-      <path id="Control_Erysiphe_orontii_at_48_Hours" d="M603.2 160c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-.9c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.2c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
+      <path id="Treated_Erysiphe_orontii_at_48_Hours" d="M603 253c0-9 5-17 10-24l3 4c9 9 11 21 6 33-4 9-6 18-5 28v5m-1-1-1-11-3-9-4-10c-2-4-5-9-5-15m12-3-2 10 1 11"/>
+      <path id="Control_Erysiphe_orontii_at_48_Hours" d="M603 160c0-9 5-17 10-24l3 3c9 10 11 21 6 34-4 9-6 18-5 27v5m-1-1-1-11-3-8-4-10c-2-5-5-10-5-15m12-3-2 10 1 11"/>
     </g>
     <g id="Erysiphe_orontii_at_24_Hours" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5">
-      <path id="Treated_Erysiphe_orontii_at_24_Hours" d="M546.7 253.4c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-1c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.2c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
-      <path id="Control_Erysiphe_orontii_at_24_Hours" d="M546.7 160c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-1c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.1c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
+      <path id="Treated_Erysiphe_orontii_at_24_Hours" d="M547 253c0-9 4-17 9-24l3 4c9 9 12 21 6 33-3 9-5 18-4 28v5m-2-1-1-12-2-8-5-10c-1-5-5-9-4-15m11-3-1 10v11"/>
+      <path id="Control_Erysiphe_orontii_at_24_Hours" d="M547 160c0-9 4-17 9-24l3 3c9 10 12 21 6 34-3 9-5 18-4 27v5m-2-1-1-11-2-8-5-10c-1-5-5-10-4-15m11-3-1 10v11"/>
     </g>
     <g id="Erysiphe_orontii_at_18_Hours" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5">
-      <path id="Treated_Erysiphe_orontii_at_18_Hours" d="M490.2 253.4c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-.9c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.3c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
-      <path id="Control_Erysiphe_orontii_at_18_Hours" d="M490.2 160c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-.9c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.2c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
+      <path id="Treated_Erysiphe_orontii_at_18_Hours" d="M490 253c0-9 4-17 10-24l2 4c10 9 12 21 7 33-4 9-6 18-5 28v5m-1-1-1-11-3-9-4-10c-2-4-5-9-5-15m12-3-1 10v11"/>
+      <path id="Control_Erysiphe_orontii_at_18_Hours" d="M490 160c0-9 4-17 10-24l2 3c10 10 12 21 7 34-4 9-6 18-5 27v5m-1-1-1-11-3-8-4-10c-2-5-5-10-5-15m12-3-1 10v11"/>
     </g>
     <g id="Erysiphe_orontii_at_12_Hours" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5">
-      <path id="Treated_Erysiphe_orontii_at_12_Hours" d="M434.8 253.4c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-1c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.2c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
-      <path id="Control_Erysiphe_orontii_at_12_Hours" d="M434.8 160c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-1c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.1c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
+      <path id="Treated_Erysiphe_orontii_at_12_Hours" d="M435 253c0-9 4-17 9-24l3 4c9 9 12 21 6 33-3 9-5 18-4 28v5m-2-1-1-12-2-8-5-10c-1-5-4-9-4-15m11-3-1 10 1 11"/>
+      <path id="Control_Erysiphe_orontii_at_12_Hours" d="M435 160c0-9 4-17 9-24l3 3c9 10 12 21 6 34-3 9-5 18-4 27v5m-2-1-1-11-2-8-5-10c-1-5-4-10-4-15m11-3-1 10 1 11"/>
     </g>
     <g id="Erysiphe_orontii_at_6_Hours" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5">
-      <path id="Treated_Erysiphe_orontii_at_6_Hours" d="M378.3 253.4c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-.9c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.3c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
-      <path id="Control_Erysiphe_orontii_at_6_Hours" d="M378.3 160c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-.9c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.2c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
+      <path id="Treated_Erysiphe_orontii_at_6_Hours" d="M378 253c0-9 5-17 10-24l3 4c9 9 11 21 6 33-4 9-6 18-5 28v5m-1-1-1-11-3-9-4-10c-2-4-5-9-4-15m11-3-1 10v11"/>
+      <path id="Control_Erysiphe_orontii_at_6_Hours" d="M378 160c0-9 5-17 10-24l3 3c9 10 11 21 6 34-4 9-6 18-5 27v5m-1-1-1-11c-1-3-1-6-3-8l-4-10c-2-5-5-10-4-15m11-3-1 10v11"/>
     </g>
   </g>
 </svg>

@@ -1,41 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="ShootApex_svg" version="1.1" viewBox="0 0 709.985 303.969" author="Provart Lab - Bio Analytic Resource, University of Toronto">
-  <g id="ATML1" fill="#662d91" fill-opacity="1" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width="4.428" transform="translate(-25.75 -27.85)">
-    <path id="path270" d="M183.528 230.963s14.557-9.28 26.202-10.371c0 0 19.288-4.003 33.844-1.638 0 0 15.467 2.73 28.568 12.373 0 0 30.023 23.291 44.58 46.764l1.637 3.457 2.002 3.82h4.003s3.82-8.915 5.095-14.556c0 0 13.465-21.107-23.291-56.589 0 0-21.697-21.253-43.055-35.15 0 0-39.371-29.334-63.818-71.793 0 0-2.83-36.798 15.44-48.378 0 0 12.61-21.616 55.326-21.101 0 0 66.905-7.205 117.856 70.508 0 0 31.908 33.967 52.494 91.094 0 0 28.821 67.42 26.763 85.433 0 0 .209 5.446-3.794 8.721 0 0-1.092 6.187 6.55 1.092 0 0 6.55-14.193 0-26.566 0 0-15.648-60.046-47.673-120.456 0 0-46.217-71.328-74.603-91.707 0 0-62.23-46.582-126.642-10.918 0 0-46.946 40.759-18.56 79.334 0 0 39.303 47.31 57.863 58.59 20.015 13.101 28.021 23.655 28.021 23.655l28.022 26.93s16.012 25.474 6.186 43.67c0 0-42.214-68.053-93.89-64.777 0 0-54.224-3.276-83.337 59.682l-6.187 6.55 37.848-82.245s17.468-59.682-46.946-61.501c0 0-71.327 5.822-98.257 155.028 0 0 4.003 1.456 6.55-1.456 0 0 32.753-185.597 124.096-137.56 0 0 8.006 9.826 9.826 22.563 1.82 12.737-2.548 22.926-2.548 22.926l-36.391 82.791-2.548 6.733 3.094 3.457 5.458-3.821s10.372-9.826 14.011-16.194c0 0 11.827-26.566 30.205-38.394"/>
-    <path id="path294" fill-rule="evenodd" d="M474.661 155.997s9.826-29.478 46.218-5.095c1.82 0 49.492 65.869 134.285 19.651 0 0 24.018-26.93 48.037-33.116 0 0 21.47.364 20.379 37.12 0 0-9.462 17.467-37.847 46.945 0 0-14.557 7.278-25.838 30.933-11.282 23.654-34.936 33.844-34.936 33.844s-40.395 12.737-77.878-14.193l-27.294-44.034s-14.557-16.012-27.658-27.294c0 0-26.566-23.654-17.468-44.761m188.145 15.284s-67.688 53.132-134.649-5.459c0 0-35.3-33.844-45.49-11.645 0 0-13.465 17.468 20.38 48.037 0 0 24.746 21.107 33.48 40.759 0 0 16.012 36.755 48.4 38.21 0 0 49.13 14.921 69.873-33.115 0 0 24.018-34.209 37.847-43.67 0 0 37.847-29.478 21.835-48.037-1.456-33.48-51.676 14.92-51.676 14.92"/>
+<svg xmlns="http://www.w3.org/2000/svg" id="ShootApex_svg" version="1.1" viewBox="0 0 710 304" author="Provart Lab - Bio Analytic Resource, University of Toronto">
+  <g id="ATML1" fill="#662d91" fill-opacity="1" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width="4.4" transform="translate(-26 -28)">
+    <path id="path270" d="M184 231s14-9 26-10c0 0 19-4 34-2 0 0 15 3 28 12 0 0 30 24 45 47l1 4 2 3h4l5-14s14-21-23-57c0 0-22-21-43-35 0 0-39-29-64-72 0 0-3-37 16-48 0 0 12-22 55-21 0 0 67-7 118 70 0 0 32 34 52 91 0 0 29 68 27 86 0 0 0 5-4 9 0 0-1 6 7 1 0 0 6-15 0-27 0 0-16-60-48-120 0 0-46-72-74-92 0 0-63-47-127-11 0 0-47 41-19 79a413 413 0 0 0 86 83l28 27s16 25 7 43c0 0-43-68-94-65 0 0-55-3-84 60l-6 7 38-83s17-59-47-61c0 0-71 6-98 155 0 0 4 1 6-2 0 0 33-185 124-137 0 0 8 10 10 22 2 13-2 23-2 23l-37 83-2 7 3 3 5-3s11-10 14-17c0 0 12-26 31-38"/>
+    <path id="path294" fill-rule="evenodd" d="M475 156s9-29 46-5c2 0 49 66 134 20 0 0 24-27 48-34 0 0 22 1 21 38 0 0-10 17-38 47 0 0-15 7-26 30-11 24-35 34-35 34s-40 13-78-14l-27-44s-15-16-28-27c0 0-26-24-17-45m188 15s-68 53-135-5c0 0-35-34-45-12 0 0-14 18 20 48 0 0 25 21 34 41 0 0 16 37 48 38 0 0 49 15 70-33 0 0 24-34 38-44 0 0 37-29 21-48-1-33-51 15-51 15"/>
   </g>
-  <g id="FIL" fill="#83af9b" fill-opacity="1" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width="4.428" transform="translate(-25.75 -27.85)">
-    <path id="path173-5" d="M321.089 170.553S244.486 81.172 214.735 58.902c0 0 12.61-21.616 55.326-21.101 0 0 66.905-7.205 117.856 70.508 0 0 31.908 33.967 52.494 91.094 0 0 28.821 67.42 26.763 85.433 0 0-.155 18.547-62.385 4.354l-56.77-15.284s-6.187.363-4.732-8.734c0 0 34.936-25.475-22.198-94.619"/>
-    <path id="path330" d="M513.6 186.202c-23.654-15.285-30.933-32.025-30.933-32.025s-13.464 17.468 20.38 48.037c0 0 24.746 21.107 33.48 40.759 0 0 16.012 36.755 48.4 38.21 0 0 49.13 14.921 69.873-33.115 0 0 24.018-34.209 37.847-43.67 0 0 37.847-29.478 21.835-48.037 0 0-13.829 30.205-35.3 33.48l-5.459-6.55c-76.422 71.327-155.756-2.184-155.756-2.184l-4.367 5.095"/>
-    <path id="path125" d="M172.247 173.465c-1.82-12.737-9.826-22.563-9.826-22.563-91.343-48.037-124.095 137.56-124.095 137.56s30.569-14.92 81.153-9.098c0 0 14.557-38.939 39.303-87.704 0 0 4.367-19.651 13.465-18.195"/>
+  <g id="FIL" fill="#83af9b" fill-opacity="1" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width="4.4" transform="translate(-26 -28)">
+    <path id="path173-5" d="M321 171S244 81 215 59c0 0 12-22 55-21 0 0 67-7 118 70 0 0 32 34 52 91 0 0 29 68 27 86 0 0 0 18-62 4l-57-15s-6 0-5-9c0 0 35-25-22-94"/>
+    <path id="path330" d="M514 186c-24-15-31-32-31-32s-14 18 20 48c0 0 25 21 34 41 0 0 16 37 48 38 0 0 49 15 70-33 0 0 24-34 38-44 0 0 37-29 21-48 0 0-13 31-35 34l-5-7c-77 72-156-2-156-2l-4 5"/>
+    <path id="path125" d="M172 173c-2-12-10-22-10-22C71 103 38 288 38 288s31-14 81-9c0 0 15-39 40-87 0 0 4-20 13-19"/>
   </g>
-  <g id="PTL" fill="#123555" fill-opacity="1" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width="4.428" transform="translate(-25.75 -27.85)">
-    <path id="path298" d="M482.667 154.177s7.279 16.74 30.933 32.025l4.367-5.095 10.19-15.285s-35.3-33.844-45.49-11.645"/>
-    <path id="path324" d="M662.806 171.281s50.22-48.4 51.676-14.92c0 0-13.829 30.205-35.3 33.48l-5.459-6.55-10.917-12.01"/>
+  <g id="PTL" fill="#123555" fill-opacity="1" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width="4.4" transform="translate(-26 -28)">
+    <path id="path298" d="M483 154s7 17 31 32l4-5 10-15s-35-34-45-12"/>
+    <path id="path324" d="M663 171s50-48 51-15c0 0-13 31-35 34l-5-7-11-12"/>
   </g>
-  <g id="AS2" fill="#f9cdad" fill-opacity="1" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width="4.428" transform="translate(-25.75 -27.85)">
-    <path id="path125-6" d="M119.479 279.364s14.557-38.939 39.303-87.704c0 0 4.367-19.651 13.465-18.195 1.82 12.737-2.548 22.926-2.548 22.926l-36.391 82.791c-6.187 5.641-13.83.182-13.83.182"/>
-    <path id="path173" d="M214.735 58.902c-18.27 11.58-15.44 48.378-15.44 48.378 24.447 42.459 63.818 71.794 63.818 71.794 21.358 13.896 43.055 35.15 43.055 35.15 36.756 35.481 23.29 56.588 23.29 56.588s.365 10.372 13.83-5.64c0 0 34.935-25.475-22.2-94.619 0 0-76.602-89.381-106.353-111.651"/>
-    <path id="path316" d="m673.723 183.29-10.917-12.009s-67.688 53.132-134.649-5.459l-10.19 15.285s79.334 73.511 155.756 2.183"/>
+  <g id="AS2" fill="#f9cdad" fill-opacity="1" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width="4.4" transform="translate(-26 -28)">
+    <path id="path125-6" d="M119 279s15-39 40-87c0 0 4-20 13-19 2 13-2 23-2 23l-37 83c-6 6-14 0-14 0"/>
+    <path id="path173" d="M215 59c-19 11-16 48-16 48 25 43 64 72 64 72 21 14 43 35 43 35 37 36 23 57 23 57s1 10 14-6c0 0 35-25-22-94 0 0-77-90-106-112"/>
+    <path id="path316" d="m674 183-11-12s-68 53-135-5l-10 15s79 74 156 2"/>
   </g>
-  <g id="WUS" transform="translate(-25.75 -27.85)">
-    <path id="path292" fill="#c8c8a9" fill-opacity="1" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width="4.428" d="m215.189 244.61 23.836-2.001s5.641 2.001 6.369 4.185l1.82 12.191s-.364 6.369-4.913 7.824l-19.834 1.638s-7.278-.546-9.644-4.731c0 0-3.82-13.101 2.366-19.106"/>
+  <g id="WUS" transform="translate(-26 -28)">
+    <path id="path292" fill="#c8c8a9" fill-opacity="1" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width="4.4" d="m215 245 24-2s6 2 6 4l2 12s0 6-5 8l-20 1s-7 0-9-4c0 0-4-13 2-19"/>
   </g>
-  <g id="CLV3" transform="translate(-25.75 -27.85)">
-    <path id="path290" fill="#fc9d9a" fill-opacity="1" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width="4.428" d="M209.73 220.592s19.834-5.277 35.846-1.092c0 0 2.365 1.82 1.638 7.278l-.364 8.734s-1.82 6.187-7.825 7.097l-23.836 2.001s-5.823-1.091-7.642-6.186c0 0-3.276-14.92 2.183-17.832"/>
+  <g id="CLV3" transform="translate(-26 -28)">
+    <path id="path290" fill="#fc9d9a" fill-opacity="1" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width="4.4" d="M210 221s20-6 36-1c0 0 2 1 1 7v9s-2 6-8 7l-24 2s-6-1-7-7c0 0-4-14 2-17"/>
   </g>
-  <g id="UFO" transform="translate(-25.75 -27.85)">
-    <path id="path254" fill="#fe4365" fill-opacity="1" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width="4.428" d="M272.142 231.327s30.023 23.291 44.58 46.764c0 0-16.297 24.5-65.19 29.904l-47.605-1.287s-15.697 3.86-56.097-24.96l5.493-12.391s11.827-26.566 30.205-38.394c0 0 10.918 1.456 16.012 21.472 0 0 8.553 19.287 18.924 23.29l26.02-.182s12.191-1.456 15.103-23.109l.546-17.65s-2.366-11.28 12.009-3.457"/>
+  <g id="UFO" transform="translate(-26 -28)">
+    <path id="path254" fill="#fe4365" fill-opacity="1" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width="4.4" d="M272 231s30 24 45 47c0 0-17 25-65 30l-48-1s-16 4-56-25l5-13s12-26 31-38c0 0 10 1 16 21 0 0 8 20 18 24h26s13-2 16-24v-17s-2-11 12-4"/>
   </g>
-  <g id="LAS" fill="#e69b03" fill-opacity="1" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width="4.428" transform="translate(-25.75 -27.85)">
-    <path id="path250" d="M130.76 285.915s-5.458-4.731-6.186 10.917c0 0 9.825 4.367 15.648-1.091 0 0 1.82-6.187-.91-10.19l-5.458 3.821-3.094-3.457"/>
-    <path id="path252" d="m321.816 290.282-1.455-4.913s-1.28-4.136-1.794-4.007c-.515.128-12.095 9.65-2.445 17.755 0 0 10.808 9.264 16.083-4.117 0 0 2.96-6.82-3.088-13.252 0 0-2.173.68-4.753 3.62l-2.548 4.914"/>
+  <g id="LAS" fill="#e69b03" fill-opacity="1" stroke="#000" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="1" stroke-width="4.4" transform="translate(-26 -28)">
+    <path id="path250" d="M131 286s-6-5-6 11c0 0 9 4 15-1 0 0 2-6-1-10l-5 3-3-3"/>
+    <path id="path252" d="m322 290-2-5-1-4c-1 0-13 10-3 18 0 0 11 9 16-4 0 0 3-7-3-13 0 0-2 0-5 3l-2 5"/>
   </g>
-  <g id="lines" fill="none" stroke="#000" stroke-dasharray="4.428 2.214" stroke-dashoffset="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" stroke-opacity="1" stroke-width="4.428" transform="translate(-25.75 -27.85)">
-    <path id="path332" d="M175.364 124.778h258.872"/>
-    <path id="path4828" marker-end="url(#Arrow1Send)" d="M474.893 113.455s58.156-32.938 53.01 24.19"/>
+  <g id="lines" fill="none" stroke="#000" stroke-dasharray="4.428 2.214" stroke-dashoffset="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" stroke-opacity="1" stroke-width="4.4" transform="translate(-26 -28)">
+    <path id="path332" d="M175 125h259"/>
+    <path id="path4828" marker-end="url(#Arrow1Send)" d="M475 113s58-32 53 25"/>
   </g>
   <g id="labels" fill="#000" fill-opacity="1" stroke="none" font-family="Arial" font-stretch="normal" font-style="normal" font-variant="normal" font-weight="400" letter-spacing="0" text-anchor="middle" word-spacing="0">
-    <text xml:space="preserve" id="text5234" x="194.616" y="299.096" font-size="16" style="line-height:1.25;-inkscape-font-specification:Arial;text-align:center"><tspan id="tspan5232" x="194.616" y="299.096" font-size="16">Longitudinal section of vegetative shoot apex</tspan></text>
-    <text xml:space="preserve" id="text5238" x="573.97" y="297.117" font-size="8" style="line-height:1.25;-inkscape-font-specification:Arial;text-align:center"><tspan id="tspan5236" x="573.97" y="297.117" font-size="16">Transverse section of leaf primordium</tspan></text>
+    <text xml:space="preserve" id="text5234" x="194.6" y="299.1" font-size="16" style="line-height:1.25;-inkscape-font-specification:Arial;text-align:center"><tspan id="tspan5232" x="194.6" y="299.1" font-size="16">Longitudinal section of vegetative shoot apex</tspan></text>
+    <text xml:space="preserve" id="text5238" x="574" y="297.1" font-size="8" style="line-height:1.25;-inkscape-font-specification:Arial;text-align:center"><tspan id="tspan5236" x="574" y="297.1" font-size="16">Transverse section of leaf primordium</tspan></text>
   </g>
 </svg>

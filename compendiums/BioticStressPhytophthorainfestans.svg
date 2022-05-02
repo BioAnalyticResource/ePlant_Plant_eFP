@@ -1,86 +1,84 @@
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="BioticStressPhytophthorainfestans_svg" x="0" y="0" version="1.1" viewBox="20 70 534.707 263.964" author="Provart Lab - Bio Analytic Resource, University of Toronto">>
-  <g id="Phytophthora_infestans" transform="translate(-10.284 -10.693)">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="BioticStressPhytophthorainfestans_svg" x="0" y="0" version="1.1" viewBox="20 70 534.7 264" author="Provart Lab - Bio Analytic Resource, University of Toronto">
+  &gt;
+  <g id="Phytophthora_infestans" transform="translate(-10 -11)">
     <g id="Labels">
-      <text id="text2" font-family="HelveticaNeue-Italic" font-size="18" transform="translate(32.931 97.314)">Phytophthora infestans</text>
-      <text id="text4" font-family="HelveticaNeue-Thin" font-size="12" transform="translate(262.043 163.667)">Control</text>
-      <text id="text6" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(265.507 176.667)">(Water)</text>
-      <text id="text14" transform="translate(228.797 266.166)"><tspan id="tspan8" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="12">Suspension of 10^6</tspan><tspan id="tspan10" x="-7.1" y="14.4" font-family="HelveticaNeue-ThinItalic" font-size="12">Phytophthora infestans </tspan><tspan id="tspan12" x="23" y="28.8" font-family="HelveticaNeue-Thin" font-size="12">spores / ml</tspan></text>
-      <text id="text16" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(369.884 341.666)">6 hours</text>
-      <text id="text18" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(450.438 342.666)">12 hours</text>
+      <text id="text2" font-family="HelveticaNeue-Italic" font-size="18" transform="translate(33 97)">Phytophthora infestans</text>
+      <text id="text4" font-family="HelveticaNeue-Thin" font-size="12" transform="translate(262 164)">Control</text>
+      <text id="text6" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(266 177)">(Water)</text>
+      <text id="text14" transform="translate(229 266)"><tspan id="tspan8" x="0" y="0" font-family="HelveticaNeue-Thin" font-size="12">Suspension of 10^6</tspan><tspan id="tspan10" x="-7.1" y="14.4" font-family="HelveticaNeue-ThinItalic" font-size="12">Phytophthora infestans </tspan><tspan id="tspan12" x="23" y="28.8" font-family="HelveticaNeue-Thin" font-size="12">spores / ml</tspan></text>
+      <text id="text16" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(370 342)">6 hours</text>
+      <text id="text18" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(450 343)">12 hours</text>
     </g>
     <g id="infoButton_Botrytis_cinerea">
       <circle id="circle21" cx="245.2" cy="91.2" r="9.2" fill="#e00ae0"/>
-      <text id="text23" fill="#fff" font-family="HelveticaNeue-Bold" font-size="12" transform="translate(243.452 94.5)">i</text>
+      <text id="text23" fill="#fff" font-family="HelveticaNeue-Bold" font-size="12" transform="translate(243 95)">i</text>
     </g>
     <g id="treatmentInfographic">
       <g id="root" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width=".5">
-        <path id="path26" d="M110.4 296c.8-2.1 0-4.2-.7-5.9-.1-.2-.2-.4-.2-.6-1-2.9 1.6-5.7 1.6-5.7"/>
-        <path id="path28" d="M118.3 262.9s2.3-4.1 4.1-5.9"/>
-        <path id="path30" d="M123.1 272.4c-.7-1.9-3.9-2.2-4-2.2"/>
-        <path id="path32" d="M103.7 271.1c-2.2.7-6.8 3.6-7 3.7"/>
-        <path id="path34" d="M107.8 271.2c-3.1-.4-8.2 5.1-8.5 5.3"/>
-        <path id="path36" d="M100.9 262c-8.2-.9-13.7 3.5-13.8 3.6"/>
-        <path id="path38" d="M109.1 261.9c-1.2-1.1-2.6-4.6-2.6-4.6"/>
-        <path id="path40" d="M113.1 264.1s.3.9.4 1.4"/>
-        <path id="path42" d="M125 284.3c-1.4-3.1-4.8-6.6-4.9-6.6"/>
-        <path id="path44" d="M111.8 262.7c-.1 0-.1 0 0 0"/>
-        <path id="path46" d="M117.4 286.6c-.3-.3-1.9-1.6-1.9-3.2-.1-1.5-.5-3.4-1.3-5.4-.1-.4-.5-.6-.4-.4.4-.9.6-2.6.6-3.2v-.6c0-.5.1-.8.2-1.2.1-.3.1-.6.2-.9"/>
-        <path id="path48" d="M110.1 324.6c-.1-.9.2-1.6.7-2.6.2-1-.1-3.2-.5-4.8-.6-2.6 2.2-5.3 2.3-5.4l.1.1c.1-.9.3-1.9.6-2.8.1-.7.1-1.7.1-2.7 0-1.6-.1-3.3.4-4.2.1-.2.2-.5.3-.8.7-1.9 1.4-3.8 1.1-7.8-1.5-3.6-1.1-2.5-1.6-3.3-.5-.8-1.3-.4-2-4.2-.7-3.8 0-5.2 0-7 0-1.8.9-6.2 1.2-7.5"/>
-        <path id="path50" d="M119.5 330.7c-.8-.5-.9-1.7-1-2.5 0-.3 0-.5-.1-.6-1.1-1.1-.9-2.3-.6-3.8 0-1.4-1.1-2.3-1.5-2.6.1.6.1 1.2.1 1.5-.3 1.5-1 4.8.4 9.6.2.5.5 1 .8 1.5.6 4.2.9 7.7.9 7.7l-.1-1.6s-.5-1.8-1.1-6c-.2-.5-.4-.9-.6-1.3 0-.1 0-.1-.1-.2-1.1-2.2-2.1-4.1-1.9-7.4v-.2c.2-4.1.2-5.4-1.7-9.3-.3-.9-.3-2.6-.3-3.7"/>
-        <path id="path52" d="M120.5 311.3c.3-3.2-.5-4.2-1.1-5l-.1-.1c-.8-1-.8-2.2-.7-4.7 0-2.6-1.4-3.6-1.9-3.9 0 1.1-.1 2.2-.3 2.9l-.1.2c-.8 1.9-1.3 3-1.1 5.3.1 1.7-.3 3.7-.6 4.9-.1.5-.2.9-.2 1.1-.2 1.1.3 2.9.8 3.5.4.7.6 1.7.8 2.4.1.3.1.6.2.8v.3c.1.5.2 1.1.3 1.7l.1.4"/>
-        <path id="path54" d="M113.8 277.6c-.4 2-.3 2-.3 4s-.3 3.1 0 4.1c.3 1 .8 1.8 1.2 2.3.9 1.3 1.8 2.5 1.9 4.3v5.2"/>
-        <path id="path56" d="M136.4 259.8c-3-.3-6 1.2-6.1 1.3h.8c-2 0-4.5.3-6.9 1.1"/>
-        <path id="path58" d="M137.9 262.7c-1.8-.9-4.1-1.6-6.8-1.7"/>
-        <path id="path60" d="M112.2 270.3c.2-.1 1-.1 1.2-.4.3-.4.4-1.1.2-1.8-.1-.2-.3-.4-.4-.7-.6-.9-1.5-2.3-1.3-4.5"/>
-        <path id="path62" d="M114.3 268c-.2 1-.1 1.8-.1 1.8"/>
-        <path id="path64" d="m126.5 263.4 14.7 5.1c-8.6-7.4-14.7-5.1-14.7-5.1z"/>
-        <path id="line66" d="m114.6 267.4-.2.4"/>
-        <path id="line68" d="M114.4 268v-.2"/>
-        <path id="line70" d="M113.6 262.2v.3"/>
+        <path id="path26" d="M110 296v-6c-1-3 1-6 1-6"/>
+        <path id="path28" d="m118 263 4-6"/>
+        <path id="path30" d="M123 272c-1-2-4-2-4-2"/>
+        <path id="path32" d="m104 271-7 4"/>
+        <path id="path34" d="M108 271c-3 0-8 5-9 5"/>
+        <path id="path36" d="M101 262c-8-1-14 4-14 4"/>
+        <path id="path38" d="m109 262-3-5"/>
+        <path id="path40" d="M113 264v2"/>
+        <path id="path42" d="M125 284c-1-3-5-6-5-6"/>
+        <path id="path46" d="m117 287-1-4-2-5s0-1 0 0v-4l1-1v-1"/>
+        <path id="path48" d="m110 325 1-3-1-5c0-2 2-5 3-5v-6l1-4v-1l1-7-1-4c-1 0-2 0-2-4v-7l1-7"/>
+        <path id="path50" d="m120 331-1-3h-1v-4c0-2-1-3-2-3v2c0 1-1 4 1 9l1 2 1 7-1-1-1-6v-2l-2-7c0-4 0-6-2-10v-3"/>
+        <path id="path52" d="M121 311c0-3-1-4-2-5v-5c0-2-2-3-2-3l-1 3-1 5v5l-1 1 1 4 1 2v1l1 2"/>
+        <path id="path54" d="m114 278-1 4 1 4 1 2 2 4v6"/>
+        <path id="path56" d="m136 260-6 1h1l-7 1"/>
+        <path id="path58" d="m138 263-7-2"/>
+        <path id="path60" d="M112 270h1l1-2-1-1-1-4"/>
+        <path id="path62" d="M114 268v2"/>
+        <path id="path64" d="m127 263 14 5c-8-7-15-5-15-5z"/>
+        <path id="line66" d="m115 267-1 1"/>
       </g>
-      <path id="rosette" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width=".5" d="M80.8 270.1s-.8-.5 2.1-4.2c2.4-2.9 5.3-6.2 7.3-7.3 2.1-1.3 4.1-2.8 8.5-1.1 1.4.8 2.3 1.4 3.7 2.8.7 1.1 2.7 2 2.9 2.3 1 .5 5.5 3.7 6.7 4.2-1.2-1.1-5.1-4.5-6.4-5.1-1.4-.6-2.6-1.7-2.2-5.9.4-2.4.9-3.8.9-3.8 1 .8 5 4.5 5.7 5.8.6 1 .2 1.7.6 2.8.3 1 .9 2.1 1.3 2.3.1-.7.3-1.8.3-1.8.3.5 1.6 1.5 1.6 1.5.2.5 1 2.6.9 3.1-.1.8-.3 2-.3 2 .6-.8 2-2 2.6-4.7.2-1.5.1-4.5 1.1-5.8.9-1.3 1.6-2.6 3.7-3.1 1.1-.3 2.9-.8 3.5 1.9.1.9-.1 2.1-2.2 4.5-1.4 1.3-4.5 4-4.5 4.1-.7.8-1 1.2-1 1.2 1.4-1 5.7-3.3 6.3-3.5.6-.8 4.5-5 9.5-5.6 2.2-.2 7.4 1.2 8.9 1.9-.8.4-2.2 1.2-2.4 1.9-.3.8-1 2.3-1.9 2.3.9.6 4 2.6 5.2 4.3 1 1.1 4.1 3.4 6.1 3.9-.3.5-6.5 2.9-9.6 1.9-3.1-1-4.8-2.9-7.7-5.2-1.7-1.2-4.4-3-8.4-2.3-2.2.5-6.2 1.8-8 3.2l-.3.4c1 0 8.3-.7 9.7 1.1 1.2 1.6 2.5 3.4 2.5 3.4-.7.6-4.4 3.6-8.2 0-1.5-1.7-2.7-3.3-4-3.2.6.8 3.6 4.8 5.6 5.9 2.2.6 8.1 1.4 9.5 6.1.8 2.6 1 5.7 1 5.7-1.3.6-5.5 3.5-11.3-3.8-1.3-2.6-1.6-2.8-2.7-8.3-.8-1.5-1.5-3-2.8-4-1.3-.1-1.9-.1-2 0-1 .1-3.8.3-4.9 2.1-1.3 1.7-3.3 4.1-7.7 6.4-2.2 1-4.4 2.1-7.7-1.9-.8-1.3-1.2-3.9.1-5.4 1.4-1.6 3.9-4.7 6.4-4.6 1.7.1 8.4 1.3 13.3 2.2-.6-.8-4.3-5.7-12-5.8-1.5.1-3.4.4-5.7 1.9-2.6 1.6-5.9 4.5-10 3.2-1-.4-2.5-.5-3.6.1z"/>
+      <path id="rosette" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width=".5" d="m81 270 2-4 7-7c2-2 4-3 9-1l3 2 3 3 7 4-6-5c-2-1-3-2-3-6l1-4 6 6 1 3 1 2v-2l2 2 1 3-1 2 3-5 1-6 4-3c1 0 3-1 3 2l-2 5-4 4-1 1 6-4s4-5 9-5c3-1 8 1 9 2l-2 1-2 3 5 4 6 4s-6 3-9 2l-8-5c-2-2-4-3-8-3-3 1-7 2-8 4h-1c1 0 9-1 10 1l2 3c0 1-4 4-8 0-1-1-2-3-4-3l6 6c2 1 8 2 9 6l1 6c-1 1-5 3-11-4l-3-8-2-4h-2c-1 0-4 0-5 2l-8 6c-2 1-4 2-8-2v-5c2-2 4-5 7-5l13 3c-1-1-4-6-12-6l-6 2c-2 1-6 4-10 3h-3z"/>
       <g id="eyeDropper">
         <g id="g88">
-          <path id="path74" fill="#fff" d="M126.5 255.5v-39H167v39h-40.5zm24.8-20.7c.4.5.9.8 1.5.3.6-.6.3-1.1-.2-1.5l-.4-.4c.2-.2.4-.5.7-.7l5.3-5.3c1.6-1.7 1.7-3.9.2-5.4-1.5-1.6-3.8-1.5-5.5.2-2 2-3.9 4-5.9 6-.3-.3-.5-.4-.7-.6-.4-.4-.9-.5-1.3-.1-.5.5-.4 1 .1 1.4.4.4.8.7 1.3 1.1-.3.3-.5.6-.7.8l-4.2 4.2c-1.6 1.6-3.2 3-4.1 5.1-.5 1.2-1.6 2.2-2.4 3.2-.5.5-.6.9 0 1.5 1.7 1.6 1.2 1.3 2.8.1 1.3-1 2.8-1.9 4.3-2.8.3-.2.7-.4 1-.7 2.3-2.2 4.6-4.5 6.9-6.8.2-.2.4-.3.7-.6 0 .2.2.6.6 1zm-18.5 14.1c-.5.9-.3 1.9.4 2.4.6.5 1.7.5 2.4 0s1-1.5.4-2.4c-.4-.7-1-1.3-1.6-2.2-.6.9-1.2 1.5-1.6 2.2z"/>
-          <path id="path76" d="M149.7 234.2c-2.3 2.3-4.6 4.5-6.9 6.8-.3.3-.6.5-1 .7-1.4.9-2.9 1.8-4.3 2.8-1.6 1.2-1.1 1.5-2.8-.1-.6-.6-.4-.9 0-1.5.9-1 1.9-2 2.4-3.2.9-2.1 2.6-3.6 4.1-5.1l4.2-4.2c.2-.2.4-.5.7-.8-.5-.4-.9-.7-1.3-1.1-.4-.4-.5-.9-.1-1.4.4-.4.9-.3 1.3.1.2.2.4.4.7.6 2-2 3.9-4 5.9-6 1.7-1.7 4-1.8 5.5-.2 1.5 1.5 1.4 3.8-.2 5.4l-5.3 5.3c-.2.2-.4.5-.7.7l.4.4c.5.5.8 1 .2 1.5-.6.5-1.1.2-1.5-.3-.3-.4-.6-.7-.9-1.1-.1.4-.3.6-.4.7zm-13.5 10.3c.6-.5 1.1-1 1.7-1.4 1.1-.8 2.4-1.4 3.5-2.2 1.2-.9 2.2-1.9 3.2-2.8-.1-.7-.2-1.1-.3-1.5.4.1.8.2 1.3.3l.4-.4c-.1-.6-.2-1-.3-1.4.4.1.8.2 1.3.3l.4-.4c-.1-.6-.2-1-.2-1.4.4.1.8.2 1.3.4.2-.2.5-.6.7-.9l-2.6-2.6c-.2.3-.5.7-.9 1.1l-3.5 3.5c-1.6 1.6-3.2 3.1-4.2 5.2-.6 1.2-1.6 2.2-2.5 3.5l.7.7zm19-17.8c-1.4 1.4-2.8 2.7-4.1 4.1-.2.2-.2.6-.3.8.3-.1.7-.1.9-.2 1.4-1.3 2.7-2.7 4-4 .2-.2.2-.5.3-.8 0-.1-.2-.2-.4-.3 0 .2-.2.3-.4.4z"/>
-          <path id="path78" d="M136 249c.5.9.3 1.9-.4 2.4-.6.5-1.7.5-2.4 0s-.9-1.5-.4-2.4c.4-.7 1-1.3 1.6-2.1.6.7 1.2 1.3 1.6 2.1zm-2.5 1.7c.4.4 1.3.4 1.7 0 .6-.6.3-1.5-.8-2.6-1.2 1.1-1.5 2-.9 2.6z"/>
-          <path id="path80" fill="#fff" d="M138 240.3c1-2.1 2.6-3.6 4.2-5.2l3.5-3.5c.4-.4.7-.8.9-1.1 1 1 1.9 1.8 2.6 2.6-.2.3-.5.7-.7.9-.6-.2-.9-.3-1.3-.4.1.4.2.9.2 1.4l-.4.4c-.6-.1-.9-.2-1.3-.3.1.4.1.9.3 1.4-.1.1-.4.3-.4.4-.5-.1-.9-.2-1.3-.3.1.4.2.9.3 1.5-.9.8-2 1.9-3.2 2.8-1.1.8-2.3 1.4-3.5 2.2-.6.4-1.1.9-1.7 1.4-.3-.3-.5-.4-.7-.6.9-1.3 2-2.3 2.5-3.6zm6-6.3c-1.3 1.3-2.7 2.6-4 4-.2.2-.2.6-.3.9.3-.1.7-.1.9-.3 1.4-1.3 2.8-2.7 4.1-4.1.2-.2.2-.5.3-.7 0-.1-.3-.2-.4-.3-.2.2-.4.3-.6.5z"/>
-          <path id="path82" fill="#fff" d="M156.1 226.6c-.1.3-.1.6-.3.8-1.3 1.4-2.7 2.7-4 4-.2.2-.6.2-.9.2.1-.3.1-.7.3-.8l4.1-4.1c.1-.1.3-.2.5-.4l.3.3z"/>
-          <path id="path84" fill="#fff" d="M135.2 250.7c-.4.4-1.3.4-1.7 0-.6-.6-.3-1.5.8-2.6 1.2 1.1 1.5 2 .9 2.6z"/>
-          <path id="path86" d="M145 233.8c0 .2-.1.5-.3.7-1.3 1.4-2.7 2.8-4.1 4.1-.2.2-.6.2-.9.3.1-.3.1-.7.3-.9 1.3-1.4 2.6-2.7 4-4 .2-.2.4-.3.6-.5.2.1.4.3.4.3z"/>
+          <path id="path74" fill="#fff" d="M127 256v-39h40v39h-40zm24-21h2v-1l-1-1h1l5-6c2-1 2-4 0-5-1-2-3-2-5 0l-6 6-1-1h-1v2l1 1v1l-4 4-5 5-2 3v2h3l4-3 1-1 7-7h1v1zm-18 14v2h3v-2l-2-2-1 2z"/>
+          <path id="path76" d="m150 234-7 7-1 1-5 2c-1 2-1 2-2 0v-1l2-3 4-5 4-5h1l-1-1v-2h1l1 1 6-6c1-2 4-2 5 0 2 1 1 3 0 5l-5 5-1 1v2h-1l-1-1zm-14 10 2-1 3-2 4-3-1-1h2v-2h1v-1h1l1-1-2-3-1 2-4 3-4 5-2 4zm19-17-4 4v1l1-1 4-4v-1l-1 1z"/>
+          <path id="path78" d="M136 249v2h-3v-2l1-2 2 2zm-2 2h1c1-1 0-2-1-3l-1 3z"/>
+          <path id="path80" fill="#fff" d="m138 240 4-5 4-3 1-1 2 2-1 1h-1v1h-1v2h-2l1 1-4 3-3 2-2 2-1-1c1-1 3-2 3-4zm6-6-4 4v1h1l4-5h-1z"/>
+          <path id="path82" fill="#fff" d="m156 227-4 4-1 1v-1l4-4 1-1v1z"/>
+          <path id="path84" fill="#fff" d="M135 251h-2l1-3c2 1 2 2 1 3z"/>
+          <path id="path86" d="M145 234v1l-4 4h-1v-1l4-4h1z"/>
         </g>
       </g>
     </g>
     <g id="Phytophthora_infestans_at_12_Hours" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5">
-      <path id="Treated_Phytophthora_infestans_at_12_Hours" d="M454.8 253.4c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-1c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.2c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
-      <path id="Control_Phytophthora_infestans_at_12_Hours" d="M454.8 161.5c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-1c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.1c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
+      <path id="Treated_Phytophthora_infestans_at_12_Hours" d="M455 253c0-9 4-17 9-24l3 4c9 9 12 21 6 33-3 9-5 18-4 28v5m-2-1-1-12-2-8-5-10c-1-5-4-9-4-15m11-3-1 10 1 11"/>
+      <path id="Control_Phytophthora_infestans_at_12_Hours" d="M455 162c0-10 4-17 9-25l3 4c9 9 12 21 6 33-3 9-5 18-4 28v5m-2-1-1-12-2-8-5-10c-1-4-4-9-4-15m11-3-1 11 1 10"/>
     </g>
-    <text id="text95" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(523.438 342.666)">24 hours</text>
+    <text id="text95" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(523 343)">24 hours</text>
     <g id="Phytophthora_infestans_at_24_Hours" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5">
-      <path id="Treated_Phytophthora_infestans_at_24_Hours" d="M527.8 253.4c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-1c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.2c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
-      <path id="Control_Phytophthora_infestans_at_24_Hours" d="M527.8 161.5c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-1c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.1c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
+      <path id="Treated_Phytophthora_infestans_at_24_Hours" d="M528 253c0-9 4-17 9-24l3 4c9 9 12 21 6 33-3 9-5 18-4 28v5m-2-1-1-12-2-8-5-10c-1-5-5-9-4-15m11-3-1 10v11"/>
+      <path id="Control_Phytophthora_infestans_at_24_Hours" d="M528 162c0-10 4-17 9-25l3 4c9 9 12 21 6 33-3 9-5 18-4 28v5m-2-1-1-12-2-8-5-10c-1-4-5-9-4-15m11-3-1 11v10"/>
     </g>
     <g id="Phytophthora_infestans_at_6_Hours" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5">
-      <path id="Treated_Phytophthora_infestans_at_6_Hours" d="M378.3 251.9c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-.9c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.3c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
-      <path id="Control_Phytophthora_infestans_at_6_Hours" d="M379.3 160c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-.9c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.2c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
+      <path id="Treated_Phytophthora_infestans_at_6_Hours" d="M378 252c0-9 5-17 10-24l3 3c9 10 11 21 6 34-4 9-6 18-5 27v5m-1-1-1-11c-1-3-1-6-3-8l-4-10c-2-5-5-10-4-15m11-3-1 10v10"/>
+      <path id="Control_Phytophthora_infestans_at_6_Hours" d="M379 160c0-9 5-17 10-24l3 3c9 10 11 21 6 34-4 9-6 18-5 27v5m-1-1-1-11c-1-3-1-6-3-8l-4-10c-2-5-5-10-4-15m11-3-1 10v11"/>
     </g>
   </g>
-  <text id="text104" x="94.712" y="151.307" font-family="HelveticaNeue" font-size="8">24hr</text>
-  <g id="TimeSampleChart" transform="translate(-10.284 -10.693)">
+  <text id="text104" x="94.7" y="151.3" font-family="HelveticaNeue" font-size="8">24hr</text>
+  <g id="TimeSampleChart" transform="translate(-10 -11)">
     <g id="darkCycle">
-      <path id="path106" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="10" d="M100.6 167.8c-4.6-7.7-2-17.7 5.7-22.3 2.7-1.6 5.5-2.3 8.4-2.3"/>
+      <path id="path106" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="10" d="M101 168a16 16 0 0 1 14-25"/>
     </g>
     <g id="lightCycle">
-      <path id="path109" fill="none" stroke="#fff69f" stroke-miterlimit="10" stroke-width="10" d="M114.7 143.3c5.5 0 10.9 2.9 13.9 7.9 4.6 7.7 2 17.7-5.7 22.3-7.7 4.6-17.7 2-22.3-5.7"/>
+      <path id="path109" fill="none" stroke="#fff69f" stroke-miterlimit="10" stroke-width="10" d="M115 143c5 0 11 3 14 8a16 16 0 0 1-28 17"/>
     </g>
     <g id="labels">
-      <text id="text112" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(89.74 121.944)">INNOCULATION</text>
-      <text id="text114" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(90.24 130.944)">24 hour sample</text>
-      <path id="line116" fill="none" stroke="#000" stroke-miterlimit="10" d="M114.4 135.8v11.3"/>
-      <text id="text118" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(90.24 193.194)">12 hour sample</text>
-      <path id="line120" fill="none" stroke="#000" stroke-miterlimit="10" d="M114.4 171.1v11.3"/>
-      <text id="text122" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(141.907 162.554)">6 hour sample</text>
-      <path id="line128" fill="none" stroke="#000" stroke-miterlimit="10" d="M126.2 160h12"/>
+      <text id="text112" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(90 122)">INNOCULATION</text>
+      <text id="text114" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(90 131)">24 hour sample</text>
+      <path id="line116" fill="none" stroke="#000" stroke-miterlimit="10" d="M114 136v11"/>
+      <text id="text118" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(90 193)">12 hour sample</text>
+      <path id="line120" fill="none" stroke="#000" stroke-miterlimit="10" d="M114 171v11"/>
+      <text id="text122" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(142 163)">6 hour sample</text>
+      <path id="line128" fill="none" stroke="#000" stroke-miterlimit="10" d="M126 160h12"/>
     </g>
   </g>
 </svg>

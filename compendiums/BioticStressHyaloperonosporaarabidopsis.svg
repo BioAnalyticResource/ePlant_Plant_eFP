@@ -1,99 +1,97 @@
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="BioticStressHyaloperonosporaarabidopsis_svg" x="0" y="0" version="1.1" viewBox="20 70 663.689 266.296" author="Provart Lab - Bio Analytic Resource, University of Toronto">>
-  <g id="Erysiphe_orontii" transform="translate(-9.646 -10.682)">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="BioticStressHyaloperonosporaarabidopsis_svg" x="0" y="0" version="1.1" viewBox="20 70 663.7 266.3" author="Provart Lab - Bio Analytic Resource, University of Toronto">
+  &gt;
+  <g id="Erysiphe_orontii" transform="translate(-10 -11)">
     <g id="Labels">
-      <text id="text2" font-family="HelveticaNeue-Italic" font-size="18" transform="translate(32.931 97.314)">Hyaloperonospora arabidopsidis</text>
-      <text id="text4" font-family="HelveticaNeue-Thin" font-size="12" transform="translate(229.58 163.667)">Wild type Col-0 plants</text>
-      <text id="text6" font-family="HelveticaNeue-ThinItalic" font-size="12" transform="translate(235.064 266.166)">rpp4 </text>
-      <text id="text8" font-family="HelveticaNeue-Thin" font-size="12" transform="translate(261.764 266.166)">mutant plants</text>
-      <text id="text10" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(373.044 342.666)">Day 0</text>
-      <text id="text12" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(442.818 342.666)">0.5 days</text>
-      <text id="text14" font-family="HelveticaNeue" font-size="8" transform="translate(104.996 162)">24hr</text>
-      <text id="text16" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(515.15 342.666)">2 days</text>
-      <text id="text18" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(586.704 342.666)">4 days</text>
-      <text id="text20" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(661.143 343.666)">6 days</text>
+      <text id="text2" font-family="HelveticaNeue-Italic" font-size="18" transform="translate(33 97)">Hyaloperonospora arabidopsidis</text>
+      <text id="text4" font-family="HelveticaNeue-Thin" font-size="12" transform="translate(230 164)">Wild type Col-0 plants</text>
+      <text id="text6" font-family="HelveticaNeue-ThinItalic" font-size="12" transform="translate(235 266)">rpp4 </text>
+      <text id="text8" font-family="HelveticaNeue-Thin" font-size="12" transform="translate(262 266)">mutant plants</text>
+      <text id="text10" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(373 343)">Day 0</text>
+      <text id="text12" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(443 343)">0.5 days</text>
+      <text id="text14" font-family="HelveticaNeue" font-size="8" transform="translate(105 162)">24hr</text>
+      <text id="text16" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(515 343)">2 days</text>
+      <text id="text18" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(587 343)">4 days</text>
+      <text id="text20" font-family="HelveticaNeue-Thin" font-size="10" transform="translate(661 344)">6 days</text>
     </g>
     <g id="infoButton_Botrytis_cinerea">
       <circle id="circle23" cx="316.2" cy="91.2" r="9.2" fill="#8800d8"/>
-      <text id="text25" fill="#fff" font-family="HelveticaNeue-Bold" font-size="12" transform="translate(314.452 95.5)">i</text>
+      <text id="text25" fill="#fff" font-family="HelveticaNeue-Bold" font-size="12" transform="translate(314 96)">i</text>
     </g>
     <g id="treatmentInfographic" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width=".5">
       <g id="root">
-        <path id="path28" d="M110.4 296c.8-2.1 0-4.2-.7-5.9-.1-.2-.2-.4-.2-.6-1-2.9 1.6-5.7 1.6-5.7"/>
-        <path id="path30" d="M118.3 262.9s2.3-4.1 4.1-5.9"/>
-        <path id="path32" d="M123.1 272.4c-.7-1.9-3.9-2.2-4-2.2"/>
-        <path id="path34" d="M103.7 271.1c-2.2.7-6.8 3.6-7 3.7"/>
-        <path id="path36" d="M107.8 271.2c-3.1-.4-8.2 5.1-8.5 5.3"/>
-        <path id="path38" d="M100.9 262c-8.2-.9-13.7 3.5-13.8 3.6"/>
-        <path id="path40" d="M109.1 261.9c-1.2-1.1-2.6-4.6-2.6-4.6"/>
-        <path id="path42" d="M113.1 264.1s.3.9.4 1.4"/>
-        <path id="path44" d="M125 284.3c-1.4-3.1-4.8-6.6-4.9-6.6"/>
-        <path id="path46" d="M111.8 262.7c-.1 0-.1 0 0 0"/>
-        <path id="path48" d="M117.4 286.6c-.3-.3-1.9-1.6-1.9-3.2-.1-1.5-.5-3.4-1.3-5.4-.1-.4-.5-.6-.4-.4.4-.9.6-2.6.6-3.2v-.6c0-.5.1-.8.2-1.2.1-.3.1-.6.2-.9"/>
-        <path id="path50" d="M110.1 324.6c-.1-.9.2-1.6.7-2.6.2-1-.1-3.2-.5-4.8-.6-2.6 2.2-5.3 2.3-5.4l.1.1c.1-.9.3-1.9.6-2.8.1-.7.1-1.7.1-2.7 0-1.6-.1-3.3.4-4.2.1-.2.2-.5.3-.8.7-1.9 1.4-3.8 1.1-7.8-1.5-3.6-1.1-2.5-1.6-3.3-.5-.8-1.3-.4-2-4.2-.7-3.8 0-5.2 0-7 0-1.8.9-6.2 1.2-7.5"/>
-        <path id="path52" d="M119.5 330.7c-.8-.5-.9-1.7-1-2.5 0-.3 0-.5-.1-.6-1.1-1.1-.9-2.3-.6-3.8 0-1.4-1.1-2.3-1.5-2.6.1.6.1 1.2.1 1.5-.3 1.5-1 4.8.4 9.6.2.5.5 1 .8 1.5.6 4.2.9 7.7.9 7.7l-.1-1.6s-.5-1.8-1.1-6c-.2-.5-.4-.9-.6-1.3 0-.1 0-.1-.1-.2-1.1-2.2-2.1-4.1-1.9-7.4v-.2c.2-4.1.2-5.4-1.7-9.3-.3-.9-.3-2.6-.3-3.7"/>
-        <path id="path54" d="M120.5 311.3c.3-3.2-.5-4.2-1.1-5l-.1-.1c-.8-1-.8-2.2-.7-4.7 0-2.6-1.4-3.6-1.9-3.9 0 1.1-.1 2.2-.3 2.9l-.1.2c-.8 1.9-1.3 3-1.1 5.3.1 1.7-.3 3.7-.6 4.9-.1.5-.2.9-.2 1.1-.2 1.1.3 2.9.8 3.5.4.7.6 1.7.8 2.4.1.3.1.6.2.8v.3c.1.5.2 1.1.3 1.7l.1.4"/>
-        <path id="path56" d="M113.8 277.6c-.4 2-.3 2-.3 4s-.3 3.1 0 4.1c.3 1 .8 1.8 1.2 2.3.9 1.3 1.8 2.5 1.9 4.3v5.2"/>
-        <path id="path58" d="M136.4 259.8c-3-.3-6 1.2-6.1 1.3h.8c-2 0-4.5.3-6.9 1.1"/>
-        <path id="path60" d="M137.9 262.7c-1.8-.9-4.1-1.6-6.8-1.7"/>
-        <path id="path62" d="M112.2 270.3c.2-.1 1-.1 1.2-.4.3-.4.4-1.1.2-1.8-.1-.2-.3-.4-.4-.7-.6-.9-1.5-2.3-1.3-4.5"/>
-        <path id="path64" d="M114.3 268c-.2 1-.1 1.8-.1 1.8"/>
-        <path id="path66" d="m126.5 263.4 14.7 5.1c-8.6-7.4-14.7-5.1-14.7-5.1z"/>
-        <path id="line68" d="m114.6 267.4-.2.4"/>
-        <path id="line70" d="M114.4 268v-.2"/>
-        <path id="line72" d="M113.6 262.2v.3"/>
+        <path id="path28" d="M110 296v-6c-1-3 1-6 1-6"/>
+        <path id="path30" d="m118 263 4-6"/>
+        <path id="path32" d="M123 272c-1-2-4-2-4-2"/>
+        <path id="path34" d="m104 271-7 4"/>
+        <path id="path36" d="M108 271c-3 0-8 5-9 5"/>
+        <path id="path38" d="M101 262c-8-1-14 4-14 4"/>
+        <path id="path40" d="m109 262-3-5"/>
+        <path id="path42" d="M113 264v2"/>
+        <path id="path44" d="M125 284c-1-3-5-6-5-6"/>
+        <path id="path48" d="m117 287-1-4-2-5s0-1 0 0v-4l1-1v-1"/>
+        <path id="path50" d="m110 325 1-3-1-5c0-2 2-5 3-5v-6l1-4v-1l1-7-1-4c-1 0-2 0-2-4v-7l1-7"/>
+        <path id="path52" d="m120 331-1-3h-1v-4c0-2-1-3-2-3v2c0 1-1 4 1 9l1 2 1 7-1-1-1-6v-2l-2-7c0-4 0-6-2-10v-3"/>
+        <path id="path54" d="M121 311c0-3-1-4-2-5v-5c0-2-2-3-2-3l-1 3-1 5v5l-1 1 1 4 1 2v1l1 2"/>
+        <path id="path56" d="m114 278-1 4 1 4 1 2 2 4v6"/>
+        <path id="path58" d="m136 260-6 1h1l-7 1"/>
+        <path id="path60" d="m138 263-7-2"/>
+        <path id="path62" d="M112 270h1l1-2-1-1-1-4"/>
+        <path id="path64" d="M114 268v2"/>
+        <path id="path66" d="m127 263 14 5c-8-7-15-5-15-5z"/>
+        <path id="line68" d="m115 267-1 1"/>
       </g>
-      <path id="rosette" d="M80.8 270.1s-.8-.5 2.1-4.2c2.4-2.9 5.3-6.2 7.3-7.3 2.1-1.3 4.1-2.8 8.5-1.1 1.4.8 2.3 1.4 3.7 2.8.7 1.1 2.7 2 2.9 2.3 1 .5 5.5 3.7 6.7 4.2-1.2-1.1-5.1-4.5-6.4-5.1-1.4-.6-2.6-1.7-2.2-5.9.4-2.4.9-3.8.9-3.8 1 .8 5 4.5 5.7 5.8.6 1 .2 1.7.6 2.8.3 1 .9 2.1 1.3 2.3.1-.7.3-1.8.3-1.8.3.5 1.6 1.5 1.6 1.5.2.5 1 2.6.9 3.1-.1.8-.3 2-.3 2 .6-.8 2-2 2.6-4.7.2-1.5.1-4.5 1.1-5.8.9-1.3 1.6-2.6 3.7-3.1 1.1-.3 2.9-.8 3.5 1.9.1.9-.1 2.1-2.2 4.5-1.4 1.3-4.5 4-4.5 4.1-.7.8-1 1.2-1 1.2 1.4-1 5.7-3.3 6.3-3.5.6-.8 4.5-5 9.5-5.6 2.2-.2 7.4 1.2 8.9 1.9-.8.4-2.2 1.2-2.4 1.9-.3.8-1 2.3-1.9 2.3.9.6 4 2.6 5.2 4.3 1 1.1 4.1 3.4 6.1 3.9-.3.5-6.5 2.9-9.6 1.9-3.1-1-4.8-2.9-7.7-5.2-1.7-1.2-4.4-3-8.4-2.3-2.2.5-6.2 1.8-8 3.2l-.3.4c1 0 8.3-.7 9.7 1.1 1.2 1.6 2.5 3.4 2.5 3.4-.7.6-4.4 3.6-8.2 0-1.5-1.7-2.7-3.3-4-3.2.6.8 3.6 4.8 5.6 5.9 2.2.6 8.1 1.4 9.5 6.1.8 2.6 1 5.7 1 5.7-1.3.6-5.5 3.5-11.3-3.8-1.3-2.6-1.6-2.8-2.7-8.3-.8-1.5-1.5-3-2.8-4-1.3-.1-1.9-.1-2 0-1 .1-3.8.3-4.9 2.1-1.3 1.7-3.3 4.1-7.7 6.4-2.2 1-4.4 2.1-7.7-1.9-.8-1.3-1.2-3.9.1-5.4 1.4-1.6 3.9-4.7 6.4-4.6 1.7.1 8.4 1.3 13.3 2.2-.6-.8-4.3-5.7-12-5.8-1.5.1-3.4.4-5.7 1.9-2.6 1.6-5.9 4.5-10 3.2-1-.4-2.5-.5-3.6.1z"/>
+      <path id="rosette" d="m81 270 2-4 7-7c2-2 4-3 9-1l3 2 3 3 7 4-6-5c-2-1-3-2-3-6l1-4 6 6 1 3 1 2v-2l2 2 1 3-1 2 3-5 1-6 4-3c1 0 3-1 3 2l-2 5-4 4-1 1 6-4s4-5 9-5c3-1 8 1 9 2l-2 1-2 3 5 4 6 4s-6 3-9 2l-8-5c-2-2-4-3-8-3-3 1-7 2-8 4h-1c1 0 9-1 10 1l2 3c0 1-4 4-8 0-1-1-2-3-4-3l6 6c2 1 8 2 9 6l1 6c-1 1-5 3-11-4l-3-8-2-4h-2c-1 0-4 0-5 2l-8 6c-2 1-4 2-8-2v-5c2-2 4-5 7-5l13 3c-1-1-4-6-12-6l-6 2c-2 1-6 4-10 3h-3z"/>
     </g>
     <g id="TimeSampleChart">
       <g id="darkCycle">
-        <path id="path77" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="10" d="M114.4 175.9c-9 0-16.3-7.3-16.3-16.3s7.3-16.3 16.3-16.3"/>
+        <path id="path77" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="10" d="M114 176a16 16 0 0 1 0-33"/>
       </g>
       <g id="lightCycle">
-        <path id="path80" fill="none" stroke="#fff69f" stroke-miterlimit="10" stroke-width="10" d="M114.1 143.3c9 0 16.3 7.3 16.3 16.3s-7.3 16.3-16.3 16.3"/>
+        <path id="path80" fill="none" stroke="#fff69f" stroke-miterlimit="10" stroke-width="10" d="M114 143a16 16 0 0 1 0 33"/>
       </g>
-      <text id="text108" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(89.491 110.444)">6 days sample</text>
-      <text id="text110" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(89.491 120.044)">4 days sample</text>
-      <text id="text112" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(89.491 129.644)">2 days sample</text>
-      <path id="line114" fill="none" stroke="#000" stroke-miterlimit="10" d="M113.9 136.3v11.3"/>
-      <text id="text116" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(87.268 196.444)">0.5 day sample</text>
-      <path id="line118" fill="none" stroke="#000" stroke-miterlimit="10" d="M113.9 171.3v11.3"/>
+      <text id="text108" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(89 110)">6 days sample</text>
+      <text id="text110" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(89 120)">4 days sample</text>
+      <text id="text112" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(89 130)">2 days sample</text>
+      <path id="line114" fill="none" stroke="#000" stroke-miterlimit="10" d="M114 136v12"/>
+      <text id="text116" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(87 196)">0.5 day sample</text>
+      <path id="line118" fill="none" stroke="#000" stroke-miterlimit="10" d="M114 171v12"/>
     </g>
     <g id="Hyaloperonsospora_arabidopsis_6_days" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5">
-      <path id="rpp4_Emwa1_6dpi_rep1_rep2" d="M662.2 254.4c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-.9c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.3c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
-      <path id="WT_Emwa1_6dpi_rep1_rep2" d="M662.2 161c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-.9c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.2c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
+      <path id="rpp4_Emwa1_6dpi_rep1_rep2" d="M662 254c0-9 5-17 10-24l3 4c9 9 11 21 6 33-4 9-6 18-5 28v5m-1-1-1-11-3-9-4-10c-2-4-5-9-5-15m12-3-2 10 1 11"/>
+      <path id="WT_Emwa1_6dpi_rep1_rep2" d="M662 161c0-9 5-17 10-24l3 3c9 10 11 21 6 34-4 9-6 18-5 27v5m-1-1-1-11-3-8-4-10c-2-5-5-10-5-15m12-3-2 10 1 11"/>
     </g>
     <g id="Hyaloperonsospora_arabidopsis_4_days" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5">
-      <path id="rpp4_Emwa1_4dpi_rep1_rep2" d="M588.7 253.4c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-1c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.2c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
-      <path id="WT_Emwa1_4dpi_rep1_rep2" d="M588.7 160c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-1c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.1c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
+      <path id="rpp4_Emwa1_4dpi_rep1_rep2" d="M589 253c0-9 4-17 9-24l3 4c9 9 12 21 6 33-3 9-5 18-4 28v5m-2-1-1-12-2-8-5-10c-1-5-5-9-4-15m11-3-1 10v11"/>
+      <path id="WT_Emwa1_4dpi_rep1_rep2" d="M589 160c0-9 4-17 9-24l3 3c9 10 12 21 6 34-3 9-5 18-4 27v5m-2-1-1-11-2-8-5-10c-1-5-5-10-4-15m11-3-1 10v11"/>
     </g>
     <g id="Hyaloperonsospora_arabidopsis_2_days" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5">
-      <path id="rpp4_Emwa1_2dpi_rep1_rep2" d="M516.2 253.4c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-.9c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.3c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
-      <path id="WT_Emwa1_2dpi_rep1_rep2" d="M516.2 160c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-.9c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.2c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
+      <path id="rpp4_Emwa1_2dpi_rep1_rep2" d="M516 253c0-9 5-17 10-24l3 4c9 9 11 21 6 33-4 9-6 18-5 28v5m-1-1-1-11-3-9-4-10c-2-4-5-9-5-15m12-3-2 10 1 11"/>
+      <path id="WT_Emwa1_2dpi_rep1_rep2" d="M516 160c0-9 5-17 10-24l3 3c9 10 11 21 6 34-4 9-6 18-5 27v5m-1-1-1-11-3-8-4-10c-2-5-5-10-5-15m12-3-2 10 1 11"/>
     </g>
     <g id="Hyaloperonsospora_arabidopsis_05_days" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5">
-      <path id="rpp4_Emwa1_05dpi_rep1_rep2" d="M446.8 253.4c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-1c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.2c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
-      <path id="WT_Emwa1_05dpi_rep1_rep2" d="M446.8 160c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-1c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.1c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
+      <path id="rpp4_Emwa1_05dpi_rep1_rep2" d="M447 253c0-9 4-17 9-24l3 4c9 9 12 21 6 33-3 9-5 18-4 28v5m-2-1-1-12-2-8-5-10c-1-5-4-9-4-15m11-3-1 10 1 11"/>
+      <path id="WT_Emwa1_05dpi_rep1_rep2" d="M447 160c0-9 4-17 9-24l3 3c9 10 12 21 6 34-3 9-5 18-4 27v5m-2-1-1-11-2-8-5-10c-1-5-4-10-4-15m11-3-1 10 1 11"/>
     </g>
     <g id="Hyaloperonsospora_arabidopsis_0_days" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5">
-      <path id="rpp4_Emwa1_0dpi_rep1_rep2" d="M378.3 253.4c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-.9c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.3c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
-      <path id="WT_Emwa1_0dpi_rep1_rep2" d="M378.3 160c-.1-9.1 4.3-17 9.4-24.3 1.3 1.6 2 2.6 2.9 3.5 9.2 9.8 11.5 21.3 6.3 33.5-3.7 8.9-5.5 18-4.7 27.5.1 1.6 0 3.3 0 4.9m-1.5-.9c-.3-3.7-.3-7.3-.9-11.1-.4-2.7-1.3-5.6-2.4-8.2-1.4-3.5-3.7-6.8-4.7-10.2-1.3-4.6-4.7-9.5-4.2-14.7m11.3-3.2c-.4 3.5-1 6.8-1.2 10.2-.1 3.6.1 7 .4 10.6"/>
+      <path id="rpp4_Emwa1_0dpi_rep1_rep2" d="M378 253c0-9 5-17 10-24l3 4c9 9 11 21 6 33-4 9-6 18-5 28v5m-1-1-1-11-3-9-4-10c-2-4-5-9-4-15m11-3-1 10v11"/>
+      <path id="WT_Emwa1_0dpi_rep1_rep2" d="M378 160c0-9 5-17 10-24l3 3c9 10 11 21 6 34-4 9-6 18-5 27v5m-1-1-1-11c-1-3-1-6-3-8l-4-10c-2-5-5-10-4-15m11-3-1 10v11"/>
     </g>
   </g>
-  <g id="spray_bottle" transform="translate(-9.646 -10.682)">
+  <g id="spray_bottle" transform="translate(-10 -11)">
     <g id="g149">
       <g id="g147">
-        <path id="path137" d="M163.4 242.9c-.2.2-.5.4-.6.7-1 1.2-2.2 1.4-3.5.5-1.9-1.3-3.7-2.7-5.6-4-.7-.5-1.2-1.2-1.2-2 0-.2-.1-.4-.1-.5-.2-1.2-.2-1.2-1.2-2.6 1.1-1.5 2.2-3 3.3-4.6 1.1.8 2.3.5 3.5.3.7-.1 1.4 0 2 .5 2 1.4 3.9 2.8 5.9 4.2 1.1.8 1.3 2 .6 3.2-.2.3-.4.7-.6 1.1-.9 1-1.7 2.1-2.5 3.2z"/>
-        <path id="path139" d="M143.9 230.9c-.2.2-.3.4-.4.5-.5.7-.4.7-1.1.2-.4-.3-.9-.6-1.3-.9-.3-.2-.3-.3-.1-.6 1.3-1.7 2.6-3.5 3.9-5.2.6-.8 1.5-1.3 2.5-1.5.4-.1.7-.1 1.1 0 .4 0 .6.3.5.7-.2.7-.3 1.3-.5 2-.1.2-.2.5-.2.7-.1.7-.1 1.3.5 1.8l-1.5 2.1c-.6-.3-1.3-.6-2-.3.5 1.4 1 2.7 1.4 4.1.1.3.2.5-.2.6-.9-1.5-1.7-2.8-2.6-4.2zm1.2-5c0 .1-.1.3-.2.6h.9c1.4.3 1.7-.7 1.9-1.7 0-.1.1-.4 0-.4-.1-.1-.3-.1-.5 0-.8.2-1.4.7-2.1 1.5z"/>
-        <path id="path141" d="m153.7 229.9-3.3 4.5c-.9-.6-1.7-1.2-2.5-1.9-.4-.3-.4-.9-.1-1.4.6-.9 1.3-1.8 2-2.7.4-.5 1-.6 1.5-.3l2.4 1.8zm-1.3.2c-.5-.4-1-.7-1.4-1-.1-.1-.4 0-.5.1-.6.8-1.2 1.6-1.8 2.5-.1.1-.1.3 0 .4.5.4 1 .8 1.5 1.1.8-1.1 1.5-2.1 2.2-3.1z"/>
-        <path id="path143" d="M140.4 231.2c.7.5 1.3 1 2 1.5-.5.5-1 1-1.5 1.4-.5-.3-.9-.7-1.5-1.1.4-.6.7-1.2 1-1.8z"/>
-        <path id="path145" d="M139.2 234.8c.3.2.4.7.2 1-.2.3-.7.4-1 .2-.3-.2-.4-.7-.2-1 .2-.3.7-.4 1-.2zm-3.6 1.2c-.2.3-.2.8.2 1 .3.2.8.2 1-.2.2-.3.2-.8-.2-1-.3-.2-.8-.1-1 .2zm2.4 1.8c-.2.3-.2.8.2 1 .3.2.8.2 1-.2.2-.3.2-.8-.2-1-.3-.2-.8-.1-1 .2zm-7.9.5c-.2.3-.2.8.2 1 .4.2.8.2 1-.2.2-.4.2-.8-.2-1-.3-.2-.8-.1-1 .2zm2.5 1.8c-.2.3-.2.8.2 1 .4.2.8.2 1-.2.2-.4.2-.8-.2-1-.4-.2-.8-.2-1 .2zm2.4 1.7c-.2.3-.2.8.2 1 .4.2.8.2 1-.2.2-.4.2-.8-.2-1-.3-.2-.7-.1-1 .2zm2.5 1.8c-.2.3-.2.8.2 1 .4.2.8.2 1-.2.2-.4.2-.8-.2-1-.3-.2-.8-.1-1 .2zm-10-4.1c-.2.3-.2.8.2 1 .3.2.8.2 1-.2.2-.3.2-.8-.2-1-.4-.2-.8-.1-1 .2zm2.4 1.8c-.2.3-.2.8.2 1 .3.2.8.2 1-.2.2-.3.2-.8-.2-1-.4-.2-.7-.1-1 .2zm2.5 1.8c-.2.3-.2.8.2 1 .3.2.8.2 1-.2.2-.3.2-.8-.2-1-.4-.2-.8-.1-1 .2zm2.5 1.8c-.2.3-.2.8.2 1 .3.2.8.2 1-.2.2-.3.2-.8-.2-1-.4-.2-.8-.2-1 .2zM133 237c-.2.3-.2.8.2 1 .3.2.8.2 1-.2.2-.3.2-.8-.2-1-.4-.2-.8-.1-1 .2zm2.4 1.8c-.2.3-.2.8.2 1 .3.2.8.2 1-.2.2-.3.2-.8-.2-1-.4-.2-.8-.1-1 .2zm2.5 1.8c-.2.3-.2.8.2 1 .3.2.8.2 1-.2.2-.3.2-.8-.2-1-.4-.2-.7-.1-1 .2zm-.6 6c-.2.3-.2.8.2 1 .4.2.8.2 1-.2.2-.4.2-.8-.2-1-.4-.2-.8-.1-1 .2z"/>
+        <path id="path137" d="M163 243v1h-4l-5-4-1-2h-1l-1-3 4-5 3 1h2l6 4 1 4-1 1-3 3z"/>
+        <path id="path139" d="m144 231-2 1-1-1v-1l4-5 2-2h2v3l-1 1 1 2-2 2-2-1 2 4v1l-3-4zm1-5v1h1l2-2v-1h-1l-2 2z"/>
+        <path id="path141" d="m154 230-4 4-2-1v-2l2-3h1l3 2zm-2 0-1-1h-1l-1 3 1 1 2-3z"/>
+        <path id="path143" d="m140 231 2 2-1 1-2-1 1-2z"/>
+        <path id="path145" d="M139 235v1h-1v-1h1zm-3 1v1h1v-1h-1zm2 2v1h1v-1h-1zm-8 0v1h1v-1h-1zm3 2v1h1v-1h-1zm2 2v1h1v-1h-1zm3 2v1l1-1-1-1v1zm-10-4v1l1-1-1-1v1zm2 1v1h1v-1h-1zm2 2 1 1h1l-1-1h-1zm3 2v1h1v-1h-1zm-2-8v1h1v-1h-1zm2 2 1 1h1l-1-1h-1zm3 2v1l1-1v-1l-1 1zm-1 6 1 1 1-1-1-1-1 1z"/>
       </g>
     </g>
-    <text id="text151" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(43.5 216)">sprayed with 5 x 10</text>
-    <text id="text153" font-family="HelveticaNeue-Thin" font-size="4.664" transform="translate(109.163 213.336)">6 </text>
-    <text id="text155" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(113.053 216)">spores / ml</text>
-    <text id="text157" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(43.5 225.6)">in distilled H</text>
-    <text id="text159" font-family="HelveticaNeue-Thin" font-size="4.664" transform="translate(83.148 228.264)">2</text>
-    <text id="text161" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(85.74 225.6)">0</text>
+    <text id="text151" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(44 216)">sprayed with 5 x 10</text>
+    <text id="text153" font-family="HelveticaNeue-Thin" font-size="4.7" transform="translate(109 213)">6 </text>
+    <text id="text155" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(113 216)">spores / ml</text>
+    <text id="text157" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(44 226)">in distilled H</text>
+    <text id="text159" font-family="HelveticaNeue-Thin" font-size="4.7" transform="translate(83 228)">2</text>
+    <text id="text161" font-family="HelveticaNeue-Thin" font-size="8" transform="translate(86 226)">0</text>
   </g>
 </svg>

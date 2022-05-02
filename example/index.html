@@ -3,37 +3,101 @@
 
 <head>
   <title>ePlant Plant eFP - Example</title>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-  <meta name="author" content="BAR Lab @ University of Toronto: Alexander Sullivan, Asher Pasha, Youyang Li, Nicholas J. Provart" />
-  <meta name="title" content="GAIA">
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+  <meta name="title" content="ePlant Plant eFP" />
   <link rel="shortcut icon" href="../icon/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="theme-color" content="#939d76" />
-  <meta name="description" content="The ePlant Plant eFP is a tissue expression API provided by the Bio-Analytic Resource for Plant Biology (BAR) from the University of Toronto. This tool will provide visualized tissue expression data corresponding for Arabidopsis thaliana with one of the listed compendiums.">
-  <meta name="keywords" content="data, data-visualization, arabidopsis-thaliana, bioinformatics, bioinformatics-tool, bioinformatics-data, bioinformatics-visualization, database, arabidopsis, eplant-plant-efp, compendiums, svg">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  <link rel="manifest" href="../icon/site.webmanifest" />
+  <link rel="canonical" href="https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/" />
+  <meta http-equiv="Cache-control" content="max-age=604800" />
+  <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' 'unsafe-inline' *.google-analytics.com *.googleapis.com *.googletagmanager.com *.utoronto.ca *.githubusercontent.com; object-src 'self'"
+  />
   <!-- Metadata -->
-  <meta property="og:image" content="../icon/favicon.ico">
-  <meta property="og:image:width" content="226">
-  <meta property="og:image:height" content="226">
-  <meta property="og:description" content="The ePlant Plant eFP is a tissue expression API provided by the Bio-Analytic Resource for Plant Biology (BAR) from the University of Toronto. This tool will provide visualized tissue expression data corresponding for Arabidopsis thaliana with one of the listed compendiums.">
-  <meta property="og:title" content="ePlant Plant eFP">
-  <meta property="og:url" content="https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/example/index.html">
-  <meta property="og:site_name" content="ePlant Plant eFP">
-  <meta name="apple-mobile-web-app-title" content="ePlant Plant eFP">
-  <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="../icon/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
-  <link rel="mask-icon" href="../icon/safari-pinned-tab.svg" color="#cddaa7">
-  <meta name="application-name" content="ePlant Plant eFP">
-  <meta name="msapplication-config" content="../icon/browserconfig.xml">
-  <meta name="msapplication-TileColor" content="#939d76">
-  <meta name="msapplication-TileImage" content="../icon/mstile-144x144.png">
-  <meta name="theme-color" content="#939d76">
-  <meta name="twitter:site" content="@BAR_PlantBio">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#cddaa7" />
+  <meta
+      name="author"
+      content="BAR Lab @ University of Toronto: Alexander Sullivan, Asher Pasha, Youyang Li, Nicholas J. Provart"
+  />
+  <meta
+      name="description"
+      content="The ePlant Plant eFP is a tissue expression API provided by the Bio-Analytic Resource for Plant Biology (BAR) from the University of Toronto. This tool will provide visualized tissue expression data corresponding for Arabidopsis thaliana with one of the listed compendiums."
+  />
+  <meta
+      name="keywords"
+      content="data, data-visualization, arabidopsis-thaliana, bioinformatics, bioinformatics-tool, bioinformatics-data, bioinformatics-visualization, database, arabidopsis, eplant-plant-efp, compendiums, svg"
+  />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+  <link rel="manifest" href="../icon/site.webmanifest" />
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../icon/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png" />
+  <link rel="mask-icon" href="../icon/safari-pinned-tab.svg" color="#cddaa7" />
+  <meta name="apple-mobile-web-app-title" content="ePlant Plant eFP" />
+  <meta name="application-name" content="ePlant Plant eFP" />
+  <meta name="msapplication-config" content="../icon/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#cddaa7" />
+  <meta name="msapplication-TileImage" content="../icon/mstile-144x144.png" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/" />
+  <meta property="og:title" content="ePlant Plant eFP" />
+  <meta
+      property="og:description"
+      content="The ePlant Plant eFP is a tissue expression API provided by the Bio-Analytic Resource for Plant Biology (BAR) from the University of Toronto. This tool will provide visualized tissue expression data corresponding for Arabidopsis thaliana with one of the listed compendiums."
+  />
+  <meta property="og:image" content="https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/icon/resoc.png" />
+  <meta property="og:image:url" content="https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/icon/resoc.png" />
+  <meta
+      property="og:image:secure_url"
+      content="https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/icon/resoc.png"
+  />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="ePlant Plant eFP" />
+  <meta property="og:site_name" content="https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/" />
+  <meta property="article:modified_time" name="article-modified_time" content="2022-05-02T12:00:00+00:00" />
+  <meta itemprop="name" content="ePlant Plant eFP" />
+  <meta itemprop="url" content="https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/" />
+  <meta
+      itemprop="description"
+      content="The ePlant Plant eFP is a tissue expression API provided by the Bio-Analytic Resource for Plant Biology (BAR) from the University of Toronto. This tool will provide visualized tissue expression data corresponding for Arabidopsis thaliana with one of the listed compendiums."
+  />
+  <meta itemprop="thumbnailUrl" content="https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/icon/resoc.png" />
+  <link rel="image_src" href="https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/icon/resoc.png" />
+  <meta itemprop="image" content="https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/icon/resoc.png" />
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/" />
+  <meta property="twitter:title" content="ePlant Plant eFP" />
+  <meta
+      property="twitter:description"
+      content="The ePlant Plant eFP is a tissue expression API provided by the Bio-Analytic Resource for Plant Biology (BAR) from the University of Toronto. This tool will provide visualized tissue expression data corresponding for Arabidopsis thaliana with one of the listed compendiums."
+  />
+  <meta property="twitter:image" content="https://bar.utoronto.ca/~asullivan/bar-homepage-build/icon/resoc.png" />
+  <meta name="twitter:site" content="@BAR_PlantBio" />
+  <meta name="twitter:title" content="ePlant Plant eFP" />
+  <meta name="twitter:image" content="https://bar.utoronto.ca/~asullivan/bar-homepage-build/icon/resoc.png" />
+  <meta name="twitter:url" content="https://twitter.com/BAR_PlantBio" />
+  <meta name="twitter:creator" content="@BAR_PlantBio" />
+  <meta name="twitter:domain" content="bar.utoronto.ca" />
+  <meta
+      name="twitter:description"
+      content="The ePlant Plant eFP is a tissue expression API provided by the Bio-Analytic Resource for Plant Biology (BAR) from the University of Toronto. This tool will provide visualized tissue expression data corresponding for Arabidopsis thaliana with one of the listed compendiums."
+  />
+  <!-- Schema/Structured Data -->
+  <script type="application/ld+json">
+      {
+          "url": "https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/",
+          "name": "ePlant Plant eFP",
+          "description": "ePlant Plant eFP",
+          "image": "https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/icon/resoc.png",
+          "@context": "http://schema.org",
+          "@type": "WebSite"
+      }
+  </script>
 </head>
 <body style="background-color: black; color: white">
     <div id="details">
