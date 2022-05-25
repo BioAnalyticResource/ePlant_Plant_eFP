@@ -1022,6 +1022,7 @@ class CreateSVGExpressionData {
                         value="${svgName}"
       style="width: 100%; max-width: 40em;"
                         class="selectCompendiumOptions"
+						aria-label="Select SVG to display"
                     >
                         ${options}
                     </select>
