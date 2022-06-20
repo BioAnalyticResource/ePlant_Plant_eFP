@@ -1017,7 +1017,7 @@ class CreateSVGExpressionData {
 				`<div class="selectSVGContainer">
                     <span>Select SVG to display:</span>
                     <select
-                        onchange="window.createSVGExpressionData.generateSVG('${locus}', '${this.desiredDOMid}', this.value.toString(), ${includeDropdownAll})"
+                        onchange="window.createSVGExpressionData.generateSVG('${locus}', '${this.desiredDOMid}', this?.value?.toString()?.length > 0 ? this.value.toString() : 'default', ${includeDropdownAll})"
                         id="sampleOptions"
                         value="${svgName}"
       style="width: 100%; max-width: 40em;"
