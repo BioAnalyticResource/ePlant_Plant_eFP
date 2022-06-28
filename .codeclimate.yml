@@ -35,3 +35,6 @@ engines:
                 enabled: false
             MD030:
                 enabled: false
+exclude_patterns:
+    - "**/.vscode/"
+    - "**/*.min.js"
