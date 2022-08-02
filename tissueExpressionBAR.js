@@ -1108,14 +1108,21 @@ class CreateSVGExpressionData {
 			/** DOM Region being modified */
 			const targetDOMRegion = document.getElementById(this.desiredDOMid);
 
-			const targetDOMChildren = targetDOMRegion.childNodes;
-			for (let i in targetDOMChildren) {
-				if (targetDOMChildren[i].className && targetDOMChildren[i].className.includes("expressionContainer")) {
-					targetDOMRegion.removeChild(targetDOMChildren[i]);
+			if (targetDOMRegion) {
+				if (targetDOMRegion.childNodes && targetDOMRegion.childNodes.length > 0) {
+					const targetDOMChildren = targetDOMRegion.childNodes;
+					for (let i in targetDOMChildren) {
+						if (
+							targetDOMChildren[i].className &&
+							targetDOMChildren[i].className.includes("expressionContainer")
+						) {
+							targetDOMRegion.removeChild(targetDOMChildren[i]);
+						}
+					}
 				}
-			}
 
-			targetDOMRegion.appendChild(this.appendSVG);
+				targetDOMRegion.appendChild(this.appendSVG);
+			}
 		}
 	}
 
