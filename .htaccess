@@ -21,7 +21,7 @@ RewriteRule ^ index.html [QSA,L]
     Header set X-Content-Type-Options nosniff
     Header add Content-Security-Policy "default-src 'self' 'unsafe-inline' *.google-analytics.com *.googleapis.com *.googletagmanager.com *.utoronto.ca *.githubusercontent.com; object-src 'self'"
     <FilesMatch "\.(js|css|png|jpg|html|htm|xml|ico|json|svg|txt|webp|cgi)$">
-        Header set Cache-Control "max-age=604800"
+        Header set Cache-Control "max-age=604800, public"
         Header append Vary: Accept-Encoding
     </FilesMatch>
 </IfModule>
