@@ -1,2 +1,7 @@
+# dependencies
+**/node_modules
+/.pnp
+.pnp.js
 
+# VS Code
 .vscode/settings.json

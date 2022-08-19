@@ -47,5 +47,6 @@ engines:
             MD034:
                 enabled: false
 exclude_patterns:
+    - "**/node_modules/"
     - "**/.vscode/"
     - "**/*.min.js"
