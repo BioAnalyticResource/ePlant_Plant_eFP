@@ -20,7 +20,8 @@ RewriteRule ^ index.html [QSA,L]
     Header set X-XSS-Protection "1; mode=block"
     Header set X-Content-Type-Options "nosniff"
     Header set Referrer-Policy "same-origin"
-    Header add Content-Security-Policy "default-src 'self' 'unsafe-inline' *.google-analytics.com *.googleapis.com *.googletagmanager.com *.utoronto.ca *.githubusercontent.com; object-src 'self'; base-uri 'self'"
+    Header set Permissions-Policy "fullscreen=*, picture-in-picture=*, xr-spatial-tracking=*, gamepad=*, hid=*, idle-detection=*, window-placement=*"
+    Header add Content-Security-Policy "default-src 'self' 'unsafe-inline' *.google-analytics.com *.googleapis.com *.googletagmanager.com *.utoronto.ca *.githubusercontent.com; object-src 'self'; base-uri 'self'; form-action 'self'; style-src 'self' 'unsafe-inline';"
     <FilesMatch "\.(js|css|png|jpg|html|htm|xml|ico|json|svg|txt|webp|cgi)$">
         Header set Cache-Control "max-age=604800, public"
         Header append Vary: Accept-Encoding
