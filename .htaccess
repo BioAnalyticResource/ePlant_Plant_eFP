@@ -18,7 +18,8 @@ RewriteRule ^ index.html [QSA,L]
 ## Cache Control
 <IfModule mod_headers.c>
     Header set X-XSS-Protection "1; mode=block"
-    Header set X-Content-Type-Options nosniff
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "same-origin"
     Header add Content-Security-Policy "default-src 'self' 'unsafe-inline' *.google-analytics.com *.googleapis.com *.googletagmanager.com *.utoronto.ca *.githubusercontent.com; object-src 'self'; base-uri 'self'"
     <FilesMatch "\.(js|css|png|jpg|html|htm|xml|ico|json|svg|txt|webp|cgi)$">
         Header set Cache-Control "max-age=604800, public"
