@@ -3,6 +3,9 @@
 /.pnp
 .pnp.js
 
+# VS Code
+.vscode/settings.json
+
 # Build files
 *.min.js
 *.min.css
@@ -23,3 +26,6 @@ sw.js
 
 # workbox
 workbox-config.js
+
+# Ignore minified files
+*.min.*

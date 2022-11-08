@@ -242,7 +242,7 @@ const ePlantPlantEFPHandleMouseEventData = {
 	/** Whether mouse events can occur [true] or not [false, default] */
 	start: false,
 	/** Cache last mouse position to calculate next position on drag */
-	cacheMousePos: {x: null, y: null},
+	cacheMousePos: { x: null, y: null },
 	/** Initial height of the SVG */
 	startHeight: null,
 	/** How much the SVG has been zoomed in by */
@@ -279,7 +279,7 @@ function ePlantPlantEFPHandleMouseEvent(domID, type, e, moveBy = 1.5) {
 
 			// Cache the mouse position and begin dragging
 			ePlantPlantEFPHandleMouseEventData.start = true;
-			ePlantPlantEFPHandleMouseEventData.cacheMousePos = {x: e.clientX, y: e.clientY};
+			ePlantPlantEFPHandleMouseEventData.cacheMousePos = { x: e.clientX, y: e.clientY };
 		}
 
 		// If the SVG is being dragged, then drag it
@@ -339,7 +339,7 @@ function ePlantPlantEFPHandleMouseEvent(domID, type, e, moveBy = 1.5) {
 			const yUpperBoundaries = yBoundaries * zoomLevel;
 
 			// Cache mouse position
-			ePlantPlantEFPHandleMouseEventData.cacheMousePos = {x: e.clientX, y: e.clientY};
+			ePlantPlantEFPHandleMouseEventData.cacheMousePos = { x: e.clientX, y: e.clientY };
 
 			// If SVG's Y position within viewpoint, then move it
 			if (
@@ -537,7 +537,7 @@ class CreateSVGExpressionData {
 				};
 				postSend = JSON.stringify(postSend);
 
-				const methods = {mode: "cors"};
+				const methods = { mode: "cors" };
 				methods["method"] = "POST";
 				if (sendHeaders) {
 					methods["headers"] = {};
@@ -664,7 +664,7 @@ class CreateSVGExpressionData {
 					"https://raw.githubusercontent.com/BioAnalyticResource/ePlant_Plant_eFP/master/data/SampleData.min.json";
 
 				/** Fetch methods */
-				const methods = {mode: "cors"};
+				const methods = { mode: "cors" };
 
 				await fetch(url, methods)
 					.then(async (response) => {
@@ -811,7 +811,7 @@ class CreateSVGExpressionData {
 		}
 		url += "]";
 
-		const methods = {mode: "cors"};
+		const methods = { mode: "cors" };
 
 		if (sampleSubunits) {
 			await fetch(url, methods)
@@ -1055,7 +1055,7 @@ class CreateSVGExpressionData {
 
 		// Create call for SVG file
 		const urlSVG = "https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/compendiums/" + svgUse + ".svg";
-		const methods = {mode: "cors"};
+		const methods = { mode: "cors" };
 
 		await fetch(urlSVG, methods)
 			.then(async (response) => {
@@ -1574,14 +1574,14 @@ class CreateSVGExpressionData {
 					function (_event) {
 						addTissueMetadata(this.id);
 					},
-					{passive: true},
+					{ passive: true },
 				);
 				subunitElement.addEventListener(
 					"mouseleave",
 					function (_event) {
 						removeTissueMetadata(this.id);
 					},
-					{passive: true},
+					{ passive: true },
 				);
 				// Adding details about sub-tissue:
 				subunitElement.setAttribute("data-expressionValue", expressionLevel);
@@ -1655,14 +1655,14 @@ class CreateSVGExpressionData {
 							function (_event) {
 								addTissueMetadata(this.id);
 							},
-							{passive: true},
+							{ passive: true },
 						);
 						dupShootElement.addEventListener(
 							"mouseleave",
 							function (_event) {
 								removeTissueMetadata(this.id);
 							},
-							{passive: true},
+							{ passive: true },
 						);
 						// Adding colour
 						const childElements = dupShootElement.childNodes;
@@ -1709,14 +1709,14 @@ class CreateSVGExpressionData {
 							function (_event) {
 								addTissueMetadata(this.id);
 							},
-							{passive: true},
+							{ passive: true },
 						);
 						dupRootElement.addEventListener(
 							"mouseleave",
 							function (_event) {
 								removeTissueMetadata(this.id);
 							},
-							{passive: true},
+							{ passive: true },
 						);
 						// Adding colour
 						let childElements = dupRootElement.childNodes;
