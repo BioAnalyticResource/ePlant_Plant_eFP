@@ -433,6 +433,10 @@ class CreateSVGExpressionData {
 		this.expressionValues = {};
 		this.topExpressionOptions = ["Microarray", "RNA-seq"];
 
+		// Local storage grabbed
+		this.localStorageTop = false;
+		this.localStorageSample = {};
+
 		// Local for this class
 		this.desiredDOMid = "";
 		/** Markup for the visualization container */
@@ -526,8 +530,37 @@ class CreateSVGExpressionData {
 	 */
 	async #retrieveTopExpressionValues(svgName, locus = "AT3G24650") {
 		let completedFetches = 0;
+
+		let fetchData = true;
+		if (!this.localStorageTop) {
+			let localStorageTopExpressionValues = localStorage.getItem("bar_eplant-top-expression-values");
+			if (localStorageTopExpressionValues) {
+				localStorageTopExpressionValues = JSON.parse(localStorageTopExpressionValues);
+
+				// Check if week passed expiration
+				if (
+					localStorageTopExpressionValues.expiry &&
+					new Date().getTime() - localStorageTopExpressionValues.expiry <= 7 * 24 * 60 * 60 * 1000
+				) {
+					fetchData = false;
+				} else if (localStorageTopExpressionValues[locus]) {
+					fetchData = false;
+				}
+
+				this.topExpressionValues = {
+					...this.topExpressionValues,
+					...localStorageTopExpressionValues,
+				};
+				this.localStorageTop = true;
+			}
+		}
+
+		if (this.topExpressionValues[locus]) {
+			fetchData = false;
+		}
+
 		// If never been called before
-		if (!this.topExpressionValues || !this.topExpressionValues[locus]) {
+		if (fetchData) {
 			for (const topMethod of this.topExpressionOptions) {
 				const url = `https://bar.utoronto.ca/expression_max_api/max_average?method=${topMethod}`;
 				const sendHeaders = "application/json";
@@ -595,6 +628,40 @@ class CreateSVGExpressionData {
 
 								completedFetches++;
 								if (completedFetches === this.topExpressionOptions.length) {
+									// Update local storage:
+									// Add to local storage as well:
+									if (!localStorageTopExpressionValues || fetchData) {
+										localStorageTopExpressionValues = {};
+
+										localStorageTopExpressionValues[locus] = {
+											...this.topExpressionValues[locus],
+										};
+
+										localStorageTopExpressionValues["expiry"] = new Date().getTime();
+									} else {
+										localStorageTopExpressionValues[locus] = {
+											...this.topExpressionValues[locus],
+										};
+									}
+									// Ensure that local storage has no more than 10 entries
+									if (Object.keys(localStorageTopExpressionValues).length > 10) {
+										// Remove the first entry if not the one we just added and not 'expiry'
+										for (const key in localStorageTopExpressionValues) {
+											if (key !== locus && key !== "expiry") {
+												delete localStorageTopExpressionValues[key];
+												break;
+											}
+										}
+									}
+
+									if (localStorageTopExpressionValues) {
+										localStorage.setItem(
+											"bar_eplant-top-expression-values",
+											JSON.stringify(localStorageTopExpressionValues),
+										);
+										this.localStorageTop = true;
+									}
+
 									await this.#loadSampleData(svgName, locus);
 								}
 							});
@@ -625,6 +692,13 @@ class CreateSVGExpressionData {
 			}
 		} else if (Object.keys(this.topExpressionValues[locus]).length > 0) {
 			await this.#loadSampleData(svgName, locus);
+		} else if (Object.keys(localStorageTopExpressionValues[locus]).length > 0) {
+			if (!this.topExpressionValues) {
+				this.topExpressionValues = {};
+			}
+
+			this.topExpressionValues[locus] = localStorageTopExpressionValues[locus];
+			await this.#loadSampleData(svgName, locus);
 		}
 	}
 
@@ -639,7 +713,7 @@ class CreateSVGExpressionData {
 			let fetchFromGitHub = true;
 
 			/** Browser's local storage for the sample data, if exists */
-			let localStoredSampleData = localStorage?.["bar_eplant-sample-data-storage"];
+			let localStoredSampleData = localStorage?.getItem("bar_eplant-sample-data-storage");
 			// If the local storage exists, see if it's expired (1 week) to fetch from GitHub or use the local storage data
 			if (localStoredSampleData) {
 				// Convert to JSON
@@ -732,6 +806,8 @@ class CreateSVGExpressionData {
 		let sampleIDList = []; // List of all of the sample's IDs
 		let sampleSubunits = []; // List of SVG's subunits
 
+		await this.#processLocalStorageEFPObjectData();
+
 		// Check if valid SVG
 		if (!sampleDataKeys.includes(svgName) && this.topExpressionValues[locus]) {
 			// Determine max expression value to default too
@@ -785,6 +861,88 @@ class CreateSVGExpressionData {
 		}
 	}
 
+	async #processLocalStorageEFPObjectData() {
+		if (Object.keys(this.localStorageSample).length === 0) {
+			// Grab localStorage's sample data:
+			let localStorageSampleValues = localStorage.getItem("bar_eplant-efp-data");
+			if (localStorageSampleValues) {
+				localStorageSampleValues = JSON.parse(localStorageSampleValues);
+				this.localStorageSample = localStorageSampleValues;
+				await this.#checkLocalStorageEFPObjectSize();
+
+				// Check if week passed expiration
+				if (
+					!localStorageSampleValues.expiry ||
+					!(new Date().getTime() - localStorageSampleValues.expiry <= 7 * 24 * 60 * 60 * 1000)
+				) {
+					// If this.eFPObjects is empty, give it the localStorageSampleValues data
+					if (Object.keys(this.eFPObjects).length === 0) {
+						this.eFPObjects = localStorageSampleValues;
+					} else {
+						// Go through this.eFPObjects and localStorageSampleValues and add in any missing data
+						// Data is in format of this.eFPObjects[compendium] and in [compendium], see if there is a [locus].
+						// See which loci are missing and add them in (if any), and if so, go through the [sample] and add in any missing data
+						for (const [compendium, compendiumData] of Object.entries(localStorageSampleValues)) {
+							if (compendium !== "expiry") {
+								if (this.eFPObjects[compendium]) {
+									// Check if locus is missing
+									let missingLoci = [];
+									// Go through the [locusCalled] array and see if any are missing
+									for (const locus of compendiumData["locusCalled"]) {
+										if (!this.eFPObjects[compendium]["locusCalled"].includes(locus)) {
+											missingLoci.push(locus);
+										}
+									}
+
+									// If there are missing loci, add them in
+									if (missingLoci.length > 0) {
+										// Go through the sample data and add in any missing data
+										for (const [sample, sampleData] of Object.entries(compendiumData["sample"])) {
+											if (this.eFPObjects[compendium]["sample"][sample]) {
+												// Go through the [locus] and see if any are missing
+												for (const locus of missingLoci) {
+													if (!this.eFPObjects[compendium]["sample"][sample][locus]) {
+														this.eFPObjects[compendium]["sample"][sample][locus] =
+															sampleData[locus];
+													}
+												}
+											} else {
+												this.eFPObjects[compendium]["sample"][sample] = sampleData;
+											}
+										}
+									}
+								} else {
+									this.eFPObjects[compendium] = compendiumData;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	async #checkLocalStorageEFPObjectSize(svgKeep = undefined) {
+		// Ensure that the localStorage is not too large (no more than 1MB)
+		// If it is, then remove the the first SVG in the eFPObjects object if not the one that is currently being kept (svgKeep) or 'expiry'
+
+		// Check size of this.localStorageSample
+		// Convert to string
+		let localStorageSampleString = JSON.stringify(this.localStorageSample);
+		// Get size of string
+		let localStorageSampleSize = localStorageSampleString.length * 2;
+		// If the localStorageSampleSize is too large, remove the first SVG in the eFPObjects object if not the one that is currently being kept (svgKeep) or 'expiry'
+		if (localStorageSampleSize > 1000000) {
+			// Go through the eFPObjects object and remove the first SVG if not the one that is currently being kept (svgKeep) or 'expiry'
+			for (const [svgName, _svgData] of Object.entries(this.eFPObjects)) {
+				if (svgName !== svgKeep && svgName !== "expiry") {
+					delete this.eFPObjects[svgName];
+					break;
+				}
+			}
+		}
+	}
+
 	/**
 	 * Calls the plantefp.cgi webservice to retrieve expression data from the BAR
 	 * @param {String} datasource Which database the information is contained in
@@ -813,7 +971,12 @@ class CreateSVGExpressionData {
 
 		const methods = { mode: "cors" };
 
-		if (sampleSubunits) {
+		let alreadyRetrievedData = false;
+		if (this.eFPObjects?.[svg]?.[locus]?.includes("locus")) {
+			alreadyRetrievedData = true;
+		}
+
+		if (sampleSubunits && !alreadyRetrievedData) {
 			await fetch(url, methods)
 				.then(async (response) => {
 					if (response.status === 200) {
@@ -889,6 +1052,16 @@ class CreateSVGExpressionData {
 
 							// Add db
 							this.eFPObjects[svg]["db"] = datasource;
+
+							// Update local storage
+							if (Object.keys(this.localStorageSample) === 0) {
+								this.localStorageSample = this.eFPObjects;
+								this.localStorageSample["expiry"] = new Date().getTime();
+							} else {
+								this.localStorageSample[svg] = this.eFPObjects[svg];
+							}
+							await this.#checkLocalStorageEFPObjectSize(svg);
+							localStorage.setItem("bar_eplant-efp-data", JSON.stringify(this.localStorageSample));
 
 							await this.#addSVGtoDOM(svg, locus, this.includeDropdownAll);
 						});
@@ -1591,14 +1764,16 @@ class CreateSVGExpressionData {
 
 				// Add tooltip/title on hover
 				const title = document.createElementNS("https://www.w3.org/2000/svg", "title");
-				title.textContent =
-					descriptionName +
-					"\r\nExpression level: " +
-					expressionLevel +
-					"\r\nSample size: " +
-					sampleSize +
-					"\r\nStandard Deviation: " +
-					parseFloat(expressionData["sd"]).toFixed(3);
+				if (title) {
+					title.textContent =
+						descriptionName +
+						"\r\nExpression level: " +
+						expressionLevel +
+						"\r\nSample size: " +
+						sampleSize +
+						"\r\nStandard Deviation: " +
+						parseFloat(expressionData["sd"]).toFixed(3);
+				}
 
 				// Add rest of titles and tooltip/title
 				let inducReduc = false;
@@ -1683,13 +1858,16 @@ class CreateSVGExpressionData {
 							dupShootElement.setAttribute("fill", colour);
 						}
 						// Add tooltip/title on hover
-						title.textContent =
-							duplicateShoot[dupS] +
-							"\r\nExpression level: " +
-							expressionLevel +
-							"\r\nSample size: " +
-							sampleSize;
-						dupShootElement.appendChild(title);
+						const title = document.createElementNS("https://www.w3.org/2000/svg", "title");
+						if (title) {
+							title.textContent =
+								duplicateShoot[dupS] +
+								"\r\nExpression level: " +
+								expressionLevel +
+								"\r\nSample size: " +
+								sampleSize;
+							dupShootElement.appendChild(title);
+						}
 					}
 				}
 			} else if (isdupRoot) {
@@ -1737,13 +1915,16 @@ class CreateSVGExpressionData {
 							dupRootElement.setAttribute("fill", colour);
 						}
 						// Add tooltip/title on hover
-						title.textContent =
-							duplicateRoot[dupR] +
-							"\r\nExpression level: " +
-							expressionLevel +
-							"\r\nSample size: " +
-							sampleSize;
-						dupRootElement.appendChild(title);
+						const title = document.createElementNS("https://www.w3.org/2000/svg", "title");
+						if (title) {
+							title.textContent =
+								duplicateRoot[dupR] +
+								"\r\nExpression level: " +
+								expressionLevel +
+								"\r\nSample size: " +
+								sampleSize;
+							dupRootElement.appendChild(title);
+						}
 					}
 				}
 			}
