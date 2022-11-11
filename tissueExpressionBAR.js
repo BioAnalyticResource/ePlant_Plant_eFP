@@ -461,7 +461,7 @@ class CreateSVGExpressionData {
 	 * @param {String} locus The AGI ID (example: AT3G24650 or AT3G24650.1)
 	 * @returns {Boolean} If locus is valid [true] or not [false, default]
 	 */
-	static verifyLoci(locus) {
+	verifyLoci(locus) {
 		// Check if locus is a string
 		if (typeof locus === "string") {
 			/** Arabidopsis thaliana locus pattern */
@@ -485,7 +485,7 @@ class CreateSVGExpressionData {
 	 * @param {Boolean} includeDropdownAll true = include a html dropdown/select of all available SVGs/samples, false = don't
 	 * @param {String | Number} containerHeight The height of the SVG container, default is 95vh
 	 */
-	static generateSVG(
+	generateSVG(
 		locus = "AT3G24650",
 		desiredDOMid = undefined,
 		svgName = "default",
@@ -1365,7 +1365,7 @@ class CreateSVGExpressionData {
 	 * @param {Number} percentage The percentage between 0 - 100 (as an int) into a colour between yellow and red
 	 * @returns {String} Hex-code colour
 	 */
-	static percentageToColour(percentage) {
+	percentageToColour(percentage) {
 		const percentageInt = parseInt(percentage);
 
 		if (percentageInt >= 0) {
