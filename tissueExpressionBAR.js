@@ -531,9 +531,9 @@ class CreateSVGExpressionData {
 	async #retrieveTopExpressionValues(svgName, locus = "AT3G24650") {
 		let completedFetches = 0;
 
+		let localStorageTopExpressionValues = localStorage.getItem("bar_eplant-top-expression-values");
 		let fetchData = true;
 		if (!this.localStorageTop) {
-			let localStorageTopExpressionValues = localStorage.getItem("bar_eplant-top-expression-values");
 			if (localStorageTopExpressionValues) {
 				localStorageTopExpressionValues = JSON.parse(localStorageTopExpressionValues);
 
@@ -644,7 +644,10 @@ class CreateSVGExpressionData {
 										};
 									}
 									// Ensure that local storage has no more than 10 entries
-									if (Object.keys(localStorageTopExpressionValues).length > 10) {
+									if (
+										localStorageTopExpressionValues &&
+										Object.keys(localStorageTopExpressionValues).length > 10
+									) {
 										// Remove the first entry if not the one we just added and not 'expiry'
 										for (const key in localStorageTopExpressionValues) {
 											if (key !== locus && key !== "expiry") {
