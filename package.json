@@ -23,11 +23,11 @@
 	"private": true,
 	"description": "Data visualization tool to display tissue expression data for Arabidopsis thaliana",
 	"devDependencies": {
-		"prettier": "^2.7.1"
+		"prettier": "^2.8.1"
 	},
 	"main": "tissueExpressionBAR.js",
 	"scripts": {
-		"prettier": "prettier --write --end-of-line auto ./"
+		"prettier": "prettier --write ./"
 	},
 	"directories": {
 		"example": "example"
