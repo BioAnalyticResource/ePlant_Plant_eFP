@@ -1,10 +1,11 @@
-//============================ Alexander Sullivan =============================
+/* eslint-disable prefer-destructuring */
+//= =========================== Alexander Sullivan =============================
 //
 // Purpose: Generates eFP tissue expression data
 //
-//=============================================================================
+//= ============================================================================
 /** Stroke data of compendiums that have already been called */
-let existingStrokeData = {};
+const existingStrokeData = {};
 window.existingStrokeData = existingStrokeData;
 /**
  * Add details to an SVG or SVG-subunit including: hover and outline
@@ -13,10 +14,12 @@ window.existingStrokeData = existingStrokeData;
 function addTissueMetadata(elementID) {
 	// Adjusting for BioticStressPseudomonassyringae's half leaf:
 	if (elementID.includes("Half_Leaf_Pseudomonas_syringae")) {
-		elementID = elementID + "_outline";
+		elementID += "_outline";
 	}
 	// Retrieve document objects:
-	let svgDoc, svgPart, svgPartChildren;
+	let svgDoc;
+	let svgPart;
+	let svgPartChildren;
 	if (document.getElementById(createSVGExpressionData.svgObjectName)) {
 		svgDoc = document.getElementById(createSVGExpressionData.svgObjectName);
 		svgPart = svgDoc.getElementById(elementID);
@@ -26,8 +29,8 @@ function addTissueMetadata(elementID) {
 	/** Increase stroke width within SVG by (multiplied) this much */
 	const increaseStrokeWidthBy = 2.25;
 	// Storing stroke widths
-	let existingStrokeWidth = undefined,
-		existingStrokeColour = undefined;
+	let existingStrokeWidth;
+	let existingStrokeColour;
 
 	if (svgDoc && svgPart) {
 		if (svgPart.getAttribute("stroke-width")) {
@@ -52,14 +55,14 @@ function addTissueMetadata(elementID) {
 
 		if (!existingStrokeData[elementID]) {
 			existingStrokeData[elementID] = {};
-			existingStrokeData[elementID]["strokeWidth"] = existingStrokeWidth;
-			existingStrokeData[elementID]["strokeColour"] = existingStrokeColour;
-			existingStrokeData[elementID]["addedMetadata"] = false;
+			existingStrokeData[elementID].strokeWidth = existingStrokeWidth;
+			existingStrokeData[elementID].strokeColour = existingStrokeColour;
+			existingStrokeData[elementID].addedMetadata = false;
 		}
 
 		// Making stroke width thicker
-		if (svgDoc.getElementById(elementID) && !existingStrokeData[elementID]["addedMetadata"]) {
-			existingStrokeData[elementID]["addedMetadata"] = true;
+		if (svgDoc.getElementById(elementID) && !existingStrokeData[elementID].addedMetadata) {
+			existingStrokeData[elementID].addedMetadata = true;
 
 			const strokeElement = svgDoc.getElementById(elementID);
 
@@ -135,7 +138,7 @@ function addTissueMetadata(elementID) {
 function removeTissueMetadata(elementID) {
 	// Adjusting for BioticStressPseudomonassyringae's half leaf:
 	if (elementID.includes("Half_Leaf_Pseudomonas_syringae")) {
-		elementID = elementID + "_outline";
+		elementID += "_outline";
 	}
 
 	/** A fallback stroke width for the SVG if one is not already pre-determined */
@@ -143,7 +146,9 @@ function removeTissueMetadata(elementID) {
 	/** A fallback stroke colour (black) for the SVG if one is not already pre-determined */
 	const fallbackStrokeColour = "#000"; // Black
 	// Retrieve document objects:
-	let svgDoc, svgPart, svgPartChildren;
+	let svgDoc;
+	let svgPart;
+	let svgPartChildren;
 	if (document.getElementById(createSVGExpressionData.svgObjectName)) {
 		svgDoc = document.getElementById(createSVGExpressionData.svgObjectName);
 		svgPart = svgDoc.getElementById(elementID);
@@ -151,24 +156,22 @@ function removeTissueMetadata(elementID) {
 	}
 
 	// If existing stroke data exists, then proceed
-	if (existingStrokeData[elementID] && existingStrokeData[elementID]["addedMetadata"]) {
-		existingStrokeData[elementID]["addedMetadata"] = false;
+	if (existingStrokeData[elementID] && existingStrokeData[elementID].addedMetadata) {
+		existingStrokeData[elementID].addedMetadata = false;
 		if (svgPart && svgPart.getAttribute("stroke-width")) {
-			if (Number(existingStrokeData[elementID]["strokeWidth"]) >= 0) {
+			if (Number(existingStrokeData[elementID].strokeWidth) >= 0) {
 				svgDoc
 					.getElementById(elementID)
-					.setAttribute("stroke-width", existingStrokeData[elementID]["strokeWidth"]);
-			} else if (!existingStrokeData[elementID]["strokeWidth"]) {
+					.setAttribute("stroke-width", existingStrokeData[elementID].strokeWidth);
+			} else if (!existingStrokeData[elementID].strokeWidth) {
 				svgDoc.getElementById(elementID).removeAttribute("stroke-width");
 			} else {
 				svgDoc.getElementById(elementID).setAttribute("stroke-width", fallbackStrokeWidth);
 			}
 
 			if (svgPart.getAttribute("stroke")) {
-				if (existingStrokeData[elementID]["strokeColour"]) {
-					svgDoc
-						.getElementById(elementID)
-						.setAttribute("stroke", existingStrokeData[elementID]["strokeColour"]);
+				if (existingStrokeData[elementID].strokeColour) {
+					svgDoc.getElementById(elementID).setAttribute("stroke", existingStrokeData[elementID].strokeColour);
 				} else {
 					svgDoc.getElementById(elementID).setAttribute("stroke", fallbackStrokeColour);
 				}
@@ -177,9 +180,9 @@ function removeTissueMetadata(elementID) {
 			for (const svgChildPart of svgPartChildren) {
 				if (svgChildPart.nodeName === "path") {
 					if (svgChildPart.getAttribute("stroke-width")) {
-						if (Number(existingStrokeData[elementID]["strokeWidth"]) >= 0) {
-							svgChildPart.setAttribute("stroke-width", existingStrokeData[elementID]["strokeWidth"]);
-						} else if (!existingStrokeData[elementID]["strokeWidth"]) {
+						if (Number(existingStrokeData[elementID].strokeWidth) >= 0) {
+							svgChildPart.setAttribute("stroke-width", existingStrokeData[elementID].strokeWidth);
+						} else if (!existingStrokeData[elementID].strokeWidth) {
 							svgDoc.getElementById(elementID).removeAttribute("stroke-width");
 						} else {
 							svgChildPart.setAttribute("stroke-width", fallbackStrokeWidth);
@@ -187,8 +190,8 @@ function removeTissueMetadata(elementID) {
 					}
 
 					if (svgChildPart.getAttribute("stroke")) {
-						if (existingStrokeData[elementID]["strokeColour"]) {
-							svgChildPart.setAttribute("stroke", existingStrokeData[elementID]["strokeColour"]);
+						if (existingStrokeData[elementID].strokeColour) {
+							svgChildPart.setAttribute("stroke", existingStrokeData[elementID].strokeColour);
 						} else {
 							svgChildPart.setAttribute("stroke", fallbackStrokeColour);
 						}
@@ -256,6 +259,7 @@ const ePlantPlantEFPHandleMouseEventData = {
  * @param {Event} e Mouse event object
  * @param {Number} moveBy How much the SVG has been moved by
  */
+// eslint-disable-next-line no-unused-vars
 function ePlantPlantEFPHandleMouseEvent(domID, type, e, moveBy = 1.5) {
 	/** SVG document */
 	const svgElement = domID.firstElementChild;
@@ -379,6 +383,7 @@ function ePlantPlantEFPHandleMouseEvent(domID, type, e, moveBy = 1.5) {
  * @param {Event} e Mouse event object
  * @param {Number} changeBy How much the SVG has been moved by
  */
+// eslint-disable-next-line no-unused-vars
 function ePlantPlantEFPHandleMouseWheel(domID, e, changeBy = 3) {
 	/** SVG document */
 	const svgElement = domID.firstElementChild;
@@ -440,6 +445,7 @@ class CreateSVGExpressionData {
 		// Local for this class
 		this.desiredDOMid = "";
 		/** Markup for the visualization container */
+		// eslint-disable-next-line no-unused-expressions
 		this.appendSVG;
 
 		// createSVGValues
@@ -465,6 +471,7 @@ class CreateSVGExpressionData {
 	 * @param {String} locus The AGI ID (example: AT3G24650 or AT3G24650.1)
 	 * @returns {Boolean} If locus is valid [true] or not [false, default]
 	 */
+	// eslint-disable-next-line class-methods-use-this
 	verifyLoci(locus) {
 		// Check if locus is a string
 		if (typeof locus === "string") {
@@ -476,9 +483,8 @@ class CreateSVGExpressionData {
 
 			// If match, then return true, else return false
 			return Boolean(locus.trim().match(regexPattern));
-		} else {
-			return false;
 		}
+		return false;
 	}
 
 	/**
@@ -571,14 +577,16 @@ class CreateSVGExpressionData {
 				postSend = JSON.stringify(postSend);
 
 				const methods = { mode: "cors" };
-				methods["method"] = "POST";
+				methods.method = "POST";
 				if (sendHeaders) {
-					methods["headers"] = {};
-					methods["headers"]["Content-type"] = sendHeaders;
+					methods.headers = {};
+					methods.headers["Content-type"] = sendHeaders;
 				}
-				methods["body"] = postSend;
+				methods.body = postSend;
 
+				// eslint-disable-next-line no-await-in-loop
 				await fetch(url, methods)
+					// eslint-disable-next-line no-loop-func
 					.then(async (response) => {
 						if (response.status === 200) {
 							await response.text().then(async (data) => {
@@ -595,25 +603,25 @@ class CreateSVGExpressionData {
 									topMethodUsed = urlQuery[1];
 								}
 
-								if (topMethodUsed && responseData && responseData["wasSuccessful"] === true) {
-									if (responseData["maxAverage"]) {
+								if (topMethodUsed && responseData && responseData.wasSuccessful === true) {
+									if (responseData.maxAverage) {
 										const tempTopExpressionData = {};
 										tempTopExpressionData[topMethodUsed] = {};
 
-										tempTopExpressionData[topMethodUsed]["maxAverage"] =
-											responseData["maxAverage"][locus.toUpperCase()];
+										tempTopExpressionData[topMethodUsed].maxAverage =
+											responseData.maxAverage[locus.toUpperCase()];
 
-										if (responseData["standardDeviation"]) {
-											tempTopExpressionData[topMethodUsed]["standardDeviation"] =
-												responseData["standardDeviation"][locus.toUpperCase()];
+										if (responseData.standardDeviation) {
+											tempTopExpressionData[topMethodUsed].standardDeviation =
+												responseData.standardDeviation[locus.toUpperCase()];
 										}
-										if (responseData["sample"]) {
-											tempTopExpressionData[topMethodUsed]["sample"] =
-												responseData["sample"][locus.toUpperCase()];
+										if (responseData.sample) {
+											tempTopExpressionData[topMethodUsed].sample =
+												responseData.sample[locus.toUpperCase()];
 										}
-										if (responseData["compendium"]) {
-											tempTopExpressionData[topMethodUsed]["compendium"] =
-												responseData["compendium"][locus.toUpperCase()];
+										if (responseData.compendium) {
+											tempTopExpressionData[topMethodUsed].compendium =
+												responseData.compendium[locus.toUpperCase()];
 										}
 
 										if (!this.topExpressionValues) {
@@ -626,7 +634,7 @@ class CreateSVGExpressionData {
 									}
 								}
 
-								completedFetches++;
+								completedFetches += 1;
 								if (completedFetches === this.topExpressionOptions.length) {
 									// Update local storage:
 									// Add to local storage as well:
@@ -637,7 +645,7 @@ class CreateSVGExpressionData {
 											...this.topExpressionValues[locus],
 										};
 
-										localStorageTopExpressionValues["expiry"] = new Date().getTime();
+										localStorageTopExpressionValues.expiry = new Date().getTime();
 									} else {
 										localStorageTopExpressionValues[locus] = {
 											...this.topExpressionValues[locus],
@@ -669,23 +677,19 @@ class CreateSVGExpressionData {
 								}
 							});
 						} else if (response.status !== 200) {
-							completedFetches++;
+							completedFetches += 1;
 							if (completedFetches === this.topExpressionOptions.length) {
 								await this.#loadSampleData(svgName, locus);
 							}
 
 							console.error(
-								"fetch error - Status Code: " +
-									response.status +
-									", fetch-url: " +
-									response.url +
-									", document-url: " +
-									window.location.href,
+								`fetch error - Status Code: ${response.status}, fetch-url: ${response.url}, document-url: ${window.location.href}`,
 							);
 						}
 					})
+					// eslint-disable-next-line no-loop-func
 					.catch(async (err) => {
-						completedFetches++;
+						completedFetches += 1;
 						if (completedFetches === this.topExpressionOptions.length) {
 							await this.#loadSampleData(svgName, locus);
 						}
@@ -764,12 +768,7 @@ class CreateSVGExpressionData {
 							});
 						} else if (response.status !== 200) {
 							console.error(
-								"fetch error - Status Code: " +
-									response.status +
-									", fetch-url: " +
-									response.url +
-									", document-url: " +
-									window.location.href,
+								`fetch error - Status Code: ${response.status}, fetch-url: ${response.url}, document-url: ${window.location.href}`,
 							);
 						}
 					})
@@ -799,7 +798,7 @@ class CreateSVGExpressionData {
 		if (this.sampleOptions.length === 0) {
 			for (const [key, value] of Object.entries(this.sampleData)) {
 				this.sampleOptions.push(key);
-				this.sampleReadableName[value["name"]] = key;
+				this.sampleReadableName[value.name] = key;
 			}
 		}
 
@@ -815,10 +814,10 @@ class CreateSVGExpressionData {
 		if (!sampleDataKeys.includes(svgName) && this.topExpressionValues[locus]) {
 			// Determine max expression value to default too
 			let maxExpressionValue = 0;
-			let maxExpressionCompendium = undefined;
+			let maxExpressionCompendium;
 			for (const [, value] of Object.entries(this.topExpressionValues[locus])) {
-				if (value["compendium"] && value["compendium"][1] && sampleDataKeys.includes(value["compendium"][1])) {
-					if (value["maxAverage"] && value["maxAverage"][1] && value["maxAverage"][1] > maxExpressionValue) {
+				if (value.compendium && value.compendium[1] && sampleDataKeys.includes(value.compendium[1])) {
+					if (value.maxAverage && value.maxAverage[1] && value.maxAverage[1] > maxExpressionValue) {
 						maxExpressionValue = value.maxAverage[1];
 						maxExpressionCompendium = value.compendium[1];
 					}
@@ -841,10 +840,10 @@ class CreateSVGExpressionData {
 		const sampleInfo = this.sampleData[svgName];
 		let sampleOptions;
 		if (sampleInfo && sampleInfo.sample) {
-			sampleOptions = sampleInfo["sample"];
+			sampleOptions = sampleInfo.sample;
 		}
 		if (sampleInfo && sampleInfo.db) {
-			sampleDB = sampleInfo["db"];
+			sampleDB = sampleInfo.db;
 		}
 
 		// If a database is available for this SVG, then find sample ID information
@@ -857,7 +856,7 @@ class CreateSVGExpressionData {
 		}
 
 		// Call plantefp.cgi webservice to retrieve information about the target tissue expression data
-		if (!this.eFPObjects[svgName] || !this.eFPObjects[svgName]["locusCalled"].includes(locus)) {
+		if (!this.eFPObjects[svgName] || !this.eFPObjects[svgName].locusCalled.includes(locus)) {
 			await this.#callPlantEFP(sampleDB, locus, sampleIDList, svgName, sampleOptions);
 		} else if (this.eFPObjects[svgName]) {
 			await this.#addSVGtoDOM(svgName, locus, this.includeDropdownAll);
@@ -889,10 +888,10 @@ class CreateSVGExpressionData {
 							if (compendium !== "expiry") {
 								if (this.eFPObjects[compendium]) {
 									// Check if locus is missing
-									let missingLoci = [];
+									const missingLoci = [];
 									// Go through the [locusCalled] array and see if any are missing
-									for (const locus of compendiumData["locusCalled"]) {
-										if (!this.eFPObjects[compendium]["locusCalled"].includes(locus)) {
+									for (const locus of compendiumData.locusCalled) {
+										if (!this.eFPObjects[compendium].locusCalled.includes(locus)) {
 											missingLoci.push(locus);
 										}
 									}
@@ -900,17 +899,17 @@ class CreateSVGExpressionData {
 									// If there are missing loci, add them in
 									if (missingLoci.length > 0) {
 										// Go through the sample data and add in any missing data
-										for (const [sample, sampleData] of Object.entries(compendiumData["sample"])) {
-											if (this.eFPObjects[compendium]["sample"][sample]) {
+										for (const [sample, sampleData] of Object.entries(compendiumData.sample)) {
+											if (this.eFPObjects[compendium].sample[sample]) {
 												// Go through the [locus] and see if any are missing
 												for (const locus of missingLoci) {
-													if (!this.eFPObjects[compendium]["sample"][sample][locus]) {
-														this.eFPObjects[compendium]["sample"][sample][locus] =
+													if (!this.eFPObjects[compendium].sample[sample][locus]) {
+														this.eFPObjects[compendium].sample[sample][locus] =
 															sampleData[locus];
 													}
 												}
 											} else {
-												this.eFPObjects[compendium]["sample"][sample] = sampleData;
+												this.eFPObjects[compendium].sample[sample] = sampleData;
 											}
 										}
 									}
@@ -931,9 +930,9 @@ class CreateSVGExpressionData {
 
 		// Check size of this.localStorageSample
 		// Convert to string
-		let localStorageSampleString = JSON.stringify(this.localStorageSample);
+		const localStorageSampleString = JSON.stringify(this.localStorageSample);
 		// Get size of string
-		let localStorageSampleSize = localStorageSampleString.length * 2;
+		const localStorageSampleSize = localStorageSampleString.length * 2;
 		// If the localStorageSampleSize is too large, remove the first SVG in the eFPObjects object if not the one that is currently being kept (svgKeep) or 'expiry'
 		if (localStorageSampleSize > 1000000) {
 			// Go through the eFPObjects object and remove the first SVG if not the one that is currently being kept (svgKeep) or 'expiry'
@@ -957,15 +956,15 @@ class CreateSVGExpressionData {
 	async #callPlantEFP(datasource, locus, samples, svg, sampleSubunits) {
 		// Create URL
 		let url = "https://bar.utoronto.ca/~asullivan/webservices/plantefp.cgi?";
-		url += "datasource=" + datasource + "&";
-		url += "id=" + locus + "&";
+		url += `datasource=${datasource}&`;
+		url += `id=${locus}&`;
 		url += "samples=[";
-		for (let i = 0; i < samples.length; i++) {
+		for (let i = 0; i < samples.length; i += 1) {
 			let sampleName = samples[i].trim();
 			sampleName = sampleName.replace(/\+/g, "%2B");
 			sampleName = sampleName.replace(/ /g, "%20");
 
-			url += '"' + sampleName + '"';
+			url += `"${sampleName}"`;
 			if (i !== samples.length - 1) {
 				url += ",";
 			}
@@ -1003,20 +1002,20 @@ class CreateSVGExpressionData {
 							}
 
 							// Create samples in dictionary
-							if (this.eFPObjects[svg]["sample"] === undefined) {
-								this.eFPObjects[svg]["sample"] = {};
+							if (this.eFPObjects[svg].sample === undefined) {
+								this.eFPObjects[svg].sample = {};
 							}
 
 							// Create samples in dictionary
-							if (this.eFPObjects[svg]["sample"] === undefined) {
-								this.eFPObjects[svg]["sample"] = {};
+							if (this.eFPObjects[svg].sample === undefined) {
+								this.eFPObjects[svg].sample = {};
 							}
 
 							// Add values
 							for (const resData of responseData) {
 								// Create key and value variables
-								const responseName = resData["name"].trim();
-								const responseValue = resData["value"];
+								const responseName = resData.name.trim();
+								const responseValue = resData.value;
 								let subunitName = "";
 
 								// Create subunits element in dictionary
@@ -1030,36 +1029,36 @@ class CreateSVGExpressionData {
 										subunitName = subunit;
 
 										// Create subunit
-										if (this.eFPObjects[svg]["sample"][subunitName] === undefined) {
-											this.eFPObjects[svg]["sample"][subunitName] = {};
+										if (this.eFPObjects[svg].sample[subunitName] === undefined) {
+											this.eFPObjects[svg].sample[subunitName] = {};
 										}
 
 										// Create responseName
-										if (this.eFPObjects[svg]["sample"][subunitName][tempName] === undefined) {
-											this.eFPObjects[svg]["sample"][subunitName][tempName] = {};
+										if (this.eFPObjects[svg].sample[subunitName][tempName] === undefined) {
+											this.eFPObjects[svg].sample[subunitName][tempName] = {};
 										}
 
 										// Add to dictionary
-										this.eFPObjects[svg]["sample"][subunitName][tempName][locus] = responseValue;
+										this.eFPObjects[svg].sample[subunitName][tempName][locus] = responseValue;
 
 										// Add to list of called locus data
-										if (!this.eFPObjects[svg]["locusCalled"]) {
-											this.eFPObjects[svg]["locusCalled"] = [];
+										if (!this.eFPObjects[svg].locusCalled) {
+											this.eFPObjects[svg].locusCalled = [];
 										}
-										if (!this.eFPObjects[svg]["locusCalled"].includes(locus)) {
-											this.eFPObjects[svg]["locusCalled"].push(locus);
+										if (!this.eFPObjects[svg].locusCalled.includes(locus)) {
+											this.eFPObjects[svg].locusCalled.push(locus);
 										}
 									}
 								}
 							}
 
 							// Add db
-							this.eFPObjects[svg]["db"] = datasource;
+							this.eFPObjects[svg].db = datasource;
 
 							// Update local storage
-							if (Object.keys(this.localStorageSample) === 0) {
+							if (!this.localStorageSample || Object.keys(this.localStorageSample)?.length === 0) {
 								this.localStorageSample = this.eFPObjects;
-								this.localStorageSample["expiry"] = new Date().getTime();
+								this.localStorageSample.expiry = new Date().getTime();
 							} else {
 								this.localStorageSample[svg] = this.eFPObjects[svg];
 							}
@@ -1072,12 +1071,7 @@ class CreateSVGExpressionData {
 						await this.#addSVGtoDOM(svg, locus, this.includeDropdownAll);
 
 						console.error(
-							"fetch error - Status Code: " +
-								response.status +
-								", fetch-url: " +
-								response.url +
-								", document-url: " +
-								window.location.href,
+							`fetch error - Status Code: ${response.status}, fetch-url: ${response.url}, document-url: ${window.location.href}`,
 						);
 					}
 				})
@@ -1128,25 +1122,25 @@ class CreateSVGExpressionData {
 				for (const top of topList) {
 					if (this.topExpressionValues[locus][top]) {
 						const expressionData = this.topExpressionValues[locus][top];
-						const compendiumOptions = expressionData["compendium"];
+						const compendiumOptions = expressionData.compendium;
 
-						for (let c = 0; c < Object.keys(compendiumOptions).length; c++) {
+						for (let c = 0; c < Object.keys(compendiumOptions).length; c += 1) {
 							const cUse = c + 1;
 
-							if (expressionData["compendium"][cUse]) {
-								const expressionCompendium = expressionData["compendium"][cUse];
-								const expressionSample = expressionData["sample"][cUse];
+							if (expressionData.compendium[cUse]) {
+								const expressionCompendium = expressionData.compendium[cUse];
+								const expressionSample = expressionData.sample[cUse];
 
 								if (
 									expressionSample &&
 									this.sampleData[expressionCompendium] &&
 									this.sampleData[expressionCompendium] &&
-									this.sampleData[expressionCompendium]["description"]
+									this.sampleData[expressionCompendium].description
 								) {
 									const readableSampleName =
-										this.sampleData[expressionCompendium]["description"][expressionSample];
-									const expressionAverageLevel = expressionData["maxAverage"][cUse];
-									const compendiumName = this.sampleData[expressionCompendium]["name"];
+										this.sampleData[expressionCompendium].description[expressionSample];
+									const expressionAverageLevel = expressionData.maxAverage[cUse];
+									const compendiumName = this.sampleData[expressionCompendium].name;
 
 									options += `<option
                                             value="${expressionCompendium}"
@@ -1177,15 +1171,17 @@ class CreateSVGExpressionData {
 			const sampleOptions = Object.keys(this.sampleReadableName);
 			sampleOptions.sort();
 
-			for (let i in sampleOptions) {
-				options += `<option
+			for (const i in sampleOptions) {
+				if (sampleOptions[i]) {
+					options += `<option
                         value="${this.sampleReadableName[sampleOptions[i]]}"
                     >
                         ${sampleOptions[i]}
                     </option>`;
 
-				if (this.sampleReadableName[sampleOptions[i]] === svgName) {
-					selectedIndexPos = parseInt(preSelectedIndex) + parseInt(i);
+					if (this.sampleReadableName[sampleOptions[i]] === svgName) {
+						selectedIndexPos = parseInt(preSelectedIndex, 10) + parseInt(i, 10);
+					}
 				}
 			}
 
@@ -1230,7 +1226,7 @@ class CreateSVGExpressionData {
 		localAppendSVG.appendChild(titleBoxDOM);
 
 		// Create call for SVG file
-		const urlSVG = "https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/compendiums/" + svgUse + ".svg";
+		const urlSVG = `https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/compendiums/${svgUse}.svg`;
 		const methods = { mode: "cors" };
 
 		await fetch(urlSVG, methods)
@@ -1266,12 +1262,7 @@ class CreateSVGExpressionData {
 					});
 				} else if (response.status !== 200) {
 					console.error(
-						"fetch error - Status Code: " +
-							response.status +
-							", fetch-url: " +
-							response.url +
-							", document-url: " +
-							window.location.href,
+						`fetch error - Status Code: ${response.status}, fetch-url: ${response.url}, document-url: ${window.location.href}`,
 					);
 				}
 			})
@@ -1287,7 +1278,7 @@ class CreateSVGExpressionData {
 			if (targetDOMRegion) {
 				if (targetDOMRegion.childNodes && targetDOMRegion.childNodes.length > 0) {
 					const targetDOMChildren = targetDOMRegion.childNodes;
-					for (let i in targetDOMChildren) {
+					for (const i in targetDOMChildren) {
 						if (
 							targetDOMChildren[i].className &&
 							targetDOMChildren[i].className.includes("expressionContainer")
@@ -1309,14 +1300,17 @@ class CreateSVGExpressionData {
 	 */
 	async #createLocusMatch(whichSVG, locus) {
 		const locusPoint = locus;
+
 		let locusValue = "";
-		for (let i = 0; i < locusPoint.length; i++) {
+		for (let i = 0; i < locusPoint.length; i += 1) {
 			if (i === 1 || i === 3) {
-				locusValue = locusValue + locusPoint[i].toLowerCase();
+				locusValue += locusPoint[i].toLowerCase();
 			} else {
-				locusValue = locusValue + locusPoint[i];
+				// eslint-disable-next-line no-unused-vars
+				locusValue += locusPoint[i];
 			}
 		}
+
 		await this.#createSVGValues(whichSVG, locus);
 	}
 
@@ -1328,7 +1322,7 @@ class CreateSVGExpressionData {
 	async #createSVGValues(whichSVG, locus) {
 		// Retrieve tissue expression information
 		const dataObject = this.eFPObjects;
-		const svgDataObject = dataObject[whichSVG]["sample"];
+		const svgDataObject = dataObject[whichSVG].sample;
 
 		// Find tissue expression's sample IDs
 		const svgSubunits = Object.keys(svgDataObject);
@@ -1343,10 +1337,10 @@ class CreateSVGExpressionData {
 			// Add raw values
 			for (const sample of sampleValues) {
 				// Create raw values in dictionary
-				if (this.svgValues[svg]["rawValues"] === undefined) {
-					this.svgValues[svg]["rawValues"] = [];
+				if (this.svgValues[svg].rawValues === undefined) {
+					this.svgValues[svg].rawValues = [];
 				}
-				this.svgValues[svg]["rawValues"].push(svgDataObject[svg][sample][locus]);
+				this.svgValues[svg].rawValues.push(svgDataObject[svg][sample][locus]);
 			}
 		}
 		await this.#findExpressionValues(whichSVG, svgSubunits);
@@ -1364,10 +1358,10 @@ class CreateSVGExpressionData {
 
 		// Iterate over each SVG subunit for their respective values
 		for (const svg of svgSubunits) {
-			const values = this.svgValues[svg]["rawValues"].sort();
+			const values = this.svgValues[svg].rawValues.sort();
 			const numValues = [];
 			for (const value of values) {
-				if (isNaN(value) === false) {
+				if (Number.isNaN(value) === false) {
 					numValues.push(parseFloat(value));
 				}
 			}
@@ -1382,62 +1376,47 @@ class CreateSVGExpressionData {
 			// Compare max values
 			const maxValue = numValues[numValues.length - 1];
 			const minValue = numValues[1];
-			if (this.svgMax === undefined) {
+			if (!this.svgMax || maxValue > this.svgMax) {
 				this.svgMax = maxValue;
-			} else {
-				if (maxValue > this.svgMax) {
-					this.svgMax = maxValue;
-				}
 			}
-			if (this.svgMin === undefined) {
+
+			if (!this.svgMin || minValue < this.svgMin) {
 				this.svgMin = minValue;
-			} else {
-				if (minValue < this.svgMin) {
-					this.svgMin = minValue;
-				}
 			}
 
 			// Now for averages:
-			if (this.svgMaxAverage === undefined) {
+			if (!this.svgMaxAverage || averageValues > this.svgMaxAverage) {
 				this.svgMaxAverage = averageValues;
 				this.svgMaxAverageSample = svg;
-			} else {
-				if (averageValues > this.svgMaxAverage) {
-					this.svgMaxAverage = averageValues;
-					this.svgMaxAverageSample = svg;
-				}
 			}
-			if (this.svgMinAverage === undefined) {
+
+			if (!this.svgMinAverage || averageValues < this.svgMinAverage) {
 				this.svgMinAverage = averageValues;
 				this.svgMinAverageSample = svg;
-			} else {
-				if (averageValues < this.svgMinAverage) {
-					this.svgMinAverage = averageValues;
-					this.svgMinAverageSample = svg;
-				}
 			}
+
 			// Add to value's dictionary:
 			// Create SVG subunit in dictionary
-			if (this.svgValues[svg] === undefined) {
+			if (!this.svgValues[svg]) {
 				this.svgValues[svg] = {};
 			}
-			this.svgValues[svg]["average"] = averageValues;
-			this.svgValues[svg]["sd"] = this.#standardDeviationCalc(numValues);
+			this.svgValues[svg].average = averageValues;
+			this.svgValues[svg].sd = this.#standardDeviationCalc(numValues);
 
 			// Find control value
 			const controlData = this.sampleData[whichSVG];
-			const controlKeys = Object.keys(controlData["controlComparison"]);
+			const controlKeys = Object.keys(controlData.controlComparison);
 			if (controlKeys.includes(svg) === false) {
 				let controlSampleName = "";
 				for (const key of controlKeys) {
-					if (controlData["controlComparison"][key].includes(svg)) {
+					if (controlData.controlComparison[key].includes(svg)) {
 						controlSampleName = key;
 					}
 				}
 
-				if (this.svgValues[controlSampleName] && this.svgValues[controlSampleName]["rawValues"]) {
+				if (this.svgValues[controlSampleName] && this.svgValues[controlSampleName].rawValues) {
 					// Calculate control average:
-					const controlValues = this.svgValues[controlSampleName]["rawValues"];
+					const controlValues = this.svgValues[controlSampleName].rawValues;
 					let controlSum = 0;
 					for (const value of controlValues) {
 						controlSum += parseFloat(value);
@@ -1449,17 +1428,17 @@ class CreateSVGExpressionData {
 					if (controlAverage !== null && controlAverage > 0 && averageValues > 0) {
 						if (averageValues > controlAverage) {
 							inductionValue = averageValues - controlAverage;
-							this.svgValues[svg]["inductionValue"] = inductionValue;
+							this.svgValues[svg].inductionValue = inductionValue;
 						} else if (controlAverage > averageValues) {
 							reductionValue = controlAverage - averageValues;
-							this.svgValues[svg]["reductionValue"] = reductionValue;
+							this.svgValues[svg].reductionValue = reductionValue;
 						}
 
 						const expressionRatio = averageValues / controlAverage;
-						this.svgValues[svg]["expressionRatio"] = expressionRatio;
+						this.svgValues[svg].expressionRatio = expressionRatio;
 
-						this.svgValues[svg]["controlSampleName"] = controlSampleName;
-						this.svgValues[svg]["controlAverage"] = controlAverage;
+						this.svgValues[svg].controlSampleName = controlSampleName;
+						this.svgValues[svg].controlAverage = controlAverage;
 					}
 				}
 			}
@@ -1474,25 +1453,26 @@ class CreateSVGExpressionData {
 	 * @param {Array} numbers An array of numbers that the standard deviation will be found for
 	 * @return sd Standard deviation
 	 */
+	// eslint-disable-next-line class-methods-use-this
 	#standardDeviationCalc(numbers) {
 		let sd = 0;
 
-		const num_of_elements = numbers.length;
+		const numOfElements = numbers.length;
 
-		if (num_of_elements >= 1) {
+		if (numOfElements >= 1) {
 			let variance = 0.0;
 
-			let number_sum = 0;
-			for (let i = 0; i < num_of_elements; i++) {
-				number_sum += numbers[i];
+			let numberSum = 0;
+			for (let i = 0; i < numOfElements; i += 1) {
+				numberSum += numbers[i];
 			}
-			const average = number_sum / num_of_elements;
+			const average = numberSum / numOfElements;
 
-			for (let x = 0; x < num_of_elements; x++) {
-				variance += Math.pow(numbers[x] - average, 2);
+			for (let x = 0; x < numOfElements; x += 1) {
+				variance += (numbers[x] - average) ** 2;
 			}
 
-			sd = Math.sqrt(variance / num_of_elements);
+			sd = Math.sqrt(variance / numOfElements);
 		}
 
 		return sd;
@@ -1507,7 +1487,7 @@ class CreateSVGExpressionData {
 		for (const subunit of svgSubunits) {
 			// Colouring values
 			const denominator = this.svgMaxAverage;
-			let numerator = this.svgValues[subunit]["average"];
+			let numerator = this.svgValues[subunit].average;
 			if (numerator < 0) {
 				numerator = 0;
 			}
@@ -1528,10 +1508,11 @@ class CreateSVGExpressionData {
 			const expressionLevel = parseFloat(numerator).toFixed(3);
 			const sampleSize = this.svgValues[subunit].rawValues.length;
 
-			this.svgValues[subunit]["expressionLevel"] = expressionLevel;
-			this.svgValues[subunit]["sampleSize"] = sampleSize;
+			this.svgValues[subunit].expressionLevel = expressionLevel;
+			this.svgValues[subunit].sampleSize = sampleSize;
 
 			// Begin colouring SVG subunits
+			// eslint-disable-next-line no-await-in-loop
 			await this.#colourSVGsubunit(whichSVG, subunit, colourFill, expressionLevel, sampleSize);
 		}
 	}
@@ -1541,8 +1522,9 @@ class CreateSVGExpressionData {
 	 * @param {Number} percentage The percentage between 0 - 100 (as an int) into a colour between yellow and red
 	 * @returns {String} Hex-code colour
 	 */
+	// eslint-disable-next-line class-methods-use-this
 	percentageToColour(percentage) {
-		const percentageInt = parseInt(percentage);
+		const percentageInt = parseInt(percentage, 10);
 
 		if (percentageInt >= 0) {
 			// From 0% to 100% as integers
@@ -1651,9 +1633,8 @@ class CreateSVGExpressionData {
 			];
 
 			return colourList[percentageInt];
-		} else {
-			return "#808080";
 		}
+		return "#808080";
 	}
 
 	/**
@@ -1669,10 +1650,10 @@ class CreateSVGExpressionData {
 		const allParsableElements = [...svgObject.getElementsByTagName("path"), ...svgObject.getElementsByTagName("g")];
 
 		if (svgObject && allParsableElements.length > 0) {
-			const expressionData = createSVGExpressionData["svgValues"][svgSubunit];
-			let descriptionName = undefined;
-			if (this.sampleData[whichSVG]["description"]) {
-				descriptionName = this.sampleData[whichSVG]["description"][svgSubunit];
+			const expressionData = createSVGExpressionData.svgValues[svgSubunit];
+			let descriptionName;
+			if (this.sampleData[whichSVG].description) {
+				descriptionName = this.sampleData[whichSVG].description[svgSubunit];
 			}
 			if (descriptionName === undefined || descriptionName === "") {
 				descriptionName = svgSubunit;
@@ -1712,7 +1693,7 @@ class CreateSVGExpressionData {
 			}
 
 			let subunitElement;
-			for (let i in allParsableElements) {
+			for (const i in allParsableElements) {
 				if (allParsableElements[i].id === svgSubunit) {
 					subunitElement = allParsableElements[i];
 				}
@@ -1720,13 +1701,11 @@ class CreateSVGExpressionData {
 
 			// This is used to determine if the SVG should be automatically coloured or manually done
 			if (subunitElement && subunitElement.childNodes.length > 0) {
-				let childElements;
-
-				childElements = subunitElement.childNodes;
+				const childElements = subunitElement.childNodes;
 
 				let coloured = false;
 
-				for (let c in childElements) {
+				for (const c in childElements) {
 					if (childElements[c].tagName === "path" || childElements[c].tagName === "g") {
 						childElements[c].setAttribute("fill", colour);
 
@@ -1747,6 +1726,7 @@ class CreateSVGExpressionData {
 				subunitElement.setAttribute("class", "hoverDetails");
 				subunitElement.addEventListener(
 					"mouseenter",
+					// eslint-disable-next-line func-names
 					function (_event) {
 						addTissueMetadata(this.id);
 					},
@@ -1754,6 +1734,7 @@ class CreateSVGExpressionData {
 				);
 				subunitElement.addEventListener(
 					"mouseleave",
+					// eslint-disable-next-line func-names
 					function (_event) {
 						removeTissueMetadata(this.id);
 					},
@@ -1762,24 +1743,19 @@ class CreateSVGExpressionData {
 				// Adding details about sub-tissue:
 				subunitElement.setAttribute("data-expressionValue", expressionLevel);
 				subunitElement.setAttribute("data-sampleSize", sampleSize);
-				subunitElement.setAttribute("data-standardDeviation", expressionData["sd"]);
+				subunitElement.setAttribute("data-standardDeviation", expressionData.sd);
 				subunitElement.setAttribute("data-sampleSize", sampleSize);
 
 				// Add tooltip/title on hover
 				const title = document.createElementNS("https://www.w3.org/2000/svg", "title");
 				if (title) {
-					title.textContent =
-						descriptionName +
-						"\r\nExpression level: " +
-						expressionLevel +
-						"\r\nSample size: " +
-						sampleSize +
-						"\r\nStandard Deviation: " +
-						parseFloat(expressionData["sd"]).toFixed(3);
+					title.textContent = `${descriptionName}\r\nExpression level: ${expressionLevel}\r\nSample size: ${sampleSize}\r\nStandard Deviation: ${parseFloat(
+						expressionData.sd,
+					).toFixed(3)}`;
 				}
 
 				// Add rest of titles and tooltip/title
-				let inducReduc = false;
+				const inducReduc = false;
 
 				// if (expressionData['inductionValue']) {
 				//     subunitElement.setAttribute("data-inductionValue", expressionData['inductionValue']);
@@ -1792,141 +1768,140 @@ class CreateSVGExpressionData {
 				// };
 
 				if (inducReduc === true) {
-					subunitElement.setAttribute("data-expressionRatio", expressionData["expressionRatio"]);
-					title.textContent +=
-						"\r\nExpression Ratio: " + parseFloat(expressionData["expressionRatio"]).toFixed(3);
-					subunitElement.setAttribute("data-controlSampleName", expressionData["controlSampleName"]);
+					subunitElement.setAttribute("data-expressionRatio", expressionData.expressionRatio);
+					title.textContent += `\r\nExpression Ratio: ${parseFloat(expressionData.expressionRatio).toFixed(
+						3,
+					)}`;
+					subunitElement.setAttribute("data-controlSampleName", expressionData.controlSampleName);
 
-					let controlSampleName = undefined;
-					if (this.sampleData[whichSVG]["description"]) {
-						controlSampleName =
-							this.sampleData[whichSVG]["description"][expressionData["controlSampleName"]];
+					let controlSampleName;
+					if (this.sampleData[whichSVG].description) {
+						controlSampleName = this.sampleData[whichSVG].description[expressionData.controlSampleName];
 					}
 					if (controlSampleName === undefined || controlSampleName === "") {
-						controlSampleName = expressionData["controlSampleName"];
+						controlSampleName = expressionData.controlSampleName;
 					}
-					title.textContent += "\r\nControl Sample Name: " + controlSampleName;
+					title.textContent += `\r\nControl Sample Name: ${controlSampleName}`;
 
-					subunitElement.setAttribute("data-controlAverage", expressionData["controlAverage"]);
-					title.textContent +=
-						"\r\nControl Expression: " + parseFloat(expressionData["controlAverage"]).toFixed(3);
+					subunitElement.setAttribute("data-controlAverage", expressionData.controlAverage);
+					title.textContent += `\r\nControl Expression: ${parseFloat(expressionData.controlAverage).toFixed(
+						3,
+					)}`;
 				}
 				subunitElement.appendChild(title);
 			}
 
 			// Correcting duplicate error:
 			if (isdupShoot) {
-				for (let dupS in duplicateShoot) {
-					// Find duplicate shoot element:
-					let dupShootElement;
-					for (let i in allParsableElements) {
-						if (allParsableElements[i].id === duplicateShoot[dupS]) {
-							dupShootElement = allParsableElements[i];
-						}
-					}
-
-					if (dupShootElement) {
-						// Add interactivity
-						dupShootElement.setAttribute("class", "hoverDetails");
-						dupShootElement.addEventListener(
-							"mouseenter",
-							function (_event) {
-								addTissueMetadata(this.id);
-							},
-							{ passive: true },
-						);
-						dupShootElement.addEventListener(
-							"mouseleave",
-							function (_event) {
-								removeTissueMetadata(this.id);
-							},
-							{ passive: true },
-						);
-						// Adding colour
-						const childElements = dupShootElement.childNodes;
-						if (childElements.length > 0) {
-							let foundColor = false;
-
-							for (const element of childElements) {
-								if (element.tagName === "path") {
-									element.setAttribute("fill", colour);
-									foundColor = true;
-								}
+				for (const dupS in duplicateShoot) {
+					if (duplicateShoot[dupS]) {
+						// Find duplicate shoot element:
+						let dupShootElement;
+						for (const i in allParsableElements) {
+							if (allParsableElements[i].id === duplicateShoot[dupS]) {
+								dupShootElement = allParsableElements[i];
 							}
+						}
 
-							if (!foundColor) {
+						if (dupShootElement) {
+							// Add interactivity
+							dupShootElement.setAttribute("class", "hoverDetails");
+							dupShootElement.addEventListener(
+								"mouseenter",
+								// eslint-disable-next-line func-names
+								function (_event) {
+									addTissueMetadata(this.id);
+								},
+								{ passive: true },
+							);
+							dupShootElement.addEventListener(
+								"mouseleave",
+								// eslint-disable-next-line func-names
+								function (_event) {
+									removeTissueMetadata(this.id);
+								},
+								{ passive: true },
+							);
+							// Adding colour
+							const childElements = dupShootElement.childNodes;
+							if (childElements.length > 0) {
+								let foundColor = false;
+
+								for (const element of childElements) {
+									if (element.tagName === "path") {
+										element.setAttribute("fill", colour);
+										foundColor = true;
+									}
+								}
+
+								if (!foundColor) {
+									dupShootElement.setAttribute("fill", colour);
+								}
+							} else {
 								dupShootElement.setAttribute("fill", colour);
 							}
-						} else {
-							dupShootElement.setAttribute("fill", colour);
-						}
-						// Add tooltip/title on hover
-						const title = document.createElementNS("https://www.w3.org/2000/svg", "title");
-						if (title) {
-							title.textContent =
-								duplicateShoot[dupS] +
-								"\r\nExpression level: " +
-								expressionLevel +
-								"\r\nSample size: " +
-								sampleSize;
-							dupShootElement.appendChild(title);
+							// Add tooltip/title on hover
+							const title = document.createElementNS("https://www.w3.org/2000/svg", "title");
+							if (title) {
+								title.textContent = `${duplicateShoot[dupS]}\r\nExpression level: ${expressionLevel}\r\nSample size: ${sampleSize}`;
+								dupShootElement.appendChild(title);
+							}
 						}
 					}
 				}
 			} else if (isdupRoot) {
-				for (let dupR in duplicateRoot) {
-					let dupRootElement;
-					for (let i in allParsableElements) {
-						if (allParsableElements[i].id === duplicateRoot[dupR]) {
-							dupRootElement = allParsableElements[i];
-						}
-					}
-
-					if (dupRootElement) {
-						// Add interactivity
-						dupRootElement.setAttribute("class", "hoverDetails");
-						dupRootElement.addEventListener(
-							"mouseenter",
-							function (_event) {
-								addTissueMetadata(this.id);
-							},
-							{ passive: true },
-						);
-						dupRootElement.addEventListener(
-							"mouseleave",
-							function (_event) {
-								removeTissueMetadata(this.id);
-							},
-							{ passive: true },
-						);
-						// Adding colour
-						let childElements = dupRootElement.childNodes;
-						if (childElements.length > 0) {
-							let foundColor = false;
-
-							for (const element of childElements) {
-								if (element.tagName === "path") {
-									element.setAttribute("fill", colour);
-									foundColor = true;
-								}
+				for (const dupR in duplicateRoot) {
+					if (duplicateRoot[dupR]) {
+						let dupRootElement;
+						for (const i in allParsableElements) {
+							if (allParsableElements[i].id === duplicateRoot[dupR]) {
+								dupRootElement = allParsableElements[i];
 							}
+						}
 
-							if (!foundColor) {
+						if (dupRootElement) {
+							// Add interactivity
+							dupRootElement.setAttribute("class", "hoverDetails");
+							dupRootElement.addEventListener(
+								"mouseenter",
+								// eslint-disable-next-line func-names
+								function (_event) {
+									addTissueMetadata(this.id);
+								},
+								{ passive: true },
+							);
+							dupRootElement.addEventListener(
+								"mouseleave",
+								// eslint-disable-next-line func-names
+								function (_event) {
+									removeTissueMetadata(this.id);
+								},
+								{ passive: true },
+							);
+							// Adding colour
+							const childElements = dupRootElement.childNodes;
+							if (childElements.length > 0) {
+								let foundColor = false;
+
+								for (const element of childElements) {
+									if (element.tagName === "path") {
+										element.setAttribute("fill", colour);
+										foundColor = true;
+									}
+								}
+
+								if (!foundColor) {
+									dupRootElement.setAttribute("fill", colour);
+								}
+							} else {
 								dupRootElement.setAttribute("fill", colour);
 							}
-						} else {
-							dupRootElement.setAttribute("fill", colour);
-						}
-						// Add tooltip/title on hover
-						const title = document.createElementNS("https://www.w3.org/2000/svg", "title");
-						if (title) {
-							title.textContent =
-								duplicateRoot[dupR] +
-								"\r\nExpression level: " +
-								expressionLevel +
-								"\r\nSample size: " +
-								sampleSize;
-							dupRootElement.appendChild(title);
+							// Add tooltip/title on hover
+							const title = document.createElementNS("https://www.w3.org/2000/svg", "title");
+							if (title) {
+								title.textContent = `${duplicateRoot[dupR]}\r\nExpression level: ${expressionLevel}\r\nSample size: ${sampleSize}`;
+								dupRootElement.appendChild(title);
+							}
 						}
 					}
 				}
