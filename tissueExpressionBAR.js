@@ -209,6 +209,24 @@ function removeTissueMetadata(elementID) {
 }
 
 /**
+ * General debounce function for the ePlant Plant eFP and its tissue metadata
+ * @param {Function} func Function to be debounced
+ * @param {Number} wait Time to wait before executing the function
+ * @returns {Function} The debounced function
+ * @example <caption>Example usage of the debounce function where the function is debounced for 250ms and prevents that function from being called again during that weight time</caption>
+ * debounceTissueMetadata(functionToBeDebounced, 250);
+ * // returns functionToBeDebounced (after 250ms)
+ */
+function debounceTissueMetadata(func, wait) {
+	let timeout;
+	return function (...args) {
+		const context = this;
+		clearTimeout(timeout);
+		timeout = setTimeout(() => func.apply(context, args), wait);
+	};
+}
+
+/**
  * Create and display the ePlant Plant eFP's hover title box
  * @param {Boolean} display Whether to display [true] or hide [false, default] the title box
  * @param {Number | String} x The x-coordinate of the element being hovered over
@@ -1727,18 +1745,20 @@ class CreateSVGExpressionData {
 				subunitElement.addEventListener(
 					"mouseenter",
 					// eslint-disable-next-line func-names
-					function (_event) {
-						addTissueMetadata(this.id);
+					(event) => {
+						window.requestAnimationFrame(() => {
+							debounceTissueMetadata(addTissueMetadata(event.target.id), 250);
+						});
 					},
-					{ passive: true },
 				);
 				subunitElement.addEventListener(
 					"mouseleave",
 					// eslint-disable-next-line func-names
-					function (_event) {
-						removeTissueMetadata(this.id);
+					(event) => {
+						window.requestAnimationFrame(() => {
+							debounceTissueMetadata(removeTissueMetadata(event.target.id), 250);
+						});
 					},
-					{ passive: true },
 				);
 				// Adding details about sub-tissue:
 				subunitElement.setAttribute("data-expressionValue", expressionLevel);
