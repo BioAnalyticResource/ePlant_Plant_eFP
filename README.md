@@ -46,9 +46,9 @@ Instructions with an example can be found here: [https://bar.utoronto.ca/~asulli
 
 ## Browser Compatibilities
 
-| Chrome | Firefox | IE  | Edge | Safari | Opera | Tor | Mobile |
-| ------ | ------- | --- | ---- | ------ | ----- | --- | ------ |
-| ✔      | ✔       | X   | ✔    | ✔      | ✔     | ✔   | ✔      |
+| Chrome | Firefox | Edge | Safari | Opera | Tor | Mobile |
+| ------ | ------- | ---- | ------ | ----- | --- | ------ |
+| ✔      | ✔       | ✔    | ✔      | ✔     | ✔   | ✔      |
 
 ## Known issues
 
