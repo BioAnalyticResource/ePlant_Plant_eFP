@@ -219,6 +219,7 @@ function removeTissueMetadata(elementID) {
  */
 function debounceTissueMetadata(func, wait) {
 	let timeout;
+	// eslint-disable-next-line func-names
 	return function (...args) {
 		const context = this;
 		clearTimeout(timeout);
