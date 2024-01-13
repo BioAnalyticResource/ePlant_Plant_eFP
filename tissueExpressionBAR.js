@@ -328,7 +328,7 @@ function ePlantPlantEFPHandleMouseEvent(domID, type, e, moveBy = 1.5) {
 			/** Boundaries to scale the SVG's viewpoint on the X axis */
 			let scaleBoundariesX = svgElement.height.baseVal.value
 				? (defaultScaleBoundaries * 100 - svgElement.height.baseVal.value / svgElement.viewBox.baseVal.height) /
-				  100
+					100
 				: (defaultScaleBoundaries * 100 - window.innerHeight / svgElement.viewBox.baseVal.height) / 100;
 			// Should be between 0 and 1
 			if (scaleBoundariesX <= 0 || scaleBoundariesX >= 1) {
@@ -338,7 +338,7 @@ function ePlantPlantEFPHandleMouseEvent(domID, type, e, moveBy = 1.5) {
 			/** Boundaries to scale the SVG's viewpoint on the Y axis */
 			let scaleBoundariesY = svgElement.width.baseVal.value
 				? (defaultScaleBoundaries * 100 - svgElement.width.baseVal.value / svgElement.viewBox.baseVal.width) /
-				  100
+					100
 				: (defaultScaleBoundaries * 100 - window.innerWidth / svgElement.viewBox.baseVal.height) / 100;
 			// Should be between 0 and 1
 			if (scaleBoundariesY <= 0 || scaleBoundariesY >= 1) {

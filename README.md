@@ -48,7 +48,7 @@ Instructions with an example can be found here: [https://bar.utoronto.ca/~asulli
 
 | Chrome | Firefox | Edge | Safari | Opera | Tor | Mobile |
 | ------ | ------- | ---- | ------ | ----- | --- | ------ |
-| ✔      | ✔       | ✔    | ✔      | ✔     | ✔   | ✔      |
+| ✔     | ✔      | ✔   | ✔     | ✔    | ✔  | ✔     |
 
 ## Known issues
 
