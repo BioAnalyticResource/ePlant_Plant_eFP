@@ -19,7 +19,7 @@
 			"url": "https://bar.utoronto.ca/"
 		}
 	],
-	"version": "1.0.19",
+	"version": "1.0.20",
 	"private": true,
 	"description": "Data visualization tool to display tissue expression data for Arabidopsis thaliana",
 	"devDependencies": {
