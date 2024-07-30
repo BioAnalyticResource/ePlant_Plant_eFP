@@ -974,7 +974,7 @@ class CreateSVGExpressionData {
 	 */
 	async #callPlantEFP(datasource, locus, samples, svg, sampleSubunits) {
 		// Create URL
-		let url = "https://bar.utoronto.ca/~asullivan/webservices/plantefp.cgi?";
+		let url = "https://bar.utoronto.ca/eplant/cgi-bin/plantefp.cgi?";
 		url += `datasource=${datasource}&`;
 		url += `id=${locus}&`;
 		url += "samples=[";
@@ -1245,7 +1245,7 @@ class CreateSVGExpressionData {
 		localAppendSVG.appendChild(titleBoxDOM);
 
 		// Create call for SVG file
-		const urlSVG = `https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/compendiums/${svgUse}.svg`;
+		const urlSVG = `https://bar.utoronto.ca/webservices/gaia/ePlant_Plant_eFP/compendiums/${svgUse}.svg`;
 		const methods = { mode: "cors" };
 
 		await fetch(urlSVG, methods)

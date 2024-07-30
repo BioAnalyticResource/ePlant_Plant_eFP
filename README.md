@@ -6,7 +6,7 @@ The ePlant Plant eFP is a tissue expression API provided by the [Bio-Analytic Re
 [![Follow on Twitter](https://img.shields.io/twitter/follow/BAR_PlantBio?style=social)](https://twitter.com/BAR_PlantBio)
 [![GitHub repo size](https://img.shields.io/github/repo-size/BioAnalyticResource/ePlant_Plant_eFP)](https://github.com/BioAnalyticResource/ePlant_Plant_eFP)
 [![GitHub](https://img.shields.io/github/license/BioAnalyticResource/ePlant_Plant_eFP)](https://github.com/BioAnalyticResource/ePlant_Plant_eFP)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fbar.utoronto.ca%2F~asullivan%2FePlant_Plant_eFP%2F)](https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fbar.utoronto.ca%2Fwebservices%2Fgaia%2FePlant_Plant_eFP%2F)](https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/)
 
 ## Getting Started
 
@@ -16,7 +16,7 @@ To use the ePlant Plant eFP, you will be required to either call the [tissueExpr
 
 Just an important note, the ePlant Plant eFP tissue expression API requires an online connection to run and display data correctly.
 
-You can also view the ePlant Plant eFP widget in action at <https://bar.utoronto.ca/~asullivan/ePlant_Plant_eFP/> (or [index.html](index.html)).
+You can also view the ePlant Plant eFP widget in action at <https://bar.utoronto.ca/webservices/gaia/ePlant_Plant_eFP/> (or [index.html](index.html)).
 
 ## How to use
 
