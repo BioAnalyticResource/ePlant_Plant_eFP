@@ -1,0 +1,79 @@
+cff-version: 1.2.0
+title: ePlant Plant eFP
+message: >-
+    A data visualization tool to display tissue expression data for Arabidopsis thaliana
+type: software
+authors:
+    - given-names: Alexander
+      family-names: Sullivan
+      email: alexjsully.connect@outlook.com
+      orcid: "https://orcid.org/0000-0002-4463-4473"
+    - given-names: Michael N
+      family-names: Lombardo
+    - given-names: Asher
+      family-names: Pasha
+      orcid: "https://orcid.org/0000-0002-9315-0520"
+    - given-names: Vincent
+      family-names: Lau
+    - given-names: Jian Yun
+      family-names: Zhuang
+    - given-names: Ashley
+      family-names: Christendat
+    - given-names: Bruno
+      family-names: Pereira
+    - given-names: Tianhui
+      family-names: Zhao
+    - given-names: Youyang
+      family-names: Li
+    - given-names: Rachel
+      family-names: Wong
+    - given-names: Faisal Z
+      family-names: Qureshi
+      affiliation: University of Ontario Institute of Technology
+    - given-names: Nicholas J.
+      family-names: Provart
+      orcid: "https://orcid.org/0000-0001-5551-7232"
+      email: nicholas.provart@utoronto.ca
+      affiliation: University of Toronto
+identifiers:
+    - type: doi
+      value: 10.1093/nar/gkae920
+repository-code: "https://github.com/BioAnalyticResource/ePlant_Plant_eFP"
+url: "https://bar.utoronto.ca/"
+abstract: >-
+    The Bio-Analytic Resource for Plant Biology ('the BAR', at
+    https://bar.utoronto.ca) is celebrating its 20th year in
+    operation in 2025. The BAR encompasses and provides
+    visualization tools for large 'omics data sets from
+    plants. The BAR covers data from Arabidopsis, tomato,
+    wheat, barley and 29 other plant species (with data for 2
+    others to be released soon). These data include nucleotide
+    and protein sequence data, gene expression data,
+    protein-protein and protein-DNA interactions, protein
+    structures, subcellular localizations, and polymorphisms.
+    The data are stored in more than 200 relational databases
+    holding 186 GB of data and are presented to the
+    researchers via web apps. These web apps provide data
+    analysis and visualization tools. Some of the most popular
+    tools are eFP ('electronic fluorescent pictograph')
+    Browsers, ePlants and ThaleMine (an Arabidopsis-specific
+    instance of InterMine). The BAR was designated a Global
+    Core Biodata Resource in 2023. Like other GCBRs, the BAR
+    has excellent operational stability, provides access
+    without login requirement, and provides an API for
+    researchers to be able to access BAR data
+    programmatically. We present in this update a new
+    overarching search tool called Gaia that permits easy
+    access to all BAR data, powered by machine learning and
+    artificial intelligence.
+keywords:
+    - agriculture
+    - bioinformatics
+    - computational biology
+    - data visualization
+    - NLP
+    - web application
+license: GPL-2.0
+commit: a7056e48e4d90f48a053ab561be30f98ee5de7c4
+version: 1.0.20
+date-released: "2024-01-15"
