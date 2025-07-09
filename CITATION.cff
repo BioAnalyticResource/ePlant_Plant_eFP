@@ -73,6 +73,7 @@ keywords:
     - data visualization
     - NLP
     - web application
+license: GPL-2.0
 commit: a7056e48e4d90f48a053ab561be30f98ee5de7c4
 version: 1.0.20
 date-released: "2024-01-15"
