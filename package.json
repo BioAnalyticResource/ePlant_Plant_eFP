@@ -3,7 +3,7 @@
 	"contributors": [
 		{
 			"name": "Alexander Sullivan",
-			"email": "alexander.j.sullivan@hotmail.com",
+			"email": "alexjsully.connect@outlook.com",
 			"url": "https://alexjsully.me/"
 		},
 		{
@@ -31,11 +31,12 @@
 	},
 	"main": "tissueExpressionBAR.js",
 	"scripts": {
-		"eslint": "eslint --fix ./ --ignore-path .prettierignore",
+		"audit:fix": "npm i && npm audit fix",
 		"eslint:check": "eslint ./ --ignore-path .prettierignore",
-		"pre-commit": "npm run prettier && npm run eslint",
+		"eslint": "eslint --fix ./ --ignore-path .prettierignore",
+		"prettier:check": "prettier --check ./",
 		"prettier": "prettier --write ./",
-		"prettier:check": "prettier --check ./"
+		"validate": "npm run prettier && npm run eslint"
 	},
 	"directories": {
 		"example": "example"
