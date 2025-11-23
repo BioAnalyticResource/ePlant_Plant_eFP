@@ -1,4 +1,3 @@
-/* eslint-disable prefer-destructuring */
 //= =========================== Alexander Sullivan =============================
 //
 // Purpose: Generates eFP tissue expression data
@@ -219,7 +218,7 @@ function removeTissueMetadata(elementID) {
  */
 function debounceTissueMetadata(func, wait) {
 	let timeout;
-	// eslint-disable-next-line func-names
+
 	return function (...args) {
 		const context = this;
 		clearTimeout(timeout);
@@ -464,7 +463,7 @@ class CreateSVGExpressionData {
 		// Local for this class
 		this.desiredDOMid = "";
 		/** Markup for the visualization container */
-		// eslint-disable-next-line no-unused-expressions
+
 		this.appendSVG;
 
 		// createSVGValues
@@ -490,7 +489,7 @@ class CreateSVGExpressionData {
 	 * @param {String} locus The AGI ID (example: AT3G24650 or AT3G24650.1)
 	 * @returns {Boolean} If locus is valid [true] or not [false, default]
 	 */
-	// eslint-disable-next-line class-methods-use-this
+
 	verifyLoci(locus) {
 		// Check if locus is a string
 		if (typeof locus === "string") {
@@ -603,9 +602,7 @@ class CreateSVGExpressionData {
 				}
 				methods.body = postSend;
 
-				// eslint-disable-next-line no-await-in-loop
 				await fetch(url, methods)
-					// eslint-disable-next-line no-loop-func
 					.then(async (response) => {
 						if (response.status === 200) {
 							await response.text().then(async (data) => {
@@ -706,7 +703,7 @@ class CreateSVGExpressionData {
 							);
 						}
 					})
-					// eslint-disable-next-line no-loop-func
+
 					.catch(async (err) => {
 						completedFetches += 1;
 						if (completedFetches === this.topExpressionOptions.length) {
@@ -1472,7 +1469,7 @@ class CreateSVGExpressionData {
 	 * @param {Array} numbers An array of numbers that the standard deviation will be found for
 	 * @return sd Standard deviation
 	 */
-	// eslint-disable-next-line class-methods-use-this
+
 	#standardDeviationCalc(numbers) {
 		let sd = 0;
 
@@ -1531,7 +1528,7 @@ class CreateSVGExpressionData {
 			this.svgValues[subunit].sampleSize = sampleSize;
 
 			// Begin colouring SVG subunits
-			// eslint-disable-next-line no-await-in-loop
+
 			await this.#colourSVGsubunit(whichSVG, subunit, colourFill, expressionLevel, sampleSize);
 		}
 	}
@@ -1541,7 +1538,7 @@ class CreateSVGExpressionData {
 	 * @param {Number} percentage The percentage between 0 - 100 (as an int) into a colour between yellow and red
 	 * @returns {String} Hex-code colour
 	 */
-	// eslint-disable-next-line class-methods-use-this
+
 	percentageToColour(percentage) {
 		const percentageInt = parseInt(percentage, 10);
 
@@ -1745,7 +1742,7 @@ class CreateSVGExpressionData {
 				subunitElement.setAttribute("class", "hoverDetails");
 				subunitElement.addEventListener(
 					"mouseenter",
-					// eslint-disable-next-line func-names
+
 					(event) => {
 						window.requestAnimationFrame(() => {
 							debounceTissueMetadata(addTissueMetadata(event.target.id), 250);
@@ -1754,7 +1751,7 @@ class CreateSVGExpressionData {
 				);
 				subunitElement.addEventListener(
 					"mouseleave",
-					// eslint-disable-next-line func-names
+
 					(event) => {
 						window.requestAnimationFrame(() => {
 							debounceTissueMetadata(removeTissueMetadata(event.target.id), 250);
@@ -1829,7 +1826,7 @@ class CreateSVGExpressionData {
 							dupShootElement.setAttribute("class", "hoverDetails");
 							dupShootElement.addEventListener(
 								"mouseenter",
-								// eslint-disable-next-line func-names
+
 								function (_event) {
 									addTissueMetadata(this.id);
 								},
@@ -1837,7 +1834,7 @@ class CreateSVGExpressionData {
 							);
 							dupShootElement.addEventListener(
 								"mouseleave",
-								// eslint-disable-next-line func-names
+
 								function (_event) {
 									removeTissueMetadata(this.id);
 								},
@@ -1885,7 +1882,7 @@ class CreateSVGExpressionData {
 							dupRootElement.setAttribute("class", "hoverDetails");
 							dupRootElement.addEventListener(
 								"mouseenter",
-								// eslint-disable-next-line func-names
+
 								function (_event) {
 									addTissueMetadata(this.id);
 								},
@@ -1893,7 +1890,7 @@ class CreateSVGExpressionData {
 							);
 							dupRootElement.addEventListener(
 								"mouseleave",
-								// eslint-disable-next-line func-names
+
 								function (_event) {
 									removeTissueMetadata(this.id);
 								},
