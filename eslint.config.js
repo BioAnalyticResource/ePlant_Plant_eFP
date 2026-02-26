@@ -1,5 +1,3 @@
-const eslintPluginPrettier = require("eslint-plugin-prettier");
-
 module.exports = [
 	{
 		ignores: ["**/*.min.js", "eslint.config.js", "node_modules/**/*"],
@@ -13,9 +11,6 @@ module.exports = [
 				},
 			},
 		},
-		plugins: {
-			prettier: eslintPluginPrettier,
-		},
 		rules: {
 			indent: ["error", "tab"],
 			"no-console": "off",
@@ -24,7 +19,6 @@ module.exports = [
 			"no-restricted-syntax": "off",
 			"no-unused-vars": ["error", { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }],
 			"no-use-before-define": "off",
-			"prettier/prettier": "error",
 			semi: ["error", "always"],
 		},
 	},

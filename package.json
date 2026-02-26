@@ -23,18 +23,16 @@
 	"private": true,
 	"description": "Data visualization tool to display tissue expression data for Arabidopsis thaliana",
 	"devDependencies": {
-		"eslint": "^9.39.1",
-		"eslint-config-prettier": "^10.1.8",
-		"eslint-plugin-prettier": "^5.5.4",
-		"prettier": "^3.6.2"
+		"esbuild": "^0.27.3",
+		"prettier": "^3.8.1"
 	},
 	"main": "tissueExpressionBAR.js",
 	"scripts": {
 		"audit:fix": "npm i && npm audit fix",
-		"eslint:check": "eslint ./",
 		"eslint": "eslint --fix ./",
-		"prettier:check": "prettier --check ./",
+		"eslint:check": "eslint ./",
 		"prettier": "prettier --write ./",
+		"prettier:check": "prettier --check ./",
 		"regen-package-lock": "rm -rf node_modules package-lock.json */node_modules */package-lock.json && npm run audit:fix",
 		"validate": "npm run prettier && npm run eslint"
 	},

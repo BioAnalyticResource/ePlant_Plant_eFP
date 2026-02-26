@@ -50,7 +50,7 @@ This will display the visualized and coloured tissue expression data within the 
 
 | Chrome | Firefox | Edge | Safari | Opera | Tor | Mobile |
 | ------ | ------- | ---- | ------ | ----- | --- | ------ |
-| ✔     | ✔      | ✔   | ✔     | ✔    | ✔  | ✔     |
+| ✔      | ✔       | ✔    | ✔      | ✔     | ✔   | ✔      |
 
 ## Known issues
 
