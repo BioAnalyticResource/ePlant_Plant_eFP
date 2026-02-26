@@ -6,8 +6,22 @@ name: Code Quality Assurance - JavaScript
 on:
     push:
         branches: [master]
+        paths:
+            - ".github/workflows/code-qa-js.yaml"
+            - ".prettier*"
+            - "**/*.css"
+            - "**/*.html"
+            - "**/*.js"
+            - "**/*.json"
     pull_request:
         branches: [master]
+        paths:
+            - ".github/workflows/code-qa-js.yaml"
+            - ".prettier*"
+            - "**/*.css"
+            - "**/*.html"
+            - "**/*.js"
+            - "**/*.json"
 
 permissions:
     contents: read
@@ -28,7 +42,7 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
             - name: Cache Node.js modules
-              uses: actions/cache@v4
+              uses: actions/cache@v5
               with:
                   path: ~/.npm
                   key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
