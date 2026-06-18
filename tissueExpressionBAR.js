@@ -131,7 +131,7 @@ function addTissueMetadata(elementID) {
 }
 
 /**
- * Remove details to an SVG or SVG-subunit including: hover and outline
+ * Remove details from an SVG or SVG-subunit including: hover and outline
  * @param {String} elementID Which SVG or SVG-subunit is being found and edited
  */
 function removeTissueMetadata(elementID) {
@@ -212,7 +212,7 @@ function removeTissueMetadata(elementID) {
  * @param {Function} func Function to be debounced
  * @param {Number} wait Time to wait before executing the function
  * @returns {Function} The debounced function
- * @example <caption>Example usage of the debounce function where the function is debounced for 250ms and prevents that function from being called again during that weight time</caption>
+ * @example <caption>Example usage of the debounce function where the function is debounced for 250ms and prevents that function from being called again during that wait time</caption>
  * debounceTissueMetadata(functionToBeDebounced, 250);
  * // returns functionToBeDebounced (after 250ms)
  */
@@ -272,7 +272,7 @@ const ePlantPlantEFPHandleMouseEventData = {
 
 /**
  * Handle mouse events to drag the SVG compendium
- * @param {String} domID DOM ID of the SVG container
+ * @param {HTMLElement} domID The SVG container element
  * @param {String} type What type of event is happening: 'down' to initiate drag, 'move' to drag, 'up' to end drag
  * @param {Event} e Mouse event object
  * @param {Number} moveBy How much the SVG has been moved by
@@ -397,9 +397,9 @@ function ePlantPlantEFPHandleMouseEvent(domID, type, e, moveBy = 1.5) {
 
 /**
  * Handle zooming of SVG
- * @param {String} domID DOM ID of the SVG container
+ * @param {HTMLElement} domID The SVG container element
  * @param {Event} e Mouse event object
- * @param {Number} changeBy How much the SVG has been moved by
+ * @param {Number} changeBy Zoom sensitivity factor used to scale the SVG viewBox
  */
 // eslint-disable-next-line no-unused-vars
 function ePlantPlantEFPHandleMouseWheel(domID, e, changeBy = 3) {
@@ -485,7 +485,7 @@ class CreateSVGExpressionData {
 	/**
 	 * Verify that the locus being called is valid
 	 * IMPORTANT: The current script only works for Arabidopsis thaliana
-	 * TODO: Add support for other languages. Fill list of loci patterns can be found within GAIA's tools (accessible only to BAR developer at the moment)
+	 * TODO: Add support for other organisms. Fill list of loci patterns can be found within GAIA's tools (accessible only to BAR developer at the moment)
 	 * @param {String} locus The AGI ID (example: AT3G24650 or AT3G24650.1)
 	 * @returns {Boolean} If locus is valid [true] or not [false, default]
 	 */
@@ -879,6 +879,9 @@ class CreateSVGExpressionData {
 		}
 	}
 
+	/**
+	 * Load cached eFP sample data from localStorage and merge any missing compendiums or loci into this.eFPObjects
+	 */
 	async #processLocalStorageEFPObjectData() {
 		if (Object.keys(this.localStorageSample).length === 0) {
 			// Grab localStorage's sample data:
@@ -940,9 +943,13 @@ class CreateSVGExpressionData {
 		}
 	}
 
+	/**
+	 * Trim the cached eFP data when it grows beyond ~1 MB by removing the first stored SVG that is not being kept
+	 * @param {String} svgKeep Name of the SVG to retain when trimming the cache
+	 */
 	async #checkLocalStorageEFPObjectSize(svgKeep = undefined) {
 		// Ensure that the localStorage is not too large (no more than 1MB)
-		// If it is, then remove the the first SVG in the eFPObjects object if not the one that is currently being kept (svgKeep) or 'expiry'
+		// If it is, then remove the first SVG in the eFPObjects object if not the one that is currently being kept (svgKeep) or 'expiry'
 
 		// Check size of this.localStorageSample
 		// Convert to string
@@ -967,7 +974,7 @@ class CreateSVGExpressionData {
 	 * @param {String} locus The AGI ID (example: AT3G24650)
 	 * @param {Array} samples List of sample ID's which the exact expression data is related to
 	 * @param {String} svg Which SVG is being called
-	 * @param {Array} sampleSubunits List of the SVG's subunits
+	 * @param {Object} sampleSubunits The SVG's subunits keyed by subunit name
 	 */
 	async #callPlantEFP(datasource, locus, samples, svg, sampleSubunits) {
 		// Create URL
@@ -1107,6 +1114,7 @@ class CreateSVGExpressionData {
 	 * Add the SVG to the designated DOM
 	 * @param {String} svgName Name of the SVG file without the .svg at the end
 	 * @param {String} locus The AGI ID (example: AT3G24650)
+	 * @param {Boolean} includeDropdownAll true = include a html dropdown/select of all available SVGs/samples, false (default) = don't
 	 */
 	async #addSVGtoDOM(svgName, locus, includeDropdownAll = false) {
 		let svgUse = "Klepikova";
@@ -1467,7 +1475,7 @@ class CreateSVGExpressionData {
 	 * Calculate the functional standard deviation
 	 * Modified from https://www.geeksforgeeks.org/php-program-find-standard-deviation-array/
 	 * @param {Array} numbers An array of numbers that the standard deviation will be found for
-	 * @return sd Standard deviation
+	 * @returns {Number} sd Standard deviation
 	 */
 
 	#standardDeviationCalc(numbers) {
@@ -1656,7 +1664,7 @@ class CreateSVGExpressionData {
 	/**
 	 * The intent is to colour the subunit of a desired location within an SVG
 	 * @param {String} whichSVG Name of the SVG file without the .svg at the end
-	 * @param {Array} svgSubunit A list containing all desired SVG subunits to be interacted with
+	 * @param {String} svgSubunit The SVG subunit being coloured
 	 * @param {String} colour A hex code for what colour it is meant to be filled with
 	 * @param {Number} expressionLevel The expression level for the interactive data
 	 * @param {Number} sampleSize The sample size of the input information, default to 1
