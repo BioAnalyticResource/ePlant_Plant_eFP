@@ -24,7 +24,7 @@
 	"description": "Data visualization tool to display tissue expression data for Arabidopsis thaliana",
 	"devDependencies": {
 		"eslint": "^10.10.0",
-		"prettier": "^3.9.6"
+		"prettier": "^3.9.7"
 	},
 	"main": "tissueExpressionBAR.js",
 	"scripts": {
