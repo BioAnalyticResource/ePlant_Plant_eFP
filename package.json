@@ -23,8 +23,8 @@
 	"private": true,
 	"description": "Data visualization tool to display tissue expression data for Arabidopsis thaliana",
 	"devDependencies": {
-		"eslint": "^10.0.2",
-		"prettier": "^3.8.1"
+		"eslint": "^10.10.0",
+		"prettier": "^3.9.7"
 	},
 	"main": "tissueExpressionBAR.js",
 	"scripts": {
